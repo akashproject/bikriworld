@@ -11,7 +11,7 @@
                 <div class="row align-items-center">
                     <div class="col-lg-6">
                         <div class="text_box">
-                            <h1 class="title"><span>Modern Life</span> Coach School Podcast</h1>
+                            <h3 class="title"><span>Sell Your Old Phone</span> Sell your own phone at the best price</h3>
                             <p>Sed ut perspiciatis unde omnis iste natus error voluptatem accan tium doloremque laudantium totam rem aperiam</p>
                             <a href="about-2.html" class="thm-btn bg-thm-color-two thm-color-two-shadow btn-rounded mr-4 mb-4"> Sell Product <i class="fal fa-chevron-right ml-2"></i></a>
                             <a href="https://www.youtube.com/watch?v=TKnufs85hXk" class="video_btn video_text popup-youtube mb-4">
@@ -22,7 +22,7 @@
                     </div>
                     <div class="col-lg-6">
                         <div class="image_box relative">
-                            <img src="assets/images/banner/banner_img.png" alt="img" class="image-fit">
+                            <img src="https://via.placeholder.com/837x500" alt="img" class="image-fit">
                             <span class="bg-thm-color-three circle_element"></span>
                         </div>
                     </div>
