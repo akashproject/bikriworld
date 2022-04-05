@@ -83,18 +83,40 @@
         </div>
     </section>
     <!-- Team End -->
-    <div class="brand_slider wow fadeInUp">
-        <!-- Feature Box Start -->
-        <div class="slide-item col-12">
-            <div class="features_box">
-                <div class="icon">
-                    <img src="https://via.placeholder.com/80x80" alt="img">
+    <section class="section-padding wow fadeInUp">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title left-align">
+                        <p class="subtitle mb-4">
+                            <i class="fal fa-book"></i>
+                            Top Selling Brand
+                        </p>
+                        <h3 class="title mb-0">Top Selling Brand </h3>
+                    </div>
                 </div>
-                <p>Apple</p>
+            </div>
+            <div class="brand_slider wow fadeInUp">
+                <div class="section-title left-align wow fadeInUp">
+                    <p class="subtitle">
+                        <i class="fal fa-book"></i>
+                        Top Selling Brand
+                    </p>
+                    <h3 class="title">Our Special Brand</h3>
+                </div>
+                <!-- Feature Box Start -->
+                <div class="slide-item col-12">
+                    <div class="features_box">
+                        <div class="icon">
+                            <img src="https://via.placeholder.com/80x80" alt="img">
+                        </div>
+                        <p>Apple</p>
+                    </div>
+                </div>
+                <!-- Feature Box End -->
             </div>
         </div>
-        <!-- Feature Box End -->
-    </div>
+    </section>
     @endsection
 @section('script')
 <!-- ============================================================== -->
