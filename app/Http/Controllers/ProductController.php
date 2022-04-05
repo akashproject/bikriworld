@@ -11,10 +11,19 @@ class ProductController extends Controller
     //
     public function index($id){
         try {
-            $products = Brand::where('brand_id', $id)->get();
+            $products = Product::where('brand_id', $id)->get();
             return view('product.index',compact('products'));
+            } catch(\Illuminate\Database\QueryException $e){
+        }
+    }
+
+    public function view($id){
+        try {
+            $product = Product::find($id);
+            return view('product.view',compact('product'));
         } catch(\Illuminate\Database\QueryException $e){
             return response()->json(['error' => $e->errorInfo[2]], $this->_statusErr);
         }
     }
+
 }

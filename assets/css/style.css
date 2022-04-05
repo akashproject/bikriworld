@@ -4280,19 +4280,16 @@ blockquote .quote_author:before {
 
     position: relative;
     margin: 0 auto 30px;
-    width: 160px;
-    height: 160px;
     border-radius: 50%;
 
 }
 
-
+a.head_trigger.desktop_trigger {
+    width: 52% !important;
+    padding: 24px;
+}
 
 .team_block .team_img img {
-
-    width: 160px;
-
-    height: 160px;
 
     border-radius: 50%;
 
@@ -4385,7 +4382,7 @@ blockquote .quote_author:before {
 .team_block.style_3 {
 
     background-color: var(--thm-white);
-
+    border: 1px solid #e3e0e0;
 }
 
 

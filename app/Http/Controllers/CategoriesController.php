@@ -13,7 +13,7 @@ class CategoriesController extends Controller
             $categories = Categories::all();
             return view('categories.index',compact('categories'));
         } catch(\Illuminate\Database\QueryException $e){
-            return response()->json(['error' => $e->errorInfo[2]], $this->_statusErr);
+            
         }
     }
 }

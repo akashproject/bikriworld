@@ -30,9 +30,13 @@
         <img src="{{ url('assets/images/elements/element_32.png') }}" class="element_2" alt="Element">
         <div class="container">
             <div class="row">
-                <div class="col-12">
-                    <div class="section-title">
-                        <h3 class="title">Select Brands</h3>
+                <div class="col-lg-12">
+                    <div class="section-title left-align">
+                        <p class="subtitle mb-4">
+                            <i class="fal fa-book"></i>
+                            Please select brand
+                        </p>
+                        <h5 class="title mb-0">choose brand what you like to sell</h4>
                     </div>
                 </div>
             </div>
@@ -40,15 +44,19 @@
             @if($brands)
                 @foreach ($brands as $value)
                 <!-- Block Start -->
-                <div class="col-lg-2 col-md-4">
+                <div class="col-lg-2 col-6">
                     <div class="team_block style_2 style_3">
                         <div class="team_img">
                             <img src="https://via.placeholder.com/180x180" alt="img" class="">
-                            <a href="team-details.html" class="thm-btn bg-thm-color-two thm-color-two-shadow btn-circle link">
+                            <a href="{{ url('selling-products') }}/{{ $value->id }}" class="thm-btn bg-thm-color-two thm-color-two-shadow btn-circle link">
                                 <i class="fal fa-plus"></i>
                             </a>
                         </div>
-                        <p class="thm-color-two mb-0 font-weight-bold">{{ $value->name }}</p>
+                        <p class="thm-color-two mb-0 font-weight-bold">
+                            <a href="{{ url('selling-products') }}/{{ $value->id }}" class="">
+                                {{ $value->name }}
+                            </a>
+                        </p>
                     </div>
                 </div>
                 <!-- Block End -->
@@ -92,29 +100,152 @@
                             <i class="fal fa-book"></i>
                             Top Selling Brand
                         </p>
-                        <h3 class="title mb-0">Top Selling Brand </h3>
+                        <h5 class="title mb-0">our top selling brand people likes</h4>
                     </div>
                 </div>
             </div>
             <div class="brand_slider wow fadeInUp">
-                <div class="section-title left-align wow fadeInUp">
-                    <p class="subtitle">
-                        <i class="fal fa-book"></i>
-                        Top Selling Brand
-                    </p>
-                    <h3 class="title">Our Special Brand</h3>
-                </div>
                 <!-- Feature Box Start -->
                 <div class="slide-item col-12">
                     <div class="features_box">
                         <div class="icon">
                             <img src="https://via.placeholder.com/80x80" alt="img">
                         </div>
-                        <p>Apple</p>
+                        <h6 class="text-center">Apple</h6>
+                    </div>
+                </div>
+                <!-- Feature Box End -->
+                <!-- Feature Box Start -->
+                <div class="slide-item col-12">
+                    <div class="features_box">
+                        <div class="icon">
+                            <img src="https://via.placeholder.com/80x80" alt="img">
+                        </div>
+                        <h6 class="text-center">Apple</h6>
+                    </div>
+                </div>
+                <!-- Feature Box End -->
+                <!-- Feature Box Start -->
+                <div class="slide-item col-12">
+                    <div class="features_box">
+                        <div class="icon">
+                            <img src="https://via.placeholder.com/80x80" alt="img">
+                        </div>
+                        <h6 class="text-center">Apple</h6>
+                    </div>
+                </div>
+                <!-- Feature Box End -->
+                <!-- Feature Box Start -->
+                <div class="slide-item col-12">
+                    <div class="features_box">
+                        <div class="icon">
+                            <img src="https://via.placeholder.com/80x80" alt="img">
+                        </div>
+                        <h6 class="text-center">Apple</h6>
+                    </div>
+                </div>
+                <!-- Feature Box End -->
+                <!-- Feature Box Start -->
+                <div class="slide-item col-12">
+                    <div class="features_box">
+                        <div class="icon">
+                            <img src="https://via.placeholder.com/80x80" alt="img">
+                        </div>
+                        <h6 class="text-center">Apple</h6>
+                    </div>
+                </div>
+                <!-- Feature Box End -->
+                <!-- Feature Box Start -->
+                <div class="slide-item col-12">
+                    <div class="features_box">
+                        <div class="icon">
+                            <img src="https://via.placeholder.com/80x80" alt="img">
+                        </div>
+                        <h6 class="text-center">Apple</h6>
                     </div>
                 </div>
                 <!-- Feature Box End -->
             </div>
+           
+        </div>
+    </section>
+
+    <section class="section-padding wow fadeInUp">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title left-align">
+                        <p class="subtitle mb-4">
+                            <i class="fal fa-book"></i>
+                            Top Selling Models
+                        </p>
+                        <h5 class="title mb-0">our top selling model people likes</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="brand_slider wow fadeInUp">
+                <!-- Feature Box Start -->
+                <div class="slide-item col-12">
+                    <div class="features_box">
+                        <div class="icon">
+                            <img src="https://via.placeholder.com/80x80" alt="img">
+                        </div>
+                        <h6 class="text-center">Iphone 13</h6>
+                    </div>
+                </div>
+                <!-- Feature Box End -->
+                <!-- Feature Box Start -->
+                <div class="slide-item col-12">
+                    <div class="features_box">
+                        <div class="icon">
+                            <img src="https://via.placeholder.com/80x80" alt="img">
+                        </div>
+                        <h6 class="text-center">Iphone 12</h6>
+                    </div>
+                </div>
+                <!-- Feature Box End -->
+                <!-- Feature Box Start -->
+                <div class="slide-item col-12">
+                    <div class="features_box">
+                        <div class="icon">
+                            <img src="https://via.placeholder.com/80x80" alt="img">
+                        </div>
+                        <h6 class="text-center">Iphone 12</h6>
+                    </div>
+                </div>
+                <!-- Feature Box End -->
+                <!-- Feature Box Start -->
+                <div class="slide-item col-12">
+                    <div class="features_box">
+                        <div class="icon">
+                            <img src="https://via.placeholder.com/80x80" alt="img">
+                        </div>
+                        <h6 class="text-center">Apple</h6>
+                    </div>
+                </div>
+                <!-- Feature Box End -->
+                <!-- Feature Box Start -->
+                <div class="slide-item col-12">
+                    <div class="features_box">
+                        <div class="icon">
+                            <img src="https://via.placeholder.com/80x80" alt="img">
+                        </div>
+                        <h6 class="text-center">Iphone 11</h6>
+                    </div>
+                </div>
+                <!-- Feature Box End -->
+                <!-- Feature Box Start -->
+                <div class="slide-item col-12">
+                    <div class="features_box">
+                        <div class="icon">
+                            <img src="https://via.placeholder.com/80x80" alt="img">
+                        </div>
+                        <h6 class="text-center">Iphone 9</h6>
+                    </div>
+                </div>
+                <!-- Feature Box End -->
+            </div>
+           
         </div>
     </section>
     @endsection

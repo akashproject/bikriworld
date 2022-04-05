@@ -148,12 +148,12 @@
     });
 
     $('.brand_slider').slick({
-        slidesToShow: 5,
+        slidesToShow: 7,
         slidesToScroll: 1,
-        autoplay: true,
+        autoplay: false,
         arrows: true,
         dots: true,
-        autoplaySpeed: 2000,
+        //autoplaySpeed: 2000,
         responsive: [{
                 breakpoint: 1199,
                 settings: {

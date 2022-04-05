@@ -1,82 +1,23 @@
-<!-- Preloader Start -->
+<!-- Preloader Start 
 <div class="preloader">
     <img src="{{ url('assets/images/preloader.svg') }}" alt="preloader">
 </div>
-<!-- Preloader End -->
+Preloader End -->
 <!-- Mobile Menu Start -->
 <aside class="aside_bar aside_bar_left aside_mobile">
     <!-- logo -->
-    <a href="index.html" class="logo">
+    <a href="{{  url('') }}" class="logo">
         <img src="{{ url('assets/images/logo.png') }}" alt="logo">
     </a>
     <!-- logo -->
     <!-- Menu -->
     <nav>
         <ul class="main-menu">
-            <li class="menu-item menu-item-has-children">
-                <a href="#">Home</a>
-                <ul class="sub-menu">
-                    <li class="menu-item">
-                        <a href="index.html">Home v1</a>
-                    </li>
-                    <li class="menu-item">
-                        <a href="index-2.html">Home v2</a>
-                    </li>
-                    <li class="menu-item">
-                        <a href="index-3.html">Home v3</a>
-                    </li>
-                </ul>
+            <li class="menu-item">
+                <a href="{{ url('selling-brands/1') }}">Sell Phone</a>
             </li>
-            <li class="menu-item menu-item-has-children">
-                <a href="#">Pages</a>
-                <ul class="sub-menu">
-                    <li class="menu-item">
-                        <a href="about.html">About Us</a>
-                    </li>
-                    <li class="menu-item">
-                        <a href="about-2.html">About Me</a>
-                    </li>
-                    <li class="menu-item">
-                        <a href="events.html">Events</a>
-                    </li>
-                    <li class="menu-item">
-                        <a href="videos.html">Videos</a>
-                    </li>
-                    <li class="menu-item">
-                        <a href="services.html">Services</a>
-                    </li>
-                    <li class="menu-item menu-item-has-children">
-                        <a href="#">Team</a>
-                        <ul class="sub-menu">
-                            <li class="menu-item">
-                                <a href="team.html">Team</a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="team-details.html">Team Details</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="menu-item">
-                        <a href="pricing.html">Pricing</a>
-                    </li>
-                    <li class="menu-item">
-                        <a href="testimonials.html">Testimonials</a>
-                    </li>
-                    <li class="menu-item">
-                        <a href="faqs.html">FAQ's</a>
-                    </li>
-                </ul>
-            </li>
-            <li class="menu-item menu-item-has-children">
-                <a href="#">Courses</a>
-                <ul class="sub-menu">
-                    <li class="menu-item">
-                        <a href="courses.html">Courses</a>
-                    </li>
-                    <li class="menu-item">
-                        <a href="course-details.html">Course Details</a>
-                    </li>
-                </ul>
+            <li class="menu-item">
+                <a href="#">Sell Gaget</a>
             </li>
             <li class="menu-item">
                 <a href="contact.html">Contacts</a>
@@ -90,7 +31,7 @@
 <!-- Canvas Start -->
 <aside class="aside_bar aside_bar_right aside_canvas">
     <!-- logo -->
-    <a href="index.html" class="logo pl-0">
+    <a href="{{  url('') }}" class="logo pl-0">
         <img src="{{ url('assets/images/logo.png') }}" alt="logo">
     </a>
     <!-- logo -->
@@ -131,20 +72,7 @@
             </ul>
         </div>
         <div class="sidebar_widget">
-            <h5 class="widget_title">Popular Tags</h5>
-            <div class="tags">
-                <a href="blog-grid.html">Business</a>
-                <a href="blog-grid.html">Corporate</a>
-                <a href="blog-grid.html">HTML</a>
-                <a href="blog-grid.html">Art</a>
-                <a href="blog-grid.html">Finance</a>
-                <a href="blog-grid.html">Investment</a>
-                <a href="blog-grid.html">CSS</a>
-                <a href="blog-grid.html">Coach</a>
-                <a href="blog-grid.html">Planing</a>
-                <a href="blog-grid.html">Creative</a>
-                <a href="blog-grid.html">Health</a>
-            </div>
+            <a href="javascript:void(0)" class="thm-btn bg-thm-color-three thm-color-three-shadow btn-rectangle"> Sign in <i class="fal fa-chevron-right ml-2"></i></a>
         </div>
     </div>
 </aside>
@@ -158,7 +86,7 @@
             <nav>
                 <!-- logo start -->
                 <div class="logo">
-                    <a href="index.html">
+                    <a href="{{  url('') }}">
                         <img src="{{ url('assets/images/logo.png') }}" alt="logo" class="image-fit">
                     </a>
                 </div>
@@ -169,13 +97,10 @@
                         <a href="{{ url('selling-brands/1') }}">Sell Phone</a>
                         <ul class="sub-menu">
                             <li class="menu-item">
-                                <a href="index.html">Iphone</a>
+                                <a href="{{  url('') }}">Iphone</a>
                             </li>
                             <li class="menu-item">
                                 <a href="index-2.html">Sumsung</a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="index-3.html">Home v3</a>
                             </li>
                         </ul>
                     </li>
@@ -232,11 +157,7 @@
                     <input type="text" name="#" placeholder="Search" autocomplete="off">
                     <i class="fal fa-search"></i>
                 </div>
-                <button type="button" class="head_trigger desktop_trigger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
+                <a href="javascript:void(0)" class="head_trigger desktop_trigger thm-btn bg-thm-color-three thm-color-three-shadow btn-rectangle">Sign In <i class="fal fa-chevron-right ml-2"></i></a>
                 <button type="button" class="head_trigger mobile_trigger">
                     <span></span>
                     <span></span>
