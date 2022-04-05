@@ -166,7 +166,7 @@
                 <!-- Navigation Start -->
                 <ul class="main-menu">
                     <li class="menu-item menu-item-has-children">
-                        <a href="{{ url('selling-brands') }}">Sell Phone</a>
+                        <a href="{{ url('selling-brands/1') }}">Sell Phone</a>
                         <ul class="sub-menu">
                             <li class="menu-item">
                                 <a href="index.html">Iphone</a>
