@@ -146,6 +146,29 @@
             }
         ]
     });
+
+    $('.brand_slider').slick({
+        slidesToShow: 5,
+        slidesToScroll: 1,
+        autoplay: true,
+        arrows: true,
+        dots: true,
+        autoplaySpeed: 2000,
+        responsive: [{
+                breakpoint: 1199,
+                settings: {
+                    slidesToShow: 2
+                }
+            },
+            {
+                breakpoint: 767,
+                settings: {
+                    slidesToShow: 1,
+                    arrows: false
+                }
+            }
+        ]
+    });
     // Magnific Popup
     $('.popup-youtube').magnificPopup({ type: 'iframe' });
     $('.gallery-thumb').magnificPopup({

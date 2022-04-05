@@ -83,6 +83,18 @@
         </div>
     </section>
     <!-- Team End -->
+    <div class="brand_slider wow fadeInUp">
+        <!-- Feature Box Start -->
+        <div class="slide-item col-12">
+            <div class="features_box">
+                <div class="icon">
+                    <img src="https://via.placeholder.com/80x80" alt="img">
+                </div>
+                <p>Apple</p>
+            </div>
+        </div>
+        <!-- Feature Box End -->
+    </div>
     @endsection
 @section('script')
 <!-- ============================================================== -->
