@@ -40,15 +40,14 @@
             @if($categories)
                 @foreach ($categories as $value)
                 <!-- Feature Box Start -->
-                <div class="col-lg-3 col-md-6">
+                <div class="col-lg-2 col-6">
                     <div class="features_box">
                         <div class="icon">
-                            <img src="assets/images/icons/icon_1.png" alt="img">
+                        <a href="{{ url('selling-brands') }}/{{ $value->id }}"> <img src="assets/images/icons/icon_1.png" alt="img"></a>
                         </div>
-                        <h5>{{ $value->name }}</h5>
-                        <p>Quis autem vel eum reprehenderit quin eavoluptate</p>
-                        <a href="services.html">
-                            <span>Read More</span>
+                        <h5 class="text-center" ><a href="{{ url('selling-brands') }}/{{ $value->id }}"> {{ $value->name }}</a></h5>
+                        <a href="{{ url('selling-brands') }}/{{ $value->id }}" class="text-center">
+                            <span>View</span>
                             <i class="fal fa-chevron-right"></i>
                         </a>
                     </div>
@@ -106,7 +105,7 @@
     <!-- About End -->
     
     <!-- Testimonials Start -->
-    <section class="section-padding pt-0 relative z-1">
+    <section class="section about_bg">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">

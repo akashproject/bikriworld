@@ -31,15 +31,14 @@
             @if($categories)
                 @foreach ($categories as $value)
                 <!-- Feature Box Start -->
-                <div class="col-lg-3 col-md-6">
+                <div class="col-lg-2 col-6">
                     <div class="features_box">
                         <div class="icon">
-                            <img src="assets/images/icons/icon_1.png" alt="img">
+                        <a href="{{ url('selling-brands') }}/{{ $value->id }}"> <img src="assets/images/icons/icon_1.png" alt="img"></a>
                         </div>
-                        <h5>{{ $value->name }}</h5>
-                        <p>Quis autem vel eum reprehenderit quin eavoluptate</p>
-                        <a href="services.html">
-                            <span>Read More</span>
+                        <h5 class="text-center" ><a href="{{ url('selling-brands') }}/{{ $value->id }}"> {{ $value->name }}</a></h5>
+                        <a href="{{ url('selling-brands') }}/{{ $value->id }}" class="text-center">
+                            <span>View</span>
                             <i class="fal fa-chevron-right"></i>
                         </a>
                     </div>
@@ -70,7 +69,7 @@
                 <div class="slide-item col-12">
                     <div class="features_box">
                         <div class="icon">
-                            <img src="https://via.placeholder.com/80x80" alt="img">
+                            <img src="{{ url('assets/images/iphone.png') }}" alt="img">
                         </div>
                         <h6 class="text-center">Apple</h6>
                     </div>
@@ -80,7 +79,7 @@
                 <div class="slide-item col-12">
                     <div class="features_box">
                         <div class="icon">
-                            <img src="https://via.placeholder.com/80x80" alt="img">
+                            <img src="{{ url('assets/images/iphone.png') }}" alt="img">
                         </div>
                         <h6 class="text-center">Apple</h6>
                     </div>
@@ -90,7 +89,7 @@
                 <div class="slide-item col-12">
                     <div class="features_box">
                         <div class="icon">
-                            <img src="https://via.placeholder.com/80x80" alt="img">
+                            <img src="{{ url('assets/images/iphone.png') }}" alt="img">
                         </div>
                         <h6 class="text-center">Apple</h6>
                     </div>
@@ -100,7 +99,7 @@
                 <div class="slide-item col-12">
                     <div class="features_box">
                         <div class="icon">
-                            <img src="https://via.placeholder.com/80x80" alt="img">
+                            <img src="{{ url('assets/images/iphone.png') }}" alt="img">
                         </div>
                         <h6 class="text-center">Apple</h6>
                     </div>
@@ -110,7 +109,7 @@
                 <div class="slide-item col-12">
                     <div class="features_box">
                         <div class="icon">
-                            <img src="https://via.placeholder.com/80x80" alt="img">
+                            <img src="{{ url('assets/images/iphone.png') }}" alt="img">
                         </div>
                         <h6 class="text-center">Apple</h6>
                     </div>
@@ -120,7 +119,7 @@
                 <div class="slide-item col-12">
                     <div class="features_box">
                         <div class="icon">
-                            <img src="https://via.placeholder.com/80x80" alt="img">
+                            <img src="{{ url('assets/images/iphone.png') }}" alt="img">
                         </div>
                         <h6 class="text-center">Apple</h6>
                     </div>
@@ -149,7 +148,7 @@
                 <div class="slide-item col-12">
                     <div class="features_box">
                         <div class="icon">
-                            <img src="https://via.placeholder.com/80x80" alt="img">
+                            <img src="{{ url('assets/images/iphone.png') }}" alt="img">
                         </div>
                         <h6 class="text-center">Iphone 13</h6>
                     </div>
@@ -159,7 +158,7 @@
                 <div class="slide-item col-12">
                     <div class="features_box">
                         <div class="icon">
-                            <img src="https://via.placeholder.com/80x80" alt="img">
+                            <img src="{{ url('assets/images/iphone.png') }}" alt="img">
                         </div>
                         <h6 class="text-center">Iphone 12</h6>
                     </div>
@@ -169,7 +168,7 @@
                 <div class="slide-item col-12">
                     <div class="features_box">
                         <div class="icon">
-                            <img src="https://via.placeholder.com/80x80" alt="img">
+                            <img src="{{ url('assets/images/iphone.png') }}" alt="img">
                         </div>
                         <h6 class="text-center">Iphone 12</h6>
                     </div>
@@ -179,7 +178,7 @@
                 <div class="slide-item col-12">
                     <div class="features_box">
                         <div class="icon">
-                            <img src="https://via.placeholder.com/80x80" alt="img">
+                            <img src="{{ url('assets/images/iphone.png') }}" alt="img">
                         </div>
                         <h6 class="text-center">Apple</h6>
                     </div>
@@ -189,7 +188,7 @@
                 <div class="slide-item col-12">
                     <div class="features_box">
                         <div class="icon">
-                            <img src="https://via.placeholder.com/80x80" alt="img">
+                            <img src="{{ url('assets/images/iphone.png') }}" alt="img">
                         </div>
                         <h6 class="text-center">Iphone 11</h6>
                     </div>
@@ -199,7 +198,7 @@
                 <div class="slide-item col-12">
                     <div class="features_box">
                         <div class="icon">
-                            <img src="https://via.placeholder.com/80x80" alt="img">
+                            <img src="{{ url('assets/images/iphone.png') }}" alt="img">
                         </div>
                         <h6 class="text-center">Iphone 9</h6>
                     </div>

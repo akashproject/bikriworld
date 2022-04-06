@@ -24,71 +24,119 @@
         </div>
     </div>
     <!-- Subheader End -->
-    <!-- Team Start -->
-    <section class="section-padding bg-thm-color-two-gradient style_2 z-1 team_page_bg">
+    <section class="section-padding wow fadeInUp">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12">
-                    <div class="section-title left-align">
-                        <p class="subtitle mb-4">
-                            <i class="fal fa-book"></i>
-                            Please select brand
-                        </p>
-                        <h5 class="title mb-0">choose brand what you like to sell</h4>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-            @if($brands)
-                @foreach ($brands as $value)
-                <!-- Block Start -->
-                <div class="col-lg-2 col-6">
-                    <div class="team_block style_2 style_3">
-                        <div class="team_img">
-                            <img src="https://via.placeholder.com/180x180" alt="img" class="">
-                            <a href="{{ url('selling-products') }}/{{ $value->id }}" class="thm-btn bg-thm-color-two thm-color-two-shadow btn-circle link">
-                                <i class="fal fa-plus"></i>
-                            </a>
+                <div class="col-lg-7">
+                    <div class="summary-wrap" >
+                        <div class="question-summary" >
+                            <h4 class="summary-heading" > Let us know some questions about your device ! </h4>
+                            <p class="summary-description" > What is the current condition of your device </p>
                         </div>
-                        <p class="thm-color-two mb-0 font-weight-bold">
-                            <a href="{{ url('selling-products') }}/{{ $value->id }}" class="">
-                                {{ $value->name }}
-                            </a>
-                        </p>
+                        @if($questions)
+                            @foreach ($questions as $key => $value)
+                                <div class="row question_list" >
+                                    <div class="col-lg-12">
+                                        <h5 ><i class="fal fa-check"></i> {{ $value->question }} </h5>
+                                    </div>
+                                    <div class="col-lg-8">
+                                        <div class="row answer_row" >
+                                            <div class="col-lg-6 ">
+                                                <div class="answer_list"  >
+                                                    <div class="form-check ">
+                                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                                        <label class="form-check-label" for="flexRadioDefault1">
+                                                            Yes
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="answer_list"  >
+                                                    <div class="form-check ">
+                                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                                                        <label class="form-check-label" for="flexRadioDefault2">
+                                                        No
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach	
+                        @endif 
                     </div>
                 </div>
-                <!-- Block End -->
-                @endforeach	
-            @endif               
+                <div class="col-lg-5">
+                    <div class="sidebar style_3">
+                        <div class="sidebar_widget recent_widgets">
+                            <h5 class="widget_title">Device Details</h5>
+                            <ul>
+                                <li style="padding: 10px 25px;">
+                                    <div class="image">
+                                        <img src="{{ url('assets/images/coach/small_1.jpg') }}" alt="img" class="image-fit">
+                                    </div>
+                                    <div class="text">
+                                        <h6 class="mb-0">
+                                            <a href="course-details.html">Iphone 5s</a>
+                                        </h6>
+                                    </div>
+                                </li>
+                                
+                            </ul>
+                        </div>
+                        <div class="sidebar_widget">
+                            <div class="sidebar_widget_inner">
+                                <ul class="info_widget">
+                                    <li>
+                                        Mobile Under Warranty
+                                    </li>
+                                    <li>
+                                        Phone Body Defective
+                                    </li>
+                                    <li>
+                                        Mobile Screen Defective
+                                    </li>
+                                    <li>
+                                         Able to Make and Receive Calls
+                                    </li>
+                                    <li>
+                                        Touch Faulty
+                                    </li>
+                                    <!-- <li>
+                                        <span>Share</span>
+                                        <ul class="social">
+                                            <li>
+                                                <a href="#">
+                                                    <i class="fab fa-facebook-f"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <i class="fab fa-twitter"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <i class="fab fa-linkedin"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <i class="fab fa-behance"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li> -->
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <!-- Pagination -->
-            <!-- <nav aria-label="Page navigation example">
-                <ul class="pagination justify-content-center">
-                    <li class="page-item">
-                        <a href="#" class="page-link">
-                            <i class="fal fa-chevron-left"></i>
-                        </a>
-                    </li>
-                    <li class="page-item">
-                        <a href="#" class="page-link">01</a>
-                    </li>
-                    <li class="page-item active">
-                        <a href="#" class="page-link">02</a>
-                    </li>
-                    <li class="page-item">
-                        <a href="#" class="page-link">03</a>
-                    </li>
-                    <li class="page-item">
-                        <a href="#" class="page-link">
-                            <i class="fal fa-chevron-right"></i>
-                        </a>
-                    </li>
-                </ul>
-            </nav> -->
-            <!-- Pagination -->
         </div>
     </section>
-    <!-- Team End -->
     <section class="section-padding wow fadeInUp">
         <div class="container">
             <div class="row">
@@ -107,7 +155,7 @@
                 <div class="slide-item col-12">
                     <div class="features_box">
                         <div class="icon">
-                            <img src="{{ url('assets/images/brands/apple.png') }}" alt="img">
+                            <img src="{{ url('assets/images/iphone.png') }}" alt="img">
                         </div>
                         <h6 class="text-center">Apple</h6>
                     </div>
@@ -117,7 +165,7 @@
                 <div class="slide-item col-12">
                     <div class="features_box">
                         <div class="icon">
-                            <img src="{{ url('assets/images/brands/apple.png') }}" alt="img">
+                            <img src="{{ url('assets/images/iphone.png') }}" alt="img">
                         </div>
                         <h6 class="text-center">Apple</h6>
                     </div>
@@ -127,7 +175,7 @@
                 <div class="slide-item col-12">
                     <div class="features_box">
                         <div class="icon">
-                            <img src="{{ url('assets/images/brands/apple.png') }}" alt="img">
+                            <img src="{{ url('assets/images/iphone.png') }}" alt="img">
                         </div>
                         <h6 class="text-center">Apple</h6>
                     </div>
@@ -137,7 +185,7 @@
                 <div class="slide-item col-12">
                     <div class="features_box">
                         <div class="icon">
-                            <img src="{{ url('assets/images/brands/apple.png') }}" alt="img">
+                            <img src="{{ url('assets/images/iphone.png') }}" alt="img">
                         </div>
                         <h6 class="text-center">Apple</h6>
                     </div>
@@ -147,7 +195,7 @@
                 <div class="slide-item col-12">
                     <div class="features_box">
                         <div class="icon">
-                            <img src="{{ url('assets/images/brands/apple.png') }}" alt="img">
+                            <img src="{{ url('assets/images/iphone.png') }}" alt="img">
                         </div>
                         <h6 class="text-center">Apple</h6>
                     </div>
@@ -157,7 +205,7 @@
                 <div class="slide-item col-12">
                     <div class="features_box">
                         <div class="icon">
-                            <img src="{{ url('assets/images/brands/apple.png') }}" alt="img">
+                            <img src="{{ url('assets/images/iphone.png') }}" alt="img">
                         </div>
                         <h6 class="text-center">Apple</h6>
                     </div>
@@ -181,7 +229,7 @@
                     </div>
                 </div>
             </div>
-            <div class="model_slider wow fadeInUp">
+            <div class="brand_slider wow fadeInUp">
                 <!-- Feature Box Start -->
                 <div class="slide-item col-12">
                     <div class="features_box">
@@ -234,46 +282,6 @@
                 <!-- Feature Box End -->
                 <!-- Feature Box Start -->
                 <div class="slide-item col-12">
-                    <div class="features_box">
-                        <div class="icon">
-                            <img src="{{ url('assets/images/iphone.png') }}" alt="img">
-                        </div>
-                        <h6 class="text-center">Iphone 9</h6>
-                    </div>
-                </div>
-                <!-- Feature Box End -->
-                 <!-- Feature Box Start -->
-                 <div class="slide-item col-12">
-                    <div class="features_box">
-                        <div class="icon">
-                            <img src="{{ url('assets/images/iphone.png') }}" alt="img">
-                        </div>
-                        <h6 class="text-center">Iphone 9</h6>
-                    </div>
-                </div>
-                <!-- Feature Box End -->
-                 <!-- Feature Box Start -->
-                 <div class="slide-item col-12">
-                    <div class="features_box">
-                        <div class="icon">
-                            <img src="{{ url('assets/images/iphone.png') }}" alt="img">
-                        </div>
-                        <h6 class="text-center">Iphone 9</h6>
-                    </div>
-                </div>
-                <!-- Feature Box End -->
-                 <!-- Feature Box Start -->
-                 <div class="slide-item col-12">
-                    <div class="features_box">
-                        <div class="icon">
-                            <img src="{{ url('assets/images/iphone.png') }}" alt="img">
-                        </div>
-                        <h6 class="text-center">Iphone 9</h6>
-                    </div>
-                </div>
-                <!-- Feature Box End -->
-                 <!-- Feature Box Start -->
-                 <div class="slide-item col-12">
                     <div class="features_box">
                         <div class="icon">
                             <img src="{{ url('assets/images/iphone.png') }}" alt="img">

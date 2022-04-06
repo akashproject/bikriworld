@@ -3867,26 +3867,22 @@ blockquote .quote_author:before {
 /*Features*/
 
 .features_box {
-
-    padding: 40px;
-
+    padding: 10px;
     margin-bottom: 30px;
-
     transition: 0.3s all;
-
     background-color: var(--thm-white);
-
 }
 
 
 
 .features_box .icon {
-
     margin-bottom: 30px;
-
+    text-align: center;
 }
 
-
+.slick-slide img {
+    display: inline !important;
+}
 
 .features_box p,
 
@@ -4114,7 +4110,7 @@ blockquote .quote_author:before {
 
 .about_bg {
 
-    background-color: rgba(var(--thm-color-two-rgb), 7%);
+    background-color: #ffffff;
 
 }
 
@@ -9907,7 +9903,7 @@ a.head_trigger.desktop_trigger {
 
 }
 
-.check_list li i{
+.check_list li i, .summary-wrap .question_list i{
 
     width: 26px;
 
@@ -9963,18 +9959,13 @@ a.head_trigger.desktop_trigger {
 
 }
 
-.sidebar.style_3 .info_widget>li{
-
-    font-size: 16px;
-
+.sidebar.style_3 .info_widget>li {
+    font-size: 14px;
     font-weight: 600;
-
     font-family: var(--thm-font);
-
-    margin-bottom: 10px;
-
     color: var(--thm-color-one);
-
+    list-style: disc;
+    margin-left: 20px;
 }
 
 .sidebar.style_3 .info_widget>li:last-child{
@@ -10077,10 +10068,63 @@ a.head_trigger.desktop_trigger {
     background: #4b83fb;
     color: #fff;
 }
+.variant:active {
+    background: #4b83fb;
+    color: #fff;
+}
+
+.variant.active {
+    background: #4b83fb;
+    color: #fff;
+}
 
 .prodduct-detail-wrap {
     margin-top: 50px;
     border: 1px solid #ddd8d8;
     border-radius: 20px;
     padding: 50px 0;
+}
+
+.summary-wrap {
+    padding: 20px 42px;
+    border-radius: 14px;
+    box-shadow: 0px 1px 8px 1px #ecf2ff;
+    margin-bottom: 30px;
+}
+
+.question-summary {
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+.summary-heading {
+    font-size: 24px;
+    margin-bottom: 3px;
+}
+
+
+.question_list h5{
+    font-size: 20px;
+    margin: 14px 0;
+}
+
+.answer_list {
+    padding: 7px 5px;
+    border: 1px solid #65cfa9;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.answer_list:hover {
+    padding: 7px 5px;
+    background: #f2f6ff;
+    border-radius: 10px;
+}
+.answer_list:active {
+    padding: 7px 5px;
+    background: #f2f6ff;
+    border-radius: 10px;
+}
+label.form-check-label {
+    font-weight: 800;
 }

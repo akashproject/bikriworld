@@ -48,7 +48,7 @@
                         <p > get upto </p>
                         <h3 class="product-price"> ₹2,350/- </h3>
                         <div >
-                            <a href="javascript:void(0)" class=" thm-btn bg-thm-color-three thm-color-three-shadow btn-rectangle"> Get Exact Value <i class="fal fa-chevron-right ml-2"></i></a>
+                            <a href="{{ url('question') }}/{{ $product->id }}" class=" thm-btn bg-thm-color-three thm-color-three-shadow btn-rectangle"> Get Exact Value <i class="fal fa-chevron-right ml-2"></i></a>
                         </div>
                     </div>
                    
@@ -57,52 +57,84 @@
         </div>
     </div>
     <!-- Section End -->
-    <!-- Team Start -->
-    <section class="section-padding" style="">
-
+    <section class="section-padding wow fadeInUp">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-title left-align">
                         <p class="subtitle mb-4">
                             <i class="fal fa-book"></i>
-                            Top Selling Brand
+                            Top Related Products
                         </p>
-                        <h5 class="title mb-0">our top selling brand people likes</h4>
+                        <h5 class="title mb-0">our top selling related product people likes</h4>
                     </div>
                 </div>
             </div>
-            <div class="row">
-                  
+            <div class="brand_slider wow fadeInUp">
+                <!-- Feature Box Start -->
+                <div class="slide-item col-12">
+                    <div class="features_box">
+                        <div class="icon">
+                            <img src="{{ url('assets/images/iphone.png') }}" alt="img">
+                        </div>
+                        <h6 class="text-center">Iphone 13</h6>
+                    </div>
+                </div>
+                <!-- Feature Box End -->
+                <!-- Feature Box Start -->
+                <div class="slide-item col-12">
+                    <div class="features_box">
+                        <div class="icon">
+                            <img src="{{ url('assets/images/iphone.png') }}" alt="img">
+                        </div>
+                        <h6 class="text-center">Iphone 12</h6>
+                    </div>
+                </div>
+                <!-- Feature Box End -->
+                <!-- Feature Box Start -->
+                <div class="slide-item col-12">
+                    <div class="features_box">
+                        <div class="icon">
+                            <img src="{{ url('assets/images/iphone.png') }}" alt="img">
+                        </div>
+                        <h6 class="text-center">Iphone 12</h6>
+                    </div>
+                </div>
+                <!-- Feature Box End -->
+                <!-- Feature Box Start -->
+                <div class="slide-item col-12">
+                    <div class="features_box">
+                        <div class="icon">
+                            <img src="{{ url('assets/images/iphone.png') }}" alt="img">
+                        </div>
+                        <h6 class="text-center">Apple</h6>
+                    </div>
+                </div>
+                <!-- Feature Box End -->
+                <!-- Feature Box Start -->
+                <div class="slide-item col-12">
+                    <div class="features_box">
+                        <div class="icon">
+                            <img src="{{ url('assets/images/iphone.png') }}" alt="img">
+                        </div>
+                        <h6 class="text-center">Iphone 11</h6>
+                    </div>
+                </div>
+                <!-- Feature Box End -->
+                <!-- Feature Box Start -->
+                <div class="slide-item col-12">
+                    <div class="features_box">
+                        <div class="icon">
+                            <img src="{{ url('assets/images/iphone.png') }}" alt="img">
+                        </div>
+                        <h6 class="text-center">Iphone 9</h6>
+                    </div>
+                </div>
+                <!-- Feature Box End -->
             </div>
-            <!-- Pagination -->
-            <!-- <nav aria-label="Page navigation example">
-                <ul class="pagination justify-content-center">
-                    <li class="page-item">
-                        <a href="#" class="page-link">
-                            <i class="fal fa-chevron-left"></i>
-                        </a>
-                    </li>
-                    <li class="page-item">
-                        <a href="#" class="page-link">01</a>
-                    </li>
-                    <li class="page-item active">
-                        <a href="#" class="page-link">02</a>
-                    </li>
-                    <li class="page-item">
-                        <a href="#" class="page-link">03</a>
-                    </li>
-                    <li class="page-item">
-                        <a href="#" class="page-link">
-                            <i class="fal fa-chevron-right"></i>
-                        </a>
-                    </li>
-                </ul>
-            </nav> -->
-            <!-- Pagination -->
+           
         </div>
     </section>
-    <!-- Team End -->
     @endsection
 @section('script')
 <!-- ============================================================== -->

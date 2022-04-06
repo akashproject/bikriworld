@@ -147,13 +147,42 @@
         ]
     });
 
+    $('.model_slider').slick({
+        slidesToShow: 7,
+        slidesToScroll: 1,
+        autoplay: true,
+        arrows: false,
+        dots: true,
+        dotsClass: "slick-dots style_2",
+        autoplaySpeed: 2000,
+        responsive: [{
+                breakpoint: 1499,
+                settings: {
+                    slidesToShow: 7
+                }
+            },
+            {
+                breakpoint: 991,
+                settings: {
+                    slidesToShow: 2
+                }
+            },
+            {
+                breakpoint: 680,
+                settings: {
+                    slidesToShow: 1
+                }
+            }
+        ]
+    });
+
     $('.brand_slider').slick({
         slidesToShow: 7,
         slidesToScroll: 1,
-        autoplay: false,
+        autoplay: true,
         arrows: true,
         dots: true,
-        //autoplaySpeed: 2000,
+        autoplaySpeed: 2000,
         responsive: [{
                 breakpoint: 1199,
                 settings: {
@@ -241,6 +270,11 @@
                 });
             }
         });
+    });
+
+    $(".product-right-content .variant").click(function() {
+        $(".product-right-content .variant").removeClass("active");
+        $(this).addClass("active");
     });
     // Easy pie bar
     $(".circle_bar").each(function() {
