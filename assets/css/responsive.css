@@ -567,6 +567,14 @@
     .post_author .text {
         width: 100%;
     }
+    .product-right-content {
+        text-align: center;
+    }
+
+    .variant {
+        margin: 10px 0;
+        width: 100%;
+    }
 
 }
 
