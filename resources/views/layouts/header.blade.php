@@ -72,7 +72,7 @@ Preloader End -->
             </ul>
         </div>
         <div class="sidebar_widget">
-            <a href="javascript:void(0)" class="thm-btn bg-thm-color-three thm-color-three-shadow btn-rectangle"> Sign in <i class="fal fa-chevron-right ml-2"></i></a>
+            <a href="javascript:void(0)" class="thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle"> Sign in <i class="fal fa-chevron-right ml-2"></i></a>
         </div>
     </div>
 </aside>
@@ -157,7 +157,7 @@ Preloader End -->
                     <input type="text" name="#" placeholder="Search" autocomplete="off">
                     <i class="fal fa-search"></i>
                 </div>
-                <a href="javascript:void(0)" class="head_trigger desktop_trigger thm-btn bg-thm-color-three thm-color-three-shadow btn-rectangle">Sign In <i class="fal fa-chevron-right ml-2"></i></a>
+                <a href="javascript:void(0)" class="head_trigger desktop_trigger thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle">Sign In <i class="fal fa-chevron-right ml-2"></i></a>
                 <button type="button" class="head_trigger mobile_trigger">
                     <span></span>
                     <span></span>

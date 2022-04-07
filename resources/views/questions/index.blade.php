@@ -33,39 +33,49 @@
                             <h4 class="summary-heading" > Let us know some questions about your device ! </h4>
                             <p class="summary-description" > What is the current condition of your device </p>
                         </div>
-                        @if($questions)
-                            @foreach ($questions as $key => $value)
-                                <div class="row question_list" >
-                                    <div class="col-lg-12">
-                                        <h5 ><i class="fal fa-check"></i> {{ $value->question }} </h5>
-                                    </div>
-                                    <div class="col-lg-8">
-                                        <div class="row answer_row" >
-                                            <div class="col-lg-6 ">
-                                                <div class="answer_list"  >
-                                                    <div class="form-check ">
-                                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                                                        <label class="form-check-label" for="flexRadioDefault1">
-                                                            Yes
-                                                        </label>
+                        <form class="form-horizontal" method="post" action="{{ url('calculate-price') }}" enctype="multipart/form-data">
+                            @csrf
+                            @if ($errors->any())
+                                <div class="alert alert-danger">
+                                    <ul>
+                                        @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @endif
+                            @if($questions)
+                                @foreach ($questions as $key => $value)
+                                    <div class="row question_list" >
+                                        <div class="col-lg-12">
+                                            <h5 ><!-- <i class="fal fa-check"></i>--> {{$key+1}}. {{ $value->question }} </h5>
+                                        </div>
+                                        <div class="col-lg-8">
+                                            <div class="row answer_row" >
+                                                <div class="col-lg-6 ">
+                                                    <div class="answer_list"  >
+                                                        <div class="form-check ">
+                                                            <input class="form-check-input" type="radio" name="question_id[{{ $value->id }}]" id="" value="1" >
+                                                            <label class="form-check-label" for="">Yes</label>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div class="col-lg-6">
-                                                <div class="answer_list"  >
-                                                    <div class="form-check ">
-                                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                                                        <label class="form-check-label" for="flexRadioDefault2">
-                                                        No
-                                                        </label>
+                                                <div class="col-lg-6">
+                                                    <div class="answer_list"  >
+                                                        <div class="form-check ">
+                                                            <input class="form-check-input" type="radio" name="question_id[{{ $value->id }}]" id="" vale="0" >
+                                                            <label class="form-check-label" for="">No</label>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            @endforeach	
-                        @endif 
+                                @endforeach	
+                            @endif 
+                            <input type="hidden" name="product_id" id="product_id" value="{{$product_id}}" >
+                            <button type="submit" class="thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle"> Calculate Price <i class="fal fa-calculator ml-2"></i></a>
+                        </form>
                     </div>
                 </div>
                 <div class="col-lg-5">

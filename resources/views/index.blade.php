@@ -15,7 +15,7 @@
                             <p>Sed ut perspiciatis unde omnis iste natus error voluptatem accan tium doloremque laudantium totam rem aperiam</p>
                             <a href="{{ url('selling-categories') }}" class="thm-btn bg-thm-color-two thm-color-two-shadow btn-rounded mr-4 mb-4"> Sell Product <i class="fal fa-chevron-right ml-2"></i></a>
                             <a href="https://www.youtube.com/watch?v=TKnufs85hXk" class="video_btn video_text popup-youtube mb-4">
-                                <i class="fas fa-play video_icon bg-thm-color-three"></i>
+                                <i class="fas fa-play video_icon bg-thm-color-two"></i>
                                 <span>Watch Videos</span>
                             </a>
                         </div>
@@ -23,7 +23,7 @@
                     <div class="col-lg-6">
                         <div class="image_box relative">
                             <img src="https://via.placeholder.com/837x500" alt="img" class="image-fit">
-                            <span class="bg-thm-color-three circle_element"></span>
+                            <span class="bg-thm-color-two circle_element"></span>
                         </div>
                     </div>
                 </div>
@@ -315,7 +315,7 @@
                 <div class="col-xl-7">
                     <div class="image_box relative why_us_box mb-0">
                         <img src="assets/images/why_us.png" alt="img" class="image-fit">
-                        <span class="bg-thm-color-three circle_element"></span>
+                        <span class="bg-thm-color-two circle_element"></span>
                         <img src="assets/images/elements/element_3.png" class="element_1 zoom-fade" alt="Element">
                         <img src="assets/images/elements/element_4.png" class="element_2 rotate_elem" alt="Element">
                         <img src="assets/images/elements/element_5.png" class="element_3 rotate_elem" alt="Element">
