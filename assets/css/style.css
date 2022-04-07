@@ -9925,12 +9925,10 @@ a.head_trigger.desktop_trigger {
 
 }
 
-.sidebar.style_3 .sidebar_widget{
-
+.sidebar.style_3 .sidebar_widget {
     padding: 0;
-
     background: none;
-
+    box-shadow: 2px 2px 10px 0px rgb(var(--thm-color-two-rgb), 50%);
 }
 
 .sidebar.style_3 .sidebar_widget .widget_title{
@@ -10134,6 +10132,7 @@ label.form-check-label {
     border: 1px solid #ccc;
     margin: 20px;
     box-shadow: 2px 2px 10px 0px rgb(var(--thm-color-two-rgb), 50%);
+    margin-top: 0;
 }
 
 
