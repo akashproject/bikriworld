@@ -34,31 +34,41 @@
     </div>
     <!-- Banner End -->
     <!-- Features Start -->
-    <section class="section-padding">
+    <section class="section-padding" style="padding: 80px 0;">
         <div class="container">
             <div class="row">
-            @if($categories)
-                @foreach ($categories as $value)
-                <!-- Feature Box Start -->
-                <div class="col-lg-2 col-6">
-                    <div class="features_box">
-                        <div class="icon">
-                        <a href="{{ url('selling-brands') }}/{{ $value->id }}"> <img src="assets/images/icons/icon_1.png" alt="img"></a>
-                        </div>
-                        <h5 class="text-center" ><a href="{{ url('selling-brands') }}/{{ $value->id }}"> {{ $value->name }}</a></h5>
-                        <a href="{{ url('selling-brands') }}/{{ $value->id }}" class="text-center">
-                            <span>View</span>
-                            <i class="fal fa-chevron-right"></i>
-                        </a>
+                <div class="col-lg-12">
+                    <div class="section-title left-align">
+                        <h6 class="title mb-0">Select your device for sell</h6>
                     </div>
                 </div>
-                <!-- Feature Box End -->
-                @endforeach	
-            @endif
+            </div>
+            <div class="row">
+                @if($categories)
+                    @foreach ($categories as $value)
+                    <!-- Feature Box Start -->
+                    <div class="col-lg-2 col-6">
+                        <div class="features_box style_2">
+                            <div class="icon">
+                                <a href="{{ url('selling-brands') }}/{{ $value->id }}"> 
+                                    <i class="fa fa-{{ strtolower($value->name) }} cat-icon" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                            <h5 class="text-center" ><a href="{{ url('selling-brands') }}/{{ $value->id }}"> {{ $value->name }}</a></h5>
+                            <a href="{{ url('selling-brands') }}/{{ $value->id }}" style="margin-left: 26px;">
+                                <span>Sell Now</span>
+                                <i class="fal fa-chevron-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Feature Box End -->
+                    @endforeach	
+                @endif
             </div>
         </div>
     </section>
     <!-- Features End -->
+    
     <!-- About Start -->
     <section class="section-padding pt-0 about">
         <div class="container">
@@ -274,7 +284,6 @@
         <div class="circle_wave"></div>
     </section>
     <!-- Testimonials End -->
-    
 
     <!-- Why Us Start -->
     <section class="section-padding about">

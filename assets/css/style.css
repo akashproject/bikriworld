@@ -990,7 +990,9 @@ select {
 }
 
 
-
+.width-100 {
+    width: 100%;
+}
 .mx-width-100 {
 
     max-width: 100%;
@@ -1758,28 +1760,22 @@ textarea.form-control-custom+i {
 /*Buttons*/
 
 .thm-btn {
-
     font-size: 14px;
-
     font-weight: bold;
-
     color: var(--thm-white);
-
-    display: inline-flex;
-
+    display: inherit;
     align-items: center;
-
     border: none;
-
-    padding: 16px 42px;
-
+    padding: 11px 0;
     text-transform: uppercase;
-
     transition: 0.5s all;
-
 }
 
 
+.sell-now-btn {
+    width: 90%;
+    margin: auto;
+}
 
 .thm-btn i {
 
@@ -3865,7 +3861,6 @@ blockquote .quote_author:before {
 
 
 /*Features*/
-
 .features_box {
     padding: 10px;
     margin-bottom: 30px;
@@ -3873,10 +3868,17 @@ blockquote .quote_author:before {
     background-color: var(--thm-white);
 }
 
+.features_box.style_2 {
+    padding: 26px;
+    margin-bottom: 30px;
+    transition: 0.3s all;
+    background-color: #f3f2f2 !important;
+    border-radius: 20px;
+}
 
 
 .features_box .icon {
-    margin-bottom: 30px;
+    margin-bottom: 12px;
     text-align: center;
 }
 
@@ -4291,7 +4293,10 @@ a.head_trigger.desktop_trigger {
 
 }
 
-
+.cat-icon {
+    font-size: 40px !important;
+    font-weight: 200 !important;
+}
 
 .team_block .team_img .link {
 
@@ -9964,6 +9969,8 @@ a.head_trigger.desktop_trigger {
     color: var(--thm-color-one);
     list-style: disc;
     margin-left: 20px;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
 }
 
 .sidebar.style_3 .info_widget>li:last-child{
@@ -9983,16 +9990,6 @@ a.head_trigger.desktop_trigger {
     display: inline-flex;
 
     position: relative;
-
-}
-
-.sidebar.style_3 .info_widget>li span:after{
-
-    content: ':';
-
-    position: absolute;
-
-    right: 20px;
 
 }
 
@@ -10084,7 +10081,7 @@ a.head_trigger.desktop_trigger {
 }
 
 .summary-wrap {
-    padding: 20px 42px;
+    padding: 20px;
     border-radius: 14px;
     box-shadow: 0px 1px 8px 1px #ecf2ff;
     margin-bottom: 30px;
@@ -10129,8 +10126,7 @@ label.form-check-label {
 
 .product-quote-wrap {
     padding: 20px;
-    border: 1px solid #ccc;
-    margin: 20px;
+    margin: 0;
     box-shadow: 2px 2px 10px 0px rgb(var(--thm-color-two-rgb), 50%);
     margin-top: 0;
 }

@@ -28,7 +28,7 @@
      <div class="section-padding">
         <div class="container">
             <div class="row justify-content-between prodduct-detail-wrap">
-                <div class="col-lg-5 mb-md-80">
+                <div class="col-lg-5 col-4 mb-md-80">
                     <!-- post details -->
                     <article class="post post_list style_2 post_details mb-0 product-left-image text-center">
                         <div class="post_img">
@@ -36,7 +36,7 @@
                         </div>
                     </article>
                 </div>
-                <div class="col-lg-7">
+                <div class="col-lg-7 col-8">
                     <div class="product-right-content">
                         <h3> Apple iPhone 5 (1 GB/64 GB) </h3>
                         <div class="variant_wrap" >
@@ -47,7 +47,7 @@
                         
                         <p > get upto </p>
                         <h3 class="product-price"> ₹2,350/- </h3>
-                        <div >
+                        <div class="calculate-price-btn">
                             <a href="{{ url('question') }}/{{ $product->id }}" class=" thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle"> Get Exact Value <i class="fal fa-chevron-right ml-2"></i></a>
                         </div>
                     </div>

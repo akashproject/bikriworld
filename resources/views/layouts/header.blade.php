@@ -37,43 +37,22 @@ Preloader End -->
     <!-- logo -->
     <p>Sed ut perspiciatis unde omnis iste natus error voluptatem accan tium doloremque laudantium totam rem aperiam</p>
     <div class="sidebar">
+    <form class="mf_form_validate ajax_submit" action="sendmail.php" method="post" enctype="multipart/form-data">
         <div class="sidebar_widget recent_widgets">
-            <h5 class="widget_title">Popular Courses</h5>
-            <ul>
-                <li>
-                    <div class="image">
-                        <img src="{{ url('assets/images/coach/small_1.jpg') }}" alt="img" class="image-fit">
+            <h5 class="widget_title">Wellcome to Bikriworld</h5>
+            <p> Please enter your mobile number </p>
+            <div class="row">
+                <div class="col-12">
+                    <div class="form-group custom_form_style">
+                        <input type="text" name="name" class="form-control" autocomplete="off" placeholder="Enter Mobile Name">
                     </div>
-                    <div class="text">
-                        <h6 class="mb-0">
-                            <a href="course-details.html">How to Become a Life Coach Partner</a>
-                        </h6>
-                        <p class="mb-0"><strong>By </strong><a href="courses.html">John Foerster</a></p>
-                    </div>
-                </li>
-                <li>
-                    <div class="image">
-                        <img src="{{ url('assets/images/coach/small_2.jpg') }}" alt="img" class="image-fit">
-                    </div>
-                    <div class="text">
-                        <h6 class="mb-0"><a href="course-details.html">How to Solve Health Problem</a></h6>
-                        <p class="mb-0"><strong>By </strong><a href="courses.html">David Sullivan</a></p>
-                    </div>
-                </li>
-                <li>
-                    <div class="image">
-                        <img src="{{ url('assets/images/coach/small_3.jpg') }}" alt="img" class="image-fit">
-                    </div>
-                    <div class="text">
-                        <h6 class="mb-0"><a href="course-details.html">Getting Started Expres And JavaScript</a></h6>
-                        <p class="mb-0"><strong>By </strong><a href="courses.html">Zachary Morin</a></p>
-                    </div>
-                </li>
-            </ul>
+                </div>
+            </div>
         </div>
         <div class="sidebar_widget">
-            <a href="javascript:void(0)" class="thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle"> Sign in <i class="fal fa-chevron-right ml-2"></i></a>
+            <button type="submit" href="javascript:void(0)" class="thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle width-100"> Sign in <i class="fal fa-chevron-right ml-2"></i></button>
         </div>
+    </form>
     </div>
 </aside>
 <div class="aside-overlay trigger-right"></div>

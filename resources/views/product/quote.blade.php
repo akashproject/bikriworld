@@ -29,75 +29,39 @@
         <div class="container">
             <div class="row justify-content-between ">
                 <div class="col-lg-8 mb-md-80">
-                    <!-- post details -->
-                    <article class="row ">
-                        <div class="col-md-12" >
-                            <div class="product-quote-wrap row" >
-                                <div class="col-lg-6 col-md-6 text-center">
-                                    <img src="https://via.placeholder.com/300x350" alt="img" class="">
-                                </div>
-                                <div class="col-lg-6 col-md-6 text-left">
-                                    <h5> Apple iPhone 5 (1 GB/64 GB) </h5>
-                                    <p class="quote-msg"> Product Selling Price </p>
-                                    <h3 class="quote-price"> ₹2,350/- </h3>
-                                </div>
-                            </div>
+                    <div class="product-quote-wrap row" >
+                        <div class="col-5 text-center">
+                            <img src="https://via.placeholder.com/300x350" alt="img" class="">
                         </div>
-                    </article>
+                        <div class="col-7 text-left">
+                            <h5> Apple iPhone 5 (1 GB/64 GB) </h5>
+                            <p class="quote-msg"> Product Selling Price </p>
+                            <h3 class="quote-price"> ₹2,350/- </h3>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="sidebar style_3">
-                        <div class="sidebar_widget">
-                            <h5 class="widget_title">Project Details</h5>
+                        <div class="sidebar_widget text-center">
+                            <h5 class="widget_title">Device Details</h5>
                             <div class="sidebar_widget_inner">
                                 <ul class="info_widget">
                                     <li>
-                                        <span>Clients</span>
-                                        Blaine D. Cotton
+                                        <span style="float:left">Base Price</span>
+                                        <span style="float:right">₹1,600/- </span>
+                                    </li>
+                                    <li >
+                                        <span style="float:left">Pickup Charges</span>
+                                        <span style="float:right">₹100/- </span>
                                     </li>
                                     <li>
-                                        <span>Project</span>
-                                        VR Learning
+                                        <span style="float:left">Total Amount</span>
+                                        <span style="float:right">₹1,700/- </span>
                                     </li>
-                                    <li>
-                                        <span>Service</span>
-                                        Courses/Learning
-                                    </li>
-                                    <li>
-                                        <span>Category</span>
-                                        VR Coach
-                                    </li>
-                                    <li>
-                                        <span>Date</span>
-                                        25 May 2021
-                                    </li>
-                                    <li>
-                                        <span>Share</span>
-                                        <ul class="social">
-                                            <li>
-                                                <a href="#">
-                                                    <i class="fab fa-facebook-f"></i>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    <i class="fab fa-twitter"></i>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    <i class="fab fa-linkedin"></i>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    <i class="fab fa-behance"></i>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </li>
+                                    
                                 </ul>
                             </div>
+                            <a href="contact.html" class="sell-now-btn thm-btn bg-thm-color-two btn-rectangle">Sell Now <i class="fal fa-chevron-right ml-2"></i></a>
                         </div>
                     </div>
                 </div>

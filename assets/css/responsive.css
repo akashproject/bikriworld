@@ -467,6 +467,24 @@
 }
 
 @media (max-width: 767px) {
+    h6 {
+        font-size: 16px;
+        line-height: 1.7;
+    }
+
+    .header .head_actions .head_trigger {
+        width: 31px;
+    }
+
+    .header .head_actions .head_trigger span {
+        height: 2px;
+        margin-bottom: 6px;
+    }
+
+    .product-right-content h3 {
+        font-size: 14px;
+    }
+
     .back-to-top{
         bottom: 20px;
         right: 20px;
@@ -571,19 +589,74 @@
         text-align: center;
     }
 
-    .variant {
-        margin: 10px 0;
-        width: 100%;
+    .variant_wrap {
+        margin-bottom: 0px;
     }
 
+    .variant {
+        margin: 3px 0;
+        width: 100%;
+        font-size: 13px;
+        padding: 3px 0;
+    }
+
+    .prodduct-detail-wrap {
+        margin-top: 0;
+        border: 1px solid #ddd8d8;
+        border-radius: 20px;
+        padding: 50px 0;
+        width: 100%;
+        margin: auto;
+    }
+
+    .product-right-content .product-price {
+        font-size: 33px;
+    }
+    .features_box.style_3, .features_box {
+        padding: 0;
+    }
+
+    .calculate-price-btn a {
+        padding: 7px 25px;
+        font-size: 11px;
+    }
+
+    .features_box {
+        padding: 0;
+        margin-bottom: 0;
+        transition: 0.3s all;
+        background-color: var(--thm-white);
+    }
+    .section-title .subtitle {
+        margin-bottom: 6px !important;
+    }
+
+    .product-quote-wrap h5 {
+        margin-bottom: 9px;
+        font-size: 16px;
+        line-height: 22px;
+    }
+    p.quote-msg {
+        margin: 0;
+        line-height: 17px;
+    }
+
+    h3.quote-price {
+        margin-top: 11px;
+        font-size: 30px;
+        margin-bottom: 0;
+    }
 }
 
+
 @media (max-width: 575px) {
+
+   
 
     .portfolio_details .title,
     .course_details .desc_box .title,
     .section-title .title {
-        font-size: 30px;
+        font-size: 17px;
     }
 
     .why_us_box,
@@ -593,7 +666,8 @@
 
     .subheader .page_title,
     .banner .text_box .title {
-        font-size: 50px;
+        font-size: 30px;
+        margin-bottom:5px;
     }
 
     .bg-banner .input-group .input-group-append {

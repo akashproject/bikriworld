@@ -164,13 +164,13 @@
             {
                 breakpoint: 991,
                 settings: {
-                    slidesToShow: 2
+                    slidesToShow: 3
                 }
             },
             {
                 breakpoint: 680,
                 settings: {
-                    slidesToShow: 1
+                    slidesToShow: 3
                 }
             }
         ]
@@ -186,13 +186,13 @@
         responsive: [{
                 breakpoint: 1199,
                 settings: {
-                    slidesToShow: 2
+                    slidesToShow: 3
                 }
             },
             {
                 breakpoint: 767,
                 settings: {
-                    slidesToShow: 1,
+                    slidesToShow: 3,
                     arrows: false
                 }
             }
