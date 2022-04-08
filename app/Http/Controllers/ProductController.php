@@ -29,7 +29,6 @@ class ProductController extends Controller
     public function productQuote(Request $request){
         $product_id = "1";
         $session_data = $request->session()->all();
-        //print_r($data);
         $product = Product::find($product_id);
         return view('product.quote',compact('product'));
     }

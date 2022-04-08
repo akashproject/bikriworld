@@ -19,11 +19,11 @@ class UserController extends Controller
 
     public function accessProfile(Request $request){
         $data = $request->all();
-        $user = User::where('mobile', $data['id'])->get();
-        if($user){
+        $user = User::where('mobile', $data['mobile'])->get();
+        if($user->count()){
             $request->session()->put('userindo', $data);
         } else {
-            User::create($request->all());
+            User::create(array('mobile',$data['mobile']));
         }
         return response()->json(['true'],$this->_statusOK);
     }
