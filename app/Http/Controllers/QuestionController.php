@@ -25,7 +25,7 @@ class QuestionController extends Controller
     public function calculatePrice(Request $request){
         $data = $request->all();
         $request->session()->put('sellprice', $data);
-        return redirect('/product-quote/'.$request->institute_id);
+        return redirect('/product-quote');
     }
 
 }

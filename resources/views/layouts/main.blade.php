@@ -38,6 +38,7 @@
     @yield('content')
     @include('layouts.footer')
     <script src="{{ url('assets/js/plugins/jquery-3.6.0.min.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"></script>
     <script src="{{ url('assets/js/plugins/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ url('assets/js/plugins/slick.min.js') }}"></script>
     <script src="{{ url('assets/js/plugins/imagesloaded.min.js') }}"></script>
@@ -48,6 +49,7 @@
     <script src="{{ url('assets/js/plugins/jquery.easypiechart.js') }}"></script>
     <script src="{{ url('assets/js/plugins/jquery.countdown.min.js') }}"></script>
     <script src="{{ url('assets/js/custom.js') }}"></script>
+    
 </body>
 
 </html>

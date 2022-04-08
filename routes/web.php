@@ -22,3 +22,5 @@ Route::get('/view-product/{id}', [App\Http\Controllers\ProductController::class,
 Route::get('/product-quote', [App\Http\Controllers\ProductController::class, 'productQuote'])->name('product-quote');
 Route::get('/question/{id}', [App\Http\Controllers\QuestionController::class, 'index'])->name('question-index');
 Route::post('/calculate-price', [App\Http\Controllers\QuestionController::class, 'calculatePrice'])->name('calculate-price');
+Route::post('/submit-mobile-otp', [App\Http\Controllers\UserController::class, 'submitMobileOtp'])->name('submit-mobile-otp');
+Route::post('/access-profile', [App\Http\Controllers\UserController::class, 'accessProfile'])->name('access-profile');

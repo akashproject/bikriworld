@@ -1759,7 +1759,7 @@ textarea.form-control-custom+i {
 
 /*Buttons*/
 
-.thm-btn {
+.custom-cta-btn {
     font-size: 14px;
     font-weight: bold;
     color: var(--thm-white);
@@ -1771,12 +1771,27 @@ textarea.form-control-custom+i {
     transition: 0.5s all;
 }
 
+.thm-btn {
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--thm-white);
+    display: inline-flex;
+    align-items: center;
+    border: none;
+    padding: 16px 42px;
+    text-transform: uppercase;
+    transition: 0.5s all;
+}
+
 
 .sell-now-btn {
     width: 90%;
+  
     margin: auto;
 }
-
+.sell-now-btn:hover {
+    color: #fff;
+}
 .thm-btn i {
 
     font-size: 12px;
@@ -3142,7 +3157,7 @@ blockquote .quote_author:before {
 
     right: -400px;
 
-    width: 400px;
+    width: 371px;
 
 }
 
@@ -3239,20 +3254,21 @@ blockquote .quote_author:before {
 
 
 .aside_bar .logo {
-
-    width: 100%;
-
+    width: 50%;
     height: 100px;
-
-    display: flex;
-
+    display: inline-block;
     align-items: center;
-
     padding-left: 15px;
-
 }
 
+a.close_aside {
+    float: right;
+    display: inline-block;
+}
 
+a.close_aside i {
+    font-size: 31px;
+}
 
 .aside_bar .logo img {
 
@@ -8954,7 +8970,21 @@ a.head_trigger.desktop_trigger {
 
 }
 
+.custom_form_style {
+    margin-bottom: 10px;
+}
+.custom_form_style input {
+    padding: 23px 9px;
+    border: 2px solid #ccc;
+}
 
+.aside_login_form {
+    margin-bottom: 10px !important;
+}
+
+.one_time_password {
+    display: none;
+}
 
 .form_style label {
 
@@ -10135,4 +10165,3 @@ label.form-check-label {
 .product-quote-wrap h5 {
     margin-bottom: 9px;
 }
-

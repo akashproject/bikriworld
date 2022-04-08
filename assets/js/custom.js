@@ -5,11 +5,51 @@
         $('.preloader').addClass('hidden');
         $('[data-popup="tooltip"]').tooltip();
     });
+
+    $("#signin_form").validate({
+        rules: {
+            'mobile': {
+                required: true,
+                number: true,
+                maxlength: 10,
+                minlength: 10,
+            }
+        },
+        messages: {
+            'mobile': "Please type valid mobile number.",
+        },
+        submitHandler: function(form) {
+            var formId = "signin_form";
+            var verifyOtp = $("#" + formId + " .verify_otp").val();
+            var responsedOtp = $("#" + formId + " .responsed_otp").val();
+
+            if (verifyOtp != '' && verifyOtp == responsedOtp) {
+                let mobileNo = jQuery("#" + formId + " input[name='mobile']").val();
+                loginProcess(mobileNo);
+            } else if (verifyOtp != '' && verifyOtp != responsedOtp) {
+                console.log(verifyOtp);
+                $("#" + formId + " .response_status").html("OTP is Invalid");
+            } else {
+                var otpcallingresponse = sendMobileOtp(formId);
+            }
+        } 
+    });
     // Canvas 
     $(".desktop_trigger, .trigger-right").on('click', function() {
         $(".desktop_trigger").toggleClass('active');
         $(".aside_canvas").toggleClass('open');
     });
+
+    $(".sell-now-btn, .trigger-right").on('click', function() {
+        $(".sell-now-btn").toggleClass('active');
+        $(".aside_canvas").toggleClass('open');
+    });
+    
+    $(".close_aside").on('click', function() {
+        $(".aside_canvas").removeClass('open');
+    });
+
+
     // Search 
     $(".search_trigger>a, .close-search-trigger").on('click', function() {
         $(".search-form-wrapper").toggleClass('open');
@@ -41,6 +81,62 @@
             footer.removeClass("d-flex");
         }
     }
+
+    jQuery(".resendOtp").click(function() {
+        var formId = jQuery(this).closest("form").attr('id');
+        jQuery("#" + formId + " .response_status").html("");
+        sendMobileOtp(formId);
+    });
+
+    function loginProcess(mobile){
+        $.ajaxSetup({
+            headers: {
+             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        $.ajax({
+            url: `http://${window.location.hostname}/access-profile`,
+            type: "post",
+            data: {
+                mobile: mobile,
+            },
+            success: function(result) {
+                //result = JSON.parse(result);
+                if (result) {
+                    location.reload();
+                }
+            }
+        });
+    }
+
+    function sendMobileOtp(formId) {
+        var mobileNo = jQuery("#" + formId + " input[name='mobile']").val();
+        $.ajaxSetup({
+            headers: {
+             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        $.ajax({
+            url: `http://${window.location.hostname}/submit-mobile-otp`,
+            type: "post",
+            data: {
+                mobile: mobileNo,
+            },
+            success: function(result) {
+                //result = JSON.parse(result);
+                if (result) {
+                    jQuery("#" + formId + " .responsed_otp").val(result.otp);
+                    jQuery("#" + formId + " .one_time_password").show();
+                    jQuery("#" + formId + " .response_status").html("OTP Has Been Sent Successfully");
+                    return true;
+                } else {
+                    jQuery("#" + formId + " .response_status").html("OTP Sent Failed! Please Try Again Later");
+                    return true;
+                }
+            }
+        });
+    }
+
     doSticky();
     //On scroll events
     $(window).on('scroll', function() {

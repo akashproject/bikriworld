@@ -61,7 +61,7 @@
                                     
                                 </ul>
                             </div>
-                            <a href="contact.html" class="sell-now-btn thm-btn bg-thm-color-two btn-rectangle">Sell Now <i class="fal fa-chevron-right ml-2"></i></a>
+                            <a href="javascript:void(0)" class="sell-now-btn head_trigger custom-cta-btn bg-thm-color-two btn-rectangle">Sell Now <i class="fal fa-chevron-right ml-2"></i></a>
                         </div>
                     </div>
                 </div>

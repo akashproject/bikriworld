@@ -34,25 +34,41 @@ Preloader End -->
     <a href="{{  url('') }}" class="logo pl-0">
         <img src="{{ url('assets/images/logo.png') }}" alt="logo">
     </a>
+    <a href="javascript:void(0)" class="close_aside">
+        <i class="fa fa-times" aria-hidden="true"></i>
+    </a>
     <!-- logo -->
     <p>Sed ut perspiciatis unde omnis iste natus error voluptatem accan tium doloremque laudantium totam rem aperiam</p>
     <div class="sidebar">
-    <form class="mf_form_validate ajax_submit" action="sendmail.php" method="post" enctype="multipart/form-data">
-        <div class="sidebar_widget recent_widgets">
-            <h5 class="widget_title">Wellcome to Bikriworld</h5>
-            <p> Please enter your mobile number </p>
-            <div class="row">
-                <div class="col-12">
-                    <div class="form-group custom_form_style">
-                        <input type="text" name="name" class="form-control" autocomplete="off" placeholder="Enter Mobile Name">
+        <form id="signin_form"  class="mf_form_validate ajax_submit" action="#" method="post" enctype="multipart/form-data">
+            <div class="sidebar_widget recent_widgets aside_login_form">
+                <h5 class="widget_title">Wellcome to Bikriworld</h5>
+                <p> Please enter your mobile number </p>
+                <div class="response_status" style="color: #ff0000;"></div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="form-group custom_form_style">
+                            <input type="text" name="mobile" class="form-control" autocomplete="off" placeholder="Enter Mobile Name">
+                        </div>
                     </div>
                 </div>
+                <div class="row one_time_password">
+                    <div class="col-12">
+                        <div class="form-group custom_form_style">
+                            <input type="text" class="form-control verify_otp" autocomplete="off" placeholder="Enter One Time Password" value="">
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <a href="javascript:void(0)" class="resendOtp"> Resend Otp </a>
+                    </div>
+                </div>
+
             </div>
-        </div>
-        <div class="sidebar_widget">
-            <button type="submit" href="javascript:void(0)" class="thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle width-100"> Sign in <i class="fal fa-chevron-right ml-2"></i></button>
-        </div>
-    </form>
+            <div class="sidebar_widget">
+                <input type="hidden" name="responsed_otp" class="responsed_otp" value="">
+                <button type="submit" href="javascript:void(0)" class="thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle width-100"> Sign in <i class="fal fa-chevron-right ml-2"></i></button>
+            </div>
+        </form>
     </div>
 </aside>
 <div class="aside-overlay trigger-right"></div>
