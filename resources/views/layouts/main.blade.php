@@ -24,12 +24,14 @@
     <link rel="icon" type="image/png" sizes="32x32" href="favicon.ico">
     <!-- Css -->
     <link href="{{ url('assets/css/plugins/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ url('assets/css/plugins/datepicker.min.css') }}" rel="stylesheet">
     <link href="{{ url('assets/css/plugins/slick.css') }}" rel="stylesheet">
     <link href="{{ url('assets/css/plugins/magnific-popup.css') }}" rel="stylesheet">
     <link href="{{ url('assets/fonts/flaticon/flaticon.css') }}" rel="stylesheet">
     <link href="{{ url('assets/fonts/font-awesome.min.css') }}" rel="stylesheet">
     <link href="{{ url('assets/css/style.css') }}" rel="stylesheet">
     <link href="{{ url('assets/css/responsive.css') }}" rel="stylesheet">
+    
     @yield('style')
 </head>
 
@@ -38,7 +40,8 @@
     @yield('content')
     @include('layouts.footer')
     <script src="{{ url('assets/js/plugins/jquery-3.6.0.min.js') }}"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"></script>
+    <script src="{{ url('assets/js/plugins/jquery.validate.min.js') }}"></script>
+    <script src="{{ url('assets/js/plugins/datepicker.min.js') }}"></script>
     <script src="{{ url('assets/js/plugins/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ url('assets/js/plugins/slick.min.js') }}"></script>
     <script src="{{ url('assets/js/plugins/imagesloaded.min.js') }}"></script>

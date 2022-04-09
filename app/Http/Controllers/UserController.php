@@ -10,7 +10,14 @@ class UserController extends Controller
 {
     public $_statusOK = 200;
     public $_statusErr = 500;
+    public $sellprice = '';
+    public $userdata = '';
 
+    public function __construct(Request $request)
+    {
+        $this->userdata = $request->session()->get('userData');
+        $this->sellprice = $request->session()->get('sellprice');
+    }
 
     public function submitMobileOtp(Request $request){
         $otpValue = array('otp'=>'1234');
@@ -21,10 +28,11 @@ class UserController extends Controller
         $data = $request->all();
         $user = User::where('mobile', $data['mobile'])->get();
         if($user->count()){
-            $request->session()->put('userindo', $data);
+            $request->session()->put('userData', $data);
         } else {
             User::create(array('mobile',$data['mobile']));
         }
         return response()->json(['true'],$this->_statusOK);
     }
+
 }

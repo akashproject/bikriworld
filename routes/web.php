@@ -24,3 +24,5 @@ Route::get('/question/{id}', [App\Http\Controllers\QuestionController::class, 'i
 Route::post('/calculate-price', [App\Http\Controllers\QuestionController::class, 'calculatePrice'])->name('calculate-price');
 Route::post('/submit-mobile-otp', [App\Http\Controllers\UserController::class, 'submitMobileOtp'])->name('submit-mobile-otp');
 Route::post('/access-profile', [App\Http\Controllers\UserController::class, 'accessProfile'])->name('access-profile');
+Route::get('/checkout', [App\Http\Controllers\ProductController::class, 'checkOut'])->name('checkout');
+Route::post('/confirm-pickup', [App\Http\Controllers\ProductController::class, 'confirmPickup'])->name('confirm-pickup');

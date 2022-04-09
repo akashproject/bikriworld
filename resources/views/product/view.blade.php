@@ -38,7 +38,7 @@
                 </div>
                 <div class="col-lg-7 col-8">
                     <div class="product-right-content">
-                        <h3> Apple iPhone 5 (1 GB/64 GB) </h3>
+                        <h3> {{ $product->name }} </h3>
                         <div class="variant_wrap" >
                             <span class="text-center variant" > 16GB </span>
                             <span class="text-center variant" > 32GB </span>

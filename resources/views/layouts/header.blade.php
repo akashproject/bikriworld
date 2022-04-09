@@ -43,14 +43,15 @@ Preloader End -->
         <form id="signin_form"  class="mf_form_validate ajax_submit" action="#" method="post" enctype="multipart/form-data">
             <div class="sidebar_widget recent_widgets aside_login_form">
                 <h5 class="widget_title">Wellcome to Bikriworld</h5>
-                <p> Please enter your mobile number </p>
                 <div class="response_status" style="color: #ff0000;"></div>
                 <div class="row">
                     <div class="col-12">
+                        <label class="padding-30px-left-right">Please enter your mobile number <span class="required">*</span></label>
                         <div class="form-group custom_form_style">
                             <input type="text" name="mobile" class="form-control" autocomplete="off" placeholder="Enter Mobile Name">
                         </div>
                     </div>
+                    
                 </div>
                 <div class="row one_time_password">
                     <div class="col-12">
@@ -152,7 +153,11 @@ Preloader End -->
                     <input type="text" name="#" placeholder="Search" autocomplete="off">
                     <i class="fal fa-search"></i>
                 </div>
-                <a href="javascript:void(0)" class="head_trigger desktop_trigger thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle">Sign In <i class="fal fa-chevron-right ml-2"></i></a>
+                @if($user)
+                    <a href="javascript:void(0)" style="width:52%;margin-left: 22px;padding: 5px;border: 1px solid var(--thm-color-two);border-radius: 10px;"> Dashboard <i class="fal fa-home ml-2"></i></a>
+                @else
+                    <a href="javascript:void(0)" class="head_trigger desktop_trigger thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle">Sign In <i class="fal fa-chevron-right ml-2"></i></a>
+                @endif
                 <button type="button" class="head_trigger mobile_trigger">
                     <span></span>
                     <span></span>

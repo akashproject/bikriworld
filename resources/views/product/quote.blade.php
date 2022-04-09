@@ -34,7 +34,7 @@
                             <img src="https://via.placeholder.com/300x350" alt="img" class="">
                         </div>
                         <div class="col-7 text-left">
-                            <h5> Apple iPhone 5 (1 GB/64 GB) </h5>
+                            <h5> {{ $product->name }} </h5>
                             <p class="quote-msg"> Product Selling Price </p>
                             <h3 class="quote-price"> ₹2,350/- </h3>
                         </div>
@@ -61,7 +61,11 @@
                                     
                                 </ul>
                             </div>
-                            <a href="javascript:void(0)" class="sell-now-btn head_trigger custom-cta-btn bg-thm-color-two btn-rectangle">Sell Now <i class="fal fa-chevron-right ml-2"></i></a>
+                            @if($user)
+                            <a href="{{ url('checkout') }}" class="sell-now-btn custom-cta-btn bg-thm-color-two btn-rectangle"> Sell Now <i class="fal fa-chevron-right ml-2"></i></a>
+                            @else
+                            <a href="javascript:void(0)" class="open-login sell-now-btn head_trigger custom-cta-btn bg-thm-color-two btn-rectangle"> Sell Now <i class="fal fa-chevron-right ml-2"></i></a>
+                            @endif
                         </div>
                     </div>
                 </div>

@@ -40,7 +40,7 @@
         $(".aside_canvas").toggleClass('open');
     });
 
-    $(".sell-now-btn, .trigger-right").on('click', function() {
+    $(".open-login, .trigger-right").on('click', function() {
         $(".sell-now-btn").toggleClass('active');
         $(".aside_canvas").toggleClass('open');
     });
@@ -81,7 +81,8 @@
             footer.removeClass("d-flex");
         }
     }
-
+    jQuery( "#datepicker" ).datepicker({ format: 'dd/mm/yyyy', changeMonth: true,changeYear: true,maxDate: new Date(),yearRange: '1950:2020' });
+    
     jQuery(".resendOtp").click(function() {
         var formId = jQuery(this).closest("form").attr('id');
         jQuery("#" + formId + " .response_status").html("");
