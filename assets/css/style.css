@@ -1786,7 +1786,7 @@ textarea.form-control-custom+i {
 
 .sell-now-btn {
     width: 90%;
-  
+    border-radius: 10px;
     margin: auto;
 }
 .sell-now-btn:hover {
@@ -3820,7 +3820,10 @@ a.close_aside i {
 
 }
 
-
+.error {
+    color: #ff2424;
+    font-weight: 600;
+}
 
 .bg-banner .think_box .text_box {
 
@@ -9432,13 +9435,21 @@ a.head_trigger.desktop_trigger {
 
 
 
-.sidebar .category_widgets li:hover a {
+.sidebar .category_widgets li:hover a, .sidebar .category_widgets li.active a {
 
     color: var(--thm-color-two);
 
 }
-
-
+.order_wraper {
+    margin: 10px 0;
+    padding: 20px;
+    box-shadow: 0px 1px 8px 1px #ecf2ff;
+    border-radius: 10px;
+}
+.order_list h6 {
+    margin: 0;
+    font-size: 15px;
+}
 
 .sidebar .search_widget {
 
@@ -10169,4 +10180,34 @@ label.form-check-label {
 #checkoutform h3 {
     font-size: 20px;
     margin: 10px 0;
+}
+
+.order_success {
+    text-align: center;
+    width: 100%;
+}
+
+.order-success-heading {
+    color: green;
+}
+.order-success-subheading {
+    color: green;
+}
+.order_report {
+    width: 100%;
+    display: block;
+    overflow: hidden;
+    background: #f7f5f5;
+    padding: 20px;
+    margin: 30px 10px;
+    text-align: left;
+    border-radius: 10px;
+}
+.report-heading {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 20px;
+}
+
+.report-content {
+    font-size: 14px;
 }

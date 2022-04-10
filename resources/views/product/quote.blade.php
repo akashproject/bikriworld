@@ -10,7 +10,7 @@
                     <div class="page_breadcrumb">
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                                <li class="breadcrumb-item"><a href="{{  url('') }}">Home</a></li>
                                 <li class="breadcrumb-item active" aria-current="page">Select Brands</li>
                             </ol>
                         </nav>
@@ -61,11 +61,13 @@
                                     
                                 </ul>
                             </div>
+                            <div class="sidebar_widget_inner">
                             @if($user)
                             <a href="{{ url('checkout') }}" class="sell-now-btn custom-cta-btn bg-thm-color-two btn-rectangle"> Sell Now <i class="fal fa-chevron-right ml-2"></i></a>
                             @else
                             <a href="javascript:void(0)" class="open-login sell-now-btn head_trigger custom-cta-btn bg-thm-color-two btn-rectangle"> Sell Now <i class="fal fa-chevron-right ml-2"></i></a>
                             @endif
+                            </div>
                         </div>
                     </div>
                 </div>

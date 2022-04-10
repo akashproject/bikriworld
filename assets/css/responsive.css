@@ -481,6 +481,10 @@
         margin-bottom: 6px;
     }
 
+    .dashboard {
+        display: none;
+    }
+
     .product-right-content h3 {
         font-size: 14px;
     }
@@ -517,6 +521,18 @@
     .header .head_actions .thm-btn,
     .newsletter_form_sec .arrows {
         display: none;
+    }
+
+    .order-success-heading {
+        font-size: 50px;
+    }
+
+    .order-success-subheading {
+        font-size: 18px;
+    }
+
+    .order_report .report-content {
+        font-size: 18px;
     }
 
     /*Whys us*/

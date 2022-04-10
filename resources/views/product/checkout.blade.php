@@ -9,7 +9,7 @@
                     <div class="page_breadcrumb">
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                                <li class="breadcrumb-item"><a href="{{  url('') }}">Home</a></li>
                                 <li class="breadcrumb-item active" aria-current="page">Select Brands</li>
                             </ol>
                         </nav>
@@ -44,19 +44,19 @@
                             <div class="col-lg-6">
                                 <div class="form-group custom_form_style">
                                     <label class="padding-30px-left-right">Name<span class="required">*</span></label>
-                                    <input type="text" name="name" class="form-control" autocomplete="off" value="" required="">
+                                    <input type="text" name="name" class="form-control" autocomplete="off" value="{{ $user->name }}" required="">
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group custom_form_style">
                                     <label class="padding-30px-left-right">Email Address<span class="required">*</span></label>
-                                    <input type="text" name="email" class="form-control" autocomplete="off" value="" required="">
+                                    <input type="text" name="email" class="form-control" autocomplete="off" value="{{ $user->email }}" required="">
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group custom_form_style">
                                     <label class="padding-30px-left-right">Mobile Number<span class="required">*</span></label>
-                                    <input type="text" name="mobile" class="form-control" autocomplete="off" value="{{$user['mobile']}}" required="" readonly>
+                                    <input type="text" name="mobile" class="form-control" autocomplete="off" value="{{ $user->mobile }}" required="" readonly>
                                 </div>
                             </div>
                             <div class="col-lg-12">
@@ -90,7 +90,7 @@
                                 </div>
                             </div>
                             </div>
-                            <div class="col-6">
+                            <div class="col-md-6">
                                 <div class="form-group custom_form_style">
                                     <label class="padding-30px-left-right">Address <span class="required">*</span></label>
                                     <input type="text" name="address_1" class="form-control" autocomplete="off" value="" placeholder="Please Enter Address" required="">
@@ -115,12 +115,43 @@
                                 </div>
                             </div>
                             <div class="col-lg-12">
+                                <h3> Payment Mode </h3>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="row answer_row" >
+                                    <div class="col-4">
+                                        <div class="answer_list"  >
+                                            <div class="form-check ">
+                                                <input class="form-check-input" type="radio" name="payment_mode" id="" value="Bank Transfar" >
+                                                <label class="form-check-label" for="">Bank Transfar</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="answer_list"  >
+                                            <div class="form-check ">
+                                                <input class="form-check-input" type="radio" name="payment_mode" id="" vale="Upi" >
+                                                <label class="form-check-label" for="">UPI</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="answer_list"  >
+                                            <div class="form-check ">
+                                                <input class="form-check-input" type="radio" name="payment_mode" id="" vale="Online Payment" >
+                                                <label class="form-check-label" for="">Online Payment</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
                                 <h3> Schedule Pickup Time </h3>                                
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group custom_form_style">
                                     <label class="padding-30px-left-right">Date TIme <span class="required">*</span></label>
-                                    <input type="text" name="pickup_time" class="form-control" autocomplete="off" id="datepicker" value="" placeholder="Please Select Date" required="">
+                                    <input type="text" name="pickup_schedule" class="form-control" autocomplete="off" id="datepicker" value="" placeholder="Please Select Date" required="">
                                 </div>
                             </div>
                         </div>
@@ -162,7 +193,12 @@
                                         
                                     </ul>
                                 </div>
-                                <button type="submit" class="sell-now-btn custom-cta-btn bg-thm-color-two btn-rectangle"> Confirm Pickup <i class="fal fa-chevron-right ml-2"></i></button>
+                                <div class="sidebar_widget_inner">
+                                    <input type="hidden" name="user_id" id="" value="{{ $user->id }}" >
+                                    <input type="hidden" name="amount" id="" value="{{ htmlentities('12000', ENT_QUOTES, 'UTF-8'); }}" >
+                                    <input type="hidden" name="product_id" id="" value="{{ $product->id }}" >
+                                    <button type="submit" class="sell-now-btn custom-cta-btn bg-thm-color-two btn-rectangle"> Confirm Pickup <i class="fal fa-chevron-right ml-2"></i></button>
+                                </div>
                             </div>
                         </div>
                     </div>

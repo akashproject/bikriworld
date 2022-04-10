@@ -34,6 +34,11 @@
             }
         } 
     });
+
+    $("#checkoutform").validate({
+
+    });
+    
     // Canvas 
     $(".desktop_trigger, .trigger-right").on('click', function() {
         $(".desktop_trigger").toggleClass('active');

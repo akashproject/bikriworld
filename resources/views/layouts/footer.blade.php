@@ -4,7 +4,7 @@
             <div class="row">
                 <div class="col-lg-3 col-md-6">
                     <div class="ft_widget ft_about">
-                        <a href="index.html" class="logo">
+                        <a href="{{  url('') }}" class="logo">
                             <img src="{{ url('assets/images/logo.png') }}" alt="logo" class="image-fit">
                         </a>
                         <ul class="info">
