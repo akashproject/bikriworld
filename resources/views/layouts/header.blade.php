@@ -298,7 +298,7 @@ Preloader End -->
                         </div>
                         @if($user)
                             <a href="{{ url('dashboard') }}" class="dashboard" style="width:52%;margin-left: 22px;padding: 5px;border: 1px solid var(--thm-color-two);border-radius: 10px;"> Dashboard <i class="fal fa-home ml-2"></i></a>
-                            <a href="{{ url('dashboard') }}" class="dashboard" style="width:52%;margin-left: 22px;padding: 5px;"> Logout <i class="fal fa-sign-out ml-2"></i></a>
+                            <a href="{{ url('logout') }}" class="dashboard" style="width:52%;margin-left: 22px;padding: 5px;"> Logout <i class="fal fa-sign-out ml-2"></i></a>
                         @else
                             <a href="javascript:void(0)" class="head_trigger desktop_trigger thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle">Sign In <i class="fal fa-chevron-right ml-2"></i></a>
                         @endif

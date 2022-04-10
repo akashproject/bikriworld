@@ -25,6 +25,9 @@ Route::post('/calculate-price', [App\Http\Controllers\QuestionController::class,
 Route::get('/dashboard', [App\Http\Controllers\UserController::class, 'dashboard'])->name('dashboard');
 Route::get('/pickups', [App\Http\Controllers\UserController::class, 'pickups'])->name('pickups');
 Route::get('/payments', [App\Http\Controllers\UserController::class, 'payments'])->name('payments');
+Route::post('/save-payment', [App\Http\Controllers\UserController::class, 'savePayment'])->name('save-payment');
+Route::post('/save-info', [App\Http\Controllers\UserController::class, 'saveInfo'])->name('save-info');
+Route::get('/logout', [App\Http\Controllers\UserController::class, 'logout'])->name('logout');
 
 // Login Module
 Route::post('/submit-mobile-otp', [App\Http\Controllers\LoginController::class, 'submitMobileOtp'])->name('submit-mobile-otp');

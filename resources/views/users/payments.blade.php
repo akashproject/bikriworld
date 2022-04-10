@@ -50,7 +50,7 @@
                 </div>
                 <div class="col-lg-8 order_list">
                     <h5 class="page_title"> Payment Information </h5>
-                    <form class="form-horizontal" id="checkoutform" method="post" action="{{ url('confirm-pickup') }}" enctype="multipart/form-data">
+                    <form class="form-horizontal" id="checkoutform" method="post" action="{{ url('save-payment') }}" enctype="multipart/form-data">
                     @csrf
                     @if ($errors->any())
                         <div class="alert alert-danger">
@@ -66,31 +66,31 @@
                             <div class="col-lg-4">
                                 <div class="form-group custom_form_style">
                                     <label class="padding-30px-left-right">Bank Name <span class="required">*</span></label>
-                                    <input type="text" name="name" class="form-control" autocomplete="off" >
+                                    <input type="text" value="{{$payment->bank_name}}" name="bank_name" class="form-control" autocomplete="off" >
                                 </div>
                             </div>
                             <div class="col-lg-4">
                                 <div class="form-group custom_form_style">
                                     <label class="padding-30px-left-right">Account Number <span class="required">*</span></label>
-                                    <input type="text" name="name" class="form-control" autocomplete="off" >
+                                    <input type="text" value="{{$payment->account_no}}" name="account_no" class="form-control" autocomplete="off" >
                                 </div>
                             </div>
                             <div class="col-lg-4">
                                 <div class="form-group custom_form_style">
                                     <label class="padding-30px-left-right">Confirm Account Number <span class="required">*</span></label>
-                                    <input type="text" name="email" class="form-control" autocomplete="off" >
+                                    <input type="password" value="{{$payment->account_no}}" name="c_account_no" class="form-control" autocomplete="off" >
                                 </div>
                             </div>
                             <div class="col-lg-4">
                                 <div class="form-group custom_form_style">
                                     <label class="padding-30px-left-right">Account Holder Name<span class="required">*</span></label>
-                                    <input type="text" name="mobile" class="form-control" autocomplete="off">
+                                    <input type="text" value="{{$payment->account_holder_name}}" name="account_holder_name" class="form-control" autocomplete="off">
                                 </div>
                             </div>
                             <div class="col-lg-4">
                                 <div class="form-group custom_form_style">
                                     <label class="padding-30px-left-right">IFSC Code<span class="required">*</span></label>
-                                    <input type="text" name="mobile" class="form-control" autocomplete="off">
+                                    <input type="text" value="{{$payment->ifsc_code}}" name="ifsc_code" class="form-control" autocomplete="off">
                                 </div>
                             </div>                           
                         </div>
@@ -99,7 +99,7 @@
                             <div class="col-lg-4">
                                 <div class="form-group custom_form_style">
                                     <label class="padding-30px-left-right">UPI Id<span class="required">*</span></label>
-                                    <input type="text" name="mobile" class="form-control" autocomplete="off" placeholder="Enter Your UPI ID" >
+                                    <input type="text" value="{{$payment->upi_id}}" name="upi_id" class="form-control" autocomplete="off" placeholder="Enter Your UPI ID" >
                                 </div>
                             </div> 
                         </div>
@@ -108,12 +108,13 @@
                             <div class="col-lg-4">
                                 <div class="form-group custom_form_style">
                                     <label class="padding-30px-left-right">PhonePay/Gpay/PayTm<span class="required">*</span></label>
-                                    <input type="text" name="mobile" class="form-control" autocomplete="off" placeholder="Enter Mobile Number" >
+                                    <input type="text" value="{{$payment->online_payment_no}}" name="online_payment_no" class="form-control" autocomplete="off" placeholder="Enter Mobile Number" >
                                 </div>
                             </div> 
                         </div>
-                        <div class="row">
+                        <div class="row " style="margin-top: 30px;">
                             <div class="col-12">
+                                <input type="hidden" name="user_id" value="{{$user->id}}" >
                                 <button type="submit" class="thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle"> Update <i class="fal fa-chevron-right ml-2"></i></button>
                             </div>
                         </div>
