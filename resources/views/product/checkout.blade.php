@@ -180,22 +180,20 @@
                                     <ul class="info_widget">
                                         <li>
                                             <span style="float:left">Base Price</span>
-                                            <span style="float:right">₹1,600/- </span>
+                                            <span style="float:right">₹{{ number_format($calculatedData['exact_price'])}}/- </span>
                                         </li>
                                         <li >
                                             <span style="float:left">Pickup Charges</span>
-                                            <span style="float:right">₹100/- </span>
+                                            <span style="float:right"><s style="color:red;margin-right:20px" >₹50/- </s> Free</span>
                                         </li>
                                         <li>
                                             <span style="float:left">Total Amount</span>
-                                            <span style="float:right">₹1,700/- </span>
+                                            <span style="float:right">₹{{ number_format($calculatedData['exact_price'])}}/- </span>
                                         </li>
-                                        
                                     </ul>
                                 </div>
                                 <div class="sidebar_widget_inner">
                                     <input type="hidden" name="user_id" id="" value="{{ $user->id }}" >
-                                    <input type="hidden" name="amount" id="" value="{{ htmlentities('12000', ENT_QUOTES, 'UTF-8'); }}" >
                                     <input type="hidden" name="product_id" id="" value="{{ $product->id }}" >
                                     <button type="submit" class="sell-now-btn custom-cta-btn bg-thm-color-two btn-rectangle"> Confirm Pickup <i class="fal fa-chevron-right ml-2"></i></button>
                                 </div>

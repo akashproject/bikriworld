@@ -12,6 +12,6 @@ class Question extends Model
     protected $primaryKey = 'id';
 
     protected $fillable = [
-        'id','question','description',
+        'id','question','description','deducted_amount'
     ];
 }

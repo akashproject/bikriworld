@@ -38,7 +38,7 @@
                            <h5 class="report-content"> Service Number </h5>
                         </div>
                         <div class="col-6">
-                            <h5 class="report-content"> {{ $order->service_no }} </h5>
+                            <h5 class="report-content"> {{ $order['service_no'] }} </h5>
                         </div>
                     </div>
                     <div class="row" >
@@ -46,7 +46,7 @@
                             <h5 class="report-content"> Service Status</h5>
                         </div>
                         <div class="col-6">
-                            <h5 class="report-content"> {{ $order->status }} </h5>
+                            <h5 class="report-content"> {{ $order['status'] }} </h5>
                         </div>
                     </div>
                     <div class="row" >
@@ -54,7 +54,7 @@
                             <h5 class="report-content"> Selling Price </h5>
                         </div>
                         <div class="col-6">
-                            <h5 class="report-content"> {{ number_format($order->amount) }}/- </h5>
+                            <h5 class="report-content"> {{ number_format($order['amount']) }}/- </h5>
                         </div>
                     </div>
                     <div class="row" >
@@ -62,7 +62,7 @@
                             <h5 class="report-content">  Payment Mode </h5>
                         </div>
                         <div class="col-6">
-                            <h5 class="report-content">  {{ $order->payment_mode }} </h5>
+                            <h5 class="report-content">  {{ $order['payment_mode'] }} </h5>
                         </div>
                     </div>
                 </div>
@@ -81,7 +81,7 @@
                             <h5 class="report-content">  Address </h5>
                         </div>
                         <div class="col-6">
-                            <h5 class="report-content">  {{ $order->pickup_address }}, {{ $order->pickup_city }}, {{ $order->pickup_state }}, {{ $order->pincode }} </h5>
+                            <h5 class="report-content">  {{ $order['pickup_address'] }}, {{ $order['pickup_city'] }}, {{ $order['pickup_state'] }}, {{ $order['pincode'] }} </h5>
                         </div>
                     </div>
                     <div class="row" >
@@ -89,7 +89,7 @@
                             <h5 class="report-content">  Pickup Date </h5>
                         </div>
                         <div class="col-6">
-                            <h5 class="report-content"> {{ date('d M, Y', strtotime($order->pickup_schedule)); }} </h5>
+                            <h5 class="report-content"> {{ date('d M, Y', strtotime($order['pickup_schedule'])); }} </h5>
                         </div>
                     </div>
                 </div>

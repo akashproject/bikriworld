@@ -12,6 +12,6 @@ class Order extends Model
     protected $primaryKey = 'id';
 
     protected $fillable = [
-        'id','user_id','product_id','service_no','amount','payment_mode','pickup_schedule','pickup_address','pickup_city','pickup_state','pincode','created_at'
+        'id','user_id','product_id','service_no','amount','payment_mode','pickup_schedule','pickup_address','pickup_city','pickup_state','pincode','created_at','status'
     ];
 }

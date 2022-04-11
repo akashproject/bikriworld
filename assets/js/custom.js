@@ -6,6 +6,16 @@
         $('[data-popup="tooltip"]').tooltip();
     });
 
+    $("#paymentform").validate({
+        rules : {
+            c_account_no : {
+                equalTo : "#account_no"
+            },messages: {
+                'c_account_no': "Account No & Confirm Account No must be same.",
+            },
+        }
+    });    
+
     $("#signin_form").validate({
         rules: {
             'mobile': {
@@ -86,7 +96,7 @@
             footer.removeClass("d-flex");
         }
     }
-    jQuery( "#datepicker" ).datepicker({ format: 'dd/mm/yyyy', changeMonth: true,changeYear: true,maxDate: new Date(),yearRange: '1950:2020' });
+    jQuery( "#datepicker" ).datepicker({ format: 'mm/dd/yyyy', changeMonth: true,changeYear: true,minDate: new Date('today') });
     
     jQuery(".resendOtp").click(function() {
         var formId = jQuery(this).closest("form").attr('id');

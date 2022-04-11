@@ -46,7 +46,7 @@
                         </div>
                         
                         <p > get upto </p>
-                        <h3 class="product-price"> ₹2,350/- </h3>
+                        <h3 class="product-price"> ₹ {{ number_format($product->max_price) }}/- </h3>
                         <div class="calculate-price-btn">
                             <a href="{{ url('question') }}/{{ $product->id }}" class=" thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle"> Get Exact Value <i class="fal fa-chevron-right ml-2"></i></a>
                         </div>

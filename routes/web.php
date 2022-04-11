@@ -39,5 +39,5 @@ Route::get('/view-product/{id}', [App\Http\Controllers\ProductController::class,
 Route::get('/product-quote', [App\Http\Controllers\ProductController::class, 'productQuote'])->name('product-quote');
 Route::get('/checkout', [App\Http\Controllers\ProductController::class, 'checkOut'])->name('checkout');
 Route::post('/confirm-pickup', [App\Http\Controllers\ProductController::class, 'confirmPickup'])->name('confirm-pickup');
-Route::get('/order-success/{id}', [App\Http\Controllers\ProductController::class, 'orderSuccess'])->name('order-success');
+Route::get('/order-success', [App\Http\Controllers\ProductController::class, 'orderSuccess'])->name('order-success');
 

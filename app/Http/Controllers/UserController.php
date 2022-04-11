@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Session;
 use App\Models\User;
 use App\Models\Order;
 use App\Models\Payment;
@@ -46,7 +47,7 @@ class UserController extends Controller
         return view('users.pickups',compact('user','order'));
     }
 
-    public function payments(){
+    public function payments(Request $request){
         $user = $this->user;
         $payment = Payment::where('user_id', $user->id)->first();
         return view('users.payments',compact('user','payment'));
@@ -67,7 +68,7 @@ class UserController extends Controller
         } else {
             Payment::create($data);
         }
-        return redirect('/payments');
+        return redirect('/payments')->with('message','Payment Information has been updated!');
     }
 
 

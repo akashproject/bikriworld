@@ -36,7 +36,7 @@
                         <div class="col-7 text-left">
                             <h5> {{ $product->name }} </h5>
                             <p class="quote-msg"> Product Selling Price </p>
-                            <h3 class="quote-price"> ₹2,350/- </h3>
+                            <h3 class="quote-price"> ₹{{ number_format($calculatedData['exact_price'])}}/- </h3>
                         </div>
                     </div>
                 </div>
@@ -48,15 +48,15 @@
                                 <ul class="info_widget">
                                     <li>
                                         <span style="float:left">Base Price</span>
-                                        <span style="float:right">₹1,600/- </span>
+                                        <span style="float:right">₹{{ number_format($calculatedData['exact_price'])}}/- </span>
                                     </li>
                                     <li >
                                         <span style="float:left">Pickup Charges</span>
-                                        <span style="float:right">₹100/- </span>
+                                        <span style="float:right"><s style="color:red;margin-right:20px" >₹50/- </s> Free</span>
                                     </li>
                                     <li>
                                         <span style="float:left">Total Amount</span>
-                                        <span style="float:right">₹1,700/- </span>
+                                        <span style="float:right">₹{{ number_format($calculatedData['exact_price'])}}/- </span>
                                     </li>
                                     
                                 </ul>

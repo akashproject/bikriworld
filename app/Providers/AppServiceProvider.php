@@ -3,6 +3,8 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Pagination\Paginator;
+use View;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -23,6 +25,16 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        Paginator::useBootstrap();
+ 
+        View::composer('*', function($view)
+        {
+            $navbars = array(
+                '/' => 'HOME',
+                '/selling-categories' => 'SELL',
+                'contact' => "CONTACT"
+            );
+            $view->with('navbars', $navbars);
+        });
     }
 }

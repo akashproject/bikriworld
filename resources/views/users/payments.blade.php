@@ -50,17 +50,11 @@
                 </div>
                 <div class="col-lg-8 order_list">
                     <h5 class="page_title"> Payment Information </h5>
-                    <form class="form-horizontal" id="checkoutform" method="post" action="{{ url('save-payment') }}" enctype="multipart/form-data">
+                    <form class="form-horizontal" id="paymentform" method="post" action="{{ url('save-payment') }}" enctype="multipart/form-data">
                     @csrf
-                    @if ($errors->any())
-                        <div class="alert alert-danger">
-                            <ul>
-                                @foreach ($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    @endif
+                        @if ($message = Session::get('message'))
+                         <p class="alert ">{{ Session::get('message') }}</p>
+                        @endif
                         <h6 style="margin-top: 26px;"> Bank Details </h6>
                         <div class="row ">
                             <div class="col-lg-4">
@@ -72,7 +66,7 @@
                             <div class="col-lg-4">
                                 <div class="form-group custom_form_style">
                                     <label class="padding-30px-left-right">Account Number <span class="required">*</span></label>
-                                    <input type="text" value="{{$payment->account_no}}" name="account_no" class="form-control" autocomplete="off" >
+                                    <input type="number" value="{{$payment->account_no}}" name="account_no" class="form-control" id="account_no" autocomplete="off" >
                                 </div>
                             </div>
                             <div class="col-lg-4">
@@ -108,7 +102,7 @@
                             <div class="col-lg-4">
                                 <div class="form-group custom_form_style">
                                     <label class="padding-30px-left-right">PhonePay/Gpay/PayTm<span class="required">*</span></label>
-                                    <input type="text" value="{{$payment->online_payment_no}}" name="online_payment_no" class="form-control" autocomplete="off" placeholder="Enter Mobile Number" >
+                                    <input type="number" value="{{$payment->online_payment_no}}" name="online_payment_no" class="form-control" autocomplete="off" placeholder="Enter Mobile Number" >
                                 </div>
                             </div> 
                         </div>
