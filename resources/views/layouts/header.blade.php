@@ -26,7 +26,9 @@ Preloader End -->
                     <a href="{{ url('logout') }}"> Log out </a>
                 </li>
             @else
-                <a href="javascript:void(0)" class="head_trigger desktop_trigger thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle">Sign In <i class="fal fa-chevron-right ml-2"></i></a>
+                <li class="menu-item open-login">
+                    <a href="javascript:void(0);" class=""> Sign In </a>
+                </li>
             @endif
             
         </ul>
