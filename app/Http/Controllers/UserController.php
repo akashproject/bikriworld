@@ -20,8 +20,12 @@ class UserController extends Controller
     public function __construct(Request $request)
     {
         $userdata = $request->session()->get('userData');
-        $this->sellprice = $request->session()->get('sellprice');
-        $this->user = User::where('mobile', $userdata['mobile'])->first();
+        if($userdata){
+            $this->sellprice = $request->session()->get('sellprice');
+            $this->user = User::where('mobile', $userdata['mobile'])->first();
+        } else {
+            return redirect('/');          
+        }
     }
 
     public function dashboard(){

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use App\Models\Payment;
 use Illuminate\Support\Facades\DB;
 
 class LoginController extends Controller
@@ -27,12 +28,15 @@ class LoginController extends Controller
 
     public function accessProfile(Request $request){
         $data = $request->all();
-        $user = User::where('mobile', $data['mobile'])->get();
-        if($user->count()){
-            $request->session()->put('userData', $data);
+        $user = User::where('mobile', $data['mobile'])->first();
+        if($user){
+            $request->session()->put('userData', $user->toArray());
         } else {
-            User::create(array('mobile',$data['mobile']));
+            $user = User::create(array('mobile'=> $data['mobile']))->toArray();
+            $payment = Payment::create(array('user_id'=> $user['id']));
+            $request->session()->put('userData', $data);
         }
+
         return response()->json(['true'],$this->_statusOK);
     }
 }
