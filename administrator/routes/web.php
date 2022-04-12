@@ -39,9 +39,18 @@ Route::get('/users', [App\Http\Controllers\UserController::class, 'index'])->nam
 Route::get('/user/{id}', [App\Http\Controllers\UserController::class, 'show'])->name('show');
 Route::put('/edituser', [App\Http\Controllers\UserController::class, 'edit'])->name('show');
 
-//institutes
-Route::get('/institutes', [App\Http\Controllers\InstituteController::class, 'index'])->name('institutes');
-Route::get('/institute/{id}', [App\Http\Controllers\InstituteController::class, 'show'])->name('institute');
+//Products
+Route::get('/products', [App\Http\Controllers\ProductController::class, 'index'])->name('products');
+Route::get('/product/{id}', [App\Http\Controllers\ProductController::class, 'show'])->name('product');
+Route::get('/addproduct', [App\Http\Controllers\ProductController::class, 'add'])->name('product');
+Route::post('/submitproduct', [App\Http\Controllers\ProductController::class, 'save'])->name('submitproduct');
+
+//categories
+Route::get('/categories', [App\Http\Controllers\CategoriesController::class, 'index'])->name('categories');
+Route::get('/category/{id}', [App\Http\Controllers\CategoriesController::class, 'show'])->name('category');
+Route::get('/addcategories', [App\Http\Controllers\CategoriesController::class, 'add'])->name('addcategories');
+Route::post('/submitcategories', [App\Http\Controllers\CategoriesController::class, 'save'])->name('submitcategories');
+
 Route::get('/addinstitutes', [App\Http\Controllers\InstituteController::class, 'add'])->name('addinstitutes');
 Route::post('/submitinstitutes', [App\Http\Controllers\InstituteController::class, 'save'])->name('submitinstitutes');
 Route::post('/submitinstitutecourse', [App\Http\Controllers\InstituteController::class, 'saveCourse'])->name('submitinstitutecourse');
