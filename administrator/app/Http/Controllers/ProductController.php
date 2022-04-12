@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Product;
-use App\Models\Categories;
+use App\Models\Brand;
 
 class ProductController extends Controller
 {
@@ -27,16 +27,16 @@ class ProductController extends Controller
     }
 
     public function add() {
-        $categories = Categories::all();
-        return view('product.add',compact('categories'));
+        $brands = Brand::all();
+        return view('product.add',compact('brands'));
     }
 
     public function show($id)
     {
         try {
             $product = Product::find($id);
-            $categories = Categories::all();
-            return view('product.show',compact('product','categories'));
+            $brands = Brand::all();
+            return view('product.show',compact('product','brands'));
         } catch(\Illuminate\Database\QueryException $e){
         }        
     }

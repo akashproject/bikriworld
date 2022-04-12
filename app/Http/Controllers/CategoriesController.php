@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Categories;
+use App\Models\Brand;
 
 class CategoriesController extends Controller
 {
@@ -18,7 +19,8 @@ class CategoriesController extends Controller
         $user = $this->userdata;
         try {
             $categories = Categories::all();
-            return view('categories.index',compact('categories','user'));
+            $brands = Brand::all();
+            return view('categories.index',compact('categories','brands','user'));
         } catch(\Illuminate\Database\QueryException $e){
             
         }

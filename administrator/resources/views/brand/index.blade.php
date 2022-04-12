@@ -6,13 +6,13 @@
 
 <div class="col-12">
 
-	@if($products)
+	@if($brands)
 
 		<div class="card">
 
 			<div class="card-body">
 
-				<h5 class="card-title">Basic Datatable</h5>
+				<h5 class="card-title"> Datatable</h5>
 
 				<div class="table-responsive">
 
@@ -21,11 +21,8 @@
 						<thead>
 
 							<tr>
-								<th>image</th>
+								<th>Logo</th>
 								<th>Name</th>
-								<th>Variant</th>
-								<th>Max Price</th>
-								<th>Created Date</th>
 								<th>Options</th>
 
 							</tr>
@@ -34,21 +31,15 @@
 
 						<tbody>
 
-							@foreach ($products as $value)
-
+							@foreach ($brands as $value)
 							<tr>
-
-								<td></td>
-								<td>{{ $value->name }}</td>
-								<td>{{$value->variant }}</td>
-								<td>{{$value->max_price }}</td>
-								<td> {{ $value->created_at->isoFormat('MMM DD, YYYY') }} </td>
+								<td style="width:80px"><img src="/public/images/{{ $value->image }}" style="width:100%"></td>													
+								<td>{{ $value->name }}</td>													
 								<td>
-									<a href="{{ url('product') }}/{{ $value->id }}" class="btn btn-primary btn-lg">Edit</a>
-									<a href="{{ url('product-delete') }}/{{ $value->id }}" class="btn btn-danger btn-lg">Delete </a>
+								<a href="{{ url('brand') }}/{{ $value->id }}" class="btn btn-primary btn-lg">Edit</a>
+								<a href="{{ url('delete-brand') }}/{{ $value->id }}" class="btn btn-danger btn-lg">Delete </a>
 								</td>
 							</tr>
-
 							@endforeach							
 
 						</tbody>

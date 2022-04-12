@@ -39,17 +39,23 @@ Route::get('/users', [App\Http\Controllers\UserController::class, 'index'])->nam
 Route::get('/user/{id}', [App\Http\Controllers\UserController::class, 'show'])->name('show');
 Route::put('/edituser', [App\Http\Controllers\UserController::class, 'edit'])->name('show');
 
-//Products
-Route::get('/products', [App\Http\Controllers\ProductController::class, 'index'])->name('products');
-Route::get('/product/{id}', [App\Http\Controllers\ProductController::class, 'show'])->name('product');
-Route::get('/addproduct', [App\Http\Controllers\ProductController::class, 'add'])->name('product');
-Route::post('/submitproduct', [App\Http\Controllers\ProductController::class, 'save'])->name('submitproduct');
+//brands
+Route::get('/brands', [App\Http\Controllers\BrandController::class, 'index'])->name('brands');
+Route::get('/brand/{id}', [App\Http\Controllers\BrandController::class, 'show'])->name('brand');
+Route::get('/addbrand', [App\Http\Controllers\BrandController::class, 'add'])->name('addbrand');
+Route::post('/submitbrand', [App\Http\Controllers\BrandController::class, 'save'])->name('submitbrand');
 
 //categories
 Route::get('/categories', [App\Http\Controllers\CategoriesController::class, 'index'])->name('categories');
 Route::get('/category/{id}', [App\Http\Controllers\CategoriesController::class, 'show'])->name('category');
 Route::get('/addcategories', [App\Http\Controllers\CategoriesController::class, 'add'])->name('addcategories');
 Route::post('/submitcategories', [App\Http\Controllers\CategoriesController::class, 'save'])->name('submitcategories');
+
+//Products
+Route::get('/products', [App\Http\Controllers\ProductController::class, 'index'])->name('products');
+Route::get('/product/{id}', [App\Http\Controllers\ProductController::class, 'show'])->name('product');
+Route::get('/addproduct', [App\Http\Controllers\ProductController::class, 'add'])->name('product');
+Route::post('/submitproduct', [App\Http\Controllers\ProductController::class, 'save'])->name('submitproduct');
 
 Route::get('/addinstitutes', [App\Http\Controllers\InstituteController::class, 'add'])->name('addinstitutes');
 Route::post('/submitinstitutes', [App\Http\Controllers\InstituteController::class, 'save'])->name('submitinstitutes');

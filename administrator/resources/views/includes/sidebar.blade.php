@@ -34,7 +34,17 @@
 
 								<li class="sidebar-item"><a href="{{ url('categories') }}" class="sidebar-link"><i class="mdi mdi-border-inside"></i><span class="hide-menu"> All Categories </span></a></li>
 
-                                <li class="sidebar-item"><a href="{{ url('addcategories') }}" class="sidebar-link"><i class="mdi mdi-border-inside"></i><span class="hide-menu"> Add Products </span></a></li>
+                                <li class="sidebar-item"><a href="{{ url('addcategories') }}" class="sidebar-link"><i class="mdi mdi-border-inside"></i><span class="hide-menu"> Add Category </span></a></li>
+
+                            </ul>
+
+                        </li>
+
+                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-border-inside"></i><span class="hide-menu">Brands </span></a>
+                            <ul aria-expanded="false" class="collapse  first-level">
+								<li class="sidebar-item"><a href="{{ url('brands') }}" class="sidebar-link"><i class="mdi mdi-border-inside"></i><span class="hide-menu"> All Brands </span></a></li>
+
+                                <li class="sidebar-item"><a href="{{ url('addbrand') }}" class="sidebar-link"><i class="mdi mdi-border-inside"></i><span class="hide-menu"> Add Brand </span></a></li>
 
                             </ul>
 
@@ -46,7 +56,7 @@
 
 								<li class="sidebar-item"><a href="{{ url('products') }}" class="sidebar-link"><i class="mdi mdi-border-inside"></i><span class="hide-menu"> All Products </span></a></li>
 
-                                <li class="sidebar-item"><a href="{{ url('addproducts') }}" class="sidebar-link"><i class="mdi mdi-border-inside"></i><span class="hide-menu"> Add Products </span></a></li>
+                                <li class="sidebar-item"><a href="{{ url('addproduct') }}" class="sidebar-link"><i class="mdi mdi-border-inside"></i><span class="hide-menu"> Add Products </span></a></li>
 
                             </ul>
 

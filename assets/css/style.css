@@ -3897,8 +3897,8 @@ a.close_aside i {
 .features_box .icon {
     margin-bottom: 12px;
     text-align: center;
+    width: 80px;
 }
-
 .slick-slide img {
     display: inline !important;
 }

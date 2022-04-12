@@ -14,56 +14,15 @@
 								<li>{{ $error }}</li>
 							@endforeach
 						</ul>
-
 					</div>
-
 				@endif
 
 				<div class="form-group row">
-					<label for="title" class="col-sm-3 text-right control-label col-form-label">Image</label>
-					<div class="col-md-9">
-						<div class="custom-file">
-							<input type="file" class="custom-file-input" name="image" id="validatedCustomFile">
-							<label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
-							<div class="invalid-feedback">Example invalid custom file feedback</div>
-						</div>
+					<label for="name" class="col-sm-3 text-right control-label col-form-label">Name</label>
+					<div class="col-sm-9">
+						<input type="text" class="form-control" name="name" id="name" placeholder="Title Here" value="{{ $category->name }}" >
 					</div>
 				</div>
-
-				<div class="form-group row">
-					<label for="title" class="col-sm-3 text-right control-label col-form-label">Title</label>
-					<div class="col-sm-9">
-						<input type="text" class="form-control" name="title" id="title" placeholder="Title Here" value="{{ $category->title }}" >
-					</div>
-				</div>
-				
-				<div class="form-group row">
-					<label for="description" class="col-sm-3 text-right control-label col-form-label"> Description </label>
-					<div class="col-sm-9">
-						<textarea class="form-control" name="description" id="description" placeholder="Description Here" > {{ $category->description }} </textarea>
-					</div>
-				</div>
-
-				<div class="form-group row">
-					<label for="venue" class="col-sm-3 text-right control-label col-form-label"> Venue </label>
-					<div class="col-sm-9">
-						<textarea class="form-control" name="venue" id="venue" placeholder="Venue Here" >  {{ $category->venue }}  </textarea>
-					</div>
-				</div>	
-				
-				<div class="form-group row">
-					<label for="date" class="col-sm-3 text-right control-label col-form-label">Date </label>
-					<div class="col-sm-9">
-						<textarea class="form-control" name="date" id="date" placeholder="Date Here" >  {{ $category->date }}  </textarea>
-					</div>
-				</div>	
-
-				<div class="form-group row">
-					<label for="time" class="col-sm-3 text-right control-label col-form-label">Time </label>
-					<div class="col-sm-9">
-						<textarea class="form-control" name="time" id="time" placeholder="Time Here" >  {{ $category->time }}  </textarea>
-					</div>
-				</div>	
 
 			</div>
 
