@@ -37,7 +37,11 @@ Route::get('/logout', [App\Http\Controllers\Auth\LoginController::class, 'logout
 // users
 Route::get('/users', [App\Http\Controllers\UserController::class, 'index'])->name('users');
 Route::get('/user/{id}', [App\Http\Controllers\UserController::class, 'show'])->name('show');
-Route::put('/edituser', [App\Http\Controllers\UserController::class, 'edit'])->name('show');
+
+//Orders
+Route::get('/orders', [App\Http\Controllers\OrderController::class, 'index'])->name('users');
+Route::get('/order/{id}', [App\Http\Controllers\OrderController::class, 'show'])->name('show');
+Route::post('/saveorder', [App\Http\Controllers\OrderController::class, 'save'])->name('save');
 
 //brands
 Route::get('/brands', [App\Http\Controllers\BrandController::class, 'index'])->name('brands');
@@ -57,14 +61,21 @@ Route::get('/product/{id}', [App\Http\Controllers\ProductController::class, 'sho
 Route::get('/addproduct', [App\Http\Controllers\ProductController::class, 'add'])->name('product');
 Route::post('/submitproduct', [App\Http\Controllers\ProductController::class, 'save'])->name('submitproduct');
 
-Route::get('/addinstitutes', [App\Http\Controllers\InstituteController::class, 'add'])->name('addinstitutes');
-Route::post('/submitinstitutes', [App\Http\Controllers\InstituteController::class, 'save'])->name('submitinstitutes');
-Route::post('/submitinstitutecourse', [App\Http\Controllers\InstituteController::class, 'saveCourse'])->name('submitinstitutecourse');
-Route::put('/editinstitutes', [App\Http\Controllers\InstituteController::class, 'edit'])->name('editinstitutes');
-Route::get('/institute-course/{id}', [App\Http\Controllers\InstituteController::class, 'instituteCourses'])->name('institutecourses');
-Route::get('/add-institute-course/{id}', [App\Http\Controllers\InstituteController::class, 'addInstitutecourse'])->name('addinstitutecourses');
+//Questions
+Route::get('/questions', [App\Http\Controllers\QuestionController::class, 'index'])->name('questions');
+Route::get('/question/{id}', [App\Http\Controllers\QuestionController::class, 'show'])->name('question');
+Route::get('/addquestion', [App\Http\Controllers\QuestionController::class, 'add'])->name('question');
+Route::post('/submitquestion', [App\Http\Controllers\QuestionController::class, 'save'])->name('submitquestion');
 
 
-Route::get('/countries', [App\Http\Controllers\CountryController::class, 'index'])->name('countries');
-Route::get('/addcountries', [App\Http\Controllers\CountryController::class, 'add'])->name('addinstitutes');
-Route::post('/submitcountries', [App\Http\Controllers\CountryController::class, 'save'])->name('submitcountries');
+// Route::get('/addinstitutes', [App\Http\Controllers\InstituteController::class, 'add'])->name('addinstitutes');
+// Route::post('/submitinstitutes', [App\Http\Controllers\InstituteController::class, 'save'])->name('submitinstitutes');
+// Route::post('/submitinstitutecourse', [App\Http\Controllers\InstituteController::class, 'saveCourse'])->name('submitinstitutecourse');
+// Route::put('/editinstitutes', [App\Http\Controllers\InstituteController::class, 'edit'])->name('editinstitutes');
+// Route::get('/institute-course/{id}', [App\Http\Controllers\InstituteController::class, 'instituteCourses'])->name('institutecourses');
+// Route::get('/add-institute-course/{id}', [App\Http\Controllers\InstituteController::class, 'addInstitutecourse'])->name('addinstitutecourses');
+
+
+// Route::get('/countries', [App\Http\Controllers\CountryController::class, 'index'])->name('countries');
+// Route::get('/addcountries', [App\Http\Controllers\CountryController::class, 'add'])->name('addinstitutes');
+// Route::post('/submitcountries', [App\Http\Controllers\CountryController::class, 'save'])->name('submitcountries');

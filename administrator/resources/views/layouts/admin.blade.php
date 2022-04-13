@@ -18,6 +18,7 @@
     <link href="{{ url('assets/extra-libs/multicheck/multicheck.css') }}" rel="stylesheet">
     <link href="{{ url('assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.css') }}" rel="stylesheet">
     <link href="{{ url('dist/css/style.min.css') }}" rel="stylesheet">
+    <link href="{{ url('dist/css/custom.css') }}" rel="stylesheet">
     @yield('style')
 </head>
 <body class="">
@@ -61,7 +62,6 @@
 <script src="{{ url('assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js') }}"></script>
 <script src="{{ url('assets/extra-libs/sparkline/sparkline.js') }}"></script>
 <script src="{{ url('dist/js/sidebarmenu.js') }}"></script>
-<script src="{{ url('dist/js/custom.min.js') }}"></script>
 <script src="{{ url('assets/libs/flot/excanvas.js') }}"></script>
 <script src="{{ url('assets/libs/flot/jquery.flot.js') }}"></script>
 <script src="{{ url('assets/libs/flot/jquery.flot.pie.js') }}"></script>
@@ -75,6 +75,7 @@
 <script src="{{ url('assets/extra-libs/multicheck/jquery.multicheck.js') }}"></script>
 <script src="{{ url('assets/extra-libs/DataTables/datatables.min.js') }}"></script>
 <script src="assets/libs/quill/dist/quill.min.js"></script>
+<script src="{{ url('dist/js/custom.js') }}"></script>
 <!--Wave Effects -->
 <script>
     /****************************************

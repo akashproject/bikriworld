@@ -61,6 +61,7 @@ class BrandController extends Controller
             $data['image'] = "brand/".$imageFile;
         }
 
+        $data['category_id'] = json_encode($data['category_id']);
         if($data['brand_id'] <= 0){
             Brand::create($data);
         } else {

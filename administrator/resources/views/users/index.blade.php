@@ -25,15 +25,13 @@
 								<td>{{$value->mobile }}</td>
 								<td> {{ $value->created_at->isoFormat('MMM DD, YYYY') }} </td>
 								<td>
-									<button type="button" class="btn btn-primary btn-lg">Edit</button>
-									<button type="button" class="btn btn-danger btn-lg">Delete</button>
+									<button type="button" class="btn btn-primary btn-lg">View</button>
 								</td>
 							</tr>
 							@endforeach							
 						</tbody>
 					</table>
 				</div>
-
 			</div>
 		</div>
 	@endif

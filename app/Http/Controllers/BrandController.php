@@ -18,7 +18,8 @@ class BrandController extends Controller
     public function index($id){
         $user = $this->userdata;
         try {
-            $brands = Brand::where('category_id', $id)->get();
+            //$brands = Brand::where('category_id', $id)->get();
+            $brands = Brand::where('category_id', 'like', '%' . $id . '%')->get();
             return view('brand.index',compact('brands','user'));
 
         } catch(\Illuminate\Database\QueryException $e){

@@ -40,7 +40,7 @@
 				<div class="form-group row">
 					<label for="state" class="col-sm-3 text-right control-label col-form-label">Category</label>
 					<div class="col-sm-9">
-						<select name="category_id" id="category_id" class="select2 form-control custom-select" style="width: 100%; height:36px;">	
+						<select name="category_id[]" id="category_id" class="select2 form-control custom-select" style="width: 100%; height:136px;" multiple>	
 							<option value="">Select Category</option>
 							@foreach($categories as $category)
 							<option value="{{$category->id}}"  {{ ( $brand->category_id ==  $category->id )? 'selected' : '' }} > {{$category->name}}</option>

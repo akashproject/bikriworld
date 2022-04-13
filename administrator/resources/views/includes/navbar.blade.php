@@ -8,12 +8,12 @@
                     <!-- ============================================================== -->
                     <!-- Logo -->
                     <!-- ============================================================== -->
-                    <a class="navbar-brand" href="index.html">
+                    <a class="navbar-brand" href="{{ url('/') }}">
                         <!-- Logo icon -->
                         <b class="logo-icon p-l-10">
                             <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
                             <!-- Dark Logo icon -->
-                            <img src="assets/images/logo-text.png" alt="homepage" class="light-logo" style="width: 84px;"/>
+                            <img src="https://via.placeholder.com/100x50" alt="homepage" class="light-logo" style="width: 84px;"/>
                            
                         </b>
                         <!--End Logo icon -->

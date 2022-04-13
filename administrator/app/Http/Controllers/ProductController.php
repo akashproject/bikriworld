@@ -41,4 +41,34 @@ class ProductController extends Controller
         }        
     }
 
+    public function save(Request $request) {
+        $data = $request->all();
+        print_r($data); exit;
+        $validatedData = $request->validate([
+            'name' => 'required',
+        ]);
+
+        if($data['product_id'] <= 0){
+            $request->validate([
+                'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            ]);
+        }
+
+        if ($request->hasFile('image')) {
+            $imageFile = strtolower($data['name']).'_logo_'.time().'.'.$request->image->extension();  
+            
+            $request->image->move(public_path('images/brand'), $imageFile);
+            $data['image'] = "brand/".$imageFile;
+        }
+
+        if($data['brand_id'] <= 0){
+            Brand::create($data);
+        } else {
+            $brand = Brand::findOrFail($data['brand_id']);
+            $brand->update($data);
+        }
+        
+        return redirect('/brands');
+    }
+
 }
