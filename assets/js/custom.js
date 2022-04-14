@@ -413,4 +413,38 @@
             );
         });
     });
+
+    $("#search_field").keyup(function(){
+        let inputData = $(this).val();
+        $.ajaxSetup({
+            headers: {
+             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        $.ajax({
+            url: `http://${window.location.hostname}/get-search-result`,
+            type: "post",
+            data: {
+                inputData: inputData,
+            },
+            success: function(result) {
+                //result = JSON.parse(result);
+                if (result.length > 0) {
+                    let htmlContent = '';
+                    console.log(result);
+                    $.each(result, function (key, data) {
+                        console.log(key,data)
+                        htmlContent += '<li class="search-list"><a href="/view-product/'+data.id+'">'+data.name+'</a></li>';
+                        // $.each(data, function (index, data) {
+                        //     console.log('index', data)
+                        // })
+                    });
+                    $(".search-content_wrap").html(htmlContent);
+                    $(".search-content_wrap").show()
+                } else {
+                    $(".search-content_wrap").hide()
+                }
+            }
+        });
+    });
 })(jQuery);

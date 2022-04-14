@@ -3897,8 +3897,12 @@ a.close_aside i {
 .features_box .icon {
     margin-bottom: 12px;
     text-align: center;
+}
+
+.img-80 {
     width: 80px;
 }
+
 .slick-slide img {
     display: inline !important;
 }
@@ -10208,4 +10212,49 @@ label.form-check-label {
 
 .report-content {
     font-size: 14px;
+}
+
+.search-content_wrap {
+    position: absolute;
+    top: 51px;
+    left: 0;
+    z-index: 2;
+    background: #fff;
+    padding: 4px 5px;
+    width: 100%;
+    height: 220px;
+    border: 2px solid #f5efef;
+    border-radius: 20px;
+    display: none;
+    overflow-y: scroll;
+}
+.search-content_wrap li {
+    list-style: none;
+    padding: 0 10px;
+    margin: 10px 0;
+}
+.search-content_wrap li a {
+    font-size: 18px;
+    font-weight: 600;
+}
+/* width */
+::-webkit-scrollbar {
+    width: 3px;
+}
+  
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 3px grey; 
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #3e4095; 
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #3e4095; 
 }

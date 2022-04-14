@@ -41,3 +41,6 @@ Route::get('/checkout', [App\Http\Controllers\ProductController::class, 'checkOu
 Route::post('/confirm-pickup', [App\Http\Controllers\ProductController::class, 'confirmPickup'])->name('confirm-pickup');
 Route::get('/order-success', [App\Http\Controllers\ProductController::class, 'orderSuccess'])->name('order-success');
 
+// Search Module
+Route::post('/get-search-result', [App\Http\Controllers\SearchController::class, 'index'])->name('get-search-result');
+
