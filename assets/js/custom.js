@@ -414,6 +414,42 @@
         });
     });
 
+    $("#searchcity").focusout(function(){
+        $(".search-city-content_wrap").hide()
+    });
+
+    $("#search_field").focusout(function(){
+        $(".search-city-content_wrap").hide()
+    });
+
+    $("#searchcity").keyup(function(){
+        let inputData = $(this).val();
+        $.ajaxSetup({
+            headers: {
+             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        $.ajax({
+            url: `http://${window.location.hostname}/get-city-search`,
+            type: "post",
+            data: {
+                inputData: inputData,
+            },
+            success: function(result) {
+                if (result.length > 0) {
+                    let htmlContent = '';
+                    $.each(result, function (key, data) {
+                        htmlContent += '<li><a class="city-search-list" href="javascript:void(0)">'+data.name+'</a></li>';
+                    });
+                    $(".search-city-content_wrap").html(htmlContent);
+                    $(".search-city-content_wrap").show()
+                } else {
+                    $(".search-city-content_wrap").hide()
+                }
+            }
+        });
+    });
+
     $("#search_field").keyup(function(){
         let inputData = $(this).val();
         $.ajaxSetup({
@@ -422,7 +458,7 @@
             }
         });
         $.ajax({
-            url: `http://${window.location.hostname}/get-search-result`,
+            url: `http://${window.location.hostname}/get-product-search`,
             type: "post",
             data: {
                 inputData: inputData,
@@ -431,9 +467,7 @@
                 //result = JSON.parse(result);
                 if (result.length > 0) {
                     let htmlContent = '';
-                    console.log(result);
                     $.each(result, function (key, data) {
-                        console.log(key,data)
                         htmlContent += '<li class="search-list"><a href="/view-product/'+data.id+'">'+data.name+'</a></li>';
                     });
                     $(".search-content_wrap").html(htmlContent);
@@ -444,4 +478,18 @@
             }
         });
     });
+
+    $('.open-city-popup').magnificPopup({
+        type: 'inline',
+        midClick: true,
+        mainClass: 'mfp-fade'
+    });
+
+    $(window).on("click","#select-city-popup .city-search-list",function(){
+        console.log("hi");
+        let city = $(this).val();
+        console.log(city);
+        $.cookie('userCity', city, {expires: 100000000000});
+    });
+
 })(jQuery);

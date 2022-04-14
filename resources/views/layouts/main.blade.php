@@ -42,6 +42,7 @@
     @include('layouts.footer')
     <script src="{{ url('assets/js/plugins/jquery-3.6.0.min.js') }}"></script>
     <script src="{{ url('assets/js/plugins/jquery.validate.min.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
     <script src="{{ url('assets/js/plugins/datepicker.min.js') }}"></script>
     <script src="{{ url('assets/js/plugins/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ url('assets/js/plugins/slick.min.js') }}"></script>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Product;
+use App\Models\City;
 
 class SearchController extends Controller
 {
@@ -16,11 +17,7 @@ class SearchController extends Controller
      */
     public function index(Request $request)
     {
-        //
-        $data = $request->all();
-        $products = Product::where('name', 'like', '%' . $data['inputData'] . '%')->get();
-        
-        return response()->json($products, $this->_statusOK);
+       
     }
 
     /**
@@ -28,10 +25,24 @@ class SearchController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function searchProduct(Request $request)
     {
-        //
+         //
+         $data = $request->all();
+         $products = Product::where('name', 'like', '%' . $data['inputData'] . '%')->get();
+         
+         return response()->json($products, $this->_statusOK);
     }
+
+    public function searchCity(Request $request)
+    {
+         //
+         $data = $request->all();
+         $products = City::where('name', 'like', '%' . $data['inputData'] . '%')->get();
+         
+         return response()->json($products, $this->_statusOK);
+    }
+
 
     /**
      * Store a newly created resource in storage.

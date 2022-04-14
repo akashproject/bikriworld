@@ -75,5 +75,10 @@ class UserController extends Controller
         return redirect('/payments')->with('message','Payment Information has been updated!');
     }
 
+    public function contact(){
+        $user = $this->user;
+        return view('users.contact',compact('user'));
+    }
+
 
 }

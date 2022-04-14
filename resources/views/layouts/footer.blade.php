@@ -112,6 +112,60 @@
         </div>
     </div>
 </footer>
+<div id="select-city-popup" class="white-popup mfp-hide">
+    <h5 class="text-center">Choose your city to sell your Old Device</h2>
+    <div class="row relative">
+        <div class="col-12">
+            <div class="form-group custom_form_style">
+                <input type="text" id="searchcity" class="form-control" autocomplete="off" placeholder="Please Type your city Here" >
+            </div>
+        </div>
+        <div class="search-city-content_wrap">
+
+        </div>
+    </div>
+    <p class="text-center">Popular Cities</p>
+    <div class="row">
+        <div class="col-4 col-lg-2">
+            <div class="city-icon">
+                <a href="javascript:void(0)" class="city-search-list" data-city="Mumbai">
+                   <img src="https://via.placeholder.com/80x80">
+                   <p class="text-center" style="color: #565353;font-weight: 600;" >Mumbai</p>
+                </a>
+            </div>
+        </div>
+        <div class="col-4 col-lg-2">
+             <a href="javascript:void(0)" class="city-search-list" data-city="Delhi">
+                <img src="https://via.placeholder.com/80x80">
+                <p class="text-center" style="color: #565353;font-weight: 600;" >Delhi NCR</p>
+            </a>
+        </div>
+        <div class="col-4 col-lg-2">
+             <a href="javascript:void(0)" class="city-search-list" data-city="Bengaluru">
+                <img src="https://via.placeholder.com/80x80">
+                <p class="text-center" style="color: #565353;font-weight: 600;" >Bengaluru</p>
+            </a>
+        </div>
+        <div class="col-4 col-lg-2">
+             <a href="javascript:void(0)" class="city-search-list" data-city="Chennai">
+                <img src="https://via.placeholder.com/80x80">
+                <p class="text-center" style="color: #565353;font-weight: 600;" >Chennai</p>
+            </a>
+        </div>
+        <div class="col-4 col-lg-2">
+             <a href="javascript:void(0)" class="city-search-list" data-city="Kolkata">
+                <img src="https://via.placeholder.com/80x80">
+                <p class="text-center" style="color: #565353;font-weight: 600;" >Kolkata</p>
+            </a>
+        </div>
+        <div class="col-4 col-lg-2">
+             <a href="javascript:void(0)" class="city-search-list" data-city="Pune">
+                <img src="https://via.placeholder.com/80x80">
+                <p class="text-center" style="color: #565353;font-weight: 600;" >Pune</p>
+            </a>
+        </div>
+    </div>
+</div>
 <!-- Footer End -->
 <a href="#" data-target="html" class="back-to-top ft-sticky">
     <i class="fal fa-long-arrow-up"></i>

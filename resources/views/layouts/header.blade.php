@@ -13,11 +13,15 @@ Preloader End -->
     <!-- Menu -->
     <nav>
         <ul class="main-menu">
+            
             @foreach ($navbars as $key => $navbarItem)
                 <li class="menu-item">
                     <a class="menu-link" href="{{ url($key) }}">{{ $navbarItem }}</a>
                 </li>
             @endforeach
+                <li class="menu-item open-city-popup">
+                    <a href="javascript:void(0);"> Select City </a>
+                </li>
             @if($user)
                 <li class="menu-item">
                     <a href="{{ url('dashboard') }}"> Dashboard </a>
@@ -114,6 +118,7 @@ Preloader End -->
                     <input type="text" name="#" id="search_field" placeholder="Search" autocomplete="off">
                     <i class="fal fa-search"></i>
                 </div>
+                <a href="#select-city-popup" class="dashboard open-city-popup" style="width:52%;margin-left: 22px;padding: 5px;"> <i class="fal fa-map-marker ml-2"></i> Select City <i class="fal fa-angle-down ml-2"></i> </a>
                 @if($user)
                     <a href="{{ url('dashboard') }}" class="dashboard" style="width:52%;margin-left: 22px;padding: 5px;border: 1px solid var(--thm-color-two);border-radius: 10px;"> Dashboard <i class="fal fa-home ml-2"></i></a>
                     <a href="{{ url('logout') }}" class="dashboard" style="width:52%;margin-left: 22px;padding: 5px;"> Logout <i class="fal fa-sign-out ml-2"></i></a>
@@ -190,6 +195,7 @@ Preloader End -->
                         <input type="text" name="#" id="search_field" placeholder="Search" autocomplete="off">
                         <i class="fal fa-search"></i>
                     </div>
+                    <a href="#select-city-popup" class="dashboard open-city-popup" style="width:52%;margin-left: 22px;padding: 5px;"> <i class="fal fa-map-marker ml-2"></i> Select City <i class="fal fa-angle-down ml-2"></i> </a>
                     @if($user)
                         <a href="{{ url('dashboard') }}" class="dashboard" style="width:52%;margin-left: 22px;padding: 5px;border: 1px solid var(--thm-color-two);border-radius: 10px;"> Dashboard <i class="fal fa-home ml-2"></i></a>
                         <a href="{{ url('logout') }}" class="dashboard" style="width:52%;margin-left: 22px;padding: 5px;"> Logout <i class="fal fa-sign-out ml-2"></i></a>

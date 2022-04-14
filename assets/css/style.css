@@ -10214,7 +10214,7 @@ label.form-check-label {
     font-size: 14px;
 }
 
-.search-content_wrap {
+.search-content_wrap,.search-city-content_wrap {
     position: absolute;
     top: 51px;
     left: 0;
@@ -10228,12 +10228,12 @@ label.form-check-label {
     display: none;
     overflow-y: scroll;
 }
-.search-content_wrap li {
+.search-content_wrap li, .search-city-content_wrap li{
     list-style: none;
     padding: 0 10px;
     margin: 10px 0;
 }
-.search-content_wrap li a {
+.search-content_wrap li a,.search-city-content_wrap li a {
     font-size: 18px;
     font-weight: 600;
 }
@@ -10257,4 +10257,14 @@ label.form-check-label {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
     background: #3e4095; 
+}
+
+.white-popup {
+    position: relative;
+    background: #FFF;
+    padding: 20px 40px;
+    width: auto;
+    max-width: 80%;
+    margin: 20px auto;
+    transition: 1s all;
 }

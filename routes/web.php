@@ -42,5 +42,7 @@ Route::post('/confirm-pickup', [App\Http\Controllers\ProductController::class, '
 Route::get('/order-success', [App\Http\Controllers\ProductController::class, 'orderSuccess'])->name('order-success');
 
 // Search Module
-Route::post('/get-search-result', [App\Http\Controllers\SearchController::class, 'index'])->name('get-search-result');
+Route::post('/get-product-search', [App\Http\Controllers\SearchController::class, 'searchProduct'])->name('get-search-result');
+Route::post('/get-city-search', [App\Http\Controllers\SearchController::class, 'searchCity'])->name('get-search-result');
+Route::get('/contact', [App\Http\Controllers\UserController::class, 'contact'])->name('contact');
 
