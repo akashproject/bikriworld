@@ -435,9 +435,6 @@
                     $.each(result, function (key, data) {
                         console.log(key,data)
                         htmlContent += '<li class="search-list"><a href="/view-product/'+data.id+'">'+data.name+'</a></li>';
-                        // $.each(data, function (index, data) {
-                        //     console.log('index', data)
-                        // })
                     });
                     $(".search-content_wrap").html(htmlContent);
                     $(".search-content_wrap").show()

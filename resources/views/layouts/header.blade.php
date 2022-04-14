@@ -108,7 +108,7 @@ Preloader End -->
                 <!-- Navigation Ens -->
             </nav>
             <!-- Head Actions -->
-            <div class="head_actions">
+            <div class="head_actions relative">
                 <!-- Search -->
                 <div class="search_bar relative" style="width:80%">
                     <input type="text" name="#" id="search_field" placeholder="Search" autocomplete="off">
@@ -125,6 +125,9 @@ Preloader End -->
                     <span></span>
                     <span></span>
                 </button>
+                <div class="search-content_wrap">
+
+                </div>
             </div>
             <!-- Head Actions -->
         </div>
