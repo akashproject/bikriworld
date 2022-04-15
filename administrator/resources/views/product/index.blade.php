@@ -38,7 +38,7 @@
 
 							<tr>
 
-								<td></td>
+								<td style="width:80px"><img src="/public/images/{{ $value->image }}" style="width:100%"></td>
 								<td>{{ $value->name }}</td>
 								<td>{{$value->variant }}</td>
 								<td>{{$value->max_price }}</td>

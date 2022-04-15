@@ -130,7 +130,7 @@
                                     <div class="col-4">
                                         <div class="answer_list"  >
                                             <div class="form-check ">
-                                                <input class="form-check-input" type="radio" name="payment_mode" id="" vale="Upi" >
+                                                <input class="form-check-input" type="radio" name="payment_mode" id="" value="Upi" >
                                                 <label class="form-check-label" for="">UPI</label>
                                             </div>
                                         </div>
@@ -138,7 +138,7 @@
                                     <div class="col-4">
                                         <div class="answer_list"  >
                                             <div class="form-check ">
-                                                <input class="form-check-input" type="radio" name="payment_mode" id="" vale="Online Payment" >
+                                                <input class="form-check-input" type="radio" name="payment_mode" id="" value="Online Payment" >
                                                 <label class="form-check-label" for="">Online Payment</label>
                                             </div>
                                         </div>
@@ -164,7 +164,11 @@
                                 <ul>
                                     <li style="padding: 10px 25px;">
                                         <div class="image">
-                                            <img src="{{ url('assets/images/coach/small_1.jpg') }}" alt="img" class="image-fit">
+                                            @if($product->image)
+                                            <img src="/administrator/public/images/{{ $product->image }}" alt="img">
+                                            @else 
+                                            <img src="https://via.placeholder.com/180x180" alt="img" class="">
+                                            @endif 
                                         </div>
                                         <div class="text">
                                             <h6 class="mb-0">

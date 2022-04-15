@@ -32,7 +32,11 @@
                     <!-- post details -->
                     <article class="post post_list style_2 post_details mb-0 product-left-image text-center">
                         <div class="post_img">
-                            <img src="https://via.placeholder.com/300x350" alt="img" class="">
+                            @if($product->image)
+                            <img src="/administrator/public/images/{{ $product->image }}" alt="img">
+                            @else 
+                            <img src="https://via.placeholder.com/180x180" alt="img" class="">
+                            @endif 
                         </div>
                     </article>
                 </div>

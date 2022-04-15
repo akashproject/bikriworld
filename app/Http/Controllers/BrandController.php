@@ -15,12 +15,14 @@ class BrandController extends Controller
         $this->userdata = $request->session()->get('userData');
     }
 
-    public function index($id){
+    public function index($id,Request $request){
         $user = $this->userdata;
         try {
-            //$brands = Brand::where('category_id', $id)->get();
+            $request->session()->put('selling_category', $id);
+            //echo $request->session()->get('category_id');
             $brands = Brand::where('category_id', 'like', '%' . $id . '%')->get();
-            return view('brand.index',compact('brands','user'));
+            $tobSellingBrands = Brand::all();
+            return view('brand.index',compact('brands','user','tobSellingBrands'));
 
         } catch(\Illuminate\Database\QueryException $e){
         }

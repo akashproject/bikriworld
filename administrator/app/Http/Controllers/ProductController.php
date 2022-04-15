@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Product;
+use App\Models\Categories;
 use App\Models\Brand;
 
 class ProductController extends Controller
@@ -28,7 +29,8 @@ class ProductController extends Controller
 
     public function add() {
         $brands = Brand::all();
-        return view('product.add',compact('brands'));
+        $categories = Categories::all();
+        return view('product.add',compact('brands','categories'));
     }
 
     public function show($id)
@@ -36,14 +38,15 @@ class ProductController extends Controller
         try {
             $product = Product::find($id);
             $brands = Brand::all();
-            return view('product.show',compact('product','brands'));
+            $categories = Categories::all();
+            return view('product.show',compact('product','brands','categories'));
         } catch(\Illuminate\Database\QueryException $e){
         }        
     }
 
     public function save(Request $request) {
         $data = $request->all();
-        print_r($data); exit;
+//        print_r($data); exit;
         $validatedData = $request->validate([
             'name' => 'required',
         ]);
@@ -57,18 +60,18 @@ class ProductController extends Controller
         if ($request->hasFile('image')) {
             $imageFile = strtolower($data['name']).'_logo_'.time().'.'.$request->image->extension();  
             
-            $request->image->move(public_path('images/brand'), $imageFile);
-            $data['image'] = "brand/".$imageFile;
+            $request->image->move(public_path('images/product'), $imageFile);
+            $data['image'] = "product/".$imageFile;
         }
 
-        if($data['brand_id'] <= 0){
-            Brand::create($data);
+        if($data['product_id'] <= 0){
+            Product::create($data);
         } else {
-            $brand = Brand::findOrFail($data['brand_id']);
+            $brand = Product::findOrFail($data['product_id']);
             $brand->update($data);
         }
         
-        return redirect('/brands');
+        return redirect('/products');
     }
 
 }

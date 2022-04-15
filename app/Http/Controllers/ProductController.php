@@ -1,12 +1,14 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Product;
 use App\Models\User;
 use App\Models\Order;
+use App\Models\Brand;
 
 class ProductController extends Controller
 {
@@ -24,11 +26,16 @@ class ProductController extends Controller
         
     }
     //
-    public function index($id){
+    public function index($id,Request $request){
         $user = $this->userdata;
+        $category_id = $request->session()->get('selling_category');
         try {
-            $products = Product::where('brand_id', $id)->get();
-            return view('product.index',compact('products','user'));
+            $tobSellingBrands = Brand::all();
+            $products = Product::where('brand_id', $id)
+            ->where('category_id', $category_id)
+            ->get();
+
+            return view('product.index',compact('products','user','tobSellingBrands'));
             } catch(\Illuminate\Database\QueryException $e){
         }
     }

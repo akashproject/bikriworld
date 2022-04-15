@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Question;
 use App\Models\Product;
-
+use App\Models\Brand;
 class QuestionController extends Controller
 {
     public $userdata = '';
@@ -16,14 +16,16 @@ class QuestionController extends Controller
         $this->userdata = $request->session()->get('userData');
     }
     
-    public function index($id){
+    public function index($id,Request $request){
         $user = $this->userdata;
         try {
-            $questions = Question::all();
+            $category_id = $request->session()->get('selling_category');
+            $questions = Question::where('category_id', $category_id)->get();
             $product = Product::find($id);
             $product_id = $id;
-            return view('questions.index',compact('questions','product_id','user'));
-            } catch(\Illuminate\Database\QueryException $e){
+            $tobSellingBrands = Brand::all();
+            return view('questions.index',compact('questions','product','user','tobSellingBrands'));
+        } catch(\Illuminate\Database\QueryException $e){
         }
     }
 

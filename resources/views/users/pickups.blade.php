@@ -53,11 +53,17 @@
                 @if($order)
                     @foreach ($order as $key => $value)
                         <div class="row order_wraper">
-                            <div class="col-6">
+                            <div class="col-6 col-lg-10">
                                 <h5> {{ $value->name }} </h5>
                             </div>
-                            <div class="col-6 text-right">
-                                <img src="http://bikriworld.com/assets/images/iphone.png" alt="img" class="">
+                            <div class="col-6  col-lg-2">
+                                <div class="" >
+                                    @if($value->image)
+                                    <img src="/administrator/public/images/{{ $value->image }}" alt="img">
+                                    @else 
+                                    <img src="https://via.placeholder.com/180x180" alt="img" class="">
+                                    @endif 
+                                </div>
                             </div>
                             <div class="col-12 order_list">
                                 <h6 >Order Status : <span style="color:red" >{{ $value->status }} </span> </h6>

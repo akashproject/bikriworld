@@ -31,7 +31,11 @@
                 <div class="col-lg-8 mb-md-80">
                     <div class="product-quote-wrap row" >
                         <div class="col-5 text-center">
-                            <img src="https://via.placeholder.com/300x350" alt="img" class="">
+                            @if($product->image)
+                            <img src="/administrator/public/images/{{ $product->image }}" alt="img">
+                            @else 
+                            <img src="https://via.placeholder.com/180x180" alt="img" class="">
+                            @endif 
                         </div>
                         <div class="col-7 text-left">
                             <h5> {{ $product->name }} </h5>

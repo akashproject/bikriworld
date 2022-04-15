@@ -68,9 +68,20 @@
 					</div>
 				</div>
 
-				
 				<div class="form-group row">
-					<label for="state" class="col-sm-3 text-right control-label col-form-label">Category</label>
+					<label for="category" class="col-sm-3 text-right control-label col-form-label">Category</label>
+					<div class="col-sm-9">
+						<select name="category_id" id="category_id" class="select2 form-control custom-select" style="width: 100%; height:36px;">
+							<option value="">Select Category</option>
+							@foreach($categories as $category)
+							<option value="{{$category->id}}" > {{$category->name}}</option>
+							@endforeach
+						<select>
+					</div>
+				</div>	
+
+				<div class="form-group row">
+					<label for="state" class="col-sm-3 text-right control-label col-form-label">Brands</label>
 					<div class="col-sm-9">
 						<select name="brand_id" id="brand_id" class="select2 form-control custom-select" style="width: 100%; height:36px;">
 							<option value="">Select Brand</option>
@@ -85,7 +96,7 @@
 			<div class="border-top">
 				<div class="card-body">
 					<button type="submit" class="btn btn-primary">Submit</button>
-					<input type="hidden" name="product_id" id="institute_id" value="" >
+					<input type="hidden" name="product_id" id="product_id" value="" >
 				</div>
 			</div>
 		</form>

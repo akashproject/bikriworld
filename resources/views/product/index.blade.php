@@ -29,6 +29,38 @@
 
         <div class="container">
             <div class="row">
+            @if($products)
+                @foreach ($products as $value)
+                <!-- Block Start -->
+                <div class="col-lg-2 col-6">
+                    <div class="team_block style_2 style_3">
+                        <div class="team_img">
+                            @if($value->image)
+                            <img src="/administrator/public/images/{{ $value->image }}" alt="img">
+                            @else 
+                            <img src="https://via.placeholder.com/180x180" alt="img" class="">
+                            @endif   
+                            <a href="{{ url('view-product') }}/{{ $value->id }}" class="thm-btn bg-thm-color-two thm-color-two-shadow btn-circle link">
+                                <i class="fal fa-plus"></i>
+                            </a>
+                        </div>
+                        <p class="thm-color-two mb-0 font-weight-bold"><a href="{{ url('view-product') }}/{{ $value->id }}" class=""> {{ $value->name }} </a></p>
+                    </div>
+                </div>
+                <!-- Block End -->               
+                @endforeach	
+            @else
+                <div class="col-12 text-center">
+                    <h3> No Product Found Yet! We Are Coming Soon Here </h3>
+                </div>
+            @endif               
+            </div>
+        </div>
+    </section>
+    <!-- Team End -->
+    <section class="section-padding wow fadeInUp">
+        <div class="container">
+            <div class="row">
                 <div class="col-lg-12">
                     <div class="section-title left-align">
                         <p class="subtitle mb-4">
@@ -39,53 +71,101 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
-            @if($products)
-                @foreach ($products as $value)
-                <!-- Block Start -->
-                <div class="col-lg-2 col-6">
-                    <div class="team_block style_2 style_3">
-                        <div class="team_img">
-                            <img src="https://via.placeholder.com/180x180" alt="img" class="">
-                            <a href="{{ url('view-product') }}/{{ $value->id }}" class="thm-btn bg-thm-color-two thm-color-two-shadow btn-circle link">
-                                <i class="fal fa-plus"></i>
-                            </a>
+            <div class="brand_slider wow fadeInUp">
+                @foreach ($tobSellingBrands as $value)
+                <!-- Feature Box Start -->
+                <div class="slide-item col-12">
+                    <div class="features_box">
+                        <div class="icon">
+                            <img src="/administrator/public/images/{{ $value->image }}" alt="img">
                         </div>
-                        <p class="thm-color-two mb-0 font-weight-bold"><a href="{{ url('view-product') }}/{{ $value->id }}" class=""> {{ $value->name }} </a></p>
+                        <h6 class="text-center"> {{ $value->name }} </h6>
                     </div>
                 </div>
-                <!-- Block End -->
-                @endforeach	
-            @endif               
+                <!-- Feature Box End -->
+                @endforeach               
             </div>
-            <!-- Pagination -->
-            <!-- <nav aria-label="Page navigation example">
-                <ul class="pagination justify-content-center">
-                    <li class="page-item">
-                        <a href="#" class="page-link">
-                            <i class="fal fa-chevron-left"></i>
-                        </a>
-                    </li>
-                    <li class="page-item">
-                        <a href="#" class="page-link">01</a>
-                    </li>
-                    <li class="page-item active">
-                        <a href="#" class="page-link">02</a>
-                    </li>
-                    <li class="page-item">
-                        <a href="#" class="page-link">03</a>
-                    </li>
-                    <li class="page-item">
-                        <a href="#" class="page-link">
-                            <i class="fal fa-chevron-right"></i>
-                        </a>
-                    </li>
-                </ul>
-            </nav> -->
-            <!-- Pagination -->
+           
         </div>
     </section>
-    <!-- Team End -->
+    <section class="section-padding wow fadeInUp">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title left-align">
+                        <p class="subtitle mb-4">
+                            <i class="fal fa-book"></i>
+                            Top Selling Models
+                        </p>
+                        <h5 class="title mb-0">our top selling model people likes</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="brand_slider wow fadeInUp">
+                <!-- Feature Box Start -->
+                <div class="slide-item col-12">
+                    <div class="features_box">
+                        <div class="icon">
+                            <img src="{{ url('assets/images/iphone.png') }}" alt="img">
+                        </div>
+                        <h6 class="text-center">Iphone 13</h6>
+                    </div>
+                </div>
+                <!-- Feature Box End -->
+                <!-- Feature Box Start -->
+                <div class="slide-item col-12">
+                    <div class="features_box">
+                        <div class="icon">
+                            <img src="{{ url('assets/images/iphone.png') }}" alt="img">
+                        </div>
+                        <h6 class="text-center">Iphone 12</h6>
+                    </div>
+                </div>
+                <!-- Feature Box End -->
+                <!-- Feature Box Start -->
+                <div class="slide-item col-12">
+                    <div class="features_box">
+                        <div class="icon">
+                            <img src="{{ url('assets/images/iphone.png') }}" alt="img">
+                        </div>
+                        <h6 class="text-center">Iphone 12</h6>
+                    </div>
+                </div>
+                <!-- Feature Box End -->
+                <!-- Feature Box Start -->
+                <div class="slide-item col-12">
+                    <div class="features_box">
+                        <div class="icon">
+                            <img src="{{ url('assets/images/iphone.png') }}" alt="img">
+                        </div>
+                        <h6 class="text-center">Apple</h6>
+                    </div>
+                </div>
+                <!-- Feature Box End -->
+                <!-- Feature Box Start -->
+                <div class="slide-item col-12">
+                    <div class="features_box">
+                        <div class="icon">
+                            <img src="{{ url('assets/images/iphone.png') }}" alt="img">
+                        </div>
+                        <h6 class="text-center">Iphone 11</h6>
+                    </div>
+                </div>
+                <!-- Feature Box End -->
+                <!-- Feature Box Start -->
+                <div class="slide-item col-12">
+                    <div class="features_box">
+                        <div class="icon">
+                            <img src="{{ url('assets/images/iphone.png') }}" alt="img">
+                        </div>
+                        <h6 class="text-center">Iphone 9</h6>
+                    </div>
+                </div>
+                <!-- Feature Box End -->
+            </div>
+           
+        </div>
+    </section>
     @endsection
 @section('script')
 <!-- ============================================================== -->

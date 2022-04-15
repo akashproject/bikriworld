@@ -1,6 +1,7 @@
 @extends('layouts.main')
 
     @section('content')
+    <!-- {{ session()->get('category_id') }} -->
     <!-- Subheader Start -->
     <div class="subheader relative z-1" style="background-image: url({{ url('assets/images/subheader.jpg') }});">
         <div class="container relative z-1">
@@ -103,7 +104,7 @@
                 </div>
             </div>
             <div class="brand_slider wow fadeInUp">
-                @foreach ($brands as $value)
+                @foreach ($tobSellingBrands as $value)
                 <!-- Feature Box Start -->
                 <div class="slide-item col-12">
                     <div class="features_box">

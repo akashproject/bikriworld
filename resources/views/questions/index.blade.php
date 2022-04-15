@@ -73,7 +73,7 @@
                                     </div>
                                 @endforeach	
                             @endif 
-                            <input type="hidden" name="product_id" id="product_id" value="{{$product_id}}" >
+                            <input type="hidden" name="product_id" id="product_id" value="{{$product->id}}" >
                             <button type="submit" class="thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle"> Calculate Price <i class="fal fa-calculator ml-2"></i></a>
                         </form>
                     </div>
@@ -85,11 +85,15 @@
                             <ul>
                                 <li style="padding: 10px 25px;">
                                     <div class="image">
-                                        <img src="{{ url('assets/images/coach/small_1.jpg') }}" alt="img" class="image-fit">
+                                    @if($product->image)
+                                    <img src="/administrator/public/images/{{ $product->image }}" alt="img" class="image-fit">
+                                    @else 
+                                    <img src="https://via.placeholder.com/180x180" alt="img" class="image-fit">
+                                    @endif 
                                     </div>
                                     <div class="text">
                                         <h6 class="mb-0">
-                                            <a href="course-details.html">Iphone 5s</a>
+                                            <a href="course-details.html">{{$product->name}}</a>
                                         </h6>
                                     </div>
                                 </li>
@@ -161,66 +165,18 @@
                 </div>
             </div>
             <div class="brand_slider wow fadeInUp">
+                @foreach ($tobSellingBrands as $value)
                 <!-- Feature Box Start -->
                 <div class="slide-item col-12">
                     <div class="features_box">
                         <div class="icon">
-                            <img src="{{ url('assets/images/iphone.png') }}" alt="img">
+                            <img src="/administrator/public/images/{{ $value->image }}" alt="img">
                         </div>
-                        <h6 class="text-center">Apple</h6>
+                        <h6 class="text-center"> {{ $value->name }} </h6>
                     </div>
                 </div>
                 <!-- Feature Box End -->
-                <!-- Feature Box Start -->
-                <div class="slide-item col-12">
-                    <div class="features_box">
-                        <div class="icon">
-                            <img src="{{ url('assets/images/iphone.png') }}" alt="img">
-                        </div>
-                        <h6 class="text-center">Apple</h6>
-                    </div>
-                </div>
-                <!-- Feature Box End -->
-                <!-- Feature Box Start -->
-                <div class="slide-item col-12">
-                    <div class="features_box">
-                        <div class="icon">
-                            <img src="{{ url('assets/images/iphone.png') }}" alt="img">
-                        </div>
-                        <h6 class="text-center">Apple</h6>
-                    </div>
-                </div>
-                <!-- Feature Box End -->
-                <!-- Feature Box Start -->
-                <div class="slide-item col-12">
-                    <div class="features_box">
-                        <div class="icon">
-                            <img src="{{ url('assets/images/iphone.png') }}" alt="img">
-                        </div>
-                        <h6 class="text-center">Apple</h6>
-                    </div>
-                </div>
-                <!-- Feature Box End -->
-                <!-- Feature Box Start -->
-                <div class="slide-item col-12">
-                    <div class="features_box">
-                        <div class="icon">
-                            <img src="{{ url('assets/images/iphone.png') }}" alt="img">
-                        </div>
-                        <h6 class="text-center">Apple</h6>
-                    </div>
-                </div>
-                <!-- Feature Box End -->
-                <!-- Feature Box Start -->
-                <div class="slide-item col-12">
-                    <div class="features_box">
-                        <div class="icon">
-                            <img src="{{ url('assets/images/iphone.png') }}" alt="img">
-                        </div>
-                        <h6 class="text-center">Apple</h6>
-                    </div>
-                </div>
-                <!-- Feature Box End -->
+                @endforeach               
             </div>
            
         </div>
