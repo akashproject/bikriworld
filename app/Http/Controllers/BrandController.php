@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Brand;
+use App\Models\Product;
 
 class BrandController extends Controller
 {
@@ -22,7 +23,8 @@ class BrandController extends Controller
             //echo $request->session()->get('category_id');
             $brands = Brand::where('category_id', 'like', '%' . $id . '%')->get();
             $tobSellingBrands = Brand::all();
-            return view('brand.index',compact('brands','user','tobSellingBrands'));
+            $tobSellingProducts = Product::all();
+            return view('brand.index',compact('brands','user','tobSellingBrands','tobSellingProducts'));
 
         } catch(\Illuminate\Database\QueryException $e){
         }

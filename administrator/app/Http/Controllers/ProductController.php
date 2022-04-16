@@ -36,6 +36,7 @@ class ProductController extends Controller
     public function show($id)
     {
         try {
+
             $product = Product::find($id);
             $brands = Brand::all();
             $categories = Categories::all();
@@ -46,7 +47,15 @@ class ProductController extends Controller
 
     public function save(Request $request) {
         $data = $request->all();
-//        print_r($data); exit;
+        $variation = array();
+        for ($i=0; $i < count($data['ram']); $i++) { 
+            $variation[$i] = array(
+                'ram'=> $data['ram'][$i],
+                'storage'=> $data['storage'][$i],
+                'price'=> $data['price'][$i],
+            );
+        }
+        $data['variant'] = json_encode($variation);
         $validatedData = $request->validate([
             'name' => 'required',
         ]);

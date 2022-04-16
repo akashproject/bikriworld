@@ -3,7 +3,7 @@
     @section('content')
     <!-- {{ session()->get('category_id') }} -->
     <!-- Subheader Start -->
-    <div class="subheader relative z-1" style="background-image: url({{ url('assets/images/subheader.jpg') }});">
+    <div class="subheader relative z-1" style="background-image: url({{ url('assets/images/inner_banner.png') }});">
         <div class="container relative z-1">
             <div class="row">
                 <div class="col-12">
@@ -135,106 +135,18 @@
                 </div>
             </div>
             <div class="model_slider wow fadeInUp">
+                @foreach ($tobSellingProducts as $value)
                 <!-- Feature Box Start -->
                 <div class="slide-item col-12">
                     <div class="features_box">
                         <div class="icon">
-                            <img src="{{ url('assets/images/iphone.png') }}" alt="img">
+                            <img src="/administrator/public/images/{{ $value->image }}" alt="img">
                         </div>
-                        <h6 class="text-center">Iphone 13</h6>
+                        <h6 class="text-center"> {{ $value->name }} </h6>
                     </div>
                 </div>
                 <!-- Feature Box End -->
-                <!-- Feature Box Start -->
-                <div class="slide-item col-12">
-                    <div class="features_box">
-                        <div class="icon">
-                            <img src="{{ url('assets/images/iphone.png') }}" alt="img">
-                        </div>
-                        <h6 class="text-center">Iphone 12</h6>
-                    </div>
-                </div>
-                <!-- Feature Box End -->
-                <!-- Feature Box Start -->
-                <div class="slide-item col-12">
-                    <div class="features_box">
-                        <div class="icon">
-                            <img src="{{ url('assets/images/iphone.png') }}" alt="img">
-                        </div>
-                        <h6 class="text-center">Iphone 12</h6>
-                    </div>
-                </div>
-                <!-- Feature Box End -->
-                <!-- Feature Box Start -->
-                <div class="slide-item col-12">
-                    <div class="features_box">
-                        <div class="icon">
-                            <img src="{{ url('assets/images/iphone.png') }}" alt="img">
-                        </div>
-                        <h6 class="text-center">Apple</h6>
-                    </div>
-                </div>
-                <!-- Feature Box End -->
-                <!-- Feature Box Start -->
-                <div class="slide-item col-12">
-                    <div class="features_box">
-                        <div class="icon">
-                            <img src="{{ url('assets/images/iphone.png') }}" alt="img">
-                        </div>
-                        <h6 class="text-center">Iphone 11</h6>
-                    </div>
-                </div>
-                <!-- Feature Box End -->
-                <!-- Feature Box Start -->
-                <div class="slide-item col-12">
-                    <div class="features_box">
-                        <div class="icon">
-                            <img src="{{ url('assets/images/iphone.png') }}" alt="img">
-                        </div>
-                        <h6 class="text-center">Iphone 9</h6>
-                    </div>
-                </div>
-                <!-- Feature Box End -->
-                 <!-- Feature Box Start -->
-                 <div class="slide-item col-12">
-                    <div class="features_box">
-                        <div class="icon">
-                            <img src="{{ url('assets/images/iphone.png') }}" alt="img">
-                        </div>
-                        <h6 class="text-center">Iphone 9</h6>
-                    </div>
-                </div>
-                <!-- Feature Box End -->
-                 <!-- Feature Box Start -->
-                 <div class="slide-item col-12">
-                    <div class="features_box">
-                        <div class="icon">
-                            <img src="{{ url('assets/images/iphone.png') }}" alt="img">
-                        </div>
-                        <h6 class="text-center">Iphone 9</h6>
-                    </div>
-                </div>
-                <!-- Feature Box End -->
-                 <!-- Feature Box Start -->
-                 <div class="slide-item col-12">
-                    <div class="features_box">
-                        <div class="icon">
-                            <img src="{{ url('assets/images/iphone.png') }}" alt="img">
-                        </div>
-                        <h6 class="text-center">Iphone 9</h6>
-                    </div>
-                </div>
-                <!-- Feature Box End -->
-                 <!-- Feature Box Start -->
-                 <div class="slide-item col-12">
-                    <div class="features_box">
-                        <div class="icon">
-                            <img src="{{ url('assets/images/iphone.png') }}" alt="img">
-                        </div>
-                        <h6 class="text-center">Iphone 9</h6>
-                    </div>
-                </div>
-                <!-- Feature Box End -->
+                @endforeach     
             </div>
            
         </div>

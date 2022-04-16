@@ -31,20 +31,26 @@ class ProductController extends Controller
         $category_id = $request->session()->get('selling_category');
         try {
             $tobSellingBrands = Brand::all();
+            $tobSellingProducts = Product::all();
             $products = Product::where('brand_id', $id)
             ->where('category_id', $category_id)
             ->get();
 
-            return view('product.index',compact('products','user','tobSellingBrands'));
+            return view('product.index',compact('products','user','tobSellingBrands','tobSellingProducts'));
             } catch(\Illuminate\Database\QueryException $e){
         }
     }
 
-    public function view($id){
+    public function view($id,Request $request){
         $user = $this->userdata;
         try {
             $product = Product::find($id);
-            return view('product.view',compact('product','user'));
+            if($request->session()->get('selling_category')){
+                $request->session()->put('selling_category', $product->category_id);
+            }
+            $tobSellingBrands = Brand::all();
+            $tobSellingProducts = Product::all();
+            return view('product.view',compact('product','user','tobSellingBrands','tobSellingProducts'));
         } catch(\Illuminate\Database\QueryException $e){
         }
     }
@@ -53,7 +59,11 @@ class ProductController extends Controller
         $user = $this->userdata;
         $product = Product::find($this->sellprice['product_id']);
         $calculatedData = $this->sellprice;
-        return view('product.quote',compact('product','user','calculatedData'));
+
+        $tobSellingBrands = Brand::all();
+        $tobSellingProducts = Product::all();
+
+        return view('product.quote',compact('product','user','calculatedData','tobSellingBrands','tobSellingProducts'));
     }
 
     public function checkOut(){

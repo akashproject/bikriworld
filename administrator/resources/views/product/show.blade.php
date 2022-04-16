@@ -60,7 +60,7 @@
 						<select name="category_id" id="category_id" class="select2 form-control custom-select" style="width: 100%; height:36px;">
 							<option value="">Select Category</option>
 							@foreach($categories as $category)
-							<option value="{{$category->id}}" > {{$category->name}}</option>
+							<option value="{{$category->id}}" {{ ( $product->category_id ==  $category->id )? 'selected' : '' }}> {{$category->name}}</option>
 							@endforeach
 						<select>
 					</div>
@@ -72,31 +72,58 @@
 						<select name="brand_id" id="brand_id" class="select2 form-control custom-select" style="width: 100%; height:36px;">
 							<option value="">Select Brand</option>
 							@foreach($brands as $brand)
-							<option value="{{$brand->id}}" > {{$brand->name}}</option>
+							<option value="{{$brand->id}}" {{ ( $product->brand_id ==  $brand->id )? 'selected' : '' }} > {{$brand->name}}</option>
 							@endforeach
 						<select>
 					</div>
 				</div>
 				<div class="form-group row text-right">
-					<div class="col-sm-12">
+					<div class="col-sm-3">
+						<label for="" class="text-left control-label col-form-label">Product Varient</label>
+					</div>
+					<div class="col-sm-6">
 						<a href="javascript:void(0)" class="addMoreProductVarient btn btn-primary" > Add More </a>
 					</div>
 				</div>
 
 				<div class="form-group row ">
-					<label for="" class="col-sm-3 text-right control-label col-form-label">Product Varient</label>
+					<label for="" class="col-sm-3 text-right control-label col-form-label"></label>
 					<div class="col-md-9 productVarientWrap" >
+						@if($product->variant != '')
+						@foreach(json_decode($product->variant) as $variant)
 						<div class="row productVarient" >
-							<div class="col-sm-4">
-								<input type="text" class="form-control" name="ram[]" id="" placeholder="Ram Memory Here" value="" >
+							<div class="col-sm-3">
+								<input type="text" class="form-control" name="ram[]" id="" placeholder="Ram Memory Here" value="{{ $variant->ram }}" >
 							</div>
-							<div class="col-sm-4">
-								<input type="text" class="form-control" name="rom[]" id="" placeholder="Storage Memory Here" value="" >
+							<div class="col-sm-3">
+								<input type="text" class="form-control" name="storage[]" id="" placeholder="Storage Memory Here" value="{{ $variant->storage }}" >
 							</div>
-							<div class="col-sm-4">
-								<a href="javascript:void(0)" class="removeProductVarient" > Remove </a>
+							<div class="col-sm-3">
+								<input type="text" class="form-control" name="price[]" id="" placeholder="Variation Price" value="{{ $variant->price }}" >
+							</div>
+							<div class="col-sm-3">
+								<a href="javascript:void(0)" class="removeProductVarient" > <i class="mdi mdi-delete" aria-hidden="true" style="font-size: 20px;color: red;"></i>
+ 								</a>
 							</div>
 						</div>
+						@endforeach
+						@else 
+						<div class="row productVarient" >
+							<div class="col-sm-3">
+								<input type="text" class="form-control" name="ram[]" id="" placeholder="Ram Memory Here" value="" >
+							</div>
+							<div class="col-sm-3">
+								<input type="text" class="form-control" name="storage[]" id="" placeholder="Storage Memory Here" value="" >
+							</div>
+							<div class="col-sm-3">
+								<input type="text" class="form-control" name="price[]" id="" placeholder="Variation Price" value="" >
+							</div>
+							<div class="col-sm-3">
+								<a href="javascript:void(0)" class="removeProductVarient" > <i class="mdi mdi-delete" aria-hidden="true" style="font-size: 20px;color: red;"></i>
+ 								</a>
+							</div>
+						</div>
+						@endif
 					</div>
 				</div>
 

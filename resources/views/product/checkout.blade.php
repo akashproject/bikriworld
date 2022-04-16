@@ -1,7 +1,7 @@
 @extends('layouts.main')
     @section('content')
     <!-- Subheader Start -->
-    <div class="subheader relative z-1" style="background-image: url({{ url('assets/images/subheader.jpg') }});">
+    <div class="subheader relative z-1" style="background-image: url({{ url('assets/images/inner_banner.png') }});">
         <div class="container relative z-1">
             <div class="row">
                 <div class="col-12">

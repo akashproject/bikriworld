@@ -388,6 +388,10 @@
         $(".product-right-content .variant").removeClass("active");
         $(this).addClass("active");
     });
+
+    $('.variant').click(function(){
+        $(".product-price_amount").html(addCommas($(this).attr('data-price')))
+    })
     // Easy pie bar
     $(".circle_bar").each(function() {
         var circleBar = $(this);
@@ -415,11 +419,11 @@
     });
 
     $("#searchcity").focusout(function(){
-        $(".search-city-content_wrap").hide()
+        //$(".search-city-content_wrap").hide()
     });
 
     $("#search_field").focusout(function(){
-        $(".search-city-content_wrap").hide()
+        //$(".search-city-content_wrap").hide()
     });
 
     $("#searchcity").keyup(function(){
@@ -439,7 +443,7 @@
                 if (result.length > 0) {
                     let htmlContent = '';
                     $.each(result, function (key, data) {
-                        htmlContent += '<li><a class="city-search-list" href="javascript:void(0)">'+data.name+'</a></li>';
+                        htmlContent += '<li><a class="city-search-list" href="javascript:void(0)"  data-city="'+data.name+'" >'+data.name+'</a></li>';
                     });
                     $(".search-city-content_wrap").html(htmlContent);
                     $(".search-city-content_wrap").show()
@@ -485,11 +489,27 @@
         mainClass: 'mfp-fade'
     });
 
-    $(window).on("click","#select-city-popup .city-search-list",function(){
-        console.log("hi");
-        let city = $(this).val();
+    $(document).on("click","#select-city-popup .city-search-list",function(){
+        let city = $(this).attr('data-city');
         console.log(city);
+        $('.user_selected_city').html(city);
         $.cookie('userCity', city, {expires: 100000000000});
+        $(".mfp-close").trigger("click");
     });
 
+
+
 })(jQuery);
+
+function addCommas(nStr)
+{
+    nStr += '';
+    x = nStr.split('.');
+    x1 = x[0];
+    x2 = x.length > 1 ? '.' + x[1] : '';
+    var rgx = /(\d+)(\d{3})/;
+    while (rgx.test(x1)) {
+        x1 = x1.replace(rgx, '$1' + ',' + '$2');
+    }
+    return x1 + x2;
+}

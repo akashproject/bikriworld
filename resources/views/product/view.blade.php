@@ -2,7 +2,7 @@
 
     @section('content')
     <!-- Subheader Start -->
-    <div class="subheader relative z-1" style="background-image: url({{ url('assets/images/subheader.jpg') }});">
+    <div class="subheader relative z-1" style="background-image: url({{ url('assets/images/inner_banner.png') }});">
         <div class="container relative z-1">
             <div class="row">
                 <div class="col-12">
@@ -44,15 +44,22 @@
                     <div class="product-right-content">
                         <h3> {{ $product->name }} </h3>
                         <div class="variant_wrap" >
-                            <span class="text-center variant" > 16GB </span>
-                            <span class="text-center variant" > 32GB </span>
-                            <span class="text-center variant" > 64GB </span>
+                            @if($product->variant != '')
+                            @foreach(json_decode($product->variant) as $variant)
+                            <span class="text-center variant" data-price="{{$variant->price}}" > {{$variant->ram}} | {{$variant->storage}} </span>
+                            @endforeach
+                            @endif
                         </div>
                         
                         <p > get upto </p>
-                        <h3 class="product-price"> ₹ {{ number_format($product->max_price) }}/- </h3>
+                        <h3 class="product-price"> ₹ <span class="product-price_amount"> {{ number_format($product->max_price) }}</span> /- </h3>
                         <div class="calculate-price-btn">
-                            <a href="{{ url('question') }}/{{ $product->id }}" class=" thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle"> Get Exact Value <i class="fal fa-chevron-right ml-2"></i></a>
+                            @if($user)
+                                <a href="{{ url('question') }}/{{ $product->id }}" class="thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle"> Get Exact Value <i class="fal fa-chevron-right ml-2"></i></a>
+                            @else
+                                <a href="javascript:void(0)" class="open-login head_trigger thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle"> Get Exact Value <i class="fal fa-chevron-right ml-2"></i></a>
+                            @endif
+                            
                         </div>
                     </div>
                    
@@ -68,73 +75,56 @@
                     <div class="section-title left-align">
                         <p class="subtitle mb-4">
                             <i class="fal fa-book"></i>
-                            Top Related Products
+                            Top Selling Brand
                         </p>
-                        <h5 class="title mb-0">our top selling related product people likes</h4>
+                        <h5 class="title mb-0">our top selling brand people likes</h4>
                     </div>
                 </div>
             </div>
             <div class="brand_slider wow fadeInUp">
+                @foreach ($tobSellingBrands as $value)
                 <!-- Feature Box Start -->
                 <div class="slide-item col-12">
                     <div class="features_box">
                         <div class="icon">
-                            <img src="{{ url('assets/images/iphone.png') }}" alt="img">
+                            <img src="/administrator/public/images/{{ $value->image }}" alt="img">
                         </div>
-                        <h6 class="text-center">Iphone 13</h6>
+                        <h6 class="text-center"> {{ $value->name }} </h6>
                     </div>
                 </div>
                 <!-- Feature Box End -->
+                @endforeach               
+            </div>
+           
+        </div>
+    </section>
+    <section class="section-padding wow fadeInUp">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title left-align">
+                        <p class="subtitle mb-4">
+                            <i class="fal fa-book"></i>
+                            Top Selling Models
+                        </p>
+                        <h5 class="title mb-0">our top selling model people likes</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="brand_slider wow fadeInUp">
+                @foreach ($tobSellingProducts as $value)
                 <!-- Feature Box Start -->
                 <div class="slide-item col-12">
                     <div class="features_box">
                         <div class="icon">
-                            <img src="{{ url('assets/images/iphone.png') }}" alt="img">
+                            <img src="/administrator/public/images/{{ $value->image }}" alt="img">
                         </div>
-                        <h6 class="text-center">Iphone 12</h6>
+                        <h6 class="text-center"> {{ $value->name }} </h6>
                     </div>
                 </div>
                 <!-- Feature Box End -->
-                <!-- Feature Box Start -->
-                <div class="slide-item col-12">
-                    <div class="features_box">
-                        <div class="icon">
-                            <img src="{{ url('assets/images/iphone.png') }}" alt="img">
-                        </div>
-                        <h6 class="text-center">Iphone 12</h6>
-                    </div>
-                </div>
-                <!-- Feature Box End -->
-                <!-- Feature Box Start -->
-                <div class="slide-item col-12">
-                    <div class="features_box">
-                        <div class="icon">
-                            <img src="{{ url('assets/images/iphone.png') }}" alt="img">
-                        </div>
-                        <h6 class="text-center">Apple</h6>
-                    </div>
-                </div>
-                <!-- Feature Box End -->
-                <!-- Feature Box Start -->
-                <div class="slide-item col-12">
-                    <div class="features_box">
-                        <div class="icon">
-                            <img src="{{ url('assets/images/iphone.png') }}" alt="img">
-                        </div>
-                        <h6 class="text-center">Iphone 11</h6>
-                    </div>
-                </div>
-                <!-- Feature Box End -->
-                <!-- Feature Box Start -->
-                <div class="slide-item col-12">
-                    <div class="features_box">
-                        <div class="icon">
-                            <img src="{{ url('assets/images/iphone.png') }}" alt="img">
-                        </div>
-                        <h6 class="text-center">Iphone 9</h6>
-                    </div>
-                </div>
-                <!-- Feature Box End -->
+                @endforeach     
+                
             </div>
            
         </div>

@@ -22,7 +22,7 @@
                     </div>
                     <div class="col-lg-6">
                         <div class="image_box relative">
-                            <img src="https://via.placeholder.com/837x500" alt="img" class="image-fit">
+                            <img src="assets/images/banner_1.png" alt="img" class="image-fit">
                             <span class="bg-thm-color-two circle_element"></span>
                         </div>
                     </div>
@@ -83,10 +83,10 @@
                     <div class="section-title left-align">
                         <p class="subtitle">
                             <i class="fal fa-book"></i>
-                            What We Provide
+                            Sell To Get Cash instantly
                         </p>
-                        <h3 class="title">We Care About Your Life For Better.</h3>
-                        <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatue velillum </p>
+                        <h3 class="title">Sell Your Gadget in 3 Steps.</h3>
+                        <p>Book a free pickup from your home or work at a time slot as per your convenience </p>
                     </div>
                     <ul class="about_list">
                         <li>
@@ -94,8 +94,8 @@
                                 <img src="assets/images/icons/icon_5.png" alt="img" class="image-fit">
                             </div>
                             <div class="text">
-                                <h6 class="mb-2">Master Certified Coach</h6>
-                                <p class="mb-0">Quis autem vel eum iure reprehenderit quein ea voluptate velit esse quam</p>
+                                <h6 class="mb-2">Check Price</h6>
+                                <p class="mb-0">Select your device & tell us about its current condition, and our advanced AI tech will tailor make the perfect price for you.</p>
                             </div>
                         </li>
                         <li>
@@ -103,8 +103,17 @@
                                 <img src="assets/images/icons/icon_5.png" alt="img" class="image-fit">
                             </div>
                             <div class="text">
-                                <h6 class="mb-2">Coach Certification Program</h6>
-                                <p class="mb-0">Quis autem vel eum iure reprehenderit quein ea voluptate velit esse quam</p>
+                                <h6 class="mb-2">Schedule Pickup Time </h6>
+                                <p class="mb-0">Book a free pickup from your home or work at a time slot as per your convenience</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="icon">
+                                <img src="assets/images/icons/icon_5.png" alt="img" class="image-fit">
+                            </div>
+                            <div class="text">
+                                <h6 class="mb-2">Get paid instantly</h6>
+                                <p class="mb-0">Did we mention you get paid as soon as our executive picks up your device? It’s instant & secure payment all the way!</p>
                             </div>
                         </li>
                     </ul>

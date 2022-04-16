@@ -8,7 +8,7 @@
 
     <title>{{ config('app.name', 'Bikri World') }}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Description website">
+    <!-- <meta name="description" content="Description website">
     <meta name="author" content="Maksym Blank">
     <meta name="keywords" content="website, with, meta, tags">
     <meta name="robots" content="noindex, follow">
@@ -22,7 +22,7 @@
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Title website">
     <meta name="twitter:description" content="Description website">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon.ico"> -->
     <!-- Css -->
     <link href="{{ url('assets/css/plugins/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ url('assets/css/plugins/datepicker.min.css') }}" rel="stylesheet">

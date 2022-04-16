@@ -2,7 +2,7 @@
 
     @section('content')
     <!-- Subheader Start -->
-    <section class="subheader relative z-1" style="background-image: url({{ url('assets/images/subheader.jpg') }});">
+    <section class="subheader relative z-1" style="background-image: url({{ url('assets/images/inner_banner.png') }});">
         <div class="container relative z-1">
             <div class="row">
                 <div class="col-12">
