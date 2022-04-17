@@ -20,7 +20,7 @@ Preloader End -->
                 </li>
             @endforeach
                 <li class="menu-item open-city-popup">
-                    <a href="javascript:void(0);"> {{ (array_key_exists('userCity',$_COOKIE)) ? $_COOKIE['userCity'] : 'Select City' }}  </a>
+                    <a href="javascript:void(0);"><span class="user_selected_city"> {{ (array_key_exists('userCity',$_COOKIE)) ? $_COOKIE['userCity'] : 'Select City' }} </span>  </a>
                 </li>
             @if($user)
                 <li class="menu-item">
@@ -195,7 +195,7 @@ Preloader End -->
                         <input type="text" name="#" id="search_field" placeholder="Search" autocomplete="off">
                         <i class="fal fa-search"></i>
                     </div>
-                    <a href="#select-city-popup" class="dashboard open-city-popup" style=width:75%;margin-left: 22px;padding: 5px;"> <i class="fal fa-map-marker ml-2"></i>  {{ (array_key_exists('userCity',$_COOKIE)) ? $_COOKIE['userCity'] : 'Select City' }} <i class="fal fa-angle-down ml-2"></i> </a>
+                    <a href="#select-city-popup" class="dashboard open-city-popup" style=width:75%;margin-left: 22px;padding: 5px;"> <i class="fal fa-map-marker ml-2"></i> <span class="user_selected_city"> {{ (array_key_exists('userCity',$_COOKIE)) ? $_COOKIE['userCity'] : 'Select City' }} </span> <i class="fal fa-angle-down ml-2"></i> </a>
                     @if($user)
                         <a href="{{ url('dashboard') }}" class="dashboard" style=width:75%;margin-left: 22px;padding: 5px;border: 1px solid var(--thm-color-two);border-radius: 10px;"> Dashboard <i class="fal fa-home ml-2"></i></a>
                         <a href="{{ url('logout') }}" class="dashboard" style=width:75%;margin-left: 22px;padding: 5px;"> Logout <i class="fal fa-sign-out ml-2"></i></a>

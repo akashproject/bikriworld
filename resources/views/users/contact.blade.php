@@ -127,7 +127,17 @@
                     </div>
                 </div>
             </div>
-            <form class="mf_form_validate ajax_submit" action="sendmail.php" method="post" enctype="multipart/form-data">
+            <form class="form-horizontal" method="post" action="{{ url('save-contact') }}" enctype="multipart/form-data">
+                @csrf
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="form-group custom_form_style">
@@ -138,7 +148,7 @@
                     <div class="col-lg-6">
                         <div class="form-group custom_form_style">
                             <label>Phone Number</label>
-                            <input type="text" name="phone" class="form-control" autocomplete="off" placeholder="Phone Number">
+                            <input type="text" name="mobile" class="form-control" autocomplete="off" placeholder="Phone Number">
                         </div>
                     </div>
                     <div class="col-lg-6">

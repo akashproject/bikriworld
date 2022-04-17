@@ -391,6 +391,7 @@
 
     $('.variant').click(function(){
         $(".product-price_amount").html(addCommas($(this).attr('data-price')))
+        $(".product-price_amount_int").val($(this).attr('data-price'))
     })
     // Easy pie bar
     $(".circle_bar").each(function() {

@@ -35,9 +35,15 @@
     <!-- Main wrapper - style you can find in pages.scss -->
     
 	<div id="main-wrapper">
-		@if(true)
+        @if(!Request::is('/'))
 			@include('includes.navbar')
-			@include('includes.sidebar')			
+			@include('includes.sidebar')		
+        @else
+        <style>
+            .page-wrapper {
+                margin-left: 0 !important;
+            }
+        </style>
 		@endif
 		
 		<div class="page-wrapper">

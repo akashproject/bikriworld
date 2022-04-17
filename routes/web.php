@@ -18,7 +18,7 @@ Route::get('/', [App\Http\Controllers\IndexController::class, 'index'])->name('i
 Route::get('/selling-categories', [App\Http\Controllers\CategoriesController::class, 'index'])->name('categories-index');
 Route::get('/selling-brands/{id}', [App\Http\Controllers\BrandController::class, 'index'])->name('brands-index');
 
-Route::get('/question/{id}', [App\Http\Controllers\QuestionController::class, 'index'])->name('question-index');
+Route::post('/question', [App\Http\Controllers\QuestionController::class, 'index'])->name('question-index');
 Route::post('/calculate-price', [App\Http\Controllers\QuestionController::class, 'calculatePrice'])->name('calculate-price');
 
 // User Module
@@ -45,4 +45,6 @@ Route::get('/order-success', [App\Http\Controllers\ProductController::class, 'or
 Route::post('/get-product-search', [App\Http\Controllers\SearchController::class, 'searchProduct'])->name('get-search-result');
 Route::post('/get-city-search', [App\Http\Controllers\SearchController::class, 'searchCity'])->name('get-search-result');
 Route::get('/contact', [App\Http\Controllers\UserController::class, 'contact'])->name('contact');
+Route::post('/save-contact', [App\Http\Controllers\ContactController::class, 'saveContact'])->name('save-contact');
+
 

@@ -90,7 +90,36 @@
 							@endforeach
 						<select>
 					</div>
-				</div>		
+				</div>	
+				<div class="form-group row text-right">
+					<div class="col-sm-3">
+						<label for="" class="text-left control-label col-form-label">Product Varient</label>
+					</div>
+					<div class="col-sm-6">
+						<a href="javascript:void(0)" class="addMoreProductVarient btn btn-primary" > Add More </a>
+					</div>
+				</div>
+
+				<div class="form-group row ">
+					<label for="" class="col-sm-3 text-right control-label col-form-label"></label>
+					<div class="col-md-9 productVarientWrap" >
+						<div class="row productVarient" >
+							<div class="col-sm-3">
+								<input type="text" class="form-control" name="ram[]" id="" placeholder="Ram Memory Here" value="" >
+							</div>
+							<div class="col-sm-3">
+								<input type="text" class="form-control" name="storage[]" id="" placeholder="Storage Memory Here" value="" >
+							</div>
+							<div class="col-sm-3">
+								<input type="text" class="form-control" name="price[]" id="" placeholder="Variation Price" value="" >
+							</div>
+							<div class="col-sm-3">
+								<a href="javascript:void(0)" class="removeProductVarient" > <i class="mdi mdi-delete" aria-hidden="true" style="font-size: 20px;color: red;"></i>
+ 								</a>
+							</div>
+						</div>
+					</div>
+				</div>	
 			</div>
 
 			<div class="border-top">

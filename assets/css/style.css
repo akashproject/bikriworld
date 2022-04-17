@@ -2681,7 +2681,7 @@ blockquote .quote_author:before {
 
     height: 5px;
 
-    background-color: var(--thm-color-one);
+    background-color: var(--thm-white);
 
     display: block;
 
@@ -5813,7 +5813,7 @@ a.head_trigger.desktop_trigger {
 
 .plane_box h2 {
 
-    font-size: 42px;
+    font-size: 40px;
 
     font-weight: 500;
 

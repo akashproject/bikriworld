@@ -473,7 +473,10 @@
     }
 
     .header .head_actions .head_trigger {
-        width: 31px;
+        width: 42px;
+        padding: 6px;
+        background: #4b83fb;
+        border-radius: 3px;
     }
 
     .header .head_actions .head_trigger span {

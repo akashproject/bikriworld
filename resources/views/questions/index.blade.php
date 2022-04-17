@@ -74,6 +74,7 @@
                                 @endforeach	
                             @endif 
                             <input type="hidden" name="product_id" id="product_id" value="{{$product->id}}" >
+                            <input type="hidden" name="veriation_price" id="veriation_price" value="{{$veriationPrice}}" >
                             <button type="submit" class="thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle"> Calculate Price <i class="fal fa-calculator ml-2"></i></a>
                         </form>
                     </div>

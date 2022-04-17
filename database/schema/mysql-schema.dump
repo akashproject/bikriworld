@@ -92,6 +92,26 @@ CREATE TABLE `migrations` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
+DROP TABLE IF EXISTS `orders`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `orders` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `user_id` int(11) NOT NULL,
+  `product_id` int(11) NOT NULL,
+  `service_no` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `amount` int(11) NOT NULL,
+  `payment_mode` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `pickup_schedule` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `pickup_address` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `pickup_city` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `pickup_state` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `pincode` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 DROP TABLE IF EXISTS `password_resets`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
@@ -100,6 +120,23 @@ CREATE TABLE `password_resets` (
   `token` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   KEY `password_resets_email_index` (`email`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+DROP TABLE IF EXISTS `payments`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `payments` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `bank_name` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `account_no` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `account_holder_name` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `ifsc_code` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `upi_id` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `online_payment_no` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 DROP TABLE IF EXISTS `personal_access_tokens`;
@@ -142,6 +179,7 @@ CREATE TABLE `users` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `email` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `password` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `mobile` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -168,3 +206,6 @@ INSERT INTO `migrations` VALUES (32,'2022_04_04_185013_create_product',1);
 INSERT INTO `migrations` VALUES (33,'2022_04_06_105852_create_calculation_question_table',2);
 INSERT INTO `migrations` VALUES (34,'2022_04_08_104224_create_cities_table',3);
 INSERT INTO `migrations` VALUES (35,'2022_04_09_064058_create_addresses',3);
+INSERT INTO `migrations` VALUES (36,'2022_04_10_081122_create_orders',4);
+INSERT INTO `migrations` VALUES (37,'2022_04_10_082947_add_data_to_orders_table',4);
+INSERT INTO `migrations` VALUES (38,'2022_04_10_190520_create_payments',4);

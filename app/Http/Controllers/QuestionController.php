@@ -16,22 +16,24 @@ class QuestionController extends Controller
         $this->userdata = $request->session()->get('userData');
     }
     
-    public function index($id,Request $request){
+    public function index(Request $request){
         $user = $this->userdata;
         try {
+            $productData = $request->all();
             $category_id = $request->session()->get('selling_category');
             $questions = Question::where('category_id', $category_id)->get();
-            $product = Product::find($id);
-            $product_id = $id;
+            $product = Product::find($productData['product_id']);
+            $veriationPrice = $productData['veriation_price'];
             $tobSellingBrands = Brand::all();
-            return view('questions.index',compact('questions','product','user','tobSellingBrands'));
+            $tobSellingProducts = Product::all();
+            return view('questions.index',compact('questions','product','user','tobSellingBrands','tobSellingProducts','veriationPrice'));
         } catch(\Illuminate\Database\QueryException $e){
         }
     }
 
     public function calculatePrice(Request $request){
         $data = $request->all();        
-        $max_price = Product::find($data['product_id'])->max_price."-";
+        $veriation_price = $data['veriation_price'];
         $sum_deduction = 0;
         foreach ($data['question_id'] as $key => $value) {
             $deducted_amount = Question::find($key)->deducted_amount;
@@ -40,7 +42,7 @@ class QuestionController extends Controller
             }            
         }
 
-        $exact_price = (int)$max_price - (int)$sum_deduction;
+        $exact_price = $veriation_price - $sum_deduction;
 
         $callculatedData = array(
             'product_id' => $data['product_id'],
