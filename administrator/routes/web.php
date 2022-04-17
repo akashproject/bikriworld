@@ -16,11 +16,11 @@ use Spatie\Permission\Models\Permission;
 */
 Auth::routes();
 
-// Route::get('/', function () {
-//     return view('auth.login');
-// });
+Route::get('/', function () {
+    return view('auth.login');
+});
 
-Route::get('/', [App\Http\Controllers\LoginController::class, 'index'])->name('login');
+//Route::get('/', [App\Http\Controllers\LoginController::class, 'index'])->name('login');
 
 Route::get('/role', function () {
     $role = Role::create(['name' => 'Administrator']);

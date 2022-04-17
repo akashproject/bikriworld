@@ -6,8 +6,10 @@
     <meta charset="UTF-8">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Bikri World') }}</title>
+    <title>{{ config('BikriWorld', 'Sell Old Phone | Sell Old Laptop Online For Cash Today | BikriWorld') }}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="title" content="Sell Old Phone | Sell Old Laptop Online For Cash Today | BikriWorld">
+    <meta name="description" content="Want To Sell Old Phones Or Sell Old Laptops Online? Get An Instant Best Price For Old Phones, Laptops, And Other Gadgets. Get Cash At Your Doorstep In 1 Day.">
     <!-- <meta name="description" content="Description website">
     <meta name="author" content="Maksym Blank">
     <meta name="keywords" content="website, with, meta, tags">
