@@ -18,6 +18,13 @@
 				@endif
 
 				<div class="form-group row">
+					<label for="icon" class="col-sm-3 text-right control-label col-form-label">Icon</label>
+					<div class="col-sm-9">
+						<input type="text" class="form-control" name="icon" id="icon" placeholder="Icon Name Here" value="{{ $category->icon }}">
+					</div>
+				</div>
+
+				<div class="form-group row">
 					<label for="name" class="col-sm-3 text-right control-label col-form-label">Name</label>
 					<div class="col-sm-9">
 						<input type="text" class="form-control" name="name" id="name" placeholder="Title Here" value="{{ $category->name }}" >

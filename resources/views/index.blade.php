@@ -91,7 +91,7 @@
                     <ul class="about_list">
                         <li>
                             <div class="icon">
-                                <img src="assets/images/icons/icon_5.png" alt="img" class="image-fit">
+                                <i class="fal fa-calculator" aria-hidden="true"></i>
                             </div>
                             <div class="text">
                                 <h6 class="mb-2">Compute Price-Quote</h6>
@@ -100,7 +100,7 @@
                         </li>
                         <li>
                             <div class="icon">
-                                <img src="assets/images/icons/icon_5.png" alt="img" class="image-fit">
+                                <i class="fal fa-shopping-bag"></i>
                             </div>
                             <div class="text">
                                 <h6 class="mb-2">Choose PickUp Mode</h6>
@@ -109,7 +109,7 @@
                         </li>
                         <li>
                             <div class="icon">
-                                <img src="assets/images/icons/icon_5.png" alt="img" class="image-fit">
+                            <i class="fal fa-hryvnia"></i>
                             </div>
                             <div class="text">
                                 <h6 class="mb-2">Get Cash On PickUp</h6>

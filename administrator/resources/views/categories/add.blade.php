@@ -20,6 +20,13 @@
 				@endif
 
 				<div class="form-group row">
+					<label for="icon" class="col-sm-3 text-right control-label col-form-label">Icon</label>
+					<div class="col-sm-9">
+						<input type="text" class="form-control" name="icon" id="icon" placeholder="Icon Name Here" >
+					</div>
+				</div>
+
+				<div class="form-group row">
 					<label for="title" class="col-sm-3 text-right control-label col-form-label">Category Name</label>
 					<div class="col-sm-9">
 						<input type="text" class="form-control" name="name" id="title" placeholder="Title Here" >

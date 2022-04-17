@@ -140,7 +140,7 @@
 
     --thm-color-one: #1b2336;
 
-    --thm-color-two: #4b83fb;
+    --thm-color-two: #00986b;
 
     --thm-color-three: #65cfa9;
 
@@ -4100,13 +4100,10 @@ a.close_aside i {
 
 
 .about_list li .icon {
-
     width: 60px;
-
     height: 60px;
-
-    margin-right: 30px;
-
+    margin-right: 0;
+    margin-top: 12px;
 }
 
 
@@ -4117,6 +4114,11 @@ a.close_aside i {
 
 }
 
+.about_list li .icon i {
+    object-fit: contain;
+    font-size: 55px;
+    color: var(--thm-color-two);
+}
 
 
 .about_list li .text {
