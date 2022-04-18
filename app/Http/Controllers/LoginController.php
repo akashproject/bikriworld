@@ -26,6 +26,30 @@ class LoginController extends Controller
         return response()->json($otpValue, $this->_statusOK);
     }
 
+    public function isUserExist(Request $request){
+        $data = $request->all();
+        $user = User::where('mobile', $data['mobile'])->first();
+        if($user){
+            $request->session()->put('userData', $user->toArray());
+            $val = array(
+                'userrecord' => 'exist'
+            );
+            return response()->json(['exist'],$this->_statusOK);
+        } else {
+            $val = array(
+                'userrecord' => 'not-exist'
+            );
+            return response()->json($val,$this->_statusOK);
+        }
+    }
+
+    public function registerUser(Request $request){
+        $data = $request->all();
+        $user = User::create($data)->toArray();
+        $payment = Payment::create(array('user_id'=> $user['id']));
+        $request->session()->put('userData', $data);
+    }
+
     public function accessProfile(Request $request){
         $data = $request->all();
         $user = User::where('mobile', $data['mobile'])->first();
@@ -39,4 +63,7 @@ class LoginController extends Controller
 
         return response()->json(['true'],$this->_statusOK);
     }
+
+
+
 }

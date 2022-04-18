@@ -12,6 +12,6 @@ class Categories extends Model
     protected $primaryKey = 'id';
 
     protected $fillable = [
-        'name'
+        'icon','name'
     ];
 }

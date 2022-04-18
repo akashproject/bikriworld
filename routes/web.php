@@ -32,6 +32,8 @@ Route::get('/logout', [App\Http\Controllers\UserController::class, 'logout'])->n
 // Login Module
 Route::post('/submit-mobile-otp', [App\Http\Controllers\LoginController::class, 'submitMobileOtp'])->name('submit-mobile-otp');
 Route::post('/access-profile', [App\Http\Controllers\LoginController::class, 'accessProfile'])->name('access-profile');
+Route::post('/check-exist', [App\Http\Controllers\LoginController::class, 'isUserExist'])->name('check-exist');
+Route::post('/register', [App\Http\Controllers\LoginController::class, 'registerUser'])->name('register');
 
 // Product Module
 Route::get('/selling-products/{id}', [App\Http\Controllers\ProductController::class, 'index'])->name('products-index');

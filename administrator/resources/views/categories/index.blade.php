@@ -21,6 +21,7 @@
 						<thead>
 
 							<tr>
+								<th>Icon</th>
 								<th>Name</th>
 								<th>Options</th>
 
@@ -32,6 +33,7 @@
 
 							@foreach ($categories as $value)
 							<tr>
+								<td>{{ $value->icon }}</td>													
 								<td>{{ $value->name }}</td>													
 								<td>
 								<a href="{{ url('category') }}/{{ $value->id }}" class="btn btn-primary btn-lg">Edit</a>

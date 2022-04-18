@@ -42,6 +42,15 @@ class BrandController extends Controller
         }        
     }
 
+    public function delete($id)
+    {
+        try {
+            $brand = Brand::find($id)->delete();
+            return redirect('/brands');
+        } catch(\Illuminate\Database\QueryException $e){
+        }        
+    }
+
     public function save(Request $request) {
         $data = $request->all();
         $validatedData = $request->validate([

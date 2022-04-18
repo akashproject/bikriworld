@@ -34,7 +34,7 @@
                 <div class="col-lg-2 col-6">
                     <div class="features_box">
                         <div class="icon">
-                        <a href="{{ url('selling-brands') }}/{{ $value->id }}"> <i class="fa fa-{{ strtolower($value->name) }} cat-icon" aria-hidden="true"></i></a>
+                        <a href="{{ url('selling-brands') }}/{{ $value->id }}"> <i class="fa fa-{{ strtolower($value->icon) }} cat-icon" aria-hidden="true"></i></a>
                         </div>
                         <h5 class="text-center" ><a href="{{ url('selling-brands') }}/{{ $value->id }}"> {{ $value->name }}</a></h5>
                         <a href="{{ url('selling-brands') }}/{{ $value->id }}" class="text-center">

@@ -32,7 +32,11 @@
             var formId = "signin_form";
             var verifyOtp = $("#" + formId + " .verify_otp").val();
             var responsedOtp = $("#" + formId + " .responsed_otp").val();
+            var isUserRegister = $("#" + formId + " .isUserRegister").val();
 
+            if(isUserRegister == 1){
+                registerUser($(form).serialize());
+            }
             if (verifyOtp != '' && verifyOtp == responsedOtp) {
                 let mobileNo = jQuery("#" + formId + " input[name='mobile']").val();
                 loginProcess(mobileNo);
@@ -41,6 +45,7 @@
                 $("#" + formId + " .response_status").html("OTP is Invalid");
             } else {
                 var otpcallingresponse = sendMobileOtp(formId);
+                $("#" + formId + " .submit_login_btn").html("Verify OTP");
             }
         } 
     });
@@ -104,6 +109,26 @@
         sendMobileOtp(formId);
     });
 
+    function registerUser(data){
+        $.ajaxSetup({
+            headers: {
+             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        $.ajax({
+            url: `http://${window.location.hostname}/register`,
+            type: "post",
+            data: data,
+            success: function(result) {
+                location.reload();
+                // //result = JSON.parse(result);
+                // if (result) {
+                //     location.reload();
+                // }
+            }
+        });
+    }
+
     function loginProcess(mobile){
         $.ajaxSetup({
             headers: {
@@ -111,19 +136,27 @@
             }
         });
         $.ajax({
-            url: `http://${window.location.hostname}/access-profile`,
+            url: `http://${window.location.hostname}/check-exist`,
             type: "post",
             data: {
                 mobile: mobile,
             },
             success: function(result) {
-                //result = JSON.parse(result);
-                if (result) {
+                if(result.userrecord == 'not-exist'){
+                    $('.userRagisterField').show();
+                    $(".submit_login_btn").html("Register");
+                    $(".isUserRegister").val("1");
+                    $('.one_time_password').hide();
+                    jQuery(" .response_status").html("Please Register Yourself");
+                } else {
                     location.reload();
+                    //window.location = $(".redirectUrl").val();
                 }
             }
         });
     }
+
+
 
     function sendMobileOtp(formId) {
         var mobileNo = jQuery("#" + formId + " input[name='mobile']").val();
@@ -171,6 +204,30 @@
             return false;
         });
     }
+
+    $('.header_banner').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
+        arrows: true,
+        dots: true,
+        autoplaySpeed: 10000,
+        responsive: [{
+                breakpoint: 1199,
+                settings: {
+                    slidesToShow: 1
+                }
+            },
+            {
+                breakpoint: 767,
+                settings: {
+                    slidesToShow: 1,
+                    arrows: false
+                }
+            }
+        ]
+    });
+
     // testimonial Slider
     $('.testimonial_slider').slick({
         slidesToShow: 3,

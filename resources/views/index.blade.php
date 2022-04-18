@@ -7,34 +7,82 @@
         <img src="assets/images/banner/element_line.png" class="element_line" alt="Element Line">
         <!-- Texts -->
         <div class="transform-center">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-6">
-                        <div class="text_box">
-                            <h3 class="title" style="font-size: 30px;"><span>Sell Old Phone & Laptops</span> Online In One Click- Cash At Your Doorstep In 24 Hours </h3>
-                            <p>Old Phones And Laptops Gathering Dust? Simply Sell Old Laptops & Old Phones For Cash In One Click! Grab 100% Seller Protected Best Price For Old Phones, Laptops, And Other Gadgets. </p>
-                            <a href="{{ url('selling-categories') }}" class="thm-btn bg-thm-color-two thm-color-two-shadow btn-rounded mr-4 mb-4"> Sell My Device <i class="fal fa-chevron-right ml-2"></i></a>
-                            <a href="https://www.youtube.com/watch?v=TKnufs85hXk" class="video_btn video_text popup-youtube mb-4">
-                                <i class="fas fa-play video_icon bg-thm-color-two"></i>
-                                <span>Watch Videos</span>
-                            </a>
+            <div class="container-fluid">
+                <div class="header_banner row align-items-center desktop-version">
+                    <div class="slide-item col-12">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="text_box">
+                                    <h3 class="title"><span>Sell Old Phone & Laptops</span> Online In One Click- Cash At Your Doorstep In 24 Hours </h3>
+                                    <p>Old Phones And Laptops Gathering Dust? Simply Sell Old Laptops & Old Phones For Cash In One Click! Grab 100% Seller Protected Best Price For Old Phones, Laptops, And Other Gadgets. </p>
+                                    <a href="{{ url('selling-categories') }}" class="thm-btn bg-thm-color-two thm-color-two-shadow btn-rounded mr-4 mb-4"> Sell My Device <i class="fal fa-chevron-right ml-2"></i></a>
+                                    <a href="https://www.youtube.com/watch?v=TKnufs85hXk" class="video_btn video_text popup-youtube mb-4">
+                                        <i class="fas fa-play video_icon bg-thm-color-two"></i>
+                                        <span>Watch Videos</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="image_box relative">
+                                    <img src="assets/images/banner_1.png" alt="img" class="image-fit">
+                                    <span class="bg-thm-color-two circle_element"></span>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-lg-6">
-                        <div class="image_box relative">
-                            <img src="assets/images/banner_1.png" alt="img" class="image-fit">
-                            <span class="bg-thm-color-two circle_element"></span>
+                    <div class="slide-item col-12">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="text_box">
+                                    <h3 class="title"><span>Sell Old Phone & Laptops</span> Online In One Click- Cash At Your Doorstep In 24 Hours </h3>
+                                    <p>Old Phones And Laptops Gathering Dust? Simply Sell Old Laptops & Old Phones For Cash In One Click! Grab 100% Seller Protected Best Price For Old Phones, Laptops, And Other Gadgets. </p>
+                                    <a href="{{ url('selling-categories') }}" class="thm-btn bg-thm-color-two thm-color-two-shadow btn-rounded mr-4 mb-4"> Sell My Device <i class="fal fa-chevron-right ml-2"></i></a>
+                                    <a href="https://www.youtube.com/watch?v=TKnufs85hXk" class="video_btn video_text popup-youtube mb-4">
+                                        <i class="fas fa-play video_icon bg-thm-color-two"></i>
+                                        <span>Watch Videos</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="image_box relative">
+                                    <img src="assets/images/banner_1.png" alt="img" class="image-fit">
+                                    <span class="bg-thm-color-two circle_element"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="header_banner row align-items-center mobile-version">
+                    <div class="slide-item col-12">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="image_box relative">
+                                    <img src="assets/images/banner_mobile.png" alt="img" class="image-fit">
+                                    <span class="bg-thm-color-two circle_element"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slide-item col-12">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="image_box relative">
+                                    <img src="assets/images/banner_mobile.png" alt="img" class="image-fit">
+                                    <span class="bg-thm-color-two circle_element"></span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        
         <!-- Bottom Line -->
         <div class="bottom-line container"></div>
     </div>
     <!-- Banner End -->
     <!-- Features Start -->
-    <section class="section-padding" style="padding: 80px 0;">
+    <section class="section-padding">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -51,7 +99,7 @@
                         <div class="features_box style_2">
                             <div class="icon">
                                 <a href="{{ url('selling-brands') }}/{{ $value->id }}"> 
-                                    <i class="fa fa-{{ strtolower($value->name) }} cat-icon" aria-hidden="true"></i>
+                                    <i class="fa fa-{{ strtolower($value->icon) }} cat-icon" aria-hidden="true"></i>
                                 </a>
                             </div>
                             <h5 class="text-center" ><a href="{{ url('selling-brands') }}/{{ $value->id }}"> {{ $value->name }}</a></h5>
@@ -85,7 +133,7 @@
                             <i class="fal fa-book"></i>
                             Best Way To Sell Old Phone For Cash: Sell & Get On-Spot Cash 
                         </p>
-                        <h3 class="title" style="font-size: 30px;">Get Cash For Your Old Gadget In 3 Simple Steps.</h3>
+                        <h3 class="title">Get Cash For Your Old Gadget In 3 Simple Steps.</h3>
                         <p>Avail doorstep pickup from your home or work at a convenient time slot and get doorstep payment.</p>
                     </div>
                     <ul class="about_list">
@@ -124,7 +172,7 @@
     <!-- About End -->
     
     <!-- Testimonials Start -->
-    <section class="section about_bg">
+    <section class="section-padding about_bg">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -133,7 +181,7 @@
                             <i class="fal fa-book"></i>
                             Online Phone Selling: Our Reviews
                         </p>
-                        <h3 class="title mb-0" style="font-size: 30px;">Customers ❤ BikriWorld:<br> What Are They Saying?</h3>
+                        <h3 class="title mb-0">Customers ❤ BikriWorld:<br> What Are They Saying?</h3>
                     </div>
                 </div>
             </div>

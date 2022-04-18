@@ -935,13 +935,14 @@ select {
 
 }
 
-
+.title{
+    font-size: 30px;
+}
 
 .section-title .title {
-
     font-weight: 600;
-
     text-transform: capitalize;
+    font-size: 30px;
 
 }
 
@@ -3418,7 +3419,17 @@ a.close_aside i {
     font-weight: 100;
 
 }
+.mobile-version {
+    display: none;
+}
 
+.header_banner .text_box{
+    margin: 50px 0 0 50px ;
+}
+
+.header_banner .image_box {
+    padding-top: 10px;
+}
 
 
 .banner .text_box p {
@@ -3428,7 +3439,6 @@ a.close_aside i {
     font-weight: 600;
 
 }
-
 
 
 .banner .bottom-line {
@@ -3639,6 +3649,10 @@ a.close_aside i {
 
     font-weight: 600;
 
+}
+
+.fontsize-30 {
+    font-size: 30px;
 }
 
 
@@ -5592,7 +5606,9 @@ a.head_trigger.desktop_trigger {
     width: calc(100% - 40px);
 
 }
-
+.userRagisterField{
+    display: none;
+}
 
 
 .why_us_box .circle_element {
