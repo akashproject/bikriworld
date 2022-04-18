@@ -43,7 +43,7 @@
             @if($brands)
                 @foreach ($brands as $value)
                 <!-- Block Start -->
-                <div class="col-lg-2 col-6">
+                <div class="col-lg-2 col-4">
                     <div class="team_block style_2 style_3">
                         <div class="team_img">
                             <img src="/administrator/public/images/{{ $value->image }}" alt="img" class="">
