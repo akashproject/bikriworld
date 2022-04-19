@@ -7,14 +7,16 @@
         <img src="assets/images/banner/element_line.png" class="element_line" alt="Element Line">
         <!-- Texts -->
         <div class="transform-center">
-            <div class="container-fluid">
+            <div class="container">
                 <div class="header_banner row align-items-center desktop-version">
                     <div class="slide-item col-12">
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="text_box">
-                                    <h3 class="title"><span>Sell Old Phone & Laptops</span> Online In One Click- Cash At Your Doorstep In 24 Hours </h3>
-                                    <p>Old Phones And Laptops Gathering Dust? Simply Sell Old Laptops & Old Phones For Cash In One Click! Grab 100% Seller Protected Best Price For Old Phones, Laptops, And Other Gadgets. </p>
+                                    <h3 class="title"><span>Sell Old Phone</span> & Laptops In One Click </h3>
+                                    <p>Don’t know what to do with your old phones & laptops? Simply Sell Old Phones For Cash At Your Door In 24 Hours. </p>
+                                    <p>✔Best Prices ✔Proper Valuation ✔ Seller Protection </p>
+                                    
                                     <a href="{{ url('selling-categories') }}" class="thm-btn bg-thm-color-two thm-color-two-shadow btn-rounded mr-4 mb-4"> Sell My Device <i class="fal fa-chevron-right ml-2"></i></a>
                                     <a href="https://www.youtube.com/watch?v=TKnufs85hXk" class="video_btn video_text popup-youtube mb-4">
                                         <i class="fas fa-play video_icon bg-thm-color-two"></i>
@@ -34,8 +36,31 @@
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="text_box">
-                                    <h3 class="title"><span>Sell Old Phone & Laptops</span> Online In One Click- Cash At Your Doorstep In 24 Hours </h3>
-                                    <p>Old Phones And Laptops Gathering Dust? Simply Sell Old Laptops & Old Phones For Cash In One Click! Grab 100% Seller Protected Best Price For Old Phones, Laptops, And Other Gadgets. </p>
+                                    <h3 class="title"><span>Free PickUp</span> For All Devices </h3>
+                                    <p>Are your old devices gathering dust? Sell your laptops & devices in one click & get cash at your door in 24 Hours with free pickup.</p>
+                                    <p>✔Best Prices ✔Proper Valuation ✔ Free Pick-Up</p>                                   
+                                    <a href="{{ url('selling-categories') }}" class="thm-btn bg-thm-color-two thm-color-two-shadow btn-rounded mr-4 mb-4"> Sell My Device <i class="fal fa-chevron-right ml-2"></i></a>
+                                    <a href="https://www.youtube.com/watch?v=TKnufs85hXk" class="video_btn video_text popup-youtube mb-4">
+                                        <i class="fas fa-play video_icon bg-thm-color-two"></i>
+                                        <span>Watch Videos</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="image_box relative">
+                                    <img src="assets/images/banner_1.png" alt="img" class="image-fit">
+                                    <span class="bg-thm-color-two circle_element"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slide-item col-12">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="text_box">
+                                    <h3 class="title"><span>Get Paid</span> In Full For Cash</h3>
+                                    <p>Want to upgrade your next SMART Device?  Short on your budget? Sell TV Online In One Click & Get Cash in your Hand/Bank Account/GPay in 24 hours.</p>
+                                    <p>✔Best Prices ✔Proper Valuation ✔ Seller Protection</p>                                   
                                     <a href="{{ url('selling-categories') }}" class="thm-btn bg-thm-color-two thm-color-two-shadow btn-rounded mr-4 mb-4"> Sell My Device <i class="fal fa-chevron-right ml-2"></i></a>
                                     <a href="https://www.youtube.com/watch?v=TKnufs85hXk" class="video_btn video_text popup-youtube mb-4">
                                         <i class="fas fa-play video_icon bg-thm-color-two"></i>
@@ -134,7 +159,7 @@
                             Best Way To Sell Old Phone For Cash: Sell & Get On-Spot Cash 
                         </p>
                         <h3 class="title">Get Cash For Your Old Gadget In 3 Simple Steps.</h3>
-                        <p>Avail doorstep pickup from your home or work at a convenient time slot and get doorstep payment.</p>
+                        <p>Avail doorstep pickup from your home or work at a convenient time slot & get doorstep payment.</p>
                     </div>
                     <ul class="about_list">
                         <li>

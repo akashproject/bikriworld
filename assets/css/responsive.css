@@ -502,6 +502,16 @@
         height: 24px;
     }
 
+    label#veriation_price-error {
+        top: 92px;
+        position: absolute;
+        width: 100%;
+        left: 0;
+    }
+
+    .thm-btn {     
+        padding: 9px 21px;
+    }
     .back-to-top{
         bottom: 20px;
         right: 20px;
@@ -626,7 +636,7 @@
     }
 
     .variant_wrap {
-        margin-bottom: 0px;
+        margin-bottom: 40px;
     }
 
     .variant {

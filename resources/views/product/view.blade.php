@@ -41,33 +41,36 @@
                     </article>
                 </div>
                 <div class="col-lg-7 col-8">
-                    <div class="product-right-content">
-                        <h3> {{ $product->name }} </h3>
-                        <div class="variant_wrap" >
-                            @if($product->variant != '')
-                            @foreach(json_decode($product->variant) as $variant)
-                            <span class="text-center variant" data-price="{{$variant->price}}" > {{$variant->ram}} | {{$variant->storage}} </span>
-                            @endforeach
-                            @endif
-                        </div>
-                        
-                        <p > get upto </p>
-                        <h3 class="product-price"> ₹ <span class="product-price_amount"> {{ number_format($product->max_price) }}</span> /- </h3>
-                        <div class="calculate-price-btn">
-                            @if($user)
-                            <form class="form-horizontal" method="post" action="{{ url('question') }}" enctype="multipart/form-data">
-                                @csrf
-                                <input type="hidden" value="{{ $product->id }}" name="product_id">
-                                <input type="hidden" name="veriation_price" class="product-price_amount_int" >
-                                <button type="submit" class="thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle"> Get Exact Value <i class="fal fa-chevron-right ml-2"></i></button>
-                            </form>
-                            @else
-                                <a href="javascript:void(0)" class="open-login head_trigger thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle"> Get Exact Value <i class="fal fa-chevron-right ml-2"></i></a>
-                            @endif
+                    <form class="form-horizontal" method="post" action="{{ url('question') }}" id="checkexactvalue" enctype="multipart/form-data">
+                        <div class="product-right-content">
+                            <h3> {{ $product->name }} </h3>
+                            <div class="variant_wrap row" >
+                                @if($product->variant != '')
+                                @foreach(json_decode($product->variant) as $key => $variant)
+                                <div class="col-lg-4">
+                                    <div class="form-group custom_form_style">
+                                        <label for="veriation_price_{{$key}}" class="text-center variant" data-price="{{$variant->price}}" > {{$variant->ram}} | {{$variant->storage}} </label>
+                                        <input id="veriation_price_{{$key}}" type="radio" name="veriation_price" class="veriation_price" class="form-control" value="{{$variant->price}}" required >
+                                    </div>
+                                </div>
+                                @endforeach
+                                @endif
+                            </div>
                             
+                            <p > get upto </p>
+                            <h3 class="product-price"> ₹ <span class="product-price_amount"> {{ number_format($product->max_price) }}</span> /- </h3>
+                            <div class="calculate-price-btn">
+                                @if($user)
+                                    @csrf
+                                    <input type="hidden" value="{{ $product->id }}" name="product_id">
+                                    <button type="submit" class="thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle"> Get Exact Value <i class="fal fa-chevron-right ml-2"></i></button>
+                                @else
+                                    <a href="javascript:void(0)" class="open-login head_trigger thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle"> Get Exact Value <i class="fal fa-chevron-right ml-2"></i></a>
+                                @endif
+                                
+                            </div>
                         </div>
-                    </div>
-                   
+                    </form>
                 </div>
             </div>
         </div>

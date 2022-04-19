@@ -37,7 +37,7 @@ class QuestionController extends Controller
         $sum_deduction = 0;
         foreach ($data['question_id'] as $key => $value) {
             $deducted_amount = Question::find($key)->deducted_amount;
-            if($value == '1'){
+            if($value == '0'){
                 $sum_deduction += $deducted_amount;
             }            
         }

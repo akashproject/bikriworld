@@ -6,6 +6,17 @@
         $('[data-popup="tooltip"]').tooltip();
     });
 
+    $("#checkexactvalue").validate({
+        rules : {
+            'veriation_price': {
+                required: true,
+            }
+        },
+        messages: {
+            'veriation_price': "Please Select your device veriation.",
+        },
+    })
+
     $("#paymentform").validate({
         rules : {
             c_account_no : {
@@ -54,6 +65,17 @@
 
     });
     
+    $(".form-check-input.yes").click(function(){
+        let questionval = $(this).attr("questionval");
+        let questionid = $(this).parent().parent().parent().parent().attr("dataquestion");
+        $(".device_summary").append('<li class="question_'+questionid+'">'+questionval+'</li>');
+    });
+
+    $(".form-check-input.no").click(function(){
+        let questionid = $(this).parent().parent().parent().parent().attr("dataquestion");
+        $(".question_"+questionid).remove();
+    });
+
     // Canvas 
     $(".desktop_trigger, .trigger-right").on('click', function() {
         $(".desktop_trigger").toggleClass('active');
@@ -446,9 +468,9 @@
         $(this).addClass("active");
     });
 
-    $('.variant').click(function(){
-        $(".product-price_amount").html(addCommas($(this).attr('data-price')))
-        $(".product-price_amount_int").val($(this).attr('data-price'))
+    $('.veriation_price').click(function(){
+        $(".product-price_amount").html(addCommas($(this).val()))
+        //$(".product-price_amount_int").val($(this).attr('data-price'))
     })
     // Easy pie bar
     $(".circle_bar").each(function() {

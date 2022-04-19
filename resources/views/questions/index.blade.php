@@ -48,14 +48,14 @@
                                 @foreach ($questions as $key => $value)
                                     <div class="row question_list" >
                                         <div class="col-lg-12">
-                                            <h5 ><!-- <i class="fal fa-check"></i>--> {{$key+1}}. {{ $value->question }} </h5>
+                                            <h5 >{{$key+1}}. <span class="question_data">{{ $value->question }} <span> </h5>
                                         </div>
                                         <div class="col-lg-8">
-                                            <div class="row answer_row" >
+                                            <div class="row answer_row" dataquestion="{{$value->id}}">
                                                 <div class="col-lg-6 ">
                                                     <div class="answer_list"  >
                                                         <div class="form-check ">
-                                                            <input class="form-check-input" type="radio" name="question_id[{{ $value->id }}]" id="" value="1" >
+                                                            <input class="form-check-input yes" questionval="{{ $value->description }}" type="radio" name="question_id[{{ $value->id }}]" id="" value="1" >
                                                             <label class="form-check-label" for="">Yes</label>
                                                         </div>
                                                     </div>
@@ -63,7 +63,7 @@
                                                 <div class="col-lg-6">
                                                     <div class="answer_list"  >
                                                         <div class="form-check ">
-                                                            <input class="form-check-input" type="radio" name="question_id[{{ $value->id }}]" id="" value="0" >
+                                                            <input class="form-check-input no" type="radio" name="question_id[{{ $value->id }}]" id="" value="0" >
                                                             <label class="form-check-label" for="">No</label>
                                                         </div>
                                                     </div>
@@ -98,52 +98,13 @@
                                         </h6>
                                     </div>
                                 </li>
-                                
                             </ul>
                         </div>
                         <div class="sidebar_widget">
                             <div class="sidebar_widget_inner">
-                                <ul class="info_widget">
-                                    <li>
-                                        Mobile Under Warranty
-                                    </li>
-                                    <li>
-                                        Phone Body Defective
-                                    </li>
-                                    <li>
-                                        Mobile Screen Defective
-                                    </li>
-                                    <li>
-                                         Able to Make and Receive Calls
-                                    </li>
-                                    <li>
-                                        Touch Faulty
-                                    </li>
-                                    <!-- <li>
-                                        <span>Share</span>
-                                        <ul class="social">
-                                            <li>
-                                                <a href="#">
-                                                    <i class="fab fa-facebook-f"></i>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    <i class="fab fa-twitter"></i>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    <i class="fab fa-linkedin"></i>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    <i class="fab fa-behance"></i>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </li> -->
+                                <h6> Device Summary </h6>
+                                <ul class="info_widget device_summary">
+                                    
                                 </ul>
                             </div>
                         </div>

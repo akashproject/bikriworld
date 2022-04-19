@@ -10102,21 +10102,33 @@ a.head_trigger.desktop_trigger {
 }
 
 .variant_wrap {
-    display: block;
-    overflow: hidden;
-    margin-bottom: 20px;
+    margin-bottom: 90px;
 }
 
 .variant {
-    padding: 6px 18px;
+    padding: 6px 28px;
     border: 1px solid #ccc;
     border-radius: 10px;
-    margin: 0px 15px;
-    display: block;
-    width: 20%;
-    float: left;
+    width: 89%;
+    left: 0;
     cursor: pointer;
+    position: absolute;
 }
+.veriation_price{
+    position: absolute;
+    left: 0;
+    visibility: hidden;
+}
+
+label#veriation_price-error {
+    top: 42px;
+    position: absolute;
+}
+
+.product-right-content .variant_wrap .custom_form_style {
+    margin-bottom: 30px;
+}
+
 
 .variant:hover {
     background: #4b83fb;
