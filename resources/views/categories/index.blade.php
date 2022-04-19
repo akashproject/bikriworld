@@ -32,11 +32,11 @@
                 @foreach ($categories as $value)
                 <!-- Feature Box Start -->
                 <div class="col-lg-2 col-6">
-                    <div class="features_box">
+                    <div class="features_box style_2">
                         <div class="icon">
-                        <a href="{{ url('selling-brands') }}/{{ $value->id }}"> <i class="fa fa-{{ strtolower($value->icon) }} cat-icon" aria-hidden="true"></i></a>
+                            <a href="{{ url('selling-brands') }}/{{ $value->id }}"> <i class="fa fa-{{ strtolower($value->icon) }} cat-icon" aria-hidden="true"></i></a>
                         </div>
-                        <h5 class="text-center" ><a href="{{ url('selling-brands') }}/{{ $value->id }}"> {{ $value->name }}</a></h5>
+                        <h5 class="text-center" ><a href="{{ url('selling-brands') }}/{{ $value->id }}"> Sell {{ $value->name }}</a></h5>
                         <a href="{{ url('selling-brands') }}/{{ $value->id }}" class="text-center">
                             <span>View</span>
                             <i class="fal fa-chevron-right"></i>
@@ -74,7 +74,7 @@
                                 <img src="/administrator/public/images/{{ $value->image }}" alt="img">
                             </a>
                         </div>
-                        <h6 class="text-center"> <a href="javascript:void(0)">  {{ $value->name }} </a></h6>
+                        <h6 class="text-center"> <a href="javascript:void(0)"> {{ $value->name }} </a></h6>
                     </div>
                 </div>
                 <!-- Feature Box End -->

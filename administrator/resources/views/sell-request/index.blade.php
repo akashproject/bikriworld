@@ -21,6 +21,9 @@
 						<thead>
 
 							<tr>
+								<th>Name</th>
+								<th>Mobile No</th>
+								<th>Email</th>
 								<th>Category</th>
 								<th>Brand</th>
 								<th>Product</th>
@@ -37,6 +40,9 @@
 
 							@foreach ($sellRequest as $value)
 							<tr>
+								<td>{{ $value->username }}</td>													
+								<td>{{ $value->mobile }}</td>													
+								<td>{{ $value->email }}</td>													
 								<td>{{ $value->category_name }}</td>													
 								<td>{{ $value->brand_name }}</td>													
 								<td>{{ $value->name }}</td>													

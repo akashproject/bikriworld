@@ -22,6 +22,27 @@
                 @endif
                 <div class="row">
                     <div class="col-lg-6 mb-md-80">
+                        <h5> Seller Information </h5>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group custom_form_style">
+                                    <label class="padding-30px-left-right">Your Name<span class="required">*</span></label>
+                                    <input type="text" name="username" class="form-control" autocomplete="off" value="" placeholder="Please Enter Your Name" required="">
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group custom_form_style">
+                                    <label class="padding-30px-left-right">Mobile Number<span class="required">*</span></label>
+                                    <input type="text" name="mobile" class="form-control" autocomplete="off" value="" placeholder="Please Enter Your Mobile No" required="">
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group custom_form_style">
+                                    <label class="padding-30px-left-right">Email Address<span class="required">*</span></label>
+                                    <input type="text" name="email" class="form-control" autocomplete="off" value="" placeholder="Email Address">
+                                </div>
+                            </div>
+                        </div>
                         <h5> Device Information </h5>
                         <div class="row">
                             <div class="col-lg-6">

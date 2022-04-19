@@ -56,7 +56,7 @@ Route::get('/delete-brand/{id}', [App\Http\Controllers\BrandController::class, '
 Route::get('/categories', [App\Http\Controllers\CategoriesController::class, 'index'])->name('categories');
 Route::get('/category/{id}', [App\Http\Controllers\CategoriesController::class, 'show'])->name('category');
 Route::get('/addcategories', [App\Http\Controllers\CategoriesController::class, 'add'])->name('addcategories');
-
+Route::post('/submitcategories', [App\Http\Controllers\CategoriesController::class, 'save'])->name('submitcategories');
 
 //Products
 Route::get('/products', [App\Http\Controllers\ProductController::class, 'index'])->name('products');

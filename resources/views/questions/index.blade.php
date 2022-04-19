@@ -55,16 +55,16 @@
                                                 <div class="col-lg-6 ">
                                                     <div class="answer_list"  >
                                                         <div class="form-check ">
-                                                            <input class="form-check-input yes" questionval="{{ $value->description }}" type="radio" name="question_id[{{ $value->id }}]" id="" value="1" >
-                                                            <label class="form-check-label" for="">Yes</label>
+                                                            <input class="form-check-input yes" questionval="{{ $value->description }}" type="radio" name="question_id[{{ $value->id }}]" id="answer_yes_{{$key}}" value="1" >
+                                                            <label class="form-check-label" for="answer_yes_{{$key}}">Yes</label>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-6">
                                                     <div class="answer_list"  >
                                                         <div class="form-check ">
-                                                            <input class="form-check-input no" type="radio" name="question_id[{{ $value->id }}]" id="" value="0" >
-                                                            <label class="form-check-label" for="">No</label>
+                                                            <input class="form-check-input no" type="radio" name="question_id[{{ $value->id }}]" id="answer_no_{{$key}}" value="0" >
+                                                            <label class="form-check-label" for="answer_no_{{$key}}">No</label>
                                                         </div>
                                                     </div>
                                                 </div>

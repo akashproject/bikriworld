@@ -26,8 +26,8 @@
                             </div>
                             <div class="col-lg-6">
                                 <div class="image_box relative">
-                                    <img src="assets/images/banner_1.png" alt="img" class="image-fit">
-                                    <span class="bg-thm-color-two circle_element"></span>
+                                    <img src="assets/images/banner/banner_image-1.png" alt="img" class="image-fit">
+                                    
                                 </div>
                             </div>
                         </div>
@@ -48,8 +48,8 @@
                             </div>
                             <div class="col-lg-6">
                                 <div class="image_box relative">
-                                    <img src="assets/images/banner_1.png" alt="img" class="image-fit">
-                                    <span class="bg-thm-color-two circle_element"></span>
+                                    <img src="assets/images/banner/banner_image-2.png" alt="img" class="image-fit">
+                                    
                                 </div>
                             </div>
                         </div>
@@ -70,8 +70,8 @@
                             </div>
                             <div class="col-lg-6">
                                 <div class="image_box relative">
-                                    <img src="assets/images/banner_1.png" alt="img" class="image-fit">
-                                    <span class="bg-thm-color-two circle_element"></span>
+                                    <img src="assets/images/banner/banner_image-3.png" alt="img" class="image-fit">
+                                    
                                 </div>
                             </div>
                         </div>
@@ -127,7 +127,7 @@
                                     <i class="fa fa-{{ strtolower($value->icon) }} cat-icon" aria-hidden="true"></i>
                                 </a>
                             </div>
-                            <h5 class="text-center" ><a href="{{ url('selling-brands') }}/{{ $value->id }}"> {{ $value->name }}</a></h5>
+                            <h5 class="text-center" ><a href="{{ url('selling-brands') }}/{{ $value->id }}"> Sell {{ $value->name }}</a></h5>
                             <a href="{{ url('selling-brands') }}/{{ $value->id }}" style="margin-left: 26px;">
                                 <span>Sell Now</span>
                                 <i class="fal fa-chevron-right"></i>

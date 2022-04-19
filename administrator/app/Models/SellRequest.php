@@ -12,6 +12,6 @@ class SellRequest extends Model
     protected $primaryKey = 'id';
 
     protected $fillable = [
-        'id','category_id','brand_id','name','ram','storage','question_id'
+        'id','username','mobile','email','category_id','brand_id','name','ram','storage','question_id'
     ];
 }
