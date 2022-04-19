@@ -70,6 +70,9 @@ Route::get('/question/{id}', [App\Http\Controllers\QuestionController::class, 's
 Route::get('/addquestion', [App\Http\Controllers\QuestionController::class, 'add'])->name('question');
 Route::post('/submitquestion', [App\Http\Controllers\QuestionController::class, 'save'])->name('submitquestion');
 
+//Sell Request
+Route::get('/sell-requests', [App\Http\Controllers\SellRequestController::class, 'index'])->name('sell-requests');
+Route::get('/sell-request/{id}', [App\Http\Controllers\SellRequestController::class, 'show'])->name('sell-request');
 
 // Route::get('/addinstitutes', [App\Http\Controllers\InstituteController::class, 'add'])->name('addinstitutes');
 // Route::post('/submitinstitutes', [App\Http\Controllers\InstituteController::class, 'save'])->name('submitinstitutes');

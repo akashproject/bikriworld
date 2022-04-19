@@ -44,7 +44,7 @@ Route::get('/checkout', [App\Http\Controllers\ProductController::class, 'checkOu
 Route::post('/confirm-pickup', [App\Http\Controllers\ProductController::class, 'confirmPickup'])->name('confirm-pickup');
 Route::get('/order-success', [App\Http\Controllers\ProductController::class, 'orderSuccess'])->name('order-success');
 Route::post('/get-question', [App\Http\Controllers\ProductController::class, 'getQuestion'])->name('get-question');
-Route::post('/submit-sell-request', [App\Http\Controllers\ProductController::class, 'submitDeviceRequest'])->name('submit-device-request');
+Route::post('/submit-sell-request', [App\Http\Controllers\ProductController::class, 'submitSellRequest'])->name('submit-sell-request');
 
 
 // Search Module

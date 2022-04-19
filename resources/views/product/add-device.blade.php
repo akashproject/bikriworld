@@ -15,6 +15,11 @@
                         </ul>
                     </div>
                 @endif
+                @if ($message)
+                <div class="alert alert-success">
+                    {{$message}}
+                </div>
+                @endif
                 <div class="row">
                     <div class="col-lg-6 mb-md-80">
                         <h5> Device Information </h5>
@@ -22,7 +27,7 @@
                             <div class="col-lg-6">
                                 <div class="form-group custom_form_style">
                                     <label class="padding-30px-left-right">Category<span class="required">*</span></label>
-                                    <select name="category_id" class="form-control add-device-category" >
+                                    <select name="category_id" class="form-control add-device-category" required="">
                                         <option value="">Select Category</option>
                                         @foreach($categories as $category)
                                         <option value="{{$category->id}}" > {{$category->name}}</option>
@@ -34,7 +39,7 @@
                             <div class="col-lg-6">
                                 <div class="form-group custom_form_style">
                                     <label class="padding-30px-left-right">Brand<span class="required">*</span></label>
-                                    <select name="brand_id" id="brand_id" class="form-control" >
+                                    <select name="brand_id" id="brand_id" class="form-control" required="">
                                         <option value="">Select Brand</option>
                                         @foreach($brands as $brand)
                                         <option value="{{$brand->id}}" > {{$brand->name}}</option>

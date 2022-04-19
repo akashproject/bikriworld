@@ -11,6 +11,7 @@ use App\Models\Order;
 use App\Models\Brand;
 use App\Models\Categories;
 use App\Models\Question;
+use App\Models\SellRequest;
 
 class ProductController extends Controller
 {
@@ -124,14 +125,19 @@ class ProductController extends Controller
         $user = $this->userdata;
         $brands = Brand::all();
         $categories = Categories::all();
-        
-        return view('product.add-device',compact('user','brands','categories'));
+        $message = "";
+        return view('product.add-device',compact('user','brands','categories','message'));
     }
 
     public function submitSellRequest(Request $request){
         $data = $request->all();
-        print_r($data);
-        exit;
+        $data['question_id'] = json_encode($data['question_id']);
+        $contact = SellRequest::create($data);
+        $user = $this->userdata;
+        $brands = Brand::all();
+        $categories = Categories::all();
+        $message = "Sell Request Has been submitted successfully";
+        return view('product.add-device',compact('user','brands','categories','message'));
     }
 
     public function getQuestion(Request $request){

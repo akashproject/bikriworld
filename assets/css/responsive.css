@@ -281,7 +281,7 @@
     /*banner*/
     .banner {
         height: auto;
-        padding-top: 80px;
+        padding-top: 75px;
     }
 
     .banner .transform-center {
@@ -653,6 +653,11 @@
         padding: 50px 0;
         width: 100%;
         margin: auto;
+    }
+
+    .answer_row label.error {
+        position: absolute;
+        top: 103px;
     }
 
     .product-right-content .product-price {

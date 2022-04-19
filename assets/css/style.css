@@ -4120,7 +4120,10 @@ a.close_aside i {
     margin-top: 12px;
 }
 
-
+.answer_row label.error {
+    position: absolute;
+    top: 40px;
+}
 
 .about_list li .icon img {
 
