@@ -9,12 +9,16 @@ use App\Models\Product;
 use App\Models\User;
 use App\Models\Order;
 use App\Models\Brand;
+use App\Models\Categories;
+use App\Models\Question;
 
 class ProductController extends Controller
 {
     public $sellprice = '';
     public $userdata = '';
     public $loggedinUser = '';
+    public $_statusOK = 200;
+    public $_statusErr = 500;
 
     public function __construct(Request $request)
     {
@@ -115,6 +119,28 @@ class ProductController extends Controller
         $order = $request->session()->get('orderData');
         return view('product.order-success',compact('user','order'));
     }
+
+    public function add(Request $request){
+        $user = $this->userdata;
+        $brands = Brand::all();
+        $categories = Categories::all();
+        
+        return view('product.add-device',compact('user','brands','categories'));
+    }
+
+    public function submitSellRequest(Request $request){
+        $data = $request->all();
+        print_r($data);
+        exit;
+    }
+
+    public function getQuestion(Request $request){
+        $data = $request->all();
+        $questions = Question::where('category_id', $data['category_id'])->get();
+        return response()->json($questions,$this->_statusOK);
+    }
+
+    
 
 
 }

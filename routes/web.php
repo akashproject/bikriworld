@@ -38,10 +38,14 @@ Route::post('/register', [App\Http\Controllers\LoginController::class, 'register
 // Product Module
 Route::get('/selling-products/{id}', [App\Http\Controllers\ProductController::class, 'index'])->name('products-index');
 Route::get('/view-product/{id}', [App\Http\Controllers\ProductController::class, 'view'])->name('product-view');
+Route::get('/add-device', [App\Http\Controllers\ProductController::class, 'add'])->name('add-device');
 Route::get('/product-quote', [App\Http\Controllers\ProductController::class, 'productQuote'])->name('product-quote');
 Route::get('/checkout', [App\Http\Controllers\ProductController::class, 'checkOut'])->name('checkout');
 Route::post('/confirm-pickup', [App\Http\Controllers\ProductController::class, 'confirmPickup'])->name('confirm-pickup');
 Route::get('/order-success', [App\Http\Controllers\ProductController::class, 'orderSuccess'])->name('order-success');
+Route::post('/get-question', [App\Http\Controllers\ProductController::class, 'getQuestion'])->name('get-question');
+Route::post('/submit-sell-request', [App\Http\Controllers\ProductController::class, 'submitDeviceRequest'])->name('submit-device-request');
+
 
 // Search Module
 Route::post('/get-product-search', [App\Http\Controllers\SearchController::class, 'searchProduct'])->name('get-search-result');

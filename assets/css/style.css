@@ -8283,7 +8283,7 @@ a.head_trigger.desktop_trigger {
 
     counter-increment: count;
 
-    content: "0"counter(count);
+    /* content: "0"counter(count); */
 
     font-size: 150px;
 
@@ -8994,8 +8994,8 @@ a.head_trigger.desktop_trigger {
 .custom_form_style {
     margin-bottom: 10px;
 }
-.custom_form_style input {
-    padding: 23px 9px;
+.custom_form_style input,.custom_form_style select {
+    /* padding: 23px 9px; */
     border: 2px solid #ccc;
 }
 

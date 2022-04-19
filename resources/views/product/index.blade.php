@@ -27,9 +27,9 @@
     <!-- Team Start -->
     <section class="section-padding" style="">
 
-        <div class="container">
+        <div class="container">          
             <div class="row">
-            @if($products)
+                @if($products)
                 @foreach ($products as $value)
                 <!-- Block Start -->
                 <div class="col-lg-2 col-6">
@@ -49,12 +49,23 @@
                 </div>
                 <!-- Block End -->               
                 @endforeach	
-            @else
+                @else
                 <div class="col-12 text-center">
                     <h3> No Product Found Yet! We Are Coming Soon Here </h3>
                 </div>
-            @endif               
+                @endif                    
             </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title left-align">
+                        <p class="subtitle mb-4">
+                            <i class="fal fa-book"></i>
+                            Could not find your device?
+                        </p>
+                        <h6 class="">Click <a href="/add-device" style="color:#007bff;" >Here</a> to add your device</h6>
+                    </div>
+                </div>
+            </div>    
         </div>
     </section>
     <!-- Team End -->

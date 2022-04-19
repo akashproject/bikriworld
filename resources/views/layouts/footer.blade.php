@@ -49,45 +49,25 @@
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <div class="ft_widget ft_menu">
-                        <h6 class="ft-title">Our Coach</h6>
+                        <h6 class="ft-title">Sell Us</h6>
                         <ul>
+                            @foreach ($footerCategories as $key => $footerCategory)
                             <li>
-                                <a href="#">Basic Life Coach</a>
+                                <a class="menu-link" href="{{ url('selling-brands') }}/{{ $footerCategory->id }}">{{ $footerCategory->name }}</a>
                             </li>
-                            <li>
-                                <a href="#">Advance Helath Coach</a>
-                            </li>
-                            <li>
-                                <a href="#">Advance Business Coach</a>
-                            </li>
-                            <li>
-                                <a href="#">Basic Learn English</a>
-                            </li>
-                            <li>
-                                <a href="#">Web Development</a>
-                            </li>
+                            @endforeach
                         </ul>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <div class="ft_widget ft_menu">
-                        <h6 class="ft-title">About Us</h6>
+                        <h6 class="ft-title">More Info</h6>
                         <ul>
-                            <li>
-                                <a href="#">Latest Courses</a>
+                            @foreach ($moreinfo as $key => $info)
+                            <li class="menu-item">
+                                <a class="menu-link" href="{{ url($key) }}">{{ $info }}</a>
                             </li>
-                            <li>
-                                <a href="#">Mission & Vision</a>
-                            </li>
-                            <li>
-                                <a href="#">Our Approach</a>
-                            </li>
-                            <li>
-                                <a href="#">Exclusive Advisors</a>
-                            </li>
-                            <li>
-                                <a href="#">Join a Career</a>
-                            </li>
+                            @endforeach
                         </ul>
                     </div>
                 </div>
