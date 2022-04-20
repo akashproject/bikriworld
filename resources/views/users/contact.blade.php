@@ -32,9 +32,9 @@
                     <div class="section-title">
                         <p class="subtitle">
                             <i class="fal fa-book"></i>
-                            Support Team
+                            Get Support
                         </p>
-                        <h5 class="title">We Have a Professional Support Team</h3>
+                        <h5 class="title">Need Help Selling Your Device? Send Your Queries</h3>
                     </div>
                 </div>
             </div>
@@ -45,9 +45,9 @@
                             <img src="{{ url('assets/images/icons/icon_14.png') }}" alt="icon" class="image-fit-contain">
                         </div>
                         <div class="text">
-                            <h4>Customer Support</h4>
-                            <p>Sed ut perspiciatis unde omnis iste natus voluptatem accusantium doloremque laudantium</p>
-                            <a href="#" class="thm-btn bg-thm-color-three thm-color-three-shadow btn-rectangle">Take A Coupon <i class="fal fa-chevron-right ml-2"></i></a>
+                            <h4>Need Support?</h4>
+                            <p>Are you stuck with payment issues or not getting the right price? Reach out & we will work our magic.</p>
+                            <a href="#" class="thm-btn bg-thm-color-three thm-color-three-shadow btn-rectangle">Mail Us <i class="fal fa-chevron-right ml-2"></i></a>
                         </div>
                     </div>
                 </div>
@@ -57,9 +57,9 @@
                             <img src="{{ url('assets/images/icons/icon_15.png') }}" alt="icon" class="image-fit-contain">
                         </div>
                         <div class="text">
-                            <h4>Have Any Questions</h4>
-                            <p>Sed ut perspiciatis unde omnis iste natus voluptatem accusantium doloremque laudantium</p>
-                            <a href="contact.html" class="thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle">Contact Us <i class="fal fa-chevron-right ml-2"></i></a>
+                            <h4>Need help selling?</h4>
+                            <p>SHave Any Questions about BikriWorld. Write to us & we will answer them happily.</p>
+                            <a href="#contact-form" class="thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle">Contact Us <i class="fal fa-chevron-right ml-2"></i></a>
                         </div>
                     </div>
                 </div>
@@ -76,7 +76,7 @@
                         <i class="fal fa-book"></i>
                         Contact Us
                     </p>
-                    <h5 class="title">Have Any Courses Get In Touch</h3>
+                    <h5 class="title">The Way To Instant Cash</h3>
                 </div>
                 <div class="contact_info mb-md-80">
                     <ul>
@@ -127,7 +127,7 @@
                     </div>
                 </div>
             </div>
-            <form class="form-horizontal" method="post" action="{{ url('save-contact') }}" enctype="multipart/form-data">
+            <form class="form-horizontal" method="post" action="{{ url('save-contact') }}" enctype="multipart/form-data" id="contact-form" >
                 @csrf
                 @if ($errors->any())
                     <div class="alert alert-danger">
@@ -190,7 +190,7 @@
                                     <i class="fal fa-book"></i>
                                     Our Professionals
                                 </p>
-                                <h5 class="title">Do You Want to Transform Your Life For Better ?</h3>
+                                <h5 class="title">BikriWorld Helps You Get The Best Value For Your Old Gadgets. Get Free Pickup & Cash In Your Hands In 24 Hours!</h3>
                                 <a href="contact.html" class="thm-btn bg-thm-color-three thm-color-three-shadow btn-rectangle">Contact Us <i class="fal fa-chevron-right ml-2"></i></a>
                             </div>
                         </div>

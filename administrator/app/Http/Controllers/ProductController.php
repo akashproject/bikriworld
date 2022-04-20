@@ -83,4 +83,13 @@ class ProductController extends Controller
         return redirect('/products');
     }
 
+    public function delete($id)
+    {
+        try {
+            $brand = Product::find($id)->delete();
+            return redirect('/products');
+        } catch(\Illuminate\Database\QueryException $e){
+        }        
+    }
+
 }

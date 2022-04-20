@@ -115,7 +115,7 @@
                             <i class="fal fa-book"></i>
                             Top Selling Models
                         </p>
-                        <h5 class="title mb-0">our top selling model people likes</h4>
+                        <h5 class="title mb-0">Top Selling Models People Love</h4>
                     </div>
                 </div>
             </div>

@@ -6,7 +6,8 @@
         <div class="container relative z-1">
             <div class="row">
                 <div class="col-12">
-                    <h4 class="page_title">Sell Old Mobile Phone</h4>
+                    <h5 class="page_title">Sell Your Phone In One Flash: </h5>
+                    <p> Get Paid In Cash Within 24 Hours </p>
                     <div class="page_breadcrumb">
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
@@ -60,7 +61,7 @@
                             <i class="fal fa-book"></i>
                             Top Selling Brand
                         </p>
-                        <h5 class="title mb-0">our top selling brand people likes</h4>
+                        <h5 class="title mb-0">Top Selling Brands People Love</h4>
                     </div>
                 </div>
             </div>

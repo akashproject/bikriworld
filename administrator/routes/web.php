@@ -57,12 +57,14 @@ Route::get('/categories', [App\Http\Controllers\CategoriesController::class, 'in
 Route::get('/category/{id}', [App\Http\Controllers\CategoriesController::class, 'show'])->name('category');
 Route::get('/addcategories', [App\Http\Controllers\CategoriesController::class, 'add'])->name('addcategories');
 Route::post('/submitcategories', [App\Http\Controllers\CategoriesController::class, 'save'])->name('submitcategories');
+Route::get('/delete-category/{id}', [App\Http\Controllers\CategoriesController::class, 'delete'])->name('delete-category');
 
 //Products
 Route::get('/products', [App\Http\Controllers\ProductController::class, 'index'])->name('products');
 Route::get('/product/{id}', [App\Http\Controllers\ProductController::class, 'show'])->name('product');
 Route::get('/addproduct', [App\Http\Controllers\ProductController::class, 'add'])->name('product');
 Route::post('/submitproduct', [App\Http\Controllers\ProductController::class, 'save'])->name('submitproduct');
+Route::post('/product-delete', [App\Http\Controllers\ProductController::class, 'delete'])->name('product-delete');
 
 //Questions
 Route::get('/questions', [App\Http\Controllers\QuestionController::class, 'index'])->name('questions');

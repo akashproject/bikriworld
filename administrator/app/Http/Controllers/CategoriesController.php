@@ -55,5 +55,12 @@ class CategoriesController extends Controller
         return redirect('/categories');
     }
 
+    
+    public function delete($id) {
+        $category = Categories::findOrFail($id);
+        $category->delete();
+        return redirect('/categories');
+    }
+
 
 }

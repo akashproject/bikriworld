@@ -45,7 +45,7 @@
 								<td> {{ $value->created_at->isoFormat('MMM DD, YYYY') }} </td>
 								<td>
 									<a href="{{ url('product') }}/{{ $value->id }}" class="btn btn-primary btn-lg">Edit</a>
-									<a href="{{ url('product-delete') }}/{{ $value->id }}" class="btn btn-danger btn-lg">Delete </a>
+									<a href="{{ url('product-delete') }}/{{ $value->id }}" class="btn btn-danger btn-lg" onclick="return confirm('Are you sure?')";>Delete </a>
 								</td>
 							</tr>
 
