@@ -73,6 +73,8 @@ Route::post('/submitquestion', [App\Http\Controllers\QuestionController::class, 
 //Sell Request
 Route::get('/sell-requests', [App\Http\Controllers\SellRequestController::class, 'index'])->name('sell-requests');
 Route::get('/sell-request/{id}', [App\Http\Controllers\SellRequestController::class, 'show'])->name('sell-request');
+Route::post('/saverequest', [App\Http\Controllers\SellRequestController::class, 'save'])->name('saverequest');
+
 
 // Route::get('/addinstitutes', [App\Http\Controllers\InstituteController::class, 'add'])->name('addinstitutes');
 // Route::post('/submitinstitutes', [App\Http\Controllers\InstituteController::class, 'save'])->name('submitinstitutes');

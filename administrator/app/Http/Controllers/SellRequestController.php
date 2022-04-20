@@ -40,7 +40,7 @@ class SellRequestController extends Controller
             ->join('brand', 'brand.id', '=', 'sell_request.brand_id')
             ->join('categories', 'categories.id', '=', 'sell_request.category_id')      
             ->where('sell_request.id', '=', $id)
-            ->select('sell_request.*','brand.name as brand_name','categories.name as category_name')
+            ->select('sell_request.*','sell_request.id as request_id','brand.name as brand_name','categories.name as category_name')
             ->first();
 
             $question = json_decode($sellRequest->question_id, true);
@@ -59,6 +59,20 @@ class SellRequestController extends Controller
             return view('sell-request.show',compact('sellRequest','question_ans'));
         } catch(\Illuminate\Database\QueryException $e){
         }        
+    }
+
+    public function save(Request $request) {
+        $data = $request->all();
+        $validatedData = $request->validate([
+            'status' => 'required',
+        ]);
+        
+
+        $sellRequest = SellRequest::findOrFail($data['request_id']);
+        $sellRequest->update($data);
+
+        
+        return redirect('/sell-request/'.$data['request_id']);
     }
 
 
