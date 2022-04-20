@@ -7120,7 +7120,7 @@ a.head_trigger.desktop_trigger {
 
     content: '';
 
-    background-image: linear-gradient(to right, var(--thm-color-one), transparent);
+    /* background-image: linear-gradient(to right, var(--thm-color-one), transparent); */
 
     opacity: 0.9;
 
@@ -7153,7 +7153,12 @@ a.head_trigger.desktop_trigger {
     color: var(--thm-white);
 
     line-height: 1;
+    margin: 0;
 
+}
+
+.subheader p{
+    color: var(--thm-white);
 }
 
 
