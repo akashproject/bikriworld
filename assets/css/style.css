@@ -9002,6 +9002,15 @@ a.head_trigger.desktop_trigger {
     border: 2px solid #ccc;
 }
 
+.brand_listing .team_img{
+    padding: 0 30px 0px 30px;
+    margin: 0;
+}
+.brand_icon{
+    font-size: 18px;
+}
+
+
 .aside_login_form {
     margin-bottom: 10px !important;
 }

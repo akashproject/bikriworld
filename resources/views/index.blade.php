@@ -82,8 +82,8 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="image_box relative">
-                                    <img src="assets/images/banner_mobile.png" alt="img" class="image-fit">
-                                    <span class="bg-thm-color-two circle_element"></span>
+                                    <img src="assets/images/banner/mobile banner-1.png" alt="img" class="image-fit">
+                                    
                                 </div>
                             </div>
                         </div>
@@ -92,8 +92,18 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="image_box relative">
-                                    <img src="assets/images/banner_mobile.png" alt="img" class="image-fit">
-                                    <span class="bg-thm-color-two circle_element"></span>
+                                    <img src="assets/images/banner/mobile banner-2.png" alt="img" class="image-fit">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slide-item col-12">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="image_box relative">
+                                    <img src="assets/images/banner/mobile banner-3.png" alt="img" class="image-fit">
+                                    
                                 </div>
                             </div>
                         </div>

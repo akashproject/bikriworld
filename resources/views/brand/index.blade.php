@@ -44,15 +44,14 @@
                 @foreach ($brands as $value)
                 <!-- Block Start -->
                 <div class="col-lg-2 col-4">
-                    <div class="team_block style_2 style_3">
-                        <div class="team_img">
-                            <img src="/administrator/public/images/{{ $value->image }}" alt="img" class="">
-                            <a href="{{ url('selling-products') }}/{{ $value->id }}" class="thm-btn bg-thm-color-two thm-color-two-shadow btn-circle link">
-                                <i class="fal fa-plus"></i>
+                    <div class="team_block style_2 style_3 brand_listing">
+                        <div class="team_img">                            
+                            <a href="{{ url('selling-products') }}/{{ $value->id }}" class="">
+                                <img src="/administrator/public/images/{{ $value->image }}" alt="img" class="">
                             </a>
                         </div>
                         <p class="thm-color-two mb-0 font-weight-bold">
-                            <a href="{{ url('selling-products') }}/{{ $value->id }}" class="">
+                            <a href="{{ url('selling-products') }}/{{ $value->id }}" class="brand_icon">
                                 {{ $value->name }}
                             </a>
                         </p>
