@@ -13,25 +13,38 @@ class ContactController extends Controller
 
     public function __construct(Request $request)
     {
-        $this->sellprice = $request->session()->get('sellprice');
-        $this->userdata = $request->session()->get('userData');
-        if($this->userdata != ''){
-            $this->loggedinUser = User::where('mobile', $this->userdata['mobile'])->first();
-        }
         
     }
 
-    public function saveContact(Request $request){
+    public function index(){
+        try {
+            $contacts = Contact::all();
+            return view('contact.index',compact('contacts'));
+        } catch(\Illuminate\Database\QueryException $e){
+            
+        }
+    }
+
+    public function show($id)
+    {
+        try {
+            $contact = Contact::findOrFail($id);
+            return view('contact.show',compact('contact'));
+        } catch(\Illuminate\Database\QueryException $e){
+        }        
+    }
+
+    public function save(Request $request) {
         $data = $request->all();
         $validatedData = $request->validate([
-            'name' => 'required',
-            'email' => 'required',
-            'mobile' => 'required',
-            'subject' => 'required',
-            'message' => 'required',
+            'status' => 'required',
         ]);
-        $contact = Contact::create($data);
-        $user = $this->user;
-        return view('users.contact',compact('user'));
+        
+
+        $contact = Contact::findOrFail($data['id']);
+        $contact->update($data);
+
+        
+        return redirect('/quary/'.$data['id']);
     }
 }

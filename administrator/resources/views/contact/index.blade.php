@@ -6,7 +6,7 @@
 
 <div class="col-12">
 
-	@if($orders)
+	@if($contacts)
 
 		<div class="card">
 
@@ -21,12 +21,12 @@
 						<thead>
 
 							<tr>
-								<th>Service No</th>
-								<th>User</th>
-								<th>Product</th>
-								<th>Amount</th>
-								<th>Payment Mode</th>
-								<th>Order Placed Date</th>
+								<th>Name</th>
+								<th>Mobile</th>
+								<th>Email</th>
+								<th>Subject</th>
+								<th>Message</th>
+								<th>Quary Placed Date</th>
 								<th>Status</th>
 								<th>Options</th>
 
@@ -36,18 +36,17 @@
 
 						<tbody>
 
-							@foreach ($orders as $value)
+							@foreach ($contacts as $value)
 							<tr>
-								<td>{{ $value->service_no }}</td>													
-								<td>{{ $value->user_fullname }}</td>													
-								<td>{{ $value->product_name }}</td>													
-								<td>{{ $value->amount }}</td>													
-								<td>{{ $value->payment_mode }}</td>													
+								<td>{{ $value->name }}</td>													
+								<td>{{ $value->mobile }}</td>													
+								<td>{{ $value->email }}</td>													
+								<td>{{ $value->subject }}</td>													
+								<td>{{ $value->message }}</td>																				
 								<td>{{ date("M d, Y",strtotime($value->created_at)) }}</td>
-								
-								<td>{{ $value->status }}</td>
+								<td>{{ $value->status }}</td>	
 								<td>
-								<a href="{{ url('order') }}/{{ $value->id }}" class="btn btn-primary btn-lg">View</a>
+								<a href="{{ url('quary') }}/{{ $value->id }}" class="btn btn-primary btn-lg">View</a>
 								</td>
 							</tr>
 							@endforeach							
