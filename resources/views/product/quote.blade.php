@@ -6,7 +6,8 @@
         <div class="container relative z-1">
             <div class="row">
                 <div class="col-12">
-                    <h4 class="page_title">Sell Old Mobile Phone</h4>
+                    <h4 class="page_title">Get The Best Price</h4>
+                    <p> Get The Best Price at based on the your device condition. </p>
                     <div class="page_breadcrumb">
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
