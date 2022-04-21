@@ -7,6 +7,7 @@
             <div class="row">
                 <div class="col-12">
                     <h4 class="page_title">Select Your {{$brand->name}} Device  </h4>
+                    <p> Easily Sell you device Online For Cash In 24 Hours: Free PickUp </p>
                     <div class="page_breadcrumb">
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">

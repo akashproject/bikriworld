@@ -41,8 +41,8 @@
                             <h5> {{ $product->name }} </h5>
                             <p class="quote-msg"> Product Selling Price </p>
                             <h3 class="quote-price" style="margin-bottom: 10px;"> ₹{{ number_format($calculatedData['exact_price'])}}/- </h3>
-                            <p style="font-size: 13px;margin-bottom: 0;">The value is based on the condition of the product mentioned by you. </p>
-                            <a href="javascript:void(0)" class="view-report" > View Product Report</a>
+                            <p style="font-size: 13px;margin-bottom: 0;">The amount is based on the your device condition as you mentioned. </p>
+                            <!-- <a href="javascript:void(0)" class="view-report" > View Report</a> -->
                         </div>
                     </div>
                 </div>
@@ -161,36 +161,72 @@
                 <div class="card">
                     <div class="card-header">
                         <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#GeneralItemOne" aria-expanded="false" aria-controls="GeneralItemOne">
-                            We Teach You How To Feel Better.
+                        Where to sell my phone for the best price in India?
                         </button>
                     </div>
                     <div id="GeneralItemOne" class="collapse" aria-labelledby="GeneralItemOne" data-parent="#generalaccordion">
                         <div class="card-body">
-                            Sed ut perspiciatis unde omnis iste natus error voluptatem accusantium doloremque laudantium totam rem aperiam eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam tatem quia voluptas sit aspernatur aut odit aut fugit sed quia consequuntur
+                        There are a lot of online buyback platforms in India for sellers looking to sell old mobiles, but BikriWorld offers the best prices for all your old devices. 
                         </div>
                     </div>
                 </div>
                 <div class="card">
                     <div class="card-header">
                         <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#GeneralItemTwo" aria-expanded="false" aria-controls="GeneralItemTwo">
-                            We Teach You How To Feel Better.
+                        How can I sell my phone to get paid instantly?
                         </button>
                     </div>
                     <div id="GeneralItemTwo" class="collapse" aria-labelledby="GeneralItemTwo" data-parent="#generalaccordion">
                         <div class="card-body">
-                            Sed ut perspiciatis unde omnis iste natus error voluptatem accusantium doloremque laudantium totam rem aperiam eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam tatem quia voluptas sit aspernatur aut odit aut fugit sed quia consequuntur
+                        Sell your phone at BikriWorld, and get the best offers for your old mobile phone. Sell mobile phones, laptops and any unused devices for the best valuation possible, Check your device’s price today!
                         </div>
                     </div>
                 </div>
                 <div class="card">
                     <div class="card-header">
                         <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#GeneralItemThree" aria-expanded="false" aria-controls="GeneralItemThree">
-                            We Teach You How To Take Massive Action.
+                            Can I sell my phone online?
                         </button>
                     </div>
                     <div id="GeneralItemThree" class="collapse" aria-labelledby="GeneralItemThree" data-parent="#generalaccordion">
                         <div class="card-body">
-                            Sed ut perspiciatis unde omnis iste natus error voluptatem accusantium doloremque laudantium totam rem aperiam eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam tatem quia voluptas sit aspernatur aut odit aut fugit sed quia consequuntur
+                        Yes, you can sell your phone online. Also, yes, it’s completely risk free. All our purchases are made with proper invoices, and every device is scrubbed of all user information and data.
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#GeneralItemFour" aria-expanded="false" aria-controls="GeneralItemFour">
+                        How to sell an old phone online?
+                        </button>
+                    </div>
+                    <div id="GeneralItemFour" class="collapse" aria-labelledby="GeneralItemFour" data-parent="#generalaccordion">
+                        <div class="card-body">
+                        Simply go on to bikriworld.com and select your type of gadget. Once you have done that, you can proceed to set the pickup location for our agent to pick up and assess your device. Once our agent reaches the location at your convenient time, you get on spot payment after the device’s condition is verified.
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#GeneralItemFive" aria-expanded="false" aria-controls="GeneralItemFive">
+                        What is the best way to sell old mobile phones?
+                        </button>
+                    </div>
+                    <div id="GeneralItemFive" class="collapse" aria-labelledby="GeneralItemFive" data-parent="#generalaccordion">
+                        <div class="card-body">
+                        The best way to sell old mobile phones is to check your price across all online buyback platforms. BikriWorld offers the best valuation for your old mobile phone. Sell your old mobile today and get cash in your hands within 24 hours!
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#GeneralItemSix" aria-expanded="false" aria-controls="GeneralItemSix">
+                        Where can I sell my phone for cash today?
+                        </button>
+                    </div>
+                    <div id="GeneralItemSix" class="collapse" aria-labelledby="GeneralItemSix" data-parent="#generalaccordion">
+                        <div class="card-body">
+                        If you want cash within 24 hours, you can sell old mobiles you have laying around at BikriWorld. BikriWorld offers transparent and easy selling of mobile phones and gadgets to consumers across India with Zero Pick Up Costs!
                         </div>
                     </div>
                 </div>

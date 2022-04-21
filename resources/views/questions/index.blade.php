@@ -6,7 +6,8 @@
         <div class="container relative z-1">
             <div class="row">
                 <div class="col-12">
-                    <h4 class="page_title">Sell Old Mobile Phone</h4>
+                    <h4 class="page_title">Your Device Report</h4>
+                    <p> Let us finalize your device value exactly by selecting to the following questions. </p>
                     <div class="page_breadcrumb">
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">

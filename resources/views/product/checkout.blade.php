@@ -5,12 +5,13 @@
         <div class="container relative z-1">
             <div class="row">
                 <div class="col-12">
-                    <h4 class="page_title">Sell Old Mobile Phone</h4>
+                    <h4 class="page_title">Fill up your Information</h4>
+                    <p> Please fill up the right details for pickup </p>
                     <div class="page_breadcrumb">
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="{{  url('') }}">Home</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Select Brands</li>
+                                <li class="breadcrumb-item active" aria-current="page">Checkout</li>
                             </ol>
                         </nav>
                     </div>

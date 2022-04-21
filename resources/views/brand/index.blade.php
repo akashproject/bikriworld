@@ -7,7 +7,8 @@
         <div class="container relative z-1">
             <div class="row">
                 <div class="col-12">
-                    <h4 class="page_title">Sell Old {{$category->name}} Online For Cash</h4>
+                    <h4 class="page_title">Sell Old {{$category->name}}</h4>
+                    <p> Sell {{$category->name}} At The Best Valuation: Quickly Get Paid In Cash </p>
                     <div class="page_breadcrumb">
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">

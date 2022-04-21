@@ -2,7 +2,7 @@
 
     @section('content')
     <!-- Subheader Start -->
-    <section class="subheader relative z-1" style="background-image: url({{ url('https://static.vecteezy.com/system/resources/thumbnails/002/375/040/small/modern-white-background-free-vector.jpg') }});">
+    <!-- <section class="subheader relative z-1" style="background-image: url({{ url('https://static.vecteezy.com/system/resources/thumbnails/002/375/040/small/modern-white-background-free-vector.jpg') }});">
         <div class="container relative z-1">
             <div class="row">
                 <div class="col-12">
@@ -22,7 +22,7 @@
             <img src="{{ url('assets/images/elements/element_20.png') }}" alt="element" class="element_3 rotate_elem">
             <img src="{{ url('assets/images/elements/element_21.png') }}" alt="element" class="element_4 rotate_elem">
         </div>
-    </section>
+    </section> -->
     <!-- Subheader End -->
     <section class="section-padding">
         <div class="container">
