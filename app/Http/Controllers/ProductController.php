@@ -12,6 +12,7 @@ use App\Models\Brand;
 use App\Models\Categories;
 use App\Models\Question;
 use App\Models\SellRequest;
+use Mail;
 
 class ProductController extends Controller
 {
@@ -112,6 +113,13 @@ class ProductController extends Controller
 
         $user = User::findOrFail($data['user_id']);
         $user->update($data);
+
+        Mail::send('emails.welcome', $data, function ($m) use ($user) {
+            $m->from('service@bikriworld.com', 'Bikriworld');
+            //$m->to($user->email, $user->name)->subject('Your Reminder!');
+            $m->to($data['email'], $data['name'])->subject('Bikriworld Order!');
+        });
+
         $request->session()->put('orderData', $order);
         return redirect('/order-success');
     }
