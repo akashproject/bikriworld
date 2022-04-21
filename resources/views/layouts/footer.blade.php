@@ -109,38 +109,38 @@
         <div class="col-4 col-lg-2">
             <div class="city-icon">
                 <a href="javascript:void(0)" class="city-search-list" data-city="Mumbai">
-                   <img src="https://via.placeholder.com/80x80">
+                   <img src="{{ url('assets/images/Mumbai.png') }}">
                    <p class="text-center" style="color: #565353;font-weight: 600;" >Mumbai</p>
                 </a>
             </div>
         </div>
         <div class="col-4 col-lg-2">
              <a href="javascript:void(0)" class="city-search-list" data-city="Delhi">
-                <img src="https://via.placeholder.com/80x80">
+                <img src="{{ url('assets/images/Delhi.png') }}">
                 <p class="text-center" style="color: #565353;font-weight: 600;" >Delhi NCR</p>
             </a>
         </div>
         <div class="col-4 col-lg-2">
              <a href="javascript:void(0)" class="city-search-list" data-city="Bengaluru">
-                <img src="https://via.placeholder.com/80x80">
+                <img src="{{ url('assets/images/Bangalore.png') }}">
                 <p class="text-center" style="color: #565353;font-weight: 600;" >Bengaluru</p>
             </a>
         </div>
         <div class="col-4 col-lg-2">
              <a href="javascript:void(0)" class="city-search-list" data-city="Chennai">
-                <img src="https://via.placeholder.com/80x80">
+                <img src="{{ url('assets/images/Chennai.png') }}">
                 <p class="text-center" style="color: #565353;font-weight: 600;" >Chennai</p>
             </a>
         </div>
         <div class="col-4 col-lg-2">
              <a href="javascript:void(0)" class="city-search-list" data-city="Kolkata">
-                <img src="https://via.placeholder.com/80x80">
+                <img src="{{ url('assets/images/Kolkata.png') }}">
                 <p class="text-center" style="color: #565353;font-weight: 600;" >Kolkata</p>
             </a>
         </div>
         <div class="col-4 col-lg-2">
              <a href="javascript:void(0)" class="city-search-list" data-city="Pune">
-                <img src="https://via.placeholder.com/80x80">
+                <img src="{{ url('assets/images/Pune.png') }}">
                 <p class="text-center" style="color: #565353;font-weight: 600;" >Pune</p>
             </a>
         </div>

@@ -6,13 +6,13 @@
         <div class="container relative z-1">
             <div class="row">
                 <div class="col-12">
-                    <h5 class="page_title">Sell Your Phone In One Flash: </h5>
+                    <h5 class="page_title">Select the Category of device to sell </h5>
                     <p> Get Paid In Cash Within 24 Hours </p>
                     <div class="page_breadcrumb">
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="{{  url('') }}">Home</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Select Brands</li>
+                                <li class="breadcrumb-item active" aria-current="page">Select Category</li>
                             </ol>
                         </nav>
                     </div>

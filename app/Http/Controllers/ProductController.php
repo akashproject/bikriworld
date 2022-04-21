@@ -37,11 +37,12 @@ class ProductController extends Controller
         try {
             $tobSellingBrands = Brand::all();
             $tobSellingProducts = Product::all();
+            $brand = Brand::find($id);
             $products = Product::where('brand_id', $id)
             ->where('category_id', $category_id)
             ->get();
 
-            return view('product.index',compact('products','user','tobSellingBrands','tobSellingProducts'));
+            return view('product.index',compact('products','brand','user','tobSellingBrands','tobSellingProducts'));
             } catch(\Illuminate\Database\QueryException $e){
         }
     }

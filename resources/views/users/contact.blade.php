@@ -7,6 +7,7 @@
             <div class="row">
                 <div class="col-12">
                     <h1 class="page_title">Contact Us</h1>
+                    <p> Need Help Selling Your Device? Send Your Queries </p>
                     <div class="page_breadcrumb">
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">

@@ -7,7 +7,7 @@
         <div class="container relative z-1">
             <div class="row">
                 <div class="col-12">
-                    <h4 class="page_title">Sell Old Mobile Phone</h4>
+                    <h4 class="page_title">Sell Old {{$category->name}} Online For Cash</h4>
                     <div class="page_breadcrumb">
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
