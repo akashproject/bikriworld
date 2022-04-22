@@ -88,14 +88,15 @@
                                     <input type="text" name="storage" class="form-control" autocomplete="off" value="" placeholder="Storage Memory" required="">
                                 </div>
                             </div>
-                            <div class="col-lg-12">
-                            <button type="submit" class="thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle"> Submit Sell Request <i class="fal fa-calculator ml-2"></i></a>
-                            </div>
+                            
                         </div>
                     </div> 
                     <div class="col-lg-6 mb-md-80 question-content_wrap" >           
                         <h5> Device Conditions </h5>
                     </div> 
+                    <div class="col-lg-12">
+                        <button type="submit" class="thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle"> Submit Sell Request <i class="fal fa-calculator ml-2"></i></a>
+                    </div>
                 </div>
             </form>
         </div>

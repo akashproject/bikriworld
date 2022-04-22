@@ -624,6 +624,7 @@
         console.log(city);
         $('.user_selected_city').html(city);
         $.cookie('userCity', city, {expires: 100000000000});
+        $(".search-city-content_wrap").hide()
         $(".mfp-close").trigger("click");
     });
 

@@ -76,10 +76,10 @@
                         <h6 class="ft-title">Apps Download</h6>
                         <p class="mb-xl-20">Sed ut perspici unde omnis iste natus error sit voluptatem accus</p>
                         <a href="#" class="app_img">
-                            <img src="assets/images/google_store.jpg" alt="img">
+                            <img src="/assets/images/google_store.jpg" alt="img">
                         </a>
                         <a href="#" class="app_img">
-                            <img src="assets/images/apple_store.jpg" alt="img">
+                            <img src="/assets/images/apple_store.jpg" alt="img">
                         </a>
                     </div>
                 </div>

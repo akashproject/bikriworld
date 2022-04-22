@@ -3254,10 +3254,16 @@ blockquote .quote_author:before {
 
 .aside_bar .logo {
     width: 50%;
-    height: 100px;
+    height: 80px;
     display: inline-block;
     align-items: center;
     padding-left: 15px;
+    padding-top: 20px;
+}
+
+.mobile-top-menu li {
+    font-size: 14px;
+    margin-left: 15px;
 }
 
 a.close_aside {
@@ -10312,8 +10318,4 @@ label.form-check-label {
     max-width: 80%;
     margin: 20px auto;
     transition: 1s all;
-}
-header.header.header-absolute.can-sticky {
-    top: 0;
-    padding-top: 0;
 }

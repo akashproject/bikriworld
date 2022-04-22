@@ -10,18 +10,33 @@ Preloader End -->
         <img src="{{ url('assets/images/logo.png') }}" alt="logo">
     </a>
     <!-- logo -->
+    <div class="container mobile-top-menu">
+        <ul style="font-size:20px">
+            <li>
+                <a href="tel:+919836555023">
+                    <i class="fal fa-phone"></i>
+                    +919836555023              
+                </a>
+            </li>
+            <li>
+                <a href="mailto:service@bikriword.com">
+                    <i class="fal fa-envelope"></i>
+                    service@bikriword.com                  
+                </a>
+            </li>
+            <li>
+                <a href="#select-city-popup" class="open-city-popup"><i class="fal fa-map-marker"></i> <span class="user_selected_city"> {{ (array_key_exists('userCity',$_COOKIE)) ? $_COOKIE['userCity'] : 'Select City' }} </span>  </a>
+            </li>
+        </ul>
+    </div>
     <!-- Menu -->
     <nav>
-        <ul class="main-menu">
-            
+        <ul class="main-menu">                
             @foreach ($navbars as $key => $navbarItem)
                 <li class="menu-item">
                     <a class="menu-link" href="{{ url($key) }}">{{ $navbarItem }}</a>
                 </li>
-            @endforeach
-                <li class="menu-item open-city-popup">
-                    <a href="javascript:void(0);"><span class="user_selected_city"> {{ (array_key_exists('userCity',$_COOKIE)) ? $_COOKIE['userCity'] : 'Select City' }} </span>  </a>
-                </li>
+            @endforeach             
             @if($user)
                 <li class="menu-item">
                     <a href="{{ url('dashboard') }}"> Dashboard </a>
@@ -99,80 +114,53 @@ Preloader End -->
 @if(Request::is('/'))
 <!-- Header Start -->
 <header class="header header-absolute can-sticky">
-    <div class="topbar bg-thm-color-two" style="margin-bottom:20px">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-7">
-                    
+    <div class="container">
+        <!-- inner -->
+        <div class="nav_warp">
+            <nav>
+                <!-- logo start -->
+                <div class="logo">
+                    <a href="{{  url('') }}">
+                        <img src="{{ url('assets/images/logo.png') }}" alt="logo" class="image-fit">
+                    </a>
                 </div>
-                <div class="col-lg-5">
-                    <ul class="right-side">
-                        <li>
-                            <a href="tel:0123456789">
-                                <i class="fal fa-phone"></i>
-                                Call : 012(345) 67 89
-                            </a>
+                <!-- logo end -->
+                <!-- Navigation Start -->
+                <ul class="main-menu">            
+                    @foreach ($navbars as $key => $navbarItem)
+                        <li class="menu-item">
+                            <a class="menu-link" href="{{ url($key) }}">{{ $navbarItem }}</a>
                         </li>
-                        <li>
-                            <a href="mailto:example@example.com">
-                                <i class="fal fa-envelope"></i>
-                                example@example.com
-                            </a>
-                        </li>
-                    </ul>
+                    @endforeach
+                </ul>
+                <!-- Navigation Ens -->
+            </nav>
+            <!-- Head Actions -->
+            <div class="head_actions relative">
+                <!-- Search -->
+                <div class="search_bar relative" style="width:100%">
+                    <input type="text" name="#" id="search_field" placeholder="Search" autocomplete="off">
+                    <i class="fal fa-search"></i>
                 </div>
-            </div>
-        </div>
-    </div>
-    <div class="nav_sec">
-        <div class="container">
-            <!-- inner -->
-            <div class="nav_warp">
-                <nav>
-                    <!-- logo start -->
-                    <div class="logo">
-                        <a href="{{  url('') }}">
-                            <img src="{{ url('assets/images/logo.png') }}" alt="logo" class="image-fit">
-                        </a>
-                    </div>
-                    <!-- logo end -->
-                    <!-- Navigation Start -->
-                    <ul class="main-menu">
-                        @foreach ($navbars as $key => $navbarItem)
-                            <li class="menu-item">
-                                <a class="menu-link" href="{{ url($key) }}">{{ $navbarItem }}</a>
-                            </li>
-                        @endforeach
-                    </ul>
-                    <!-- Navigation Ens -->                    
-                </nav>
-                <!-- Head Actions -->
-                <div class="head_actions relative">
-                    <!-- Search -->
-                    <div class="search_bar relative" style="width:100%">
-                        <input type="text" name="#" id="search_field" placeholder="Search" autocomplete="off">
-                        <i class="fal fa-search"></i>
-                    </div>
-                    <a href="#select-city-popup" class="dashboard open-city-popup" style=width:75%;margin-left: 22px;padding: 5px;"> <i class="fal fa-map-marker ml-2"></i> <span class="user_selected_city"> {{ (array_key_exists('userCity',$_COOKIE)) ? $_COOKIE['userCity'] : 'Select City' }} </span> <i class="fal fa-angle-down ml-2"></i> </a>
-                    @if($user)
-                        <a href="{{ url('dashboard') }}" class="dashboard" style=width:75%;margin-left: 22px;padding: 5px;border: 1px solid var(--thm-color-two);border-radius: 10px;"> Dashboard <i class="fal fa-home ml-2"></i></a>
-                        <a href="{{ url('logout') }}" class="dashboard" style=width:75%;margin-left: 22px;padding: 5px;"> Logout <i class="fal fa-sign-out ml-2"></i></a>
-                    @else
-                        <a href="javascript:void(0)" class="head_trigger desktop_trigger thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle">Sign In <i class="fal fa-chevron-right ml-2"></i></a>
-                    @endif
-                    <button type="button" class="head_trigger mobile_trigger">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </button>
-                    <div class="search-content_wrap">
+                <a href="#select-city-popup" class="dashboard open-city-popup" style="width:75%;margin-left: 22px;padding: 5px;"> <i class="fal fa-map-marker ml-2"></i> <span class="user_selected_city"> {{ (array_key_exists('userCity',$_COOKIE)) ? $_COOKIE['userCity'] : 'Select City' }} </span> <i class="fal fa-angle-down ml-2"></i> </a>
+                @if($user)
+                    <a href="{{ url('dashboard') }}" class="dashboard" style="width:75%;margin-left: 22px;padding: 5px;border: 1px solid var(--thm-color-two);border-radius: 10px;"> Dashboard <i class="fal fa-home ml-2"></i></a>
+                    <a href="{{ url('logout') }}" class="dashboard" style="width:75%;margin-left: 22px;padding: 5px;"> Logout <i class="fal fa-sign-out ml-2"></i></a>
+                @else
+                    <a href="javascript:void(0)" class="head_trigger desktop_trigger thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle">Sign In <i class="fal fa-chevron-right ml-2"></i></a>
+                @endif
+                <button type="button" class="head_trigger mobile_trigger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <div class="search-content_wrap">
 
-                    </div>
                 </div>
-                <!-- Head Actions -->
             </div>
-            <!-- inner -->
+            <!-- Head Actions -->
         </div>
+        <!-- inner -->
     </div>
 </header>
 @else
@@ -231,7 +219,7 @@ Preloader End -->
                         <input type="text" name="#" id="search_field" placeholder="Search" autocomplete="off">
                         <i class="fal fa-search"></i>
                     </div>
-                    <a href="#select-city-popup" class="dashboard open-city-popup" style=width:75%;margin-left: 22px;padding: 5px;"> <i class="fal fa-map-marker ml-2"></i> <span class="user_selected_city"> {{ (array_key_exists('userCity',$_COOKIE)) ? $_COOKIE['userCity'] : 'Select City' }} </span> <i class="fal fa-angle-down ml-2"></i> </a>
+                    <a href="#select-city-popup" class="dashboard open-city-popup" style="width:75%;margin-left: 22px;padding: 5px;"> <i class="fal fa-map-marker ml-2"></i> <span class="user_selected_city"> {{ (array_key_exists('userCity',$_COOKIE)) ? $_COOKIE['userCity'] : 'Select City' }} </span> <i class="fal fa-angle-down ml-2"></i> </a>
                     @if($user)
                         <a href="{{ url('dashboard') }}" class="dashboard" style=width:75%;margin-left: 22px;padding: 5px;border: 1px solid var(--thm-color-two);border-radius: 10px;"> Dashboard <i class="fal fa-home ml-2"></i></a>
                         <a href="{{ url('logout') }}" class="dashboard" style=width:75%;margin-left: 22px;padding: 5px;"> Logout <i class="fal fa-sign-out ml-2"></i></a>

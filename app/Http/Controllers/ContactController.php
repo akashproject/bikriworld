@@ -15,12 +15,7 @@ class ContactController extends Controller
 
     public function __construct(Request $request)
     {
-        $this->sellprice = $request->session()->get('sellprice');
         $this->userdata = $request->session()->get('userData');
-        if($this->userdata != ''){
-            $this->loggedinUser = User::where('mobile', $this->userdata['mobile'])->first();
-        }
-        
     }
 
     public function saveContact(Request $request){
@@ -33,7 +28,7 @@ class ContactController extends Controller
             'message' => 'required',
         ]);
         $contact = Contact::create($data);
-        $user = $this->user;
+        $user = $this->userdata;
         return view('users.contact',compact('user'));
     }
 }
