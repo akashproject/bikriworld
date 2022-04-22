@@ -50,7 +50,7 @@
                 </div>
                 <div class="col-lg-8 ">
                     <h5 class="page_title"> Personal Information </h5>
-                    <form class="form-horizontal" id="checkoutform" method="post" action="{{ url('confirm-pickup') }}" enctype="multipart/form-data">
+                    <form class="form-horizontal" id="checkoutform" method="post" action="{{ url('save-info') }}" enctype="multipart/form-data">
                     @csrf
                     @if ($errors->any())
                         <div class="alert alert-danger">
@@ -81,6 +81,7 @@
                                 </div>
                             </div>
                             <div class="col-12">
+                                <input type="hidden" name="user_id" value="{{$user->id}}" >
                                 <button type="submit" class="thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle"> Update <i class="fal fa-chevron-right ml-2"></i></button>
                             </div>
                         </div>

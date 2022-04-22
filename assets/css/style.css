@@ -10313,3 +10313,7 @@ label.form-check-label {
     margin: 20px auto;
     transition: 1s all;
 }
+header.header.header-absolute.can-sticky {
+    top: 0;
+    padding-top: 0;
+}

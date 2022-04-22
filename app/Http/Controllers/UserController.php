@@ -57,9 +57,11 @@ class UserController extends Controller
         return view('users.payments',compact('user','payment'));
     }
 
-    public function saveInfo(){
+    public function saveInfo(Request $request){
         $user = $this->user;
-
+        $data = $request->all();
+        $user = User::find($data['user_id']);
+        $user->update($data);
         return redirect('/dashboard');
     }
 

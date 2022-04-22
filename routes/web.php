@@ -18,6 +18,12 @@ Route::get('/clear-cache', function() {
     // return what you want
  });
 
+// Route::get('/test-mail', function() {
+    
+//     //return view('emails.order');
+// });
+Route::get('/test-mail', [App\Http\Controllers\ProductController::class, 'testMail'])->name('test-mail');
+
 //Categories 
 Route::get('/', [App\Http\Controllers\IndexController::class, 'index'])->name('index');
 Route::get('/selling-categories', [App\Http\Controllers\CategoriesController::class, 'index'])->name('categories-index');

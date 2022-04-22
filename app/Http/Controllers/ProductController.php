@@ -104,6 +104,7 @@ class ProductController extends Controller
             'pincode' => $data['pincode'],
             'status' => 'pending',
         );
+
         $order = Order::create($orderData)->toArray();
 
         $userData = array(
@@ -114,10 +115,9 @@ class ProductController extends Controller
         $user = User::findOrFail($data['user_id']);
         $user->update($data);
 
-        Mail::send('emails.welcome', $data, function ($m) use ($user) {
+        Mail::send('emails.order', $orderData, function ($m) use ($user) {
             $m->from('service@bikriworld.com', 'Bikriworld');
-            //$m->to($user->email, $user->name)->subject('Your Reminder!');
-            $m->to($data['email'], $data['name'])->subject('Bikriworld Order!');
+            $m->to($user->email, $user->name)->subject('Bikriworld Order Placed Successfully!');
         });
 
         $request->session()->put('orderData', $order);
@@ -156,6 +156,29 @@ class ProductController extends Controller
     }
 
     
-
+    public function testMail(Request $request){
+        $user = $this->userdata;
+        $user = array(
+            'name' => 'Akash Dutta',
+            'email' => 'akashdutta.scriptcrown@gmail.com',
+        );
+        $orderData = array(
+            'service_no' => rand(00000000,99999999),
+            'amount' => "2000",
+            'payment_mode' => "UPI",
+            'pickup_schedule' => "14 Apr, 2022",
+            'pickup_address' => "123 st, Bhattanagar, Liluah",
+            'pickup_city' => 'Howrah',
+            'pickup_state' => 'West Bengal',
+            'pincode' => '711203',
+            'status' => 'pending',
+        );
+        Mail::send('emails.order', $orderData, function ($m) use ($user) {
+            $m->from('service@bikriworld.com', 'Bikriworld');
+            //$m->to($user->email, $user->name)->subject('Your Reminder!');
+            $m->to($user['email'], $user['name'])->subject('Bikriworld Order Placed Successfully!');
+        });
+        echo "mail sent successfully";
+    }
 
 }
