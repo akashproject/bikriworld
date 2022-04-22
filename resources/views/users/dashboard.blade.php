@@ -61,6 +61,9 @@
                             </ul>
                         </div>
                     @endif
+                        @if ($message = Session::get('message'))
+                         <p class="alert ">{{ Session::get('message') }}</p>
+                        @endif
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="form-group custom_form_style">

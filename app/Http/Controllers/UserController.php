@@ -62,7 +62,7 @@ class UserController extends Controller
         $data = $request->all();
         $user = User::find($data['user_id']);
         $user->update($data);
-        return redirect('/dashboard');
+        return redirect('/dashboard')->with('message','User Information has been updated!');;
     }
 
 
