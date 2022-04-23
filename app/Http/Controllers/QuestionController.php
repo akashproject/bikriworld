@@ -21,7 +21,7 @@ class QuestionController extends Controller
         try {
             $productData = $request->all();
             $category_id = $request->session()->get('selling_category');
-            $questions = Question::where('category_id', $category_id)->get();
+            $questions = Question::where('category_id', 'like', '%"' . $category_id . '"%')->get();
             $product = Product::find($productData['product_id']);
             $veriationPrice = $productData['veriation_price'];
             $tobSellingBrands = Brand::all();

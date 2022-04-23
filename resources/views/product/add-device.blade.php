@@ -42,6 +42,12 @@
                                     <input type="text" name="email" class="form-control" autocomplete="off" value="" placeholder="Email Address">
                                 </div>
                             </div>
+                            <div class="col-lg-6">
+                                <div class="form-group custom_form_style">
+                                    <label class="padding-30px-left-right">Alternative Number<span class="required">*</span></label>
+                                    <input type="text" name="alt_mobile" class="form-control" autocomplete="off" value="" placeholder="Please Enter Alternative Number" required="">
+                                </div>
+                            </div>
                         </div>
                         <h5> Device Information </h5>
                         <div class="row">

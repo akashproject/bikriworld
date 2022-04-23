@@ -115,6 +115,12 @@
 						<select>
 					</div>
 				</div>
+				<div class="form-group row">
+					<label for="name" class="col-sm-3 text-right control-label col-form-label"> Reason </label>
+					<div class="col-sm-9 text-left control-label col-form-label">
+						<textarea name="reason" class="form-control"  id="reason" placeholder="Enter Reason Here" >{{ $order->reason }}</textarea>
+					</div>
+				</div>
 
 			</div>
 

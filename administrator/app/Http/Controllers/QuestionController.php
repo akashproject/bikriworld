@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Models\Question;
 use App\Models\Categories;
+use App\Models\Brand;
 
 class QuestionController extends Controller
 {
@@ -34,15 +35,18 @@ class QuestionController extends Controller
     public function add() {
         $question = Question::all();
         $categories = Categories::all();
-        return view('question.add',compact('question','categories'));
+        $brands = Brand::all();
+        return view('question.add',compact('question','categories','brands'));
     }
 
     public function show($id)
     {
         try {
             $question = Question::find($id);
+            $question->brand_id = ($question->brand_id)?json_decode($question->brand_id,true):array();
             $categories = Categories::all();
-            return view('question.show',compact('question','categories'));
+            $brands = Brand::all();
+            return view('question.show',compact('question','categories','brands'));
         } catch(\Illuminate\Database\QueryException $e){
         }        
     }
@@ -55,6 +59,10 @@ class QuestionController extends Controller
             'deducted_amount' => 'required',
         ]);
 
+        if(isset($data['brand_id'])){
+            $data['brand_id'] = json_encode($data['brand_id']);
+        }
+        
         if($data['question_id'] <= 0){
             Question::create($data);
         } else {

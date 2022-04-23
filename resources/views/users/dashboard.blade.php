@@ -83,6 +83,12 @@
                                     <input type="text" name="mobile" class="form-control" autocomplete="off" value="{{$user->mobile}}" required="" readonly>
                                 </div>
                             </div>
+                            <div class="col-lg-6">
+                                <div class="form-group custom_form_style">
+                                    <label class="padding-30px-left-right">Alternative Number</label>
+                                    <input type="text" name="alt_mobile" class="form-control" placeholder="Enter Alternative Number" autocomplete="off" value="{{$user->alt_mobile}}" >
+                                </div>
+                            </div>
                             <div class="col-12">
                                 <input type="hidden" name="user_id" value="{{$user->id}}" >
                                 <button type="submit" class="thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle"> Update <i class="fal fa-chevron-right ml-2"></i></button>

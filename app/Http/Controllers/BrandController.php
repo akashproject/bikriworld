@@ -23,7 +23,7 @@ class BrandController extends Controller
             $category = Categories::find($id);
             $request->session()->put('selling_category', $id);
             //echo $request->session()->get('category_id');
-            $brands = Brand::where('category_id', 'like', '%' . $id . '%')->get();
+            $brands = Brand::where('category_id', 'like', '%"' . $id . '"%')->get();
             $tobSellingBrands = Brand::all();
             $tobSellingProducts = Product::all();
             return view('brand.index',compact('category','brands','user','tobSellingBrands','tobSellingProducts'));

@@ -60,6 +60,12 @@
                                     <input type="text" name="mobile" class="form-control" autocomplete="off" value="{{ $user->mobile }}" required="" readonly>
                                 </div>
                             </div>
+                            <div class="col-lg-6">
+                                <div class="form-group custom_form_style">
+                                    <label class="padding-30px-left-right">Alternative Number</label>
+                                    <input type="text" name="alt_mobile" class="form-control" placeholder="Enter Alternative Number" autocomplete="off" value="{{$user->alt_mobile}}" >
+                                </div>
+                            </div>
                             <div class="col-lg-12">
                                 <h3> Pickup Location </h3>
                             </div>
