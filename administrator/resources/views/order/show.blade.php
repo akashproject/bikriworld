@@ -36,7 +36,7 @@
 				<div class="form-group row">
 					<label for="name" class="col-sm-3 text-right control-label col-form-label">Product Variant</label>
 					<div class="col-sm-9 text-left control-label col-form-label">
-						<span >{{ $order->variant }}</span >
+						<span >{{ $order->variation_type }}</span >
 					</div>
 				</div>
 

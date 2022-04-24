@@ -94,6 +94,7 @@ class ProductController extends Controller
         $orderData = array(
             'user_id' => $data['user_id'],
             'product_id' => $data['product_id'],
+            'variation_type' => $data['variation_type'],
             'service_no' => rand(00000000,99999999),
             'amount' => $this->sellprice['exact_price'],
             'payment_mode' => $data['payment_mode'],
@@ -127,6 +128,7 @@ class ProductController extends Controller
     public function orderSuccess(Request $request){
         $user = $this->userdata;
         $order = $request->session()->get('orderData');
+        $order['product_name'] = Product::findOrFail($order['product_id'])->name;
         return view('product.order-success',compact('user','order'));
     }
 

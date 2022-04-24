@@ -11,7 +11,7 @@
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="{{  url('') }}">Home</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Select Brands</li>
+                                <li class="breadcrumb-item active" aria-current="page">Order Status</li>
                             </ol>
                         </nav>
                     </div>
@@ -73,7 +73,7 @@
                             <h5 class="report-content">  Device </h5>
                         </div>
                         <div class="col-6">
-                            <h5 class="report-content"> Apple iPhone 13 mini (4 GB/512 GB) </h5>
+                            <h5 class="report-content"> {{$order['product_name']}} ( {{$order['variation_type']}} ) </h5>
                         </div>
                     </div>
                     <div class="row" >

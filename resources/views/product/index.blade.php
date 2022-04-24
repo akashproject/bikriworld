@@ -35,7 +35,7 @@
                 <!-- Block Start -->
                 <div class="col-lg-2 col-6">
                     <div class="team_block style_2 style_3">
-                        <div class="team_img">
+                        <div class="team_img product_img">
                             @if($value->image)
                             <img src="/administrator/public/images/{{ $value->image }}" alt="img">
                             @else 
@@ -117,7 +117,7 @@
                 @foreach ($tobSellingProducts as $value)
                 <!-- Feature Box Start -->
                 <div class="slide-item col-12">
-                    <div class="features_box">
+                    <div class="features_box product_image_box">
                         <div class="icon">
                             <img src="/administrator/public/images/{{ $value->image }}" alt="img">
                         </div>

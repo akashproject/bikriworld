@@ -131,7 +131,7 @@
                 @foreach ($tobSellingProducts as $value)
                 <!-- Feature Box Start -->
                 <div class="slide-item col-12">
-                    <div class="features_box">
+                    <div class="features_box product_image_box">
                         <div class="icon">
                             <img src="/administrator/public/images/{{ $value->image }}" alt="img">
                         </div>

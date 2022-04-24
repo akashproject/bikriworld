@@ -513,13 +513,14 @@
         });
     });
 
-    $(".product-right-content .variant").click(function() {
+    $(".product-right-content .variant").on("click",function() {
         $(".product-right-content .variant").removeClass("active");
         $(this).addClass("active");
     });
 
-    $('.veriation_price').click(function(){
+    $('.veriation_price').on("click",function(){
         $(".product-price_amount").html(addCommas($(this).val()))
+        $("#veriation_type").val($(this).attr("data-type"));
         //$(".product-price_amount_int").val($(this).attr('data-price'))
     })
     // Easy pie bar

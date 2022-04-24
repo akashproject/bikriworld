@@ -181,6 +181,7 @@
                                             <h6 class="mb-0">
                                                 <a href="javascript:void(0)"> {{ $product->name }}</a>
                                             </h6>
+                                            <p> {{ $calculatedData['variation_type'] }}</p>
                                         </div>
                                     </li>
                                     
@@ -206,6 +207,7 @@
                                 <div class="sidebar_widget_inner">
                                     <input type="hidden" name="user_id" id="" value="{{ $user->id }}" >
                                     <input type="hidden" name="product_id" id="" value="{{ $product->id }}" >
+                                    <input type="hidden" name="variation_type" id="" value="{{ $calculatedData['variation_type'] }}" >
                                     <button type="submit" class="sell-now-btn custom-cta-btn bg-thm-color-two btn-rectangle"> Confirm Pickup <i class="fal fa-chevron-right ml-2"></i></button>
                                 </div>
                             </div>

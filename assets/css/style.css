@@ -3885,6 +3885,11 @@ a.close_aside i {
 
 
 /*Features*/
+.features_box.product_image_box img {
+    height: 100px;
+    width: auto !important;
+}
+
 .features_box {
     padding: 10px;
     margin-bottom: 30px;
@@ -7106,7 +7111,10 @@ a.head_trigger.desktop_trigger {
 
 }
 
-
+.team_img.product_img img {
+    border-radius: 0;
+    height: 150px;
+}
 
 /*subheader*/
 
@@ -9252,7 +9260,7 @@ a.head_trigger.desktop_trigger {
 
     width: 90px;
 
-    height: 90px;
+    height: auto;
 
     margin-right: 30px;
 

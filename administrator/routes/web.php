@@ -68,6 +68,8 @@ Route::post('/product-delete', [App\Http\Controllers\ProductController::class, '
 
 //Questions
 Route::get('/questions', [App\Http\Controllers\QuestionController::class, 'index'])->name('questions');
+Route::get('/sub-questions', [App\Http\Controllers\QuestionController::class, 'subQuestions'])->name('sub-questions');
+Route::get('/device-age', [App\Http\Controllers\QuestionController::class, 'deviceAge'])->name('device-age');
 Route::get('/question/{id}', [App\Http\Controllers\QuestionController::class, 'show'])->name('question');
 Route::get('/addquestion', [App\Http\Controllers\QuestionController::class, 'add'])->name('question');
 Route::post('/submitquestion', [App\Http\Controllers\QuestionController::class, 'save'])->name('submitquestion');

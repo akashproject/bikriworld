@@ -54,7 +54,8 @@
                     @foreach ($order as $key => $value)
                         <div class="row order_wraper">
                             <div class="col-6 col-lg-10">
-                                <h5> {{ $value->name }} </h5>
+                                <h5 style="margin:0"> {{ $value->name }} </h5>
+                                <p> {{ $value->variation_type }}</p>
                             </div>
                             <div class="col-6  col-lg-2">
                                 <div class="" >
