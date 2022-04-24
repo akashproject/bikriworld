@@ -78,6 +78,8 @@
                             <ul aria-expanded="false" class="collapse  first-level">
 								<li class="sidebar-item"><a href="{{ url('questions') }}" class="sidebar-link"><i class="mdi mdi-border-inside"></i><span class="hide-menu"> All Questions </span></a></li>
                                 <li class="sidebar-item"><a href="{{ url('addquestion') }}" class="sidebar-link"><i class="mdi mdi-border-inside"></i><span class="hide-menu"> Add Question </span></a></li>
+                                <li class="sidebar-item"><a href="{{ url('device-age') }}" class="sidebar-link"><i class="mdi mdi-border-inside"></i><span class="hide-menu"> Device Ages </span></a></li>
+                                <li class="sidebar-item"><a href="{{ url('add-device-age') }}" class="sidebar-link"><i class="mdi mdi-border-inside"></i><span class="hide-menu"> Add Device Age </span></a></li>                              
                             </ul>
                         </li>
 

@@ -68,11 +68,24 @@ Route::post('/product-delete', [App\Http\Controllers\ProductController::class, '
 
 //Questions
 Route::get('/questions', [App\Http\Controllers\QuestionController::class, 'index'])->name('questions');
-Route::get('/sub-questions', [App\Http\Controllers\QuestionController::class, 'subQuestions'])->name('sub-questions');
-Route::get('/device-age', [App\Http\Controllers\QuestionController::class, 'deviceAge'])->name('device-age');
 Route::get('/question/{id}', [App\Http\Controllers\QuestionController::class, 'show'])->name('question');
-Route::get('/addquestion', [App\Http\Controllers\QuestionController::class, 'add'])->name('question');
 Route::post('/submitquestion', [App\Http\Controllers\QuestionController::class, 'save'])->name('submitquestion');
+//Route::get('/sub-questions', [App\Http\Controllers\QuestionController::class, 'subQuestions'])->name('sub-questions');
+Route::get('/device-age', [App\Http\Controllers\QuestionController::class, 'deviceAge'])->name('device-age');
+Route::get('/add-device-age', [App\Http\Controllers\QuestionController::class, 'addDeviceAge'])->name('add-device-age');
+
+//Accessories
+Route::get('/accessories', [App\Http\Controllers\AccessoriesController::class, 'index'])->name('accessories');
+Route::get('/add-accessories', [App\Http\Controllers\AccessoriesController::class, 'add'])->name('add-accessories');
+Route::get('/accessory/{id}', [App\Http\Controllers\AccessoriesController::class, 'show'])->name('accessory');
+Route::post('/save-accessories', [App\Http\Controllers\AccessoriesController::class, 'save'])->name('save-device-age');
+
+//Products
+Route::get('/products', [App\Http\Controllers\ProductController::class, 'index'])->name('products');
+Route::get('/product/{id}', [App\Http\Controllers\ProductController::class, 'show'])->name('product');
+Route::get('/addproduct', [App\Http\Controllers\ProductController::class, 'add'])->name('product');
+Route::post('/submitproduct', [App\Http\Controllers\ProductController::class, 'save'])->name('submitproduct');
+Route::post('/product-delete', [App\Http\Controllers\ProductController::class, 'delete'])->name('product-delete');
 
 //Contact
 Route::get('/quaries', [App\Http\Controllers\ContactController::class, 'index'])->name('quaries');
