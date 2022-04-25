@@ -83,6 +83,13 @@
                             </ul>
                         </li>
 
+                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-border-inside"></i><span class="hide-menu">Accessories </span></a>
+                            <ul aria-expanded="false" class="collapse  first-level">
+								<li class="sidebar-item"><a href="{{ url('accessories') }}" class="sidebar-link"><i class="mdi mdi-border-inside"></i><span class="hide-menu"> All Accessories </span></a></li>
+                                <li class="sidebar-item"><a href="{{ url('add-accessories') }}" class="sidebar-link"><i class="mdi mdi-border-inside"></i><span class="hide-menu"> Add Accessories </span></a></li>                     
+                            </ul>
+                        </li>
+
                         <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-border-inside"></i><span class="hide-menu">Sell Request </span></a>
 
                             <ul aria-expanded="false" class="collapse  first-level">

@@ -8,6 +8,9 @@ use Illuminate\Http\Request;
 use App\Models\Question;
 use App\Models\Product;
 use App\Models\Brand;
+use App\Models\Accessories;
+use App\Models\Age;
+
 class QuestionController extends Controller
 {
     public $userdata = '';
@@ -31,6 +34,20 @@ class QuestionController extends Controller
         } catch(\Illuminate\Database\QueryException $e){
         }
     }
+
+    public function givenAccessories(Request $request){
+        $user = $this->userdata;
+        $data = $request->all();
+        $product = Product::find($data['product_id']);
+        $accessories = Accessories::all();
+        $veriationPrice = $data['veriation_price'];
+        $veriationType = $data['veriation_type'];
+        $tobSellingBrands = Brand::all();
+        $tobSellingProducts = Product::all();
+
+        return view('questions.accessories',compact('accessories','product','user','tobSellingBrands','tobSellingProducts','veriationPrice','veriationType'));
+    }
+
 
     public function calculatePrice(Request $request){
         $data = $request->all();        
@@ -61,5 +78,7 @@ class QuestionController extends Controller
         $request->session()->put('sellprice', $callculatedData);
         return redirect('/product-quote');
     }
+
+
 
 }

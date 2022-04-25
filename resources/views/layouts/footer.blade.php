@@ -12,10 +12,10 @@
                                 <a href="#">256 Elizaberth Ave Str, Brooklyn, CA, 90025</a>
                             </li>
                             <li>
-                                <a href="tel:+01234567899">+012 (345) 678 99</a>
+                                <a href="tel:+917439995068">+91 7439995068</a>
                             </li>
                             <li>
-                                <a href="mailto:example@example.com">example@example.com</a>
+                                <a href="mailto:service@bikriworld.com">service@bikriworld.com</a>
                             </li>
                         </ul>
                         <ul class="social">

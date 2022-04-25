@@ -48,7 +48,7 @@
 						<select name="brand_id[]" id="brand_id" class="select2 form-control custom-select" style="width: 100%; height:136px;" multiple>
 							<option value="">Select Brand</option>
 							@foreach($brands as $key => $brand)
-							<option value="{{$brand->id}} {{$accessories->brand_id[$key] ?? ''}}" {{ ( $accessories->brand_id[$key] ?? '' ==  $brand->id )? 'selected' : '' }} > {{$brand->name}}</option>
+							<option value="{{$brand->id}}" {{ (in_array($brand->id,  $accessories->brand_id))?'selected' : '' }} > {{$brand->name}}</option>
 							@endforeach
 						<select>
 					</div>
@@ -56,7 +56,7 @@
 				<div class="form-group row">
 					<label for="title" class="col-sm-3 text-right control-label col-form-label">Extra Brand Amount</label>
 					<div class="col-sm-9">
-						<input type="number" class="form-control" name="extra_amount" id="title" placeholder="Enter Deducted Amount Here" value="{{ $accessories->extra_amount }}">
+						<input type="number" class="form-control" name="extra_deducted_amount" id="title" placeholder="Enter Deducted Amount Here" value="{{ $accessories->extra_deducted_amount }}">
 					</div>
 				</div>					
 			</div>

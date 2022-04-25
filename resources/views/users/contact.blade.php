@@ -48,7 +48,7 @@
                         <div class="text">
                             <h4>Need Support?</h4>
                             <p>Are you stuck with payment issues or not getting the right price? Reach out & we will work our magic.</p>
-                            <a href="#" class="thm-btn bg-thm-color-three thm-color-three-shadow btn-rectangle">Mail Us <i class="fal fa-chevron-right ml-2"></i></a>
+                            <a href="mailto:support@bikriworld.com" class="thm-btn bg-thm-color-three thm-color-three-shadow btn-rectangle">Mail Us <i class="fal fa-chevron-right ml-2"></i></a>
                         </div>
                     </div>
                 </div>
@@ -92,15 +92,15 @@
                             <i class="icon fal fa-envelope-open-text"></i>
                             <div class="text">
                                 <h6>Email Address</h6>
-                                <p>supportcoachinfo@gmail.com</p>
+                                <p>support@bikriworld.com</p>
                             </div>
                         </li>
                         <li>
                             <i class="icon fal fa-phone"></i>
                             <div class="text">
                                 <h6>Contact Us</h6>
-                                <p><strong>Mobile: </strong> +012 (345) 789 99</p>
-                                <p><strong>Hotline: </strong> +563 789 55</p>
+                                <p><strong>Mobile: </strong> <a href="tel:7439995068">+(91) 7439 995 068</a> </p>
+                                <p><strong>Hotline: </strong> <a href="tel:7439995068">+(91) 7439 995 068</a> </p>
                             </div>
                         </li>
                     </ul>

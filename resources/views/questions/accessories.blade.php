@@ -12,7 +12,7 @@
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="{{  url('') }}">Home</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Device Report</li>
+                                <li class="breadcrumb-item active" aria-current="page">Device Accessories</li>
                             </ol>
                         </nav>
                     </div>
@@ -31,10 +31,10 @@
                 <div class="col-lg-7">
                     <div class="summary-wrap" >
                         <div class="question-summary" >
-                            <h4 class="summary-heading" > Let us know some questions about your device ! </h4>
-                            <p class="summary-description" > What is the current condition of your device </p>
+                            <h4 class="summary-heading" > Let us know following accessories with your device! </h4>
+                            <p class="summary-description" > What you have accessories with your device </p>
                         </div>
-                        <form class="form-horizontal" method="post" action="{{ url('given-accessories') }}" enctype="multipart/form-data">
+                        <form class="form-horizontal" method="post" action="{{ url('device-age') }}" enctype="multipart/form-data">
                             @csrf
                             @if ($errors->any())
                                 <div class="alert alert-danger">
@@ -44,40 +44,24 @@
                                         @endforeach
                                     </ul>
                                 </div>
-                            @endif
-                            @if($questions)
-                                @foreach ($questions as $key => $value)
-                                    <div class="row question_list" >
-                                        <div class="col-lg-12">
-                                            <h5 >{{$key+1}}. <span class="question_data">{{ $value->question }} <span> </h5>
-                                        </div>
-                                        <div class="col-lg-8">
-                                            <div class="row answer_row" dataquestion="{{$value->id}}">
-                                                <div class="col-lg-6 ">
-                                                    <div class="answer_list"  >
-                                                        <div class="form-check ">
-                                                            <input class="form-check-input yes" questionval="{{ $value->description }}" type="radio" name="question_id[{{ $value->id }}]" id="answer_yes_{{$key}}" value="1" >
-                                                            <label class="form-check-label" for="answer_yes_{{$key}}">Yes</label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-6">
-                                                    <div class="answer_list"  >
-                                                        <div class="form-check ">
-                                                            <input class="form-check-input no" type="radio" name="question_id[{{ $value->id }}]" id="answer_no_{{$key}}" value="0" >
-                                                            <label class="form-check-label" for="answer_no_{{$key}}">No</label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                            @endif                           
+                                <div class="row question_list" >
+                                @if($accessories)
+                                    @foreach ($accessories as $key => $value)
+                                    <div class="col-lg-3">
+                                        <div class="accessories_wrap" dataquestion="{{$value->id}}">
+                                            <img src="https://via.placeholder.com/80x80" class="img"> 
+                                            <h6> {{$value->name}} </h6>
                                         </div>
                                     </div>
-                                @endforeach	
-                            @endif 
+                                    @endforeach	
+                                @endif
+                                </div>
+                                
                             <input type="hidden" name="product_id" id="product_id" value="{{$product->id}}" >
                             <input type="hidden" name="veriation_price" id="veriation_price" value="{{$veriationPrice}}" >
                             <input type="hidden" name="veriation_type" id="veriation_type" value="{{$veriationType}}" >
-                            <button type="submit" class="thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle"> Continue <i class="fal fa-arrow-right ml-2"></i></a>
+                            <button type="submit" class="thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle"> Calculate Price <i class="fal fa-calculator ml-2"></i></a>
                         </form>
                     </div>
                 </div>

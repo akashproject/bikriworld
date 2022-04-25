@@ -51,6 +51,20 @@ class QuestionController extends Controller
         }        
     }
 
+    public function showDeviceAge($id)
+    {
+        try {
+            $age = Age::find($id);
+            $age->brand_id = ($age->brand_id)?json_decode($age->brand_id,true):array();
+            $categories = Categories::all();
+            $brands = Brand::all();
+            return view('question.show-devive',compact('age','categories','brands'));
+        } catch(\Illuminate\Database\QueryException $e){
+        }        
+    }
+
+     
+
     public function addDeviceAge()
     {
         try {

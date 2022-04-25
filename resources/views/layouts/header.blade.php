@@ -13,9 +13,9 @@ Preloader End -->
     <div class="container mobile-top-menu">
         <ul style="font-size:20px">
             <li>
-                <a href="tel:+919836555023">
+                <a href="tel:+97439995068">
                     <i class="fal fa-phone"></i>
-                    +919836555023              
+                    +91 7439 995 068              
                 </a>
             </li>
             <li>
@@ -66,7 +66,7 @@ Preloader End -->
         <i class="fa fa-times" aria-hidden="true"></i>
     </a>
     <!-- logo -->
-    <p>Sed ut perspiciatis unde omnis iste natus error voluptatem accan tium doloremque laudantium totam rem aperiam</p>
+    <!-- <p>Sed ut perspiciatis unde omnis iste natus error voluptatem accan tium doloremque laudantium totam rem aperiam</p> -->
     <div class="sidebar">
         <form id="signin_form"  class="mf_form_validate ajax_submit" action="#" method="post" enctype="multipart/form-data">
             <div class="sidebar_widget recent_widgets aside_login_form">
@@ -176,13 +176,13 @@ Preloader End -->
                         <li>
                             <a href="tel:0123456789">
                                 <i class="fal fa-phone"></i>
-                                Call : 012(345) 67 89
+                                Call : 7439 995 068
                             </a>
                         </li>
                         <li>
-                            <a href="mailto:example@example.com">
+                            <a href="mailto:service@bikriworld.com">
                                 <i class="fal fa-envelope"></i>
-                                example@example.com
+                                service@bikriworld.com
                             </a>
                         </li>
                     </ul>

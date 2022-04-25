@@ -72,13 +72,15 @@ Route::get('/question/{id}', [App\Http\Controllers\QuestionController::class, 's
 Route::post('/submitquestion', [App\Http\Controllers\QuestionController::class, 'save'])->name('submitquestion');
 //Route::get('/sub-questions', [App\Http\Controllers\QuestionController::class, 'subQuestions'])->name('sub-questions');
 Route::get('/device-age', [App\Http\Controllers\QuestionController::class, 'deviceAge'])->name('device-age');
+Route::get('/device-age/{id}', [App\Http\Controllers\QuestionController::class, 'showDeviceAge'])->name('show-device-age');
 Route::get('/add-device-age', [App\Http\Controllers\QuestionController::class, 'addDeviceAge'])->name('add-device-age');
+Route::post('/save-device-age', [App\Http\Controllers\QuestionController::class, 'saveDeviceAge'])->name('save-device-age');
 
 //Accessories
 Route::get('/accessories', [App\Http\Controllers\AccessoriesController::class, 'index'])->name('accessories');
 Route::get('/add-accessories', [App\Http\Controllers\AccessoriesController::class, 'add'])->name('add-accessories');
 Route::get('/accessory/{id}', [App\Http\Controllers\AccessoriesController::class, 'show'])->name('accessory');
-Route::post('/save-accessories', [App\Http\Controllers\AccessoriesController::class, 'save'])->name('save-device-age');
+Route::post('/save-accessories', [App\Http\Controllers\AccessoriesController::class, 'save'])->name('save-accessories');
 
 //Products
 Route::get('/products', [App\Http\Controllers\ProductController::class, 'index'])->name('products');
