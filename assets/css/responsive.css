@@ -467,6 +467,11 @@
 }
 
 @media (max-width: 767px) {
+    .accessories_wrap h6 {
+        font-size: 14px;
+        margin-top: 5px;
+    }
+
     .header {
         padding-top: 12px;
         padding-bottom: 10px;

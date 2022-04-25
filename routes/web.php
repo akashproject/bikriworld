@@ -32,6 +32,7 @@ Route::get('/selling-brands/{id}', [App\Http\Controllers\BrandController::class,
 Route::post('/question', [App\Http\Controllers\QuestionController::class, 'index'])->name('question-index');
 Route::post('/calculate-price', [App\Http\Controllers\QuestionController::class, 'calculatePrice'])->name('calculate-price');
 Route::post('/given-accessories', [App\Http\Controllers\QuestionController::class, 'givenAccessories'])->name('given-accessories');
+Route::post('/device-age', [App\Http\Controllers\QuestionController::class, 'deviceAge'])->name('device-age');
 
 // User Module
 Route::get('/dashboard', [App\Http\Controllers\UserController::class, 'dashboard'])->name('dashboard');

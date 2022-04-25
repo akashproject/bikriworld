@@ -9265,8 +9265,46 @@ a.head_trigger.desktop_trigger {
     margin-right: 30px;
 
 }
+.accessories_wrap {
+    text-align: center;
+    padding: 12px;
+    border-radius: 10px;
+    background: #00986b0d;
+    width: 100%;
+    margin-top: 20px
+}
+
+.ages_wrap {
+    width: 100%;
+}
+
+.ages_wrap h6 {
+    margin: 0;
+    padding: 9px 20px;
+    font-size: 14px;
+    background: #00986b0d;
+}
+
+.accessories_wrap h6 {
+    font-size: 14px;
+    margin: 8px 3px 0;
+}
 
 
+
+.accessory_input:checked + .accessories_wrap, .age_input:checked + .ages_wrap {
+    font-weight: bold;
+    border: 1px solid #00986b;
+}
+
+.accessories_list,.ages_list {
+    margin-bottom: 30px;
+}   
+
+input.accessory_input, input.age_input{
+    position: absolute;
+    visibility: hidden;
+}
 
 .sidebar .recent_widgets ul li .text {
 

@@ -199,7 +199,7 @@
                     <div class="col-lg-5">
                         <div class="image_box relative z-1">
                             <img src="{{ url('assets/images/elements/square_shape.png') }}" alt="shape" class="shape_2 rotate_elem">
-                            <img src="{{ url('assets/images/cta_image.png') }}" alt="img" class="image-fit">
+                            <img src="{{ url('assets/images/contact-footer.jpg') }}" alt="img" class="image-fit">
                             <div class="arrows slideRight">
                                 <div class="arrow"></div>
                                 <div class="arrow"></div>

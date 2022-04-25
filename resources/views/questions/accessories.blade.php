@@ -2,7 +2,7 @@
 
     @section('content')
     <!-- Subheader Start -->
-    <div class="subheader relative z-1" style="background-image: url({{ url('assets/images/inner_banner.png') }});">
+    <div class="subheader relative z-1" style="background-image: url({{ url('assets/images/report-banner.jpg') }});">
         <div class="container relative z-1">
             <div class="row">
                 <div class="col-12">
@@ -43,25 +43,24 @@
                                             <li>{{ $error }}</li>
                                         @endforeach
                                     </ul>
-                                </div>
+                                </div> 
                             @endif                           
-                                <div class="row question_list" >
+                            <div class="row accessories_list" >
                                 @if($accessories)
                                     @foreach ($accessories as $key => $value)
-                                    <div class="col-lg-3">
-                                        <div class="accessories_wrap" dataquestion="{{$value->id}}">
+                                    <div class="col-lg-3 col-6 relative">
+                                        <input type="checkbox" name="accessories[]" id="accessory_{{$value->id}}" class="accessory_input" value="{{$value->id}}" >   
+                                        <label for="accessory_{{$value->id}}" class="accessories_wrap" dataquestion="{{$value->id}}">                                           
                                             <img src="https://via.placeholder.com/80x80" class="img"> 
                                             <h6> {{$value->name}} </h6>
-                                        </div>
+                                        </label>
                                     </div>
                                     @endforeach	
                                 @endif
-                                </div>
-                                
-                            <input type="hidden" name="product_id" id="product_id" value="{{$product->id}}" >
-                            <input type="hidden" name="veriation_price" id="veriation_price" value="{{$veriationPrice}}" >
-                            <input type="hidden" name="veriation_type" id="veriation_type" value="{{$veriationType}}" >
-                            <button type="submit" class="thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle"> Calculate Price <i class="fal fa-calculator ml-2"></i></a>
+                            </div>
+                            <button type="submit" class="thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle"> 
+                                Continue <i class="fal fa-arrow-right ml-2"></i>
+                            </button>
                         </form>
                     </div>
                 </div>
@@ -82,6 +81,7 @@
                                         <h6 class="mb-0">
                                             <a href="course-details.html">{{$product->name}}</a>
                                         </h6>
+                                        <p> {{ $veriationType }} </p>
                                     </div>
                                 </li>
                             </ul>
