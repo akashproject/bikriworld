@@ -51,7 +51,7 @@
                                     <div class="col-lg-3 col-6 relative">
                                         <input type="checkbox" name="accessories[]" id="accessory_{{$value->id}}" class="accessory_input" value="{{$value->id}}" >   
                                         <label for="accessory_{{$value->id}}" class="accessories_wrap" dataquestion="{{$value->id}}">                                           
-                                            <img src="https://via.placeholder.com/80x80" class="img"> 
+                                            <i class="fa fa-{{ strtolower($value->icon) }} cat-icon" aria-hidden="true"></i>
                                             <h6> {{$value->name}} </h6>
                                         </label>
                                     </div>

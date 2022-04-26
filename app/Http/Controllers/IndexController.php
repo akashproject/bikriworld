@@ -18,13 +18,6 @@ class IndexController extends Controller
     public function index(){
         $user = $this->userdata;
         try {
-            $data = array('name'=>"Virat Gandhi");
-            // Mail::send('emails.welcome', $data, function ($message) {
-            //     $message->from('service@bikriworld.com', 'Bikriworld');
-             
-            //     $message->to('akashduttaphp@gmail.com')->cc('akashdutta.scriptcrown@gmail.com');
-            // });
- 
             $categories = Categories::all();
             return view('index',compact('categories','user'));
         } catch(\Illuminate\Database\QueryException $e){

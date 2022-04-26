@@ -39,7 +39,7 @@
                             @endif 
                         </div>
                         <div class="col-7 text-left">
-                            <h5> {{ $product->name }} </h5>
+                            <h5> {{ $product->name }} ( {{ $calculatedData['variation_type'] }}  )</h5>
                             <p class="quote-msg"> Product Selling Price </p>
                             <h3 class="quote-price" style="margin-bottom: 10px;"> ₹{{ number_format($calculatedData['exact_price'])}}/- </h3>
                             <p style="font-size: 13px;margin-bottom: 0;">The amount is based on the your device condition as you mentioned. </p>

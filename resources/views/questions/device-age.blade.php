@@ -49,7 +49,7 @@
                                 @if($ages)
                                     @foreach ($ages as $key => $value)
                                     <div class="col-lg-6 col-6 relative">
-                                        <input type="radio" name="age[]" id="age_{{$value->id}}" class="age_input" value="{{$value->id}}" >   
+                                        <input type="radio" name="age_id" id="age_{{$value->id}}" class="age_input" value="{{$value->id}}" >   
                                         <label for="age_{{$value->id}}" class="ages_wrap" dataquestion="{{$value->id}}">                                           
                                             <h6> {{$value->age}} </h6>
                                         </label>

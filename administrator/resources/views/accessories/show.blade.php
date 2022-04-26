@@ -18,11 +18,17 @@
 					</div>
 
 				@endif
+				<div class="form-group row">
+					<label for="icon" class="col-sm-3 text-right control-label col-form-label">Icon</label>
+					<div class="col-sm-9">
+						<input type="text" class="form-control" name="icon" id="icon" placeholder="Icon Name Here" value="{{ $accessories->icon }}">
+					</div>
+				</div>
 
 				<div class="form-group row">
 					<label for="title" class="col-sm-3 text-right control-label col-form-label">Accessory Name</label>
 					<div class="col-sm-9">
-						<input type="text" class="form-control" name="name" id="title" placeholder="Enter Question Here"value="{{ $accessories->name }}">
+						<input type="text" class="form-control" name="name" id="title" placeholder="Enter Question Here" value="{{ $accessories->name }}">
 					</div>
 				</div>
 				<div class="form-group row">

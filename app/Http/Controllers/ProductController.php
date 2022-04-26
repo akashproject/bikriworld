@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -66,7 +65,6 @@ class ProductController extends Controller
         $user = $this->userdata;
         $product = Product::find($this->sellprice['product_id']);
         $calculatedData = $this->sellprice;
-
         $tobSellingBrands = Brand::all();
         $tobSellingProducts = Product::all();
 
