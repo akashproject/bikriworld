@@ -34,7 +34,7 @@
                             <h4 class="summary-heading" > Let us know some questions about your device ! </h4>
                             <p class="summary-description" > What is the current condition of your device </p>
                         </div>
-                        <form class="form-horizontal" method="post" action="{{ url('given-accessories') }}" enctype="multipart/form-data">
+                        <form class="form-horizontal" id="question_list_form" method="post" action="{{ url('given-accessories') }}" enctype="multipart/form-data">
                             @csrf
                             @if ($errors->any())
                                 <div class="alert alert-danger">
@@ -56,7 +56,7 @@
                                                 <div class="col-lg-6 ">
                                                     <div class="answer_list"  >
                                                         <div class="form-check ">
-                                                            <input class="form-check-input yes" questionval="{{ $value->description }}" type="radio" name="question_id[{{ $value->id }}]" id="answer_yes_{{$key}}" value="1" >
+                                                            <input class="form-check-input yes" questionval="{{ $value->description }}" type="radio" name="question_id[{{ $value->id }}]" id="answer_yes_{{$key}}" value="1" required>
                                                             <label class="form-check-label" for="answer_yes_{{$key}}">Yes</label>
                                                         </div>
                                                     </div>
@@ -64,7 +64,7 @@
                                                 <div class="col-lg-6">
                                                     <div class="answer_list"  >
                                                         <div class="form-check ">
-                                                            <input class="form-check-input no" type="radio" name="question_id[{{ $value->id }}]" id="answer_no_{{$key}}" value="0" >
+                                                            <input class="form-check-input no" type="radio" name="question_id[{{ $value->id }}]" id="answer_no_{{$key}}" value="0" required>
                                                             <label class="form-check-label" for="answer_no_{{$key}}">No</label>
                                                         </div>
                                                     </div>
@@ -77,7 +77,7 @@
                             <input type="hidden" name="product_id" id="product_id" value="{{$product->id}}" >
                             <input type="hidden" name="veriation_price" id="veriation_price" value="{{$veriationPrice}}" >
                             <input type="hidden" name="veriation_type" id="veriation_type" value="{{$veriationType}}" >
-                            <button type="submit" class="thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle"> Continue <i class="fal fa-arrow-right ml-2"></i></button>
+                            <button type="submit" class="thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle" style="margin-top: 20px;"> Continue <i class="fal fa-arrow-right ml-2"></i></button>
                         </form>
                     </div>
                 </div>

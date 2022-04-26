@@ -17,6 +17,8 @@
         },
     })
 
+    $("#question_list_form").validate();
+
     $("#device-age").validate({
         rules : {
             'age_id': {
