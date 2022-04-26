@@ -56,30 +56,12 @@
                 </div>
                 <div class="col-lg-4">
                     <div class="sidebar style_3">
-                        <div class="sidebar_widget recent_widgets">
-                            <h5 class="widget_title">Device Details</h5>
-                            <ul>
-                                <li style="padding: 10px 25px;">
-                                    <div class="image">
-                                    @if($product->image)
-                                    <img src="/administrator/public/images/{{ $product->image }}" alt="img" class="image-fit">
-                                    @else 
-                                    <img src="https://via.placeholder.com/180x180" alt="img" class="image-fit">
-                                    @endif 
-                                    </div>
-                                    <div class="text">
-                                        <h6 class="mb-0">
-                                            <a href="course-details.html">{{$product->name}}</a>
-                                        </h6>
-                                        <p> {{ $calculatedData['variation_type'] }} </p>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="sidebar_widget text-center">                           
+                        
+                        <div class="sidebar_widget text-center">          
+                            <h5 class="widget_title">Price Summary</h5>                 
                             <div class="sidebar_widget_inner">
                                 @if($calculatedData['exact_price'] > 100)
-                                <h6 >Price Summary</h5>
+                                
                                 <ul class="info_widget">
                                     <li>
                                         <span style="float:left">Base Price</span>

@@ -7131,9 +7131,10 @@ a.head_trigger.desktop_trigger {
 
 }
 
-.team_img.product_img img {
+.team_img.product_img a img {
     border-radius: 0;
     height: 150px;
+    max-width: 100%;
 }
 
 /*subheader*/
