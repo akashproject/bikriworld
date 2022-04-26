@@ -46,9 +46,9 @@ class AppServiceProvider extends ServiceProvider
 
             //info Menu
             $moreinfo = array(
-                '/about' => 'About Us',
+                '/about-us' => 'About Us',
                 '/privacy-policy' => 'Privacy Policy',
-                '/term-conditions' => "Terms & Conditions",
+                '/terms-conditions' => "Terms & Conditions",
                 '/contact-us' => "Contact Us",
 
             );

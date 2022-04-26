@@ -66,4 +66,8 @@ Route::post('/get-city-search', [App\Http\Controllers\SearchController::class, '
 Route::get('/contact', [App\Http\Controllers\UserController::class, 'contact'])->name('contact');
 Route::post('/save-contact', [App\Http\Controllers\ContactController::class, 'saveContact'])->name('save-contact');
 
+Route::get('/about-us', [App\Http\Controllers\UserController::class, 'aboutUs'])->name('about-us');
+Route::get('/privacy-policy', [App\Http\Controllers\UserController::class, 'privacyPolicy'])->name('privacy-policy');
+Route::get('/terms-conditions', [App\Http\Controllers\UserController::class, 'termsConditions'])->name('terms-conditions');
+
 

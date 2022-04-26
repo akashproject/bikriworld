@@ -82,5 +82,22 @@ class UserController extends Controller
         return view('users.contact',compact('user'));
     }
 
+    public function aboutUs(){
+        $user = $this->user;
+        return view('users.about',compact('user'));
+    }
+
+    public function privacyPolicy(){
+        $user = $this->user;
+        return view('users.privacy',compact('user'));
+    }
+
+    public function termsConditions(){
+        $user = $this->user;
+        return view('users.terms',compact('user'));
+    }
+
+
+
 
 }
