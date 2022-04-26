@@ -3271,6 +3271,26 @@ a.close_aside {
     display: inline-block;
 }
 
+label#age_id-error {
+    position: absolute;
+    top: -44px;
+}
+
+.sorry_message {
+    margin-top: 20px;
+}
+
+.sorry_message h5 {
+    color: #cb1919;
+    font-size: 19px;
+}
+
+.sorry_message p {
+    color: #cb1919;
+    font-size: 14px;
+    line-height: 15px;
+}
+
 a.close_aside i {
     font-size: 31px;
 }
@@ -9245,6 +9265,11 @@ a.head_trigger.desktop_trigger {
     margin-bottom: 30px;
 
 }
+
+.sidebar .recent_widgets.recent_widgets_custom ul li {
+    margin-bottom: 0;
+}
+
 
 
 

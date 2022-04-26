@@ -34,7 +34,7 @@
                             <h4 class="summary-heading" > Let us know age of your device! </h4>
                             <p class="summary-description" > How much age of your device </p>
                         </div>
-                        <form class="form-horizontal" method="post" action="{{ url('calculate-price') }}" enctype="multipart/form-data">
+                        <form class="form-horizontal" id="device-age" method="post" action="{{ url('calculate-price') }}" enctype="multipart/form-data">
                             @csrf
                             @if ($errors->any())
                                 <div class="alert alert-danger">
@@ -48,7 +48,7 @@
                             <div class="row ages_list" >
                                 @if($ages)
                                     @foreach ($ages as $key => $value)
-                                    <div class="col-lg-6 col-6 relative">
+                                    <div class="col-lg-6 col-12 relative">
                                         <input type="radio" name="age_id" id="age_{{$value->id}}" class="age_input" value="{{$value->id}}" >   
                                         <label for="age_{{$value->id}}" class="ages_wrap" dataquestion="{{$value->id}}">                                           
                                             <h6> {{$value->age}} </h6>

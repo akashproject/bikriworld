@@ -60,7 +60,9 @@ class QuestionController extends Controller
         $user = $this->userdata;
         $callculatedData = $request->session()->get('sellprice');
         $data = $request->all();
-        $callculatedData['accessories'] = $data['accessories'];
+        if (isset($data['accessories'])) {
+            $callculatedData['accessories'] = $data['accessories'];
+        }       
         $category_id = $request->session()->get('selling_category');
         $request->session()->put('sellprice', $callculatedData);
         
@@ -101,18 +103,20 @@ class QuestionController extends Controller
         }
 
         // Deduction calculation by accessories
-        $notProvidedAccessories = DB::table('accessories')
+        if(isset($callculatedData['accessories'])){
+            $notProvidedAccessories = DB::table('accessories')
                                     ->select('accessories.brand_id','accessories.deducted_amount','accessories.extra_deducted_amount')
                                     ->whereNotIn('id', $callculatedData['accessories'])
                                     ->where('category_id', '=', $category_id)->get();
 
-        foreach ($notProvidedAccessories as $key => $notProvidedAccessory) {
-            $sum_deduction += $notProvidedAccessory->deducted_amount;
-            if($notProvidedAccessory->brand_id){
-                $brands = json_decode($notProvidedAccessory->brand_id,true);
-                if(in_array($brand_id, $brands)){
-                    $sum_deduction += $notProvidedAccessory->extra_deducted_amount;
-                }   
+            foreach ($notProvidedAccessories as $key => $notProvidedAccessory) {
+                $sum_deduction += $notProvidedAccessory->deducted_amount;
+                if($notProvidedAccessory->brand_id){
+                    $brands = json_decode($notProvidedAccessory->brand_id,true);
+                    if(in_array($brand_id, $brands)){
+                        $sum_deduction += $notProvidedAccessory->extra_deducted_amount;
+                    }   
+                }
             }
         }
 

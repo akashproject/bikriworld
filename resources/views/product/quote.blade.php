@@ -40,18 +40,46 @@
                         </div>
                         <div class="col-7 text-left">
                             <h5> {{ $product->name }} ( {{ $calculatedData['variation_type'] }}  )</h5>
+                            @if($calculatedData['exact_price'] > 100)
                             <p class="quote-msg"> Product Selling Price </p>
                             <h3 class="quote-price" style="margin-bottom: 10px;"> ₹{{ number_format($calculatedData['exact_price'])}}/- </h3>
                             <p style="font-size: 13px;margin-bottom: 0;">The amount is based on the your device condition as you mentioned. </p>
+                            @else
+                            <div class="sorry_message" >
+                                <h5> We Are Sorry </h5>
+                                <p> Price is too low as per your device condition </p>
+                            </div>
+                            @endif
                             <!-- <a href="javascript:void(0)" class="view-report" > View Report</a> -->
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="sidebar style_3">
-                        <div class="sidebar_widget text-center">
+                        <div class="sidebar_widget recent_widgets">
                             <h5 class="widget_title">Device Details</h5>
+                            <ul>
+                                <li style="padding: 10px 25px;">
+                                    <div class="image">
+                                    @if($product->image)
+                                    <img src="/administrator/public/images/{{ $product->image }}" alt="img" class="image-fit">
+                                    @else 
+                                    <img src="https://via.placeholder.com/180x180" alt="img" class="image-fit">
+                                    @endif 
+                                    </div>
+                                    <div class="text">
+                                        <h6 class="mb-0">
+                                            <a href="course-details.html">{{$product->name}}</a>
+                                        </h6>
+                                        <p> {{ $calculatedData['variation_type'] }} </p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="sidebar_widget text-center">                           
                             <div class="sidebar_widget_inner">
+                                @if($calculatedData['exact_price'] > 100)
+                                <h6 >Price Summary</h5>
                                 <ul class="info_widget">
                                     <li>
                                         <span style="float:left">Base Price</span>
@@ -67,13 +95,16 @@
                                     </li>
                                     
                                 </ul>
+                                @else 
+                                <p> Price is too low as per your device condition </p>
+                                @endif
                             </div>
                             <div class="sidebar_widget_inner">
-                            @if($user)
-                            <a href="{{ url('checkout') }}" class="sell-now-btn custom-cta-btn bg-thm-color-two btn-rectangle"> Sell Now <i class="fal fa-chevron-right ml-2"></i></a>
-                            @else
-                            <a href="javascript:void(0)" class="open-login sell-now-btn head_trigger custom-cta-btn bg-thm-color-two btn-rectangle"> Sell Now <i class="fal fa-chevron-right ml-2"></i></a>
-                            @endif
+                                @if($calculatedData['exact_price'] > 100)
+                                <a href="{{ url('checkout') }}" class="sell-now-btn custom-cta-btn bg-thm-color-two btn-rectangle"> Sell Now <i class="fal fa-chevron-right ml-2"></i></a>
+                                @else
+                                <a href="{{ url('selling-categories') }}" class="sell-now-btn head_trigger custom-cta-btn bg-thm-color-two btn-rectangle"> Sell Another Device <i class="fal fa-chevron-right ml-2"></i></a>
+                                @endif
                             </div>
                         </div>
                     </div>

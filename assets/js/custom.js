@@ -17,6 +17,17 @@
         },
     })
 
+    $("#device-age").validate({
+        rules : {
+            'age_id': {
+                required: true,
+            }
+        },
+        messages: {
+            'age_id': "Please Select your device age.",
+        },
+    })
+
     $("#paymentform").validate({
         rules : {
             c_account_no : {

@@ -34,7 +34,7 @@
                             <h4 class="summary-heading" > Let us know following accessories with your device! </h4>
                             <p class="summary-description" > What you have accessories with your device </p>
                         </div>
-                        <form class="form-horizontal" method="post" action="{{ url('device-age') }}" enctype="multipart/form-data">
+                        <form class="form-horizontal" id="device-accessories" method="post" action="{{ url('device-age') }}" enctype="multipart/form-data">
                             @csrf
                             @if ($errors->any())
                                 <div class="alert alert-danger">
@@ -49,7 +49,7 @@
                                 @if($accessories)
                                     @foreach ($accessories as $key => $value)
                                     <div class="col-lg-3 col-6 relative">
-                                        <input type="checkbox" name="accessories[]" id="accessory_{{$value->id}}" class="accessory_input" value="{{$value->id}}" >   
+                                        <input type="checkbox" name="accessories[]" id="accessory_{{$value->id}}" class="accessory_input" value="{{$value->id}}">   
                                         <label for="accessory_{{$value->id}}" class="accessories_wrap" dataquestion="{{$value->id}}">                                           
                                             <i class="fa fa-{{ strtolower($value->icon) }} cat-icon" aria-hidden="true"></i>
                                             <h6> {{$value->name}} </h6>
