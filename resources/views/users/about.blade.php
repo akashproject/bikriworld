@@ -2,17 +2,17 @@
 
     @section('content')
     <!-- Subheader Start -->
-    <div class="subheader relative z-1" style="background-image: url({{ url('assets/images/contact-banner.png') }});">
+    <div class="subheader relative z-1" style="background-image: url({{ url('assets/images/inner_banner.png') }});">
         <div class="container relative z-1">
             <div class="row">
                 <div class="col-12">
-                    <h1 class="page_title">Contact Us</h1>
-                    <p> Need Help Selling Your Device? Send Your Queries </p>
+                    <h1 class="page_title">About Us</h1>
+                    <p> We Are letting you know about our goals & services </p>
                     <div class="page_breadcrumb">
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Contact Us</li>
+                                <li class="breadcrumb-item active" aria-current="page">About Us</li>
                             </ol>
                         </nav>
                     </div>
@@ -104,7 +104,7 @@
                             <div class="counter">
                                 <b data-from="0" data-to="369">0</b>
                             </div>
-                            <p class="mb-0">Popular Coach</p>
+                            <p class="mb-0">Happy Customer</p>
                         </div>
                     </div>
                 </div>
@@ -119,7 +119,7 @@
                             <div class="counter">
                                 <b data-from="0" data-to="264">0</b>
                             </div>
-                            <p class="mb-0">Our Advisors</p>
+                            <p class="mb-0">Product Bought</p>
                         </div>
                     </div>
                 </div>
@@ -134,7 +134,7 @@
                             <div class="counter">
                                 <b data-from="0" data-to="259">0</b>
                             </div>
-                            <p class="mb-0">Video Tutorials</p>
+                            <p class="mb-0">Business Partners</p>
                         </div>
                     </div>
                 </div>
@@ -149,7 +149,7 @@
                             <div class="counter">
                                 <b data-from="0" data-to="568">0</b>
                             </div>
-                            <p class="mb-0">Student Reviews</p>
+                            <p class="mb-0">Amount Given</p>
                         </div>
                     </div>
                 </div>
@@ -164,7 +164,6 @@
             <div class="row justify-content-between flex-row-reverse">
                 <div class="col-lg-6">
                     <div class="image_boxes style_2 relative z-1 h-100">
-                        <img src="{{ url('assets/images/about/small_2.jpg') }}" class="small_img" alt="img">
                         <div class="video_warp style_2 relative z-1 big_img">
                             <img src="assets/images/about/about_img_2.jpg" alt="img">
                             <a href="https://www.youtube.com/watch?v=TKnufs85hXk" class="popup-youtube transform-center justify-content-center d-flex">
@@ -222,145 +221,66 @@
             </div>
             <div class="row">
                 <!-- Block Start -->
-                <div class="col-lg col-md-6">
+                <div class="col-lg-3 col-md-6">
                     <div class="team_block style_2">
                         <div class="team_img">
-                            <img src="assets/images/team/1.jpg" alt="img" class="image-fit">
-                            <a href="team-details.html" class="thm-btn bg-thm-color-two thm-color-two-shadow btn-circle link">
-                                <i class="fal fa-plus"></i>
-                            </a>
+                            <div class="team-image">
+                                <img src="assets/images/team/1.jpg" alt="img" class="image-fit">
+                            </div>
                         </div>
-                        <h6 class="mb-1"><a href="team-details.html">Wallace D. Grace</a></h6>
-                        <p class="thm-color-two mb-0 font-weight-bold">Coach Teacher</p>
+                        <div class="team-content" >
+                            <h6 class="mb-1"><a href="team-details.html">Wallace D. Grace</a></h6>
+                            <p class="thm-color-two mb-0 font-weight-bold">Coach Teacher</p>
+                        </div>
                     </div>
                 </div>
                 <!-- Block End -->
                 <!-- Block Start -->
-                <div class="col-lg col-md-6">
+                <div class="col-lg-3 col-md-6">
                     <div class="team_block style_2">
                         <div class="team_img">
-                            <img src="assets/images/team/2.jpg" alt="img" class="image-fit">
-                            <a href="team-details.html" class="thm-btn bg-thm-color-two thm-color-two-shadow btn-circle link">
-                                <i class="fal fa-plus"></i>
-                            </a>
+                            <div class="team-image">
+                                <img src="assets/images/team/1.jpg" alt="img" class="image-fit">
+                            </div>
                         </div>
-                        <h6 class="mb-1"><a href="team-details.html">Evan A. Ethridge</a></h6>
-                        <p class="thm-color-two mb-0 font-weight-bold">Coach Teacher</p>
+                        <div class="team-content" >
+                            <h6 class="mb-1"><a href="team-details.html">Wallace D. Grace</a></h6>
+                            <p class="thm-color-two mb-0 font-weight-bold">Coach Teacher</p>
+                        </div>
                     </div>
                 </div>
                 <!-- Block End -->
                 <!-- Block Start -->
-                <div class="col-lg col-md-6">
+                <div class="col-lg-3 col-md-6">
                     <div class="team_block style_2">
                         <div class="team_img">
-                            <img src="assets/images/team/3.jpg" alt="img" class="image-fit">
-                            <a href="team-details.html" class="thm-btn bg-thm-color-two thm-color-two-shadow btn-circle link">
-                                <i class="fal fa-plus"></i>
-                            </a>
+                            <div class="team-image">
+                                <img src="assets/images/team/1.jpg" alt="img" class="image-fit">
+                            </div>
                         </div>
-                        <h6 class="mb-1"><a href="team-details.html">Marcus L. Duncan</a></h6>
-                        <p class="thm-color-two mb-0 font-weight-bold">Coach Teacher</p>
+                        <div class="team-content" >
+                            <h6 class="mb-1"><a href="team-details.html">Wallace D. Grace</a></h6>
+                            <p class="thm-color-two mb-0 font-weight-bold">Coach Teacher</p>
+                        </div>
                     </div>
                 </div>
                 <!-- Block End -->
                 <!-- Block Start -->
-                <div class="col-lg col-md-6">
+                <div class="col-lg-3 col-md-6">
                     <div class="team_block style_2">
                         <div class="team_img">
-                            <img src="assets/images/team/4.jpg" alt="img" class="image-fit">
-                            <a href="team-details.html" class="thm-btn bg-thm-color-two thm-color-two-shadow btn-circle link">
-                                <i class="fal fa-plus"></i>
-                            </a>
+                            <div class="team-image">
+                                <img src="assets/images/team/1.jpg" alt="img" class="image-fit">
+                            </div>
                         </div>
-                        <h6 class="mb-1"><a href="team-details.html">Paul B. Gilliland</a></h6>
-                        <p class="thm-color-two mb-0 font-weight-bold">Coach Teacher</p>
+                        <div class="team-content" >
+                            <h6 class="mb-1"><a href="team-details.html">Wallace D. Grace</a></h6>
+                            <p class="thm-color-two mb-0 font-weight-bold">Coach Teacher</p>
+                        </div>
                     </div>
                 </div>
                 <!-- Block End -->
-                <!-- Block Start -->
-                <div class="col-lg col-md-6">
-                    <div class="team_block style_2">
-                        <div class="team_img">
-                            <img src="assets/images/team/5.jpg" alt="img" class="image-fit">
-                            <a href="team-details.html" class="thm-btn bg-thm-color-two thm-color-two-shadow btn-circle link">
-                                <i class="fal fa-plus"></i>
-                            </a>
-                        </div>
-                        <h6 class="mb-1"><a href="team-details.html">Donald T.Lewis</a></h6>
-                        <p class="thm-color-two mb-0 font-weight-bold">Coach Teacher</p>
-                    </div>
-                </div>
-                <!-- Block End -->
-                <!-- Block Start -->
-                <div class="col-lg col-md-6">
-                    <div class="team_block style_2">
-                        <div class="team_img">
-                            <img src="assets/images/team/6.jpg" alt="img" class="image-fit">
-                            <a href="team-details.html" class="thm-btn bg-thm-color-two thm-color-two-shadow btn-circle link">
-                                <i class="fal fa-plus"></i>
-                            </a>
-                        </div>
-                        <h6 class="mb-1"><a href="team-details.html">Allan J. Sumlin</a></h6>
-                        <p class="thm-color-two mb-0 font-weight-bold">Coach Teacher</p>
-                    </div>
-                </div>
-                <!-- Block End -->
-                <!-- Block Start -->
-                <div class="col-lg col-md-6">
-                    <div class="team_block style_2">
-                        <div class="team_img">
-                            <img src="assets/images/team/7.jpg" alt="img" class="image-fit">
-                            <a href="team-details.html" class="thm-btn bg-thm-color-two thm-color-two-shadow btn-circle link">
-                                <i class="fal fa-plus"></i>
-                            </a>
-                        </div>
-                        <h6 class="mb-1"><a href="team-details.html">Gracie T. Evans</a></h6>
-                        <p class="thm-color-two mb-0 font-weight-bold">Coach Teacher</p>
-                    </div>
-                </div>
-                <!-- Block End -->
-                <!-- Block Start -->
-                <div class="col-lg col-md-6">
-                    <div class="team_block style_2">
-                        <div class="team_img">
-                            <img src="assets/images/team/8.jpg" alt="img" class="image-fit">
-                            <a href="team-details.html" class="thm-btn bg-thm-color-two thm-color-two-shadow btn-circle link">
-                                <i class="fal fa-plus"></i>
-                            </a>
-                        </div>
-                        <h6 class="mb-1"><a href="team-details.html">David S. Hudson</a></h6>
-                        <p class="thm-color-two mb-0 font-weight-bold">Coach Teacher</p>
-                    </div>
-                </div>
-                <!-- Block End -->
-                <!-- Block Start -->
-                <div class="col-lg col-md-6">
-                    <div class="team_block style_2">
-                        <div class="team_img">
-                            <img src="assets/images/team/9.jpg" alt="img" class="image-fit">
-                            <a href="team-details.html" class="thm-btn bg-thm-color-two thm-color-two-shadow btn-circle link">
-                                <i class="fal fa-plus"></i>
-                            </a>
-                        </div>
-                        <h6 class="mb-1"><a href="team-details.html">Michael J. Randall</a></h6>
-                        <p class="thm-color-two mb-0 font-weight-bold">Coach Teacher</p>
-                    </div>
-                </div>
-                <!-- Block End -->
-                <!-- Block Start -->
-                <div class="col-lg col-md-6">
-                    <div class="team_block style_2">
-                        <div class="team_img">
-                            <img src="assets/images/team/10.jpg" alt="img" class="image-fit">
-                            <a href="team-details.html" class="thm-btn bg-thm-color-two thm-color-two-shadow btn-circle link">
-                                <i class="fal fa-plus"></i>
-                            </a>
-                        </div>
-                        <h6 class="mb-1"><a href="team-details.html">Joseph Anderson</a></h6>
-                        <p class="thm-color-two mb-0 font-weight-bold">Coach Teacher</p>
-                    </div>
-                </div>
-                <!-- Block End -->
+               
             </div>
         </div>
     </section>
@@ -534,39 +454,7 @@
         </div>
     </section>
     <!-- Testimonials End -->
-    <!-- Sponsors Start -->
-    <div class="section-padding">
-        <div class="container">
-            <div class="row justify-content-around">
-                <div class="col-auto">
-                    <div class="sponsors_img">
-                        <img src="assets/images/sponsors/1.png" alt="img">
-                    </div>
-                </div>
-                <div class="col-auto">
-                    <div class="sponsors_img">
-                        <img src="assets/images/sponsors/2.png" alt="img">
-                    </div>
-                </div>
-                <div class="col-auto">
-                    <div class="sponsors_img">
-                        <img src="assets/images/sponsors/3.png" alt="img">
-                    </div>
-                </div>
-                <div class="col-auto">
-                    <div class="sponsors_img">
-                        <img src="assets/images/sponsors/4.png" alt="img">
-                    </div>
-                </div>
-                <div class="col-auto">
-                    <div class="sponsors_img">
-                        <img src="assets/images/sponsors/5.png" alt="img">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Sponsors End -->
+    
     @endsection
 @section('script')
 <!-- ============================================================== -->
