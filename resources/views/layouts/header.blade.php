@@ -72,7 +72,33 @@ Preloader End -->
             <div class="sidebar_widget recent_widgets aside_login_form">
                 <h5 class="widget_title">Wellcome to Bikriworld</h5>
                 <div class="response_status" style="color: #ff0000;"></div>
-                <div class="row userRagisterField">
+                <div class="row">
+                    <div class="col-12">
+                        <label class="padding-30px-left-right">Please enter your mobile number <span class="required">*</span></label>
+                        <div class="form-group custom_form_style">
+                            <input type="text" name="mobile" class="form-control" autocomplete="off" placeholder="Enter Mobile Number">
+                        </div>
+                    </div>                   
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                    <label class="padding-30px-left-right">Please enter your Password <span class="required">*</span></label>
+                        <div class="form-group custom_form_style">
+                            <input type="text" class="form-control" autocomplete="off" placeholder="Enter Your Password" value="">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="sidebar_widget">
+                <button type="submit" href="javascript:void(0)" class="submit_login_btn thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle width-100"> Continue <i class="fal fa-chevron-right ml-2"></i></button>
+            </div>
+        </form>
+        <form id="signup_form" style="display:none" class="mf_form_validate ajax_submit" action="#" method="post" enctype="multipart/form-data">
+            <div class="sidebar_widget recent_widgets aside_login_form">
+                <h5 class="widget_title">Wellcome to Bikriworld</h5>
+                <div class="response_status" style="color: #ff0000;"></div>
+                <div class="row">
                     <div class="col-12">
                         <label class="padding-30px-left-right">Please your Name <span class="required">*</span></label>
                         <div class="form-group custom_form_style">
@@ -88,22 +114,16 @@ Preloader End -->
                         </div>
                     </div>                   
                 </div>
-                <div class="row one_time_password">
+                <div class="row">
                     <div class="col-12">
                         <div class="form-group custom_form_style">
-                            <input type="text" class="form-control verify_otp" autocomplete="off" placeholder="Enter One Time Password" value="">
+                            <input type="password" class="form-control verify_otp" autocomplete="off" placeholder="Enter your Password" value="">
                         </div>
-                    </div>
-                    <div class="col-12">
-                        <a href="javascript:void(0)" class="resendOtp"> Resend Otp </a>
                     </div>
                 </div>
 
             </div>
             <div class="sidebar_widget">
-                <input type="hidden" name="responsed_otp" class="responsed_otp" value="">
-                <input type="hidden" class="isUserRegister" value="0">
-                <input type="hidden" class="redirectUrl" value="/">
                 <button type="submit" href="javascript:void(0)" class="submit_login_btn thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle width-100"> Continue <i class="fal fa-chevron-right ml-2"></i></button>
             </div>
         </form>
