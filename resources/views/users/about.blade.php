@@ -218,8 +218,8 @@
             <div class="row">
                 <!-- Block Start -->
                 <div class="col-lg-3 col-md-6">
-                    <div class="team_block style_2">
-                        <div class="team_img">
+                    <div class="team_block about_team_block style_2">
+                        <div class="team_img about_team_img">
                             <div class="team-image">
                                 <img src="assets/images/team/1.jpg" alt="img" class="image-fit">
                             </div>
@@ -233,8 +233,8 @@
                 <!-- Block End -->
                 <!-- Block Start -->
                 <div class="col-lg-3 col-md-6">
-                    <div class="team_block style_2">
-                        <div class="team_img">
+                    <div class="team_block about_team_block style_2">
+                        <div class="team_img about_team_img">
                             <div class="team-image">
                                 <img src="assets/images/team/1.jpg" alt="img" class="image-fit">
                             </div>
@@ -248,8 +248,8 @@
                 <!-- Block End -->
                 <!-- Block Start -->
                 <div class="col-lg-3 col-md-6">
-                    <div class="team_block style_2">
-                        <div class="team_img">
+                    <div class="team_block about_team_block style_2">
+                        <div class="team_img about_team_img">
                             <div class="team-image">
                                 <img src="assets/images/team/1.jpg" alt="img" class="image-fit">
                             </div>
@@ -263,8 +263,8 @@
                 <!-- Block End -->
                 <!-- Block Start -->
                 <div class="col-lg-3 col-md-6">
-                    <div class="team_block style_2">
-                        <div class="team_img">
+                    <div class="team_block about_team_block style_2">
+                        <div class="team_img about_team_img">
                             <div class="team-image">
                                 <img src="assets/images/team/1.jpg" alt="img" class="image-fit">
                             </div>
