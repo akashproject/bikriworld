@@ -31,7 +31,7 @@
             <div class="row ">
                 <div class="col-lg-6">
                     <div class="image_box shadow_1 mb-md-80">
-                        <img src="{{ url('assets/images/about/about.jpg') }}" alt="img" class="image-fit">
+                        <img src="{{ url('assets/images/about/about.webp') }}" alt="img" class="image-fit">
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -46,7 +46,7 @@
                     <ul class="about_list row">
                         <li class="col-md-6">
                             <div class="icon">
-                                <img src="{{ url('assets/images/icons/icon_5.png') }}" alt="img" class="image-fit">
+                                <img src="{{ url('assets/images/icons/icon-tick.webp') }}" alt="img" class="image-fit">
                             </div>
                             <div class="text">
                                 <h6 class="mb-2">Master Coach</h6>
@@ -55,7 +55,7 @@
                         </li>
                         <li class="col-md-6">
                             <div class="icon">
-                                <img src="{{ url('assets/images/icons/icon_5.png') }}" alt="img" class="image-fit">
+                                <img src="{{ url('assets/images/icons/icon-tick.webp') }}" alt="img" class="image-fit">
                             </div>
                             <div class="text">
                                 <h6 class="mb-2">Professional Advisors</h6>
@@ -64,7 +64,7 @@
                         </li>
                         <li class="col-md-6">
                             <div class="icon">
-                                <img src="{{ url('assets/images/icons/icon_5.png') }}" alt="img" class="image-fit">
+                                <img src="{{ url('assets/images/icons/icon-tick.webp') }}" alt="img" class="image-fit">
                             </div>
                             <div class="text">
                                 <h6 class="mb-2">Coach Certification</h6>
@@ -73,7 +73,7 @@
                         </li>
                         <li class="col-md-6">
                             <div class="icon">
-                                <img src="{{ url('assets/images/icons/icon_5.png') }}" alt="img" class="image-fit">
+                                <img src="{{ url('assets/images/icons/icon-tick.webp') }}" alt="img" class="image-fit">
                             </div>
                             <div class="text">
                                 <h6 class="mb-2">Coaching Scholars</h6>
@@ -98,7 +98,7 @@
                 <div class="col-lg-3 col-md-6">
                     <div class="counter_box">
                         <div class="icon">
-                            <img src="{{ url('assets/images/icons/icon_6.png') }}" alt="icon" class="image-fit">
+                            <img src="{{ url('assets/images/icons/people.png') }}" alt="icon" class="image-fit">
                         </div>
                         <div class="text">
                             <div class="counter">
@@ -113,7 +113,7 @@
                 <div class="col-lg-3 col-md-6">
                     <div class="counter_box">
                         <div class="icon">
-                            <img src="{{ url('assets/images/icons/icon_7.png') }}" alt="icon" class="image-fit">
+                            <img src="{{ url('assets/images/icons/payment.png') }}" alt="icon" class="image-fit">
                         </div>
                         <div class="text">
                             <div class="counter">
@@ -128,7 +128,7 @@
                 <div class="col-lg-3 col-md-6">
                     <div class="counter_box">
                         <div class="icon">
-                            <img src="{{ url('assets/images/icons/icon_8.png') }}" alt="icon" class="image-fit">
+                            <img src="{{ url('assets/images/icons/handshake.png') }}" alt="icon" class="image-fit">
                         </div>
                         <div class="text">
                             <div class="counter">
@@ -143,7 +143,7 @@
                 <div class="col-lg-3 col-md-6">
                     <div class="counter_box">
                         <div class="icon">
-                            <img src="{{ url('assets/images/icons/icon_9.png') }}" alt="icon" class="image-fit">
+                            <img src="{{ url('assets/images/icons/money.png') }}" alt="icon" class="image-fit">
                         </div>
                         <div class="text">
                             <div class="counter">

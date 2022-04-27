@@ -7709,7 +7709,7 @@ a.head_trigger.desktop_trigger {
 
     content: '';
 
-    background-color: rgb(var(--thm-color-one-rgb), 65%);
+    background-color: rgb(var(--thm-color-one-rgb), 10%);
 
     position: absolute;
 
