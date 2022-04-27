@@ -43,7 +43,7 @@
                 <div class="col-lg-6">
                     <div class="contact_faq_box shadow_1">
                         <div class="icon">
-                            <img src="{{ url('assets/images/icons/icon_14.png') }}" alt="icon" class="image-fit-contain">
+                            <img src="{{ url('assets/images/icons/support.png') }}" alt="icon" class="image-fit-contain">
                         </div>
                         <div class="text">
                             <h4>Need Support?</h4>
@@ -55,7 +55,7 @@
                 <div class="col-lg-6">
                     <div class="contact_faq_box shadow_1">
                         <div class="icon">
-                            <img src="{{ url('assets/images/icons/icon_15.png') }}" alt="icon" class="image-fit-contain">
+                            <img src="{{ url('assets/images/icons/question.png') }}" alt="icon" class="image-fit-contain">
                         </div>
                         <div class="text">
                             <h4>Need help selling?</h4>
@@ -192,7 +192,7 @@
                                     Our Professionals
                                 </p>
                                 <h5 class="title">BikriWorld Helps You Get The Best Value For Your Old Gadgets. Get Free Pickup & Cash In Your Hands In 24 Hours!</h3>
-                                <a href="contact.html" class="thm-btn bg-thm-color-three thm-color-three-shadow btn-rectangle">Contact Us <i class="fal fa-chevron-right ml-2"></i></a>
+                                <a href="#contact-form" class="thm-btn bg-thm-color-three thm-color-three-shadow btn-rectangle">Contact Us <i class="fal fa-chevron-right ml-2"></i></a>
                             </div>
                         </div>
                     </div>

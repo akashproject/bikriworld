@@ -63,7 +63,7 @@ Route::post('/submit-sell-request', [App\Http\Controllers\ProductController::cla
 // Search Module
 Route::post('/get-product-search', [App\Http\Controllers\SearchController::class, 'searchProduct'])->name('get-search-result');
 Route::post('/get-city-search', [App\Http\Controllers\SearchController::class, 'searchCity'])->name('get-search-result');
-Route::get('/contact', [App\Http\Controllers\UserController::class, 'contact'])->name('contact');
+Route::get('/contact-us', [App\Http\Controllers\UserController::class, 'contact'])->name('contact');
 Route::post('/save-contact', [App\Http\Controllers\ContactController::class, 'saveContact'])->name('save-contact');
 
 Route::get('/about-us', [App\Http\Controllers\UserController::class, 'aboutUs'])->name('about-us');

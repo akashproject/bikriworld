@@ -43,7 +43,7 @@
 						<select name="category_id[]" id="category_id" class="select2 form-control custom-select" style="width: 100%; height:136px;" multiple>	
 							<option value="">Select Category</option>
 							@foreach($categories as $category)
-							<option value="{{$category->id}}"  {{ ( $brand->category_id ==  $category->id )? 'selected' : '' }} > {{$category->name}}</option>
+							<option value="{{$category->id}}"  {{ (in_array($category->id,  $brand->category_id))?'selected' : '' }} > {{$category->name}}</option>
 							@endforeach
 						<select>
 					</div>

@@ -81,10 +81,6 @@
                             </div>
                         </li>
                     </ul>
-                    <a href="about-2.html" class="thm-btn bg-thm-color-three thm-color-three-shadow btn-rectangle">
-                        Learn More
-                        <i class="fal fa-chevron-right ml-2"></i>
-                    </a>
                 </div>
             </div>
         </div>
@@ -196,8 +192,8 @@
                             Financial Solutions
                         </li>
                     </ul>
-                    <a href="about.html" class="thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle">
-                        Learn More
+                    <a href="{{ url('/contact-us') }}" class="thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle">
+                        Join Us
                         <i class="fal fa-chevron-right ml-2"></i>
                     </a>
                 </div>

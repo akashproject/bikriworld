@@ -35,7 +35,7 @@ class AppServiceProvider extends ServiceProvider
             $navbars = array(
                 '/' => 'HOME',
                 '/selling-categories' => 'SELL',
-                'contact' => "CONTACT"
+                '/contact-us' => "CONTACT"
             );
             $view->with('navbars', $navbars);
 
