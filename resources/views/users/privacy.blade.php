@@ -5,9 +5,9 @@
     <section class="section-padding content-section">
         <div class="container">
             <div class="row ">
-            <h1>Privacy Policy for Bikriworld</h1>
+                <h1>We at BikriWorld Care Deeply About Your Privacy</h1>
 
-                <p>At bikriworld, accessible from http://bikriworld.com/, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by bikriworld and how we use it.</p>
+                <p>At bikriworld, accessible from https://bikriworld.com/, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by bikriworld and how we use it.</p>
 
                 <p>If you have additional questions or require more information about our Privacy Policy, do not hesitate to contact us.</p>
 

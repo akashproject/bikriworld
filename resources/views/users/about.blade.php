@@ -6,8 +6,8 @@
         <div class="container relative z-1">
             <div class="row">
                 <div class="col-12">
-                    <h1 class="page_title">About Us</h1>
-                    <p> We Are letting you know about our goals & services </p>
+                    <h1 class="page_title">India’s Best Way To Sell Used Devices Online</h1>
+                    <p> Your One Day CASH-acation. Sell Your Used Device on BikriWorld. Get Cash In 24 Hours! </p>
                     <div class="page_breadcrumb">
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
@@ -40,8 +40,8 @@
                             <i class="fal fa-book"></i>
                             About Us
                         </p>
-                        <h3 class="title">We Care About Your Life For Better Future</h3>
-                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae inventore</p>
+                        <h3 class="title">We Buy. We Are Your One-Stop Solution For Selling Used Devices.</h3>
+                        <p>We are BikriWorld an organization built of people committed to helping you find the best prices for your used devices. That is why we are. We exist because we buy.</p>
                     </div>
                     <ul class="about_list row">
                         <li class="col-md-6">
@@ -49,8 +49,8 @@
                                 <img src="{{ url('assets/images/icons/icon-tick.webp') }}" alt="img" class="image-fit">
                             </div>
                             <div class="text">
-                                <h6 class="mb-2">Master Coach</h6>
-                                <p class="mb-0">Quis autem reprehenderit quein voluptate velit esseua</p>
+                                <h6 class="mb-2">Awesome Prices</h6>
+                                <p class="mb-0">Nothing but awesome prices all-around at BikriWorld.</p>
                             </div>
                         </li>
                         <li class="col-md-6">
@@ -58,8 +58,8 @@
                                 <img src="{{ url('assets/images/icons/icon-tick.webp') }}" alt="img" class="image-fit">
                             </div>
                             <div class="text">
-                                <h6 class="mb-2">Professional Advisors</h6>
-                                <p class="mb-0">Quis autem reprehenderit quein voluptate velit esseua</p>
+                                <h6 class="mb-2">Transparent Selling</h6>
+                                <p class="mb-0">It’s as easy as counting. Sell your used device in one click.</p>
                             </div>
                         </li>
                         <li class="col-md-6">
@@ -67,8 +67,8 @@
                                 <img src="{{ url('assets/images/icons/icon-tick.webp') }}" alt="img" class="image-fit">
                             </div>
                             <div class="text">
-                                <h6 class="mb-2">Coach Certification</h6>
-                                <p class="mb-0">Quis autem reprehenderit quein voluptate velit esseua</p>
+                                <h6 class="mb-2">All Devices</h6>
+                                <p class="mb-0">When we say all devices, we mean it. Sell any used device to us.</p>
                             </div>
                         </li>
                         <li class="col-md-6">
@@ -76,8 +76,8 @@
                                 <img src="{{ url('assets/images/icons/icon-tick.webp') }}" alt="img" class="image-fit">
                             </div>
                             <div class="text">
-                                <h6 class="mb-2">Coaching Scholars</h6>
-                                <p class="mb-0">Quis autem reprehenderit quein voluptate velit esseua</p>
+                                <h6 class="mb-2">Full Protection</h6>
+                                <p class="mb-0">When you sell to us, we are committed to maintaining your safety.</p>
                             </div>
                         </li>
                     </ul>
@@ -100,7 +100,7 @@
                             <div class="counter">
                                 <b data-from="0" data-to="369">0</b>
                             </div>
-                            <p class="mb-0">Happy Customer</p>
+                            <p class="mb-0">Loving Customers</p>
                         </div>
                     </div>
                 </div>
@@ -115,7 +115,7 @@
                             <div class="counter">
                                 <b data-from="0" data-to="264">0</b>
                             </div>
-                            <p class="mb-0">Product Bought</p>
+                            <p class="mb-0">Devices Sold</p>
                         </div>
                     </div>
                 </div>
@@ -130,7 +130,7 @@
                             <div class="counter">
                                 <b data-from="0" data-to="259">0</b>
                             </div>
-                            <p class="mb-0">Business Partners</p>
+                            <p class="mb-0">Fulfillment Partners</p>
                         </div>
                     </div>
                 </div>
@@ -145,7 +145,7 @@
                             <div class="counter">
                                 <b data-from="0" data-to="568">0</b>
                             </div>
-                            <p class="mb-0">Amount Given</p>
+                            <p class="mb-0">Cash Transactions</p>
                         </div>
                     </div>
                 </div>
@@ -176,20 +176,20 @@
                     <div class="section-title left-align">
                         <p class="subtitle">
                             <i class="fal fa-book"></i>
-                            Who We Are
+                            WHAT MAKES BIKRIWORLD
                         </p>
-                        <h3 class="title">Upgrade Your Skills Build Your Life</h3>
-                        <p class="mb-0">Quis autem vel eum iure reprehenderit qui in ea voluptate esse quam nihil molestiae conseq uaturvel illum qui dolorem eum fugiat quo voluptas nulla pariatur </p>
+                        <h3 class="title">BikriWorld ♥ Your Expectations & Your Used Devices</h3>
+                        <p class="mb-0">We exist to buy used devices of all conditions. Furthermore, we exist because we know how hard it is to find a quote that matches your expectations. Here’s why you should sell your used device to us:- </p>
                     </div>
                     <ul class="about_list style_2 mb-xl-30">
                         <li>
-                            Business Consulting
+                            Best Market Valuations
                         </li>
                         <li>
-                            Career Development
+                            Free Pickup at Desired Location
                         </li>
                         <li>
-                            Financial Solutions
+                            100% Seller Protection
                         </li>
                     </ul>
                     <a href="{{ url('/contact-us') }}" class="thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle">
@@ -209,9 +209,9 @@
                     <div class="section-title">
                         <p class="subtitle">
                             <i class="fal fa-book"></i>
-                            Our Professionals
+                            Our Wizards
                         </p>
-                        <h3 class="title">Meet Our Professinoal Team Members</h3>
+                        <h3 class="title">Meet The Wizards At BikriWorld</h3>
                     </div>
                 </div>
             </div>
@@ -225,7 +225,7 @@
                             </div>
                         </div>
                         <div class="team-content" >
-                            <h6 class="mb-1"><a href="team-details.html">Wallace D. Grace</a></h6>
+                            <h6 class="mb-1"><a href="javascript:void(0)">Wallace D. Grace</a></h6>
                             <p class="thm-color-two mb-0 font-weight-bold">Coach Teacher</p>
                         </div>
                     </div>
@@ -240,7 +240,7 @@
                             </div>
                         </div>
                         <div class="team-content" >
-                            <h6 class="mb-1"><a href="team-details.html">Wallace D. Grace</a></h6>
+                            <h6 class="mb-1"><a href="javascript:void(0)">Wallace D. Grace</a></h6>
                             <p class="thm-color-two mb-0 font-weight-bold">Coach Teacher</p>
                         </div>
                     </div>
@@ -255,7 +255,7 @@
                             </div>
                         </div>
                         <div class="team-content" >
-                            <h6 class="mb-1"><a href="team-details.html">Wallace D. Grace</a></h6>
+                            <h6 class="mb-1"><a href="javascript:void(0)">Wallace D. Grace</a></h6>
                             <p class="thm-color-two mb-0 font-weight-bold">Coach Teacher</p>
                         </div>
                     </div>
@@ -270,7 +270,7 @@
                             </div>
                         </div>
                         <div class="team-content" >
-                            <h6 class="mb-1"><a href="team-details.html">Wallace D. Grace</a></h6>
+                            <h6 class="mb-1"><a href="javascript:void(0)">Wallace D. Grace</a></h6>
                             <p class="thm-color-two mb-0 font-weight-bold">Coach Teacher</p>
                         </div>
                     </div>

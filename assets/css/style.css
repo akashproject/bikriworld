@@ -942,7 +942,7 @@ select {
 .section-title .title {
     font-weight: 600;
     text-transform: capitalize;
-    font-size: 30px;
+    font-size: 26px;
 
 }
 
@@ -6253,25 +6253,15 @@ a.head_trigger.desktop_trigger {
 
 
 /*COunter*/
-
 .counter_box {
-
     box-shadow: 0px 1px 30px 1px #ecf2ff;
-
     display: flex;
-
     align-items: center;
-
     background-color: var(--thm-white);
-
-    padding: 40px;
-
+    padding: 31px;
     width: 100%;
-
     margin-bottom: 30px;
-
     justify-content: center;
-
 }
 
 
@@ -7184,14 +7174,14 @@ a.head_trigger.desktop_trigger {
 
 .subheader .page_title {
 
-    font-size: 43px;
+    font-size: 33px;
 
     font-weight: 600;
 
     color: var(--thm-white);
 
     line-height: 1;
-    margin: 0;
+    margin-bottom: 25px;
 
 }
 
