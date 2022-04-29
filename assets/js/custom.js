@@ -201,6 +201,12 @@
         $('#signup_form').show();
     });
 
+    $(".open_signin").click(function(){
+        $('#signin_form').show();
+        $('#signup_form').hide();
+    });
+    
+
 
 
     // Search 

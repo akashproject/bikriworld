@@ -7713,7 +7713,9 @@ a.head_trigger.desktop_trigger {
 
 }
 
-
+.open_signup,.open_signin {
+    font-weight: 600;
+}
 
 .video_box_elements .element_1 {
 

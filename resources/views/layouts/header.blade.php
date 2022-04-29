@@ -134,9 +134,9 @@ Preloader End -->
                 </div>
 
             </div>
-            <div class="sidebar_widget">
+            <div class="sidebar_widget text-center">
                 <span > Or </span>
-                <a href="javascript:void();"class="open_signup" >Login to your profile</a>     
+                <a href="javascript:void();"class="open_signin" >Login to your profile</a>     
             </div>
         </form>
     </div>
