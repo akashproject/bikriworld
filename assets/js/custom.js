@@ -53,9 +53,34 @@
             'mobile': "Please type valid mobile number.",
         },
         submitHandler: function(form) {
-            checkExist();
+            loginProcess($(form).serialize());
         }
-    })
+    });
+
+    $("#signup_form").validate({
+        rules: {
+            'name': {
+                required: true,
+            },
+            'mobile': {
+                required: true,
+                number: true,
+                maxlength: 10,
+                minlength: 10,
+            },
+            'password': {
+                required: true,
+            },
+        },
+        messages: {
+            'name': "Please type your name.",
+            'mobile': "Please type valid mobile number.",
+            'password': "Please type your password.",
+        },
+        submitHandler: function(form) {
+            registerUser($(form).serialize());
+        }
+    });
 
     // $("#signin_form").validate({
     //     rules: {
@@ -171,6 +196,12 @@
         $(".aside_canvas").removeClass('open');
     });
 
+    $(".open_signup").click(function(){
+        $('#signin_form').hide();
+        $('#signup_form').show();
+    });
+
+
 
     // Search 
     $(".search_trigger>a, .close-search-trigger").on('click', function() {
@@ -255,25 +286,22 @@
         });
     }
 
-    function loginProcess(mobile){
+
+
+    function loginProcess(data){
         $.ajaxSetup({
             headers: {
              'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             }
         });
         $.ajax({
-            url: `http://${window.location.hostname}/check-exist`,
+            url: `http://${window.location.hostname}/access-profile`,
             type: "post",
-            data: {
-                mobile: mobile,
-            },
+            data: data,
             success: function(result) {
                 if(result.userrecord == 'not-exist'){
-                    $('.userRagisterField').show();
-                    $(".submit_login_btn").html("Register");
-                    $(".isUserRegister").val("1");
-                    $('.one_time_password').hide();
-                    jQuery(" .response_status").html("Please Register Yourself");
+                    jQuery(".response_status").html("You have enter wrong credentials");
+                    return false;
                 } else {
                     location.reload();
                     //window.location = $(".redirectUrl").val();

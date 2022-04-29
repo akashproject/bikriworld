@@ -84,14 +84,19 @@ Preloader End -->
                     <div class="col-12">
                     <label class="padding-30px-left-right">Please enter your Password <span class="required">*</span></label>
                         <div class="form-group custom_form_style">
-                            <input type="text" class="form-control" autocomplete="off" placeholder="Enter Your Password" value="">
+                            <input type="password" name="password" class="form-control" autocomplete="off" placeholder="Enter Your Password" value="">
                         </div>
                     </div>
                 </div>
-
+                <div class="row">
+                    <div class="col-12">
+                        <button type="submit" href="javascript:void(0)" class="submit_login_btn thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle width-100"> Continue <i class="fal fa-chevron-right ml-2"></i></button> 
+                    </div>
+                </div>
             </div>
-            <div class="sidebar_widget">
-                <button type="submit" href="javascript:void(0)" class="submit_login_btn thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle width-100"> Continue <i class="fal fa-chevron-right ml-2"></i></button>
+            <div class="sidebar_widget text-center">
+                <span > Or </span>
+                <a href="javascript:void();"class="open_signup" >Register Yourself</a>                
             </div>
         </form>
         <form id="signup_form" style="display:none" class="mf_form_validate ajax_submit" action="#" method="post" enctype="multipart/form-data">
@@ -116,15 +121,22 @@ Preloader End -->
                 </div>
                 <div class="row">
                     <div class="col-12">
+                    <label class="padding-30px-left-right">Please enter password <span class="required">*</span></label> 
                         <div class="form-group custom_form_style">
-                            <input type="password" class="form-control verify_otp" autocomplete="off" placeholder="Enter your Password" value="">
+                            <input type="password" name="password" class="form-control verify_otp" autocomplete="off" placeholder="Enter your Password" value="">
                         </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <button type="submit" href="javascript:void(0)" class="submit_login_btn thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle width-100"> Continue <i class="fal fa-chevron-right ml-2"></i></button>
                     </div>
                 </div>
 
             </div>
             <div class="sidebar_widget">
-                <button type="submit" href="javascript:void(0)" class="submit_login_btn thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle width-100"> Continue <i class="fal fa-chevron-right ml-2"></i></button>
+                <span > Or </span>
+                <a href="javascript:void();"class="open_signup" >Login to your profile</a>     
             </div>
         </form>
     </div>

@@ -28,7 +28,7 @@ class LoginController extends Controller
 
     public function isUserExist(Request $request){
         $data = $request->all();
-        $user = User::where('mobile', $data['mobile'])->first();
+        $user = User::where('mobile', $data['mobile'])->where('password', $data['password'])->first();
         if($user){
             $request->session()->put('userData', $user->toArray());
             $val = array(
@@ -52,16 +52,17 @@ class LoginController extends Controller
 
     public function accessProfile(Request $request){
         $data = $request->all();
-        $user = User::where('mobile', $data['mobile'])->first();
+        $user = User::where('mobile', $data['mobile'])->where('password', $data['password'])->first();
         if($user){
             $request->session()->put('userData', $user->toArray());
+            return response()->json(['true'],$this->_statusOK); 
         } else {
-            $user = User::create(array('mobile'=> $data['mobile']))->toArray();
-            $payment = Payment::create(array('user_id'=> $user['id']));
-            $request->session()->put('userData', $data);
+            $val = array(
+                'userrecord' => 'not-exist'
+            );
+            return response()->json($val,$this->_statusOK);
         }
 
-        return response()->json(['true'],$this->_statusOK);
     }
 
 
