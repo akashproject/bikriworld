@@ -70,32 +70,32 @@
                                 <h3> Pickup Location </h3>
                             </div>
                             <div class="col-lg-12">
-                            <div class="row answer_row" >
-                                <div class="col-4">
-                                    <div class="answer_list"  >
-                                        <div class="form-check ">
-                                            <input class="form-check-input" type="radio" name="type" id="" value="home" >
-                                            <label class="form-check-label" for="">Home</label>
+                                <div class="row answer_row" >
+                                    <div class="col-4">
+                                        <div class="answer_list"  >
+                                            <div class="form-check ">
+                                                <input class="form-check-input address_type" type="radio" name="type" id="type_home" value="Home" >
+                                                <label class="form-check-label" for="type_home">Home</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="answer_list"  >
+                                            <div class="form-check ">
+                                                <input class="form-check-input address_type" type="radio" name="type" id="type_offile" value="Office" >
+                                                <label class="form-check-label" for="type_offile">Office</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="answer_list"  >
+                                            <div class="form-check ">
+                                                <input class="form-check-input address_type" type="radio" name="type" id="type_other" value="Other" >
+                                                <label class="form-check-label" for="type_other">Other</label>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-4">
-                                    <div class="answer_list"  >
-                                        <div class="form-check ">
-                                            <input class="form-check-input" type="radio" name="type" id="" value="office" >
-                                            <label class="form-check-label" for="">Office</label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-4">
-                                    <div class="answer_list"  >
-                                        <div class="form-check ">
-                                            <input class="form-check-input" type="radio" name="type" id="" value="other" >
-                                            <label class="form-check-label" for="">Other</label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group custom_form_style">
@@ -205,8 +205,8 @@
                                     </ul>
                                 </div>
                                 <div class="sidebar_widget_inner">
-                                    <input type="hidden" name="user_id" id="" value="{{ $user->id }}" >
-                                    <input type="hidden" name="product_id" id="" value="{{ $product->id }}" >
+                                    <input type="hidden" name="user_id" id="user_id" value="{{ $user->id }}" >
+                                    <input type="hidden" name="product_id" id="product_id" value="{{ $product->id }}" >
                                     <input type="hidden" name="variation_type" id="" value="{{ $calculatedData['variation_type'] }}" >
                                     <button type="submit" class="sell-now-btn custom-cta-btn bg-thm-color-two btn-rectangle"> Confirm Pickup <i class="fal fa-chevron-right ml-2"></i></button>
                                 </div>

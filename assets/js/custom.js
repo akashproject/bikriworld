@@ -248,6 +248,35 @@
         sendMobileOtp(formId);
     });
 
+    jQuery(".address_type").on('change', function(){
+        $.ajaxSetup({
+            headers: {
+             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        $.ajax({
+            url: `http://${window.location.hostname}/get-address`,
+            type: "post",
+            data: {
+                'user_id':jQuery("#user_id").val(),
+                'type':jQuery(this).val()
+            },
+            success: function(result) {
+                if(result){
+                    jQuery("input[name='address_1']").val(result.address_1);
+                    jQuery("input[name='city']").val(result.city);
+                    jQuery("input[name='state']").val(result.state);
+                    jQuery("input[name='pincode']").val(result.pincode);
+                }
+                
+                // //result = JSON.parse(result);
+                // if (result) {
+                //     location.reload();
+                // }
+            }
+        });
+    });
+
     function registerUser(data){
         $.ajaxSetup({
             headers: {

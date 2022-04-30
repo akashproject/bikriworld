@@ -27,7 +27,7 @@
                     </div>
                 </div>
                 <div class="col-lg-8 order_list">
-                    <h5 class="page_title"> Add New Address </h5>
+                    <h5 class="page_title"> Edit Address </h5>
                     <form class="form-horizontal" id="addressForm" method="post" action="{{ url('save-address') }}" enctype="multipart/form-data">
                     @csrf
                         @if ($message = Session::get('message'))

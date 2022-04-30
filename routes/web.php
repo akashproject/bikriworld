@@ -39,6 +39,7 @@ Route::get('/dashboard', [App\Http\Controllers\UserController::class, 'dashboard
 Route::get('/pickups', [App\Http\Controllers\UserController::class, 'pickups'])->name('pickups');
 Route::get('/payments', [App\Http\Controllers\UserController::class, 'payments'])->name('payments');
 Route::get('/addresses', [App\Http\Controllers\UserController::class, 'addresses'])->name('addresses');
+Route::post('/get-address', [App\Http\Controllers\UserController::class, 'getAddress'])->name('get-address');
 Route::get('/add-address', [App\Http\Controllers\UserController::class, 'addAddress'])->name('add-address');
 Route::get('/edit-address/{id}', [App\Http\Controllers\UserController::class, 'editAddress'])->name('edit-address');
 Route::get('/delete-address/{id}', [App\Http\Controllers\UserController::class, 'deleteAddress'])->name('delete-address');
