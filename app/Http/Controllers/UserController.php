@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Session;
 use App\Models\User;
 use App\Models\Order;
 use App\Models\Payment;
+use App\Models\Address;
 use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
@@ -55,6 +56,50 @@ class UserController extends Controller
         $user = $this->user;
         $payment = Payment::where('user_id', $user->id)->first();
         return view('users.payments',compact('user','payment'));
+    }
+
+    public function addresses(){
+        $user = $this->user;
+        $address = Address::where('user_id', $this->user->id)->get();
+        return view('users.address',compact('user','address'));
+    }
+
+    public function addAddress(){
+        $user = $this->user;
+        return view('users.add-address',compact('user'));
+    }
+
+    public function editAddress($id){
+        $user = $this->user;
+        $address = Address::find($id);
+        return view('users.edit-address',compact('user','address'));
+    }
+
+    public function deleteAddress($id){
+        $address = Address::find($id);
+        $address->delete();
+        return redirect('/addresses')->with('message','address Information has been deleted!');;
+    }
+
+    public function saveAddress(Request $request){
+
+        $data = $request->all();
+        $validatedData = $request->validate([
+            'address_1' => 'required',
+            'city' => 'required',
+            'state' => 'required',
+            'pincode' => 'required',
+            'type' => 'required',
+        ]);
+
+        
+        if($data['address_id'] <= 0){
+            Address::create($data);
+        } else {
+            $address = Address::findOrFail($data['address_id']);
+            $address->update($data);
+        }
+        return redirect('/addresses')->with('message','address Information has been updated!');;
     }
 
     public function saveInfo(Request $request){

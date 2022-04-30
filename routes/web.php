@@ -38,6 +38,11 @@ Route::post('/device-age', [App\Http\Controllers\QuestionController::class, 'dev
 Route::get('/dashboard', [App\Http\Controllers\UserController::class, 'dashboard'])->name('dashboard');
 Route::get('/pickups', [App\Http\Controllers\UserController::class, 'pickups'])->name('pickups');
 Route::get('/payments', [App\Http\Controllers\UserController::class, 'payments'])->name('payments');
+Route::get('/addresses', [App\Http\Controllers\UserController::class, 'addresses'])->name('addresses');
+Route::get('/add-address', [App\Http\Controllers\UserController::class, 'addAddress'])->name('add-address');
+Route::get('/edit-address/{id}', [App\Http\Controllers\UserController::class, 'editAddress'])->name('edit-address');
+Route::get('/delete-address/{id}', [App\Http\Controllers\UserController::class, 'deleteAddress'])->name('delete-address');
+Route::post('/save-address', [App\Http\Controllers\UserController::class, 'saveAddress'])->name('save-address');
 Route::post('/save-payment', [App\Http\Controllers\UserController::class, 'savePayment'])->name('save-payment');
 Route::post('/save-info', [App\Http\Controllers\UserController::class, 'saveInfo'])->name('save-info');
 Route::get('/logout', [App\Http\Controllers\UserController::class, 'logout'])->name('logout');

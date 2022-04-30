@@ -82,7 +82,7 @@
                                 <div class="col-4">
                                     <div class="answer_list"  >
                                         <div class="form-check ">
-                                            <input class="form-check-input" type="radio" name="type" id="" vale="office" >
+                                            <input class="form-check-input" type="radio" name="type" id="" value="office" >
                                             <label class="form-check-label" for="">Office</label>
                                         </div>
                                     </div>
@@ -90,7 +90,7 @@
                                 <div class="col-4">
                                     <div class="answer_list"  >
                                         <div class="form-check ">
-                                            <input class="form-check-input" type="radio" name="type" id="" vale="other" >
+                                            <input class="form-check-input" type="radio" name="type" id="" value="other" >
                                             <label class="form-check-label" for="">Other</label>
                                         </div>
                                     </div>

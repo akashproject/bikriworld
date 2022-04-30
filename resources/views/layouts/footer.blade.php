@@ -74,7 +74,7 @@
                 <div class="col-lg-3 col-md-6">
                     <div class="ft_widget ft_apps">
                         <h6 class="ft-title">Apps Download</h6>
-                        <p class="mb-xl-20">Sed ut perspici unde omnis iste natus error sit voluptatem accus</p>
+                        <p class="mb-xl-20">Sell From Anywhere At The Best (₹) Price. Download The Bikri World App Now.</p>
                         <a href="#" class="app_img">
                             <img src="/assets/images/google_store.jpg" alt="img">
                         </a>

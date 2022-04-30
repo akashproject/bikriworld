@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Address;
+use App\Models\Payment;
 
 class UserController extends Controller
 {
@@ -38,8 +40,9 @@ class UserController extends Controller
     public function show($id)
     {
         $user = User::find($id);
-
-        return view('users.show',compact('user'));
+        $addressess = Address::where('user_id',$id)->get();
+        $payment = Payment::where('user_id',$id)->first();
+        return view('users.show',compact('user','addressess','payment'));
     }
 
     public function edit($id, $request)
