@@ -481,7 +481,7 @@
         slidesToScroll: 1,
         autoplay: true,
         arrows: false,
-        dots: true,
+        dots: false,
         dotsClass: "slick-dots style_2",
         autoplaySpeed: 2000,
         responsive: [{
@@ -510,7 +510,7 @@
         slidesToScroll: 1,
         autoplay: true,
         arrows: false,
-        dots: true,
+        dots: false,
         dotsClass: "slick-dots style_2",
         autoplaySpeed: 2000,
         responsive: [{

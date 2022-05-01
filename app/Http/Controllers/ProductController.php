@@ -40,6 +40,7 @@ class ProductController extends Controller
             $brand = Brand::find($id);
             $products = Product::where('brand_id', $id)
             ->where('category_id', $category_id)
+            ->orderBy('name', 'asc')
             ->get();
 
             return view('product.index',compact('products','brand','user','tobSellingBrands','tobSellingProducts'));
@@ -128,6 +129,13 @@ class ProductController extends Controller
         $order = $request->session()->get('orderData');
         $order['product_name'] = Product::findOrFail($order['product_id'])->name;
         return view('product.order-success',compact('user','order'));
+    }
+
+    public function manageOrder(Request $request){
+        $user = $this->userdata;
+        $order = $request->session()->get('orderData');
+        $order['product_name'] = Product::findOrFail($order['product_id'])->name;
+        return view('product.order-manage',compact('user','order'));
     }
 
     public function add(Request $request){

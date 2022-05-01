@@ -522,10 +522,23 @@
     .brand_icon {
         font-size: 15px;
     }
+    .team_block {
+        margin-bottom: 5px;
+        height: 192px;
+    }
 
     .team_block .team_img .link {
         width: 24px;
         height: 24px;
+        right: 20%;
+        bottom: 45%;
+    }
+
+    .thm-btn i {
+        font-size: 12px;
+        font-weight: 600;
+        line-height: 0;
+        margin-right: 1px;
     }
 
     label#veriation_price-error {

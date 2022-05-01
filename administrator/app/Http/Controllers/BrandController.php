@@ -36,6 +36,7 @@ class BrandController extends Controller
     {
         try {
             $brand = Brand::find($id);
+            $brand['category_id'] = json_decode($brand['category_id']);
             $categories = Categories::all();
             return view('brand.show',compact('brand','categories'));
         } catch(\Illuminate\Database\QueryException $e){
