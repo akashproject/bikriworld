@@ -376,6 +376,18 @@
     }
 
     doSticky();
+
+    $(".payment_mode_form_btn").on('click', function(){
+        $(".payment_mode_form").toggle();
+        $(".save_order_btn").toggle();
+    });
+
+
+    $(".address_form_btn").on('click', function(){
+        $(".address_form").toggle();
+        $(".save_order_btn").toggle();
+    });
+
     //On scroll events
     $(window).on('scroll', function() {
         doSticky();

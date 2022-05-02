@@ -1,105 +1,134 @@
 @extends('layouts.main')
 
     @section('content')
-    <!-- Subheader Start -->
-    <section class="subheader relative z-1" style="background-image: url({{ url('assets/images/inner_banner.png') }});">
-        <div class="container relative z-1">
-            <div class="row">
-                <div class="col-12">
-                    <h4 class="page_title">Sell Old Mobile Phone</h4>
-                    <div class="page_breadcrumb">
-                        <nav aria-label="breadcrumb">
-                            <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="{{  url('') }}">Home</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Order Status</li>
-                            </ol>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-            <img src="{{ url('assets/images/elements/element_19.png') }}" alt="element" class="element_1 slideRightTwo">
-            <img src="{{ url('assets/images/elements/element_10.png') }}" alt="element" class="element_2 zoom-fade">
-            <img src="{{ url('assets/images/elements/element_20.png') }}" alt="element" class="element_3 rotate_elem">
-            <img src="{{ url('assets/images/elements/element_21.png') }}" alt="element" class="element_4 rotate_elem">
-        </div>
-    </section>
-    <!-- Subheader End -->
     <section class="section-padding">
         <div class="container">
-            <div class="row text-center" >
-                <div class="order_success">
-                    <h1 class="order-success-heading"> <i class="fal fa-check-circle ml-2"></i> </h1>
-                    <h4 class="order-success-subheading">Deal has been successfully confirmed</h4>
-                </div>
-                <div class="order_report">
-                    <h5 class="report-heading"> Service Details </h5>
-                    <div class="row" >
-                        <div class="col-6">
-                           <h5 class="report-content"> Service Number </h5>
+            <div class="row" >
+                <div class="col-md-12" >
+                    <div class="summary-wrap">
+                        <h5 class="report-heading"> Order Number : {{ $order->service_no }} </h5>
+                        <div class="row" >
+                           <div class="col-lg-6 col-12"> 
+                                <h6 style="margin:0;"> {{ $order->product_name }} ( {{ $order->variation_type }} ) </h6>
+                                <p style="margin:0;"> Selling Price : ₹. <strong>{{ number_format($order->amount) }}/-  </strong></p>
+                                <p> Payment Mode :<strong>{{ $order->payment_mode }}  </strong></p>
+                            </div>
+                           <div class="col-lg-6 col-12 text-right">
+                                <a href="javascript:void(0)" class="thm-btn bg-thm-color-one thm-color-two-shadow btn-rectangle payment_mode_form_btn"> Change Payment </a>
+                                <a href="{{ url('payments') }}" class="thm-btn bg-thm-color-one thm-color-two-shadow btn-rectangle payment_mode_form_btn"> Add Payment </a>
+                            </div>
                         </div>
-                        <div class="col-6">
-                            <h5 class="report-content"> {{ $order['service_no'] }} </h5>
+                        <div class="row payment_mode_form" style="display:none;" >
+                            <div class="col-lg-12">
+                                <div class="row answer_row" >
+                                    <div class="col-4">
+                                        <div class="answer_list"  >
+                                            <div class="form-check ">
+                                                <input class="form-check-input" type="radio" name="payment_mode" id="" value="Bank Transfar" {{ ($order->payment_mode=="Bank Transfar")? "checked" : "" }} >
+                                                <label class="form-check-label" for="">Bank Transfar</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="answer_list"  >
+                                            <div class="form-check ">
+                                                <input class="form-check-input" type="radio" name="payment_mode" id="" value="Upi" {{ ($order->payment_mode=="Upi")? "checked" : "" }}>
+                                                <label class="form-check-label" for="">UPI</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="answer_list"  >
+                                            <div class="form-check ">
+                                                <input class="form-check-input" type="radio" name="payment_mode" id="" value="Online Payment" {{ ($order->payment_mode=="Online Payment")? "checked" : "" }}>
+                                                <label class="form-check-label" for="">Online Payment</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <h6 class="report-heading"> Order Summary </h6>
+                        <div class="row" >
+                            <div class="col-lg-9 col-12">
+                                <h6 style="margin:0;">Pickup Address : {{ $order->pickup_address }} {{ $order->pickup_city }} {{ $order->pickup_state }} {{ $order->pincode }} </h5>
+                                <p> Pickup Schedule : <strong> {{ $order->pickup_schedule }} </strong>
+                            </div>
+                            <div class="col-lg-3 col-12 text-right">
+                                <a href="javascript:void(0)" class="thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle address_form_btn"> Edit</a>
+                            </div>
+                        </div>
+                        <div class="row address_form"  style="display:none;">
+                            <div class="col-lg-12">
+                                <h6 style="margin:0;"> Pickup Location </h6>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="row answer_row" >
+                                    <div class="col-4">
+                                        <div class="answer_list"  >
+                                            <div class="form-check ">
+                                                <input class="form-check-input address_type" type="radio" name="type" id="type_home" value="Home" {{ ($order->type=="Home")? "checked" : "" }}>
+                                                <label class="form-check-label" for="type_home">Home</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="answer_list"  >
+                                            <div class="form-check ">
+                                                <input class="form-check-input address_type" type="radio" name="type" id="type_offile" value="Office" {{ ($order->type=="Office")? "checked" : "" }}>
+                                                <label class="form-check-label" for="type_offile">Office</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="answer_list"  >
+                                            <div class="form-check ">
+                                                <input class="form-check-input address_type" type="radio" name="type" id="type_other" value="Other"  {{ ($order->type=="Other")? "checked" : "" }}>
+                                                <label class="form-check-label" for="type_other">Other</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group custom_form_style">
+                                    <label class="padding-30px-left-right">Address <span class="required">*</span></label>
+                                    <input type="text" name="address_1" class="form-control" autocomplete="off" value="{{ $order->pickup_address }}" placeholder="Please Enter Address" required="">
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="form-group custom_form_style">
+                                    <label class="padding-30px-left-right">City <span class="required">*</span></label>
+                                    <input type="text" name="city" class="form-control" autocomplete="off" value="{{ $order->pickup_city }}" placeholder="Please Enter City" required="">
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="form-group custom_form_style">
+                                    <label class="padding-30px-left-right">State <span class="required">*</span></label>
+                                    <input type="text" name="state" class="form-control" autocomplete="off" value="{{ $order->pickup_state }}" placeholder="Please Enter State" required="">
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="form-group custom_form_style">
+                                    <label class="padding-30px-left-right">Pincode <span class="required">*</span></label>
+                                    <input type="text" name="pincode" class="form-control" autocomplete="off" value="{{ $order->pincode }}" placeholder="Please Enter Pincode" required="">
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <h6 style="margin:0;"> Pickup Schedule </h6>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="form-group custom_form_style">
+                                    <label class="padding-30px-left-right">Date TIme <span class="required">*</span></label>
+                                    <input type="text" name="pickup_schedule" class="form-control" autocomplete="off" id="datepicker" value="{{ $order->pickup_schedule }}" placeholder="Please Select Date" required="" >
+                                </div>
+                            </div>
+                        </div>
+                        <div class="">
+                            <button type="submit" class="save_order_btn thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle" style="display:none"> Save</a>
                         </div>
                     </div>
-                    <div class="row" >
-                        <div class="col-6">
-                            <h5 class="report-content"> Service Status</h5>
-                        </div>
-                        <div class="col-6">
-                            <h5 class="report-content"> {{ $order['status'] }} </h5>
-                        </div>
-                    </div>
-                    <div class="row" >
-                        <div class="col-6">
-                            <h5 class="report-content"> Selling Price </h5>
-                        </div>
-                        <div class="col-6">
-                            <h5 class="report-content"> {{ number_format($order['amount']) }}/- </h5>
-                        </div>
-                    </div>
-                    <div class="row" >
-                        <div class="col-6">
-                            <h5 class="report-content">  Payment Mode </h5>
-                        </div>
-                        <div class="col-6">
-                            <h5 class="report-content">  {{ $order['payment_mode'] }} </h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="order_report">
-                    <h5 class="report-heading"> Order Details <h5>
-                    <div class="row" >
-                        <div class="col-6">
-                            <h5 class="report-content">  Device </h5>
-                        </div>
-                        <div class="col-6">
-                            <h5 class="report-content"> {{$order['product_name']}} ( {{$order['variation_type']}} ) </h5>
-                        </div>
-                    </div>
-                    <div class="row" >
-                        <div class="col-6">
-                            <h5 class="report-content">  Address </h5>
-                        </div>
-                        <div class="col-6">
-                            <h5 class="report-content">  {{ $order['pickup_address'] }}, {{ $order['pickup_city'] }}, {{ $order['pickup_state'] }}, {{ $order['pincode'] }} </h5>
-                        </div>
-                    </div>
-                    <div class="row" >
-                        <div class="col-6">
-                            <h5 class="report-content">  Pickup Date </h5>
-                        </div>
-                        <div class="col-6">
-                            <h5 class="report-content"> {{ date('d M, Y', strtotime($order['pickup_schedule'])); }} </h5>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row text-center" >
-                <div class="col-12 text-right" >
-                    <a href="{{ url('dashboard') }}" class="thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle"><i class="fal fa-chevron-left ml-2"></i> Goto Dashboard</a>
-
-                    <a href="{{ url('manage-order') }}" class="thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle"> Manage Order</a>
-                </div>
+                </div >
             </div>
         </div>
     </section>

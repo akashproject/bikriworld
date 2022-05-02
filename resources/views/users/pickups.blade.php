@@ -49,8 +49,10 @@
                                 <h6> Selling Amount : Rs. {{ $value->amount }}/- </h6>
                             </div>
                             <div class="col-12 col-lg-6 text-right">
+                            @if($value->status != "cancelled")
                             <a href="{{ url('payments') }}" class="thm-btn bg-thm-color-one thm-color-two-shadow btn-rectangle" style="margin-top: 32px;">   Add Payment</a>
-                            <a href="{{ url('manage-order') }}/{{ $value->id}}" class="thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle" style="margin-top: 32px;">   Details</a>
+                            @endif
+                            <a href="{{ url('manage-order') }}/{{ $value->service_no}}" class="thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle" style="margin-top: 32px;">   Details</a>
                             </div>
                         </div>
                     @endforeach	

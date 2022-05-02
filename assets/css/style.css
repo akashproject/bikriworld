@@ -4463,10 +4463,11 @@ a.head_trigger.desktop_trigger {
 
 }
 
+.team_block.style_2.style_3.brand_listing {
+    height: auto;
+}
 
-
-/*Cta*/
-
+/* Cta */
 .cta_box .cta_box_inner {
 
     padding: 0 30px 0 120px;
@@ -4478,19 +4479,14 @@ a.head_trigger.desktop_trigger {
 
 
 .cta_box .text_block {
-
     padding: 50px 0;
-
 }
 
 
 
 .cta_box .section-title {
-
     max-width: 100%;
-
     padding-bottom: 0;
-
 }
 
 

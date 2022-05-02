@@ -65,10 +65,10 @@ class UserController extends Controller
     }
 
     public function getAddress(Request $request){
-
+        $user = $this->user;
         $data = $request->all();
         try {
-            $address = Address::where('user_id', $data['user_id'])->where('type', $data['type'])->first();
+            $address = Address::where('user_id',  $this->user->id)->where('type', $data['type'])->first();
             return response()->json($address,$this->_statusOK);
         } catch(\Illuminate\Database\QueryException $e){
         }

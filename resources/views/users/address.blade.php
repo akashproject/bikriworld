@@ -25,7 +25,7 @@
                     </div>
                 </div>
                 <div class="col-lg-8 ">
-                    <h5 class="page_title" style="float:left"> Pickup Address Information </h5>
+                    <h5 class="page_title"> Pickup Address Information </h5>
                     <div class="text-right" >
                         <a href="{{ url('add-address') }}" class="thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle"> Add Address </a>
                     </div>

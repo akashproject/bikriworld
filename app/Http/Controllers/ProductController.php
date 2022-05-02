@@ -131,10 +131,10 @@ class ProductController extends Controller
         return view('product.order-success',compact('user','order'));
     }
 
-    public function manageOrder(Request $request){
+    public function manageOrder($id){
         $user = $this->userdata;
-        $order = $request->session()->get('orderData');
-        $order['product_name'] = Product::findOrFail($order['product_id'])->name;
+        $order = Order::where('service_no',$id)->first();
+        $order['product_name'] = Product::findOrFail($order->product_id)->name;
         return view('product.order-manage',compact('user','order'));
     }
 
