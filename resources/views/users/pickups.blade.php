@@ -43,13 +43,14 @@
                                     @endif 
                                 </div>
                             </div>
-                            <div class="col-12 col-lg-8 order_list">
+                            <div class="col-12 col-lg-6 order_list">
                                 <h6 >Order Status : <span style="color:red" >{{ $value->status }} </span> </h6>
                                 <h6 >Pickup Date : {{ $value->pickup_schedule }} </h6>
                                 <h6> Selling Amount : Rs. {{ $value->amount }}/- </h6>
                             </div>
-                            <div class="col-12 col-lg-4 text-right">
-                            <a href="{{ url('payments') }}" class="thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle" style="margin-top: 32px;">   Add Payment</a>
+                            <div class="col-12 col-lg-6 text-right">
+                            <a href="{{ url('payments') }}" class="thm-btn bg-thm-color-one thm-color-two-shadow btn-rectangle" style="margin-top: 32px;">   Add Payment</a>
+                            <a href="{{ url('manage-order') }}/{{ $value->id}}" class="thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle" style="margin-top: 32px;">   Details</a>
                             </div>
                         </div>
                     @endforeach	
