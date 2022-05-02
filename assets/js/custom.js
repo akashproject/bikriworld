@@ -480,26 +480,32 @@
         slidesToShow: 4,
         slidesToScroll: 1,
         autoplay: true,
-        arrows: false,
+        arrows: true,
         dots: false,
         dotsClass: "slick-dots style_2",
         autoplaySpeed: 2000,
         responsive: [{
                 breakpoint: 1499,
                 settings: {
-                    slidesToShow: 3
+                    slidesToShow: 3,
+                    dots: false,
+                    arrows: true
                 }
             },
             {
                 breakpoint: 991,
                 settings: {
-                    slidesToShow: 2
+                    slidesToShow: 2,
+                    dots: false,
+                    arrows: true
                 }
             },
             {
                 breakpoint: 680,
                 settings: {
-                    slidesToShow: 1
+                    slidesToShow: 1,
+                    dots: false,
+                    arrows: true
                 }
             }
         ]
@@ -509,26 +515,32 @@
         slidesToShow: 7,
         slidesToScroll: 1,
         autoplay: true,
-        arrows: false,
+        arrows: true,
         dots: false,
         dotsClass: "slick-dots style_2",
         autoplaySpeed: 2000,
         responsive: [{
                 breakpoint: 1499,
                 settings: {
-                    slidesToShow: 7
+                    slidesToShow: 7,
+                    dots: false,
+                    arrows: true
                 }
             },
             {
                 breakpoint: 991,
                 settings: {
-                    slidesToShow: 3
+                    slidesToShow: 3,
+                    dots: false,
+                    arrows: true
                 }
             },
             {
                 breakpoint: 680,
                 settings: {
-                    slidesToShow: 3
+                    slidesToShow: 3,
+                    dots: false,
+                    arrows: true
                 }
             }
         ]
@@ -539,19 +551,22 @@
         slidesToScroll: 1,
         autoplay: true,
         arrows: true,
-        dots: true,
+        dots: false,
         autoplaySpeed: 2000,
         responsive: [{
                 breakpoint: 1199,
                 settings: {
-                    slidesToShow: 3
+                    slidesToShow: 3,
+                    dots: false,
+                    arrows: true
                 }
             },
             {
                 breakpoint: 767,
                 settings: {
                     slidesToShow: 3,
-                    arrows: false
+                    dots: false,
+                    arrows: true
                 }
             }
         ]

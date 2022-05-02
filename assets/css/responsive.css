@@ -528,17 +528,18 @@
     }
 
     .team_block .team_img .link {
-        width: 24px;
-        height: 24px;
-        right: 20%;
-        bottom: 45%;
+        width: 36px;
+        height: 36px;
+        position: absolute;
+        right: 8%;
+        bottom: 75%;
     }
 
     .thm-btn i {
-        font-size: 12px;
+        font-size: 15px;
         font-weight: 600;
-        line-height: 0;
-        margin-right: 1px;
+        line-height: 2;
+        margin-right: 0;
     }
 
     label#veriation_price-error {
@@ -601,7 +602,7 @@
     }
 
     .order_report .report-content {
-        font-size: 18px;
+        font-size: 16px;
     }
 
     /*Whys us*/

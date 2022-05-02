@@ -31,6 +31,12 @@
                     <h1 class="order-success-heading"> <i class="fal fa-check-circle ml-2"></i> </h1>
                     <h4 class="order-success-subheading">Deal has been successfully confirmed</h4>
                 </div>
+                <div class="mx-auto col-md-5" >
+                    <div class="add_payment_report">
+                        <a href="{{ url('payments') }}" > <i class="fal fa-plus-circle ml-2"></i> Add Your Payment Details </a>
+                        <p> Please add your payment details before pickup for a seamless transfer </p>
+                    </div>
+                </div>
                 <div class="order_report">
                     <h5 class="report-heading"> Service Details </h5>
                     <div class="row" >
@@ -96,7 +102,7 @@
             </div>
             <div class="row text-center" >
                 <div class="col-12 text-right" >
-                    <a href="{{ url('dashboard') }}" class="thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle"><i class="fal fa-chevron-left ml-2"></i> Goto Dashboard</a>
+                    <a href="{{ url('dashboard') }}" class="thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle" style="margin-bottom: 19px;"><i class="fal fa-chevron-left ml-2"></i> Goto Dashboard</a>
 
                     <a href="{{ url('manage-order') }}" class="thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle"> Manage Order</a>
                 </div>
