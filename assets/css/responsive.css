@@ -467,11 +467,18 @@
 }
 
 @media (max-width: 767px) {
+    .cancel_payment_btn{
+        float: none;
+        margin-top: 10px;
+    }
+
     .accessories_wrap h6 {
         font-size: 14px;
         margin-top: 5px;
     }
-
+    .white-popup{
+        max-width: 100%;
+    }
     .header {
         padding-top: 12px;
         padding-bottom: 10px;

@@ -148,7 +148,7 @@
 
     --thm-color-five: #0c1634;
 
-    --thm-color-six: #ff0030;
+    --thm-color-six: #c52341;
 
     --thm-color-light: #dadada;
 
@@ -8738,7 +8738,9 @@ a.head_trigger.desktop_trigger {
 
 }
 
-
+.cancel_payment_btn{
+    float: right;
+}
 
 .faqs_elements .element_3 {
 
@@ -10383,7 +10385,7 @@ label.form-check-label {
     background: #FFF;
     padding: 20px 40px;
     width: auto;
-    max-width: 80%;
+    max-width: 35%;
     margin: 20px auto;
     transition: 1s all;
 }

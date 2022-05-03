@@ -17,6 +17,48 @@
         },
     })
 
+    $("#updateOrder").validate({
+        messages: {
+            'address_1': "Please enter pickup address.",
+            'state': "Please enter state name.",
+            'city': "Please enter city name.",
+            'pincode': "Please enter area pincode.",
+            'pickup_schedule': "Please select pickup schedule.",
+
+        },
+        submitHandler: function(form) {
+            console.log($(form).serialize());
+            $.ajaxSetup({
+                headers: {
+                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+            $.ajax({
+                url: `http://${window.location.hostname}/update-order`,
+                type: "post",
+                data: $(form).serialize(),
+                success: function(result) {
+                    if(result){
+                        jQuery(".open-popup-link").trigger("click");
+                    }
+                }
+            });
+            return false;
+        }
+    });
+
+    jQuery('.open-popup-link').magnificPopup({
+
+        type: 'inline',
+    
+        midClick: true,
+    
+        mainClass: 'mfp-fade'
+    
+    });
+
+    
+
     $("#question_list_form").validate();
 
     $("#device-age").validate({
@@ -387,6 +429,14 @@
         $(".address_form").toggle();
         $(".save_order_btn").toggle();
     });
+
+    $($("[name='reason']")).on("change",function(){
+        if($(this).attr("id") == "other"){
+            $("#other_field").show();
+        } else {
+            $("#other_field").hide();
+        }
+    })
 
     //On scroll events
     $(window).on('scroll', function() {

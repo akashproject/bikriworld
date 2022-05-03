@@ -6,22 +6,32 @@
             <div class="row" >
                 <div class="col-md-12" >
                     <div class="summary-wrap">
-                        <h5 class="report-heading"> Order Number : {{ $order->service_no }} </h5>
+                        <h5 class="report-heading"> Order Number : {{ $order->service_no }} 
+                        @if($order->status != "cancelled")
+                            <a href="#cancel-order" class="thm-btn bg-thm-color-six thm-color-two-shadow btn-rectangle cancel_payment_btn open-popup-link"> Cancel Order</a>
+                        @endif 
+                        </h5>
+                        
                         <div class="row" >
-                           <div class="col-lg-6 col-12"> 
+                            <div class="col-lg-6 col-12"> 
                                 <h6 style="margin:0;"> {{ $order->product_name }} ( {{ $order->variation_type }} ) </h6>
                                 <p style="margin:0;"> Selling Price : ₹. <strong>{{ number_format($order->amount) }}/-  </strong></p>
                                 <p> Payment Mode :<strong>{{ $order->payment_mode }}  </strong></p>
                             </div>
-                           <div class="col-lg-6 col-12 text-right">
-                                <a href="javascript:void(0)" class="thm-btn bg-thm-color-one thm-color-two-shadow btn-rectangle payment_mode_form_btn"> Change Payment </a>
-                                <a href="{{ url('payments') }}" class="thm-btn bg-thm-color-one thm-color-two-shadow btn-rectangle payment_mode_form_btn"> Add Payment </a>
+                            <div class="col-lg-6 col-12 text-right" style="margin-bottom: 20px;">
+                                 @if($order->status != "cancelled")
+                                <a href="javascript:void(0)" class="thm-btn bg-thm-color-one thm-color-two-shadow btn-rectangle payment_mode_form_btn" style="margin-bottom:20px"> Change Payment </a>
+                                
+                                <a href="{{ url('payments') }}" class="thm-btn bg-thm-color-one thm-color-two-shadow btn-rectangle "> Add Payment </a>
+                                @endif
                             </div>
                         </div>
+                        <form class="form-horizontal" id="updateOrder" method="post" action="{{ url('update-order') }}" enctype="multipart/form-data">
+                        @csrf
                         <div class="row payment_mode_form" style="display:none;" >
                             <div class="col-lg-12">
                                 <div class="row answer_row" >
-                                    <div class="col-4">
+                                    <div class="col-12 col-lg-4">
                                         <div class="answer_list"  >
                                             <div class="form-check ">
                                                 <input class="form-check-input" type="radio" name="payment_mode" id="" value="Bank Transfar" {{ ($order->payment_mode=="Bank Transfar")? "checked" : "" }} >
@@ -29,7 +39,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-4">
+                                    <div class="col-12 col-lg-4">
                                         <div class="answer_list"  >
                                             <div class="form-check ">
                                                 <input class="form-check-input" type="radio" name="payment_mode" id="" value="Upi" {{ ($order->payment_mode=="Upi")? "checked" : "" }}>
@@ -37,7 +47,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-4">
+                                    <div class="col-12 col-lg-4">
                                         <div class="answer_list"  >
                                             <div class="form-check ">
                                                 <input class="form-check-input" type="radio" name="payment_mode" id="" value="Online Payment" {{ ($order->payment_mode=="Online Payment")? "checked" : "" }}>
@@ -46,16 +56,22 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="row">
+                                    <button type="submit" class=" thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle"> Save</a>
+                                </div>
                             </div>
                         </div>
                         <h6 class="report-heading"> Order Summary </h6>
                         <div class="row" >
                             <div class="col-lg-9 col-12">
                                 <h6 style="margin:0;">Pickup Address : {{ $order->pickup_address }} {{ $order->pickup_city }} {{ $order->pickup_state }} {{ $order->pincode }} </h5>
-                                <p> Pickup Schedule : <strong> {{ $order->pickup_schedule }} </strong>
+                                <p style="margin:0;"> Pickup Schedule : <strong> {{ $order->pickup_schedule }} </strong> </p>
+                                <p> Order Status : <strong> {{ $order->status }} </strong></p> 
                             </div>
                             <div class="col-lg-3 col-12 text-right">
+                                @if($order->status != "cancelled")
                                 <a href="javascript:void(0)" class="thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle address_form_btn"> Edit</a>
+                                @endif
                             </div>
                         </div>
                         <div class="row address_form"  style="display:none;">
@@ -67,7 +83,7 @@
                                     <div class="col-4">
                                         <div class="answer_list"  >
                                             <div class="form-check ">
-                                                <input class="form-check-input address_type" type="radio" name="type" id="type_home" value="Home" {{ ($order->type=="Home")? "checked" : "" }}>
+                                                <input class="form-check-input address_type" type="radio" name="type" id="type_home" value="Home" {{ ($order->type=="Home")? "checked" : "" }} >
                                                 <label class="form-check-label" for="type_home">Home</label>
                                             </div>
                                         </div>
@@ -119,19 +135,54 @@
                             </div>
                             <div class="col-lg-3">
                                 <div class="form-group custom_form_style">
-                                    <label class="padding-30px-left-right">Date TIme <span class="required">*</span></label>
+                                    <label class="padding-30px-left-right">Date Time <span class="required">*</span></label>
                                     <input type="text" name="pickup_schedule" class="form-control" autocomplete="off" id="datepicker" value="{{ $order->pickup_schedule }}" placeholder="Please Select Date" required="" >
                                 </div>
                             </div>
+                            <div class="col-12">
+                                <button type="submit" class=" thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle" > Save</a>
+                            </div>
                         </div>
                         <div class="">
-                            <button type="submit" class="save_order_btn thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle" style="display:none"> Save</a>
+                            <input type="hidden" name="order_id" value="{{ $order->id }}" >
+                            
                         </div>
+                        </form>
                     </div>
                 </div >
             </div>
         </div>
     </section>
+    <div id="success-message" class="white-popup mfp-hide text-center">
+        <h3 style="color:#00986b"><i class="fal fa-check-circle"></i> Success</h3>
+        <p>Your Order has been successfully updated</p>
+    </div>
+
+    <div id="cancel-order" class="white-popup mfp-hide">
+        <h5 style="color:#00986b" class="text-center"><i class="fal fa-check-circle"></i> Reason for cancellation</h3>
+        <p> Can you let us know the reason for cancellation </p>
+        <form class="form-horizontal" id="updateOrder" method="post" action="{{ url('cancel-order') }}" enctype="multipart/form-data">
+        <ul>
+            <li> <input type="radio" name="reason" id="better" value="Got a better price" > <label for="better" >Got a better price </label> </li>
+            <li> <input type="radio" name="reason" id="network" value="Sold it in my network"> <label for="network" > Sold it in my network </label> </li>
+            <li> <input type="radio" name="reason" id="someone" value="Gave it to someone"> <label for="someone" > Gave it to someone </label></li>
+            <li> <input type="radio" name="reason" id="reschedule" value="Would like to reschedule"> <label for="reschedule" > Would like to reschedule </label></li>
+            <li> <input type="radio" name="reason" id="contact" value="No one from Bikriworld contacted me"> <label for="contact" > No one from Bikriworld contacted me </label></li>
+            <li> <input type="radio" name="reason" id="documents" value="Required documents not available"> <label for="documents" > Required documents not available </label></li>
+            <li> <input type="radio" name="reason" id="payment" value="Not Bikriworld about payment"> <label for="payment" > Not Bikriworld about payment </label></li>
+            <li> <input type="radio" name="reason" id="emi" value="Device is still under EMI"> <label for="emi" > Device is still under EMI </label></li>
+            <li> <input type="radio" name="reason" id="confident" value="Not confident about Bikriworld!"> <label for="confident" > Not confident about Bikriworld! </label></li>
+            <li> <input type="radio" name="reason" id="interested" value="Not interested, was just exploring the option!"> <label for="interested" > Not interested, was just exploring the option! </label></li>
+            <li> <input type="radio" name="reason" id="other" > <label for="better" > Others! </li>
+            <li class="form-group custom_form_style">
+                <textarea name="reason" class="form-control" id="other_field" placeholder="Please type reason" style="display:none" ></textarea>
+            </li>    
+        </ul>
+        <button type="submit" href="javascript:void(0)" class="thm-btn bg-thm-color-one thm-color-two-shadow btn-rectangle "> Submit </button>
+        </form>
+    </div>
+    <a href="#success-message" class="open-popup-link" style="visibility:hidden" >Enquire Now</a>
+
     @endsection
 @section('script')
 <!-- ============================================================== -->

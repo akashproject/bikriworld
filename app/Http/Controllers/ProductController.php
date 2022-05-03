@@ -138,6 +138,19 @@ class ProductController extends Controller
         return view('product.order-manage',compact('user','order'));
     }
 
+    public function updateOrder(Request $request){
+        $user = $this->userdata;
+        $data = $request->all();
+        try {
+            $order = Order::findOrFail($data['order_id']);
+            $order->update($data);
+            return response()->json(array(true),$this->_statusOK);
+        } catch(\Illuminate\Database\QueryException $e){
+        
+        }
+        
+    }
+
     public function add(Request $request){
         $user = $this->userdata;
         $brands = Brand::all();
