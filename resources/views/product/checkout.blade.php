@@ -100,25 +100,25 @@
                             <div class="col-md-6">
                                 <div class="form-group custom_form_style">
                                     <label class="padding-30px-left-right">Address <span class="required">*</span></label>
-                                    <input type="text" name="address_1" class="form-control" autocomplete="off" value="" placeholder="Please Enter Address" required="">
+                                    <input type="text" name="address_1" id="address_1" class="form-control" autocomplete="off" value="" placeholder="Please Enter Address" required="">
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group custom_form_style">
                                     <label class="padding-30px-left-right">City <span class="required">*</span></label>
-                                    <input type="text" name="city" class="form-control" autocomplete="off" value="" placeholder="Please Enter City" required="">
+                                    <input type="text" name="city" id="city" class="form-control" autocomplete="off" value="" placeholder="Please Enter City" required="">
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group custom_form_style">
                                     <label class="padding-30px-left-right">State <span class="required">*</span></label>
-                                    <input type="text" name="state" class="form-control" autocomplete="off" value="" placeholder="Please Enter State" required="">
+                                    <input type="text" name="state" id="state" class="form-control" autocomplete="off" value="" placeholder="Please Enter State" required="">
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group custom_form_style">
                                     <label class="padding-30px-left-right">Pincode <span class="required">*</span></label>
-                                    <input type="text" name="pincode" class="form-control" autocomplete="off" value="" placeholder="Please Enter Pincode" required="">
+                                    <input type="text" name="pincode" id="pincode" class="form-control" autocomplete="off" value="" placeholder="Please Enter Pincode" required="">
                                 </div>
                             </div>
                             <div class="col-lg-12">

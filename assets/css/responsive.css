@@ -472,8 +472,18 @@
         margin-top: 10px;
     }
 
+    #cancel-order h5 {
+        font-size: 19px;
+    }
+
+    #cancel-order p{
+        font-size: 19px;
+        line-height: 22px;
+        font-weight: 600;
+    }
+
     .accessories_wrap h6 {
-        font-size: 14px;
+        font-size: 11px;
         margin-top: 5px;
     }
     .white-popup{

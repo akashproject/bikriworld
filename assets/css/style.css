@@ -4517,7 +4517,10 @@ a.head_trigger.desktop_trigger {
 
 }
 
-
+label#reason-error {
+    position: absolute;
+    bottom: 19px;
+}
 
 .cta_box .cta_box_inner .arrows {
 
@@ -9310,7 +9313,7 @@ a.head_trigger.desktop_trigger {
 }
 
 .accessories_wrap h6 {
-    font-size: 14px;
+    font-size: 12px;
     margin: 8px 3px 0;
 }
 
@@ -10213,7 +10216,7 @@ input.accessory_input, input.age_input{
     visibility: hidden;
 }
 
-label#veriation_price-error {
+label#veriation_choice-error {
     top: 42px;
     position: absolute;
 }
@@ -10385,9 +10388,17 @@ label.form-check-label {
     background: #FFF;
     padding: 20px 40px;
     width: auto;
-    max-width: 35%;
+    max-width: 70%;
     margin: 20px auto;
     transition: 1s all;
+}
+
+#success-message {
+    max-width: 35%;
+}
+
+#cancel-order {
+    max-width: 35%;
 }
 
 .content-section h1 {

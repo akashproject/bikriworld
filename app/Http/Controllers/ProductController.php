@@ -151,6 +151,18 @@ class ProductController extends Controller
         
     }
 
+    public function cancelOrder(Request $request){
+        $data = $request->all();
+        try {
+            $data['status'] = 'cancelled';
+            $order = Order::findOrFail($data['order_id']);
+            $order->update($data);
+            return redirect('/manage-order/'.$order->service_no);
+        } catch(\Illuminate\Database\QueryException $e){
+        
+        }
+    }
+
     public function add(Request $request){
         $user = $this->userdata;
         $brands = Brand::all();

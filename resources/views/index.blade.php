@@ -134,7 +134,7 @@
                         <div class="features_box style_2">
                             <div class="icon">
                                 <a href="{{ url('selling-brands') }}/{{ $value->id }}"> 
-                                    <i class="fa fa-{{ strtolower($value->icon) }} cat-icon" aria-hidden="true"></i>
+                                    <img src="{{ url('assets/images/icons') }}/{{$value->icon}}.png" style="width: auto;">
                                 </a>
                             </div>
                             <h5 class="text-center" ><a href="{{ url('selling-brands') }}/{{ $value->id }}"> Sell {{ $value->name }}</a></h5>

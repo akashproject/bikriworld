@@ -104,7 +104,7 @@
                 <div class="col-12 text-right" >
                     <a href="{{ url('dashboard') }}" class="thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle" style="margin-bottom: 19px;"><i class="fal fa-chevron-left ml-2"></i> Goto Dashboard</a>
 
-                    <a href="{{ url('manage-order') }}" class="thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle"> Manage Order</a>
+                    <a href="{{ url('manage-order') }}/{{$order['service_no']}}" class="thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle"> Manage Order</a>
                 </div>
             </div>
         </div>

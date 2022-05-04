@@ -8,14 +8,20 @@
 
     $("#checkexactvalue").validate({
         rules : {
-            'veriation_price': {
+            'veriation_choice': {
                 required: true,
             }
         },
         messages: {
-            'veriation_price': "Please Select your device veriation.",
+            'veriation_choice': "Please Select your device veriation.",
         },
     })
+
+    $("#cancelOrder").validate({
+        messages: {
+            'reason': "Please select cancellation reason.",
+        },
+    });
 
     $("#updateOrder").validate({
         messages: {
@@ -305,16 +311,11 @@
             },
             success: function(result) {
                 if(result){
-                    jQuery("input[name='address_1']").val(result.address_1);
-                    jQuery("input[name='city']").val(result.city);
-                    jQuery("input[name='state']").val(result.state);
-                    jQuery("input[name='pincode']").val(result.pincode);
+                    jQuery("#address_1").val(result.address_1);
+                    jQuery("#city").val(result.city);
+                    jQuery("#state").val(result.state);
+                    jQuery("#pincode").val(result.pincode);
                 }
-                
-                // //result = JSON.parse(result);
-                // if (result) {
-                //     location.reload();
-                // }
             }
         });
     });
@@ -433,8 +434,10 @@
     $($("[name='reason']")).on("change",function(){
         if($(this).attr("id") == "other"){
             $("#other_field").show();
+            $("#other_field").attr("name","reason");
         } else {
             $("#other_field").hide();
+            $("#other_field").attr("name","");
         }
     })
 
@@ -715,6 +718,7 @@
     $('.veriation_price').on("click",function(){
         $(".product-price_amount").html(addCommas($(this).val()))
         $("#veriation_type").val($(this).attr("data-type"));
+        $("#veriation_price").val($(this).val());
         //$(".product-price_amount_int").val($(this).attr('data-price'))
     })
     // Easy pie bar
