@@ -51,6 +51,15 @@ class QuestionController extends Controller
         }        
     }
 
+    public function delete($id)
+    {
+        try {
+            $question = Question::find($id)->delete();
+            return redirect('/questions');
+        } catch(\Illuminate\Database\QueryException $e){
+        }  
+    }
+
     public function showDeviceAge($id)
     {
         try {
@@ -110,6 +119,15 @@ class QuestionController extends Controller
         }
 
         return redirect('/device-age');     
+    }
+
+    public function deleteDeviceAge($id)
+    {
+        try {
+            $age = Age::find($id)->delete();
+            return redirect('/device-age');
+        } catch(\Illuminate\Database\QueryException $e){
+        }  
     }
 
     public function save(Request $request) {

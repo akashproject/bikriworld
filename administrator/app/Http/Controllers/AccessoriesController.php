@@ -70,4 +70,12 @@ class AccessoriesController extends Controller
         
         return redirect('/accessories');
     }
+
+    public function delete($id){
+        try {
+            $age = Accessories::find($id)->delete();
+            return redirect('/accessories');
+        } catch(\Illuminate\Database\QueryException $e){
+        } 
+    }
 }

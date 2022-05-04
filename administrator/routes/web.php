@@ -78,16 +78,20 @@ Route::get('/questions', [App\Http\Controllers\QuestionController::class, 'index
 Route::get('/question/{id}', [App\Http\Controllers\QuestionController::class, 'show'])->name('question');
 Route::get('/addquestion', [App\Http\Controllers\QuestionController::class, 'add'])->name('question');
 Route::post('/submitquestion', [App\Http\Controllers\QuestionController::class, 'save'])->name('submitquestion');
+Route::get('/question-delete/{id}', [App\Http\Controllers\QuestionController::class, 'delete'])->name('question');
+
 //Route::get('/sub-questions', [App\Http\Controllers\QuestionController::class, 'subQuestions'])->name('sub-questions');
 Route::get('/device-age', [App\Http\Controllers\QuestionController::class, 'deviceAge'])->name('device-age');
 Route::get('/device-age/{id}', [App\Http\Controllers\QuestionController::class, 'showDeviceAge'])->name('show-device-age');
 Route::get('/add-device-age', [App\Http\Controllers\QuestionController::class, 'addDeviceAge'])->name('add-device-age');
 Route::post('/save-device-age', [App\Http\Controllers\QuestionController::class, 'saveDeviceAge'])->name('save-device-age');
+Route::get('/age-delete/{id}', [App\Http\Controllers\QuestionController::class, 'deleteDeviceAge'])->name('age-delete');
 
 //Accessories
 Route::get('/accessories', [App\Http\Controllers\AccessoriesController::class, 'index'])->name('accessories');
 Route::get('/add-accessories', [App\Http\Controllers\AccessoriesController::class, 'add'])->name('add-accessories');
 Route::get('/accessory/{id}', [App\Http\Controllers\AccessoriesController::class, 'show'])->name('accessory');
+Route::get('/accessory-delete/{id}', [App\Http\Controllers\AccessoriesController::class, 'delete'])->name('accessory-delete');
 Route::post('/save-accessories', [App\Http\Controllers\AccessoriesController::class, 'save'])->name('save-accessories');
 
 //Contact

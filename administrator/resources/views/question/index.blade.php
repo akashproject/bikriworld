@@ -41,7 +41,7 @@
 								<td>{{ $value->name }}</td>									
 								<td>
 								<a href="{{ url('question') }}/{{ $value->id }}" class="btn btn-primary btn-lg">Edit</a>
-								<a href="{{ url('question-delete') }}/{{ $value->id }}" class="btn btn-danger btn-lg">Delete </a>
+								<a href="{{ url('question-delete') }}/{{ $value->id }}" class="btn btn-danger btn-lg" onclick="return confirm('Are you sure?');">Delete </a>
 								</td>
 							</tr>
 							@endforeach							
