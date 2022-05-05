@@ -28,7 +28,30 @@
     <!-- Team Start -->
     <section class="section-padding" style="">
 
-        <div class="container">          
+        <div class="container">  
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="section-title left-align">
+                        <p class="subtitle mb-4">
+                            <i class="fal fa-book"></i>
+                            Please select device
+                        </p>
+                        <h6 class="title mb-0">choose device what you like to sell</h6>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <!-- <div class="section-title left-align">
+                        <p class="subtitle mb-4">
+                            <i class="fal fa-book"></i>
+                            Please select device
+                        </p>
+                        <div class="search_bar relative" style="width:100%">
+                            <input type="text" name="#" id="search_field" placeholder="Search" autocomplete="off">
+                            <i class="fal fa-search"></i>
+                        </div>
+                    </div> -->
+                </div>
+            </div>        
             <div class="row">
                 @if($products)
                 @foreach ($products as $value)

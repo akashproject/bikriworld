@@ -36,7 +36,7 @@
                             <i class="fal fa-book"></i>
                             Please select brand
                         </p>
-                        <h5 class="title mb-0">choose brand what you like to sell</h4>
+                        <h5 class="title mb-0">choose brand what you like to sell</h5>
                     </div>
                 </div>
             </div>
