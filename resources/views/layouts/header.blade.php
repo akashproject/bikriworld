@@ -13,7 +13,7 @@ Preloader End -->
     <div class="container mobile-top-menu">
         <ul style="font-size:20px">
             <li>
-                <a href="tel:+97439995068">
+                <a href="tel:+917439995068">
                     <i class="fal fa-phone"></i>
                     +91 7439 995 068              
                 </a>
@@ -206,7 +206,7 @@ Preloader End -->
                 <div class="col-lg-5">
                     <ul class="right-side">
                         <li>
-                            <a href="tel:0123456789">
+                            <a href="tel:7439995068">
                                 <i class="fal fa-phone"></i>
                                 Call : 7439 995 068
                             </a>

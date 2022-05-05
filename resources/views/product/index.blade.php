@@ -47,7 +47,7 @@
                                 <i class="fal fa-plus"></i>
                             </a>
                         </div>
-                        <p class="thm-color-two mb-0 font-weight-bold"><a href="{{ url('view-product') }}/{{ $value->id }}" class=""> {{ $value->name }} </a></p>
+                        <p class="thm-color-two mb-0 font-weight-bold"><a href="{{ url('view-product') }}/{{ $value->id }}" style="font-size: 13px;line-height: 18px;" > {{ $value->name }} </a></p>
                     </div>
                 </div>
                 <!-- Block End -->               

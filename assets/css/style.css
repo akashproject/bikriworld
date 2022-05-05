@@ -4370,11 +4370,11 @@ a.head_trigger.desktop_trigger {
     font-weight: 200 !important;
 }
 .team_block .team_img .link {
-    width: 36px;
-    height: 36px;
+    width: 30px;
+    height: 30px;
     position: absolute;
-    right: 8%;
-    bottom: 75%;
+    right: 9%;
+    bottom: 77%;
 }
 
 
@@ -7111,9 +7111,13 @@ a.head_trigger.desktop_trigger {
 
 }
 
+.team_img.product_img {
+    margin-bottom: 18px;
+}
+
 .team_img.product_img a img {
     border-radius: 0;
-    height: 125px;
+    height: 110px;
     max-width: 100%;
 }
 
@@ -10219,7 +10223,7 @@ label#veriation_price-error {
 }
 
 .product-right-content .variant_wrap .custom_form_style {
-    margin-bottom: 30px;
+    margin-bottom: 42px;
 }
 
 

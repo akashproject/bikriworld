@@ -218,6 +218,17 @@
         $(".device_summary").append('<li class="question_'+questionid+'">'+questionval+'</li>');
     });
 
+    $(".accessories_wrap").click(function(){
+        let questionval = $(this).children("h6").html();
+        $(".device_summary").append('<li class="">'+questionval+'</li>');
+    });
+
+    $(".ages_wrap").click(function(){
+        let questionval = $(this).children("h6").html();
+        $(".device_summary").html('<li class="">'+questionval+'</li>');
+    });
+    
+
     $(".form-check-input.no").click(function(){
         let questionid = $(this).parent().parent().parent().parent().attr("dataquestion");
         $(".question_"+questionid).remove();

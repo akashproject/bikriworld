@@ -99,8 +99,8 @@
                             <i class="icon fal fa-phone"></i>
                             <div class="text">
                                 <h6>Contact Us</h6>
-                                <p><strong>Mobile: </strong> <a href="tel:7439995068">+(91) 7439 995 068</a> </p>
-                                <p><strong>Hotline: </strong> <a href="tel:7439995068">+(91) 7439 995 068</a> </p>
+                                <p><strong>Mobile: </strong> <a href="tel:+917439995068">+(91) 7439 995 068</a> </p>
+                                <p><strong>Hotline: </strong> <a href="tel:+917439995068">+(91) 7439 995 068</a> </p>
                             </div>
                         </li>
                     </ul>

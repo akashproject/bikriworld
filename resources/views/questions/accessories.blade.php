@@ -88,7 +88,7 @@
                         </div>
                         <div class="sidebar_widget">
                             <div class="sidebar_widget_inner">
-                                <h6> Device Summary </h6>
+                                <h6> Accessories provided with device </h6>
                                 <ul class="info_widget device_summary">
                                     
                                 </ul>
