@@ -51,7 +51,7 @@
                                 <div class="col-lg-4">
                                     <div class="form-group custom_form_style">
                                         <label for="veriation_price_{{$key}}" class="text-center variant" data-price="{{$variant->price}}" > {{$variant->ram}} | {{$variant->storage}} </label>
-                                        <input id="veriation_price_{{$key}}" type="radio" name="veriation_price" class="veriation_price" class="form-control" data-type="{{$variant->ram}} | {{$variant->storage}}" value="{{$variant->price}}" required >
+                                        <input id="veriation_price_{{$key}}" type="radio" class="veriation_price" name="veriation_choice" data-type="{{$variant->ram}} | {{$variant->storage}}" value="{{$variant->price}}" required >
                                     </div>
                                 </div>
                                 @endforeach
@@ -64,7 +64,8 @@
                                 @if($user)
                                     @csrf
                                     <input type="hidden" value="{{ $product->id }}" name="product_id">
-                                    <input type="hidden" value="" name="veriation_type" id="veriation_type">
+                                    <input type="hidden" name="veriation_type" id="veriation_type">
+                                    <input type="hidden" name="veriation_price" id="veriation_price" value="{{$product->max_price}}" >
                                     <button type="submit" class="thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle"> Get Exact Value <i class="fal fa-chevron-right ml-2"></i></button>
                                 @else
                                     <a href="javascript:void(0)" class="open-login head_trigger thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle"> Get Exact Value <i class="fal fa-chevron-right ml-2"></i></a>

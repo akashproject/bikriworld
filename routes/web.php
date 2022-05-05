@@ -63,6 +63,7 @@ Route::get('/checkout', [App\Http\Controllers\ProductController::class, 'checkOu
 Route::post('/confirm-pickup', [App\Http\Controllers\ProductController::class, 'confirmPickup'])->name('confirm-pickup');
 Route::get('/order-success', [App\Http\Controllers\ProductController::class, 'orderSuccess'])->name('order-success');
 Route::post('/update-order', [App\Http\Controllers\ProductController::class, 'updateOrder'])->name('update-order');
+Route::post('/cancel-order', [App\Http\Controllers\ProductController::class, 'cancelOrder'])->name('cancel-order');
 Route::get('/manage-order/{id}', [App\Http\Controllers\ProductController::class, 'manageOrder'])->name('manage-order');
 Route::post('/get-question', [App\Http\Controllers\ProductController::class, 'getQuestion'])->name('get-question');
 Route::post('/submit-sell-request', [App\Http\Controllers\ProductController::class, 'submitSellRequest'])->name('submit-sell-request');
