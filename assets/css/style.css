@@ -181,7 +181,9 @@
     /*Border Color*/
 
 }
-
+:root{
+    accent-color : var(--thm-color-two);
+}
 
 
 /*Animations*/
@@ -7335,7 +7337,9 @@ a.head_trigger.desktop_trigger {
     background-position: left center;
 
 }
-
+#select-city-popup {
+    max-width: 85%;
+}
 
 
 .skills-sec .container-fluid .row>div:first-child {
@@ -10272,24 +10276,25 @@ label#veriation_price-error {
 }
 
 .answer_list {
-    padding: 7px 5px;
-    border: 1px solid var(--thm-color-two);
-    border-radius: 10px;
+    padding: .375rem .75rem;
+    border-radius: 6px;
     margin-bottom: 20px;
+    background: #00986b0d;
 }
 
 .answer_list:hover {
-    padding: 7px 5px;
-    background: #f2f6ff;
-    border-radius: 10px;
+    padding: .375rem .75rem;
+    background: #00986b0d;
+    border-radius: 6px;
 }
 .answer_list:active {
-    padding: 7px 5px;
-    background: #f2f6ff;
-    border-radius: 10px;
+    padding: .375rem .75rem;
+    background: #00986b0d;
+    border-radius: 6px;
 }
 label.form-check-label {
     font-weight: 800;
+    width: 100%;
 }
 
 .product-quote-wrap {

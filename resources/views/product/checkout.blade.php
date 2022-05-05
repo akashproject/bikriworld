@@ -129,24 +129,24 @@
                                     <div class="col-4">
                                         <div class="answer_list"  >
                                             <div class="form-check ">
-                                                <input class="form-check-input" type="radio" name="payment_mode" id="" value="Bank Transfar" >
-                                                <label class="form-check-label" for="">Bank Transfar</label>
+                                                <input class="form-check-input" type="radio" name="payment_mode" id="payment_bank" value="Bank Transfar" >
+                                                <label class="form-check-label" for="payment_bank">Bank Transfar</label>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-4">
                                         <div class="answer_list"  >
                                             <div class="form-check ">
-                                                <input class="form-check-input" type="radio" name="payment_mode" id="" value="Upi" >
-                                                <label class="form-check-label" for="">UPI</label>
+                                                <input class="form-check-input" type="radio" name="payment_mode" id="payment_upi" value="Upi" >
+                                                <label class="form-check-label" for="payment_upi">UPI</label>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-4">
                                         <div class="answer_list"  >
                                             <div class="form-check ">
-                                                <input class="form-check-input" type="radio" name="payment_mode" id="" value="Online Payment" >
-                                                <label class="form-check-label" for="">Online Payment</label>
+                                                <input class="form-check-input" type="radio" name="payment_mode" id="payment_online" value="Online Payment" >
+                                                <label class="form-check-label" for="payment_online">Online Payment</label>
                                             </div>
                                         </div>
                                     </div>

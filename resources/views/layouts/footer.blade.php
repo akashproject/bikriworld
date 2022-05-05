@@ -87,7 +87,7 @@
         </div>
         <div class="footer_bottom">
             <p class="mb-0">
-                © {{ date('Y') }} <a href="#">Wellco</a>. All Rights Reserved, Design By BikriWorld
+                © {{ date('Y') }} <a href="#">BikriWorld</a>. All Rights Reserved
             </p>
         </div>
     </div>
