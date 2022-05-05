@@ -30,13 +30,21 @@
     <section class="section-padding bg-thm-color-two-gradient style_2 z-1 team_page_bg">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12">
+                <div class="col-lg-6">
                     <div class="section-title left-align">
-                        <p class="subtitle mb-4">
+                        <p class="subtitle mb-0">
                             <i class="fal fa-book"></i>
                             Please select brand
                         </p>
                         <h5 class="title mb-0">choose brand what you like to sell</h5>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="section-title text-center">
+                        <div class="search_bar">
+                            <input type="text" name="#" id="search_product" placeholder="Search Device Brand" autocomplete="off">
+                            <i class="fal fa-search"></i>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -44,7 +52,7 @@
             @if($brands)
                 @foreach ($brands as $value)
                 <!-- Block Start -->
-                <div class="col-lg-2 col-4">
+                <div class="col-lg-2 col-4 product_filter_list">
                     <div class="team_block style_2 style_3 brand_listing">
                         <div class="team_img">                            
                             <a href="{{ url('selling-products') }}/{{ $value->id }}" class="">

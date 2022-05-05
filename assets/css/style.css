@@ -2613,7 +2613,7 @@ blockquote .quote_author:before {
 
 
 
-.header .head_actions .search_bar input {
+.header .head_actions .search_bar input,#search_product {
     height: 50px;
     padding: 5px 30px;
     border-radius: 50px;
@@ -2642,7 +2642,7 @@ blockquote .quote_author:before {
 
 
 
-.header .head_actions .search_bar input+i {
+.header .head_actions .search_bar input+i,#search_product+i {
 
     position: absolute;
 
@@ -2660,6 +2660,18 @@ blockquote .quote_author:before {
 
 }
 
+#search_product+i {
+
+    position: absolute;
+    right: 30px;
+    top: 24px;
+    transform: translateY(-50%);
+    color: var(--thm-color-two);
+    font-weight: 400;
+    pointer-events: none;
+    font-size: 22px;
+
+}
 
 
 .header .head_actions .head_trigger {
@@ -3924,6 +3936,7 @@ a.close_aside i {
     transition: 0.3s all;
     background-color: #f3f2f2 !important;
     border-radius: 20px;
+    height: 200px;
 }
 
 
@@ -9318,7 +9331,7 @@ a.head_trigger.desktop_trigger {
 }
 
 .accessories_wrap h6 {
-    font-size: 14px;
+    font-size: 12px;
     margin: 8px 3px 0;
 }
 

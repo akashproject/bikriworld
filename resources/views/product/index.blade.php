@@ -32,7 +32,7 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class="section-title left-align">
-                        <p class="subtitle mb-4">
+                        <p class="subtitle mb-0">
                             <i class="fal fa-book"></i>
                             Please select device
                         </p>
@@ -40,23 +40,18 @@
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <!-- <div class="section-title left-align">
-                        <p class="subtitle mb-4">
-                            <i class="fal fa-book"></i>
-                            Please select device
-                        </p>
-                        <div class="search_bar relative" style="width:100%">
-                            <input type="text" name="#" id="search_field" placeholder="Search" autocomplete="off">
+                    <div class="section-title text-center">
+                        <div class="search_bar">
+                            <input type="text" name="#" id="search_product" placeholder="Search Your Device" autocomplete="off">
                             <i class="fal fa-search"></i>
                         </div>
-                    </div> -->
+                    </div>
                 </div>
             </div>        
             <div class="row">
                 @if($products)
                 @foreach ($products as $value)
-                <!-- Block Start -->
-                <div class="col-lg-2 col-6">
+                <div class="col-lg-2 col-6 product_filter_list">
                     <div class="team_block style_2 style_3">
                         <div class="team_img product_img">
                             <a href="{{ url('view-product') }}/{{ $value->id }}" >
@@ -73,7 +68,6 @@
                         <p class="thm-color-two mb-0 font-weight-bold"><a href="{{ url('view-product') }}/{{ $value->id }}" style="font-size: 13px;line-height: 18px;" > {{ $value->name }} </a></p>
                     </div>
                 </div>
-                <!-- Block End -->               
                 @endforeach	
                 @else
                 <div class="col-12 text-center">

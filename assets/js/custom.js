@@ -819,6 +819,18 @@
         });
     });
 
+    $("#search_product").on("keyup",function(){
+        var searchText = $(this).val().toLowerCase();
+        $('.row .product_filter_list').each(function(){
+            
+            var currentLiText = $(this).text().toLowerCase(),
+                showCurrentLi = currentLiText.indexOf(searchText) !== -1;
+            
+            $(this).toggle(showCurrentLi);
+            
+        });   
+    });
+
     $('.open-city-popup').magnificPopup({
         type: 'inline',
         midClick: true,
