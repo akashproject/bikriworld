@@ -1,5 +1,6 @@
 @extends('layouts.main')
-
+    @section('meta_title','Contact Us')
+    @section('meta_description','contact,contact us')
     @section('content')
     <!-- Subheader Start -->
     <div class="subheader relative z-1" style="background-image: url({{ url('assets/images/contact-banner.png') }});">

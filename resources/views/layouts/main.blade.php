@@ -6,10 +6,11 @@
     <meta charset="UTF-8">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('BikriWorld', 'Sell Old Phone | Sell Old Laptop Online For Cash Today | BikriWorld') }}</title>
+    <title>@yield('title','Sell Old Phone | Sell Old Laptop Online For Cash Today | BikriWorld')</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="title" content="Sell Old Phone | Sell Old Laptop Online For Cash Today | BikriWorld">
-    <meta name="description" content="Want To Sell Old Phones Or Sell Old Laptops Online? Get An Instant Best Price For Old Phones, Laptops, And Other Gadgets. Get Cash At Your Doorstep In 1 Day.">
+    <meta name="title" content="@yield('meta_title','Sell Old Phone | Sell Old Laptop Online For Cash Today | BikriWorld')">
+    <meta name="description" content="@yield('meta_description','Want To Sell Old Phones Or Sell Old Laptops Online? Get An Instant Best Price For Old Phones, Laptops, And Other Gadgets. Get Cash At Your Doorstep In 1 Day.')">
+    <link rel="canonical" href="{{url()->current()}}"/>
     <!-- <meta name="description" content="Description website">
     <meta name="author" content="Maksym Blank">
     <meta name="keywords" content="website, with, meta, tags">
