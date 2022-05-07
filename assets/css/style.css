@@ -10234,7 +10234,7 @@ input.accessory_input, input.age_input{
     visibility: hidden;
 }
 
-label#veriation_price-error {
+label#veriation_choice-error {
     top: 42px;
     position: absolute;
 }

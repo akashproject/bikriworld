@@ -8,12 +8,12 @@
 
     $("#checkexactvalue").validate({
         rules : {
-            'veriation_price': {
+            'veriation_choice': {
                 required: true,
             }
         },
         messages: {
-            'veriation_price': "Please Select your device veriation.",
+            'veriation_choice': "Please Select your device veriation.",
         },
     })
 
