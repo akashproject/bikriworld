@@ -992,6 +992,9 @@ select {
 
 }
 
+.text-thm-color {
+    color: var(--thm-color-two);
+}
 
 .width-100 {
     width: 100%;

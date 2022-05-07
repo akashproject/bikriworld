@@ -52,7 +52,100 @@
     </section>
     <!-- Features End -->
     <!-- Team End -->
-     
+    <section class="section-padding wow fadeInUp" style="background-color: #4caf5014;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title left-align">
+                        <p class="subtitle mb-4">
+                            <i class="fal fa-book"></i>
+                            How We Work
+                        </p>
+                        <h5 class="title mb-0">How BikriWorld Helps You Get The Most Cash For Phones!</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-12">
+                    <h6 style="margin:10px 0">
+                        <img src="{{ url('assets/images/icons/price-tag.png') }}" style="width: auto;"> 
+                        <span style="margin-left: 20px;"style="margin-left: 20px;"> Get The Right Price-Quote</span> 
+                    </h6>
+                    <p>Simply pick your device and answer questions. Get an instant best price for your gadget’s current condition.</p>
+                </div>
+                <div class="col-lg-4 col-12">
+                    <h6 style="margin:10px 0">
+                        <img src="{{ url('assets/images/pickup.png') }}" style="width: auto;">
+                        <span style="margin-left: 20px;">Choose Mode of PickUp </span> 
+                    </h6>
+                    <p>Select the Location & Time after you like the Price! Get your old devices picked up from your home or work at your convenience.</p>
+                </div>
+                <div class="col-lg-4 col-12">
+                    <h6 style="margin:10px 0">
+                        <img src="{{ url('assets/images/icons/mobile.png') }}" style="width: auto;"> 
+                        <span style="margin-left: 20px;"> Get Cash For Phone/Gadget </span> 
+                    </h6>
+                    <p>You will get on spot payment. As soon as our Wizard enters the secret code, you are all set with cash and paperwork.</p>
+                </div>
+            </div>
+                     
+        </div>
+    </section>
+
+    <section class="section-padding wow fadeInUp">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title left-align">
+                        <p class="subtitle mb-4">
+                            <i class="fal fa-book"></i>
+                            Why People Like...
+                        </p>
+                        <h5 class="title mb-0">As Easy As 1,2,3: Why Sell Old Mobiles To BikriWorld?</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-12">
+                    <h6 style="margin:0">
+                        <i class="fal fa-check-circle text-thm-color" aria-hidden="true"></i> Best Valuation
+                    </h6>
+                    <p> Prices set on Market Value and Usage Only. </p>
+                </div>
+                <div class="col-lg-4 col-12">
+                    <h6 style="margin:0">
+                        <i class="fal fa-check-circle text-thm-color" aria-hidden="true"></i> Protected Payment
+                    </h6>
+                    <p>Sell Old Mobile Online & Get Protected Payment In Desired Location & Mode.</p>
+                </div>
+                <div class="col-lg-4 col-12">
+                    <h6 style="margin:0">
+                        <i class="fal fa-check-circle text-thm-color" aria-hidden="true"></i> As Easy As Counting 
+                    </h6>
+                    <p> Pick Price >> Set Pickup >> Get Cash </p>
+                </div>
+                <div class="col-lg-4 col-12">
+                    <h6 style="margin:0">
+                        <i class="fal fa-check-circle text-thm-color" aria-hidden="true"></i> Door Pickup
+                    </h6>
+                    <p> Get Free Pickup from Anywhere in India. Zero Packing & Transport Costs. </p>
+                </div>
+                <div class="col-lg-4 col-12">
+                    <h6 style="margin:0">
+                        <i class="fal fa-check-circle text-thm-color" aria-hidden="true"></i> 100% Data Deletion
+                    </h6>
+                    <p> No data gets leftover, and anonymity is ensured when you sell old mobiles to us. </p>
+                </div>
+                <div class="col-lg-4 col-12">
+                    <h6 style="margin:0">
+                        <i class="fal fa-check-circle text-thm-color" aria-hidden="true"></i> Valid Documentation
+                    </h6>
+                    <p> Worried about what happens to your device after you sell it? Rest easy with invoices. </p>
+                </div>
+            </div>
+                     
+        </div>
+    </section>
 
     <section class="section-padding wow fadeInUp">
         <div class="container">
