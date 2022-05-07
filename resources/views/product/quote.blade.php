@@ -12,7 +12,7 @@
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="{{  url('') }}">Home</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Select Brands</li>
+                                <li class="breadcrumb-item active" aria-current="page">Final Selling Price</li>
                             </ol>
                         </nav>
                     </div>
@@ -30,29 +30,61 @@
         <div class="container">
             <div class="row justify-content-between ">
                 <div class="col-lg-8 mb-md-80">
-                    <div class="product-quote-wrap row" >
-                        <div class="col-5 text-center">
-                            @if($product->image)
-                            <img src="/administrator/public/images/{{ $product->image }}" alt="img">
-                            @else 
-                            <img src="https://via.placeholder.com/180x180" alt="img" class="">
-                            @endif 
-                        </div>
-                        <div class="col-7 text-left">
-                            <h5> {{ $product->name }} ( {{ $calculatedData['variation_type'] }}  )</h5>
-                            @if($calculatedData['exact_price'] > 100)
-                            <p class="quote-msg"> Product Selling Price </p>
-                            <h3 class="quote-price" style="margin-bottom: 10px;"> ₹{{ number_format($calculatedData['exact_price'])}}/- </h3>
-                            <p style="font-size: 13px;margin-bottom: 0;">The amount is based on the your device condition as you mentioned. </p>
-                            @else
-                            <div class="sorry_message" >
-                                <h5> We Are Sorry </h5>
-                                <p> Price is too low as per your device condition </p>
+                    <div class="product-quote-wrap " >
+                        <div class="row">
+                            <div class="col-5 text-center">
+                                @if($product->image)
+                                <img src="/administrator/public/images/{{ $product->image }}" alt="img">
+                                @else 
+                                <img src="https://via.placeholder.com/180x180" alt="img" class="">
+                                @endif 
                             </div>
-                            @endif
-                            <!-- <a href="javascript:void(0)" class="view-report" > View Report</a> -->
+                            <div class="col-7 text-left">
+                                <h5> {{ $product->name }} ( {{ $calculatedData['variation_type'] }}  )</h5>
+                                @if($calculatedData['exact_price'] > 100)
+                                <p class="quote-msg"> Product Selling Price </p>
+                                <h3 class="quote-price" style="margin-bottom: 10px;"> ₹{{ number_format($calculatedData['exact_price'])}}/- </h3>
+                                <p style="font-size: 13px;margin-bottom: 20px;">The amount is based on the your device condition as you mentioned. </p>
+                                <div class="row desktop-version " >
+                                    <div class="col-4 text-center" >
+                                        <img src="{{ url('assets/images/verified.png') }}" style="width: 50px;">
+                                        <span style="display: block;margin-top: 5px;font-weight: bold;"> Safe & Secure </span>
+                                    </div>
+                                    <div class="col-4 text-center" >
+                                        <img src="{{ url('assets/images/pickup.png') }}" style="width: 50px;">
+                                        <span style="display: block;margin-top: 5px;font-weight: bold;"> Free Pickup </span>
+                                    </div>
+                                    <div class="col-4 text-center" >
+                                        <img src="{{ url('assets/images/pay.png') }}" style="width: 50px;">
+                                        <span style="display: block;margin-top: 5px;font-weight: bold;"> Instant Payment </span>
+                                    </div>
+                                </div>
+                                @else
+                                <div class="sorry_message" >
+                                    <h5> We Are Sorry </h5>
+                                    <p> Price is too low as per your device condition </p>
+                                </div>
+                                @endif
+                                <!-- <a href="javascript:void(0)" class="view-report" > View Report</a> -->
+                            </div>
                         </div>
-                    </div>
+                        <div class="mobile-version">
+                            <div class="row " >
+                                <div class="col-4 text-center" >
+                                    <img src="{{ url('assets/images/verified.png') }}" style="width: 40px;">
+                                    <span style="display: block;margin-top: 5px;font-weight: bold;font-size: 12px;"> Safe & Secure </span>
+                                </div>
+                                <div class="col-4 text-center" >
+                                    <img src="{{ url('assets/images/pickup.png') }}" style="width: 40px;">
+                                    <span style="display: block;margin-top: 5px;font-weight: bold;font-size: 12px;"> Free Pickup </span>
+                                </div>
+                                <div class="col-4 text-center" >
+                                    <img src="{{ url('assets/images/pay.png') }}" style="width: 40px;">
+                                    <span style="display: block;margin-top: 5px;font-weight: bold;font-size: 12px;"> Instant Payment </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>                   
                 </div>
                 <div class="col-lg-4">
                     <div class="sidebar style_3">
@@ -96,8 +128,6 @@
     </div>
 
     <!-- Section End -->
-    @include('common.top-brand')
-    @include('common.top-product')
 
     <section class="section-padding wow fadeInUp">
         <div class="container">

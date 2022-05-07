@@ -126,7 +126,7 @@
                             </div>
                             <div class="col-lg-12">
                                 <div class="row answer_row" >
-                                    <div class="col-4">
+                                    <div class="col-12 col-lg-4">
                                         <div class="answer_list"  >
                                             <div class="form-check ">
                                                 <input class="form-check-input" type="radio" name="payment_mode" id="payment_bank" value="Bank Transfar" >
@@ -134,7 +134,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-4">
+                                    <div class="col-12 col-lg-4">
                                         <div class="answer_list"  >
                                             <div class="form-check ">
                                                 <input class="form-check-input" type="radio" name="payment_mode" id="payment_upi" value="Upi" >
@@ -142,7 +142,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-4">
+                                    <div class="col-12 col-lg-4 ">
                                         <div class="answer_list"  >
                                             <div class="form-check ">
                                                 <input class="form-check-input" type="radio" name="payment_mode" id="payment_online" value="Online Payment" >

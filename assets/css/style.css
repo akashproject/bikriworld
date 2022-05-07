@@ -3781,6 +3781,11 @@ a.close_aside i {
 
 }
 
+.form-check-input {
+    position: absolute;
+    margin-top: .6rem;
+    margin-left: 9px;
+}
 
 
 .bg-banner .form-check-inline .form-check-input {
@@ -9337,7 +9342,7 @@ a.head_trigger.desktop_trigger {
 
 
 
-.accessory_input:checked + .accessories_wrap, .age_input:checked + .ages_wrap {
+.accessory_input:checked + .accessories_wrap, .age_input:checked + .ages_wrap, .form-check-input:checked + .form-check-label {
     font-weight: bold;
     border: 1px solid #00986b;
 }
@@ -10288,26 +10293,36 @@ label#veriation_choice-error {
     margin: 14px 0;
 }
 
-.answer_list {
+/* .answer_list {
     padding: .375rem .75rem;
     border-radius: 6px;
     margin-bottom: 20px;
     background: #00986b0d;
+} */
+
+/* .answer_list:hover {
+    padding: .375rem .75rem;
+    background: #00986b0d;
+    border-radius: 6px;
+} */
+
+.form-check{
+    padding-left: 0;
 }
 
-.answer_list:hover {
-    padding: .375rem .75rem;
-    background: #00986b0d;
-    border-radius: 6px;
-}
-.answer_list:active {
-    padding: .375rem .75rem;
-    background: #00986b0d;
-    border-radius: 6px;
+.form-check-label:active {
+    font-weight: 800;
+    width: 100%;
+    padding: .399rem .75rem;
+    padding-left: 2.25rem;
 }
 label.form-check-label {
     font-weight: 800;
     width: 100%;
+    padding: .399rem .75rem;
+    padding-left: 2.25rem;
+    background: #00986b14;
+    margin-bottom: 0.5rem;
 }
 
 .product-quote-wrap {

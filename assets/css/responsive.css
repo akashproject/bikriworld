@@ -553,8 +553,8 @@
         margin-right: 0;
     }
 
-    label#veriation_price-error {
-        top: 92px;
+    label#veriation_choice-error {
+        top: 98px;
         position: absolute;
         width: 100%;
         left: 0;
@@ -708,7 +708,7 @@
 
     .answer_row label.error {
         position: absolute;
-        top: 103px;
+        top: 74px;
     }
 
     .product-right-content .product-price {

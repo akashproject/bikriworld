@@ -293,9 +293,17 @@
             footer.removeClass("d-flex");
         }
     }
-    jQuery( "#datepicker" ).datepicker({ format: 'mm/dd/yyyy', changeMonth: true,changeYear: true,minDate: new Date('today') });
+    jQuery( "#datepicker" ).datepicker({ 
+        format: 'mm/dd/yyyy', 
+        changeMonth: true,
+        changeYear: true,
+        minDate: new Date('today'),
+        orientation: "top",
+        todayHighlight:'TRUE',
+        autoclose: true,
+    });
     
-    jQuery(".resendOtp").click(function() {
+    jQuery(".resendOtp").on("click",function() {
         var formId = jQuery(this).closest("form").attr('id');
         jQuery("#" + formId + " .response_status").html("");
         sendMobileOtp(formId);
@@ -754,15 +762,7 @@
         });
     });
 
-    $("#searchcity").focusout(function(){
-        //$(".search-city-content_wrap").hide()
-    });
-
-    $("#search_field").focusout(function(){
-        //$(".search-city-content_wrap").hide()
-    });
-
-    $("#searchcity").keyup(function(){
+    $("#searchcity").on('keyup',function(){
         let inputData = $(this).val();
         $.ajaxSetup({
             headers: {
@@ -790,7 +790,7 @@
         });
     });
 
-    $("#search_field").keyup(function(){
+    $("#search_field").on("keyup",function(){
         let inputData = $(this).val();
         $.ajaxSetup({
             headers: {

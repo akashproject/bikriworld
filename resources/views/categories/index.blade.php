@@ -7,7 +7,7 @@
             <div class="row">
                 <div class="col-12">
                     <h5 class="page_title">Select the Category of device to sell </h5>
-                    <p> Get Paid In Cash Within 24 Hours </p>
+                    <p> ✔Right Valuation ✔Right Value ✔ Full Seller Protection </p>
                     <div class="page_breadcrumb">
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">

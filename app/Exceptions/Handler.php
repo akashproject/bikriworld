@@ -34,8 +34,19 @@ class Handler extends ExceptionHandler
      */
     public function register()
     {
-        $this->reportable(function (Throwable $e) {
-            //
+        $this->renderable(function (InvalidOrderException $e, $request) {
+            return response()->view('errors.invalid-order', [], 500);
         });
+    }
+
+    public function render($request, Throwable $e)
+    {
+        if ($request->is('api/*')) {
+            return response()->json([
+                'message' => 'Record not found.'
+            ], 404);
+        }
+
+        return parent::render($request, $e);
     }
 }

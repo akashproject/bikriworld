@@ -37,7 +37,7 @@ Preloader End -->
                     <a class="menu-link" href="{{ url($key) }}">{{ $navbarItem }}</a>
                 </li>
             @endforeach             
-            @if($user)
+            @if(Session::get('userData'))
                 <li class="menu-item">
                     <a href="{{ url('dashboard') }}"> Dashboard </a>
                 </li>
@@ -175,7 +175,7 @@ Preloader End -->
                     <i class="fal fa-search"></i>
                 </div>
                 <a href="#select-city-popup" class="dashboard open-city-popup" style="width:75%;margin-left: 22px;padding: 5px;"> <i class="fal fa-map-marker ml-2"></i> <span class="user_selected_city"> {{ (array_key_exists('userCity',$_COOKIE)) ? $_COOKIE['userCity'] : 'Select City' }} </span> <i class="fal fa-angle-down ml-2"></i> </a>
-                @if($user)
+                @if(Session::get('userData'))
                     <a href="{{ url('dashboard') }}" class="dashboard" style="width:75%;margin-left: 22px;padding: 5px;border: 1px solid var(--thm-color-two);border-radius: 10px;"> Dashboard <i class="fal fa-home ml-2"></i></a>
                     <a href="{{ url('logout') }}" class="dashboard" style="width:75%;margin-left: 22px;padding: 5px;"> Logout <i class="fal fa-sign-out ml-2"></i></a>
                 @else
@@ -252,7 +252,7 @@ Preloader End -->
                         <i class="fal fa-search"></i>
                     </div>
                     <a href="#select-city-popup" class="dashboard open-city-popup" style="width:75%;margin-left: 22px;padding: 5px;"> <i class="fal fa-map-marker ml-2"></i> <span class="user_selected_city"> {{ (array_key_exists('userCity',$_COOKIE)) ? $_COOKIE['userCity'] : 'Select City' }} </span> <i class="fal fa-angle-down ml-2"></i> </a>
-                    @if($user)
+                    @if(Session::get('userData'))
                         <a href="{{ url('dashboard') }}" class="dashboard" style=width:75%;margin-left: 22px;padding: 5px;border: 1px solid var(--thm-color-two);border-radius: 10px;"> Dashboard <i class="fal fa-home ml-2"></i></a>
                         <a href="{{ url('logout') }}" class="dashboard" style=width:75%;margin-left: 22px;padding: 5px;"> Logout <i class="fal fa-sign-out ml-2"></i></a>
                     @else
