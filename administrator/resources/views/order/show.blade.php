@@ -40,6 +40,22 @@
 					</div>
 				</div>
 				<div class="form-group row">
+					<label for="name" class="col-sm-3 text-right control-label col-form-label">Product Accessories</label>
+					<div class="col-sm-9 text-left control-label col-form-label">
+						@foreach ($accessories as $accessory)
+						<span >{{ $accessory->name }},</span >
+						@endforeach		
+					</div>
+				</div>
+				<div class="form-group row">
+					<label for="name" class="col-sm-3 text-right control-label col-form-label">Device Condition</label>
+					<div class="col-sm-9 text-left control-label col-form-label">
+						@foreach ($questions as $key => $value)
+						<span > {{$key}} : {{ $value }} <br> </span >
+						@endforeach		
+					</div>
+				</div>
+				<div class="form-group row">
 					<label for="name" class="col-sm-3 text-right control-label col-form-label">Product Age</label>
 					<div class="col-sm-9 text-left control-label col-form-label">
 						<span >{{ $age->age }}</span >
