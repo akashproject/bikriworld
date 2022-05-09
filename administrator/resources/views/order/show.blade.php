@@ -39,6 +39,12 @@
 						<span >{{ $order->variation_type }}</span >
 					</div>
 				</div>
+				<div class="form-group row">
+					<label for="name" class="col-sm-3 text-right control-label col-form-label">Product Age</label>
+					<div class="col-sm-9 text-left control-label col-form-label">
+						<span >{{ $age->age }}</span >
+					</div>
+				</div>
 
 				<div class="form-group row">
 					<h4  class="col-sm-2 text-right"> User Info </h4>

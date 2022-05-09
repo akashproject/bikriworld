@@ -89,11 +89,16 @@ class ProductController extends Controller
         $user = $this->userdata;
         $data = $request->all();
 
-
+        $device_condition = array(
+            'question_id' => $this->sellprice['question_id'],
+            'accessories' => $this->sellprice['accessories'],
+            'age_id' => $this->sellprice['age_id']
+        );
         $orderData = array(
             'user_id' => $data['user_id'],
             'product_id' => $data['product_id'],
             'variation_type' => $data['variation_type'],
+            'device_condition' => json_encode($device_condition),
             'service_no' => rand(00000000,99999999),
             'amount' => $this->sellprice['exact_price'],
             'payment_mode' => $data['payment_mode'],

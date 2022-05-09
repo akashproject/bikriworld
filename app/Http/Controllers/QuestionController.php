@@ -70,6 +70,7 @@ class QuestionController extends Controller
         $ages = Age::where('category_id', $category_id)->get();
         $veriationType = $callculatedData['variation_type'];
 
+
         
         $tobSellingBrands = Brand::all();
         $tobSellingProducts = Product::all();
@@ -133,11 +134,8 @@ class QuestionController extends Controller
 
             $exact_price = $veriation_price - $sum_deduction;
 
-            $callculatedData = array(
-                'product_id' => $callculatedData['product_id'],
-                'exact_price' => $exact_price,
-                'variation_type' => $callculatedData['variation_type']
-            );
+            $callculatedData['exact_price'] = $exact_price;
+
             $request->session()->put('sellprice', $callculatedData);
             return redirect('/product-quote');
         } catch (\Throwable $th) {

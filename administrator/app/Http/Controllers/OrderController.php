@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Models\Order;
+use App\Models\Age;
+use App\Models\Accessories;
 
 class OrderController extends Controller
 {
@@ -41,7 +43,11 @@ class OrderController extends Controller
             ->where('orders.id', '=', $id)
             ->select('orders.*','product.*','users.*', 'orders.id as order_id','product.name as product_name','users.name as user_fullname')
             ->first();
-            return view('order.show',compact('order'));
+
+            $device_condition = json_decode($order->device_condition,true);
+            $age = Age::findOrFail($device_condition['age_id'])->first();
+
+            return view('order.show',compact('order','age'));
         } catch(\Illuminate\Database\QueryException $e){
         }        
     }
