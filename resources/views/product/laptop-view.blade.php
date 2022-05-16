@@ -55,7 +55,7 @@
                                     <div class="form-group form_style">
                                         <label class="padding-30px-left-right">Select Processor <span class="required">*</span></label>
                                         <select name="processor" id="deviceProcessor"  class="form-control device-configuration" required>
-                                            <option  value=""> Click Here </option>
+                                            <option  value=""> Device Processor  </option>
                                             @foreach ($processer as $value)
                                                 <option  value="{{$value->price}}"> {{$value->value}} </option>
                                             @endforeach	
@@ -66,7 +66,7 @@
                                     <div class="form-group form_style">
                                         <label class="padding-30px-left-right">Select Ram <span class="required">*</span></label>
                                         <select name="ram" id="deviceRam" class="form-control device-configuration" required>
-                                            <option  value=""> Click Here</option>
+                                            <option  value=""> Device Ram </option>
                                             @foreach ($ram as $value)
                                                 <option value="{{$value->price}}"> {{$value->value}} </option>
                                             @endforeach	
@@ -75,9 +75,9 @@
                                 </div>
                                 <div class="col-12" >
                                     <div class="form-group form_style">
-                                        <label class="padding-30px-left-right">Select Hard Disk <span class="required">*</span></label>
+                                        <label class="padding-30px-left-right">Select Device Hard Disk <span class="required">*</span></label>
                                         <select name="hdd" id="deviceHarddisk" class="form-control device-configuration" required>
-                                            <option  value=""> Click Here </option>
+                                            <option  value=""> Device Hard Disk </option>
                                             @foreach ($hdd as $value)
                                                 <option value="{{$value->price}}"> {{$value->value}} </option>
                                             @endforeach

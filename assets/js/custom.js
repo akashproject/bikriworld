@@ -452,7 +452,9 @@
     $($("[name='reason']")).on("change",function(){
         if($(this).attr("id") == "other"){
             $("#other_field").show();
+            $("#other_field").attr("name","reason");
         } else {
+            $("#other_field").attr("name","custom_reason");
             $("#other_field").hide();
         }
     })

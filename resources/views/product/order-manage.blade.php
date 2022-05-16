@@ -179,7 +179,7 @@
             <li> <input type="radio" name="reason" id="interested" value="Not interested, was just exploring the option!"> <label for="interested" > Not interested, was just exploring the option! </label></li>
             <li> <input type="radio" name="reason" id="other" required> <label for="other" > Others! </li>
             <li class="form-group custom_form_style">
-                <textarea  name="reason" class="form-control" id="other_field" placeholder="Please type reason" style="display:none" required></textarea>
+                <textarea name="custom_reason" class="form-control" id="other_field" placeholder="Please type reason" style="display:none" ></textarea>
             </li>    
         </ul>
         <input type="hidden" name="order_id" value="{{ $order->id }}" >

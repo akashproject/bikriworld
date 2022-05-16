@@ -497,7 +497,7 @@
     }
 
     h6 {
-        font-size: 16px;
+        font-size: 12px;
         line-height: 1.7;
     }
 
@@ -761,6 +761,15 @@
     .header_banner .text_box {
         margin: 50px 0 0 0;
     }
+
+    /*Contact*/
+    .form_style {
+        padding: 1px 10px;
+    }
+    .form_style label {
+        display: none;
+    }
+    
     .mobile-version {
         display: block;
     }
@@ -768,6 +777,8 @@
     .desktop-version {
         display: none;
     }
+
+    
 
 }
 
@@ -1009,13 +1020,9 @@
         padding: 30px;
     }
 
-    /*Contact*/
-    .form_style label {
-        display: none;
-    }
-
     .form_style .form-control {
         padding-left: 0;
+        font-size: 12px;
     }
 
     .form_style .form-control::placeholder {
