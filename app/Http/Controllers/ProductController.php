@@ -11,6 +11,7 @@ use App\Models\Brand;
 use App\Models\Categories;
 use App\Models\Question;
 use App\Models\SellRequest;
+use App\Models\DeviceConfig;
 use Mail;
 
 class ProductController extends Controller
@@ -57,7 +58,17 @@ class ProductController extends Controller
             }
             $tobSellingBrands = Brand::all();
             $tobSellingProducts = Product::all();
-            return view('product.view',compact('product','user','tobSellingBrands','tobSellingProducts'));
+            if($product->category_id == "2"){
+                
+                $processer = DeviceConfig::where('type', "processer")->orderBy('value', 'asc')->get();
+                $ram = DeviceConfig::where('type', "ram")->orderBy('value', 'asc')->get();
+                $hdd = DeviceConfig::where('type', "hdd")->orderBy('value', 'asc')->get();
+
+                return view('product.laptop-view',compact('product','user','tobSellingBrands','tobSellingProducts','processer','ram','hdd'));
+            } else {
+                return view('product.view',compact('product','user','tobSellingBrands','tobSellingProducts'));                
+            }
+            
         } catch(\Illuminate\Database\QueryException $e){
         }
     }
@@ -166,7 +177,6 @@ class ProductController extends Controller
         } catch(\Illuminate\Database\QueryException $e){
         
         }
-        print_r($data); exit;
     }
 
     public function add(Request $request){

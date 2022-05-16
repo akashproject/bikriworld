@@ -9048,17 +9048,12 @@ a.head_trigger.desktop_trigger {
 
 
 .form_style {
-
     display: flex;
-
     border: 3px solid var(--thm-border);
-
     border-radius: 8px;
-
-    padding: 15px 30px;
-
+    padding: 1px 30px;
     white-space: nowrap;
-
+    margin-bottom: 11px;
 }
 
 .custom_form_style {
@@ -10224,7 +10219,7 @@ input.accessory_input, input.age_input{
 }
 
 .variant_wrap {
-    margin-bottom: 90px;
+    margin-bottom: 20px;
 }
 
 .variant {

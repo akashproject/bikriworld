@@ -1,3 +1,4 @@
+let price = 0;
 (function($) {
     'use strict';
     // Preloader
@@ -734,8 +735,17 @@
     $('.veriation_price').on("click",function(){
         $(".product-price_amount").html(addCommas($(this).val()))
         $("#veriation_type").val($(this).attr("data-type"));
-        //$(".product-price_amount_int").val($(this).attr('data-price'))
+        $("#veriation_price").val($(this).val())
     })
+
+    $(".device-configuration").on("change",function(){
+        let processor = $("#deviceProcessor").val();
+        let ram = $("#deviceRam").val();
+        let hdd = $("#deviceHarddisk").val();
+        console.log(processor,ram,hdd);
+        price = parseInt(processor) + parseInt(ram) + parseInt(hdd);
+        $("#veriation_price").val(price);
+    });
     // Easy pie bar
     $(".circle_bar").each(function() {
         var circleBar = $(this);
