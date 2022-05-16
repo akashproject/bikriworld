@@ -57,7 +57,7 @@
                                         <select name="processor" id="deviceProcessor"  class="form-control device-configuration" required>
                                             <option  value=""> Click Here </option>
                                             @foreach ($processer as $value)
-                                                <option  value="{{$value->price}}"> {{$value->price}} </option>
+                                                <option  value="{{$value->price}}"> {{$value->value}} </option>
                                             @endforeach	
                                         </select>   
                                     </div>                   
@@ -75,10 +75,21 @@
                                 </div>
                                 <div class="col-12" >
                                     <div class="form-group form_style">
-                                        <label class="padding-30px-left-right">Select Hard Disk<span class="required">*</span></label>
+                                        <label class="padding-30px-left-right">Select Hard Disk <span class="required">*</span></label>
                                         <select name="hdd" id="deviceHarddisk" class="form-control device-configuration" required>
                                             <option  value=""> Click Here </option>
                                             @foreach ($hdd as $value)
+                                                <option value="{{$value->price}}"> {{$value->value}} </option>
+                                            @endforeach
+                                        </select>   
+                                    </div>                   
+                                </div>
+                                <div class="col-12" >
+                                    <div class="form-group form_style">
+                                        <label class="padding-30px-left-right">Select Ghaphics if Yes </label>
+                                        <select name="hdd" id="deviceGraphic" class="form-control device-configuration" >
+                                            <option  value="0"> No Graphics available </option>
+                                            @foreach ($graphic as $value)
                                                 <option value="{{$value->price}}"> {{$value->value}} </option>
                                             @endforeach
                                         </select>   

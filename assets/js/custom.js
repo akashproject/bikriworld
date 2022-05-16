@@ -1,4 +1,3 @@
-let price = 0;
 (function($) {
     'use strict';
     // Preloader
@@ -739,13 +738,22 @@ let price = 0;
     })
 
     $(".device-configuration").on("change",function(){
-        let processor = $("#deviceProcessor").val();
-        let ram = $("#deviceRam").val();
-        let hdd = $("#deviceHarddisk").val();
-        console.log(processor,ram,hdd);
-        price = parseInt(processor) + parseInt(ram) + parseInt(hdd);
+        let price = parseInt($("#deviceProcessor").val()) + parseInt($("#deviceRam").val()) + parseInt($("#deviceHarddisk").val()) + parseInt($("#deviceGraphic").val());
         $("#veriation_price").val(price);
     });
+
+    $(".device-configuration").on("change",function(){
+        let processor = $("#deviceProcessor option:selected" ).text();
+        let ram = $("#deviceRam option:selected" ).text();
+        let hdd = $("#deviceHarddisk option:selected" ).text();
+        let graphic = $("#deviceGraphic option:selected" ).text();
+        console.log(processor,ram,hdd);
+        let label = processor+' | Ram : '+ram+' | Storage : '+hdd+' | Graphic :'+graphic;
+
+        $("#veriation_type").val(label);
+    });
+
+
     // Easy pie bar
     $(".circle_bar").each(function() {
         var circleBar = $(this);
