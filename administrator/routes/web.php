@@ -103,3 +103,10 @@ Route::post('/savequary', [App\Http\Controllers\ContactController::class, 'save'
 Route::get('/sell-requests', [App\Http\Controllers\SellRequestController::class, 'index'])->name('sell-requests');
 Route::get('/sell-request/{id}', [App\Http\Controllers\SellRequestController::class, 'show'])->name('sell-request');
 Route::post('/saverequest', [App\Http\Controllers\SellRequestController::class, 'save'])->name('saverequest');
+
+//Configuration
+Route::get('/configs', [App\Http\Controllers\DeviceConfigController::class, 'index'])->name('configs');
+Route::get('/config/{id}', [App\Http\Controllers\DeviceConfigController::class, 'show'])->name('config');
+Route::get('/addconfig', [App\Http\Controllers\DeviceConfigController::class, 'add'])->name('addconfig');
+Route::post('/submit-config', [App\Http\Controllers\DeviceConfigController::class, 'save'])->name('submit-config');
+Route::get('/delete-config/{id}', [App\Http\Controllers\DeviceConfigController::class, 'delete'])->name('delete-config');

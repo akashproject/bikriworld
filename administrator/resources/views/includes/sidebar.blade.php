@@ -74,6 +74,18 @@
 
                         </li>
 
+                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-border-inside"></i><span class="hide-menu"> Configuration </span></a>
+
+                            <ul aria-expanded="false" class="collapse  first-level">
+
+								<li class="sidebar-item"><a href="{{ url('configs') }}" class="sidebar-link"><i class="mdi mdi-border-inside"></i><span class="hide-menu"> All Configurations </span></a></li>
+
+                                <li class="sidebar-item"><a href="{{ url('addconfig') }}" class="sidebar-link"><i class="mdi mdi-border-inside"></i><span class="hide-menu"> Add Configs </span></a></li>
+
+                            </ul>
+
+                        </li>
+
                         <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-border-inside"></i><span class="hide-menu">Questions </span></a>
                             <ul aria-expanded="false" class="collapse  first-level">
 								<li class="sidebar-item"><a href="{{ url('questions') }}" class="sidebar-link"><i class="mdi mdi-border-inside"></i><span class="hide-menu"> All Questions </span></a></li>
