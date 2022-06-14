@@ -28,8 +28,8 @@ class QuestionController extends Controller
             $product = Product::find($productData['product_id']);
             $veriationPrice = $productData['veriation_price'];
             $veriationType = $productData['veriation_type'];
-            $tobSellingBrands = Brand::all();
-            $tobSellingProducts = Product::all();
+            $tobSellingBrands = Brand::inRandomOrder()->limit(10)->get();
+            $tobSellingProducts = Product::inRandomOrder()->limit(10)->get();
             return view('questions.index',compact('questions','product','user','tobSellingBrands','tobSellingProducts','veriationPrice','veriationType'));
         } catch(\Illuminate\Database\QueryException $e){
         }
@@ -50,8 +50,8 @@ class QuestionController extends Controller
         $product = Product::find($data['product_id']);
         $accessories = Accessories::where('category_id', $category_id)->get();
         $veriationType = $data['veriation_type'];
-        $tobSellingBrands = Brand::all();
-        $tobSellingProducts = Product::all();
+        $tobSellingBrands = Brand::inRandomOrder()->limit(10)->get();
+        $tobSellingProducts = Product::inRandomOrder()->limit(10)->get();
 
         return view('questions.accessories',compact('accessories','product','user','tobSellingBrands','tobSellingProducts','veriationType'));
     }
@@ -72,8 +72,8 @@ class QuestionController extends Controller
 
 
         
-        $tobSellingBrands = Brand::all();
-        $tobSellingProducts = Product::all();
+        $tobSellingBrands = Brand::inRandomOrder()->limit(10)->get();
+        $tobSellingProducts = Product::inRandomOrder()->limit(10)->get();
 
         return view('questions.device-age',compact('ages','product','user','tobSellingBrands','tobSellingProducts','veriationType'));
     }
@@ -94,7 +94,7 @@ class QuestionController extends Controller
             // Deduction calculation by question
             foreach ($callculatedData['question_id'] as $key => $value) {
                 $question = Question::find($key);
-                if($value == '0'){               
+                if($value == '1'){               
                     $sum_deduction += $question->deducted_amount;
                     if($question->brand_id){
                         $brands = json_decode($question->brand_id,true);

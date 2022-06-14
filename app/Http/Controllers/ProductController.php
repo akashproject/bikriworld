@@ -36,8 +36,8 @@ class ProductController extends Controller
         $user = $this->userdata;
         $category_id = $request->session()->get('selling_category');
         try {
-            $tobSellingBrands = Brand::all();
-            $tobSellingProducts = Product::all();
+            $tobSellingBrands = Brand::inRandomOrder()->limit(10)->get();
+            $tobSellingProducts = Product::inRandomOrder()->limit(10)->get();
             $brand = Brand::find($id);
             $products = Product::where('brand_id', $id)
             ->where('category_id', $category_id)
@@ -56,8 +56,8 @@ class ProductController extends Controller
             if($request->session()->get('selling_category')){
                 $request->session()->put('selling_category', $product->category_id);
             }
-            $tobSellingBrands = Brand::all();
-            $tobSellingProducts = Product::all();
+            $tobSellingBrands = Brand::inRandomOrder()->limit(10)->get();
+            $tobSellingProducts = Product::inRandomOrder()->limit(10)->get();
             if($product->category_id == "2"){
                 
                 $processer = DeviceConfig::where('type', "processer")->orderBy('value', 'asc')->get();
@@ -78,8 +78,8 @@ class ProductController extends Controller
         $user = $this->userdata;
         $product = Product::find($this->sellprice['product_id']);
         $calculatedData = $this->sellprice;
-        $tobSellingBrands = Brand::all();
-        $tobSellingProducts = Product::all();
+        $tobSellingBrands = Brand::inRandomOrder()->limit(10)->get();
+        $tobSellingProducts = Product::inRandomOrder()->limit(10)->get();
 
         return view('product.quote',compact('product','user','calculatedData','tobSellingBrands','tobSellingProducts'));
     }
@@ -132,10 +132,10 @@ class ProductController extends Controller
         $user = User::findOrFail($data['user_id']);
         $user->update($data);
 
-        Mail::send('emails.order', $orderData, function ($m) use ($user) {
-            $m->from('service@bikriworld.com', 'Bikriworld');
-            $m->to($user->email, $user->name)->subject('Bikriworld Order Placed Successfully!');
-        });
+        // Mail::send('emails.order', $orderData, function ($m) use ($user) {
+        //     $m->from('service@bikriworld.com', 'Bikriworld');
+        //     $m->to($user->email, $user->name)->subject('Bikriworld Order Placed Successfully!');
+        // });
 
         $request->session()->put('orderData', $order);
         return redirect('/order-success');

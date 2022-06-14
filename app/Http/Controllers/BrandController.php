@@ -24,8 +24,8 @@ class BrandController extends Controller
             $request->session()->put('selling_category', $id);
             //echo $request->session()->get('category_id');
             $brands = Brand::where('category_id', 'like', '%"' . $id . '"%')->orderBy('name', 'asc')->get();
-            $tobSellingBrands = Brand::inRandomOrder()->limit(20)->get();
-            $tobSellingProducts = Product::inRandomOrder()->limit(20)->get();
+            $tobSellingBrands = Brand::inRandomOrder()->limit(10)->get();
+            $tobSellingProducts = Product::inRandomOrder()->limit(10)->get();
             return view('brand.index',compact('category','brands','user','tobSellingBrands','tobSellingProducts'));
 
         } catch(\Illuminate\Database\QueryException $e){

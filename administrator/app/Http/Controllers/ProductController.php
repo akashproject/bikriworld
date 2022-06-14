@@ -67,7 +67,8 @@ class ProductController extends Controller
         }
 
         if ($request->hasFile('image')) {
-            $imageFile = strtolower($data['name']).'_logo_'.time().'.'.$request->image->extension();  
+            
+            $imageFile = strtolower(str_replace(" ","",$data['name'])).'_logo_'.time().'.'.$request->image->extension();  
             
             $request->image->move(public_path('images/product'), $imageFile);
             $data['image'] = "product/".$imageFile;

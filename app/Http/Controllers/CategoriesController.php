@@ -19,7 +19,7 @@ class CategoriesController extends Controller
         $user = $this->userdata;
         try {
             $categories = Categories::all();
-            $tobSellingBrands = Brand::inRandomOrder()->limit(20)->get();
+            $tobSellingBrands = Brand::inRandomOrder()->limit(10)->get();
             return view('categories.index',compact('categories','tobSellingBrands','user'));
         } catch(\Illuminate\Database\QueryException $e){
             
