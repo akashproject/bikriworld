@@ -50,8 +50,9 @@
                                 @foreach(json_decode($product->variant) as $key => $variant)
                                 <div class="col-lg-4">
                                     <div class="form-group custom_form_style">
-                                        <label for="veriation_price_{{$key}}" class="text-center variant" data-price="{{$variant->price}}" > {{$variant->ram}} | {{$variant->storage}} </label>
-                                        <input id="veriation_price_{{$key}}" type="radio" class="veriation_price" name="veriation_choice" data-type="{{$variant->ram}} | {{$variant->storage}}" value="{{$variant->price}}" required >
+                                        <label for="veriation_price_{{$key}}" class="text-center variant" data-price="{{$variant->price}}" >
+                                        {{$variant->ram}} {{($variant->ram)?"|":""}} {{$variant->storage}} </label>
+                                        <input id="veriation_price_{{$key}}" type="radio" class="veriation_price" name="veriation_choice" data-type="{{$variant->ram}} {{($variant->ram)?'|':''}} {{$variant->storage}}" value="{{$variant->price}}" required >
                                     </div>
                                 </div>
                                 @endforeach

@@ -43,20 +43,25 @@ class OrderController extends Controller
             ->where('orders.id', '=', $id)
             ->select('orders.*','product.*','users.*', 'orders.id as order_id','product.name as product_name','users.name as user_fullname')
             ->first();
-
+            
             $device_condition = json_decode($order->device_condition,true);
             
             $age = Age::findOrFail($device_condition['age_id'])->first();
-
-            $accessories = Accessories::whereIn('id', $device_condition['accessories'])->get();
-
+            $accessories = array();
+            if($device_condition['accessories']){
+                $accessories = Accessories::whereIn('id', $device_condition['accessories'])->get();
+            }
+            
+            
             $questions = array();
             foreach ($device_condition['question_id'] as $key => $value) {
                 $question = DB::table('calculation_question')
                 ->where('calculation_question.id', '=', $key)
                 ->select('calculation_question.question')->first();
-
-                $questions[$question->question] = ($value == '1')?"Yes":"No";
+                if(isset($question)){
+                    $questions[$question->question] = ($value == '1')?"Yes":"No";
+                }
+                
             }
 
             return view('order.show',compact('order','age','accessories','questions'));

@@ -229,7 +229,7 @@
                                 <img src="assets/images/author/1.jpg" alt="img" class="image-fit">
                             </div>
                             <div class="text">
-                                <h6 class="mb-0">Herminia F. Hudson</h6>
+                                <h6 class="mb-0">Arvind kr</h6>
                             </div>
                         </div>
                         <p class="comment">
@@ -253,7 +253,7 @@
                                 <img src="assets/images/author/2.jpg" alt="img" class="image-fit">
                             </div>
                             <div class="text">
-                                <h6 class="mb-0">Robert M. Morales</h6>
+                                <h6 class="mb-0">Roushan Sharma</h6>
                                 <p class="mb-0 font-weight-bold thm-color-two">Business Manager</p>
                             </div>
                         </div>
@@ -278,8 +278,8 @@
                                 <img src="assets/images/author/3.jpg" alt="img" class="image-fit">
                             </div>
                             <div class="text">
-                                <h6 class="mb-0">Nicolas Vanderpool</h6>
-                                <p class="mb-0 font-weight-bold thm-color-two">Apps Developer</p>
+                                <h6 class="mb-0">UMITA KUMARI</h6>
+                                <!-- <p class="mb-0 font-weight-bold thm-color-two">Apps Developer</p> -->
                             </div>
                         </div>
                         <p class="comment">
@@ -303,8 +303,8 @@
                                 <img src="assets/images/author/1.jpg" alt="img" class="image-fit">
                             </div>
                             <div class="text">
-                                <h6 class="mb-0">Herminia F. Hudson</h6>
-                                <p class="mb-0 font-weight-bold thm-color-two">Web Designer</p>
+                                <h6 class="mb-0">Prem Tiwari</h6>
+                                <!-- <p class="mb-0 font-weight-bold thm-color-two">Web Designer</p> -->
                             </div>
                         </div>
                         <p class="comment">
@@ -328,8 +328,8 @@
                                 <img src="assets/images/author/2.jpg" alt="img" class="image-fit">
                             </div>
                             <div class="text">
-                                <h6 class="mb-0">Robert M. Morales</h6>
-                                <p class="mb-0 font-weight-bold thm-color-two">Business Manager</p>
+                                <h6 class="mb-0">Abhishek Giri</h6>
+                                <!-- <p class="mb-0 font-weight-bold thm-color-two">Business Manager</p> -->
                             </div>
                         </div>
                         <p class="comment">
@@ -346,7 +346,7 @@
                 </div>
                 <!-- Testimonial Item -->
                 <!-- Testimonial Item -->
-                <div class="slide-item col-12">
+                <!-- <div class="slide-item col-12">
                     <div class="testimonial_item">
                         <div class="author">
                             <div class="image bg-thm-color-two">
@@ -368,10 +368,10 @@
                             <i class="fal fa-star active"></i>
                         </div>
                     </div>
-                </div>
+                </div> -->
                 <!-- Testimonial Item -->
                  <!-- Testimonial Item -->
-                 <div class="slide-item col-12">
+                <!-- <div class="slide-item col-12">
                     <div class="testimonial_item">
                         <div class="author">
                             <div class="image bg-thm-color-two">
@@ -393,7 +393,7 @@
                             <i class="fal fa-star active"></i>
                         </div>
                     </div>
-                </div>
+                </div> -->
                 <!-- Testimonial Item -->
             </div>
         </div>

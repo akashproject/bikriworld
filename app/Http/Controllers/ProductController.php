@@ -100,10 +100,9 @@ class ProductController extends Controller
     public function confirmPickup(Request $request) {
         $user = $this->userdata;
         $data = $request->all();
-
         $device_condition = array(
             'question_id' => $this->sellprice['question_id'],
-            'accessories' => $this->sellprice['accessories'],
+            'accessories' => (isset($this->sellprice['accessories']))?$this->sellprice['accessories']:'',
             'age_id' => $this->sellprice['age_id']
         );
         $orderData = array(
