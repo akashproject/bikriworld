@@ -43,8 +43,12 @@ class ProductController extends Controller
             ->where('category_id', $category_id)
             ->orderBy('name', 'asc')
             ->get();
-
-            return view('product.index',compact('products','brand','user','tobSellingBrands','tobSellingProducts'));
+            if($category_id == "12"){
+                return view('vehicle.index',compact('products','brand','user','tobSellingBrands','tobSellingProducts'));
+            } else {
+                return view('product.index',compact('products','brand','user','tobSellingBrands','tobSellingProducts'));
+            }
+            
             } catch(\Illuminate\Database\QueryException $e){
         }
     }
