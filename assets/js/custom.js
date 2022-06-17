@@ -34,7 +34,7 @@
                 }
             });
             $.ajax({
-                url: `http://${window.location.hostname}/update-order`,
+                url: `https://${window.location.hostname}/update-order`,
                 type: "post",
                 data: $(form).serialize(),
                 success: function(result) {
@@ -196,7 +196,7 @@
             }
         });
         $.ajax({
-            url: `http://${window.location.hostname}/get-question`,
+            url: `https://${window.location.hostname}/get-question`,
             type: "post",
             data: {
                 category_id: $(this).val(),
@@ -316,7 +316,7 @@
             }
         });
         $.ajax({
-            url: `http://${window.location.hostname}/get-address`,
+            url: `https://${window.location.hostname}/get-address`,
             type: "post",
             data: {
                 'user_id':jQuery("#user_id").val(),
@@ -345,7 +345,7 @@
             }
         });
         $.ajax({
-            url: `http://${window.location.hostname}/register`,
+            url: `https://${window.location.hostname}/register`,
             type: "post",
             data: data,
             success: function(result) {
@@ -365,7 +365,7 @@
             }
         });
         $.ajax({
-            url: `http://${window.location.hostname}/check-exist`,
+            url: `https://${window.location.hostname}/check-exist`,
             type: "post",
             data: {
                 mobile: mobile,
@@ -391,7 +391,7 @@
             }
         });
         $.ajax({
-            url: `http://${window.location.hostname}/access-profile`,
+            url: `https://${window.location.hostname}/access-profile`,
             type: "post",
             data: data,
             success: function(result) {
@@ -416,7 +416,7 @@
             }
         });
         $.ajax({
-            url: `http://${window.location.hostname}/submit-mobile-otp`,
+            url: `https://${window.location.hostname}/submit-mobile-otp`,
             type: "post",
             data: {
                 mobile: mobileNo,
@@ -790,7 +790,7 @@
             }
         });
         $.ajax({
-            url: `http://${window.location.hostname}/get-city-search`,
+            url: `https://${window.location.hostname}/get-city-search`,
             type: "post",
             data: {
                 inputData: inputData,
@@ -818,7 +818,7 @@
             }
         });
         $.ajax({
-            url: `http://${window.location.hostname}/get-product-search`,
+            url: `https://${window.location.hostname}/get-product-search`,
             type: "post",
             data: {
                 inputData: inputData,
