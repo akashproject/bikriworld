@@ -64,8 +64,8 @@ class ProductController extends Controller
             $tobSellingProducts = Product::inRandomOrder()->limit(10)->get();
             if($product->category_id == "2"){
                 
-                $processer = DeviceConfig::where('type', "processer")->orderBy('value', 'asc')->get();
-                $ram = DeviceConfig::where('type', "ram")->orderBy('value', 'asc')->get();
+                $processer = DeviceConfig::where('type', "processer")->get();
+                $ram = DeviceConfig::where('type', "ram")->get();
                 $hdd = DeviceConfig::where('type', "hdd")->orderBy('value', 'asc')->get();
                 $graphic = DeviceConfig::where('type', "graphic")->orderBy('value', 'asc')->get();
 
