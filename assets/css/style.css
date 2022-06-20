@@ -10321,6 +10321,11 @@ label.form-check-label {
     padding-left: 2.25rem;
     background: #00986b14;
     margin-bottom: 0.5rem;
+    height: 55px;
+}
+
+.answer_row {
+    margin-top: 0.5rem;
 }
 
 .product-quote-wrap {

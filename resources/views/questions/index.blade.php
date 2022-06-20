@@ -28,7 +28,7 @@
     <section class="section-padding wow fadeInUp">
         <div class="container">
             <div class="row">
-                <div class="col-lg-7">
+                <div class="col-lg-8">
                     <div class="summary-wrap" >
                         <div class="question-summary" >
                             <h4 class="summary-heading" > Let us know some questions about your device ! </h4>
@@ -46,33 +46,22 @@
                                 </div>
                             @endif
                             @if($questions)
-                                @foreach ($questions as $key => $value)
-                                    <div class="row question_list" >
-                                        <div class="col-lg-12">
-                                            <h5 >{{$key+1}}. <span class="question_data">{{ $value->question }} <span> </h5>
-                                        </div>
-                                        <div class="col-lg-8">
-                                            <div class="row answer_row" dataquestion="{{$value->id}}">
-                                                <div class="col-lg-6 ">
-                                                    <div class="answer_list"  >
-                                                        <div class="form-check ">
-                                                            <input class="form-check-input yes" questionval="{{ $value->description }}" type="radio" name="question_id[{{ $value->id }}]" id="answer_yes_{{$key}}" value="1" required>
-                                                            <label class="form-check-label" for="answer_yes_{{$key}}">Yes</label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-6">
-                                                    <div class="answer_list"  >
-                                                        <div class="form-check ">
-                                                            <input class="form-check-input no" type="radio" name="question_id[{{ $value->id }}]" id="answer_no_{{$key}}" value="0" required>
-                                                            <label class="form-check-label" for="answer_no_{{$key}}">No</label>
-                                                        </div>
+                                <div class="row " >
+                                    @foreach ($questions as $key => $value)
+                                    
+                                        <div class="col-lg-6 question_list col-xs-12">
+                                            <div class="answer_row" dataquestion="{{$value->id}}">
+                                                <div class="answer_list"  >
+                                                    <div class="form-check ">
+                                                        <input class="form-check-input yes" questionval="{{ $value->description }}" type="checkbox" name="question_id[{{ $value->id }}]" id="answer_yes_{{$key}}" value="1">
+                                                        <label class="form-check-label" for="answer_yes_{{$key}}">{{ $value->question }}</label>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                @endforeach	
+                                    
+                                     @endforeach	
+                                </div>
                             @endif 
                             <input type="hidden" name="product_id" id="product_id" value="{{$product->id}}" >
                             <input type="hidden" name="veriation_price" id="veriation_price" value="{{$veriationPrice}}" >
@@ -81,7 +70,7 @@
                         </form>
                     </div>
                 </div>
-                <div class="col-lg-5">
+                <div class="col-lg-4">
                     <div class="sidebar style_3">
                         <div class="sidebar_widget recent_widgets">
                             <h5 class="widget_title">Device Details</h5>

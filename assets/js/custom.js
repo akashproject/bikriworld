@@ -211,11 +211,20 @@
             }
         });
     });
+
+    $('.form-check-input').change(function() {
+        if(this.checked) {
+            let questionval = $(this).attr("questionval");
+            let questionid = $(this).parent().parent().parent().attr("dataquestion");
+            $(".device_summary").append('<li class="question_'+questionid+'">'+questionval+'</li>');
+        } else {
+            let questionid = $(this).parent().parent().parent().attr("dataquestion");
+            $(".question_"+questionid).remove();
+        }
+    });
     
-    $(".form-check-input.yes").click(function(){
-        let questionval = $(this).attr("questionval");
-        let questionid = $(this).parent().parent().parent().parent().attr("dataquestion");
-        $(".device_summary").append('<li class="question_'+questionid+'">'+questionval+'</li>');
+    $(".form-check-input").click(function(){
+        
     });
 
     $(".accessories_wrap").click(function(){
@@ -230,8 +239,7 @@
     
 
     $(".form-check-input.no").click(function(){
-        let questionid = $(this).parent().parent().parent().parent().attr("dataquestion");
-        $(".question_"+questionid).remove();
+        
     });
 
     // Canvas 
