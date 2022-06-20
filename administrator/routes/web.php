@@ -66,13 +66,6 @@ Route::get('/addproduct', [App\Http\Controllers\ProductController::class, 'add']
 Route::post('/submitproduct', [App\Http\Controllers\ProductController::class, 'save'])->name('submitproduct');
 Route::get('/product-delete/{id}', [App\Http\Controllers\ProductController::class, 'delete'])->name('product-delete');
 
-//Products
-// Route::get('/products', [App\Http\Controllers\ProductController::class, 'index'])->name('products');
-// Route::get('/product/{id}', [App\Http\Controllers\ProductController::class, 'show'])->name('product');
-// Route::get('/addproduct', [App\Http\Controllers\ProductController::class, 'add'])->name('product');
-// Route::post('/submitproduct', [App\Http\Controllers\ProductController::class, 'save'])->name('submitproduct');
-// Route::post('/product-delete', [App\Http\Controllers\ProductController::class, 'delete'])->name('product-delete');
-
 //Questions
 Route::get('/questions', [App\Http\Controllers\QuestionController::class, 'index'])->name('questions');
 Route::get('/question/{id}', [App\Http\Controllers\QuestionController::class, 'show'])->name('question');
@@ -80,12 +73,19 @@ Route::get('/addquestion', [App\Http\Controllers\QuestionController::class, 'add
 Route::post('/submitquestion', [App\Http\Controllers\QuestionController::class, 'save'])->name('submitquestion');
 Route::get('/question-delete/{id}', [App\Http\Controllers\QuestionController::class, 'delete'])->name('question');
 
-//Route::get('/sub-questions', [App\Http\Controllers\QuestionController::class, 'subQuestions'])->name('sub-questions');
+//Age
 Route::get('/device-age', [App\Http\Controllers\QuestionController::class, 'deviceAge'])->name('device-age');
 Route::get('/device-age/{id}', [App\Http\Controllers\QuestionController::class, 'showDeviceAge'])->name('show-device-age');
 Route::get('/add-device-age', [App\Http\Controllers\QuestionController::class, 'addDeviceAge'])->name('add-device-age');
 Route::post('/save-device-age', [App\Http\Controllers\QuestionController::class, 'saveDeviceAge'])->name('save-device-age');
 Route::get('/age-delete/{id}', [App\Http\Controllers\QuestionController::class, 'deleteDeviceAge'])->name('age-delete');
+
+//Conditions
+Route::get('/conditions', [App\Http\Controllers\ConditionController::class, 'index'])->name('conditions');
+Route::get('/condition/{id}', [App\Http\Controllers\ConditionController::class, 'show'])->name('condition');
+Route::get('/add-condition', [App\Http\Controllers\ConditionController::class, 'add'])->name('add-condition');
+Route::post('/save-condition', [App\Http\Controllers\ConditionController::class, 'save'])->name('save-condition');
+Route::get('/condition-delete/{id}', [App\Http\Controllers\ConditionController::class, 'delete'])->name('condition-delete');
 
 //Accessories
 Route::get('/accessories', [App\Http\Controllers\AccessoriesController::class, 'index'])->name('accessories');
