@@ -112,8 +112,6 @@ class QuestionController extends Controller
             $veriation_price = (isset($callculatedData['veriation_price']))?$callculatedData['veriation_price']:0;
             
            
-
-            
             $sum_deduction = 0;
             $brand_id = Product::find($callculatedData['product_id'])->brand_id;
 
@@ -125,7 +123,8 @@ class QuestionController extends Controller
                     if($question->brand_id){
                         $brands = json_decode($question->brand_id,true);
                         if(in_array($brand_id, $brands)){
-                            $sum_deduction += $question->extra_amount;
+                            $brand_extra_amount = ($question->extra_amount / 100) * $veriation_price;
+                            $sum_deduction += $brand_extra_amount;
                         }   
                     }
                 }            
@@ -144,7 +143,8 @@ class QuestionController extends Controller
                     if($notProvidedAccessory->brand_id){
                         $brands = json_decode($notProvidedAccessory->brand_id,true);
                         if(in_array($brand_id, $brands)){
-                            $sum_deduction += $notProvidedAccessory->extra_deducted_amount;
+                            $accessory_extra_amount = ($notProvidedAccessory->extra_deducted_amount / 100) * $veriation_price;
+                            $sum_deduction += $accessory_extra_amount;
                         }   
                     }
                 }
@@ -156,20 +156,19 @@ class QuestionController extends Controller
             $sum_deduction += $age->deducted_amount;
             $brands = json_decode($age->brand_id,true);
             if(in_array($brand_id, $brands)){
-                $sum_deduction += $age->extra_deducted_amount;
+                $age_extra_amount = ($age->extra_deducted_amount / 100) * $veriation_price;
+                $sum_deduction += $age_extra_amount;
             } 
 
             
             // Deduction calculation by conditions
-            $condition = Condition::find($callculatedData['condition_id'])->first();
-            
-            $sum_deduction += $condition->deducted_amount;
-            
+            $condition = Condition::find($callculatedData['condition_id'])->first();           
+            $sum_deduction += $condition->deducted_amount;          
             $conditions = json_decode($condition->brand_id,true);
-
             
             if(in_array($brand_id, $brands)){
-                $sum_deduction += $condition->extra_deducted_amount;
+                $condition_extra_amount = ($condition->extra_deducted_amount / 100) * $veriation_price;
+                $sum_deduction += $condition_extra_amount;
             } 
             
 
