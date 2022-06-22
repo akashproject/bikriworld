@@ -86,6 +86,17 @@
                                 </div>
                                 <div class="col-12" >
                                     <div class="form-group form_style">
+                                        <label class="padding-30px-left-right">Select Screen Size <span class="required">*</span></label>
+                                        <select name="screen" id="deviceScreensize" class="form-control device-configuration" required>
+                                            <option  value=""> Device Screen Size </option>
+                                            @foreach ($screen as $value)
+                                                <option value="{{$value->price}}"> {{$value->value}} </option>
+                                            @endforeach
+                                        </select>   
+                                    </div>                   
+                                </div>
+                                <div class="col-12" >
+                                    <div class="form-group form_style">
                                         <label class="padding-30px-left-right">Select Ghaphics if Yes </label>
                                         <select name="hdd" id="deviceGraphic" class="form-control device-configuration" >
                                             <option  value="0"> No Graphics available </option>

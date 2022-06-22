@@ -67,9 +67,10 @@ class ProductController extends Controller
                 $processer = DeviceConfig::where('type', "processer")->get();
                 $ram = DeviceConfig::where('type', "ram")->get();
                 $hdd = DeviceConfig::where('type', "hdd")->orderBy('value', 'asc')->get();
+                $screen = DeviceConfig::where('type', "screen")->orderBy('value', 'asc')->get();
                 $graphic = DeviceConfig::where('type', "graphic")->orderBy('value', 'asc')->get();
 
-                return view('product.laptop-view',compact('product','user','tobSellingBrands','tobSellingProducts','processer','ram','hdd','graphic'));
+                return view('product.laptop-view',compact('product','user','tobSellingBrands','tobSellingProducts','processer','ram','hdd','screen','graphic'));
             } else {
                 return view('product.view',compact('product','user','tobSellingBrands','tobSellingProducts'));                
             }

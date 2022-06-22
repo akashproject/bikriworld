@@ -12,7 +12,7 @@
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="{{  url('') }}">Home</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Device Age</li>
+                                <li class="breadcrumb-item active" aria-current="page">Physical Condition</li>
                             </ol>
                         </nav>
                     </div>
@@ -31,10 +31,10 @@
                 <div class="col-lg-7">
                     <div class="summary-wrap" >
                         <div class="question-summary" >
-                            <h4 class="summary-heading" > Let us know age of your device! </h4>
-                            <p class="summary-description" > How much age of your device </p>
+                            <h4 class="summary-heading" > Let us know Physical condition of your device! </h4>
+                            <p class="summary-description" > Physical condition of your device </p>
                         </div>
-                        <form class="form-horizontal" id="device-age" method="post" action="{{ url('device-condition') }}" enctype="multipart/form-data">
+                        <form class="form-horizontal" id="physical-condition" method="post" action="{{ url('calculate-price') }}" enctype="multipart/form-data">
                             @csrf
                             @if ($errors->any())
                                 <div class="alert alert-danger">
@@ -45,13 +45,13 @@
                                     </ul>
                                 </div> 
                             @endif                           
-                            <div class="row ages_list" >
-                                @if($ages)
-                                    @foreach ($ages as $key => $value)
+                            <div class="row conditions_list" >
+                                @if($conditions)
+                                    @foreach ($conditions as $key => $value)
                                     <div class="col-lg-6 col-12 relative">
-                                        <input type="radio" name="age_id" id="age_{{$value->id}}" class="age_input" value="{{$value->id}}" >   
-                                        <label for="age_{{$value->id}}" class="ages_wrap" dataquestion="{{$value->id}}">                                           
-                                            <h6> {{$value->age}} </h6>
+                                        <input type="radio" name="condition_id" id="condition_{{$value->id}}" class="condition_input" value="{{$value->id}}" >   
+                                        <label for="condition_{{$value->id}}" class="conditions_wrap" dataquestion="{{$value->id}}">                                           
+                                            <h6> {{$value->condition}} </h6>
                                         </label>
                                     </div>
                                     @endforeach	

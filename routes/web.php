@@ -33,6 +33,7 @@ Route::post('/question', [App\Http\Controllers\QuestionController::class, 'index
 Route::post('/calculate-price', [App\Http\Controllers\QuestionController::class, 'calculatePrice'])->name('calculate-price');
 Route::post('/given-accessories', [App\Http\Controllers\QuestionController::class, 'givenAccessories'])->name('given-accessories');
 Route::post('/device-age', [App\Http\Controllers\QuestionController::class, 'deviceAge'])->name('device-age');
+Route::post('/device-condition', [App\Http\Controllers\QuestionController::class, 'deviceCondition'])->name('device-condition');
 
 // User Module
 Route::get('/dashboard', [App\Http\Controllers\UserController::class, 'dashboard'])->name('dashboard');

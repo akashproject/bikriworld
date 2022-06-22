@@ -237,10 +237,11 @@
         $(".device_summary").html('<li class="">'+questionval+'</li>');
     });
     
-
-    $(".form-check-input.no").click(function(){
-        
+    $(".conditions_wrap").click(function(){
+        let questionval = $(this).children("h6").html();
+        $(".device_summary").html('<li class="">'+questionval+'</li>');
     });
+
 
     // Canvas 
     $(".desktop_trigger, .trigger-right").on('click', function() {
@@ -748,7 +749,7 @@
     })
 
     $(".device-configuration").on("change",function(){
-        let price = parseInt($("#deviceProcessor").val()) + parseInt($("#deviceRam").val()) + parseInt($("#deviceHarddisk").val()) + parseInt($("#deviceGraphic").val());
+        let price = parseInt($("#deviceProcessor").val()) + parseInt($("#deviceRam").val()) + parseInt($("#deviceHarddisk").val()) + parseInt($("#deviceGraphic").val()) + parseInt($("#deviceScreensize").val()) ;
         $("#veriation_price").val(price);
     });
 
@@ -756,9 +757,9 @@
         let processor = $("#deviceProcessor option:selected" ).text();
         let ram = $("#deviceRam option:selected" ).text();
         let hdd = $("#deviceHarddisk option:selected" ).text();
+        let screen = $("#deviceScreensize option:selected" ).text();
         let graphic = $("#deviceGraphic option:selected" ).text();
-        console.log(processor,ram,hdd);
-        let label = processor+' | Ram : '+ram+' | Storage : '+hdd+' | Graphic :'+graphic;
+        let label = processor+' | Ram : '+ram+' | Storage : '+hdd+' | Graphic :'+graphic+' | Screen :'+screen ;
 
         $("#veriation_type").val(label);
     });

@@ -26,6 +26,7 @@
 							<option value="processer" {{ ($config->type == "processer")?'selected' : '' }} > Processer</option>
 							<option value="ram"  {{ ($config->type == "ram")?'selected' : '' }} > Ram Memory </option>
 							<option value="hdd"  {{ ($config->type == "hdd")?'selected' : '' }} > Hard Disk </option>
+							<option value="screen"  {{ ($config->type == "screen")?'selected' : '' }} > Screen Size </option>
 							<option value="graphic"  {{ ($config->type == "graphic")?'selected' : '' }} > Graphic Memory </option>
 						<select>
 					</div>

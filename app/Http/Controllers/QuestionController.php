@@ -10,6 +10,7 @@ use App\Models\Product;
 use App\Models\Brand;
 use App\Models\Accessories;
 use App\Models\Age;
+use App\Models\Condition;
 
 class QuestionController extends Controller
 {
@@ -78,14 +79,39 @@ class QuestionController extends Controller
         return view('questions.device-age',compact('ages','product','user','tobSellingBrands','tobSellingProducts','veriationType'));
     }
 
+    public function deviceCondition(Request $request){
+        $user = $this->userdata;
+        $callculatedData = $request->session()->get('sellprice');
+        $data = $request->all();
+        if (isset($data['accessories'])) {
+            $callculatedData['accessories'] = $data['accessories'];
+        } 
+        
+        $callculatedData['age_id'] = $data['age_id'];
+
+        $category_id = $request->session()->get('selling_category');
+        $request->session()->put('sellprice', $callculatedData);
+        
+        $product = Product::find($callculatedData['product_id']);
+        $conditions = Condition::where('category_id', $category_id)->get();
+        $veriationType = $callculatedData['variation_type'];
+
+        $tobSellingBrands = Brand::inRandomOrder()->limit(10)->get();
+        $tobSellingProducts = Product::inRandomOrder()->limit(10)->get();
+
+        return view('questions.device-condition',compact('conditions','product','user','tobSellingBrands','tobSellingProducts','veriationType'));
+    }
+
     public function calculatePrice(Request $request){
         $user = $this->userdata;
         try {
-            $data = $request->all();        
+            $data = $request->all();      
             $callculatedData = $request->session()->get('sellprice');
-            $callculatedData['age_id'] = $data['age_id'];
+            $callculatedData['condition_id'] = $data['condition_id'];
             $category_id = $request->session()->get('selling_category');
             $veriation_price = (isset($callculatedData['veriation_price']))?$callculatedData['veriation_price']:0;
+            
+           
 
             
             $sum_deduction = 0;
@@ -105,6 +131,7 @@ class QuestionController extends Controller
                 }            
             }
 
+           
             // Deduction calculation by accessories
             if(isset($callculatedData['accessories'])){
                 $notProvidedAccessories = DB::table('accessories')
@@ -123,6 +150,7 @@ class QuestionController extends Controller
                 }
             }
 
+            
             // Deduction calculation by age
             $age = Age::find($callculatedData['age_id'])->first();
             $sum_deduction += $age->deducted_amount;
@@ -131,9 +159,21 @@ class QuestionController extends Controller
                 $sum_deduction += $age->extra_deducted_amount;
             } 
 
+            
+            // Deduction calculation by conditions
+            $condition = Condition::find($callculatedData['condition_id'])->first();
+            
+            $sum_deduction += $condition->deducted_amount;
+            
+            $conditions = json_decode($condition->brand_id,true);
+
+            
+            if(in_array($brand_id, $brands)){
+                $sum_deduction += $condition->extra_deducted_amount;
+            } 
+            
 
             $exact_price = $veriation_price - $sum_deduction;
-
             $callculatedData['exact_price'] = $exact_price;
 
             $request->session()->put('sellprice', $callculatedData);

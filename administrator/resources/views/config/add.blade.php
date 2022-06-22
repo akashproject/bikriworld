@@ -26,6 +26,7 @@
 							<option value="processer" > Processer</option>
 							<option value="ram" > Ram Memory </option>
 							<option value="hdd" > Hard Disk </option>
+							<option value="screen" > Screen Size </option>
 							<option value="graphic" > Graphic Memory </option>
 						<select>
 					</div>
