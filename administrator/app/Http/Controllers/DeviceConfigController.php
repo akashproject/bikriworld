@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Categories;
 use App\Models\DeviceConfig;
 
 class DeviceConfigController extends Controller
@@ -37,7 +38,8 @@ class DeviceConfigController extends Controller
      */
     public function add()
     {
-        return view('config.add');
+        $categories = Categories::all();
+        return view('config.add',compact('categories'));
     }
 
     /**
@@ -62,7 +64,8 @@ class DeviceConfigController extends Controller
     {
         try {
             $config = DeviceConfig::find($id);
-            return view('config.show',compact('config'));
+            $categories = Categories::all();
+            return view('config.show',compact('config','categories'));
         } catch(\Illuminate\Database\QueryException $e){
         }        
     }

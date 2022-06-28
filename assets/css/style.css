@@ -3788,6 +3788,7 @@ a.close_aside i {
     position: absolute;
     margin-top: .6rem;
     margin-left: 9px;
+    visibility: hidden;
 }
 
 
@@ -9053,7 +9054,8 @@ a.head_trigger.desktop_trigger {
     border-radius: 8px;
     padding: 1px 30px;
     white-space: nowrap;
-    margin-bottom: 11px;
+    margin-bottom: 22px;
+    height: 49px;
 }
 
 .custom_form_style {
@@ -10303,6 +10305,12 @@ label#veriation_choice-error {
     background: #00986b0d;
     border-radius: 6px;
 } */
+
+.answer_row .answer_list .form-check-label {
+    height: auto;
+    padding: 0.6rem 0.75rem;
+    padding-left: 2.25rem;
+}
 
 .form-check{
     padding-left: 0;

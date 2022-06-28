@@ -66,6 +66,13 @@ Route::get('/addproduct', [App\Http\Controllers\ProductController::class, 'add']
 Route::post('/submitproduct', [App\Http\Controllers\ProductController::class, 'save'])->name('submitproduct');
 Route::get('/product-delete/{id}', [App\Http\Controllers\ProductController::class, 'delete'])->name('product-delete');
 
+//Series
+Route::get('/serieses', [App\Http\Controllers\SeriesController::class, 'index'])->name('seriess');
+Route::get('/series/{id}', [App\Http\Controllers\SeriesController::class, 'show'])->name('series');
+Route::get('/addseries', [App\Http\Controllers\SeriesController::class, 'add'])->name('series');
+Route::post('/submitseries', [App\Http\Controllers\SeriesController::class, 'save'])->name('submitseries');
+Route::get('/series-delete/{id}', [App\Http\Controllers\SeriesController::class, 'delete'])->name('series-delete');
+
 //Questions
 Route::get('/questions', [App\Http\Controllers\QuestionController::class, 'index'])->name('questions');
 Route::get('/question/{id}', [App\Http\Controllers\QuestionController::class, 'show'])->name('question');

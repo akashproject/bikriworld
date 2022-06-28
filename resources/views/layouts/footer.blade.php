@@ -5,12 +5,10 @@
                 <div class="col-lg-3 col-md-6">
                     <div class="ft_widget ft_about">
                         <a href="{{  url('') }}" class="logo">
-                            <img src="{{ url('assets/images/logo.png') }}" alt="logo" class="image-fit">
+                            <img src="{{ url('assets/images/logo.webp') }}" alt="logo" class="image-fit">
                         </a>
                         <ul class="info">
-                            <li>
-                                <a href="#">256 Elizaberth Ave Str, Brooklyn, CA, 90025</a>
-                            </li>
+                           
                             <li>
                                 <a href="tel:+917439995068">+91 7439995068</a>
                             </li>

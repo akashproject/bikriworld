@@ -35,6 +35,7 @@ class ProductController extends Controller
     public function index($id,Request $request){
         $user = $this->userdata;
         $category_id = $request->session()->get('selling_category');
+        $request->session()->put('selling_brand', $id);
         try {
             $tobSellingBrands = Brand::inRandomOrder()->limit(10)->get();
             $tobSellingProducts = Product::inRandomOrder()->limit(10)->get();
@@ -56,6 +57,7 @@ class ProductController extends Controller
     public function view($id,Request $request){
         $user = $this->userdata;
         try {
+            $brand_id = $request->session()->get('selling_brand');
             $product = Product::find($id);
             if($request->session()->get('selling_category')){
                 $request->session()->put('selling_category', $product->category_id);
@@ -63,9 +65,13 @@ class ProductController extends Controller
             $tobSellingBrands = Brand::inRandomOrder()->limit(10)->get();
             $tobSellingProducts = Product::inRandomOrder()->limit(10)->get();
             if($product->category_id == "2"){
-                
-                $processer = DeviceConfig::where('type', "processer")->get();
-                $ram = DeviceConfig::where('type', "ram")->get();
+                if($brand_id == "1"){
+                    $processer = DeviceConfig::where('type', "processer")->where('brand_id', $brand_id)->orderBy('value', 'asc')->get();
+                } else {
+                    $processer = DeviceConfig::where('type', "processer")->whereNull('brand_id')->orderBy('value', 'asc')->get();
+                }
+
+                $ram = DeviceConfig::where('type', "ram")->orderBy('value', 'asc')->get();
                 $hdd = DeviceConfig::where('type', "hdd")->orderBy('value', 'asc')->get();
                 $screen = DeviceConfig::where('type', "screen")->orderBy('value', 'asc')->get();
                 $graphic = DeviceConfig::where('type', "graphic")->orderBy('value', 'asc')->get();

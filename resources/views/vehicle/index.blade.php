@@ -6,13 +6,13 @@
         <div class="container relative z-1">
             <div class="row">
                 <div class="col-12">
-                    <h4 class="page_title">Select Your {{$brand->name}} Device  </h4>
+                    <h4 class="page_title">Select Your {{$brand->name}} Vehicle  </h4>
                     <p> Easily Sell you device Online For Cash In 24 Hours: Free PickUp </p>
                     <div class="page_breadcrumb">
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="{{  url('') }}">Home</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Select Device</li>
+                                <li class="breadcrumb-item active" aria-current="page">Select Vehicle</li>
                             </ol>
                         </nav>
                     </div>

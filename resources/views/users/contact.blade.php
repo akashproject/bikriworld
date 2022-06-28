@@ -83,13 +83,6 @@
                 <div class="contact_info mb-md-80">
                     <ul>
                         <li>
-                            <i class="icon fal fa-map-marker-alt"></i>
-                            <div class="text">
-                                <h6>Location</h6>
-                                <p>354 Oakridge, Camden NJ 08102 - USA</p>
-                            </div>
-                        </li>
-                        <li>
                             <i class="icon fal fa-envelope-open-text"></i>
                             <div class="text">
                                 <h6>Email Address</h6>

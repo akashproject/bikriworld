@@ -5,13 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class DeviceConfig extends Model
+class Series extends Model
 {
     use HasFactory;
-    protected $table = 'device_config';
+    protected $table = 'series';
     protected $primaryKey = 'id';
 
     protected $fillable = [
-        'id','category_id','type','value','price',
+        'id','category_id','brand_id','series',
     ];
 }

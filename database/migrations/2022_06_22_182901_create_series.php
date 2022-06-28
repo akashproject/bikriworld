@@ -15,6 +15,9 @@ class CreateSeries extends Migration
     {
         Schema::create('series', function (Blueprint $table) {
             $table->id();
+            $table->integer('category_id');
+            $table->integer('brand_id');
+            $table->string('series',50);
             $table->timestamps();
         });
     }

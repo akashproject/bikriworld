@@ -60,6 +60,16 @@
 
                         </li>
 
+                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-border-inside"></i><span class="hide-menu">Series </span></a>
+                            <ul aria-expanded="false" class="collapse  first-level">
+								<li class="sidebar-item"><a href="{{ url('serieses') }}" class="sidebar-link"><i class="mdi mdi-border-inside"></i><span class="hide-menu"> All Series </span></a></li>
+
+                                <li class="sidebar-item"><a href="{{ url('addseries') }}" class="sidebar-link"><i class="mdi mdi-border-inside"></i><span class="hide-menu"> Add Series </span></a></li>
+
+                            </ul>
+
+                        </li>
+
                         
 
                         <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-border-inside"></i><span class="hide-menu">Products </span></a>

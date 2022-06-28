@@ -472,6 +472,12 @@
         margin-top: 10px;
     }
 
+    label.error {
+        position: absolute;
+        top: 42px;
+        font-size: 12px;
+    }
+
     .product-right-content .variant_wrap .custom_form_style {
         margin-bottom: 32px;
     }
@@ -765,6 +771,8 @@
     /*Contact*/
     .form_style {
         padding: 1px 10px;
+        margin-bottom: 22px;
+        height: 44px;
     }
     .form_style label {
         display: none;
@@ -785,7 +793,11 @@
 
 @media (max-width: 575px) {
 
-   
+    label.error {
+        position: absolute;
+        top: 47px;
+        font-size: 12px;
+    }
 
     .portfolio_details .title,
     .course_details .desc_box .title,
@@ -1022,7 +1034,6 @@
 
     .form_style .form-control {
         padding-left: 0;
-        font-size: 12px;
     }
 
     .form_style .form-control::placeholder {

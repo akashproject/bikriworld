@@ -18,11 +18,23 @@
 					</div>
 
 				@endif
+				
 				<div class="form-group row">
-					<label for="state" class="col-sm-3 text-right control-label col-form-label">Category</label>
+					<label for="category" class="col-sm-3 text-right control-label col-form-label">Category</label>
+					<div class="col-sm-9">
+						<select name="category_id[]" id="category_id" class="select2 form-control custom-select" style="width: 100%;">
+							<option value="">Select Category</option>
+							@foreach($categories as $category)
+							<option value="{{$category->id}}" > {{$category->name}}</option>
+							@endforeach
+						<select>
+					</div>
+				</div>		
+				<div class="form-group row">
+					<label for="state" class="col-sm-3 text-right control-label col-form-label">Type</label>
 					<div class="col-sm-9">
 						<select name="type" id="type" class="select2 form-control custom-select">	
-							<option value="">Select Category</option>
+							<option value="">Select Type</option>
 							<option value="processer" > Processer</option>
 							<option value="ram" > Ram Memory </option>
 							<option value="hdd" > Hard Disk </option>
