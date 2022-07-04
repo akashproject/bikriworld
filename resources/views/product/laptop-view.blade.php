@@ -51,6 +51,19 @@
                                 <div class="col-12" >
                                     <h6>Select configuration For calculate exact price</h6>                                
                                 </div>
+                                @if($year != '')
+                                <div class="col-12" >
+                                    <div class="form-group form_style">
+                                        <label class="padding-30px-left-right">Select Year <span class="required">*</span></label>
+                                        <select name="year" id="deviceYear"  class="form-control device-configuration" required>
+                                            <option  value=""> Release Year  </option>
+                                            @foreach ($year as $value)
+                                                <option  value="{{$value->price}}"> {{$value->value}} </option>
+                                            @endforeach	
+                                        </select>   
+                                    </div>                   
+                                </div>
+                                @endif
                                 <div class="col-12" >
                                     <div class="form-group form_style">
                                         <label class="padding-30px-left-right">Select Processor <span class="required">*</span></label>

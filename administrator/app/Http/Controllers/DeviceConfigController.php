@@ -38,8 +38,7 @@ class DeviceConfigController extends Controller
      */
     public function add()
     {
-        $categories = Categories::all();
-        return view('config.add',compact('categories'));
+        return view('config.add');
     }
 
     /**
@@ -64,8 +63,7 @@ class DeviceConfigController extends Controller
     {
         try {
             $config = DeviceConfig::find($id);
-            $categories = Categories::all();
-            return view('config.show',compact('config','categories'));
+            return view('config.show',compact('config'));
         } catch(\Illuminate\Database\QueryException $e){
         }        
     }

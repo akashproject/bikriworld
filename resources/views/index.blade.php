@@ -18,7 +18,7 @@
                                     <p>✔Best Prices ✔Proper Valuation ✔ Seller Protection </p>
                                     
                                     <a href="{{ url('selling-categories') }}" class="thm-btn bg-thm-color-two thm-color-two-shadow btn-rounded mr-4 mb-4"> Sell My Device <i class="fal fa-chevron-right ml-2"></i></a>
-                                    <a href="https://www.youtube.com/watch?v=TKnufs85hXk" class="video_btn video_text popup-youtube mb-4">
+                                    <a href="https://www.youtube.com/watch?v=BFrKemXxiN0" class="video_btn video_text popup-youtube mb-4">
                                         <i class="fas fa-play video_icon bg-thm-color-two"></i>
                                         <span>Watch Videos</span>
                                     </a>

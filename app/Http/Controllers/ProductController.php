@@ -65,8 +65,10 @@ class ProductController extends Controller
             $tobSellingBrands = Brand::inRandomOrder()->limit(10)->get();
             $tobSellingProducts = Product::inRandomOrder()->limit(10)->get();
             if($product->category_id == "2"){
+                $year = '';
                 if($brand_id == "1"){
                     $processer = DeviceConfig::where('type', "processer")->where('brand_id', $brand_id)->orderBy('value', 'asc')->get();
+                    $year = DeviceConfig::where('type', "year")->orderBy('value', 'asc')->get();
                 } else {
                     $processer = DeviceConfig::where('type', "processer")->whereNull('brand_id')->orderBy('value', 'asc')->get();
                 }
@@ -76,7 +78,7 @@ class ProductController extends Controller
                 $screen = DeviceConfig::where('type', "screen")->orderBy('value', 'asc')->get();
                 $graphic = DeviceConfig::where('type', "graphic")->orderBy('value', 'asc')->get();
 
-                return view('product.laptop-view',compact('product','user','tobSellingBrands','tobSellingProducts','processer','ram','hdd','screen','graphic'));
+                return view('product.laptop-view',compact('product','user','tobSellingBrands','tobSellingProducts','processer','ram','hdd','screen','graphic','year'));
             } else {
                 return view('product.view',compact('product','user','tobSellingBrands','tobSellingProducts'));                
             }
@@ -142,10 +144,15 @@ class ProductController extends Controller
         $user = User::findOrFail($data['user_id']);
         $user->update($data);
 
-        // Mail::send('emails.order', $orderData, function ($m) use ($user) {
-        //     $m->from('service@bikriworld.com', 'Bikriworld');
-        //     $m->to($user->email, $user->name)->subject('Bikriworld Order Placed Successfully!');
-        // });
+        Mail::send('emails.order', $orderData, function ($m) use ($user) {
+            $m->from('service@bikriworld.com', 'Bikriworld');
+            $m->to($user->email, $user->name)->subject('Bikriworld Order Placed Successfully!');
+        });
+
+        Mail::send('emails.order', $orderData, function ($m) use ($user) {
+            $m->from('admin@bikriworld.com', 'Bikriworld');
+            $m->to('pramod.kr.14855@gmail.com', $user->name)->subject('Bikriworld Got new Order Request!');
+        });
 
         $request->session()->put('orderData', $order);
         return redirect('/order-success');

@@ -162,7 +162,7 @@
                     <div class="image_boxes style_2 relative z-1 h-100">
                         <div class="video_warp style_2 relative z-1 big_img">
                             <img src="assets/images/about/about_img_2.jpg" alt="img">
-                            <a href="https://www.youtube.com/watch?v=TKnufs85hXk" class="popup-youtube transform-center justify-content-center d-flex">
+                            <a href="https://www.youtube.com/watch?v=BFrKemXxiN0" class="popup-youtube transform-center justify-content-center d-flex">
                                 <img src="assets/images/icons/youtube.png" alt="icon">
                             </a>
                         </div>
@@ -202,34 +202,33 @@
     </section>
     <!-- About Us End -->
     <!-- Testimonials Start -->
-    <section class="section section-bg relative z-1 bg-thm-color-one" style="background-image: url(assets/images/bg/bg_4.png);">
+    <section class="section-padding about_bg">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="section-title left-align white">
+                    <div class="section-title left-align">
                         <p class="subtitle mb-4">
                             <i class="fal fa-book"></i>
-                            Our Testimonials
+                            Online Phone Selling: Our Reviews
                         </p>
-                        <h3 class="title mb-0">What’s Our Clients<br> About Us</h3>
+                        <h3 class="title mb-0">Customers ❤ BikriWorld:<br> What Are They Saying?</h3>
                     </div>
                 </div>
             </div>
-            <div class="testimonial_slider style_2 row">
+            <div class="testimonial_slider row arrows_none">
                 <!-- Testimonial Item -->
                 <div class="slide-item col-12">
-                    <div class="testimonial_item style_dark">
+                    <div class="testimonial_item">
                         <div class="author">
                             <div class="image bg-thm-color-two">
                                 <img src="assets/images/author/1.jpg" alt="img" class="image-fit">
                             </div>
                             <div class="text">
-                                <h6 class="mb-0">Herminia F. Hudson</h6>
-                                <p class="mb-0 font-weight-bold thm-color-two">Web Designer</p>
+                                <h6 class="mb-0">Arvind kr</h6>
                             </div>
                         </div>
                         <p class="comment">
-                            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudtium totam rem aperiam eaque quae
+                        Upgraded to the iPhone 13, this year. Wasn’t getting good prices at all. I wondered about how to sell mobile phones so that I can get the best prices. Then I came across Bikri World. Got a very good price for my old One Plus Nord and my Mi Note 10. 
                         </p>
                         <div class="ratings">
                             <i class="fal fa-star active"></i>
@@ -243,18 +242,18 @@
                 <!-- Testimonial Item -->
                 <!-- Testimonial Item -->
                 <div class="slide-item col-12">
-                    <div class="testimonial_item style_dark">
+                    <div class="testimonial_item">
                         <div class="author">
                             <div class="image bg-thm-color-two">
                                 <img src="assets/images/author/2.jpg" alt="img" class="image-fit">
                             </div>
                             <div class="text">
-                                <h6 class="mb-0">Robert M. Morales</h6>
+                                <h6 class="mb-0">Roushan Sharma</h6>
                                 <p class="mb-0 font-weight-bold thm-color-two">Business Manager</p>
                             </div>
                         </div>
                         <p class="comment">
-                            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudtium totam rem aperiam eaque quae
+                            Great experience when I went to sell my old phone online at BikriWorld. Got a very good deal on the price. Awesome pickup experience and good behaviour of customer service people.
                         </p>
                         <div class="ratings">
                             <i class="fal fa-star active"></i>
@@ -268,7 +267,82 @@
                 <!-- Testimonial Item -->
                 <!-- Testimonial Item -->
                 <div class="slide-item col-12">
-                    <div class="testimonial_item style_dark">
+                    <div class="testimonial_item">
+                        <div class="author">
+                            <div class="image bg-thm-color-two">
+                                <img src="assets/images/author/3.jpg" alt="img" class="image-fit">
+                            </div>
+                            <div class="text">
+                                <h6 class="mb-0">UMITA KUMARI</h6>
+                                <!-- <p class="mb-0 font-weight-bold thm-color-two">Apps Developer</p> -->
+                            </div>
+                        </div>
+                        <p class="comment">
+                            I thought I would not be able to sell my used laptop online. It was used heavily and it wasn’t exactly sellable, but Bikriworld offered a price, I could not say no to. I always recommend BirkiWorld to anyone who asks me: How do I sell my used phone online?
+                        </p>
+                        <div class="ratings">
+                            <i class="fal fa-star active"></i>
+                            <i class="fal fa-star active"></i>
+                            <i class="fal fa-star active"></i>
+                            <i class="fal fa-star active"></i>
+                            <i class="fal fa-star active"></i>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonial Item -->
+                <!-- Testimonial Item -->
+                <div class="slide-item col-12">
+                    <div class="testimonial_item">
+                        <div class="author">
+                            <div class="image bg-thm-color-two">
+                                <img src="assets/images/author/1.jpg" alt="img" class="image-fit">
+                            </div>
+                            <div class="text">
+                                <h6 class="mb-0">Prem Tiwari</h6>
+                                <!-- <p class="mb-0 font-weight-bold thm-color-two">Web Designer</p> -->
+                            </div>
+                        </div>
+                        <p class="comment">
+                            Me in 2021: I want to sell my phone, but I don’t like the thought of giving my phone to strangers. I wasn’t sure if my identity would be protected or what would happen to the phone. However, the people at BikriWorld gave me a secure selling experience. The pickup was swift and I got paperwork that would prove I sold my phone to them.
+                        </p>
+                        <div class="ratings">
+                            <i class="fal fa-star active"></i>
+                            <i class="fal fa-star active"></i>
+                            <i class="fal fa-star active"></i>
+                            <i class="fal fa-star active"></i>
+                            <i class="fal fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonial Item -->
+                <!-- Testimonial Item -->
+                <div class="slide-item col-12">
+                    <div class="testimonial_item">
+                        <div class="author">
+                            <div class="image bg-thm-color-two">
+                                <img src="assets/images/author/2.jpg" alt="img" class="image-fit">
+                            </div>
+                            <div class="text">
+                                <h6 class="mb-0">Abhishek Giri</h6>
+                                <!-- <p class="mb-0 font-weight-bold thm-color-two">Business Manager</p> -->
+                            </div>
+                        </div>
+                        <p class="comment">
+                            Best place to sell a phone for cash in a short time. Sold my phone to them in 2020. Got a very good deal. Timely Pickup. Quick Payment.
+                        </p>
+                        <div class="ratings">
+                            <i class="fal fa-star active"></i>
+                            <i class="fal fa-star active"></i>
+                            <i class="fal fa-star active"></i>
+                            <i class="fal fa-star"></i>
+                            <i class="fal fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonial Item -->
+                <!-- Testimonial Item -->
+                <!-- <div class="slide-item col-12">
+                    <div class="testimonial_item">
                         <div class="author">
                             <div class="image bg-thm-color-two">
                                 <img src="assets/images/author/3.jpg" alt="img" class="image-fit">
@@ -279,7 +353,7 @@
                             </div>
                         </div>
                         <p class="comment">
-                            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudtium totam rem aperiam eaque quae
+                            BikriWorld is the answer to the question: How to sell old phones online? I have sold over 3 mobile phones and tablets. Every purchase was fast and on time. Got the necessary paperwork, and of course, the best prices.
                         </p>
                         <div class="ratings">
                             <i class="fal fa-star active"></i>
@@ -289,61 +363,11 @@
                             <i class="fal fa-star active"></i>
                         </div>
                     </div>
-                </div>
+                </div> -->
                 <!-- Testimonial Item -->
-                <!-- Testimonial Item -->
-                <div class="slide-item col-12">
-                    <div class="testimonial_item style_dark">
-                        <div class="author">
-                            <div class="image bg-thm-color-two">
-                                <img src="assets/images/author/1.jpg" alt="img" class="image-fit">
-                            </div>
-                            <div class="text">
-                                <h6 class="mb-0">Herminia F. Hudson</h6>
-                                <p class="mb-0 font-weight-bold thm-color-two">Web Designer</p>
-                            </div>
-                        </div>
-                        <p class="comment">
-                            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudtium totam rem aperiam eaque quae
-                        </p>
-                        <div class="ratings">
-                            <i class="fal fa-star active"></i>
-                            <i class="fal fa-star active"></i>
-                            <i class="fal fa-star active"></i>
-                            <i class="fal fa-star active"></i>
-                            <i class="fal fa-star"></i>
-                        </div>
-                    </div>
-                </div>
-                <!-- Testimonial Item -->
-                <!-- Testimonial Item -->
-                <div class="slide-item col-12">
-                    <div class="testimonial_item style_dark">
-                        <div class="author">
-                            <div class="image bg-thm-color-two">
-                                <img src="assets/images/author/2.jpg" alt="img" class="image-fit">
-                            </div>
-                            <div class="text">
-                                <h6 class="mb-0">Robert M. Morales</h6>
-                                <p class="mb-0 font-weight-bold thm-color-two">Business Manager</p>
-                            </div>
-                        </div>
-                        <p class="comment">
-                            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudtium totam rem aperiam eaque quae
-                        </p>
-                        <div class="ratings">
-                            <i class="fal fa-star active"></i>
-                            <i class="fal fa-star active"></i>
-                            <i class="fal fa-star active"></i>
-                            <i class="fal fa-star"></i>
-                            <i class="fal fa-star"></i>
-                        </div>
-                    </div>
-                </div>
-                <!-- Testimonial Item -->
-                <!-- Testimonial Item -->
-                <div class="slide-item col-12">
-                    <div class="testimonial_item style_dark">
+                 <!-- Testimonial Item -->
+                <!-- <div class="slide-item col-12">
+                    <div class="testimonial_item">
                         <div class="author">
                             <div class="image bg-thm-color-two">
                                 <img src="assets/images/author/3.jpg" alt="img" class="image-fit">
@@ -354,7 +378,7 @@
                             </div>
                         </div>
                         <p class="comment">
-                            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudtium totam rem aperiam eaque quae
+                            Selling my old tablet was very easy. Good price for the condition of the tablet. Genuine sell and fast pickup.
                         </p>
                         <div class="ratings">
                             <i class="fal fa-star active"></i>
@@ -364,10 +388,11 @@
                             <i class="fal fa-star active"></i>
                         </div>
                     </div>
-                </div>
+                </div> -->
                 <!-- Testimonial Item -->
             </div>
         </div>
+        <div class="circle_wave"></div>
     </section>
     <!-- Testimonials End -->
     

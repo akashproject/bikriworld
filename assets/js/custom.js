@@ -72,6 +72,17 @@
         },
     })
 
+    $("#physical-condition").validate({
+        rules : {
+            'condition_id': {
+                required: true,
+            }
+        },
+        messages: {
+            'condition_id': "Please Select your device physical condition.",
+        },
+    })
+
     $("#paymentform").validate({
         rules : {
             c_account_no : {
@@ -159,7 +170,14 @@
     // });
 
     $("#checkoutform").validate({
-
+        rules: {
+            'payment_mode': {
+                required: true,
+            },
+        },
+        messages: {
+            'payment_mode': "Please select payment option.",
+        }
     });
 
     $("#adddevice").validate({
@@ -748,8 +766,14 @@
         $("#veriation_price").val($(this).val())
     })
 
+    let price = 0;
     $(".device-configuration").on("change",function(){
-        let price = parseInt($("#deviceProcessor").val()) + parseInt($("#deviceRam").val()) + parseInt($("#deviceHarddisk").val()) + parseInt($("#deviceGraphic").val()) + parseInt($("#deviceScreensize").val()) ;
+        console.log($(this).val());
+        price = parseInt(price)+parseInt($(this).val());
+        // let price = parseInt($("#deviceProcessor").val()) + parseInt($("#deviceRam").val()) + parseInt($("#deviceHarddisk").val()) + parseInt($("#deviceGraphic").val()) + parseInt($("#deviceScreensize").val()) ;
+        // if($("#deviceYear").val() > 0){
+        //     price = parseInt(price) + parseInt($("#deviceYear").val())
+        // }
         $("#veriation_price").val(price);
     });
 
