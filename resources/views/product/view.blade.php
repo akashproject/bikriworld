@@ -67,6 +67,7 @@
                                     <input type="hidden" value="{{ $product->id }}" name="product_id">
                                     <input type="hidden" name="veriation_type" id="veriation_type">
                                     <input type="hidden" name="veriation_price" id="veriation_price" value="{{$product->max_price}}" >
+                                    <input type="hidden" name="series_price" id="series_price" value="{{(isset($series->price))?$series->price:''}}" >
                                     <button type="submit" class="thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle"> Get Exact Value <i class="fal fa-chevron-right ml-2"></i></button>
                                 @else
                                     <a href="javascript:void(0)" class="open-login head_trigger thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle"> Get Exact Value <i class="fal fa-chevron-right ml-2"></i></a>

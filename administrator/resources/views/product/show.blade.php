@@ -18,12 +18,12 @@
 				@endif
 
 				<div class="form-group row ">
-					<label for="state" class="col-sm-3 text-right control-label col-form-label">Category</label>
+					<label for="state" class="col-sm-3 text-right control-label col-form-label">Series</label>
 					<div class="col-sm-9">
-						<select name="brand_id" id="brand_id" class="select2 form-control custom-select" style="width: 100%; height:36px;">	
-							<option value="">Select Category</option>
-							@foreach($brands as $brand)
-							<option value="{{$brand->id}}"  {{ ( $product->brand_id ==  $brand->id )? 'selected' : '' }} > {{$brand->name}}</option>
+						<select name="series_id" id="series_id" class="select2 form-control custom-select" style="width: 100%; height:36px;">	
+							<option value="">Select Series</option>
+							@foreach($serieses as $series)
+							<option value="{{$series->id}}"  {{ ( $product->series_id ==  $series->id )? 'selected' : '' }} > {{$series->series}}</option>
 							@endforeach
 						<select>
 					</div>

@@ -10,8 +10,12 @@ use App\Models\Order;
 use App\Models\Brand;
 use App\Models\Categories;
 use App\Models\Question;
+use App\Models\Accessories;
+use App\Models\Age;
+use App\Models\Condition;
 use App\Models\SellRequest;
 use App\Models\DeviceConfig;
+use App\Models\Series;
 use Mail;
 
 class ProductController extends Controller
@@ -64,6 +68,7 @@ class ProductController extends Controller
             }
             $tobSellingBrands = Brand::inRandomOrder()->limit(10)->get();
             $tobSellingProducts = Product::inRandomOrder()->limit(10)->get();
+            $series = Series::find($product->series_id);
             if($product->category_id == "2"){
                 $year = '';
                 if($brand_id == "1"){
@@ -78,9 +83,9 @@ class ProductController extends Controller
                 $screen = DeviceConfig::where('type', "screen")->orderBy('value', 'asc')->get();
                 $graphic = DeviceConfig::where('type', "graphic")->orderBy('value', 'asc')->get();
 
-                return view('product.laptop-view',compact('product','user','tobSellingBrands','tobSellingProducts','processer','ram','hdd','screen','graphic','year'));
+                return view('product.laptop-view',compact('series','product','user','tobSellingBrands','tobSellingProducts','processer','ram','hdd','screen','graphic','year'));
             } else {
-                return view('product.view',compact('product','user','tobSellingBrands','tobSellingProducts'));                
+                return view('product.view',compact('series','product','user','tobSellingBrands','tobSellingProducts'));                
             }
             
         } catch(\Illuminate\Database\QueryException $e){
@@ -218,7 +223,16 @@ class ProductController extends Controller
 
     public function getQuestion(Request $request){
         $data = $request->all();
-        $questions = Question::where('category_id', $data['category_id'])->get();
+        $questions = Question::select('id', 'question as name')
+                           ->where('category_id', '=', $data['category_id'])
+                           ->get()->toArray();  
+        $age = Age::select('id', 'age as name')
+        ->where('category_id', '=', $data['category_id'])
+        ->get()->toArray();                                     
+        $accessories = Accessories::where('category_id', $data['category_id'])->get()->toArray();
+
+        $questions = array_merge($questions,$accessories,$age);
+
         return response()->json($questions,$this->_statusOK);
     }
 

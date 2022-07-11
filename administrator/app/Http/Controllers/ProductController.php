@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Product;
 use App\Models\Categories;
 use App\Models\Brand;
+use App\Models\Series;
 
 class ProductController extends Controller
 {
@@ -30,7 +31,8 @@ class ProductController extends Controller
     public function add() {
         $brands = Brand::all();
         $categories = Categories::all();
-        return view('product.add',compact('brands','categories'));
+        $serieses = Series::all();
+        return view('product.add',compact('brands','serieses','categories'));
     }
 
     public function show($id)
@@ -40,7 +42,8 @@ class ProductController extends Controller
             $product = Product::find($id);
             $brands = Brand::all();
             $categories = Categories::all();
-            return view('product.show',compact('product','brands','categories'));
+            $serieses = Series::all();
+            return view('product.show',compact('product','brands','categories','serieses'));
         } catch(\Illuminate\Database\QueryException $e){
         }        
     }

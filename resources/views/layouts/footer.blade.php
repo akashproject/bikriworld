@@ -144,6 +144,13 @@
         </div>
     </div>
 </div>
+<a class="service-modal" href="#city-service" style="position:absolute;right:-200%">Open modal</a>
+
+<div id="city-service" class="white-popup mfp-hide">
+	<h4>Service will be coming soon on your city</h4>
+	<p>Sorry ! Our Service is currently temporary disable on your city. We will get back to you soon</p>
+	<p><a class="popup-modal-dismiss thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle" href="#">Dismiss</a></p>
+</div>
 <!-- Footer End -->
 <a href="#" data-target="html" class="back-to-top ft-sticky">
     <i class="fal fa-long-arrow-up"></i>

@@ -1,3 +1,5 @@
+
+const city = ["Howrah", "Kolkata", "Patna"];
 (function($) {
     'use strict';
     // Preloader
@@ -220,10 +222,12 @@
                 category_id: $(this).val(),
             },
             success: function(result) {
-                let htmlContent = '<h5>Device Conditions</h5>';
-                $.each(result, function (key, data) {
-                    htmlContent += '<div class="row question_list"><div class="col-lg-12"><h5><span class="question_data">'+data.question+'<span> </span></span></h5></div><div class="col-lg-8"><div class="row answer_row" dataquestion="'+data.id+'"><div class="col-lg-6 "><div class="answer_list"><div class="form-check "><input class="form-check-input yes" questionval="'+data.description+'" type="radio" name="question_id['+data.id+']" id="" value="1" required=""><label class="form-check-label" for="">Yes</label></div></div></div><div class="col-lg-6"><div class="answer_list"><div class="form-check "><input class="form-check-input no" type="radio" name="question_id['+data.id+']" id="" value="0" required=""><label class="form-check-label" for="">No</label></div></div></div></div></div></div>';
+                let htmlContent = '<h5>Select Device Conditions</h5><div class="row">';
+                $.each(result, function (key, data) {          
+
+                    htmlContent += '<div class="col-lg-6 question_list col-xs-12"><div class="answer_row" dataquestion="'+data.id+'"><div class="answer_list"  ><div class="form-check "><input class="form-check-input yes" questionval="'+data.description+'" type="checkbox" name="question_id['+data.id+']" id="answer_yes_'+key+'" value="1"><label class="form-check-label" for="answer_yes_'+key+'">'+data.name+'</label></div></div></div></div>';
                 });
+                htmlContent += '</div>';
                 $(".question-content_wrap").html(htmlContent);
                 $(".question-content_wrap").show();
             }
@@ -885,18 +889,38 @@
     });
 
     $('.open-city-popup').magnificPopup({
-        type: 'inline',
-        midClick: true,
-        mainClass: 'mfp-fade'
+        closeOnContentClick: false,
+        enableEscapeKey:false,
+        showCloseBtn:false,
+        closeOnBgClick:false
+    });
+
+    $('.service-modal').magnificPopup({
+        closeOnContentClick: true,
+        enableEscapeKey:true,
+        showCloseBtn:true,
+        closeOnBgClick:true
+    });
+
+    
+    
+    $(window).on('load', function() {  
+        if($.cookie('userCity')  == null) {
+            $('.open-city-popup').trigger("click");
+        } else {
+            if(city.includes($.cookie('userCity'))){ } else {
+                console.log("Here",$.cookie('userCity'));
+                $('.service-modal').trigger("click");
+            }           
+        }
     });
 
     $(document).on("click","#select-city-popup .city-search-list",function(){
         let city = $(this).attr('data-city');
-        console.log(city);
         $('.user_selected_city').html(city);
         $.cookie('userCity', city, {expires: 100000000000});
         $(".search-city-content_wrap").hide()
-        $(".mfp-close").trigger("click");
+        $.magnificPopup.close();
     });
 
 

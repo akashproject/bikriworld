@@ -46,7 +46,7 @@
                                 </div>
                             @endif
                             @if($questions)
-                                <div class="row " >
+                                <div class="row" >
                                     @foreach ($questions as $key => $value)
                                     
                                         <div class="col-lg-6 question_list col-xs-12">

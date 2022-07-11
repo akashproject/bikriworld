@@ -31,16 +31,20 @@ class AppServiceProvider extends ServiceProvider
  
         View::composer('*', function($view)
         {
+
+            $serviceLocation = array(
+                'Howrah','Kolkata','Bihar'
+            );
+            $view->with('serviceLocation', $serviceLocation);
             // Header Menu
             $navbars = array(
-                '/' => 'HOME',
                 '/selling-categories' => 'SELL',
                 '/contact-us' => "CONTACT"
             );
             $view->with('navbars', $navbars);
 
             // Category Menu
-            $footerCategories = Categories::all();
+            $footerCategories = Categories::where('status', '1')->orderBy('name', 'asc')->get();;
             $view->with('footerCategories', $footerCategories);
 
 

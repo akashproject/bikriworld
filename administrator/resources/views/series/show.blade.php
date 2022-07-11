@@ -49,7 +49,13 @@
 							@endforeach
 						<select>
 					</div>
-				</div>		
+				</div>	
+				<div class="form-group row">
+					<label for="price" class="col-sm-3 text-right control-label col-form-label">Price</label>
+					<div class="col-sm-9">
+						<input type="text" class="form-control" name="price" id="price" value="{{ $series->price }}" placeholder="Price Here" >
+					</div>
+				</div>			
 			</div>
 
 			<div class="border-top">

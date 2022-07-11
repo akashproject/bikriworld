@@ -25,6 +25,12 @@ class QuestionController extends Controller
         try {
             $productData = $request->all();
             $category_id = $request->session()->get('selling_category');
+
+            if($productData['series_price'] != ''){
+                $request->session()->put('series_price', $productData['series_price']);
+            }
+            
+
             $questions = Question::where('category_id', $category_id)->get();
             $product = Product::find($productData['product_id']);
             $veriationPrice = $productData['veriation_price'];
@@ -110,11 +116,10 @@ class QuestionController extends Controller
             $callculatedData['condition_id'] = $data['condition_id'];
             $category_id = $request->session()->get('selling_category');
             $veriation_price = (isset($callculatedData['veriation_price']))?$callculatedData['veriation_price']:0;
-            
-           
+                   
             $sum_deduction = 0;
             $brand_id = Product::find($callculatedData['product_id'])->brand_id;
-
+            $series_price = $request->session()->get('series_price');
             // Deduction calculation by question
             foreach ($callculatedData['question_id'] as $key => $value) {
                 $question = Question::find($key);
@@ -171,9 +176,9 @@ class QuestionController extends Controller
                 $sum_deduction += $condition_extra_amount;
             } 
             
-
+           
             $exact_price = $veriation_price - $sum_deduction;
-            $callculatedData['exact_price'] = $exact_price;
+            $callculatedData['exact_price'] = $exact_price + $series_price;
 
             $request->session()->put('sellprice', $callculatedData);
             return redirect('/product-quote');

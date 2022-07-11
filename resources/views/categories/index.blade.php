@@ -1,6 +1,22 @@
 @extends('layouts.main')
 
     @section('content')
+    @if(isset($_COOKIE['userCity']) && !in_array($_COOKIE['userCity'],$serviceLocation))
+    <div class="section-padding">
+        <div class="container ">
+            <div class="row text-center" >
+                <div style="width: 100%;">
+                    <img src="{{ url('assets/images/icons/404.png') }}" style="width: auto;margin-bottom: 21px;">
+                    <h5> Sorry! This Service is not availble on your city </h5>
+                </div>
+                <div style="width: 100%;">
+                    <a href="/" class="thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle"> Back to Home <i class="fal fa-chevron-right ml-2"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @else
     <!-- Subheader Start -->
     <div class="subheader relative z-1" style="background-image: url({{ url('assets/images/catagory-banner.jpg') }});">
         <div class="container relative z-1">
@@ -236,6 +252,7 @@
             </div>          
         </div>
     </section>
+    @endif
     @endsection
 @section('script')
 <!-- ============================================================== -->
