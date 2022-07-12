@@ -68,6 +68,7 @@ Route::post('/cancel-order', [App\Http\Controllers\ProductController::class, 'ca
 Route::get('/manage-order/{id}', [App\Http\Controllers\ProductController::class, 'manageOrder'])->name('manage-order');
 Route::post('/get-question', [App\Http\Controllers\ProductController::class, 'getQuestion'])->name('get-question');
 Route::post('/submit-sell-request', [App\Http\Controllers\ProductController::class, 'submitSellRequest'])->name('submit-sell-request');
+Route::post('/get-product-config-price', [App\Http\Controllers\ProductController::class, 'getProductConfigPrice'])->name('get-product-config-price');
 
 
 // Search Module

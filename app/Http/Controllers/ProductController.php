@@ -16,6 +16,7 @@ use App\Models\Condition;
 use App\Models\SellRequest;
 use App\Models\DeviceConfig;
 use App\Models\Series;
+use App\Models\ProductConfigPrice;
 use Mail;
 
 class ProductController extends Controller
@@ -234,6 +235,14 @@ class ProductController extends Controller
         $questions = array_merge($questions,$accessories,$age);
 
         return response()->json($questions,$this->_statusOK);
+    }
+
+    public function getProductConfigPrice(Request $request){
+        $data = $request->all();
+        $productConfigPrice = ProductConfigPrice::where('config_id', $data['config_id'])->where('product_id', $data['product_id'])->first();
+
+        $price = (isset($productConfigPrice->price))?$productConfigPrice->price:"0";
+        return response()->json($price,$this->_statusOK);
     }
 
     

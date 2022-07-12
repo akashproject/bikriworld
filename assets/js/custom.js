@@ -772,16 +772,43 @@ const city = ["Howrah", "Kolkata", "Patna"];
 
     let price = 0;
     $(".device-configuration").on("change",function(){
-        console.log($(this).val());
-        price = parseInt(price)+parseInt($(this).val());
+        
+        
         // let price = parseInt($("#deviceProcessor").val()) + parseInt($("#deviceRam").val()) + parseInt($("#deviceHarddisk").val()) + parseInt($("#deviceGraphic").val()) + parseInt($("#deviceScreensize").val()) ;
         // if($("#deviceYear").val() > 0){
         //     price = parseInt(price) + parseInt($("#deviceYear").val())
         // }
-        $("#veriation_price").val(price);
+        
     });
 
     $(".device-configuration").on("change",function(){
+
+        let config_id = $(this).attr("id");
+        console.log($('#'+config_id+' option:selected').attr('data-id'));
+
+        $.ajaxSetup({
+            headers: {
+             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+
+        $.ajax({
+            url: `https://${window.location.hostname}/get-product-config-price`,
+            type: "post",
+            data: {
+                config_id: $('#'+config_id+' option:selected').attr('data-id'),
+                product_id:$("#product_id").val()
+            },
+            success: function(result) {
+                let config_price = parseInt($("#config_price").val()) + parseInt(result);
+                $("#config_price").val(config_price);
+            }
+        });
+        
+
+        price = parseInt(price)+parseInt($(this).val());
+        $("#veriation_price").val(price);
+
         let processor = $("#deviceProcessor option:selected" ).text();
         let ram = $("#deviceRam option:selected" ).text();
         let hdd = $("#deviceHarddisk option:selected" ).text();

@@ -123,7 +123,7 @@
                             <div class="calculate-price-btn">
                                 @if($user)
                                     @csrf
-                                    <input type="hidden" value="{{ $product->id }}" name="product_id">
+                                    <input type="hidden" value="{{ $product->id }}" id="product_id" name="product_id">
                                     <input type="hidden" name="veriation_type" id="veriation_type">
                                     <input type="hidden" name="veriation_price" id="veriation_price" value="{{$product->max_price}}" >
                                     <input type="hidden" name="series_price" id="series_price" value="{{(isset($series->price))?$series->price:''}}" >
