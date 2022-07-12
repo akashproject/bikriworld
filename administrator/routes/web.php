@@ -117,3 +117,10 @@ Route::get('/config/{id}', [App\Http\Controllers\DeviceConfigController::class, 
 Route::get('/addconfig', [App\Http\Controllers\DeviceConfigController::class, 'add'])->name('addconfig');
 Route::post('/submit-config', [App\Http\Controllers\DeviceConfigController::class, 'save'])->name('submit-config');
 Route::get('/delete-config/{id}', [App\Http\Controllers\DeviceConfigController::class, 'delete'])->name('delete-config');
+
+//Configuration
+Route::get('/product-config-prices', [App\Http\Controllers\ProductConfigPriceController::class, 'index'])->name('product-config-prices');
+Route::get('/product-config-price/{id}', [App\Http\Controllers\ProductConfigPriceController::class, 'show'])->name('product-config-price');
+Route::get('/add-product-config-price', [App\Http\Controllers\ProductConfigPriceController::class, 'add'])->name('add-product-config-price');
+Route::post('/submit-product-config-price', [App\Http\Controllers\ProductConfigPriceController::class, 'save'])->name('submit-product-config-price');
+Route::get('/delete-product-config-price/{id}', [App\Http\Controllers\ProductConfigPriceController::class, 'delete'])->name('delete-product-config-price');

@@ -11,7 +11,7 @@ use App\Models\Brand;
 use App\Models\Accessories;
 use App\Models\Age;
 use App\Models\Condition;
-
+use App\Models\ProductConfigPrice;
 class QuestionController extends Controller
 {
     public $userdata = '';
@@ -120,6 +120,10 @@ class QuestionController extends Controller
             $sum_deduction = 0;
             $brand_id = Product::find($callculatedData['product_id'])->brand_id;
             $series_price = $request->session()->get('series_price');
+            $productConfigPrice = ProductConfigPrice::where('product_id', $callculatedData['product_id'])->first();
+            if($productConfigPrice){
+                $veriation_price = $veriation_price + $productConfigPrice->price;
+            }
             // Deduction calculation by question
             foreach ($callculatedData['question_id'] as $key => $value) {
                 $question = Question::find($key);

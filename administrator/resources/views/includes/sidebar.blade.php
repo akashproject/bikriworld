@@ -92,6 +92,11 @@
 
                                 <li class="sidebar-item"><a href="{{ url('addconfig') }}" class="sidebar-link"><i class="mdi mdi-border-inside"></i><span class="hide-menu"> Add Configs </span></a></li>
 
+                                <li class="sidebar-item"><a href="{{ url('product-config-prices') }}" class="sidebar-link"><i class="mdi mdi-border-inside"></i><span class="hide-menu"> Product Configuration Price </span></a></li>
+
+                                <li class="sidebar-item"><a href="{{ url('add-product-config-price') }}" class="sidebar-link"><i class="mdi mdi-border-inside"></i><span class="hide-menu"> Add Configuration Price </span></a></li>
+                                
+
                             </ul>
 
                         </li>

@@ -70,7 +70,7 @@
                                         <select name="processor" id="deviceProcessor"  class="form-control device-configuration" required>
                                             <option  value=""> Device Processor  </option>
                                             @foreach ($processer as $value)
-                                                <option  value="{{$value->price}}"> {{$value->value}} </option>
+                                                <option  value="{{$value->price}}" data-id="{{$value->id}}" > {{$value->value}} </option>
                                             @endforeach	
                                         </select>   
                                     </div>                   
@@ -81,7 +81,7 @@
                                         <select name="ram" id="deviceRam" class="form-control device-configuration" required>
                                             <option  value=""> Device Ram </option>
                                             @foreach ($ram as $value)
-                                                <option value="{{$value->price}}"> {{$value->value}} </option>
+                                                <option value="{{$value->price}}" data-id="{{$value->id}}"> {{$value->value}} </option>
                                             @endforeach	
                                         </select>   
                                     </div>                   
@@ -92,7 +92,7 @@
                                         <select name="hdd" id="deviceHarddisk" class="form-control device-configuration" required>
                                             <option  value=""> Device Hard Disk </option>
                                             @foreach ($hdd as $value)
-                                                <option value="{{$value->price}}"> {{$value->value}} </option>
+                                                <option value="{{$value->price}}" data-id="{{$value->id}}"> {{$value->value}} </option>
                                             @endforeach
                                         </select>   
                                     </div>                   
@@ -103,7 +103,7 @@
                                         <select name="screen" id="deviceScreensize" class="form-control device-configuration" required>
                                             <option  value=""> Device Screen Size </option>
                                             @foreach ($screen as $value)
-                                                <option value="{{$value->price}}"> {{$value->value}} </option>
+                                                <option value="{{$value->price}}" data-id="{{$value->id}}"> {{$value->value}} </option>
                                             @endforeach
                                         </select>   
                                     </div>                   
@@ -114,7 +114,7 @@
                                         <select name="hdd" id="deviceGraphic" class="form-control device-configuration" >
                                             <option  value="0"> No Graphics available </option>
                                             @foreach ($graphic as $value)
-                                                <option value="{{$value->price}}"> {{$value->value}} </option>
+                                                <option value="{{$value->price}}" data-id="{{$value->id}}"> {{$value->value}} </option>
                                             @endforeach
                                         </select>   
                                     </div>                   
@@ -126,7 +126,9 @@
                                     <input type="hidden" value="{{ $product->id }}" name="product_id">
                                     <input type="hidden" name="veriation_type" id="veriation_type">
                                     <input type="hidden" name="veriation_price" id="veriation_price" value="{{$product->max_price}}" >
-                                    <input type="hidden" name="series_price" id="series_price" value="{{$series->price}}" >
+                                    <input type="hidden" name="series_price" id="series_price" value="{{(isset($series->price))?$series->price:''}}" >
+                                    <input type="hidden" name="config_price" id="config_price" value="0" >
+
                                     <button type="submit" class="thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle"> Get Exact Value <i class="fal fa-chevron-right ml-2"></i></button>
                                 @else
                                     <a href="javascript:void(0)" class="open-login head_trigger thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle"> Get Exact Value <i class="fal fa-chevron-right ml-2"></i></a>
