@@ -22,7 +22,13 @@ class ProductConfigPriceController extends Controller
 
     public function index(){
         try {
-            $productConfigPrices = ProductConfigPrice::all();
+            $productConfigPrices = DB::table('product_config_price')
+            ->join('product', 'product.id', '=', 'product_config_price.product_id')
+            ->join('device_config', 'device_config.id', '=', 'product_config_price.config_id')
+            ->select('product_config_price.*','product_config_price.price as config_price', 'product.name as product_name', 'device_config.value')
+            ->distinct()
+            ->orderBy('id', 'asc') //order in descending order
+            ->get();    
             return view('product-config-price.index',compact('productConfigPrices'));
 
         } catch(\Illuminate\Database\QueryException $e){

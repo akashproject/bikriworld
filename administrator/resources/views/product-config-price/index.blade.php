@@ -34,9 +34,9 @@
 
 							@foreach ($productConfigPrices as $value)
 							<tr>												
-								<td>{{ $value->config_id }}</td>													
-								<td>{{ $value->product_id }}</td>													
-								<td>{{ $value->price }}</td>													
+								<td>{{ $value->value }}</td>													
+								<td>{{ $value->product_name }}</td>													
+								<td>{{ $value->config_price }}</td>													
 								<td>
 									<a href="{{ url('product-config-price') }}/{{ $value->id }}" class="btn btn-primary btn-lg">Edit</a>
 									<a href="{{ url('delete-product-config-price') }}/{{ $value->id }}" class="btn btn-danger btn-lg" onclick="return confirm('Are you sure?');">Delete </a>
