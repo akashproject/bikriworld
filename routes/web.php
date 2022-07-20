@@ -82,3 +82,5 @@ Route::get('/privacy-policy', [App\Http\Controllers\UserController::class, 'priv
 Route::get('/terms-conditions', [App\Http\Controllers\UserController::class, 'termsConditions'])->name('terms-conditions');
 
 
+// Vehicle Module
+Route::get('/view-vehicle/{id}', [App\Http\Controllers\VehicleController::class, 'view'])->name('product-view');

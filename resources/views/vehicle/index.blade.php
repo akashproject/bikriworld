@@ -54,18 +54,18 @@
                 <div class="col-lg-2 col-6 product_filter_list">
                     <div class="team_block style_2 style_3">
                         <div class="team_img product_img">
-                            <a href="{{ url('view-product') }}/{{ $value->id }}" >
+                            <a href="{{ url('view-vehicle') }}/{{ $value->id }}" >
                             @if($value->image)
                             <img src="/administrator/public/images/{{ $value->image }}" alt="img">
                             @else 
                             <img src="https://via.placeholder.com/180x180" alt="img" class="">
                             @endif   
                             </a>
-                            <a href="{{ url('view-product') }}/{{ $value->id }}" class="thm-btn bg-thm-color-two thm-color-two-shadow btn-circle link">
+                            <a href="{{ url('view-vehicle') }}/{{ $value->id }}" class="thm-btn bg-thm-color-two thm-color-two-shadow btn-circle link">
                                 <i class="fal fa-plus"></i>
                             </a>
                         </div>
-                        <p class="thm-color-two mb-0 font-weight-bold"><a href="{{ url('view-product') }}/{{ $value->id }}" style="font-size: 13px;line-height: 18px;" > {{ $value->name }} </a></p>
+                        <p class="thm-color-two mb-0 font-weight-bold"><a href="{{ url('view-vehicle') }}/{{ $value->id }}" style="font-size: 13px;line-height: 18px;" > {{ $value->name }} </a></p>
                     </div>
                 </div>
                 @endforeach	
