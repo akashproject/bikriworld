@@ -124,3 +124,10 @@ Route::get('/product-config-price/{id}', [App\Http\Controllers\ProductConfigPric
 Route::get('/add-product-config-price', [App\Http\Controllers\ProductConfigPriceController::class, 'add'])->name('add-product-config-price');
 Route::post('/submit-product-config-price', [App\Http\Controllers\ProductConfigPriceController::class, 'save'])->name('submit-product-config-price');
 Route::get('/delete-product-config-price/{id}', [App\Http\Controllers\ProductConfigPriceController::class, 'delete'])->name('delete-product-config-price');
+
+//Vehicle COnfiguration
+Route::get('/vehicle-configs', [App\Http\Controllers\VehicleVariationController::class, 'index'])->name('vehicle-configs');
+Route::get('/vehicle-config/{id}', [App\Http\Controllers\VehicleVariationController::class, 'show'])->name('vehicle-config');
+Route::get('/add-vehicle-config', [App\Http\Controllers\VehicleVariationController::class, 'add'])->name('add-vehicle-config');
+Route::post('/submit-vehicle-config', [App\Http\Controllers\VehicleVariationController::class, 'save'])->name('submit-vehicle-config');
+Route::get('/delete-vehicle-config/{id}', [App\Http\Controllers\VehicleVariationController::class, 'delete'])->name('delete-vehicle-config');

@@ -84,3 +84,5 @@ Route::get('/terms-conditions', [App\Http\Controllers\UserController::class, 'te
 
 // Vehicle Module
 Route::get('/view-vehicle/{id}', [App\Http\Controllers\VehicleController::class, 'view'])->name('product-view');
+Route::post('/book-appointment', [App\Http\Controllers\VehicleController::class, 'bookAppointment'])->name('book-appointment');
+Route::post('/confirm-booking', [App\Http\Controllers\VehicleController::class, 'confirmBooking'])->name('confirm-booking');

@@ -26,11 +26,11 @@ class QuestionController extends Controller
             $productData = $request->all();
             $category_id = $request->session()->get('selling_category');
 
-            if($productData['series_price'] != ''){
+            if(isset($productData['series_price']) && $productData['series_price'] != ''){
                 $request->session()->put('series_price', $productData['series_price']);
             }
 
-            if($productData['config_price'] != ''){
+            if(isset($productData['config_price']) && $productData['config_price'] != ''){
                 $request->session()->put('config_price', $productData['config_price']);
             }
 

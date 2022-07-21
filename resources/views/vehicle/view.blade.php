@@ -42,16 +42,46 @@
                     </article>
                 </div>
                 <div class="col-lg-7 col-8">
-                    <form class="form-horizontal" method="post" action="{{ url('question') }}" id="checkexactvalue" enctype="multipart/form-data">
+                    <form class="form-horizontal" method="post" action="{{ url('book-appointment') }}" id="" enctype="multipart/form-data">
                         <div class="product-right-content">
                             <h3> {{ $vehicle->name }} </h3>
                             
                             <p > Get upto </p>
                             <h3 class="product-price"> ₹ <span class="product-price_amount"> {{ number_format($vehicle->max_price) }}</span> /- </h3>
+                            <div class="variant_wrap row" >
+                                <div class="col-12" >
+                                    <h6>Select The Options Below </h6>                                
+                                </div>
+                                @if($year != '')
+                                <div class="col-12" >
+                                    <div class="form-group form_style">
+                                        <label class="padding-30px-left-right">Select Year <span class="required">*</span></label>
+                                        <select name="year" id="deviceYear"  class="form-control vehicle-configuration" required>
+                                            <option  value=""> Release Year  </option>
+                                            @foreach ($year as $value)
+                                                <option  value="{{$value->name}}"> {{$value->name}} </option>
+                                            @endforeach	
+                                        </select>   
+                                    </div>                   
+                                </div>
+                                @endif
+                                <div class="col-12" >
+                                    <div class="form-group form_style">
+                                        <label class="padding-30px-left-right">Kilometer Driven <span class="required">*</span></label>
+                                        <select name="kmdriven" id="kmdriven"  class="form-control vehicle-configuration" required>
+                                            <option  value=""> Select Kilometer Driven   </option>
+                                            @foreach ($km as $value)
+                                                <option  value="{{$value->name}}"> {{$value->name}} </option>
+                                            @endforeach	
+                                        </select>   
+                                    </div>                   
+                                </div>
+                            </div>
                             <div class="calculate-price-btn">
                                 @if($user)
-                                    @csrf                               
-                                    <a href="javascript:void(0)" class="open-login head_trigger thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle"> Schedule Appointment <i class="fal fa-chevron-right ml-2"></i></a>
+                                    @csrf             
+                                    <input type="hidden" value="{{ $vehicle->id }}" id="vehicle_id" name="vehicle_id">    
+                                    <button type="submit" class="thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle"> Schedule Appointment  <i class="fal fa-chevron-right ml-2"></i></button>              
                                 @else
                                     <a href="javascript:void(0)" class="open-login head_trigger thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle"> Schedule Appointment <i class="fal fa-chevron-right ml-2"></i></a>
                                 @endif
