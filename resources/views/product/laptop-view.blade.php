@@ -58,7 +58,7 @@
                                         <select name="year" id="deviceYear"  class="form-control device-configuration" required>
                                             <option  value=""> Release Year  </option>
                                             @foreach ($year as $value)
-                                                <option  value="{{$value->price}}"> {{$value->value}} </option>
+                                                <option  value="{{$value->price}}" data-id="{{$value->id}}" > {{$value->value}} </option>
                                             @endforeach	
                                         </select>   
                                     </div>                   

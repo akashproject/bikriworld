@@ -125,7 +125,7 @@ class QuestionController extends Controller
             $series_price = $request->session()->get('series_price');
             $config_price = $request->session()->get('config_price');
             
-            $veriation_price = $veriation_price + $config_price + $series_price;;
+            $veriation_price = $veriation_price + $config_price + $series_price;
             // Deduction calculation by question
             foreach ($callculatedData['question_id'] as $key => $value) {
                 $question = Question::find($key);

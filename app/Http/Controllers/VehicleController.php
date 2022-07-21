@@ -36,6 +36,7 @@ class VehicleController extends Controller
             if($request->session()->get('selling_category')){
                 $request->session()->put('selling_category', $vehicle->category_id);
             }
+            
             $tobSellingBrands = Brand::inRandomOrder()->limit(10)->get();
             $tobSellingProducts = Product::inRandomOrder()->limit(10)->get();
             $series = Series::find($vehicle->series_id);

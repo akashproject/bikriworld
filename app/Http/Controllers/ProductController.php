@@ -79,8 +79,8 @@ class ProductController extends Controller
                     $processer = DeviceConfig::where('type', "processer")->whereNull('brand_id')->orderBy('value', 'asc')->get();
                 }
 
-                $ram = DeviceConfig::where('type', "ram")->orderBy('value', 'asc')->get();
-                $hdd = DeviceConfig::where('type', "hdd")->orderBy('value', 'asc')->get();
+                $ram = DeviceConfig::where('type', "ram")->orderBy('id', 'asc')->get();
+                $hdd = DeviceConfig::where('type', "hdd")->orderBy('id', 'asc')->get();
                 $screen = DeviceConfig::where('type', "screen")->orderBy('value', 'asc')->get();
                 $graphic = DeviceConfig::where('type', "graphic")->orderBy('value', 'asc')->get();
 
