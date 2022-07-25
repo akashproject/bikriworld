@@ -42,7 +42,7 @@
                     </article>
                 </div>
                 <div class="col-lg-7 col-8">
-                    <form class="form-horizontal" method="post" action="{{ url('book-appointment') }}" id="" enctype="multipart/form-data">
+                    <form class="form-horizontal" method="post" action="{{ url('check-document') }}" id="" enctype="multipart/form-data">
                         <div class="product-right-content">
                             <h3> {{ $vehicle->name }} </h3>
                             
@@ -67,6 +67,17 @@
                                 @endif
                                 <div class="col-12" >
                                     <div class="form-group form_style">
+                                        <label class="padding-30px-left-right">Registration City <span class="required">*</span></label>
+                                        <select name="city" id="city"  class="form-control vehicle-configuration" required>
+                                            <option  value=""> Select City </option>
+                                            @foreach ($city as $value)
+                                                <option  value="{{$value->name}}"> {{$value->name}} </option>
+                                            @endforeach	
+                                        </select>   
+                                    </div>                   
+                                </div>
+                                <div class="col-12" >
+                                    <div class="form-group form_style">
                                         <label class="padding-30px-left-right">Kilometer Driven <span class="required">*</span></label>
                                         <select name="kmdriven" id="kmdriven"  class="form-control vehicle-configuration" required>
                                             <option  value=""> Select Kilometer Driven   </option>
@@ -81,7 +92,7 @@
                                 @if($user)
                                     @csrf             
                                     <input type="hidden" value="{{ $vehicle->id }}" id="vehicle_id" name="vehicle_id">    
-                                    <button type="submit" class="thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle"> Schedule Appointment  <i class="fal fa-chevron-right ml-2"></i></button>              
+                                    <button type="submit" class="thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle"> Next Step <i class="fal fa-chevron-right ml-2"></i></button>              
                                 @else
                                     <a href="javascript:void(0)" class="open-login head_trigger thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle"> Schedule Appointment <i class="fal fa-chevron-right ml-2"></i></a>
                                 @endif

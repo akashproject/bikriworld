@@ -11,7 +11,10 @@ use App\Models\Brand;
 use App\Models\Accessories;
 use App\Models\Age;
 use App\Models\Condition;
+use App\Models\DeviceConfig;
+use App\Models\Series;
 use App\Models\ProductConfigPrice;
+
 class QuestionController extends Controller
 {
     public $userdata = '';
@@ -22,22 +25,48 @@ class QuestionController extends Controller
     
     public function index(Request $request){
         $user = $this->userdata;
+       
         try {
-            $productData = $request->all();
-            $category_id = $request->session()->get('selling_category');
 
-            if(isset($productData['series_price']) && $productData['series_price'] != ''){
-                $request->session()->put('series_price', $productData['series_price']);
+            $category_id = $request->session()->get('selling_category');
+            $productData = $request->all();
+
+            
+            $veriationPrice = 0;
+
+            if(isset($productData['config']) && $productData['config']){
+                // Device Configuration Price
+                $configPrice = DeviceConfig::select('price')
+                ->whereIn('id', $productData['config'])
+                ->get(); 
+
+                foreach($configPrice as $key => $value){
+                    $veriationPrice += $value->price;
+                }
+
+                // Device Configuration Extra Price
+                $productConfigPrice = ProductConfigPrice::select('price')
+                ->where('product_id', '=', $productData['product_id'])
+                ->whereIn('config_id', $productData['config'])
+                ->get(); 
+                foreach($productConfigPrice as $key => $value){
+                    $veriationPrice += $value->price;
+                }
+            } else {
+                $veriationPrice = $productData['veriation_price'];
             }
 
-            if(isset($productData['config_price']) && $productData['config_price'] != ''){
-                $request->session()->put('config_price', $productData['config_price']);
+            if(isset($productData['series_price']) && $productData['series_price'] != ''){
+                $veriationPrice += $value->price;
             }
 
             $questions = Question::where('category_id', $category_id)->get();
             $product = Product::find($productData['product_id']);
-            $veriationPrice = $productData['veriation_price'];
+
+
             $veriationType = $productData['veriation_type'];
+
+
             $tobSellingBrands = Brand::inRandomOrder()->limit(10)->get();
             $tobSellingProducts = Product::inRandomOrder()->limit(10)->get();
             return view('questions.index',compact('questions','product','user','tobSellingBrands','tobSellingProducts','veriationPrice','veriationType'));
@@ -122,10 +151,7 @@ class QuestionController extends Controller
                    
             $sum_deduction = 0;
             $brand_id = Product::find($callculatedData['product_id'])->brand_id;
-            $series_price = $request->session()->get('series_price');
-            $config_price = $request->session()->get('config_price');
             
-            $veriation_price = $veriation_price + $config_price + $series_price;
             // Deduction calculation by question
             foreach ($callculatedData['question_id'] as $key => $value) {
                 $question = Question::find($key);

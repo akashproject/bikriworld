@@ -1,5 +1,6 @@
 
 const city = ["Howrah", "Kolkata", "Patna"];
+const veriationPrice = [];
 (function($) {
     'use strict';
     // Preloader
@@ -783,31 +784,32 @@ const city = ["Howrah", "Kolkata", "Patna"];
 
     $(".device-configuration").on("change",function(){
 
-        let config_id = $(this).attr("id");
-        console.log($('#'+config_id+' option:selected').attr('data-id'));
+        // let config_id = $(this).attr("id");
+        // veriationPrice[config_id] = $(this).val();
 
-        $.ajaxSetup({
-            headers: {
-             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            }
-        });
+        // // price = parseInt(price)+parseInt($(this).val());
+        // // $("#veriation_price").val(price);
 
-        $.ajax({
-            url: `https://${window.location.hostname}/get-product-config-price`,
-            type: "post",
-            data: {
-                config_id: $('#'+config_id+' option:selected').attr('data-id'),
-                product_id:$("#product_id").val()
-            },
-            success: function(result) {
-                let config_price = parseInt($("#config_price").val()) + parseInt(result);
-                $("#config_price").val(config_price);
-            }
-        });
-        
+        // $.ajaxSetup({
+        //     headers: {
+        //      'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        //     }
+        // });
 
-        price = parseInt(price)+parseInt($(this).val());
-        $("#veriation_price").val(price);
+        // $.ajax({
+        //     url: `https://${window.location.hostname}/get-product-config-price`,
+        //     type: "post",
+        //     data: {
+        //         config_id: $('#'+config_id+' option:selected').attr('data-id'),
+        //         product_id:$("#product_id").val()
+        //     },
+        //     success: function(result) {
+
+        //         let config_price = parseInt($("#config_price").val()) + parseInt(result);
+        //         //$("#config_price").val(config_price);
+        //         veriationPrice["config-"+config_id] = result;
+        //     }
+        // });
 
         let processor = $("#deviceProcessor option:selected" ).text();
         let ram = $("#deviceRam option:selected" ).text();
@@ -821,6 +823,7 @@ const city = ["Howrah", "Kolkata", "Patna"];
 
 
     // Easy pie bar
+    
     $(".circle_bar").each(function() {
         var circleBar = $(this);
         $(circleBar).one('inview', function(event, isInView) {

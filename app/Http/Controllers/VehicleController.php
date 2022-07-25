@@ -11,6 +11,7 @@ use App\Models\Series;
 use App\Models\User;
 use App\Models\VehicleVariation;
 use App\Models\Order;
+use App\Models\City;
 use Mail;
 
 
@@ -44,17 +45,20 @@ class VehicleController extends Controller
             }
             $year = VehicleVariation::where('type', "year")->get();
             $km = VehicleVariation::where('type', "km")->get();
+            $city = City::all();
             
             $tobSellingBrands = Brand::inRandomOrder()->limit(10)->get();
             $tobSellingProducts = Product::inRandomOrder()->limit(10)->get();
             $series = Series::find($vehicle->series_id);
             
 
-            return view('vehicle.view',compact('series','vehicle','user','tobSellingBrands','tobSellingProducts','year','km'));       
+            return view('vehicle.view',compact('series','vehicle','user','tobSellingBrands','tobSellingProducts','year','km','city'));       
             
         } catch(\Illuminate\Database\QueryException $e){
         }
     }
+
+    
 
     public function bookAppointment(Request $request){
         
