@@ -48,7 +48,7 @@ class VehicleController extends Controller
             }
             $year = VehicleVariation::where('type', "year")->get();
             $km = VehicleVariation::where('type', "km")->get();
-            $city = City::all();
+            $city = City::orderBy('name')->get();
             
             $tobSellingBrands = Brand::where('category_id', 'like', '%"' . $id . '"%')->inRandomOrder()->limit(10)->get();
             $tobSellingProducts = Product::where('category_id', 'like', '%"' . $id . '"%')->inRandomOrder()->limit(10)->get();
