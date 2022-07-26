@@ -84,5 +84,7 @@ Route::get('/terms-conditions', [App\Http\Controllers\UserController::class, 'te
 
 // Vehicle Module
 Route::get('/view-vehicle/{id}', [App\Http\Controllers\VehicleController::class, 'view'])->name('product-view');
+Route::post('/given-document', [App\Http\Controllers\VehicleController::class, 'givenDocuments'])->name('given-document');
+Route::post('/vehicle-condition', [App\Http\Controllers\VehicleController::class, 'vehicleCondition'])->name('vehicle-condition');
 Route::post('/book-appointment', [App\Http\Controllers\VehicleController::class, 'bookAppointment'])->name('book-appointment');
 Route::post('/confirm-booking', [App\Http\Controllers\VehicleController::class, 'confirmBooking'])->name('confirm-booking');

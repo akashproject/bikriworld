@@ -9,6 +9,7 @@ use App\Models\Order;
 use App\Models\Age;
 use App\Models\Accessories;
 use App\Models\Question;
+use App\Models\Condition;
 class OrderController extends Controller
 {
     public $_statusOK = 200;
@@ -45,26 +46,36 @@ class OrderController extends Controller
             ->first();
             
             $device_condition = json_decode($order->device_condition,true);
+            $age = new age();
+            if (isset($device_condition['age_id'])) {
+                $age = Age::findOrFail($device_condition['age_id'])->first();
+            }
+
+            $condition = new condition();
+            if (isset($device_condition['condition_id'])) {
+                $condition = Condition::findOrFail($device_condition['condition_id'])->first();
+            }
             
-            $age = Age::findOrFail($device_condition['age_id'])->first();
             $accessories = array();
-            if($device_condition['accessories']){
+            if(isset($device_condition['accessories'])){
                 $accessories = Accessories::whereIn('id', $device_condition['accessories'])->get();
             }
             
             
             $questions = array();
-            foreach ($device_condition['question_id'] as $key => $value) {
-                $question = DB::table('calculation_question')
-                ->where('calculation_question.id', '=', $key)
-                ->select('calculation_question.question')->first();
-                if(isset($question)){
-                    $questions[$question->question] = ($value == '1')?"Yes":"No";
+            if(isset($device_condition['question_id'])){
+                foreach ($device_condition['question_id'] as $key => $value) {
+                    $question = DB::table('calculation_question')
+                    ->where('calculation_question.id', '=', $key)
+                    ->select('calculation_question.question')->first();
+                    if(isset($question)){
+                        $questions[$question->question] = ($value == '1')?"Yes":"No";
+                    }
+                    
                 }
-                
             }
 
-            return view('order.show',compact('order','age','accessories','questions'));
+            return view('order.show',compact('order','age','condition','accessories','questions'));
         } catch(\Illuminate\Database\QueryException $e){
         }        
     }

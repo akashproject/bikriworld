@@ -42,7 +42,7 @@
                     </article>
                 </div>
                 <div class="col-lg-7 col-8">
-                    <form class="form-horizontal" method="post" action="{{ url('check-document') }}" id="" enctype="multipart/form-data">
+                    <form class="form-horizontal" method="post" action="{{ url('given-document') }}" id="" enctype="multipart/form-data">
                         <div class="product-right-content">
                             <h3> {{ $vehicle->name }} </h3>
                             

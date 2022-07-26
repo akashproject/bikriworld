@@ -53,6 +53,7 @@
 						@foreach ($questions as $key => $value)
 						<span > {{$key}} : {{ $value }} <br> </span >
 						@endforeach		
+						<span >{{ $condition->condition }}</span >
 					</div>
 				</div>
 				<div class="form-group row">
