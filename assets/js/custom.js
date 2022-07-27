@@ -381,7 +381,8 @@ const veriationPrice = [];
             type: "post",
             data: data,
             success: function(result) {
-                location.reload();
+                //location.reload();
+                $("#checkexactvalue").submit();
                 // //result = JSON.parse(result);
                 // if (result) {
                 //     location.reload();
@@ -431,8 +432,8 @@ const veriationPrice = [];
                     jQuery(".response_status").html("You have enter wrong credentials");
                     return false;
                 } else {
-                    location.reload();
-                    //window.location = $(".redirectUrl").val();
+                    //location.reload();
+                    $("#checkexactvalue").submit();
                 }
             }
         });

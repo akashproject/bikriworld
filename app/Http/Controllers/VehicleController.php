@@ -110,6 +110,7 @@ class VehicleController extends Controller
         $vehicleData['condition_id'] = $data['condition_id'];        
         $request->session()->put('vehicleData', $vehicleData);
 
+        
         $product = Product::find($vehicleData['vehicle_id']);
         return view('vehicle.book-appointment',compact('product','vehicleData','user'));
         

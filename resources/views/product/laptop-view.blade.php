@@ -43,6 +43,7 @@
                 </div>
                 <div class="col-lg-7 col-8">
                     <form class="form-horizontal" method="post" action="{{ url('question') }}" id="checkexactvalue" enctype="multipart/form-data">
+                        @csrf
                         <div class="product-right-content">
                             <h3> {{ $product->name }} </h3>
                             <p > get upto </p>
@@ -121,12 +122,11 @@
                                 </div>
                             </div>
                             <div class="calculate-price-btn">
-                                @if($user)
-                                    @csrf
-                                    <input type="hidden" value="{{ $product->id }}" id="product_id" name="product_id">
-                                    <input type="hidden" name="veriation_type" id="veriation_type">
-                                    <input type="hidden" name="veriation_price" id="veriation_price" value="{{$product->max_price}}" >
-                                    <input type="hidden" name="series_price" id="series_price" value="{{(isset($series->price))?$series->price:''}}" >
+                                <input type="hidden" value="{{ $product->id }}" id="product_id" name="product_id">
+                                <input type="hidden" name="veriation_type" id="veriation_type">
+                                <input type="hidden" name="veriation_price" id="veriation_price" value="{{$product->max_price}}" >
+                                <input type="hidden" name="series_price" id="series_price" value="{{(isset($series->price))?$series->price:''}}" >
+                                @if($user)                                                                      
                                     <!-- <input type="hidden" name="config_price" id="config_price" value="0" > -->
                                     <button type="submit" class="thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle"> Get Exact Value <i class="fal fa-chevron-right ml-2"></i></button>
                                 @else

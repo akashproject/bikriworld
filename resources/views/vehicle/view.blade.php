@@ -42,7 +42,7 @@
                     </article>
                 </div>
                 <div class="col-lg-7 col-8">
-                    <form class="form-horizontal" method="post" action="{{ url('given-document') }}" id="" enctype="multipart/form-data">
+                    <form class="form-horizontal" method="post" action="{{ url('given-document') }}" id="exact-price-module" enctype="multipart/form-data">
                         <div class="product-right-content">
                             <h3> {{ $vehicle->name }} </h3>
                             
@@ -89,13 +89,14 @@
                                 </div>
                             </div>
                             <div class="calculate-price-btn">
-                                @if($user)
-                                    @csrf             
-                                    <input type="hidden" value="{{ $vehicle->id }}" id="vehicle_id" name="vehicle_id">    
-                                    <button type="submit" class="thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle"> Next Step <i class="fal fa-chevron-right ml-2"></i></button>              
+                                @csrf             
+                                <input type="hidden" value="{{ $vehicle->id }}" id="vehicle_id" name="vehicle_id">    
+                                <button type="submit" class="thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle"> Next Step <i class="fal fa-chevron-right ml-2"></i></button>           
+                                <!-- @if($user)
+                                    
                                 @else
                                     <a href="javascript:void(0)" class="open-login head_trigger thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle"> Schedule Appointment <i class="fal fa-chevron-right ml-2"></i></a>
-                                @endif
+                                @endif -->
                                 
                             </div>
                         </div>
