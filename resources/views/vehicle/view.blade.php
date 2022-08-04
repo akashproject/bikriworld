@@ -42,7 +42,7 @@
                     </article>
                 </div>
                 <div class="col-lg-7 col-8">
-                    <form class="form-horizontal" method="post" action="{{ url('given-document') }}" id="exact-price-module" enctype="multipart/form-data">
+                    <form class="form-horizontal" method="post" action="{{ url('given-document') }}" id="checkexactvalue" enctype="multipart/form-data">
                         <div class="product-right-content">
                             <h3> {{ $vehicle->name }} </h3>
                             
@@ -68,12 +68,13 @@
                                 <div class="col-12" >
                                     <div class="form-group form_style">
                                         <label class="padding-30px-left-right">Registration City <span class="required">*</span></label>
-                                        <select name="city" id="city"  class="form-control vehicle-configuration" required>
+                                        <input type="text" list="city" name="city" class="form-control vehicle-configuration" required />
+                                        <datalist id="city" >
                                             <option  value=""> Select City </option>
                                             @foreach ($city as $value)
                                                 <option  value="{{$value->name}}"> {{$value->name}} </option>
                                             @endforeach	
-                                        </select>   
+                                        </datalist>   
                                     </div>                   
                                 </div>
                                 <div class="col-12" >
@@ -91,7 +92,11 @@
                             <div class="calculate-price-btn">
                                 @csrf             
                                 <input type="hidden" value="{{ $vehicle->id }}" id="vehicle_id" name="vehicle_id">    
-                                <button type="submit" class="thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle"> Next Step <i class="fal fa-chevron-right ml-2"></i></button>           
+                                @if($user)                                                                       
+                                    <button type="submit" class="thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle"> Next <i class="fal fa-chevron-right ml-2"></i></button>
+                                @else
+                                    <a href="javascript:void(0)" id="product_sign_in" class="open-login head_trigger thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle"> Next <i class="fal fa-chevron-right ml-2"></i></a>
+                                @endif      
                                 <!-- @if($user)
                                     
                                 @else

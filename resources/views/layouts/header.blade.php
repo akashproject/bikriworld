@@ -145,7 +145,7 @@ Preloader End -->
 <!-- Canvas End -->
 @if(Request::is('/'))
 <!-- Header Start -->
-<header class="header header-absolute can-sticky">
+<header class="header header-absolute">
     <div class="container">
         <!-- inner -->
         <div class="nav_warp">
