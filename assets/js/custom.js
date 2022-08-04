@@ -783,6 +783,10 @@ const veriationPrice = [];
         
     });
 
+    $(".desktop_trigger").on("click",function(){
+        $(this).attr("id");
+    })
+
     $(".device-configuration").on("change",function(){
 
         // let config_id = $(this).attr("id");

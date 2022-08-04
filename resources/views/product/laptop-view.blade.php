@@ -130,7 +130,7 @@
                                     <!-- <input type="hidden" name="config_price" id="config_price" value="0" > -->
                                     <button type="submit" class="thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle"> Get Exact Value <i class="fal fa-chevron-right ml-2"></i></button>
                                 @else
-                                    <a href="javascript:void(0)" class="open-login head_trigger thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle"> Get Exact Value <i class="fal fa-chevron-right ml-2"></i></a>
+                                    <a href="javascript:void(0)" id="product_sign_in"  class="open-login head_trigger thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle"> Get Exact Value <i class="fal fa-chevron-right ml-2"></i></a>
                                 @endif
                                 
                             </div>

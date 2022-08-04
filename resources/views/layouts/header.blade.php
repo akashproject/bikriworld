@@ -253,8 +253,8 @@ Preloader End -->
                     </div>
                     <a href="#select-city-popup" class="dashboard open-city-popup" style="width:75%;margin-left: 22px;padding: 5px;"> <i class="fal fa-map-marker ml-2"></i> <span class="user_selected_city"> {{ (array_key_exists('userCity',$_COOKIE)) ? $_COOKIE['userCity'] : 'Select City' }} </span> <i class="fal fa-angle-down ml-2"></i> </a>
                     @if(Session::get('userData'))
-                        <a href="{{ url('dashboard') }}" class="dashboard" style=width:75%;margin-left: 22px;padding: 5px;border: 1px solid var(--thm-color-two);border-radius: 10px;"> Dashboard <i class="fal fa-home ml-2"></i></a>
-                        <a href="{{ url('logout') }}" class="dashboard" style=width:75%;margin-left: 22px;padding: 5px;"> Logout <i class="fal fa-sign-out ml-2"></i></a>
+                        <a href="{{ url('dashboard') }}" class="dashboard" style="width:75%;margin-left: 22px;padding: 5px;border: 1px solid var(--thm-color-two);border-radius: 10px;"> Dashboard <i class="fal fa-home ml-2"></i></a>
+                        <a href="{{ url('logout') }}" class="dashboard" style="width:75%;margin-left: 22px;padding: 5px;"> Logout <i class="fal fa-sign-out ml-2"></i></a>
                     @else
                         <a href="javascript:void(0)" class="head_trigger desktop_trigger thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle">Sign In <i class="fal fa-chevron-right ml-2"></i></a>
                     @endif
