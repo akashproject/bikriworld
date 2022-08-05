@@ -24,9 +24,7 @@
 					<div class="col-sm-9">
 						<select name="category_id" id="category_id" class="select2 form-control custom-select" style="width: 100%;">
 							<option value="">Select Category</option>
-							@foreach($categories as $category)
-							<option value="{{$category->id}}" > {{$category->name}} </option>
-							@endforeach
+							<option value="12" > Motorcycle </option>
 						<select>
 					</div>
 				</div>		
