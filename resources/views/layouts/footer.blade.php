@@ -1,4 +1,4 @@
-<footer class="footer">
+<footer class="footer text-center">
     <div class="container">
         <div class="footer_top section-padding">
             <div class="row">
@@ -115,7 +115,7 @@
         <div class="col-4 col-lg-2">
              <a href="javascript:void(0)" class="city-search-list" data-city="Delhi">
                 <img src="{{ url('assets/images/Delhi.png') }}">
-                <p class="text-center" style="color: #565353;font-weight: 600;" >Delhi NCR</p>
+                <p class="text-center" style="color: #565353;font-weight: 600;" >Delhi</p>
             </a>
         </div>
         <div class="col-4 col-lg-2">
@@ -144,7 +144,7 @@
         </div>
     </div>
 </div>
-<a class="service-modal" href="#city-service" style="position:absolute;right:-200%">Open modal</a>
+<a class="service-modal" href="#city-service" style="visibility:hidden">Open modal</a>
 
 <div id="city-service" class="white-popup mfp-hide">
 	<h4>Service will be coming soon on your city</h4>

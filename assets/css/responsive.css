@@ -467,6 +467,12 @@
 }
 
 @media (max-width: 767px) {
+
+    .city-search-list img{
+        width: 68px;
+        max-width: fit-content;
+    }
+
     .cancel_payment_btn{
         float: none;
         margin-top: 10px;
@@ -795,7 +801,7 @@
 
     label.error {
         position: absolute;
-        top: 47px;
+        top: 40px;
         font-size: 12px;
     }
 
@@ -805,6 +811,12 @@
         font-size: 17px;
     }
 
+    .answer_row .answer_list .form-check-label {
+        height: auto;
+        padding: 0.6rem 0.75rem;
+        padding-left: 1.75rem;
+    }
+    
     .why_us_box,
     .banner .image_box {
         /* display: none; */

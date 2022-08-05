@@ -5991,7 +5991,7 @@ a.head_trigger.desktop_trigger {
 
 .footer .ft_about .social {
 
-    display: flex;
+    display: inline-flex;
 
     margin-top: 20px;
 
@@ -10250,16 +10250,16 @@ label#veriation_choice-error {
 
 
 .variant:hover {
-    background: #4b83fb;
+    background: #00986b;
     color: #fff;
 }
 .variant:active {
-    background: #4b83fb;
+    background: #00986b;
     color: #fff;
 }
 
 .variant.active {
-    background: #4b83fb;
+    background: #00986b;
     color: #fff;
 }
 
