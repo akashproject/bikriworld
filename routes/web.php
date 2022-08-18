@@ -13,6 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Methods: POST, GET, OPTIONS, PUT, DELETE, PATCH');
+header('Access-Control-Allow-Headers: Content-Type, X-Auth-Token, Origin, Authorization');
+
 Route::get('/clear-cache', function() {
     $exitCode = Artisan::call('cache:clear');
     // return what you want
@@ -88,3 +92,10 @@ Route::post('/given-document', [App\Http\Controllers\VehicleController::class, '
 Route::post('/vehicle-condition', [App\Http\Controllers\VehicleController::class, 'vehicleCondition'])->name('vehicle-condition');
 Route::post('/book-appointment', [App\Http\Controllers\VehicleController::class, 'bookAppointment'])->name('book-appointment');
 Route::post('/confirm-booking', [App\Http\Controllers\VehicleController::class, 'confirmBooking'])->name('confirm-booking');
+
+
+
+
+// Api Route
+Route::get('/api-categories', [App\Http\Controllers\ApiCategoriesController::class, 'apiIndex'])->name('api-categories-index');
+Route::get('/api-brands/{id}', [App\Http\Controllers\ApiCategoriesController::class, 'apiBrands'])->name('api-brands-index');
