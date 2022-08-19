@@ -99,3 +99,4 @@ Route::post('/confirm-booking', [App\Http\Controllers\VehicleController::class, 
 // Api Route
 Route::get('/api-categories', [App\Http\Controllers\ApiCategoriesController::class, 'apiIndex'])->name('api-categories-index');
 Route::get('/api-brands/{id}', [App\Http\Controllers\ApiCategoriesController::class, 'apiBrands'])->name('api-brands-index');
+Route::post('/api-products', [App\Http\Controllers\ApiProductsController::class, 'listProduct'])->name('api-products');
