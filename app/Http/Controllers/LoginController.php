@@ -22,7 +22,18 @@ class LoginController extends Controller
     }
 
     public function submitMobileOtp(Request $request){
-        $otpValue = array('otp'=>'1234');
+
+        $otpValue = rand(000000,999999);
+        
+        // $url = "https://2factor.in/API/V1/30060f8f-034f-11eb-9fa5-0200cd936042/SMS/+919836555023/990375/OTP1";
+
+        // $curl = curl_init($url);
+        // curl_setopt($curl, CURLOPT_URL, $url);
+        // curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+
+        // $resp = curl_exec($curl);
+        // curl_close($curl);
+
         return response()->json($otpValue, $this->_statusOK);
     }
 
@@ -64,6 +75,8 @@ class LoginController extends Controller
         }
 
     }
+
+
 
 
 
