@@ -56,6 +56,90 @@ Preloader End -->
 </aside>
 <div class="aside-overlay trigger-left"></div>
 <!-- Mobile Menu End -->
+<aside class="aside_bar aside_bar_right aside_canvas_global">
+    <!-- logo -->
+    <a href="{{  url('') }}" class="logo pl-0">
+        <img src="{{ url('assets/images/logo.png') }}" alt="logo">
+    </a>
+    <a href="javascript:void(0)" class="close_aside">
+        <i class="fa fa-times" aria-hidden="true"></i>
+    </a>
+    <!-- logo -->
+    <!-- <p>Sed ut perspiciatis unde omnis iste natus error voluptatem accan tium doloremque laudantium totam rem aperiam</p> -->
+    <div class="sidebar">
+        <form id="global_signin_form"  class="mf_form_validate ajax_submit" action="#" method="post" enctype="multipart/form-data">
+            <div class="sidebar_widget recent_widgets aside_login_form">
+                <h5 class="widget_title">Wellcome to Bikriworld</h5>
+                <div class="response_status" style="color: #ff0000;"></div>
+                <div class="row">
+                    <div class="col-12">
+                        <label class="padding-30px-left-right">Please enter your mobile number <span class="required">*</span></label>
+                        <div class="form-group custom_form_style">
+                            <input type="text" name="mobile" class="form-control" autocomplete="off" placeholder="Enter Mobile Number">
+                        </div>
+                    </div>                   
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                    <label class="padding-30px-left-right">Please enter your Password <span class="required">*</span></label>
+                        <div class="form-group custom_form_style">
+                            <input type="password" name="password" class="form-control" autocomplete="off" placeholder="Enter Your Password" value="">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <button type="submit" href="javascript:void(0)" class="submit_login_btn thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle width-100"> Continue <i class="fal fa-chevron-right ml-2"></i></button> 
+                    </div>
+                </div>
+            </div>
+            <div class="sidebar_widget text-center">
+                <span > Or </span>
+                <a href="javascript:void();"class="open_global_signup" >Register Yourself</a>                
+            </div>
+        </form>
+        <form id="global_signup_form" style="display:none" class="mf_form_validate ajax_submit" action="#" method="post" enctype="multipart/form-data">
+            <div class="sidebar_widget recent_widgets aside_login_form">
+                <h5 class="widget_title">Wellcome to Bikriworld</h5>
+                <div class="response_status" style="color: #ff0000;"></div>
+                <div class="row">
+                    <div class="col-12">
+                        <label class="padding-30px-left-right">Please your Name <span class="required">*</span></label>
+                        <div class="form-group custom_form_style">
+                            <input type="text" name="name" class="form-control" autocomplete="off" placeholder="Enter Name">
+                        </div>
+                    </div>                 
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <label class="padding-30px-left-right">Please enter your mobile number <span class="required">*</span></label>
+                        <div class="form-group custom_form_style">
+                            <input type="text" name="mobile" class="form-control" autocomplete="off" placeholder="Enter Mobile Number">
+                        </div>
+                    </div>                   
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                    <label class="padding-30px-left-right">Please enter password <span class="required">*</span></label> 
+                        <div class="form-group custom_form_style">
+                            <input type="password" name="password" class="form-control verify_otp" autocomplete="off" placeholder="Enter your Password" value="">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <button type="submit" href="javascript:void(0)" class="submit_login_btn thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle width-100"> Continue <i class="fal fa-chevron-right ml-2"></i></button>
+                    </div>
+                </div>
+
+            </div>
+            <div class="sidebar_widget text-center">
+                <span > Or </span>
+                <a href="javascript:void();"class="open_global_signin" >Login to your profile</a>     
+            </div>
+        </form>
+    </div>
+</aside>
 <!-- Canvas Start -->
 <aside class="aside_bar aside_bar_right aside_canvas">
     <!-- logo -->
@@ -141,6 +225,7 @@ Preloader End -->
         </form>
     </div>
 </aside>
+
 <div class="aside-overlay trigger-right"></div>
 <!-- Canvas End -->
 @if(Request::is('/'))
@@ -179,7 +264,7 @@ Preloader End -->
                     <a href="{{ url('dashboard') }}" class="dashboard" style="width:75%;margin-left: 22px;padding: 5px;border: 1px solid var(--thm-color-two);border-radius: 10px;"> Dashboard <i class="fal fa-home ml-2"></i></a>
                     <a href="{{ url('logout') }}" class="dashboard" style="width:75%;margin-left: 22px;padding: 5px;"> Logout <i class="fal fa-sign-out ml-2"></i></a>
                 @else
-                    <a href="javascript:void(0)" class="head_trigger desktop_trigger thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle">Sign In <i class="fal fa-chevron-right ml-2"></i></a>
+                    <a href="javascript:void(0)" class="head_trigger global_desktop_trigger thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle">Sign In <i class="fal fa-chevron-right ml-2"></i></a>
                 @endif
                 <button type="button" class="head_trigger mobile_trigger">
                     <span></span>

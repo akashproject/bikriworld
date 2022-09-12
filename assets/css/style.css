@@ -4378,7 +4378,7 @@ a.close_aside i {
     display: inline;
 }
 
-a.head_trigger.desktop_trigger {
+a.head_trigger.desktop_trigger, a.head_trigger.global_desktop_trigger {
     width: 52% !important;
     padding: 24px;
 }

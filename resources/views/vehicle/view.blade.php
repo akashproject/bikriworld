@@ -68,20 +68,20 @@
                                 <div class="col-12" >
                                     <div class="form-group form_style">
                                         <label class="padding-30px-left-right">Registration City <span class="required">*</span></label>
-                                        <input type="text" list="city" name="city" class="form-control vehicle-configuration" required />
-                                        <datalist id="city" >
+                                        <input type="text" list="city" placeholder="Registration City" name="city" class="form-control vehicle-configuration" required />
+                                        <!-- <datalist id="city" >
                                             <option  value=""> Select City </option>
                                             @foreach ($city as $value)
                                                 <option  value="{{$value->name}}"> {{$value->name}} </option>
                                             @endforeach	
-                                        </datalist>   
+                                        </datalist>    -->
                                     </div>                   
                                 </div>
                                 <div class="col-12" >
                                     <div class="form-group form_style">
                                         <label class="padding-30px-left-right">Kilometer Driven <span class="required">*</span></label>
                                         <select name="kmdriven" id="kmdriven"  class="form-control vehicle-configuration" required>
-                                            <option  value=""> Select Kilometer Driven   </option>
+                                            <option  value="">Kilometer Driven   </option>
                                             @foreach ($km as $value)
                                                 <option  value="{{$value->name}}"> {{$value->name}} </option>
                                             @endforeach	

@@ -113,6 +113,23 @@ const veriationPrice = [];
         }
     });
 
+    $("#global_signin_form").validate({
+        rules: {
+            'mobile': {
+                required: true,
+                number: true,
+                maxlength: 10,
+                minlength: 10,
+            }
+        },
+        messages: {
+            'mobile': "Please type valid mobile number.",
+        },
+        submitHandler: function(form) {
+            loginProcessGlobal($(form).serialize());
+        }
+    });
+
     $("#signup_form").validate({
         rules: {
             'name': {
@@ -135,6 +152,31 @@ const veriationPrice = [];
         },
         submitHandler: function(form) {
             registerUser($(form).serialize());
+        }
+    });
+
+    $("#global_signup_form").validate({
+        rules: {
+            'name': {
+                required: true,
+            },
+            'mobile': {
+                required: true,
+                number: true,
+                maxlength: 10,
+                minlength: 10,
+            },
+            'password': {
+                required: true,
+            },
+        },
+        messages: {
+            'name': "Please type your name.",
+            'mobile': "Please type valid mobile number.",
+            'password': "Please type your password.",
+        },
+        submitHandler: function(form) {
+            registerUserGlobal($(form).serialize());
         }
     });
 
@@ -272,6 +314,11 @@ const veriationPrice = [];
         $(".aside_canvas").toggleClass('open');
     });
 
+    $(".global_desktop_trigger, .trigger-right").on('click', function() {
+        $(".global_desktop_trigger").toggleClass('active');
+        $(".aside_canvas_global").toggleClass('open');
+    });
+
     $(".open-login, .trigger-right").on('click', function() {
         $(".sell-now-btn").toggleClass('active');
         $(".aside_canvas").toggleClass('open');
@@ -289,6 +336,16 @@ const veriationPrice = [];
     $(".open_signin").click(function(){
         $('#signin_form').show();
         $('#signup_form').hide();
+    });
+
+    $(".open_global_signup").click(function(){
+        $('#global_signin_form').hide();
+        $('#global_signup_form').show();
+    });
+
+    $(".open_global_signin").click(function(){
+        $('#global_signin_form').show();
+        $('#global_signup_form').hide();
     });
     
 
@@ -391,6 +448,28 @@ const veriationPrice = [];
         });
     }
 
+    function registerUserGlobal(data){
+        $.ajaxSetup({
+            headers: {
+             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        $.ajax({
+            url: `https://${window.location.hostname}/register`,
+            type: "post",
+            data: data,
+            success: function(result) {
+                location.reload();
+                //$("#checkexactvalue").submit();
+                // //result = JSON.parse(result);
+                // if (result) {
+                //     location.reload();
+                // }
+            }
+        });
+    }
+
+
     function checkExist(mobile){
         $.ajaxSetup({
             headers: {
@@ -434,6 +513,27 @@ const veriationPrice = [];
                 } else {
                     //location.reload();
                     $("#checkexactvalue").submit();
+                }
+            }
+        });
+    }
+
+    function loginProcessGlobal(data){
+        $.ajaxSetup({
+            headers: {
+             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        $.ajax({
+            url: `https://${window.location.hostname}/access-profile`,
+            type: "post",
+            data: data,
+            success: function(result) {
+                if(result.userrecord == 'not-exist'){
+                    jQuery(".response_status").html("You have enter wrong credentials");
+                    return false;
+                } else {
+                    location.reload();
                 }
             }
         });
