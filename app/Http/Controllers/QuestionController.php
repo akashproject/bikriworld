@@ -199,7 +199,7 @@ class QuestionController extends Controller
 
             
             // Deduction calculation by conditions
-            $condition = Condition::find($callculatedData['condition_id'])->first();           
+            $condition = Condition::where('id', $callculatedData['condition_id'])->first();     
             $sum_deduction += $condition->deducted_amount;          
             $conditions = json_decode($condition->brand_id,true);
             
