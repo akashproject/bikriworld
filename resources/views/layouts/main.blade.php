@@ -37,23 +37,25 @@
     <link href="{{ url('assets/fonts/font-awesome.min.css') }}" rel="stylesheet">
     <link href="{{ url('assets/css/style.css') }}" rel="stylesheet">
     <link href="{{ url('assets/css/responsive.css') }}" rel="stylesheet">
-    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-10993657790"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-10993657790');
+    </script>
+    @if(URL::current() == "https://bikriworld.com/order-success")
+    <!-- Event snippet for Order Confirmed conversion page -->
+    <script>
+    gtag('event', 'conversion', {'send_to': 'AW-10993657790/HXbJCNywyOUDEL7Pl_oo'});
+    </script>
+    @endif
     @yield('style')
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-MTH2HF6');</script>
-    <!-- End Google Tag Manager -->
 
 </head>
 
 <body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MTH2HF6"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
     @include('layouts.header')
     @yield('content')
     @include('layouts.footer')

@@ -28,6 +28,7 @@ class OrderController extends Controller
             ->join('users', 'users.id', '=', 'orders.user_id')
             ->select('orders.*', 'product.name as product_name','users.name as user_fullname')
             ->distinct()
+            ->orderBy('created_at', 'desc')
             ->get();
             return view('order.index',compact('orders'));
         } catch(\Illuminate\Database\QueryException $e){
@@ -44,20 +45,21 @@ class OrderController extends Controller
             ->where('orders.id', '=', $id)
             ->select('orders.*','product.*','users.*', 'orders.id as order_id','product.name as product_name','users.name as user_fullname')
             ->first();
-            
+        
             $device_condition = json_decode($order->device_condition,true);
+           
             $age = new age();
             if (isset($device_condition['age_id'])) {
-                $age = Age::findOrFail($device_condition['age_id'])->first();
+                $age = Age::findOrFail($device_condition['age_id']);
             }
 
             $condition = new condition();
             if (isset($device_condition['condition_id'])) {
-                $condition = Condition::findOrFail($device_condition['condition_id'])->first();
+                $condition = Condition::findOrFail($device_condition['condition_id']);
             }
             
             $accessories = array();
-            if(isset($device_condition['accessories'])){
+            if(isset($device_condition['accessories']) && $device_condition['accessories'] != ""){
                 $accessories = Accessories::whereIn('id', $device_condition['accessories'])->get();
             }
             

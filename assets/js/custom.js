@@ -1039,16 +1039,16 @@ const veriationPrice = [];
 
     
     
-    $(window).on('load', function() {  
-        if($.cookie('userCity')  == null) {
-            $('.open-city-popup').trigger("click");
-        } else {
-            if(city.includes($.cookie('userCity'))){ } else {
-                console.log("Here",$.cookie('userCity'));
-                $('.service-modal').trigger("click");
-            }           
-        }
-    });
+    // $(window).on('load', function() {  
+    //     if($.cookie('userCity')  == null) {
+    //         $('.open-city-popup').trigger("click");
+    //     } else {
+    //         if(city.includes($.cookie('userCity'))){ } else {
+    //             console.log("Here",$.cookie('userCity'));
+    //             $('.service-modal').trigger("click");
+    //         }           
+    //     }
+    // });
 
     $(document).on("click","#select-city-popup .city-search-list",function(){
         let city = $(this).attr('data-city');
