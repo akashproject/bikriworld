@@ -219,8 +219,7 @@ class QuestionController extends Controller
             $request->session()->put('sellprice', $callculatedData);
             return redirect('/product-quote');
         } catch (\Throwable $th) {
-            echo $th;
-            //return view('common.error',compact('user'));
+            return view('common.error',compact('user'));
         }
         
     }
