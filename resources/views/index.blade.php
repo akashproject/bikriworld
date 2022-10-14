@@ -225,8 +225,8 @@
                 <div class="slide-item col-12">
                     <div class="testimonial_item">
                         <div class="author">
-                            <div class="image bg-thm-color-two">
-                                <img src="assets/images/author/1.jpg" alt="img" class="image-fit">
+                            <div class="image">
+                                <img src="assets/images/icons/user.png" alt="img" class="image-fit">
                             </div>
                             <div class="text">
                                 <h6 class="mb-0">Arvind kr</h6>
@@ -249,8 +249,8 @@
                 <div class="slide-item col-12">
                     <div class="testimonial_item">
                         <div class="author">
-                            <div class="image bg-thm-color-two">
-                                <img src="assets/images/author/2.jpg" alt="img" class="image-fit">
+                            <div class="image">
+                                <img src="assets/images/icons/user.png" alt="img" class="image-fit">
                             </div>
                             <div class="text">
                                 <h6 class="mb-0">Roushan Sharma</h6>
@@ -274,8 +274,8 @@
                 <div class="slide-item col-12">
                     <div class="testimonial_item">
                         <div class="author">
-                            <div class="image bg-thm-color-two">
-                                <img src="assets/images/author/3.jpg" alt="img" class="image-fit">
+                            <div class="image">
+                                <img src="assets/images/icons/user.png" alt="img" class="image-fit">
                             </div>
                             <div class="text">
                                 <h6 class="mb-0">UMITA KUMARI</h6>
@@ -299,8 +299,8 @@
                 <div class="slide-item col-12">
                     <div class="testimonial_item">
                         <div class="author">
-                            <div class="image bg-thm-color-two">
-                                <img src="assets/images/author/1.jpg" alt="img" class="image-fit">
+                            <div class="image">
+                                <img src="assets/images/icons/user.png" alt="img" class="image-fit">
                             </div>
                             <div class="text">
                                 <h6 class="mb-0">Prem Tiwari</h6>
@@ -324,8 +324,8 @@
                 <div class="slide-item col-12">
                     <div class="testimonial_item">
                         <div class="author">
-                            <div class="image bg-thm-color-two">
-                                <img src="assets/images/author/2.jpg" alt="img" class="image-fit">
+                            <div class="image">
+                                <img src="assets/images/icons/user.png" alt="img" class="image-fit">
                             </div>
                             <div class="text">
                                 <h6 class="mb-0">Abhishek Giri</h6>
