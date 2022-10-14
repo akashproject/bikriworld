@@ -144,6 +144,7 @@ class QuestionController extends Controller
         $user = $this->userdata;
         try {
             $data = $request->all();      
+            
             $callculatedData = $request->session()->get('sellprice');
             $callculatedData['condition_id'] = $data['condition_id'];
             $category_id = $request->session()->get('selling_category');
@@ -189,24 +190,27 @@ class QuestionController extends Controller
 
             
             // Deduction calculation by age
-            $age = Age::find($callculatedData['age_id'])->first();
+            $age = Age::find($callculatedData['age_id']);
             $sum_deduction += $age->deducted_amount;
-            $brands = json_decode($age->brand_id,true);
-            if(in_array($brand_id, $brands)){
-                $age_extra_amount = ($age->extra_deducted_amount / 100) * $veriation_price;
-                $sum_deduction += $age_extra_amount;
-            } 
+            if($age->brand_id){
+                $brands = json_decode($age->brand_id,true);
+                if(in_array($brand_id, $brands)){
+                    $age_extra_amount = ($age->extra_deducted_amount / 100) * $veriation_price;
+                    $sum_deduction += $age_extra_amount;
+                } 
+            }
 
             
             // Deduction calculation by conditions
-            $condition = Condition::where('id', $callculatedData['condition_id'])->first();     
-            $sum_deduction += $condition->deducted_amount;          
-            $conditions = json_decode($condition->brand_id,true);
-            
-            if(in_array($brand_id, $brands)){
-                $condition_extra_amount = ($condition->extra_deducted_amount / 100) * $veriation_price;
-                $sum_deduction += $condition_extra_amount;
-            } 
+            $condition = Condition::find($callculatedData['condition_id']); 
+            $sum_deduction += $condition->deducted_amount;   
+            if($condition->brand_id){             
+                $conditions = json_decode($condition->brand_id,true);    
+                if(in_array($brand_id, $brands)){
+                    $condition_extra_amount = ($condition->extra_deducted_amount / 100) * $veriation_price;
+                    $sum_deduction += $condition_extra_amount;
+                } 
+            }
             
            
             $exact_price = $veriation_price - $sum_deduction;
@@ -215,7 +219,8 @@ class QuestionController extends Controller
             $request->session()->put('sellprice', $callculatedData);
             return redirect('/product-quote');
         } catch (\Throwable $th) {
-            return view('common.error',compact('user'));
+            echo $th;
+            //return view('common.error',compact('user'));
         }
         
     }
