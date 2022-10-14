@@ -48,11 +48,16 @@
 					</div>
 				</div>
 				<div class="form-group row">
-					<label for="name" class="col-sm-3 text-right control-label col-form-label">Device Condition</label>
+					<label for="name" class="col-sm-3 text-right control-label col-form-label">Device Faults</label>
 					<div class="col-sm-9 text-left control-label col-form-label">
 						@foreach ($questions as $key => $value)
 						<span > {{$key}} : {{ $value }} <br> </span >
 						@endforeach		
+					</div>
+				</div>
+				<div class="form-group row">
+					<label for="name" class="col-sm-3 text-right control-label col-form-label">Device Condition</label>
+					<div class="col-sm-9 text-left control-label col-form-label">
 						<span >{{ $condition->condition }}</span >
 					</div>
 				</div>

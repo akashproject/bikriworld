@@ -122,7 +122,8 @@ class ProductController extends Controller
         $device_condition = array(
             'question_id' => $this->sellprice['question_id'],
             'accessories' => (isset($this->sellprice['accessories']))?$this->sellprice['accessories']:'',
-            'age_id' => $this->sellprice['age_id']
+            'age_id' => $this->sellprice['age_id'],
+            'condition_id' => $this->sellprice['condition_id'],
         );
         $orderData = array(
             'user_id' => $data['user_id'],

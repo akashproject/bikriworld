@@ -47,7 +47,6 @@ class OrderController extends Controller
             ->first();
         
             $device_condition = json_decode($order->device_condition,true);
-           
             $age = new age();
             if (isset($device_condition['age_id'])) {
                 $age = Age::findOrFail($device_condition['age_id']);
