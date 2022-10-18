@@ -4,59 +4,9 @@
 </div>
 Preloader End -->
 <!-- Mobile Menu Start -->
-<aside class="aside_bar aside_bar_left aside_mobile">
-    <!-- logo -->
-    <a href="{{  url('') }}" class="logo">
-        <img src="{{ url('assets/images/logo.png') }}" alt="logo">
-    </a>
-    <!-- logo -->
-    <div class="container mobile-top-menu">
-        <ul style="font-size:20px">
-            <li>
-                <a href="tel:+917439995068">
-                    <i class="fal fa-phone"></i>
-                    +91 7439 995 068              
-                </a>
-            </li>
-            <li>
-                <a href="mailto:service@bikriword.com">
-                    <i class="fal fa-envelope"></i>
-                    service@bikriword.com                  
-                </a>
-            </li>
-            <li>
-                <a href="#select-city-popup" class="open-city-popup"><i class="fal fa-map-marker"></i> <span class="user_selected_city"> {{ (array_key_exists('userCity',$_COOKIE)) ? $_COOKIE['userCity'] : 'Select City' }} </span>  </a>
-            </li>
-        </ul>
-    </div>
-    <!-- Menu -->
-    <nav>
-        <ul class="main-menu">                
-            @foreach ($navbars as $key => $navbarItem)
-                <li class="menu-item">
-                    <a class="menu-link" href="{{ url($key) }}">{{ $navbarItem }}</a>
-                </li>
-            @endforeach             
-            @if(Session::get('userData'))
-                <li class="menu-item">
-                    <a href="{{ url('dashboard') }}"> Dashboard </a>
-                </li>
-                <li class="menu-item">
-                    <a href="{{ url('logout') }}"> Log out </a>
-                </li>
-            @else
-                <li class="menu-item open-login">
-                    <a href="javascript:void(0);" class=""> Sign In </a>
-                </li>
-            @endif
-            
-        </ul>
-    </nav>
-    <!-- Menu -->
-</aside>
 <div class="aside-overlay trigger-left"></div>
 <!-- Mobile Menu End -->
-<aside class="aside_bar aside_bar_right aside_canvas_global">
+<aside class="aside_bar aside_bar_right aside_canvas">
     <!-- logo -->
     <a href="{{  url('') }}" class="logo pl-0">
         <img src="{{ url('assets/images/logo.png') }}" alt="logo">
@@ -108,95 +58,10 @@ Preloader End -->
             </div>
             <div class="sidebar_widget">
                 <input type="hidden" name="responsed_otp" class="responsed_otp" value="">
-
+                <input type="hidden" id="redirect_url" value="{{ (Route::current()->getName() == 'product-view') ? 'active' : '' }}">
                 <a type="button" href="javascript:void(0)" class="checkUserExistBtn thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle width-100"> Continue <i class="fal fa-chevron-right ml-2"></i></a>
 
                 <button type="submit" href="javascript:void(0)" class="loginSubmitBtn thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle width-100"> Continue <i class="fal fa-chevron-right ml-2"></i></button>
-            </div>
-        </form>
-    </div>
-</aside>
-<!-- Canvas Start -->
-<aside class="aside_bar aside_bar_right aside_canvas">
-    <!-- logo -->
-    <a href="{{  url('') }}" class="logo pl-0">
-        <img src="{{ url('assets/images/logo.png') }}" alt="logo">
-    </a>
-    <a href="javascript:void(0)" class="close_aside">
-        <i class="fa fa-times" aria-hidden="true"></i>
-    </a>
-    <!-- logo -->
-    <!-- <p>Sed ut perspiciatis unde omnis iste natus error voluptatem accan tium doloremque laudantium totam rem aperiam</p> -->
-    <div class="sidebar">
-        <form id="signin_form"  class="mf_form_validate ajax_submit" action="#" method="post" enctype="multipart/form-data">
-            <div class="sidebar_widget recent_widgets aside_login_form">
-                <h5 class="widget_title">Wellcome to Bikriworld</h5>
-                <div class="response_status" style="color: #ff0000;"></div>
-                <div class="row">
-                    <div class="col-12">
-                        <label class="padding-30px-left-right">Please enter your mobile number <span class="required">*</span></label>
-                        <div class="form-group custom_form_style">
-                            <input type="text" name="mobile" class="form-control" autocomplete="off" placeholder="Enter Mobile Number">
-                        </div>
-                    </div>                   
-                </div>
-                <div class="row">
-                    <div class="col-12">
-                    <label class="padding-30px-left-right">Please enter your Password <span class="required">*</span></label>
-                        <div class="form-group custom_form_style">
-                            <input type="password" name="password" class="form-control" autocomplete="off" placeholder="Enter Your Password" value="">
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-12">
-                        <button type="submit" href="javascript:void(0)" class="submit_login_btn thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle width-100"> Continue <i class="fal fa-chevron-right ml-2"></i></button> 
-                    </div>
-                </div>
-            </div>
-            <div class="sidebar_widget text-center">
-                <span > Or </span>
-                <a href="javascript:void();"class="open_signup" >Register Yourself</a>                
-            </div>
-        </form>
-        <form id="signup_form" style="display:none" class="mf_form_validate ajax_submit" action="#" method="post" enctype="multipart/form-data">
-            <div class="sidebar_widget recent_widgets aside_login_form">
-                <h5 class="widget_title">Wellcome to Bikriworld</h5>
-                <div class="response_status" style="color: #ff0000;"></div>
-                <div class="row">
-                    <div class="col-12">
-                        <label class="padding-30px-left-right">Please your Name <span class="required">*</span></label>
-                        <div class="form-group custom_form_style">
-                            <input type="text" name="name" class="form-control" autocomplete="off" placeholder="Enter Name">
-                        </div>
-                    </div>                 
-                </div>
-                <div class="row">
-                    <div class="col-12">
-                        <label class="padding-30px-left-right">Please enter your mobile number <span class="required">*</span></label>
-                        <div class="form-group custom_form_style">
-                            <input type="text" name="mobile" class="form-control" autocomplete="off" placeholder="Enter Mobile Number">
-                        </div>
-                    </div>                   
-                </div>
-                <div class="row">
-                    <div class="col-12">
-                    <label class="padding-30px-left-right">Please enter password <span class="required">*</span></label> 
-                        <div class="form-group custom_form_style">
-                            <input type="password" name="password" class="form-control verify_otp" autocomplete="off" placeholder="Enter your Password" value="">
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-12">
-                        <button type="submit" href="javascript:void(0)" class="submit_login_btn thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle width-100"> Continue <i class="fal fa-chevron-right ml-2"></i></button>
-                    </div>
-                </div>
-
-            </div>
-            <div class="sidebar_widget text-center">
-                <span > Or </span>
-                <a href="javascript:void();"class="open_signin" >Login to your profile</a>     
             </div>
         </form>
     </div>
@@ -240,7 +105,7 @@ Preloader End -->
                     <a href="{{ url('dashboard') }}" class="dashboard" style="width:75%;margin-left: 22px;padding: 5px;border: 1px solid var(--thm-color-two);border-radius: 10px;"> Dashboard <i class="fal fa-home ml-2"></i></a>
                     <a href="{{ url('logout') }}" class="dashboard" style="width:75%;margin-left: 22px;padding: 5px;"> Logout <i class="fal fa-sign-out ml-2"></i></a>
                 @else
-                    <a href="javascript:void(0)" class="head_trigger global_desktop_trigger thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle">Sign In <i class="fal fa-chevron-right ml-2"></i></a>
+                    <a href="javascript:void(0)" class="head_trigger desktop_trigger thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle">Sign In <i class="fal fa-chevron-right ml-2"></i></a>
                 @endif
                 <button type="button" class="head_trigger mobile_trigger">
                     <span></span>

@@ -60,8 +60,6 @@ const veriationPrice = [];
     
     });
 
-    
-
     $("#question_list_form").validate();
 
     $("#device-age").validate({
@@ -96,90 +94,6 @@ const veriationPrice = [];
         }
     });    
 
-    $("#signin_form").validate({
-        rules: {
-            'mobile': {
-                required: true,
-                number: true,
-                maxlength: 10,
-                minlength: 10,
-            }
-        },
-        messages: {
-            'mobile': "Please type valid mobile number.",
-        },
-        submitHandler: function(form) {
-            loginProcess($(form).serialize());
-        }
-    });
-
-    // $("#global_signin_form").validate({
-    //     rules: {
-    //         'mobile': {
-    //             required: true,
-    //             number: true,
-    //             maxlength: 10,
-    //             minlength: 10,
-    //         }
-    //     },
-    //     messages: {
-    //         'mobile': "Please type valid mobile number.",
-    //     },
-    //     submitHandler: function(form) {
-    //         loginProcessGlobal($(form).serialize());
-    //     }
-    // });
-
-    $("#signup_form").validate({
-        rules: {
-            'name': {
-                required: true,
-            },
-            'mobile': {
-                required: true,
-                number: true,
-                maxlength: 10,
-                minlength: 10,
-            },
-            'password': {
-                required: true,
-            },
-        },
-        messages: {
-            'name': "Please type your name.",
-            'mobile': "Please type valid mobile number.",
-            'password': "Please type your password.",
-        },
-        submitHandler: function(form) {
-            registerUser($(form).serialize());
-        }
-    });
-
-    $("#global_signup_form").validate({
-        rules: {
-            'name': {
-                required: true,
-            },
-            'mobile': {
-                required: true,
-                number: true,
-                maxlength: 10,
-                minlength: 10,
-            },
-            'password': {
-                required: true,
-            },
-        },
-        messages: {
-            'name': "Please type your name.",
-            'mobile': "Please type valid mobile number.",
-            'password': "Please type your password.",
-        },
-        submitHandler: function(form) {
-            registerUserGlobal($(form).serialize());
-        }
-    });
-
     $("#global_signin_form").validate({
         rules: {
             'mobile': {
@@ -196,7 +110,10 @@ const veriationPrice = [];
             var formId = "global_signin_form";
             var verifyOtp = $("#" + formId + " .verify_otp").val();
             var responsedOtp = $("#" + formId + " .responsed_otp").val();
-            if (verifyOtp != '') {
+            if (responsedOtp != '' & verifyOtp == '' ) {
+                jQuery("#" + formId + " .response_status").html("Please Enter One Time Password");
+                return false;
+            }else if (verifyOtp != '' && responsedOtp != '') {
                 verifyLoginOtp(form,formId,verifyOtp,responsedOtp);
             } else {
                 sendMobileOtp(formId);
@@ -324,16 +241,6 @@ const veriationPrice = [];
         $('#signin_form').show();
         $('#signup_form').hide();
     });
-
-    $(".open_global_signup").click(function(){
-        $('#global_signin_form').hide();
-        $('#global_signup_form').show();
-    });
-
-    $(".open_global_signin").click(function(){
-        $('#global_signin_form').show();
-        $('#global_signup_form').hide();
-    });
     
     // Search 
     $(".search_trigger>a, .close-search-trigger").on('click', function() {
@@ -411,47 +318,7 @@ const veriationPrice = [];
         });
     });
 
-    function registerUser(data){
-        $.ajaxSetup({
-            headers: {
-             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            }
-        });
-        $.ajax({
-            url: `https://${window.location.hostname}/register`,
-            type: "post",
-            data: data,
-            success: function(result) {
-                //location.reload();
-                $("#checkexactvalue").submit();
-                // //result = JSON.parse(result);
-                // if (result) {
-                //     location.reload();
-                // }
-            }
-        });
-    }
 
-    function registerUserGlobal(data){
-        $.ajaxSetup({
-            headers: {
-             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            }
-        });
-        $.ajax({
-            url: `https://${window.location.hostname}/register`,
-            type: "post",
-            data: data,
-            success: function(result) {
-                location.reload();
-                //$("#checkexactvalue").submit();
-                // //result = JSON.parse(result);
-                // if (result) {
-                //     location.reload();
-                // }
-            }
-        });
-    }
 
     $(".checkUserExistBtn").on('click', function(){
         let mobile = $("#global_signin_form input[name=mobile]").val();
@@ -492,27 +359,6 @@ const veriationPrice = [];
         });
     }
 
-    function loginProcess(data){
-        $.ajaxSetup({
-            headers: {
-             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            }
-        });
-        $.ajax({
-            url: `https://${window.location.hostname}/access-profile`,
-            type: "post",
-            data: data,
-            success: function(result) {
-                if(result.userrecord == 'not-exist'){
-                    jQuery(".response_status").html("You have enter wrong credentials");
-                    return false;
-                } else {
-                    //location.reload();
-                    $("#checkexactvalue").submit();
-                }
-            }
-        });
-    }
 
     function verifyLoginOtp(form,formId,verifyOtp,responsedOtp) {
         $.ajaxSetup({
@@ -556,7 +402,15 @@ const veriationPrice = [];
                     jQuery(".response_status").html("You have enter wrong credentials");
                     return false;
                 } else {
-                    location.reload();
+                    console.log($("#redirect_url").val());
+                    if($("#redirect_url").val() == 'active'){
+                        console.log("if");
+                        $("#checkexactvalue").submit();
+                    } else {
+                        console.log("else");
+                        location.reload();
+                    }
+                    
                 }
             }
         });
@@ -581,7 +435,7 @@ const veriationPrice = [];
                 if (result) {
                     jQuery("#" + formId + " .responsed_otp").val(result.Details);
                     jQuery("#" + formId + " .one_time_password").show();
-                    jQuery("#" + formId + " .response_status").html("OTP Sent successfully to your given mobile number");
+                    jQuery("#" + formId + " .response_status").html("OTP Sent to your given mobile number");
                     return true;
                 } else {
                     jQuery("#" + formId + " .response_status").html("OTP Sent Failed! Please Try Again Later");
@@ -836,7 +690,7 @@ const veriationPrice = [];
             $filterGrid.isotope({ filter: filterValue });
         });
 
-        $('.filter-trigger').on('click', function(e) {
+        $('.filter-trigger').on('click', function() {
             $(this).closest('.filter-btns').find('.active').removeClass('active');
             $(this).addClass('active');
             event.preventDefault();
@@ -894,7 +748,6 @@ const veriationPrice = [];
         $("#veriation_price").val($(this).val())
     })
 
-    let price = 0;
     $(".device-configuration").on("change",function(){
         
         
