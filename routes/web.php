@@ -55,6 +55,8 @@ Route::get('/logout', [App\Http\Controllers\UserController::class, 'logout'])->n
 
 // Login Module
 Route::post('/submit-mobile-otp', [App\Http\Controllers\LoginController::class, 'submitMobileOtp'])->name('submit-mobile-otp');
+Route::post('/verify-otp', [App\Http\Controllers\LoginController::class, 'verifyOtp'])->name('verify-otp');
+
 Route::post('/access-profile', [App\Http\Controllers\LoginController::class, 'accessProfile'])->name('access-profile');
 Route::post('/check-exist', [App\Http\Controllers\LoginController::class, 'isUserExist'])->name('check-exist');
 Route::post('/register', [App\Http\Controllers\LoginController::class, 'registerUser'])->name('register');
@@ -100,20 +102,3 @@ Route::post('/confirm-booking', [App\Http\Controllers\VehicleController::class, 
 Route::get('/api-categories', [App\Http\Controllers\ApiCategoriesController::class, 'apiIndex'])->name('api-categories-index');
 Route::get('/api-brands/{id}', [App\Http\Controllers\ApiCategoriesController::class, 'apiBrands'])->name('api-brands-index');
 Route::post('/api-products', [App\Http\Controllers\ApiProductsController::class, 'listProduct'])->name('api-products');
-
-Route::get('/send-otp', function(){
-    $apiKey = urlencode('Tgs2z14CjJA-T7PKzZ1TqLOFNUsUpkmESZ084FjkMj	');
-    // Message details
-    $numbers = urlencode('9836555023'); //Mobile number on which you want to send message
-    $sender = urlencode('SENDER_NAME');
-    $message = rawurlencode('123456 is OTP for platform verification. Valid for 30 Minutes. Do not Share it with anyone. Contact Us if not initiated by you.');
-    // Prepare data for POST request
-    $data = 'apikey=' . $apiKey . '&amp;numbers=' . $numbers . "&amp;sender=" . $sender . "&amp;message=" . $message;
-    // Send the GET request with cURL
-    $ch = curl_init('https://api.textlocal.in/send/?' . $data);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    $response = curl_exec($ch);
-    curl_close($ch);
-    // Process your response here
-    echo $response;
-});

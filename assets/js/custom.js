@@ -113,22 +113,22 @@ const veriationPrice = [];
         }
     });
 
-    $("#global_signin_form").validate({
-        rules: {
-            'mobile': {
-                required: true,
-                number: true,
-                maxlength: 10,
-                minlength: 10,
-            }
-        },
-        messages: {
-            'mobile': "Please type valid mobile number.",
-        },
-        submitHandler: function(form) {
-            loginProcessGlobal($(form).serialize());
-        }
-    });
+    // $("#global_signin_form").validate({
+    //     rules: {
+    //         'mobile': {
+    //             required: true,
+    //             number: true,
+    //             maxlength: 10,
+    //             minlength: 10,
+    //         }
+    //     },
+    //     messages: {
+    //         'mobile': "Please type valid mobile number.",
+    //     },
+    //     submitHandler: function(form) {
+    //         loginProcessGlobal($(form).serialize());
+    //     }
+    // });
 
     $("#signup_form").validate({
         rules: {
@@ -180,39 +180,30 @@ const veriationPrice = [];
         }
     });
 
-    // $("#signin_form").validate({
-    //     rules: {
-    //         'mobile': {
-    //             required: true,
-    //             number: true,
-    //             maxlength: 10,
-    //             minlength: 10,
-    //         }
-    //     },
-    //     messages: {
-    //         'mobile': "Please type valid mobile number.",
-    //     },
-    //     submitHandler: function(form) {
-    //         var formId = "signin_form";
-    //         var verifyOtp = $("#" + formId + " .verify_otp").val();
-    //         var responsedOtp = $("#" + formId + " .responsed_otp").val();
-    //         var isUserRegister = $("#" + formId + " .isUserRegister").val();
-
-    //         if(isUserRegister == 1){
-    //             registerUser($(form).serialize());
-    //         }
-    //         if (verifyOtp != '' && verifyOtp == responsedOtp) {
-    //             let mobileNo = jQuery("#" + formId + " input[name='mobile']").val();
-    //             loginProcess(mobileNo);
-    //         } else if (verifyOtp != '' && verifyOtp != responsedOtp) {
-    //             console.log(verifyOtp);
-    //             $("#" + formId + " .response_status").html("OTP is Invalid");
-    //         } else {
-    //             var otpcallingresponse = sendMobileOtp(formId);
-    //             $("#" + formId + " .submit_login_btn").html("Verify OTP");
-    //         }
-    //     } 
-    // });
+    $("#global_signin_form").validate({
+        rules: {
+            'mobile': {
+                required: true,
+                number: true,
+                maxlength: 10,
+                minlength: 10,
+            }
+        },
+        messages: {
+            'mobile': "Please type valid mobile number.",
+        },
+        submitHandler: function(form) {
+            var formId = "global_signin_form";
+            var verifyOtp = $("#" + formId + " .verify_otp").val();
+            var responsedOtp = $("#" + formId + " .responsed_otp").val();
+            if (verifyOtp != '') {
+                verifyLoginOtp(form,formId,verifyOtp,responsedOtp);
+            } else {
+                sendMobileOtp(formId);
+                $("#" + formId + " .submit_login_btn").html("Verify OTP");
+            }
+        } 
+    });
 
     $("#checkoutform").validate({
         rules: {
@@ -287,10 +278,6 @@ const veriationPrice = [];
             $(".question_"+questionid).remove();
         }
     });
-    
-    $(".form-check-input").click(function(){
-        
-    });
 
     $(".accessories_wrap").click(function(){
         let questionval = $(this).children("h6").html();
@@ -348,9 +335,6 @@ const veriationPrice = [];
         $('#global_signup_form').hide();
     });
     
-
-
-
     // Search 
     $(".search_trigger>a, .close-search-trigger").on('click', function() {
         $(".search-form-wrapper").toggleClass('open');
@@ -469,6 +453,15 @@ const veriationPrice = [];
         });
     }
 
+    $(".checkUserExistBtn").on('click', function(){
+        let mobile = $("#global_signin_form input[name=mobile]").val();
+        if(mobile){
+            checkExist(mobile);
+        } else {
+            $(".response_status").html("Please type valid mobile number.")
+        }
+    });
+
 
     function checkExist(mobile){
         $.ajaxSetup({
@@ -483,18 +476,21 @@ const veriationPrice = [];
                 mobile: mobile,
             },
             success: function(result) {
-                if(result.userrecord == 'not-exist'){
-                   $("#signin_form").hide();
-                   $("#signup_form").show();
+                if(result <= 0){
+                    $(".loginSubmitBtn").html("Signup Now");
+                    $(".registration_fields").show();
+                    $(".checkUserExistBtn").hide();
+                    $(".loginSubmitBtn").show();
                 } else {
-                    location.reload();
-                    //window.location = $(".redirectUrl").val();
+                    var formId = jQuery(".checkUserExistBtn").closest("form").attr('id');
+                    jQuery("#" + formId + " .response_status").html("");
+                    sendMobileOtp(formId);
+                    $(".checkUserExistBtn").hide();
+                    $(".loginSubmitBtn").show();
                 }
             }
         });
     }
-
-
 
     function loginProcess(data){
         $.ajaxSetup({
@@ -513,6 +509,33 @@ const veriationPrice = [];
                 } else {
                     //location.reload();
                     $("#checkexactvalue").submit();
+                }
+            }
+        });
+    }
+
+    function verifyLoginOtp(form,formId,verifyOtp,responsedOtp) {
+        $.ajaxSetup({
+            headers: {
+             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        $.ajax({
+            url: `https://${window.location.hostname}/verify-otp`,
+            type: "post",
+            data: {
+                'otp_value':verifyOtp,
+                'session_id':responsedOtp
+            },
+            success: function(result) {
+                result = JSON.parse(result);
+                console.log(result);
+                console.log(result.Status);
+                if(result.Status == "Success"){                    
+                    loginProcessGlobal($(form).serialize());
+                } else {
+                    $("#" + formId + " .response_status").html("OTP is Invalid");
+                    return false;
                 }
             }
         });
@@ -539,8 +562,6 @@ const veriationPrice = [];
         });
     }
 
-
-
     function sendMobileOtp(formId) {
         var mobileNo = jQuery("#" + formId + " input[name='mobile']").val();
         $.ajaxSetup({
@@ -555,11 +576,12 @@ const veriationPrice = [];
                 mobile: mobileNo,
             },
             success: function(result) {
-                //result = JSON.parse(result);
+                console.log(result);
+                result = JSON.parse(result);
                 if (result) {
-                    jQuery("#" + formId + " .responsed_otp").val(result.otp);
+                    jQuery("#" + formId + " .responsed_otp").val(result.Details);
                     jQuery("#" + formId + " .one_time_password").show();
-                    jQuery("#" + formId + " .response_status").html("OTP Has Been Sent Successfully");
+                    jQuery("#" + formId + " .response_status").html("OTP Sent successfully to your given mobile number");
                     return true;
                 } else {
                     jQuery("#" + formId + " .response_status").html("OTP Sent Failed! Please Try Again Later");

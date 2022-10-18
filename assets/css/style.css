@@ -9059,7 +9059,12 @@ a.head_trigger.desktop_trigger, a.head_trigger.global_desktop_trigger {
 }
 
 .custom_form_style {
-    margin-bottom: 10px;
+    margin-top: 13px;
+    margin-bottom: 0;
+}
+
+.custom_form_style label {
+    margin: 0;
 }
 .custom_form_style input,.custom_form_style select {
     /* padding: 23px 9px; */
@@ -9079,7 +9084,11 @@ a.head_trigger.desktop_trigger, a.head_trigger.global_desktop_trigger {
     margin-bottom: 10px !important;
 }
 
-.one_time_password {
+.aside_login_form p {
+    margin: 0;
+}
+
+.one_time_password,.registration_fields,.loginSubmitBtn{
     display: none;
 }
 

@@ -73,69 +73,45 @@ Preloader End -->
                 <div class="response_status" style="color: #ff0000;"></div>
                 <div class="row">
                     <div class="col-12">
-                        <label class="padding-30px-left-right">Please enter your mobile number <span class="required">*</span></label>
                         <div class="form-group custom_form_style">
-                            <input type="text" name="mobile" class="form-control" autocomplete="off" placeholder="Enter Mobile Number">
-                        </div>
-                    </div>                   
-                </div>
-                <div class="row">
-                    <div class="col-12">
-                    <label class="padding-30px-left-right">Please enter your Password <span class="required">*</span></label>
-                        <div class="form-group custom_form_style">
-                            <input type="password" name="password" class="form-control" autocomplete="off" placeholder="Enter Your Password" value="">
+                            <label class="padding-30px-left-right">Please enter your mobile number <span class="required">*</span></label>
+                            <input type="text" name="mobile" class="form-control" autocomplete="off" placeholder="Enter Mobile Name">
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-12">
-                        <button type="submit" href="javascript:void(0)" class="submit_login_btn thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle width-100"> Continue <i class="fal fa-chevron-right ml-2"></i></button> 
-                    </div>
-                </div>
-            </div>
-            <div class="sidebar_widget text-center">
-                <span > Or </span>
-                <a href="javascript:void();"class="open_global_signup" >Register Yourself</a>                
-            </div>
-        </form>
-        <form id="global_signup_form" style="display:none" class="mf_form_validate ajax_submit" action="#" method="post" enctype="multipart/form-data">
-            <div class="sidebar_widget recent_widgets aside_login_form">
-                <h5 class="widget_title">Wellcome to Bikriworld</h5>
-                <div class="response_status" style="color: #ff0000;"></div>
-                <div class="row">
-                    <div class="col-12">
-                        <label class="padding-30px-left-right">Please your Name <span class="required">*</span></label>
+                <div class="row registration_fields">
+                    <div class="col-12">    
                         <div class="form-group custom_form_style">
+                            <label class="padding-30px-left-right">Please your Name <span class="required">*</span></label>
                             <input type="text" name="name" class="form-control" autocomplete="off" placeholder="Enter Name">
                         </div>
-                    </div>                 
-                </div>
-                <div class="row">
+                    </div> 
                     <div class="col-12">
-                        <label class="padding-30px-left-right">Please enter your mobile number <span class="required">*</span></label>
+                        
                         <div class="form-group custom_form_style">
-                            <input type="text" name="mobile" class="form-control" autocomplete="off" placeholder="Enter Mobile Number">
-                        </div>
-                    </div>                   
-                </div>
-                <div class="row">
-                    <div class="col-12">
-                    <label class="padding-30px-left-right">Please enter password <span class="required">*</span></label> 
-                        <div class="form-group custom_form_style">
-                            <input type="password" name="password" class="form-control verify_otp" autocomplete="off" placeholder="Enter your Password" value="">
+                            <label class="padding-30px-left-right">Please enter your email address <span class="required">*</span></label>
+                            <input type="text" name="email" class="form-control" autocomplete="off" placeholder="Enter Email Address">
                         </div>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row one_time_password">
                     <div class="col-12">
-                        <button type="submit" href="javascript:void(0)" class="submit_login_btn thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle width-100"> Continue <i class="fal fa-chevron-right ml-2"></i></button>
+                        <div class="form-group custom_form_style">
+                            <label class="padding-30px-left-right">Enter your one time password <span class="required">*</span></label>
+                            <input type="text" class="form-control verify_otp" autocomplete="off" placeholder="Enter One Time Password" value="">
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <a href="javascript:void(0)" class="resendOtp"> Resend Otp </a>
                     </div>
                 </div>
-
             </div>
-            <div class="sidebar_widget text-center">
-                <span > Or </span>
-                <a href="javascript:void();"class="open_global_signin" >Login to your profile</a>     
+            <div class="sidebar_widget">
+                <input type="hidden" name="responsed_otp" class="responsed_otp" value="">
+
+                <a type="button" href="javascript:void(0)" class="checkUserExistBtn thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle width-100"> Continue <i class="fal fa-chevron-right ml-2"></i></a>
+
+                <button type="submit" href="javascript:void(0)" class="loginSubmitBtn thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle width-100"> Continue <i class="fal fa-chevron-right ml-2"></i></button>
             </div>
         </form>
     </div>

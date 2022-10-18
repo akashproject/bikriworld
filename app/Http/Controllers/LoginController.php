@@ -21,36 +21,47 @@ class LoginController extends Controller
         $this->sellprice = $request->session()->get('sellprice');
     }
 
-    public function submitMobileOtp(Request $request){
-
-        $otpValue = rand(000000,999999);
-        
-        // $url = "https://2factor.in/API/V1/30060f8f-034f-11eb-9fa5-0200cd936042/SMS/+919836555023/990375/OTP1";
-
-        // $curl = curl_init($url);
-        // curl_setopt($curl, CURLOPT_URL, $url);
-        // curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-
-        // $resp = curl_exec($curl);
-        // curl_close($curl);
-
-        return response()->json($otpValue, $this->_statusOK);
+    public function submitMobileOtp(Request $request){        
+        try {
+            $requestData = $request->all();
+            $url = "https://2factor.in/API/V1/30060f8f-034f-11eb-9fa5-0200cd936042/SMS/".$requestData['mobile']."/AUTOGEN/BKWLG";
+      
+            $curl = curl_init($url);
+            curl_setopt($curl, CURLOPT_URL, $url);
+            curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+      
+            $resp = curl_exec($curl);
+            curl_close($curl);
+            return response()->json($resp, $this->_statusOK);
+        } catch(\Illuminate\Database\QueryException $e){
+            return response()->json(['error' => $e->errorInfo[2]], 401);
+        }
     }
 
+    public function verifyOtp(Request $request){
+        try {
+          $requestData = $request->all();
+    
+          $url = "https://2factor.in/API/V1/30060f8f-034f-11eb-9fa5-0200cd936042/SMS/VERIFY/".$requestData['session_id']."/".$requestData['otp_value'];
+          $curl = curl_init($url);
+          curl_setopt($curl, CURLOPT_URL, $url);
+          curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+          
+          $resp = curl_exec($curl);
+          curl_close($curl);
+          return response()->json($resp, $this->_statusOK);
+        } catch(\Illuminate\Database\QueryException $e){
+          return response()->json(['error' => $e->errorInfo[2]], 401);
+        }
+      }
+
     public function isUserExist(Request $request){
-        $data = $request->all();
-        $user = User::where('mobile', $data['mobile'])->where('password', $data['password'])->first();
-        if($user){
-            $request->session()->put('userData', $user->toArray());
-            $val = array(
-                'userrecord' => 'exist'
-            );
-            return response()->json(['exist'],$this->_statusOK);
-        } else {
-            $val = array(
-                'userrecord' => 'not-exist'
-            );
-            return response()->json($val,$this->_statusOK);
+        try {
+            $requestData = $request->all();
+            $exist = User::where('mobile', $requestData['mobile'])->count();
+            return response()->json($exist, $this->_statusOK);
+        } catch(\Illuminate\Database\QueryException $e){
+            return response()->json(['error' => $e->errorInfo[2]], 401);
         }
     }
 
@@ -63,16 +74,16 @@ class LoginController extends Controller
 
     public function accessProfile(Request $request){
         $data = $request->all();
-        $user = User::where('mobile', $data['mobile'])->where('password', $data['password'])->first();
+        $user = User::where('mobile', $data['mobile'])->first();
         if($user){
             $request->session()->put('userData', $user->toArray());
-            return response()->json(['true'],$this->_statusOK); 
         } else {
-            $val = array(
-                'userrecord' => 'not-exist'
-            );
-            return response()->json($val,$this->_statusOK);
+            $user = User::create(array('mobile'=> $data['mobile'],'name'=> $data['name'],'email'=> $data['email']))->toArray();
+            $payment = Payment::create(array('user_id'=> $user['id']));
+            $request->session()->put('userData', $data);
         }
+
+        return response()->json(['true'],$this->_statusOK);
 
     }
 
