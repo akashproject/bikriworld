@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -125,9 +126,11 @@ class ProductController extends Controller
             'age_id' => $this->sellprice['age_id'],
             'condition_id' => $this->sellprice['condition_id'],
         );
+        $product = Product::find($data['product_id']);
         $orderData = array(
             'user_id' => $data['user_id'],
             'product_id' => $data['product_id'],
+            'device_name' => $product->name,
             'variation_type' => $data['variation_type'],
             'device_condition' => json_encode($device_condition),
             'service_no' => rand(00000000,99999999),
@@ -143,6 +146,41 @@ class ProductController extends Controller
 
         $order = Order::create($orderData)->toArray();
 
+        //Order Mail
+        $age = array();
+        if (isset($device_condition['age_id'])) {
+            $age = Age::findOrFail($device_condition['age_id'])->toArray();
+        }
+
+        $condition = array();
+        if (isset($device_condition['condition_id'])) {
+            $condition = Condition::findOrFail($device_condition['condition_id'])->toArray();
+        }
+        
+        $accessories = array();
+        if(isset($device_condition['accessories']) && $device_condition['accessories'] != ""){
+            $accessories = Accessories::whereIn('id', $device_condition['accessories'])->get()->toArray();
+        }
+        
+        $orderData['questions'] = array();
+        if(isset($device_condition['question_id'])){
+            $i = 0;
+            foreach ($device_condition['question_id'] as $key => $value) {
+                $question = DB::table('calculation_question')
+                ->where('calculation_question.id', '=', $key)
+                ->select('calculation_question.question')->first();
+                if(isset($question)){
+                    $orderData['questions'][$i] = $question->question;
+                }
+                $i++;
+            }
+        }
+
+        $orderData['age'] = $age['age'];
+        $orderData['condition'] = $condition['condition'];
+        $orderData['accessories'] = $accessories;
+
+
         $userData = array(
             'name' => $data['name'],
             'email' => $data['email'],
@@ -157,10 +195,9 @@ class ProductController extends Controller
         });
 
         Mail::send('emails.order', $orderData, function ($m) use ($user) {
-            $m->from('admin@bikriworld.com', 'Bikriworld');
-            $m->to('pramod.kr.14855@gmail.com', $user->name)->subject('Bikriworld Got new Order Request!');
+            $m->from('service@bikriworld.com', 'Bikriworld');
+            $m->to('akashdutta.scriptcrown@gmail.com', "Admin User")->subject('Bikriworld Got new Order Request!');
         });
-
         $request->session()->put('orderData', $order);
         return redirect('/order-success');
     }
@@ -267,9 +304,9 @@ class ProductController extends Controller
         Mail::send('emails.order', $orderData, function ($m) use ($user) {
             $m->from('service@bikriworld.com', 'Bikriworld');
             //$m->to($user->email, $user->name)->subject('Your Reminder!');
-            $m->to($user['email'], $user['name'])->subject('Bikriworld Order Placed Successfully!');
+            $m->to($user['email'], $user['name'])->subject('Bikriworld Test Mail!');
         });
-        echo "mail sent successfully";
+        echo "Bikriworld Test Mail 1";
     }
 
 }

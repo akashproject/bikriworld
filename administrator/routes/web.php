@@ -30,6 +30,9 @@ Route::get('/test', function () {
     $permission = Permission::create(['name' => 'edit users']);
     $permission->assignRole('Administrator');
 });
+
+Route::get('/test-mail', [App\Http\Controllers\ProductController::class, 'testMail'])->name('test-mail');
+
 Route::get('/getRole', function () {
     return $role = Auth::user()->getRoleNames();
 });

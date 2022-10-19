@@ -21,6 +21,7 @@
 						<thead>
 
 							<tr>
+								<th>#ID</th>
 								<th>Service No</th>
 								<th>User</th>
 								<th>Product</th>
@@ -38,6 +39,7 @@
 
 							@foreach ($orders as $value)
 							<tr>
+								<td>{{ $value->order_id }}</td>													
 								<td>{{ $value->service_no }}</td>													
 								<td>{{ $value->user_fullname }}</td>													
 								<td>{{ $value->product_name }}</td>													

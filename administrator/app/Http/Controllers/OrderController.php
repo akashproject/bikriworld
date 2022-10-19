@@ -26,9 +26,9 @@ class OrderController extends Controller
            $orders = DB::table('orders')
             ->join('product', 'product.id', '=', 'orders.product_id')
             ->join('users', 'users.id', '=', 'orders.user_id')
-            ->select('orders.*', 'product.name as product_name','users.name as user_fullname')
+            ->select('orders.*', 'product.name as product_name','users.name as user_fullname','orders.id as order_id')
             ->distinct()
-            ->orderBy('created_at', 'desc')
+            ->orderBy('orders.id', 'desc')
             ->get();
             return view('order.index',compact('orders'));
         } catch(\Illuminate\Database\QueryException $e){

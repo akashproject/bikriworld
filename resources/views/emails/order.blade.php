@@ -4,7 +4,48 @@
     </div>
     <h3> Dear Seller, </h3><h3>
     <p style="margin: 0;"> Woohoo! We Love you already. Thank you for choosing to BikriWorld for your devices. </p>
-    <p style="margin: 20px 0;"> We created a Service Number: {{$service_no}} for you, and the ability to track your Devices Status. </p> 
+    <p style="margin: 20px 0;"> We created a Service Number: {{$service_no}} for you, and the ability to track your Devices Status. </p>
+    <table style="border: 2px solid;margin: 30px 0;">
+        <thead>
+            <tr style="background: #00986b;color: #fff;">
+                <th colspan="2" style="padding: 10px 20px;"> Product Details </th>
+            </tr>
+        </thead>
+        <tbody style="">
+            <tr>
+                <td style="padding: 10px 20px 10px;font-size: 20px;"> Model Name </td>
+                <td style="padding: 10px 20px 10px;font-size: 20px;"> {{$device_name}} </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px 20px 10px;font-size: 20px;"> Model Configuration </td>
+                <td style="padding: 10px 20px 10px;font-size: 20px;"> {{$variation_type}} </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px 20px 10px;font-size: 20px;"> Additional Accessories </td>
+                <td style="padding: 10px 20px 10px;font-size: 20px;">
+                    @foreach ($accessories as $accessory)
+                        <span >{{ $accessory['name'] }},</span >
+                    @endforeach	 
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px 20px 10px;font-size: 20px;"> Model Age </td>
+                <td style="padding: 10px 20px 10px;font-size: 20px;"> {{$age}} </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px 20px 10px;font-size: 20px;"> Model Condition </td>
+                <td style="padding: 10px 20px 10px;font-size: 20px;"> {{$condition}} </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px 20px 10px;font-size: 20px;"> Model Faults </td>
+                <td style="padding: 10px 20px 10px;font-size: 20px;">
+                    @foreach ($questions as $question)
+                        <span >{{ $question }}, <br></span >
+                    @endforeach	 
+                </td>
+            </tr>
+        </tbody>
+    </table> 
     <table style="border: 2px solid;margin: 30px 0;">
         <thead>
             <tr style="background: #00986b;color: #fff;">
@@ -15,6 +56,10 @@
             <tr>
                 <td style="padding: 10px 20px 10px;font-size: 20px;"> Service No </td>
                 <td style="padding: 10px 20px 10px;font-size: 20px;"> {{$service_no}} </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px 20px 10px;font-size: 20px;"> Payment Date </td>
+                <td style="padding: 10px 20px 10px;font-size: 20px;"> {{$pickup_schedule}} </td>
             </tr>
             <tr>
                 <td style="padding: 10px 20px 10px;font-size: 20px;"> Pickup address </td>
