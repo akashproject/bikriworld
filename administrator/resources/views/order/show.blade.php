@@ -140,6 +140,7 @@
 							<option value="paid" {{ ( $order->status ==  'paid' )? 'selected' : '' }} > Paid But Product Not Recived </option>
 							<option value="pickuped" {{ ( $order->status ==  'pickuped' )? 'selected' : '' }}> Paid And Pickuped </option>
 							<option value="cancelled" {{ ( $order->status ==  'cancelled' )? 'selected' : '' }}> Cancelled </option>
+							<option value="cancelled" {{ ( $order->status ==  'completed' )? 'selected' : '' }}> Completed </option>
 						<select>
 					</div>
 				</div>

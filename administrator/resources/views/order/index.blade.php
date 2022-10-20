@@ -46,8 +46,19 @@
 								<td>{{ $value->amount }}</td>													
 								<td>{{ $value->payment_mode }}</td>													
 								<td>{{ date("M d, Y",strtotime($value->created_at)) }}</td>
-								
-								<td>{{ $value->status }}</td>
+								<td > 
+									<span style="display:none" >
+									{{$color = "" }}
+									@if($value->status == 'cancelled')
+										{{ $color = "red"}}
+									@elseif($value->status == 'completed')
+										{{ $color = "green"}}
+									@else 
+										{{ @$color = "blue"}}
+									@endif
+									</span>
+									<span style="color:{{$color}}" > {{ $value->status }} </span>
+								</td>
 								<td>
 								<a href="{{ url('order') }}/{{ $value->id }}" class="btn btn-primary btn-lg">View</a>
 								</td>
