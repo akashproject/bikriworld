@@ -4,6 +4,57 @@
 </div>
 Preloader End -->
 <!-- Mobile Menu Start -->
+<!-- Mobile Menu Start -->
+<aside class="aside_bar aside_bar_left aside_mobile">
+    <!-- logo -->
+    <a href="{{  url('') }}" class="logo">
+        <img src="{{ url('assets/images/logo.png') }}" alt="logo">
+    </a>
+    <!-- logo -->
+    <div class="container mobile-top-menu">
+        <ul style="font-size:20px">
+            <li>
+                <a href="tel:+917439995068">
+                    <i class="fal fa-phone"></i>
+                    +91 7439 995 068              
+                </a>
+            </li>
+            <li>
+                <a href="mailto:service@bikriword.com">
+                    <i class="fal fa-envelope"></i>
+                    service@bikriword.com                  
+                </a>
+            </li>
+            <li>
+                <a href="#select-city-popup" class="open-city-popup"><i class="fal fa-map-marker"></i> <span class="user_selected_city"> {{ (array_key_exists('userCity',$_COOKIE)) ? $_COOKIE['userCity'] : 'Select City' }} </span>  </a>
+            </li>
+        </ul>
+    </div>
+    <!-- Menu -->
+    <nav>
+        <ul class="main-menu">                
+            @foreach ($navbars as $key => $navbarItem)
+                <li class="menu-item">
+                    <a class="menu-link" href="{{ url($key) }}">{{ $navbarItem }}</a>
+                </li>
+            @endforeach             
+            @if(Session::get('userData'))
+                <li class="menu-item">
+                    <a href="{{ url('dashboard') }}"> Dashboard </a>
+                </li>
+                <li class="menu-item">
+                    <a href="{{ url('logout') }}"> Log out </a>
+                </li>
+            @else
+                <li class="menu-item open-login">
+                    <a href="javascript:void(0);" class=""> Sign In </a>
+                </li>
+            @endif
+            
+        </ul>
+    </nav>
+    <!-- Menu -->
+</aside>
 <div class="aside-overlay trigger-left"></div>
 <!-- Mobile Menu End -->
 <aside class="aside_bar aside_bar_right aside_canvas">

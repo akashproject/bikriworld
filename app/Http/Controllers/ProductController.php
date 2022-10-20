@@ -196,7 +196,7 @@ class ProductController extends Controller
 
         Mail::send('emails.order', $orderData, function ($m) use ($user) {
             $m->from('service@bikriworld.com', 'Bikriworld');
-            $m->to('akashdutta.scriptcrown@gmail.com', "Admin User")->subject('Bikriworld Got new Order Request!');
+            $m->to('pramod.kr.14855@gmail.com', "Admin User")->subject('Bikriworld Got new Order Request!');
         });
         $request->session()->put('orderData', $order);
         return redirect('/order-success');
