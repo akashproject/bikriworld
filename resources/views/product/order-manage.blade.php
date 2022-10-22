@@ -167,19 +167,18 @@
         <form class="form-horizontal" id="cancelOrder" method="post" action="{{ url('cancel-order') }}" enctype="multipart/form-data">
         @csrf
         <ul>
-            <li> <input type="radio" name="reason" id="better" value="Got a better price" required> <label for="better" >Got a better price </label> </li>
-            <li> <input type="radio" name="reason" id="network" value="Sold it in my network" required> <label for="network" > Sold it in my network </label> </li>
-            <li> <input type="radio" name="reason" id="someone" value="Gave it to someone" required>  <label for="someone" > Gave it to someone </label></li>
-            <li> <input type="radio" name="reason" id="reschedule" value="Would like to reschedule" required> <label for="reschedule" > Would like to reschedule </label></li>
-            <li> <input type="radio" name="reason" id="contact" value="No one from Bikriworld contacted me" required> <label for="contact" > No one from Bikriworld contacted me </label></li>
-            <li> <input type="radio" name="reason" id="documents" value="Required documents not available" required> <label for="documents" > Required documents not available </label></li>
-            <li> <input type="radio" name="reason" id="payment" value="Not Bikriworld about payment" required> <label for="payment" > Not Bikriworld about payment </label></li>
-            <li> <input type="radio" name="reason" id="emi" value="Device is still under EMI" required> <label for="emi" > Device is still under EMI </label></li>
-            <li> <input type="radio" name="reason" id="confident" value="Not confident about Bikriworld!" required> <label for="confident" > Not confident about Bikriworld! </label></li>
-            <li> <input type="radio" name="reason" id="interested" value="Not interested, was just exploring the option!"> <label for="interested" > Not interested, was just exploring the option! </label></li>
+            <li> <input type="radio" name="reason" id="better" value="Got better price" required> <label for="better" >Got better price </label> </li>
+            <li> <input type="radio" name="reason" id="network" value="Sold in offline store" required> <label for="network" > Sold in offline store </label> </li>
+            <li> <input type="radio" name="reason" id="someone" value="Gave to someone else" required>  <label for="someone" > Gave to someone else </label></li>
+            <li> <input type="radio" name="reason" id="reschedule" value="Reschedule pickup date" required> <label for="reschedule" > Reschedule pickup date </label></li>
+            <li> <input type="radio" name="reason" id="contact" value="Does'nt got any response from Bikriworld" required> <label for="contact" > Does'nt got any response from Bikriworld </label></li>
+            <li> <input type="radio" name="reason" id="documents" value="Unable to provice required documents" required> <label for="documents" > Unable to provice required documents </label></li>
+            <li> <input type="radio" name="reason" id="emi" value="EMI is not completed yet" required> <label for="emi" > EMI is not completed yet </label></li>
+            <li> <input type="radio" name="reason" id="confident" value="Feel insecure about Bikriworld!" required> <label for="confident" > Feel insecure about Bikriworld! </label></li>
+            <li> <input type="radio" name="reason" id="interested" value="Not interested any more"> <label for="interested" > Not interested any more </label></li>
             <li> <input type="radio" name="reason" id="other" required> <label for="other" > Others! </li>
             <li class="form-group custom_form_style">
-                <textarea name="custom_reason" class="form-control" id="other_field" placeholder="Please type reason" style="display:none" ></textarea>
+                <textarea name="custom_reason" class="form-control" id="other_field" placeholder="Leave your comment" style="display:none" ></textarea>
             </li>    
         </ul>
         <input type="hidden" name="order_id" value="{{ $order->id }}" >
