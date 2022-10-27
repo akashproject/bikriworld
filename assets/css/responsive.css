@@ -1018,6 +1018,10 @@
     .comments .comment .comment_text {
         width: 100%;
     }
+
+    .product_filter_list {
+        padding: 0 3px;
+    }
 }
 
 @media (max-width: 380px) {
