@@ -3,7 +3,7 @@
         <img src="http://bikriworld.com/assets/images/logo.png" style="width: 20%;">
     </div>
     <h3> Dear Seller, </h3><h3>
-    <p style="margin: 0;"> Woohoo! We Love you already. Thank you for choosing to BikriWorld for your devices. </p>
+    <p style="margin: 0;"> Thank you for choosing to BikriWorld for your devices. </p>
     <p style="margin: 20px 0;"> We created a Service Number: {{$service_no}} for you, and the ability to track your Devices Status. </p>
     <table style="border: 2px solid;margin: 30px 0;">
         <thead>
@@ -54,7 +54,7 @@
         </thead>
         <tbody style="">
             <tr>
-                <td style="padding: 10px 20px 10px;font-size: 20px;"> Service No </td>
+                <td style="padding: 10px 20px 10px;font-size: 20px;"> Order No </td>
                 <td style="padding: 10px 20px 10px;font-size: 20px;"> {{$service_no}} </td>
             </tr>
             <tr>

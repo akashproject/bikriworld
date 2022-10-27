@@ -134,13 +134,13 @@
 				<div class="form-group row">
 					<label for="state" class="col-sm-3 text-right control-label col-form-label">Status</label>
 					<div class="col-sm-4">
-						<select name="status" id="category_id" class="select2 form-control custom-select" style="width: 100%; height:36px;">	
+						<select name="status" id="status" class="select2 form-control custom-select" style="width: 100%; height:36px;">	
 							<option value="">Update Status</option>
 							<option value="pending" {{ ( $order->status ==  'pending' )? 'selected' : '' }} >Pending</option>
 							<option value="paid" {{ ( $order->status ==  'paid' )? 'selected' : '' }} > Paid But Product Not Recived </option>
 							<option value="pickuped" {{ ( $order->status ==  'pickuped' )? 'selected' : '' }}> Paid And Pickuped </option>
 							<option value="cancelled" {{ ( $order->status ==  'cancelled' )? 'selected' : '' }}> Cancelled </option>
-							<option value="cancelled" {{ ( $order->status ==  'completed' )? 'selected' : '' }}> Completed </option>
+							<option value="completed" {{ ( $order->status ==  'completed' )? 'selected' : '' }}> Completed </option>
 						<select>
 					</div>
 				</div>

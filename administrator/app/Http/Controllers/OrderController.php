@@ -10,6 +10,8 @@ use App\Models\Age;
 use App\Models\Accessories;
 use App\Models\Question;
 use App\Models\Condition;
+use Mail;
+
 class OrderController extends Controller
 {
     public $_statusOK = 200;
@@ -61,8 +63,7 @@ class OrderController extends Controller
             if(isset($device_condition['accessories']) && $device_condition['accessories'] != ""){
                 $accessories = Accessories::whereIn('id', $device_condition['accessories'])->get();
             }
-            
-            
+                       
             $questions = array();
             if(isset($device_condition['question_id'])){
                 foreach ($device_condition['question_id'] as $key => $value) {
@@ -87,9 +88,53 @@ class OrderController extends Controller
             'status' => 'required',
         ]);
 
-        $institute = Order::findOrFail($data['order_id']);
-            $institute->update($data);
-        
+        $order = Order::findOrFail($data['order_id']);
+        $order->update($data);
+        switch ($data['status']) {
+            case 'completed':
+                $this->sendStatusMail($data['order_id']);
+                break;
+            default:
+                # code...
+                break;
+        }
+
         return redirect('/order/'.$data['order_id']);
+    }
+
+    public function sendStatusMail($order_id){
+        try {
+            $order = DB::table('orders')
+            ->join('product', 'product.id', '=', 'orders.product_id')
+            ->join('users', 'users.id', '=', 'orders.user_id')
+            ->where('orders.id', '=', $order_id)
+            ->select('orders.*','product.*','users.*','product.name as product_name','users.name as user_fullname')
+            ->first();
+        
+            $user = array(
+                'name' => $order->user_fullname,
+                'email' => $order->email,
+                'service_no' => $order->service_no,
+            );
+            $orderData = array(
+                'name' => $order->user_fullname,
+                'device_name' => $order->product_name,
+                'variation_type' => $order->variation_type,
+                'service_no' => $order->service_no,
+                'amount' => number_format($order->amount),
+                'payment_mode' => $order->payment_mode,
+                'pickup_schedule' => $order->pickup_schedule,
+                'pickup_address' => $order->pickup_address.','.$order->pickup_city.','.$order->pickup_state.' Pin -'.$order->pincode,
+                'recived_at' => date('d M, Y'),
+            );
+            Mail::send('emails.order', $orderData, function ($m) use ($user) {
+                $m->from('service@bikriworld.com', 'Bikriworld');
+                $m->to($user['email'], $user['name'])->subject('Bikriworld Invoice! | '.$user['service_no']);
+            });
+            return true;
+        } catch(\Illuminate\Database\QueryException $e){
+
+        } 
+        
     }
 }
