@@ -51,10 +51,10 @@
                 <div class="col-lg-2 col-6">
                     <div class="features_box style_2">
                         <div class="icon">
-                            <a href="{{ url('selling-brands') }}/{{ $value->id }}"> <img src="{{ url('assets/images/icons') }}/{{$value->icon}}.png" style="width: auto;"> </a>
+                            <a href="{{ url('select-brand') }}/{{ $value->slug }}"> <img src="{{ url('assets/images/icons') }}/{{$value->icon}}.png" style="width: auto;"> </a>
                         </div>
-                        <h5 class="text-center" ><a href="{{ url('selling-brands') }}/{{ $value->id }}"> Sell {{ $value->name }}</a></h5>
-                        <a href="{{ url('selling-brands') }}/{{ $value->id }}" class="text-center">
+                        <h5 class="text-center" ><a href="{{ url('select-brand') }}/{{ $value->slug }}"> Sell {{ $value->name }}</a></h5>
+                        <a href="{{ url('select-brand') }}/{{ $value->slug }}" class="text-center">
                             <span>View</span>
                             <i class="fal fa-chevron-right"></i>
                         </a>

@@ -17,10 +17,11 @@ class BrandController extends Controller
         $this->userdata = $request->session()->get('userData');
     }
 
-    public function index($id,Request $request){
+    public function index($slug,Request $request){
         $user = $this->userdata;
         try {   
-            $category = Categories::find($id);
+            $category = Categories::where('slug', $slug)->firstOrFail(); //Categories::find($id);
+            $id = $category->id;
             $request->session()->put('selling_category', $id);
             //echo $request->session()->get('category_id');
             $brands = Brand::where('category_id', 'like', '%"' . $id . '"%')->orderBy('name', 'asc')->get();

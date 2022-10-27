@@ -38,7 +38,7 @@ class AppServiceProvider extends ServiceProvider
             $view->with('serviceLocation', $serviceLocation);
             // Header Menu
             $navbars = array(
-                '/selling-categories' => 'SELL',
+                '/sell-old-used-product' => 'SELL',
                 '/contact-us' => "CONTACT"
             );
             $view->with('navbars', $navbars);

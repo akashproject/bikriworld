@@ -30,8 +30,8 @@ Route::get('/test-mail', [App\Http\Controllers\ProductController::class, 'testMa
 
 //Categories 
 Route::get('/', [App\Http\Controllers\IndexController::class, 'index'])->name('index');
-Route::get('/selling-categories', [App\Http\Controllers\CategoriesController::class, 'index'])->name('categories-index');
-Route::get('/selling-brands/{id}', [App\Http\Controllers\BrandController::class, 'index'])->name('brands-index');
+Route::get('/sell-old-used-product', [App\Http\Controllers\CategoriesController::class, 'index'])->name('categories-index');
+Route::get('/select-brand/{slug}', [App\Http\Controllers\BrandController::class, 'index'])->name('brands-index');
 
 Route::post('/question', [App\Http\Controllers\QuestionController::class, 'index'])->name('question-index');
 Route::post('/calculate-price', [App\Http\Controllers\QuestionController::class, 'calculatePrice'])->name('calculate-price');
