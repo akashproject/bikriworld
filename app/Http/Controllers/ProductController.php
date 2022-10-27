@@ -38,15 +38,17 @@ class ProductController extends Controller
         
     }
     //
-    public function index($id,Request $request){
-        $user = $this->userdata;
-        $category_id = $request->session()->get('selling_category');
-        $request->session()->put('selling_brand', $id);
+    public function index($slug,Request $request){
+       
         try {
+            $user = $this->userdata;
+            $brand = Brand::where('slug', $slug)->firstOrFail();
+            $category_id = $request->session()->get('selling_category');
+            $request->session()->put('selling_brand', $brand->id);
             $tobSellingBrands = Brand::inRandomOrder()->limit(10)->get();
             $tobSellingProducts = Product::inRandomOrder()->limit(10)->get();
-            $brand = Brand::find($id);
-            $products = Product::where('brand_id', $id)
+           
+            $products = Product::where('brand_id', $brand->id)
             ->where('category_id', $category_id)
             ->orderBy('name', 'asc')
             ->get();
@@ -60,11 +62,11 @@ class ProductController extends Controller
         }
     }
 
-    public function view($id,Request $request){
+    public function view($slug,Request $request){
         $user = $this->userdata;
         try {
             $brand_id = $request->session()->get('selling_brand');
-            $product = Product::find($id);
+            $product = Product::where('slug', $slug)->firstOrFail();  //Product::find($id);
             if($request->session()->get('selling_category')){
                 $request->session()->put('selling_category', $product->category_id);
             }
@@ -112,7 +114,7 @@ class ProductController extends Controller
             $product = Product::find($this->sellprice['product_id']);
             return view('product.checkout',compact('product','calculatedData','user'));
         } else {
-            return redirect('/selling-categories');          
+            return redirect('/sell-old-used-product');          
         }
         
     }

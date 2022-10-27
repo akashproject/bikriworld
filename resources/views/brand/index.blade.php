@@ -70,12 +70,12 @@
                 <div class="col-lg-2 col-4 product_filter_list">
                     <div class="team_block style_2 style_3 brand_listing">
                         <div class="team_img">                            
-                            <a href="{{ url('selling-products') }}/{{ $value->id }}" class="">
+                            <a href="{{ url('sell-used-model') }}/{{ $value->slug }}" class="">
                                 <img src="/administrator/public/images/{{ $value->image }}" alt="img" class="">
                             </a>
                         </div>
                         <p class="thm-color-two mb-0 font-weight-bold">
-                            <a href="{{ url('selling-products') }}/{{ $value->id }}" class="brand_icon">
+                            <a href="{{ url('sell-used-model') }}/{{ $value->slug }}" class="brand_icon">
                                 {{ $value->name }}
                             </a>
                         </p>

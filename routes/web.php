@@ -62,8 +62,8 @@ Route::post('/check-exist', [App\Http\Controllers\LoginController::class, 'isUse
 Route::post('/register', [App\Http\Controllers\LoginController::class, 'registerUser'])->name('register');
 
 // Product Module
-Route::get('/selling-products/{id}', [App\Http\Controllers\ProductController::class, 'index'])->name('products-index');
-Route::get('/view-product/{id}', [App\Http\Controllers\ProductController::class, 'view'])->name('product-view');
+Route::get('/sell-used-model/{slug}', [App\Http\Controllers\ProductController::class, 'index'])->name('products-index');
+Route::get('/sell-old-product/{slug}', [App\Http\Controllers\ProductController::class, 'view'])->name('sell-old-product');
 Route::get('/add-device', [App\Http\Controllers\ProductController::class, 'add'])->name('add-device');
 Route::get('/product-quote', [App\Http\Controllers\ProductController::class, 'productQuote'])->name('product-quote');
 Route::get('/checkout', [App\Http\Controllers\ProductController::class, 'checkOut'])->name('checkout');

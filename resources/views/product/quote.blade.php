@@ -117,7 +117,7 @@
                                 @if($calculatedData['exact_price'] > 100)
                                 <a href="{{ url('checkout') }}" class="sell-now-btn custom-cta-btn bg-thm-color-two btn-rectangle"> Sell Now <i class="fal fa-chevron-right ml-2"></i></a>
                                 @else
-                                <a href="{{ url('selling-categories') }}" class="sell-now-btn head_trigger custom-cta-btn bg-thm-color-two btn-rectangle"> Sell Another Device <i class="fal fa-chevron-right ml-2"></i></a>
+                                <a href="{{ url('sell-old-used-product') }}" class="sell-now-btn head_trigger custom-cta-btn bg-thm-color-two btn-rectangle"> Sell Another Device <i class="fal fa-chevron-right ml-2"></i></a>
                                 @endif
                             </div>
                         </div>

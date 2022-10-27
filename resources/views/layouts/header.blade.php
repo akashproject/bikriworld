@@ -109,7 +109,7 @@ Preloader End -->
             </div>
             <div class="sidebar_widget">
                 <input type="hidden" name="responsed_otp" class="responsed_otp" value="">
-                <input type="hidden" id="redirect_url" value="{{ (Route::current()->getName() == 'product-view') ? 'active' : '' }}">
+                <input type="hidden" id="redirect_url" value="{{ (Route::current()->getName() == 'sell-old-product') ? 'active' : '' }}">
                 <a type="button" href="javascript:void(0)" class="checkUserExistBtn thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle width-100"> Continue <i class="fal fa-chevron-right ml-2"></i></a>
 
                 <button type="submit" href="javascript:void(0)" class="loginSubmitBtn thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle width-100"> Continue <i class="fal fa-chevron-right ml-2"></i></button>
