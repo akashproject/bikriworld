@@ -1,11 +1,12 @@
 <body style="font-family: sans-serif;color: #282828;">
-        <div style="width: 100%;padding-bottom: 20px;border-bottom: 1px solid #ccc;">
+    <div style="width: 91%;padding: 20px;box-shadow: 0px 1px 7px 0px #40cba8d6;margin: 10px;border-radius: 10px;" >
+        <div style="padding-bottom: 20px;border-bottom: 1px solid #ccc;">
             <img src="http://bikriworld.com/assets/images/logo.png" style="width: 20%;">
         </div>
         <h3> Dear Seller, </h3>
         <p style="margin: 0;"> Thank you for choosing to BikriWorld for your devices. </p>
         <p style="margin: 20px 0;"> We created a Service Number: {{$service_no}} for you, and the ability to track your Devices Status. </p>
-        <table style="border: 2px solid;margin: 30px 0;">
+        <table style="border: 2px solid;margin: 30px 0;width: 100%;">
             <thead>
                 <tr style="background: #00986b;color: #fff;">
                     <th colspan="2" style="padding: 10px 20px;"> Product Details </th>
@@ -46,7 +47,7 @@
                 </tr>
             </tbody>
         </table> 
-        <table style="border: 2px solid;margin: 30px 0;">
+        <table style="border: 2px solid;margin: 30px 0;width: 100%;">
             <thead>
                 <tr style="background: #00986b;color: #fff;">
                     <th colspan="2" style="padding: 10px 20px;"> Order Details </th>
