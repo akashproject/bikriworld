@@ -764,7 +764,7 @@ button {
 
 label {
 
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 
     font-weight: 500;
 
@@ -9342,6 +9342,15 @@ a.head_trigger.desktop_trigger, a.head_trigger.global_desktop_trigger {
     padding: 9px 20px;
     font-size: 14px;
     background: #00986b0d;
+}
+
+.device-description {
+    background: #deede7;
+    font-size: 12px;
+    padding: 5px 50px;
+}
+.device-description ul {
+    list-style: disc;
 }
 
 .accessories_wrap h6 {

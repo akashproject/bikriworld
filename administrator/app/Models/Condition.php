@@ -12,6 +12,6 @@ class Condition extends Model
     protected $primaryKey = 'id';
 
     protected $fillable = [
-        'id','icon','category_id','condition','deducted_amount','brand_id','extra_deducted_amount'
+        'id','icon','category_id','condition','description','deducted_amount','brand_id','extra_deducted_amount'
     ];
 }

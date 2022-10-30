@@ -81,13 +81,17 @@
 <script src="{{ url('assets/extra-libs/multicheck/jquery.multicheck.js') }}"></script>
 <script src="{{ url('assets/extra-libs/DataTables/datatables.min.js') }}"></script>
 <script src="assets/libs/quill/dist/quill.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/5.10.0/tinymce.min.js"></script>
 <script src="{{ url('dist/js/custom.js') }}"></script>
 <!--Wave Effects -->
 <script>
-    /****************************************
-        *       Basic Table                   *
-        ****************************************/
     $('#zero_config').DataTable();
+    tinymce.init({
+        selector : "#mceEditor",
+        plugins: 'emoticons wordcount help code lists',
+        menubar : true,
+        toolbar: "undo redo | bold italic underline strikethrough | fontselect fontsizeselect formatselect | alignleft aligncenter alignright alignjustify | outdent indent |  numlist bullist checklist | forecolor backcolor casechange permanentpen formatpainter removeformat | pagebreak | charmap emoticons | fullscreen  preview save print | insertfile image media pageembed template link anchor codesample | a11ycheck"
+    });
 </script>
 @yield('script')
 </body>

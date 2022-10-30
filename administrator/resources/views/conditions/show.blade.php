@@ -31,6 +31,14 @@
 						<input type="text" class="form-control" name="condition" id="title" placeholder="Enter Condition Here" value="{{ $conditions->condition }}">
 					</div>
 				</div>
+
+				<div class="form-group row">
+					<label for="title" class="col-sm-3 text-right control-label col-form-label">Description</label>
+					<div class="col-sm-9">
+						<textarea name="description" class="form-control" id="mceEditor" placeholder="Enter Reason Here" >{{ $conditions->description }}</textarea>
+					</div>
+				</div>
+
 				<div class="form-group row">
 					<label for="title" class="col-sm-3 text-right control-label col-form-label">Deducted Amount</label>
 					<div class="col-sm-9">
