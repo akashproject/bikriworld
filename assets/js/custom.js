@@ -318,17 +318,34 @@ const veriationPrice = [];
         });
     });
 
-
+    $("#signin_mobile_number").on("keyup", function(){
+        let mobileno = $(this).val();
+        // if(mobileno.length == 10){
+        //     console.log(mobileno);
+        //     checkExist(mobileno);
+        // }
+        
+    });
 
     $(".checkUserExistBtn").on('click', function(){
         let mobile = $("#global_signin_form input[name=mobile]").val();
-        if(mobile){
+        if(mobile && mobile.length == 10){
+            $('#signin_mobile_number').attr('readonly', true);
+            $(".change_number").show();
             checkExist(mobile);
         } else {
             $(".response_status").html("Please type valid mobile number.")
         }
     });
 
+    $(".change_number").on('click', function(){
+        $('#signin_mobile_number').attr('readonly', false);
+        $(".one_time_password").hide();
+        $(".checkUserExistBtn").show();
+        $(".loginSubmitBtn").hide();
+        $(".registration_fields").hide();
+        
+    });
 
     function checkExist(mobile){
         $.ajaxSetup({
@@ -344,7 +361,7 @@ const veriationPrice = [];
             },
             success: function(result) {
                 if(result <= 0){
-                    $(".loginSubmitBtn").html("Signup Now");
+                    //$(".loginSubmitBtn").html("Signup Now");
                     $(".registration_fields").show();
                     $(".checkUserExistBtn").hide();
                     $(".loginSubmitBtn").show();

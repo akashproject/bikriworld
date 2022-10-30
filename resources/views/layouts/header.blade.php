@@ -76,8 +76,11 @@ Preloader End -->
                     <div class="col-12">
                         <div class="form-group custom_form_style">
                             <label class="padding-30px-left-right">Please enter your mobile number <span class="required">*</span></label>
-                            <input type="text" name="mobile" class="form-control" autocomplete="off" placeholder="Enter Mobile Name">
+                            <input type="text" id="signin_mobile_number" name="mobile" class="form-control" autocomplete="off" placeholder="Enter Mobile Name">
                         </div>
+                    </div>
+                    <div class="col-12">
+                        <a href="javascript:void(0)" class="change_number" style="display:none" > Change Number </a>
                     </div>
                 </div>
                 <div class="row registration_fields">
@@ -88,7 +91,6 @@ Preloader End -->
                         </div>
                     </div> 
                     <div class="col-12">
-                        
                         <div class="form-group custom_form_style">
                             <label class="padding-30px-left-right">Please enter your email address <span class="required">*</span></label>
                             <input type="text" name="email" class="form-control" autocomplete="off" placeholder="Enter Email Address">
