@@ -91,7 +91,7 @@
                                 <h6> Accessories provided with device </h6>
                                 <ul class="info_widget device_summary">
                                     @foreach ($accessories as $key => $value)
-                                        <li style="display:none;" > {{$value->name}} </li >
+                                        <li id="{{$value->id}}" style="display:none;" > {{$value->name}} </li >
                                     @endforeach	
                                 </ul>
                             </div>

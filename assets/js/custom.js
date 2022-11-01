@@ -198,7 +198,9 @@ const veriationPrice = [];
 
     $(".accessories_wrap").click(function(){
         let questionval = $(this).children("h6").html();
-        $(".device_summary").append('<li class="">'+questionval+'</li>');
+        let id = $(this).attr("dataquestion");
+        $(".device_summary #"+id).toggle();
+        //$(".device_summary").append('<li class="">'+questionval+'</li>');
     });
 
     $(".ages_wrap").click(function(){
