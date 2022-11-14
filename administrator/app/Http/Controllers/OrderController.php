@@ -11,7 +11,7 @@ use App\Models\Accessories;
 use App\Models\Question;
 use App\Models\Condition;
 use Mail;
-use Pdf;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class OrderController extends Controller
 {
