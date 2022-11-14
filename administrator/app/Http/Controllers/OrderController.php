@@ -11,6 +11,7 @@ use App\Models\Accessories;
 use App\Models\Question;
 use App\Models\Condition;
 use Mail;
+use Pdf;
 
 class OrderController extends Controller
 {
@@ -139,37 +140,14 @@ class OrderController extends Controller
         
     }
 
-    // public function generateInvoiceAttachment()
-    // {
-    //    // Setup a filename 
-    //    $documentFileName = "fun.pdf";
- 
-    //    // Create the mPDF document
-    //    $document = new PDF( [
-    //        'mode' => 'utf-8',
-    //        'format' => 'A4',
-    //        'margin_header' => '3',
-    //        'margin_top' => '20',
-    //        'margin_bottom' => '20',
-    //        'margin_footer' => '2',
-    //    ]);     
-
-    //    // Set some header informations for output
-    //    $header = [
-    //        'Content-Type' => 'application/pdf',
-    //        'Content-Disposition' => 'inline; filename="'.$documentFileName.'"'
-    //    ];
-
-    //    // Write some simple Content
-    //    $document->WriteHTML('<h1 style="color:blue">TheCodingJack</h1>');
-    //    $document->WriteHTML('<p>Write something, just for fun!</p>');
-        
-    //    // Save PDF on your public storage 
-    //    Storage::disk('public')->put($documentFileName, $document->Output($documentFileName, "S"));
-        
-    //    // Get file back from storage with the give header informations
-    //    return Storage::disk('public')->download($documentFileName, 'Request', $header);
-    // }
+    public function generateInvoiceAttachment()
+    {
+        $data = array(
+            "title"=> "Welcome"
+        );
+        $pdf = Pdf::loadView('emails.invoice-pdf', $data);
+        return $pdf->download(public_path('files/demo.pdf'));
+    }
 
     public function testMail(){
         try {
@@ -200,7 +178,7 @@ class OrderController extends Controller
                 'recived_at' => date('d M, Y'),
             );
             $files = [
-                public_path('files/demo-1.pdf'),
+                public_path('files/demo.pdf'),
             ];
             Mail::send('emails.order', $orderData, function ($m) use ($user, $files) {
                 $m->from('service@bikriworld.com', 'Bikriworld');
