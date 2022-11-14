@@ -20,6 +20,10 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
+Route::get('/clear-cache', function() {
+    $exitCode = Artisan::call('cache:clear');
+    // return what you want
+});
 //Route::get('/', [App\Http\Controllers\LoginController::class, 'index'])->name('login');
 
 Route::get('/role', function () {
@@ -31,7 +35,7 @@ Route::get('/test', function () {
     $permission->assignRole('Administrator');
 });
 
-Route::get('/test-mail', [App\Http\Controllers\ProductController::class, 'testMail'])->name('test-mail');
+Route::get('/test-mail', [App\Http\Controllers\OrderController::class, 'testMail'])->name('test-mail');
 
 Route::get('/getRole', function () {
     return $role = Auth::user()->getRoleNames();

@@ -119,6 +119,7 @@ class OrderController extends Controller
             $orderData = array(
                 'name' => $order->user_fullname,
                 'device_name' => $order->product_name,
+                'product_unique_no' => $order->product_unique_no,
                 'variation_type' => $order->variation_type,
                 'service_no' => $order->service_no,
                 'amount' => number_format($order->amount),
@@ -136,5 +137,81 @@ class OrderController extends Controller
 
         } 
         
+    }
+
+    // public function generateInvoiceAttachment()
+    // {
+    //    // Setup a filename 
+    //    $documentFileName = "fun.pdf";
+ 
+    //    // Create the mPDF document
+    //    $document = new PDF( [
+    //        'mode' => 'utf-8',
+    //        'format' => 'A4',
+    //        'margin_header' => '3',
+    //        'margin_top' => '20',
+    //        'margin_bottom' => '20',
+    //        'margin_footer' => '2',
+    //    ]);     
+
+    //    // Set some header informations for output
+    //    $header = [
+    //        'Content-Type' => 'application/pdf',
+    //        'Content-Disposition' => 'inline; filename="'.$documentFileName.'"'
+    //    ];
+
+    //    // Write some simple Content
+    //    $document->WriteHTML('<h1 style="color:blue">TheCodingJack</h1>');
+    //    $document->WriteHTML('<p>Write something, just for fun!</p>');
+        
+    //    // Save PDF on your public storage 
+    //    Storage::disk('public')->put($documentFileName, $document->Output($documentFileName, "S"));
+        
+    //    // Get file back from storage with the give header informations
+    //    return Storage::disk('public')->download($documentFileName, 'Request', $header);
+    // }
+
+    public function testMail(){
+        try {
+
+            $this->generateInvoiceAttachment();
+            $order = DB::table('orders')
+            ->join('product', 'product.id', '=', 'orders.product_id')
+            ->join('users', 'users.id', '=', 'orders.user_id')
+            ->where('orders.id', '=', '104')
+            ->select('orders.*','product.*','users.*','product.name as product_name','users.name as user_fullname')
+            ->first();
+        
+            $user = array(
+                'name' => $order->user_fullname,
+                'email' => $order->email,
+                'service_no' => $order->service_no,
+            );
+            $orderData = array(
+                'name' => $order->user_fullname,
+                'device_name' => $order->product_name,
+                'product_unique_no' => $order->product_unique_no,
+                'variation_type' => $order->variation_type,
+                'service_no' => $order->service_no,
+                'amount' => number_format($order->amount),
+                'payment_mode' => $order->payment_mode,
+                'pickup_schedule' => $order->pickup_schedule,
+                'pickup_address' => $order->pickup_address.','.$order->pickup_city.','.$order->pickup_state.' Pin -'.$order->pincode,
+                'recived_at' => date('d M, Y'),
+            );
+            $files = [
+                public_path('files/demo-1.pdf'),
+            ];
+            Mail::send('emails.order', $orderData, function ($m) use ($user, $files) {
+                $m->from('service@bikriworld.com', 'Bikriworld');
+                $m->to('akashdutta.scriptcrown@gmail.com', $user['name'])->subject('Bikriworld Invoice! | '.$user['service_no']);
+                // foreach ($files as $file){
+                //     $m->attach($file);
+                // }
+            });
+            return true;
+        } catch(\Illuminate\Database\QueryException $e){
+
+        } 
     }
 }
