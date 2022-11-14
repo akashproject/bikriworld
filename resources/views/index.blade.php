@@ -133,15 +133,27 @@
                     <div class="col-lg-2 col-6">
                         <div class="features_box style_2">
                             <div class="icon">
+                                @if($value->status == '1')
                                 <a href="{{ url('select-brand') }}/{{ $value->slug }}"> 
                                     <img src="{{ url('assets/images/icons') }}/{{$value->icon}}.png" style="width: auto;">
                                 </a>
+                                @else 
+                                <a href="javascript:void(0)"> 
+                                    <img src="{{ url('assets/images/icons') }}/{{$value->icon}}.png" style="width: auto;">
+                                </a>
+                                @endif
                             </div>
                             <h5 class="text-center" ><a href="{{ url('select-brand') }}/{{ $value->slug }}"> Sell {{ $value->name }}</a></h5>
-                            <a href="{{ url('select-brand') }}/{{ $value->slug }}" style="margin-left: 26px;">
+                            @if($value->status == '1')
+                            <a href="{{ url('select-brand') }}/{{ $value->slug }}">
                                 <span>Sell Now</span>
                                 <i class="fal fa-chevron-right"></i>
                             </a>
+                            @else 
+                            <a href="javescript:void(0)" >
+                                <span>Coming Soon</span>
+                            </a>
+                            @endif
                         </div>
                     </div>
                     <!-- Feature Box End -->

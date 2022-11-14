@@ -48,7 +48,7 @@
                             <div class="row conditions_list" >
                                 @if($conditions)
                                     @foreach ($conditions as $key => $value)
-                                    <div class="col-lg-12 col-12 relative">
+                                    <div class="col-lg-6 col-md-6 col-12 relative">
                                         <input type="radio" name="condition_id" id="condition_{{$value->id}}" class="condition_input" value="{{$value->id}}" >   
                                         <label for="condition_{{$value->id}}" class="conditions_wrap" dataquestion="{{$value->id}}">                                           
                                             <h6> {{$value->condition}} </h6>

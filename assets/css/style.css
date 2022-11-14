@@ -9348,7 +9348,9 @@ a.head_trigger.desktop_trigger, a.head_trigger.global_desktop_trigger {
     background: #deede7;
     font-size: 12px;
     padding: 5px 50px;
+    height: 93px;
 }
+
 .device-description ul {
     list-style: disc;
 }

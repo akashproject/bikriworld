@@ -79,6 +79,7 @@ class ProductController extends Controller
         }
 
         if($data['product_id'] <= 0){
+            $data['slug'] = "sell-old-used-".str_replace(" ","-",strtolower($data['name']));
             Product::create($data);
         } else {
             $brand = Product::findOrFail($data['product_id']);
