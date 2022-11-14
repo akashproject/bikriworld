@@ -146,48 +146,48 @@ class OrderController extends Controller
             "title"=> "Welcome"
         );
         $pdf = Pdf::loadView('emails.invoice-pdf', $data);
-        return $pdf->download(public_path('files/demo.pdf'));
+        return $pdf->download(public_path('files/demo-1.pdf'));
     }
 
     public function testMail(){
         try {
 
-            $this->generateInvoiceAttachment();
-            $order = DB::table('orders')
-            ->join('product', 'product.id', '=', 'orders.product_id')
-            ->join('users', 'users.id', '=', 'orders.user_id')
-            ->where('orders.id', '=', '104')
-            ->select('orders.*','product.*','users.*','product.name as product_name','users.name as user_fullname')
-            ->first();
+            echo $this->generateInvoiceAttachment();
+            // $order = DB::table('orders')
+            // ->join('product', 'product.id', '=', 'orders.product_id')
+            // ->join('users', 'users.id', '=', 'orders.user_id')
+            // ->where('orders.id', '=', '104')
+            // ->select('orders.*','product.*','users.*','product.name as product_name','users.name as user_fullname')
+            // ->first();
         
-            $user = array(
-                'name' => $order->user_fullname,
-                'email' => $order->email,
-                'service_no' => $order->service_no,
-            );
-            $orderData = array(
-                'name' => $order->user_fullname,
-                'device_name' => $order->product_name,
-                'product_unique_no' => $order->product_unique_no,
-                'variation_type' => $order->variation_type,
-                'service_no' => $order->service_no,
-                'amount' => number_format($order->amount),
-                'payment_mode' => $order->payment_mode,
-                'pickup_schedule' => $order->pickup_schedule,
-                'pickup_address' => $order->pickup_address.','.$order->pickup_city.','.$order->pickup_state.' Pin -'.$order->pincode,
-                'recived_at' => date('d M, Y'),
-            );
-            $files = [
-                public_path('files/demo.pdf'),
-            ];
-            Mail::send('emails.order', $orderData, function ($m) use ($user, $files) {
-                $m->from('service@bikriworld.com', 'Bikriworld');
-                $m->to('akashdutta.scriptcrown@gmail.com', $user['name'])->subject('Bikriworld Invoice! | '.$user['service_no']);
-                // foreach ($files as $file){
-                //     $m->attach($file);
-                // }
-            });
-            return true;
+            // $user = array(
+            //     'name' => $order->user_fullname,
+            //     'email' => $order->email,
+            //     'service_no' => $order->service_no,
+            // );
+            // $orderData = array(
+            //     'name' => $order->user_fullname,
+            //     'device_name' => $order->product_name,
+            //     'product_unique_no' => $order->product_unique_no,
+            //     'variation_type' => $order->variation_type,
+            //     'service_no' => $order->service_no,
+            //     'amount' => number_format($order->amount),
+            //     'payment_mode' => $order->payment_mode,
+            //     'pickup_schedule' => $order->pickup_schedule,
+            //     'pickup_address' => $order->pickup_address.','.$order->pickup_city.','.$order->pickup_state.' Pin -'.$order->pincode,
+            //     'recived_at' => date('d M, Y'),
+            // );
+            // $files = [
+            //     public_path('files/demo.pdf'),
+            // ];
+            // Mail::send('emails.order', $orderData, function ($m) use ($user, $files) {
+            //     $m->from('service@bikriworld.com', 'Bikriworld');
+            //     $m->to('akashdutta.scriptcrown@gmail.com', $user['name'])->subject('Bikriworld Invoice! | '.$user['service_no']);
+            //     // foreach ($files as $file){
+            //     //     $m->attach($file);
+            //     // }
+            // });
+            // return true;
         } catch(\Illuminate\Database\QueryException $e){
 
         } 
