@@ -12,6 +12,7 @@ use App\Models\Question;
 use App\Models\Condition;
 use Mail;
 use Barryvdh\DomPDF\Facade\Pdf;
+use Illuminate\Support\Facades\Storage;
 
 class OrderController extends Controller
 {
@@ -142,52 +143,54 @@ class OrderController extends Controller
 
     public function generateInvoiceAttachment()
     {
-        $data = array(
-            "title"=> "Welcome"
-        );
-        $pdf = Pdf::loadView('emails.invoice-pdf', $data);
-        return $pdf->download(public_path('files/demo-1.pdf'));
+        echo public_path('files/demo-1.pdf');
+       
+        //return $pdf->stream(public_path('files/demo-1.pdf'));
     }
 
     public function testMail(){
         try {
 
-            echo $this->generateInvoiceAttachment();
-            // $order = DB::table('orders')
-            // ->join('product', 'product.id', '=', 'orders.product_id')
-            // ->join('users', 'users.id', '=', 'orders.user_id')
-            // ->where('orders.id', '=', '104')
-            // ->select('orders.*','product.*','users.*','product.name as product_name','users.name as user_fullname')
-            // ->first();
+            //$this->generateInvoiceAttachment();
+            $order = DB::table('orders')
+            ->join('product', 'product.id', '=', 'orders.product_id')
+            ->join('users', 'users.id', '=', 'orders.user_id')
+            ->where('orders.id', '=', '104')
+            ->select('orders.*','product.*','users.*','product.name as product_name','users.name as user_fullname')
+            ->first();
         
-            // $user = array(
-            //     'name' => $order->user_fullname,
-            //     'email' => $order->email,
-            //     'service_no' => $order->service_no,
-            // );
-            // $orderData = array(
-            //     'name' => $order->user_fullname,
-            //     'device_name' => $order->product_name,
-            //     'product_unique_no' => $order->product_unique_no,
-            //     'variation_type' => $order->variation_type,
-            //     'service_no' => $order->service_no,
-            //     'amount' => number_format($order->amount),
-            //     'payment_mode' => $order->payment_mode,
-            //     'pickup_schedule' => $order->pickup_schedule,
-            //     'pickup_address' => $order->pickup_address.','.$order->pickup_city.','.$order->pickup_state.' Pin -'.$order->pincode,
-            //     'recived_at' => date('d M, Y'),
-            // );
-            // $files = [
-            //     public_path('files/demo.pdf'),
-            // ];
-            // Mail::send('emails.order', $orderData, function ($m) use ($user, $files) {
-            //     $m->from('service@bikriworld.com', 'Bikriworld');
-            //     $m->to('akashdutta.scriptcrown@gmail.com', $user['name'])->subject('Bikriworld Invoice! | '.$user['service_no']);
-            //     // foreach ($files as $file){
-            //     //     $m->attach($file);
-            //     // }
-            // });
-            // return true;
+            $user = array(
+                'name' => $order->user_fullname,
+                'email' => $order->email,
+                'service_no' => $order->service_no,
+            );
+            $orderData = array(
+                'name' => $order->user_fullname,
+                'device_name' => $order->product_name,
+                'product_unique_no' => $order->product_unique_no,
+                'variation_type' => $order->variation_type,
+                'service_no' => $order->service_no,
+                'amount' => number_format($order->amount),
+                'payment_mode' => $order->payment_mode,
+                'pickup_schedule' => $order->pickup_schedule,
+                'pickup_address' => $order->pickup_address.','.$order->pickup_city.','.$order->pickup_state.' Pin -'.$order->pincode,
+                'recived_at' => date('d M, Y'),
+            );
+
+            $data = array(
+                "title"=> "Welcome"
+            );
+            $pdf = Pdf::loadView('emails.invoice-pdf', $data);
+
+            echo Mail::send('emails.order2', $orderData, function ($m) use ($user, $pdf) {
+                $m->from('service@bikriworld.com', 'Bikriworld');
+                $m->to('akashdutta.scriptcrown@gmail.com', $user['name'])->subject('Bikriworld Invoice! | '.$user['service_no'])->attachData($pdf->output(), "invoice.pdf");;
+                // foreach ($files as $file){
+                //     $m->attach($file);
+                // }
+            });
+            echo "<br>";
+            dd('Mail sent successfully');
         } catch(\Illuminate\Database\QueryException $e){
 
         } 
