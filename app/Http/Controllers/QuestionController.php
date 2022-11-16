@@ -61,9 +61,6 @@ class QuestionController extends Controller
             $category_id = $request->session()->get('selling_category');
 
             $productData = $request->all();
-
-
-
             
 
             $veriationPrice = 0;
@@ -116,7 +113,7 @@ class QuestionController extends Controller
 
             if(isset($productData['series_price']) && $productData['series_price'] != ''){
 
-                $veriationPrice += $value->price;
+                $veriationPrice += $productData['series_price'];
 
             }
 
