@@ -894,7 +894,7 @@ const veriationPrice = [];
                 if (result.length > 0) {
                     let htmlContent = '';
                     $.each(result, function (key, data) {
-                        htmlContent += '<li class="search-list"><a href="/view-product/'+data.id+'">'+data.name+'</a></li>';
+                        htmlContent += '<li class="search-list"><a href="/sell-old-product/'+data.slug+'">'+data.name+'</a></li>';
                     });
                     $(".search-content_wrap").html(htmlContent);
                     $(".search-content_wrap").show()
