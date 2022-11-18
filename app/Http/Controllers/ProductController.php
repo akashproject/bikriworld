@@ -191,15 +191,16 @@ class ProductController extends Controller
         $user = User::findOrFail($data['user_id']);
         $user->update($data);
 
-        Mail::send('emails.order', $orderData, function ($m) use ($user) {
-            $m->from('service@bikriworld.com', 'Bikriworld');
-            $m->to($user->email, $user->name)->subject('Bikriworld Order Placed Successfully!');
-        });
+        // Mail::send('emails.order', $orderData, function ($m) use ($user) {
+        //     $m->from('service@bikriworld.com', 'Bikriworld');
+        //     $m->to($user->email, $user->name)->subject('Bikriworld Order Placed Successfully!');
+        // });
 
-        Mail::send('emails.order', $orderData, function ($m) use ($user) {
-            $m->from('service@bikriworld.com', 'Bikriworld');
-            $m->to('pramod.kr.14855@gmail.com', "Admin User")->subject('Bikriworld Got new Order Request!');
-        });
+        // Mail::send('emails.order', $orderData, function ($m) use ($user) {
+        //     $m->from('service@bikriworld.com', 'Bikriworld');
+        //     $m->to('pramod.kr.14855@gmail.com', "Admin User")->subject('Bikriworld Got new Order Request!');
+        // });
+        
         $request->session()->put('orderData', $order);
         return redirect('/order-success');
     }

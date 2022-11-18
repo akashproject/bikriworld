@@ -16,7 +16,7 @@
 
 				<div class="table-responsive">
 
-					<table id="zero_config" class="table table-striped table-bordered">
+					<table id="" class="table table-striped table-bordered">
 
 						<thead>
 

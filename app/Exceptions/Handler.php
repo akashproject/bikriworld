@@ -39,17 +39,12 @@ class Handler extends ExceptionHandler
         });
     }
 
-    public function render($request, Exception $e)
-    {
-        if($request->is('api/*')){
-            return response()->json([
-                'error_message' => $e->getMessage(),
-                'status' => Response::HTTP_BAD_REQUEST
-            ]);
-        }
+    // public function render($request, Exception $e)
+    // {
+    //     $this->reportable(function (Throwable $e) {
+    //         //
+    //     });
     
-        return parent::render($request, $e);
-    
-    }
+    // }
     
 }
