@@ -21,7 +21,7 @@ Route::get('/', function () {
 });
 
 Route::get('/clear-cache', function() {
-    $exitCode = Artisan::call('cache:clear');
+    $exitCode = Artisan::call('config:cache');
     // return what you want
 });
 //Route::get('/', [App\Http\Controllers\LoginController::class, 'index'])->name('login');

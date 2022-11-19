@@ -178,7 +178,7 @@
         <table cellspacing="0" cellpadding="0" width="600" class="w320">
           <tr style="text-align:center;">
             <td style="font-size: 32px;font-weight: 700;line-height: normal;padding: 35px 0 0;color: #4d4d4d;">
-              Thank you for your order!
+              Thank you for choosing Bikriworld!
             </td>
           </tr>
           <tr style="text-align:center;">
@@ -204,11 +204,11 @@
                           <table cellspacing="0" cellpadding="0" width="100%" style="border-collapse:separate !important;">
                             <tr>
                               <td style="border: 1px solid #e5e5e5;border-radius: 5px;background-color: #ffffff;padding: 12px 15px 15px;text-align: left;width: 253px;">
-                                <span style="padding: 5px 0;font-size: 18px;line-height: 1.3;">Pickup Mode</span><br />
+                                <span style="padding: 5px 0;font-size: 18px;line-height: 1.3;">Payment Mode</span><br />
                                 {{$payment_mode}} <br />
                                 <br />
                                 <span style="padding: 5px 0;font-size: 18px;line-height: 1.3;">Pickup Address</span> <br />
-                                #{{$pickup_address}}
+                                {{$pickup_address}}
                               </td>
                             </tr>
                           </table>
@@ -223,11 +223,12 @@
                           <table cellspacing="0" cellpadding="0" width="100%" style="border-collapse:separate !important;">
                             <tr>
                               <td style="border: 1px solid #e5e5e5;border-radius: 5px;background-color: #ffffff;padding: 12px 15px 15px;text-align: left;width: 253px;">
-                                <span style="padding: 5px 0;font-size: 18px;line-height: 1.3;">Date Ordered</span><br />
-                                {{$recived_at}} <br />
-                                <br />
                                 <span style="padding: 5px 0;font-size: 18px;line-height: 1.3;">Order</span> <br />
                                 #{{$service_no}}
+                                <br />
+                                <br />
+                                <span style="padding: 5px 0;font-size: 18px;line-height: 1.3;">Date Ordered</span><br />
+                                {{$recived_at}} <br />                                
                               </td>
                             </tr>
                           </table>
@@ -250,14 +251,14 @@
             <tr>
               <td style="padding: 30px 20px !important;">
                 <table cellspacing="0" cellpadding="0" width="100%">
-                  <tr>
-                    <td style="text-align: left;border-bottom: 1px solid #cccccc;color: #4d4d4d;font-weight: 700;padding-bottom: 5px;" width="300">
+                  <tr style="background: #eee;">
+                    <td style="text-align: left;border-bottom: 1px solid #cccccc;color: #4d4d4d;font-weight: 700;padding: 10px 5px;" width="300">
                        Item ID
                     </td>
-                    <td  style="text-align: left;border-bottom: 1px solid #cccccc;color: #4d4d4d;font-weight: 700;padding-bottom: 5px;"  width="163">
+                    <td  style="text-align: left;border-bottom: 1px solid #cccccc;color: #4d4d4d;font-weight: 700;padding: 10px 5px;"  width="163">
                       Name
                     </td>
-                    <td  style="text-align: left;border-bottom: 1px solid #cccccc;color: #4d4d4d;font-weight: 700;padding-bottom: 5px;"  width="97">
+                    <td  style="text-align: left;border-bottom: 1px solid #cccccc;color: #4d4d4d;font-weight: 700;padding: 10px 5px;"  width="97">
                       Price
                     </td>
                   </tr> 
