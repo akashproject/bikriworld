@@ -29,7 +29,7 @@
                 <header style="padding-bottom: 25px; margin-bottom: 25px;">
                    <div style="display: flex;align-items: center!important;justify-content: space-between!important;flex-wrap: wrap;margin-top:12px;margin-left:12px;margin-right;:12px">
                       <div style="width: auto;">
-                         <div style="header-logo"><a href="index.html"><img src="https://bikriworld.com/assets/images/logo.png" alt="Invce"></a></div>
+                         <div style="width: 220px;"><a href="index.html"><img style="width: 100%;" src="https://bikriworld.com/assets/images/logo.png" alt="Invce"></a></div>
                       </div>
                       <div style="width: auto;">
                          <h1 style="font-size: 24px;margin-bottom: 5px;">Invoice</h1>
