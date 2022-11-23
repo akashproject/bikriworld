@@ -177,10 +177,8 @@ class OrderController extends Controller
                 'recived_at' => date('d M, Y'),
             );
 
-            $data = array(
-                "title"=> "Welcome"
-            );
-            $pdf = Pdf::loadView('emails.invoice-pdf', $data);
+
+            $pdf = Pdf::loadView('emails.invoice-pdf', $orderData);
 
             echo Mail::send('emails.order2', $orderData, function ($m) use ($user, $pdf) {
                 $m->from('service@bikriworld.com', 'Bikriworld');
