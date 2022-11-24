@@ -177,8 +177,20 @@ class OrderController extends Controller
                 'recived_at' => date('d M, Y'),
             );
 
+            $data = array(
+                'name' => $order->user_fullname,
+                'device_name' => $order->product_name,
+                'product_unique_no' => $order->product_unique_no,
+                'variation_type' => $order->variation_type,
+                'service_no' => $order->service_no,
+                'amount' => number_format($order->amount),
+                'payment_mode' => $order->payment_mode,
+                'pickup_schedule' => $order->pickup_schedule,
+                'pickup_address' => $order->pickup_address.','.$order->pickup_city.','.$order->pickup_state.' Pin -'.$order->pincode,
+                'recived_at' => date('d M, Y'),
+            );
 
-            $pdf = Pdf::loadView('emails.invoice-pdf', $orderData);
+            $pdf = Pdf::loadView('emails.invoice-pdf', $data);
 
             echo Mail::send('emails.order2', $orderData, function ($m) use ($user, $pdf) {
                 $m->from('service@bikriworld.com', 'Bikriworld');

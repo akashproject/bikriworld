@@ -82,13 +82,13 @@
 
                         <div style="width: auto;">
 
-                            <p style="margin-bottom: 0;margin: 0 0 18px 0;margin-right: 1.5rem!important;line-height: 1.571;margin-right: 1.5rem!important;"><b>Invoice No: </b>#{{$service_no}}</p>
+                            <p style="margin-bottom: 0;margin: 0 0 18px 0;margin-right: 1.5rem!important;line-height: 1.571;margin-right: 1.5rem!important;"><b>Invoice No: </b>#{{ $service_no ?? '' }}</p>
 
                         </div>
 
                         <div style="width: auto;">
 
-                            <p style="margin-bottom: 0;margin: 0 0 18px 0;margin-right: 1.5rem!important;line-height: 1.571;"><b>Date : </b>{{$recived_at}}</p>
+                            <p style="margin-bottom: 0;margin: 0 0 18px 0;margin-right: 1.5rem!important;line-height: 1.571;"><b>Date : </b>{{ $recived_at ?? '' }}</p>
 
                         </div>
 
@@ -103,9 +103,9 @@
 
                       <div>
 
-                         <b>Passenger Info:</b>
+                         <b>Invoiced From:</b>
 
-                         <address style="margin-bottom: 0;font-style: normal;">Mr. Alex Jender<br>1457 E 25th St, Indianapolis, Dhaka,<br>+123 5469 2547<br>info@zoomsax.com</address>
+                         <address style="margin-bottom: 0;font-style: normal;">Team BikriWorld.<br><br>service@bikriworld.com</address>
 
                       </div>
 
@@ -115,9 +115,9 @@
 
                       <div style="text-align: right;">
 
-                         <b>Pabna Express:</b>
+                         <b>Pay To:</b>
 
-                         <address style="margin-bottom: 0;font-style: normal;">4510 E 96th St, Indianapolis,<br>IN 46240, Pabna, Rajshahi<br>+153 5463 2548<br>info@pabnaexpress.com</address>
+                         <address style="margin-bottom: 0;font-style: normal;">{{ $name ?? '' }}<br>{{ $pickup_address ?? '' }}</address>
 
                       </div>
 
@@ -128,40 +128,64 @@
                 <table style="border: none;margin-bottom: 25px;margin: 0 0 1.5em;width: 100%;border-collapse: collapse;border-spacing: 0;">
 
                     <thead style="border-color: inherit;border-style: solid;border-width: 0;">
-
                         <tr style="text-align: left;border-bottom: none;position: relative;border-color: inherit;border-style: solid;border-width: 0;">
-
-                           <th style="border-radius: 99px 0 0 99px;background-color:#DDE2EE;padding: 11px 20px;">Item Description</th>
-
+                           <th style="border-radius: 99px 0 0 99px;background-color:#DDE2EE;padding: 11px 20px;">Unique Id</th>
+                           <th style="background-color:#DDE2EE;padding: 11px 20px;">Item</th>
                            <th style="background-color:#DDE2EE;padding: 11px 20px;">Price</th>
-
-                           <th style="background-color:#DDE2EE;padding: 11px 20px;">Qty</th>
-
                            <th style="background-color:#DDE2EE;padding: 11px 20px;border-radius: 0 99px 99px 0;">Total</th>
-
                         </tr>
-
                     </thead>
 
                     <tbody>
 
                       <tr style="border-bottom: none;position: relative;border-color: inherit;border-style: solid;border-width: 0;">
-
-                         <td style="background-color:#f2f2f2;padding: 11px 20px;border: none;"><b>Easy Chicken Masala	</b></td>
-
-                         <td style="background-color:#f2f2f2;padding: 11px 20px;border: none;"><b>$55.00</td>
-
-                         <td style="background-color:#f2f2f2;padding: 11px 20px;border: none;">1</td>
-
-                         <td style="background-color:#f2f2f2;padding: 11px 20px;border: none;">$55.00</td>
-
+                        <td style="border-radius: 99px 0 0 99px;background-color:#f2f2f2;padding: 11px 20px;border: none;">
+                           <b>{{ $product_unique_no ?? '' }}</b>
+                        </td>
+                        <td style="background-color:#f2f2f2;padding: 11px 20px;border: none;">
+                           <b>{{ $device_name ?? '' }}</b>
+                        </td>
+                        <td style="background-color:#f2f2f2;padding: 11px 20px;border: none;">
+                           <b>{{ $amount ?? '' }}</b>
+                        </td>
+                        <td style="background-color:#f2f2f2;padding: 11px 20px;border: none;border-radius: 0 99px 99px 0;">
+                           <b>{{ $amount ?? '' }}</b>
+                        </td>
                       </tr>
 
                     </tbody>
 
                 </table>
 
-                <p style="background-color: transparent;padding-bottom: 0;padding-top: 0;text-align: center;padding: 13px 30px;border-radius: 999px;margin-top: 15px;margin-bottom: 26px;"><b>Invce Inc:</b><br>12th Floor, Plot No.5, IFIC Bank, Gausin Rod, Suite 250-20, Franchisco USA 2022.</p>
+                <div style="flex-wrap: wrap;margin-top:12px;margin-left:12px;margin-right:12px;justify-content: space-between!important;margin-bottom:1.5rem!important;height: 120px;">
+                  <div style="width: auto;float: left;">
+                     <div style="">
+                        
+                     </div>
+                  </div>
+                  <div style="width: auto;float: right;">
+                     <table style="border: none;margin-bottom: 0;margin-top: -4px;margin: 0 0 1.5em;width: 100%;border-collapse: collapse;border-spacing: 0;">
+                        <tbody style="border-color: inherit;border-style: solid;border-width: 0;">
+                           <tr style="border-color: inherit;border-style: solid;border-width: 0;">
+                              <th style="border: none;padding: 4px 20px;">Sub Total:</th>
+                              <td style="border: none;padding: 4px 20px;text-align: right;">Rs. {{ $amount ?? '' }}/-</td>
+                           </tr>
+                           <tr style="border-color: inherit;border-style: solid;border-width: 0;">
+                              <th style="border: none;padding: 4px 20px;">Tax:</th>
+                              <td style="border: none;padding: 4px 20px;text-align: right;">Rs. 00.00/-</td>
+                           </tr>
+                           <tr style="border-color: inherit;border-style: solid;border-width: 0;">
+                              <th style="border: none;padding: 4px 20px;">Discount:</th>
+                              <td style="border: none;padding: 4px 20px;text-align: right;">Rs. 00.00/-</td>
+                           </tr>
+                           <tr style="border-color: inherit;border-style: solid;border-width: 0;">
+                              <th style="border: none;padding: 4px 20px;">Total:</th>
+                              <td style="border: none;padding: 4px 20px;text-align: right;">Rs. {{ $amount ?? '' }}/-</td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+               </div>
 
                 <p style="border-top: 1px solid #CFD3DC;border-bottom: 1px solid #CFD3DC;padding-top: 15px;padding-bottom: 15px;text-align: center;margin-top: 1rem!important;">
 

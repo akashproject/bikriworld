@@ -208,7 +208,7 @@
                                 {{$payment_mode}} <br />
                                 <br />
                                 <span style="padding: 5px 0;font-size: 18px;line-height: 1.3;">Pickup Address</span> <br />
-                                #{{$pickup_address}}
+                                {{$pickup_address}}
                               </td>
                             </tr>
                           </table>
