@@ -150,7 +150,8 @@ class OrderController extends Controller
 
     public function testMail(){
         try {
-
+           
+            $starttime = microtime(true); // Top of page
             //$this->generateInvoiceAttachment();
             $order = DB::table('orders')
             ->join('product', 'product.id', '=', 'orders.product_id')
@@ -158,7 +159,7 @@ class OrderController extends Controller
             ->where('orders.id', '=', '104')
             ->select('orders.*','product.*','users.*','product.name as product_name','users.name as user_fullname')
             ->first();
-        
+            
             $user = array(
                 'name' => $order->user_fullname,
                 'email' => $order->email,
@@ -176,7 +177,7 @@ class OrderController extends Controller
                 'pickup_address' => $order->pickup_address.','.$order->pickup_city.','.$order->pickup_state.' Pin -'.$order->pincode,
                 'recived_at' => date('d M, Y'),
             );
-
+            
             $data = array(
                 'name' => $order->user_fullname,
                 'device_name' => $order->product_name,
@@ -189,20 +190,42 @@ class OrderController extends Controller
                 'pickup_address' => $order->pickup_address.','.$order->pickup_city.','.$order->pickup_state.' Pin -'.$order->pincode,
                 'recived_at' => date('d M, Y'),
             );
-
+            
             $pdf = Pdf::loadView('emails.invoice-pdf', $data);
+            $to = "akashdutta.scriptcrown@gmail.com";
+            $subject = "Test Email";
+            
+            $message = "<b>This is HTML message.</b>";
+            $message .= "<h1>This is headline.</h1>";
+            
+            $header = "From:service@bikriworld.com \r\n";
+            $header .= "MIME-Version: 1.0\r\n";
+            $header .= "Content-type: text/html\r\n";
+            
+            $retval = mail($to,$subject,$message,$header);
+            
+            if( $retval == true ) {
+                echo "Message sent successfully...";
+            }else {
+                echo "Message could not be sent...";
+            }
+            
+            // echo Mail::send('emails.order2', $orderData, function ($m) use ($user, $pdf) {
+            //     $m->from('service@bikriworld.com', 'Bikriworld');
+            //     $m->to('akashdutta.scriptcrown@gmail.com', $user['name'])->subject('Bikriworld Invoice! | '.$user['service_no']);
+            //     // foreach ($files as $file){
+            //     //     $m->attach($file);
+            //     // }
+            // });
+          
+            
+            // Code
+            $endtime = microtime(true); // Bottom of page
 
-            echo Mail::send('emails.order2', $orderData, function ($m) use ($user, $pdf) {
-                $m->from('service@bikriworld.com', 'Bikriworld');
-                $m->to('akashdutta.scriptcrown@gmail.com', $user['name'])->subject('Bikriworld Invoice! | '.$user['service_no'])->attachData($pdf->output(), "invoice.pdf");;
-                // foreach ($files as $file){
-                //     $m->attach($file);
-                // }
-            });
-            echo "<br>";
-            dd('Mail sent successfully');
+            printf("Page loaded in %f seconds", $endtime - $starttime );
+            exit;
         } catch(\Illuminate\Database\QueryException $e){
-
-        } 
+            print_r($e);
+        }   
     }
 }

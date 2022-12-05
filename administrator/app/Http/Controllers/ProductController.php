@@ -98,28 +98,4 @@ class ProductController extends Controller
         }        
     }
 
-    public function testMail(Request $request){
-        $user = array(
-            'name' => 'Akash Dutta',
-            'email' => 'akashdutta.scriptcrown@gmail.com',
-        );
-        $orderData = array(
-            'service_no' => rand(00000000,99999999),
-            'amount' => "2000",
-            'payment_mode' => "UPI",
-            'pickup_schedule' => "14 Apr, 2022",
-            'pickup_address' => "123 st, Bhattanagar, Liluah",
-            'pickup_city' => 'Howrah',
-            'pickup_state' => 'West Bengal',
-            'pincode' => '711203',
-            'status' => 'pending',
-        );
-        Mail::send('emails.order', $orderData, function ($m) use ($user) {
-            $m->from('service@bikriworld.com', 'Bikriworld');
-            //$m->to($user->email, $user->name)->subject('Your Reminder!');
-            $m->to($user['email'], $user['name'])->subject('Bikriworld Test Admin Mail!');
-        });
-        echo "Bikriworld Test Admin Mail";
-    }
-
 }
