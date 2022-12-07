@@ -175,7 +175,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         Spatie\Permission\PermissionServiceProvider::class,
-
+        Dacastro4\LaravelGmail\LaravelGmailServiceProvider::class,
     ],
 
     /*
@@ -230,6 +230,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'PDF' => Barryvdh\DomPDF\Facade::class,
+        'LaravelGmail' => Dacastro4\LaravelGmail\Facade\LaravelGmail::class,
     ],
 
 ];
