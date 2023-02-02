@@ -130,9 +130,25 @@ class OrderController extends Controller
                 'pickup_address' => $order->pickup_address.','.$order->pickup_city.','.$order->pickup_state.' Pin -'.$order->pincode,
                 'recived_at' => date('d M, Y'),
             );
-            Mail::send('emails.order', $orderData, function ($m) use ($user) {
+
+            $data = array(
+                'name' => $order->user_fullname,
+                'device_name' => $order->product_name,
+                'product_unique_no' => $order->product_unique_no,
+                'variation_type' => $order->variation_type,
+                'service_no' => $order->service_no,
+                'amount' => number_format($order->amount),
+                'payment_mode' => $order->payment_mode,
+                'pickup_schedule' => $order->pickup_schedule,
+                'pickup_address' => $order->pickup_address.','.$order->pickup_city.','.$order->pickup_state.' Pin -'.$order->pincode,
+                'recived_at' => date('d M, Y'),
+            );
+            
+            $pdf = Pdf::loadView('emails.invoice-pdf', $data);
+
+            Mail::send('emails.order2', $orderData, function ($m) use ($user, $pdf) {
                 $m->from('service@bikriworld.com', 'Bikriworld');
-                $m->to($user['email'], $user['name'])->subject('Bikriworld Invoice! | '.$user['service_no']);
+                $m->to('akashdutta.scriptcrown@gmail.com', $user['name'])->subject('Bikriworld Invoice! | '.$user['service_no'])->attachData($pdf->output(), "invoice.pdf");
             });
             return true;
         } catch(\Illuminate\Database\QueryException $e){
@@ -192,31 +208,31 @@ class OrderController extends Controller
             );
             
             $pdf = Pdf::loadView('emails.invoice-pdf', $data);
-            $to = "akashdutta.scriptcrown@gmail.com";
-            $subject = "Test Email";
+            // $to = "akashdutta.scriptcrown@gmail.com";
+            // $subject = "Test Email";
             
-            $message = "<b>This is HTML message.</b>";
-            $message .= "<h1>This is headline.</h1>";
+            // $message = "<b>This is HTML message.</b>";
+            // $message .= "<h1>This is headline.</h1>";
             
-            $header = "From:service@bikriworld.com \r\n";
-            $header .= "MIME-Version: 1.0\r\n";
-            $header .= "Content-type: text/html\r\n";
+            // $header = "From:service@bikriworld.com \r\n";
+            // $header .= "MIME-Version: 1.0\r\n";
+            // $header .= "Content-type: text/html\r\n";
             
-            $retval = mail($to,$subject,$message,$header);
+            // $retval = mail($to,$subject,$message,$header);
             
-            if( $retval == true ) {
-                echo "Message sent successfully...";
-            }else {
-                echo "Message could not be sent...";
-            }
+            // if( $retval == true ) {
+            //     echo "Message sent successfully...";
+            // }else {
+            //     echo "Message could not be sent...";
+            // }
             
-            // echo Mail::send('emails.order2', $orderData, function ($m) use ($user, $pdf) {
-            //     $m->from('service@bikriworld.com', 'Bikriworld');
-            //     $m->to('akashdutta.scriptcrown@gmail.com', $user['name'])->subject('Bikriworld Invoice! | '.$user['service_no']);
-            //     // foreach ($files as $file){
-            //     //     $m->attach($file);
-            //     // }
-            // });
+            echo Mail::send('emails.order2', $orderData, function ($m) use ($user, $pdf) {
+                $m->from('service@bikriworld.com', 'Bikriworld');
+                $m->to('akashdutta.scriptcrown@gmail.com', $user['name'])->subject('Bikriworld Invoice! | '.$user['service_no'])->attachData($pdf->output(), "invoice.pdf");
+                // foreach ($pdf as $file){
+                //     $m->attach($file);
+                // }
+            });
           
             
             // Code
