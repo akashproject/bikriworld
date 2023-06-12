@@ -2,6 +2,14 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TWWMLNZZ9G"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-TWWMLNZZ9G');
+    </script>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta charset="UTF-8">
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -50,6 +58,8 @@
     <script>
     gtag('event', 'conversion', {'send_to': 'AW-10993657790/HXbJCNywyOUDEL7Pl_oo'});
     </script>
+    <!-- Google tag (gtag.js) -->
+
     @endif
     @yield('style')
 

@@ -153,6 +153,11 @@
         max-width: 185px;
     }
 
+    .subheader {
+
+        background-size: cover;
+    
+    }
     /*banner*/
     .subheader .page_title,
     .banner .text_box .title {
@@ -468,6 +473,22 @@
 
 @media (max-width: 767px) {
 
+    .refferel-code {
+        margin: auto;
+        text-align: center;
+        padding: 0;
+    }
+
+    .refferel-code h5 {
+        color: #fff;
+        margin: 11px 0;
+    }
+    ul.social-share {
+        display: inline-flex;
+    }
+    ul.social-share li {
+        margin: 1rem 10px;
+    }
     .city-search-list img{
         width: 68px;
         max-width: fit-content;
@@ -482,6 +503,12 @@
         position: absolute;
         top: -22px;
         font-size: 12px;
+    }
+
+    .custom_form_style label.error {
+        margin: 0;
+        position: inherit;
+        top: auto;
     }
 
     .product-right-content .variant_wrap .custom_form_style {
@@ -502,6 +529,7 @@
 
     .subheader {
         padding: 30px 0 0;
+        background-size: cover;
     }
 
     .subheader .page_breadcrumb .breadcrumb .breadcrumb-item a,.breadcrumb .breadcrumb-item{
@@ -530,7 +558,7 @@
     }
 
     .product-right-content h3 {
-        font-size: 14px;
+        font-size: 20px;
     }
 
     .brand_listing .team_img{
@@ -575,8 +603,8 @@
     .thm-btn {     
         padding: 9px 21px;
     }
-    .back-to-top{
-        bottom: 20px;
+    .back-to-top {
+        bottom: 70px;
         right: 20px;
         font-size: 18px;
         width: 40px;
@@ -792,7 +820,31 @@
         display: none;
     }
 
+    .sticky-footer-mobile {
+        margin-bottom: 10px;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        z-index: 10;
+        display: block;
+    }
     
+    .sticky-footer-mobile a.sticky-btn {
+        background: #fff;
+        color: #00986b;
+        border: 2px solid;
+        display: block;
+        width: 100%;
+        padding: 8px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+    .sticky-footer-desktop {
+        display: none;
+    }
 
 }
 
@@ -803,6 +855,12 @@
         position: absolute;
         top: -22px;
         font-size: 12px;
+    }
+
+    .custom_form_style label.error {
+        margin: 0;
+        position: inherit;
+        top: auto;
     }
 
     .portfolio_details .title,

@@ -231,7 +231,6 @@ $(function() {
     });
     let varientField = '';
     $('.addMoreProductVarient').on("click", function(){
-        console.log("here");
         if(varientField == ''){
             varientField = $('.productVarientWrap').html();
         }
@@ -242,5 +241,27 @@ $(function() {
         $(this).parent().parent().remove();
     });
 
-    
+    $('#copyToClipBoard').on("click", function(){
+        // Get the text field
+        var copyText = document.getElementById("copyTextContainer");
+        unsecuredCopyToClipboard(copyText.value);
+       
+    });
+
 });
+
+function unsecuredCopyToClipboard(text) {
+    const textArea = document.createElement("textarea");
+    textArea.value = text;
+    //document.body.prependChild(textArea);
+    document.body.insertBefore(textArea, document.body.firstChild);
+    textArea.focus();
+    textArea.select();
+    try {
+      document.execCommand('copy');
+      $("#copyToClipBoard").html("copied");
+    } catch (err) {
+      console.error('Unable to copy to clipboard', err);
+    }
+    document.body.removeChild(textArea);
+  }

@@ -56,6 +56,7 @@ class BrandController extends Controller
         $data = $request->all();
         $validatedData = $request->validate([
             'name' => 'required',
+            'slug' => 'required',
         ]);
 
         if($data['brand_id'] <= 0){

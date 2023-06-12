@@ -78,7 +78,7 @@
                                 <li style="padding: 10px 25px;">
                                     <div class="image">
                                     @if($product->image)
-                                    <img src="/administrator/public/images/{{ $product->image }}" alt="img" class="image-fit">
+                                    <img src="https://administrator.bikriworld.com/public/images/{{ $product->image }}" alt="img" class="image-fit">
                                     @else 
                                     <img src="https://via.placeholder.com/180x180" alt="img" class="image-fit">
                                     @endif 

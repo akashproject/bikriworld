@@ -53,6 +53,13 @@
 					</div>
 				</div>
 
+				<div class="form-group row">
+					<label for="name" class="col-sm-3 text-right control-label col-form-label">Slug</label>
+					<div class="col-sm-9">
+						<input type="text" class="form-control" name="slug" id="slug" placeholder="Slug Here" >
+					</div>
+				</div>
+
 				<!-- <div class="form-group row">
 					<label for="type" class="col-sm-3 text-right control-label col-form-label">Type</label>
 					<div class="col-sm-9">

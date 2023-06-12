@@ -34,7 +34,12 @@
 						<input type="text" class="form-control" name="name" id="name" placeholder="Title Here" >
 					</div>
 				</div>
-
+				<div class="form-group row">
+					<label for="name" class="col-sm-3 text-right control-label col-form-label">Brand Slug</label>
+					<div class="col-sm-9">
+						<input type="text" class="form-control" name="slug" id="slug" placeholder="Title Here" >
+					</div>
+				</div>
 				<div class="form-group row">
 					<label for="category" class="col-sm-3 text-right control-label col-form-label">Category</label>
 					<div class="col-sm-9">

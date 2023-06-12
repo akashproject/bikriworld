@@ -37,7 +37,10 @@ Preloader End -->
                 <li class="menu-item">
                     <a class="menu-link" href="{{ url($key) }}">{{ $navbarItem }}</a>
                 </li>
-            @endforeach             
+            @endforeach    
+                <li class="menu-item">
+                    <a class="menu-link" href="mailto:franchise@bikriworld.com"> Become a Pertner </a>
+                </li>
             @if(Session::get('userData'))
                 <li class="menu-item">
                     <a href="{{ url('dashboard') }}"> Dashboard </a>
@@ -87,21 +90,21 @@ Preloader End -->
                     <div class="col-12">    
                         <div class="form-group custom_form_style">
                             <label class="padding-30px-left-right">Please your Name <span class="required">*</span></label>
-                            <input type="text" name="name" class="form-control" autocomplete="off" placeholder="Enter Name">
+                            <input type="text" name="name" class="form-control" autocomplete="off" placeholder="Enter Name" required>
                         </div>
                     </div> 
                     <div class="col-12">
                         <div class="form-group custom_form_style">
                             <label class="padding-30px-left-right">Please enter your email address <span class="required">*</span></label>
-                            <input type="text" name="email" class="form-control" autocomplete="off" placeholder="Enter Email Address">
+                            <input type="email" name="email" class="form-control" autocomplete="off" placeholder="Enter Email Address" required>
                         </div>
                     </div>
                 </div>
                 <div class="row one_time_password">
                     <div class="col-12">
                         <div class="form-group custom_form_style">
-                            <label class="padding-30px-left-right">Enter your one time password <span class="required">*</span></label>
-                            <input type="text" class="form-control verify_otp" autocomplete="off" placeholder="Enter One Time Password" value="">
+                            <label class="padding-30px-left-right">Enter your OTP <span class="required">*</span></label>
+                            <input type="text" class="form-control verify_otp" autocomplete="off" placeholder="Enter OTP" value="">
                         </div>
                     </div>
                     <div class="col-12">
@@ -112,9 +115,11 @@ Preloader End -->
             <div class="sidebar_widget">
                 <input type="hidden" name="responsed_otp" class="responsed_otp" value="">
                 <input type="hidden" id="redirect_url" value="{{ (Route::current()->getName() == 'sell-old-product') ? 'active' : '' }}">
-                <a type="button" href="javascript:void(0)" class="checkUserExistBtn thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle width-100"> Continue <i class="fal fa-chevron-right ml-2"></i></a>
+                
+                <a href="javascript:void(0)" class="checkUserExistBtn thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle width-100"> Continue <i class="fal fa-chevron-right ml-2"></i></a>
 
                 <button type="submit" href="javascript:void(0)" class="loginSubmitBtn thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle width-100"> Continue <i class="fal fa-chevron-right ml-2"></i></button>
+                <img src="https://www.icacourse.in/wp-content/themes/scriptcrown/images/loader.gif" style="width: 42px;display:none;" class="checkout_loader">
             </div>
         </form>
     </div>
@@ -143,6 +148,17 @@ Preloader End -->
                             <a class="menu-link" href="{{ url($key) }}">{{ $navbarItem }}</a>
                         </li>
                     @endforeach
+                    <li class="menu-item menu-item-has-children">
+                        <a href="#">More</a>
+                        <ul class="sub-menu">
+                            <li class="menu-item">
+                                <a class="menu-link" href="mailto:franchise@bikriworld.com"> Become a Pertner </a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="javascript:void(0)">Refer & Earn </a>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
                 <!-- Navigation Ens -->
             </nav>
@@ -220,6 +236,17 @@ Preloader End -->
                                 <a class="menu-link" href="{{ url($key) }}">{{ $navbarItem }}</a>
                             </li>
                         @endforeach
+                        <li class="menu-item menu-item-has-children">
+                            <a href="#">More</a>
+                            <ul class="sub-menu">
+                                <li class="menu-item">
+                                    <a class="menu-link" href="mailto:franchise@bikriworld.com"> Become a Pertner </a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="javascript:void(0)">Refer & Earn </a>
+                                </li>
+                            </ul>
+                        </li>
                     </ul>
                     <!-- Navigation Ens -->                    
                 </nav>

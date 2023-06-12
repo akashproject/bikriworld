@@ -26,14 +26,20 @@ class OrderController extends Controller
 
     public function index(){
         try {
+            $search = (request()->has('search'))?request()->get('search'):"";
             //$orders = Order::all();
-           $orders = DB::table('orders')
-            ->join('product', 'product.id', '=', 'orders.product_id')
+           $builder = DB::table('orders');
+
+           $builder->join('product', 'product.id', '=', 'orders.product_id')
             ->join('users', 'users.id', '=', 'orders.user_id')
-            ->select('orders.*', 'product.name as product_name','users.name as user_fullname','orders.id as order_id')
-            ->distinct()
-            ->orderBy('orders.id', 'desc')
-            ->get();
+            ->select('orders.*', 'product.name as product_name','users.name as user_fullname','orders.id as order_id');
+             if(request()->has('search') && request()->get('search') != "") {
+                $builder->where("orders.service_no",request()->get('search'))
+                        ->orWhere('users.name', 'LIKE', "%$search%")
+                        ->orWhere('users.mobile',$search);
+             }   
+
+            $orders = $builder->distinct()->orderBy('orders.id', 'desc')->paginate(10);
             return view('order.index',compact('orders'));
         } catch(\Illuminate\Database\QueryException $e){
             
@@ -155,6 +161,102 @@ class OrderController extends Controller
 
         } 
         
+    }
+
+    public function exportAllCsv(Request $request) {
+        try {
+            $data = $request->all();
+            $fileName = 'tasks.csv';
+            $data['startDate'] = date("Y-m-d h:i:s",$data['startDate']);
+            $data['endDate'] = date("Y-m-d h:i:s",$data['endDate']);
+
+            $orders = DB::table($data['table'])
+            ->join('product', 'product.id', '=', 'orders.product_id')
+            ->join('users', 'users.id', '=', 'orders.user_id')
+            ->select('users.name as Name','users.mobile as Mobile','users.email as Email','product.name as product_name','orders.service_no','orders.amount','orders.payment_mode as Payment Mode','orders.pickup_schedule as Pickup Date','orders.pickup_address as Address','orders.pickup_state as State','orders.pickup_city as City','orders.pincode as Pincode')
+            ->whereBetween('orders.created_at', [$data['startDate'],$data['endDate']])
+            ->orderBy('orders.id', 'desc');
+
+            if($orders->count() <= 0) {
+                return redirect()->back()->with('message', 'No Record to Export!');
+            }
+
+            $rows = $orders->get();
+            $dbColumns = $orders->first();
+            
+            $headers = array(
+                "Content-type"        => "text/csv",
+                "Content-Disposition" => "attachment; filename=$fileName",
+                "Pragma"              => "no-cache",
+                "Cache-Control"       => "must-revalidate, post-check=0, pre-check=0",
+                "Expires"             => "0"
+            );
+            $columns = array();
+            foreach ($dbColumns as $key => $value) {
+                $columns[] = $key;
+            }
+            $rows = json_decode(json_encode($rows), true);
+            //echo "<pre>"; print_r($rows); exit;
+            //$columns = DB::getSchemaBuilder()->getColumnListing($data['table']);
+            $callback = function() use($rows, $columns) {
+                $file = fopen('php://output', 'w');
+                fputcsv($file, $columns);
+                foreach ($rows as $order) {
+                    fputcsv($file, $order);
+                }
+                fclose($file);
+            };
+
+            return response()->stream($callback, 200, $headers);
+
+        } catch(\Illuminate\Database\QueryException $e){
+            var_dump($e);
+        } 
+
+    }
+
+    public function exportCsv(Request $request) {
+        try {
+            $data = $request->all();
+            $fileName = 'tasks.csv';
+
+            $orders = DB::table('orders')
+            ->join('product', 'product.id', '=', 'orders.product_id')
+            ->join('users', 'users.id', '=', 'orders.user_id')
+            ->select('users.name as Name','users.mobile as Mobile','users.email as Email','product.name as product_name','orders.service_no','orders.amount','orders.payment_mode as Payment Mode','orders.pickup_schedule as Pickup Date','orders.pickup_address as Address','orders.pickup_state as State','orders.pickup_city as City','orders.pincode as Pincode')
+            ->whereBetween('orders.created_at', [$data['startDate'],$data['endDate']])
+            ->orderBy('orders.id', 'desc');
+            $rows = $orders->first();
+            
+            $headers = array(
+                "Content-type"        => "text/csv",
+                "Content-Disposition" => "attachment; filename=$fileName",
+                "Pragma"              => "no-cache",
+                "Cache-Control"       => "must-revalidate, post-check=0, pre-check=0",
+                "Expires"             => "0"
+            );
+            $columns = array();
+            foreach ($rows as $key => $value) {
+                $columns[] = $key;
+            }
+            $rows = json_decode(json_encode($rows), true);
+            //echo "<pre>"; print_r($rows); exit;
+            //$columns = DB::getSchemaBuilder()->getColumnListing($data['table']);
+            $callback = function() use($rows, $columns) {
+                $file = fopen('php://output', 'w');
+                fputcsv($file, $columns);
+                foreach ($rows as $order) {
+                    fputcsv($file, $order);
+                }
+                fclose($file);
+            };
+
+            return response()->stream($callback, 200, $headers);
+
+        } catch(\Illuminate\Database\QueryException $e){
+            var_dump($e);
+        } 
+
     }
 
     public function generateInvoiceAttachment()

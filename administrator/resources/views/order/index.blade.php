@@ -12,10 +12,66 @@
 
 			<div class="card-body">
 
+			@if(session()->has('message'))
+				<div class="alert alert-success">
+					{{ session()->get('message') }}
+				</div>
+			@endif
 				<h5 class="card-title"> Datatable</h5>
-
+				<form class="form-horizontal" method="post" action="{{ url('export-csv') }}" enctype="multipart/form-data">
+					@csrf
+					<div class="form-group row ">
+						<div class="col-sm-4">
+							<div class="form-group mt-3">
+								<label
+								>Start Date
+									<small class="text-muted">dd/mm/yyyy</small></label>
+								<input
+								type="date"
+								class="form-control date-inputmask"
+								id="date-mask"
+								name="startDate"
+								placeholder="Enter Date"
+								/>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div class="form-group mt-3">
+								<label
+								>End Date
+									<small class="text-muted">dd/mm/yyyy</small></label>
+								<input
+								type="date"
+								class="form-control date-inputmask"
+								id="date-mask"
+								name="endDate"
+								placeholder="Enter Date"
+								/>
+								<div class="form-group mt-3">
+									<button type="submit" class="btn btn-primary">Export CSV</button>								
+								</div>
+							</div>
+						</div>
+						
+					</div>
+					<input type="hidden" name="table" id="table" value="orders" >
+				</form>
 				<div class="table-responsive">
+					<div class="row">
+						<div class="col-sm-12 col-md-6">
+						</div>		
+						<div class="col-sm-12 col-md-6">
+							<form class="form-horizontal" method="get" action="{{ url('orders') }}">
 
+								<div class="form-group row">
+									<label for="search" class="col-sm-3 text-right control-label col-form-label">Search</label>
+									<div class="col-sm-9">
+										<input type="text" class="form-control" name="search" id="search" placeholder="Search Word" >
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
 					<table id="" class="table table-striped table-bordered">
 
 						<thead>
@@ -68,9 +124,9 @@
 						</tbody>
 
 					</table>
-
 				</div>
 
+				{{ $orders->links() }}
 
 
 			</div>

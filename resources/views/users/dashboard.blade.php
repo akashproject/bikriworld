@@ -21,6 +21,9 @@
                                 <li>
                                     <a href="{{ url('addresses') }}">Addresses</a>
                                 </li>
+                                <li>
+                                    <a href="{{ url('bw-earning') }}"> BW Earning </a>
+                                </li>
                             </ul>
                         </div>
                     </div>

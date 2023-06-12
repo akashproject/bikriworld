@@ -18,12 +18,15 @@ class ProductController extends Controller
     public function __construct(Request $request)
     {
         $this->middleware('auth');
-        
     }
     //
-    public function index(){
+    public function index(Request $request){
         try {
-            $products = Product::all();
+            $products = Product::select();
+            if($request->has('name')){
+                $products->where('name', 'like', '%'.$request->input('name').'%');
+            }
+            $products = $products->paginate(50);
             return view('product.index',compact('products'));
             } catch(\Illuminate\Database\QueryException $e){
         }
@@ -52,21 +55,26 @@ class ProductController extends Controller
     public function save(Request $request) {
         $data = $request->all();
         $variation = array();
-        for ($i=0; $i < count($data['ram']); $i++) { 
-            $variation[$i] = array(
-                'ram'=> $data['ram'][$i],
-                'storage'=> $data['storage'][$i],
-                'price'=> $data['price'][$i],
-            );
+        $data['variant'] = null;
+        if ($data['ram'][0] != '') {
+            for ($i=0; $i < count($data['ram']); $i++) { 
+                $variation[$i] = array(
+                    'ram'=> $data['ram'][$i],
+                    'storage'=> $data['storage'][$i],
+                    'price'=> $data['price'][$i],
+                );
+            }
+            $data['variant'] = json_encode($variation);
         }
-        $data['variant'] = json_encode($variation);
+        
         $validatedData = $request->validate([
             'name' => 'required',
+            'slug' => 'required',
         ]);
 
         if($data['product_id'] <= 0){
             $request->validate([
-                'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+                'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',
             ]);
         }
 

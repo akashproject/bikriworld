@@ -34,7 +34,7 @@
                     <article class="post post_list style_2 post_details mb-0 product-left-image text-center">
                         <div class="post_img">
                             @if($vehicle->image)
-                            <img src="/administrator/public/images/{{ $vehicle->image }}" alt="img">
+                            <img src="https://administrator.bikriworld.com/public/images/{{ $vehicle->image }}" alt="img">
                             @else 
                             <img src="https://via.placeholder.com/180x180" alt="img" class="">
                             @endif 

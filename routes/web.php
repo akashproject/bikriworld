@@ -52,6 +52,7 @@ Route::post('/save-address', [App\Http\Controllers\UserController::class, 'saveA
 Route::post('/save-payment', [App\Http\Controllers\UserController::class, 'savePayment'])->name('save-payment');
 Route::post('/save-info', [App\Http\Controllers\UserController::class, 'saveInfo'])->name('save-info');
 Route::get('/logout', [App\Http\Controllers\UserController::class, 'logout'])->name('logout');
+Route::get('/bw-earning', [App\Http\Controllers\UserController::class, 'bwEarning'])->name('bw-earning');
 
 // Login Module
 Route::post('/submit-mobile-otp', [App\Http\Controllers\LoginController::class, 'submitMobileOtp'])->name('submit-mobile-otp');
@@ -96,7 +97,8 @@ Route::post('/book-appointment', [App\Http\Controllers\VehicleController::class,
 Route::post('/confirm-booking', [App\Http\Controllers\VehicleController::class, 'confirmBooking'])->name('confirm-booking');
 
 
-
+//Refer & Earn
+Route::get('/refer-earn', [App\Http\Controllers\ReferEarnController::class, 'index'])->name('refer-earn');
 
 // Api Route
 Route::get('/api-categories', [App\Http\Controllers\ApiCategoriesController::class, 'apiIndex'])->name('api-categories-index');

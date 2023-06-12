@@ -73,7 +73,7 @@
                     <div class="ft_widget ft_apps">
                         <h6 class="ft-title">Apps Download</h6>
                         <p class="mb-xl-20">Sell From Anywhere At The Best (₹) Price. Download The Bikri World App Now.</p>
-                        <a href="#" class="app_img">
+                        <a target="_blank" href="https://play.google.com/store/apps/details?id=com.bikriworld" class="app_img">
                             <img src="/assets/images/google_store.jpg" alt="img">
                         </a>
                         <a href="#" class="app_img">
@@ -151,6 +151,31 @@
 	<p>Sorry ! Our Service is currently temporary disable on your city. We will get back to you soon</p>
 	<p><a class="popup-modal-dismiss thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle" href="#">Dismiss</a></p>
 </div>
+
+<div class="sticky-footer-mobile">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-6">
+                <a class="sticky-btn" target="_blank" href="https://play.google.com/store/apps/details?id=com.bikriworld">
+                    <img src="{{url('assets/images/icons')}}/playstore-m.png" style="width: auto;"> Download </a>
+            </div>
+            <div class="col-6">
+                <a class="sticky-btn" href="https://api.whatsapp.com/send?phone=7439995068&text=Want to sell my device">
+                    <img src="{{url('assets/images/icons')}}/whatsapp-m.png" style="width: auto;"> Whatsapp Chat</a>
+            </div>
+        </div>  
+    </div>
+</div>
+
+<a href="https://api.whatsapp.com/send?phone=7439995068&text=Want to sell my device" target="_blank" class="whatsapp-chat desktop-version" style="">
+    <img src="{{url('assets/images/icons')}}/whatsapp.png" style="width: auto;">
+</a>
+
+<a href="https://play.google.com/store/apps/details?id=com.bikriworld"  target="_blank" class="download-app desktop-version" style="">
+    <i class="fab fa-google-play"></i>
+    <span class="text-up-band" > Download Now</span>
+</a>
+
 <!-- Footer End -->
 <a href="#" data-target="html" class="back-to-top ft-sticky">
     <i class="fal fa-long-arrow-up"></i>

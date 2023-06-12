@@ -6,6 +6,26 @@
 		<form class="form-horizontal" method="post" action="{{ url('saveorder') }}" enctype="multipart/form-data">
 			@csrf
 			<div class="card-body">
+				<div class="text-right" >
+<textarea id="copyTextContainer" style="display:none">Service No : {{ $order->service_no }}
+Product Name : {{ $order->product_name }}
+Product Variant : {{ $order->variation_type }}
+Product Accessories : @foreach ($accessories as $accessory) {{ $accessory->name }}, @endforeach
+Device Faults : @foreach ($questions as $key => $value) {{$key}} : {{ $value }}, @endforeach
+Device Condition : {{ $condition->condition }}
+Product Age : {{ $age->age }}
+
+Selling Amount : Rs. {{ number_format($order->amount) }}/-
+Payment Mode : {{ $order->payment_mode }}
+Pickup Address : {{ $order->pickup_address }}, {{ $order->pickup_city }}, {{ $order->pickup_state }}, {{ $order->pincode }}
+Pickup Schedule : {{ $order->pickup_schedule }}
+
+Owner Name : {{ $order->user_fullname }}
+Mobile : {{ $order->mobile }}
+Email : {{ $order->email }}
+</textarea>
+					<button type="button" class="btn btn-primary" id="copyToClipBoard">Copy</button>
+				</div>
 				<h4 class="card-title"> Order Details </h4>
 				@if ($errors->any())
 					<div class="alert alert-danger">
@@ -127,7 +147,7 @@
 				<div class="form-group row">
 					<label for="name" class="col-sm-3 text-right control-label col-form-label">Pickup Address</label>
 					<div class="col-sm-9 text-left control-label col-form-label">
-						<span >Rs. {{ $order->pickup_address }}, {{ $order->pickup_city }}, {{ $order->pickup_state }}, {{ $order->pincode }} </span >
+						<span >{{ $order->pickup_address }}, {{ $order->pickup_city }}, {{ $order->pickup_state }}, {{ $order->pincode }} </span >
 					</div>
 				</div>
 
@@ -144,6 +164,14 @@
 						<select>
 					</div>
 				</div>
+
+				<div class="form-group row">
+					<label for="product_unique_no" class="col-sm-3 text-right control-label col-form-label"> Unique No </label>
+					<div class="col-sm-9 text-left control-label col-form-label">
+						<input type="text" name="product_unique_no" class="form-control"  id="product_unique_no" placeholder="Enter Unique No Here" >
+					</div>
+				</div>
+
 				<div class="form-group row">
 					<label for="name" class="col-sm-3 text-right control-label col-form-label"> Reason </label>
 					<div class="col-sm-9 text-left control-label col-form-label">

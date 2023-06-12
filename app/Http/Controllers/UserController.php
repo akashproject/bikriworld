@@ -64,6 +64,11 @@ class UserController extends Controller
         return view('users.address',compact('user','address'));
     }
 
+    public function bwEarning(){
+        $user = $this->user;
+        return view('users.bw-earning',compact('user'));
+    }
+
     public function getAddress(Request $request){
         $user = $this->user;
         $data = $request->all();

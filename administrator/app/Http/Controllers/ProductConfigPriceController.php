@@ -62,22 +62,26 @@ class ProductConfigPriceController extends Controller
     }
 
     public function save(Request $request) {
-        $data = $request->all();
-        $validatedData = $request->validate([
-            'config_id' => 'required',
-            'product_id' => 'required',
-            'price' => 'required',
-        ]);
+        try {
 
-        
-        if($data['product_config_price_id'] <= 0){
-            ProductConfigPrice::create($data);
-        } else {
-            $productConfigPrice = ProductConfigPrice::findOrFail($data['product_config_price_id']);
-            $productConfigPrice->update($data);
-        }
-        
-        return redirect('/product-config-prices');
+            $data = $request->all();
+            $validatedData = $request->validate([
+                'config_id' => 'required',
+                'product_id' => 'required',
+                'price' => 'required',
+            ]);
+
+            
+            if($data['product_config_price_id'] <= 0){
+                ProductConfigPrice::create($data);
+            } else {
+                $productConfigPrice = ProductConfigPrice::findOrFail($data['product_config_price_id']);
+                $productConfigPrice->update($data);
+            }
+            
+            return redirect('/product-config-prices');
+        } catch(\Illuminate\Database\QueryException $e){
+        } 
     }
 
 

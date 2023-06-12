@@ -56,7 +56,7 @@
                         <div class="team_img product_img">
                             <a href="{{ url('sell-old-product') }}/{{ $value->slug }}" >
                             @if($value->image)
-                            <img src="/administrator/public/images/{{ $value->image }}" alt="img">
+                            <img src="https://administrator.bikriworld.com/public/images/{{ $value->image }}" alt="img">
                             @else 
                             <img src="https://via.placeholder.com/180x180" alt="img" class="">
                             @endif   

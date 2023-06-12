@@ -71,7 +71,8 @@
                     <div class="team_block style_2 style_3 brand_listing">
                         <div class="team_img">                            
                             <a href="{{ url('sell-used-model') }}/{{ $value->slug }}" class="">
-                                <img src="/administrator/public/images/{{ $value->image }}" alt="img" class="">
+                                
+                                <img src="https://administrator.bikriworld.com/public/images/{{ $value->image }}" alt="img" class="">
                             </a>
                         </div>
                         <p class="thm-color-two mb-0 font-weight-bold">

@@ -96,6 +96,12 @@ const veriationPrice = [];
 
     $("#global_signin_form").validate({
         rules: {
+            'name': {
+                required: true,
+            },
+            'email': {
+                email: true,
+            },
             'mobile': {
                 required: true,
                 number: true,
@@ -104,17 +110,22 @@ const veriationPrice = [];
             }
         },
         messages: {
+            'name': "Please enter your name.",
+            'email': "Please enter your Email Address.",
             'mobile': "Please type valid mobile number.",
         },
         submitHandler: function(form) {
+            $(".checkout_loader").show();
             var formId = "global_signin_form";
             var verifyOtp = $("#" + formId + " .verify_otp").val();
             var responsedOtp = $("#" + formId + " .responsed_otp").val();
             if (responsedOtp != '' & verifyOtp == '' ) {
                 jQuery("#" + formId + " .response_status").html("Please Enter One Time Password");
+                $(".checkout_loader").hide();
                 return false;
             }else if (verifyOtp != '' && responsedOtp != '') {
                 verifyLoginOtp(form,formId,verifyOtp,responsedOtp);
+                
             } else {
                 sendMobileOtp(formId);
                 $("#" + formId + " .submit_login_btn").html("Verify OTP");
@@ -330,13 +341,16 @@ const veriationPrice = [];
     });
 
     $(".checkUserExistBtn").on('click', function(){
+        $(".checkout_loader").show();
         let mobile = $("#global_signin_form input[name=mobile]").val();
         if(mobile && mobile.length == 10){
             $('#signin_mobile_number').attr('readonly', true);
             $(".change_number").show();
             checkExist(mobile);
+            
         } else {
             $(".response_status").html("Please type valid mobile number.")
+            $(".checkout_loader").hide();
         }
     });
 
@@ -345,8 +359,7 @@ const veriationPrice = [];
         $(".one_time_password").hide();
         $(".checkUserExistBtn").show();
         $(".loginSubmitBtn").hide();
-        $(".registration_fields").hide();
-        
+        $(".registration_fields").hide();        
     });
 
     function checkExist(mobile){
@@ -367,6 +380,7 @@ const veriationPrice = [];
                     $(".registration_fields").show();
                     $(".checkUserExistBtn").hide();
                     $(".loginSubmitBtn").show();
+                    $(".checkout_loader").hide();
                 } else {
                     var formId = jQuery(".checkUserExistBtn").closest("form").attr('id');
                     jQuery("#" + formId + " .response_status").html("");
@@ -393,6 +407,7 @@ const veriationPrice = [];
                 'session_id':responsedOtp
             },
             success: function(result) {
+                $(".checkout_loader").hide();
                 result = JSON.parse(result);
                 console.log(result);
                 console.log(result.Status);
@@ -449,7 +464,7 @@ const veriationPrice = [];
                 mobile: mobileNo,
             },
             success: function(result) {
-                console.log(result);
+                $(".checkout_loader").hide();
                 result = JSON.parse(result);
                 if (result) {
                     jQuery("#" + formId + " .responsed_otp").val(result.Details);

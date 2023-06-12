@@ -19,21 +19,17 @@
 					<table id="zero_config" class="table table-striped table-bordered">
 
 						<thead>
-
 							<tr>
 								<th>Logo</th>
 								<th>Name</th>
 								<th>Options</th>
-
 							</tr>
-
 						</thead>
 
 						<tbody>
-
 							@foreach ($brands as $value)
 							<tr>
-								<td style="width:80px"><img src="/public/images/{{ $value->image }}" style="width:100%"></td>													
+								<td style="width:80px"><img src="{{ url('public/images')}}/{{ $value->image }}" style="width:100%"></td>													
 								<td>{{ $value->name }}</td>													
 								<td>
 								<a href="{{ url('brand') }}/{{ $value->id }}" class="btn btn-primary btn-lg">Edit</a>
@@ -41,15 +37,9 @@
 								</td>
 							</tr>
 							@endforeach							
-
 						</tbody>
-
 					</table>
-
 				</div>
-
-
-
 			</div>
 
 		</div>

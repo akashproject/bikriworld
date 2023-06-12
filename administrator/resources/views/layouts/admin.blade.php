@@ -76,11 +76,12 @@
 <script src="{{ url('assets/libs/flot/jquery.flot.crosshair.js') }}"></script>
 <script src="{{ url('assets/libs/flot.tooltip/js/jquery.flot.tooltip.min.js') }}"></script>
 <script src="{{ url('dist/js/pages/chart/chart-page-init.js') }}"></script>
+<script src="{{ url('dist/js/pages/calendar/cal-init.js') }}"></script>
 <script src="{{ url('dist/js/waves.js') }}"></script>
 <script src="{{ url('assets/extra-libs/multicheck/datatable-checkbox-init.js') }}"></script>
 <script src="{{ url('assets/extra-libs/multicheck/jquery.multicheck.js') }}"></script>
 <script src="{{ url('assets/extra-libs/DataTables/datatables.min.js') }}"></script>
-<script src="assets/libs/quill/dist/quill.min.js"></script>
+<script src="{{ url('assets/libs/quill/dist/quill.min.js') }}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/5.10.0/tinymce.min.js"></script>
 <script src="{{ url('dist/js/custom.js') }}"></script>
 <!--Wave Effects -->

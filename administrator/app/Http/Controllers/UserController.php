@@ -18,7 +18,7 @@ class UserController extends Controller
      */
     public function __construct()
     {
-        //$this->middleware('auth');
+        $this->middleware('auth');
     }
 
     /**
@@ -30,7 +30,15 @@ class UserController extends Controller
     {
         $users = "";
 		try {
-            $users = User::all();    
+            $search = (request()->has('search'))?request()->get('search'):"";
+            $builder = User::query();
+            if(request()->has('search') && request()->get('search') != "") {
+                $builder->where('name', 'LIKE', "%$search%")
+                ->orWhere('mobile',$search)
+                ->orWhere('email','LIKE',"%$search%");
+             } 
+
+            $users = $builder->orderBy('name')->paginate(20);
         } catch(\Illuminate\Database\QueryException $e){
             return response()->json(['error' => $e->errorInfo[2]], $this->_statusErr);
         }		

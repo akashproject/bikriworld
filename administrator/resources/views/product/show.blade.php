@@ -47,6 +47,12 @@
 					</div>
 				</div>
 
+				<div class="form-group row">
+					<label for="name" class="col-sm-3 text-right control-label col-form-label">Slug</label>
+					<div class="col-sm-9">
+						<input type="text" class="form-control" name="slug" id="slug" placeholder="Slug Here" value="{{ $product->slug }}" >
+					</div>
+				</div>
 
 				<div class="form-group row">
 					<label for="max_price" class="col-sm-3 text-right control-label col-form-label">Max Selling Price</label>

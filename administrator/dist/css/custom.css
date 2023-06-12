@@ -14834,3 +14834,9 @@ File: scss
 .productVarient {
     margin: 5px 0;
 }
+.cursor-default svg {
+    width: 10px;
+}
+nav.flex.items-center.justify-between svg {
+    width: 10px;
+}

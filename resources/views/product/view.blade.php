@@ -34,7 +34,7 @@
                     <article class="post post_list style_2 post_details mb-0 product-left-image text-center">
                         <div class="post_img">
                             @if($product->image)
-                            <img src="/administrator/public/images/{{ $product->image }}" alt="img">
+                            <img src="https://administrator.bikriworld.com/public/images/{{ $product->image }}" alt="img">
                             @else 
                             <img src="https://via.placeholder.com/180x180" alt="img" class="">
                             @endif 
@@ -46,8 +46,10 @@
                         @csrf
                         <div class="product-right-content">
                             <h3> {{ $product->name }} </h3>
+                           
                             <div class="variant_wrap row" >
                                 @if($product->variant != '')
+                                <span style="display: block;width: 100%;margin-left: 12px;margin-bottom: 8px;font-weight: 600;line-height: 15px;" > Please Select device specification </span>
                                 @foreach(json_decode($product->variant) as $key => $variant)
                                 <div class="col-lg-4">
                                     <div class="form-group custom_form_style">

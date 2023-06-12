@@ -67,6 +67,7 @@ class LoginController extends Controller
 
     public function registerUser(Request $request){
         $data = $request->all();
+        $data['referral_code'] ="BW_".$this->random_strings(8);
         $user = User::create($data)->toArray();
         $payment = Payment::create(array('user_id'=> $user['id']));
         $request->session()->put('userData', $data);
@@ -78,13 +79,30 @@ class LoginController extends Controller
         if($user){
             $request->session()->put('userData', $user->toArray());
         } else {
-            $user = User::create(array('mobile'=> $data['mobile'],'name'=> $data['name'],'email'=> $data['email']))->toArray();
+            $user = User::create(
+                array('mobile'=> $data['mobile'],
+                'name'=> $data['name'],
+                'email'=> $data['email'],
+                'referral_code'=> "BW_".$this->random_strings(8),
+                ))->toArray();
             $payment = Payment::create(array('user_id'=> $user['id']));
             $request->session()->put('userData', $data);
         }
 
         return response()->json(['true'],$this->_statusOK);
 
+    }
+
+    public function random_strings($length_of_string)
+    {
+    
+        // String of all alphanumeric character
+        $str_result = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    
+        // Shuffle the $str_result and returns substring
+        // of specified length
+        return substr(str_shuffle($str_result),
+                        0, $length_of_string);
     }
 
 

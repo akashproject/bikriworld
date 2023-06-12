@@ -37,7 +37,7 @@
                             <div class="col-6  col-lg-2">
                                 <div class="" >
                                     @if($value->image)
-                                    <img src="/administrator/public/images/{{ $value->image }}" alt="img">
+                                    <img src="https://administrator.bikriworld.com/public/images/{{ $value->image }}" alt="img">
                                     @else 
                                     <img src="https://via.placeholder.com/180x180" alt="img" class="">
                                     @endif 

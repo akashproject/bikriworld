@@ -13,10 +13,19 @@
 			<div class="card-body">
 
 				<h5 class="card-title">Basic Datatable</h5>
+				<div class="card-title">
+					<form class="form-inline" action="{{ url('products')}}">
+						<div class="form-group">
+							<label for="name">Search Product </label>
+							<input type="text" name="name" class="form-control" id="product">
+						</div>
+						<button type="submit" class="btn btn-default">Go</button>
+					</form>
+				</div>
 
 				<div class="table-responsive">
 
-					<table id="zero_config" class="table table-striped table-bordered">
+					<table id="" class="table table-striped table-bordered">
 
 						<thead>
 
@@ -38,7 +47,7 @@
 
 							<tr>
 
-								<td style="width:80px"><img src="/public/images/{{ $value->image }}" style="width:100%"></td>
+								<td style="width:80px"><img src="{{ url('/public/images')}}/{{ $value->image }}" style="width:100%"></td>
 								<td>{{ $value->name }}</td>
 								<td>{{$value->variant }}</td>
 								<td>{{$value->max_price }}</td>
@@ -56,7 +65,9 @@
 					</table>
 
 				</div>
-
+				<div class="d-flex justify-content-center">
+					{!! $products->links() !!}
+				</div>
 
 
 			</div>

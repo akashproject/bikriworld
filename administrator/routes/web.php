@@ -51,6 +51,10 @@ Route::get('/user/{id}', [App\Http\Controllers\UserController::class, 'show'])->
 Route::get('/orders', [App\Http\Controllers\OrderController::class, 'index'])->name('users');
 Route::get('/order/{id}', [App\Http\Controllers\OrderController::class, 'show'])->name('show');
 Route::post('/saveorder', [App\Http\Controllers\OrderController::class, 'save'])->name('save');
+Route::post('/export-csv', [App\Http\Controllers\OrderController::class, 'exportAllCsv'])->name('export-csv');
+
+Route::get('/order-report', [App\Http\Controllers\OrderByUserController::class, 'index'])->name('order-report');
+Route::get('/user-report', [App\Http\Controllers\OrderByUserController::class, 'indexByUser'])->name('order-user');
 
 //brands
 Route::get('/brands', [App\Http\Controllers\BrandController::class, 'index'])->name('brands');
