@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,10 +21,6 @@ Route::get('/clear-cache', function() {
     // return what you want
  });
 
-// Route::get('/test-mail', function() {
-    
-//     //return view('emails.order');
-// });
 Route::get('/test-mail', [App\Http\Controllers\ProductController::class, 'testMail'])->name('test-mail');
 
 //Categories 
@@ -61,6 +56,7 @@ Route::post('/verify-otp', [App\Http\Controllers\LoginController::class, 'verify
 Route::post('/access-profile', [App\Http\Controllers\LoginController::class, 'accessProfile'])->name('access-profile');
 Route::post('/check-exist', [App\Http\Controllers\LoginController::class, 'isUserExist'])->name('check-exist');
 Route::post('/register', [App\Http\Controllers\LoginController::class, 'registerUser'])->name('register');
+Route::get('/register', [App\Http\Controllers\LoginController::class, 'register'])->name('register-page');
 
 // Product Module
 Route::get('/sell-used-model/{slug}', [App\Http\Controllers\ProductController::class, 'index'])->name('products-index');

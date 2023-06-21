@@ -99,6 +99,12 @@ Preloader End -->
                             <input type="email" name="email" class="form-control" autocomplete="off" placeholder="Enter Email Address" required>
                         </div>
                     </div>
+                    <div class="col-12">
+                        <div class="form-group custom_form_style">
+                            <label class="padding-30px-left-right">Please enter Referral Code <span class="required"></span></label>
+                            <input type="text" name="referral_code" class="form-control" autocomplete="off" placeholder="Enter Referral Code if any"  value="{{(isset($_GET['ref']) && $_GET['ref'] !='')?$_GET['ref']:''}}">
+                        </div>
+                    </div>
                 </div>
                 <div class="row one_time_password">
                     <div class="col-12">

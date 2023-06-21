@@ -28,45 +28,46 @@
     <!-- Subheader End -->
     <section class="section-padding">
         <div class="container">
+            @if(isset($user) && $user != null)
             <div class="refferel-code">
                 <div class="row">
                         <div class="col-md-5">
                             <h5> Your referral code: </h5>
-                            <h4> BW202144AEE {{$user->referral_code }}</h4>
+                            <h4> {{$user->referral_code }}</h4>
                         </div>
                         <div class="col-md-7">
                             <h5> Share Button: </h5>
                             <ul class="social-share">
                                 <li>
-                                    <a href="javascript:void(0)" class="btn-outline clickToCopy" style="font-size: 15px;"> Click to Copy</a>
-                                    <textarea class="copyLink" style="display:none">{{ $shareLink }}</textarea>
+                                    <a href="javascript:void(0)" id="copyToClipBoard" class="btn-outline clickToCopy" style="font-size: 15px;"> Click to Copy</a>
+                                    <textarea class="copyLink" id="copyTextContainer" style="display:none">{{ $user->referral_code }}</textarea>
                                 </li>
                                 <li>
-                                    <a href="https://www.facebook.com/sharer/sharer.php?u=sadas">
+                                    <a href="https://www.facebook.com/sharer/sharer.php?u={{ $shareLink }}" target="_blank">
                                         <img src="{{ url('assets/images/icons/facebook.png') }}" alt="icon" class="image-fit-contain">
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="https://twitter.com/share?url={{ $shareLink }}&text=Enroll In Eduversity Programme&via=<USERNAME>">
+                                    <a target="_blank" href="https://twitter.com/share?url={{ $shareLink }}&text=Register and Bonus&via=<USERNAME>">
                                         <img src="{{ url('assets/images/icons/twitter.png') }}" alt="icon" class="image-fit-contain">
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="https://www.linkedin.com/shareArticle?url={{ $shareLink }}&title=Enroll In Eduversity Programme&summary=Enroll In Eduversity Programme&source={{ $shareLink }}">
+                                    <a target="_blank" href="https://www.linkedin.com/shareArticle?url={{ $shareLink }}&title=Register and Bonus&summary=Register and Bonus&source={{ $shareLink }}">
                                         <img src="{{ url('assets/images/icons/linkedin.png') }}" alt="icon" class="image-fit-contain">
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="https://wa.me/?text={{ $shareLink }}">
+                                    <a target="_blank" href="https://wa.me/?text={{ $shareLink }}">
                                         <img src="{{ url('assets/images/icons/whatsapp-share.png') }}" alt="icon" class="image-fit-contain">
                                     </a>
                                 </li>
                             </ul>
                         </div>
                     </div>
-                </div>
-                    
+                </div>                 
             </div>
+            @endif
         </div>
     </section>
    <!-- Contact Faq Box Start -->

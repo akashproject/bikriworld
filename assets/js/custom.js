@@ -967,7 +967,11 @@ const veriationPrice = [];
         $.magnificPopup.close();
     });
 
-
+    $('#copyToClipBoard').on("click", function(){
+        // Get the text field
+        var copyText = document.getElementById("copyTextContainer");
+        unsecuredCopyToClipboard(copyText.value);
+    });
 
 })(jQuery);
 
@@ -982,4 +986,20 @@ function addCommas(nStr)
         x1 = x1.replace(rgx, '$1' + ',' + '$2');
     }
     return x1 + x2;
+}
+
+function unsecuredCopyToClipboard(text) {
+    const textArea = document.createElement("textarea");
+    textArea.value = text;
+    //document.body.prependChild(textArea);
+    document.body.insertBefore(textArea, document.body.firstChild);
+    textArea.focus();
+    textArea.select();
+    try {
+      document.execCommand('copy');
+      $("#copyToClipBoard").html("Copied");
+    } catch (err) {
+      console.error('Unable to copy to clipboard', err);
+    }
+    document.body.removeChild(textArea);
 }

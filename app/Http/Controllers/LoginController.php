@@ -65,9 +65,21 @@ class LoginController extends Controller
         }
     }
 
+    public function register(){
+        return view('users.register');
+    }
+
     public function registerUser(Request $request){
         $data = $request->all();
         $data['referral_code'] ="BW_".$this->random_strings(8);
+        if (isset($data['referral_code']) && $data['referral_code'] !='') {
+            $referredUser = User::where('referral_code',$data['referral_code'])->first();
+            if($referredUser !== null){
+                $data['referred_by'] = User::where('referral_code',$data['referral_code'])->first()->id;
+            } else {
+                return false;
+            }
+        }
         $user = User::create($data)->toArray();
         $payment = Payment::create(array('user_id'=> $user['id']));
         $request->session()->put('userData', $data);
@@ -79,12 +91,22 @@ class LoginController extends Controller
         if($user){
             $request->session()->put('userData', $user->toArray());
         } else {
-            $user = User::create(
-                array('mobile'=> $data['mobile'],
+            $createData = array(
+                'mobile'=> $data['mobile'],
                 'name'=> $data['name'],
                 'email'=> $data['email'],
                 'referral_code'=> "BW_".$this->random_strings(8),
-                ))->toArray();
+            );
+
+            if (isset($data['referral_code']) && $data['referral_code'] !='') {
+                $referredUser = User::where('referral_code',$data['referral_code'])->first();
+                if($referredUser !== null){
+                    $createData['referred_by'] = User::where('referral_code',$data['referral_code'])->first()->id;
+                } else {
+                    return false;
+                }
+            }
+            $user = User::create($createData)->toArray();
             $payment = Payment::create(array('user_id'=> $user['id']));
             $request->session()->put('userData', $data);
         }

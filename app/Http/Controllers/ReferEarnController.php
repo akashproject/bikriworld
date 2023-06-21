@@ -10,7 +10,7 @@ class ReferEarnController extends Controller
     public $_statusOK = 200;
     public $_statusErr = 500;
     public $sellprice = '';
-    public $user = '';
+    public $user = null;
 
     public function __construct(Request $request)
     {
@@ -25,7 +25,7 @@ class ReferEarnController extends Controller
        
         try {
             $user = $this->user;
-            $shareLink ='https://bikriworld.com/';
+            $shareLink = route('register-page').'?ref='.$user->referral_code;
             return view('refer-earn.index',compact('user','shareLink'));
             } catch(\Illuminate\Database\QueryException $e){
         }

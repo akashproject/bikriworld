@@ -245,7 +245,6 @@ $(function() {
         // Get the text field
         var copyText = document.getElementById("copyTextContainer");
         unsecuredCopyToClipboard(copyText.value);
-       
     });
 
 });

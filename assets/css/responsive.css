@@ -484,10 +484,18 @@
         margin: 11px 0;
     }
     ul.social-share {
-        display: inline-flex;
+        overflow: hidden;
+        display: block;
     }
+    ul.social-share li:first-child {
+        width: 100%;
+    }
+
     ul.social-share li {
         margin: 1rem 10px;
+        float: left;
+        overflow: hidden;
+        width: 18%;
     }
     .city-search-list img{
         width: 68px;
