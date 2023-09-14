@@ -29,7 +29,7 @@ use App\Models\DeviceConfig;
 use App\Models\Series;
 
 use App\Models\ProductConfigPrice;
-
+use App\Models\Order;
 
 
 class QuestionController extends Controller
@@ -426,17 +426,22 @@ class QuestionController extends Controller
            
 
             $exact_price = $veriation_price - $sum_deduction;
+            // Reffer & Earn
+            $canEarn = Order::where('user_id',$user['id'])->where('status','completed')->count();
+
+            if(isset($user['referred_by'])) {
+                if ($canEarn < 1 && $user['referred_by'] !== null) {
+                    $callculatedData['canEarn'] = true;
+                    $exact_price += 500;
+                }
+            }
 
             $callculatedData['exact_price'] = $exact_price;
-
-
-
             $request->session()->put('sellprice', $callculatedData);
 
             return redirect('/product-quote');
 
         } catch (\Throwable $th) {
-
             return view('common.error',compact('user'));
 
         }

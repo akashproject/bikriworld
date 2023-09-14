@@ -123,9 +123,11 @@ class VehicleController extends Controller
             'accessories' => (isset($this->vehicleData['accessories']))?$this->vehicleData['accessories']:'',
             'condition_id' => $this->vehicleData['condition_id']
         );
+        $product = Product::find($data['product_id']);
         $orderData = array(
             'user_id' => $data['user_id'],
             'product_id' => $data['product_id'],
+            'device_name' => $product->name,
             'variation_type' => $data['variation_type'],
             'device_condition' => json_encode($device_condition),
             'service_no' => rand(00000000,99999999),

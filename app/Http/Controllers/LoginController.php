@@ -65,7 +65,11 @@ class LoginController extends Controller
         }
     }
 
-    public function register(){
+    public function register(Request $request){
+        if($request->session()->get('userData')){
+            return redirect('/');
+        }
+
         return view('users.register');
     }
 
@@ -101,14 +105,21 @@ class LoginController extends Controller
             if (isset($data['referral_code']) && $data['referral_code'] !='') {
                 $referredUser = User::where('referral_code',$data['referral_code'])->first();
                 if($referredUser !== null){
-                    $createData['referred_by'] = User::where('referral_code',$data['referral_code'])->first()->id;
+                    $createData['referred_by'] = $referredUser->id;
+                } else {
+                    return false;
+                }
+            } else if(isset($_COOKIE['referral_code']) && $_COOKIE['referral_code'] !=''){
+                $referredUser = User::where('referral_code',$_COOKIE['referral_code'])->first();
+                if($referredUser !== null){
+                    $createData['referred_by'] = $referredUser->id;
                 } else {
                     return false;
                 }
             }
             $user = User::create($createData)->toArray();
             $payment = Payment::create(array('user_id'=> $user['id']));
-            $request->session()->put('userData', $data);
+            $request->session()->put('userData', $user);
         }
 
         return response()->json(['true'],$this->_statusOK);

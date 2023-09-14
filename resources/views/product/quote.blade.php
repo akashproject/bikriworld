@@ -63,6 +63,8 @@
                                 <div class="sorry_message" >
                                     <h5> We Are Sorry </h5>
                                     <p> Price is too low as per your device condition </p>
+                                    <h4 style="margin: 0;"> Rs. 500/- </h4>
+                                    <h6 style="margin: 0;"> Get minimum <a href="tel:7439995068" style="background: #00986b;padding: 5px 10px;font-size: 14px;color: #fff;border-radius: 5px;margin: 0;"> Call Now </a></h6>
                                 </div>
                                 @endif
                                 <!-- <a href="javascript:void(0)" class="view-report" > View Report</a> -->
@@ -92,20 +94,29 @@
                         <div class="sidebar_widget text-center">          
                             <h5 class="widget_title">Price Summary</h5>                 
                             <div class="sidebar_widget_inner">
-                                @if($calculatedData['exact_price'] > 100)
-                                
+                                @if($calculatedData['exact_price'] > 100)                   
                                 <ul class="info_widget">
                                     <li>
                                         <span style="float:left">Base Price</span>
-                                        <span style="float:right">₹{{ number_format($calculatedData['exact_price'])}}/- </span>
+                                        @if(isset($calculatedData['canEarn']) && $calculatedData['canEarn'] === true)
+                                        <span style="float:right">₹ {{ number_format($calculatedData['exact_price'] - 500)}}/- </span>
+                                        @else
+                                        <span style="float:right">₹ {{ number_format($calculatedData['exact_price'])}}/- </span>
+                                        @endif
                                     </li>
-                                    <li >
+                                    @if(isset($calculatedData['canEarn']) && $calculatedData['canEarn'] === true)
+                                    <li>
+                                        <span style="float:left">Referrel Earn</span>
+                                        <span style="float:right;color:#00986b;"> <strong> ₹ 500/- </strong></span>
+                                    </li>
+                                    @endif
+                                    <li>
                                         <span style="float:left">Pickup Charges</span>
-                                        <span style="float:right"><s style="color:red;margin-right:20px" >₹50/- </s> Free</span>
+                                        <span style="float:right"><s style="color:red;margin-right:20px" >₹ 50/- </s> Free</span>
                                     </li>
                                     <li>
                                         <span style="float:left">Total Amount</span>
-                                        <span style="float:right">₹{{ number_format($calculatedData['exact_price'])}}/- </span>
+                                        <span style="float:right">₹ {{ number_format($calculatedData['exact_price'])}}/- </span>
                                     </li>
                                     
                                 </ul>

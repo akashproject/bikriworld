@@ -152,6 +152,14 @@
 	<p><a class="popup-modal-dismiss thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle" href="#">Dismiss</a></p>
 </div>
 
+<div id="confirm_withdrawal" class="white-popup mfp-hide">
+	<h4> Have you insert payment option? </h4>
+	<p>
+        <a class="thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle" href="{{ url('confirm-withdrawal') }}">Yes</a>
+        <a class="thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle" href="{{ url('payments') }}">Not Yet</a>
+    </p>
+</div>
+
 <div class="sticky-footer-mobile">
     <div class="container">
         <div class="row text-center">

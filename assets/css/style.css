@@ -7022,7 +7022,9 @@ a.head_trigger.desktop_trigger, a.head_trigger.global_desktop_trigger {
     box-shadow: 0px 1px 30px 1px #ecf2ff;
 
 }
-
+.desktop_trigger {
+    cursor: pointer;
+}
 
 
 .post.post_list.with_bg {
@@ -10503,7 +10505,10 @@ label.form-check-label {
     z-index: 100;
     padding: 5px;
 }
-
+div#confirm_withdrawal {
+    text-align: center;
+    padding: 20px 0;
+}
 a.download-app:hover {
     color: var(--thm-white);
     text-decoration: none;

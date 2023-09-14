@@ -64,4 +64,12 @@ class UserController extends Controller
         }		
     }
 	
+    public function save(Request $request) {
+        $data = $request->all();
+        $user = User::findOrFail($data['user_id']);
+        $user->update(array('earning'=>0));
+        
+        return redirect('/user/'.$data['user_id']);
+    }
+
 }

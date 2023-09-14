@@ -20,6 +20,7 @@
                 <td style="padding: 10px 20px 10px;font-size: 16px;"> Model Configuration </td>
                 <td style="padding: 10px 20px 10px;font-size: 16px;"> {{$variation_type}} </td>
             </tr>
+            @if(isset($accessories))
             <tr>
                 <td style="padding: 10px 20px 10px;font-size: 16px;"> Additional Accessories </td>
                 <td style="padding: 10px 20px 10px;font-size: 16px;">
@@ -28,14 +29,20 @@
                     @endforeach	 
                 </td>
             </tr>
+            @endif
+            @if(isset($age))
             <tr>
                 <td style="padding: 10px 20px 10px;font-size: 16px;"> Model Age </td>
                 <td style="padding: 10px 20px 10px;font-size: 16px;"> {{$age}} </td>
             </tr>
+            @endif
+            @if(isset($condition))
             <tr>
                 <td style="padding: 10px 20px 10px;font-size: 16px;"> Model Condition </td>
                 <td style="padding: 10px 20px 10px;font-size: 16px;"> {{$condition}} </td>
             </tr>
+            @endif
+            @if(isset($questions))
             <tr>
                 <td style="padding: 10px 20px 10px;font-size: 16px;"> Model Faults </td>
                 <td style="padding: 10px 20px 10px;font-size: 16px;">
@@ -44,6 +51,7 @@
                     @endforeach	 
                 </td>
             </tr>
+            @endif
         </tbody>
     </table> 
     <table style="border: 1px solid #00986b57;margin:30px 0;width:100%">

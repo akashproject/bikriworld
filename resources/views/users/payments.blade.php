@@ -33,9 +33,6 @@
                     <h5 class="page_title"> Payment Information </h5>
                     <form class="form-horizontal" id="paymentform" method="post" action="{{ url('save-payment') }}" enctype="multipart/form-data">
                     @csrf
-                        @if ($message = Session::get('message'))
-                         <p class="alert ">{{ Session::get('message') }}</p>
-                        @endif
                         <h6 style="margin-top: 26px;"> Bank Details </h6>
                         <div class="row ">
                             <div class="col-lg-4">

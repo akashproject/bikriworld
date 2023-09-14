@@ -48,6 +48,7 @@ Route::post('/save-payment', [App\Http\Controllers\UserController::class, 'saveP
 Route::post('/save-info', [App\Http\Controllers\UserController::class, 'saveInfo'])->name('save-info');
 Route::get('/logout', [App\Http\Controllers\UserController::class, 'logout'])->name('logout');
 Route::get('/bw-earning', [App\Http\Controllers\UserController::class, 'bwEarning'])->name('bw-earning');
+Route::get('/confirm-withdrawal', [App\Http\Controllers\UserController::class, 'confirmWithdrawal'])->name('confirm-withdrawal');
 
 // Login Module
 Route::post('/submit-mobile-otp', [App\Http\Controllers\LoginController::class, 'submitMobileOtp'])->name('submit-mobile-otp');

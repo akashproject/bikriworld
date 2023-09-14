@@ -24,8 +24,13 @@ class ReferEarnController extends Controller
     public function index(Request $request){
        
         try {
+
             $user = $this->user;
-            $shareLink = route('register-page').'?ref='.$user->referral_code;
+            $shareLink = null;
+            if($user){
+                $shareLink = route('categories-index').'?ref='.$user->referral_code;
+            }
+            
             return view('refer-earn.index',compact('user','shareLink'));
             } catch(\Illuminate\Database\QueryException $e){
         }

@@ -10,6 +10,7 @@ use App\Models\Order;
 use App\Models\Payment;
 use App\Models\Address;
 use Illuminate\Support\Facades\DB;
+use Mail;
 
 class UserController extends Controller
 {
@@ -68,6 +69,21 @@ class UserController extends Controller
         $user = $this->user;
         return view('users.bw-earning',compact('user'));
     }
+
+    public function confirmWithdrawal(Request $request){
+        $user = $this->user;
+        if(isset($user->email)) {
+            Mail::raw('Bikriworld has new Withdrawl Request', function ($message) use ($user) {
+                $message->from('service@bikriworld.com', 'Bikriworld');
+                $message->to('akashdutta.scriptcrown@gmail.com');
+                $message->subject('Bikriworld has new Withdrawl Request - '.$user->mobile);
+            });
+        }
+        $request->session()->put('message', 'Bw Coin withdrawal request submitted successfully! Amount will be credit within 7 working days');
+
+        return redirect('bw-earning');
+    }
+    
 
     public function getAddress(Request $request){
         $user = $this->user;

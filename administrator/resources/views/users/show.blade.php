@@ -4,7 +4,6 @@
 <div class="col-12">
 	<div class="card">
 		<form class="form-horizontal" action="">
-		
 			@csrf
 			<div class="card-body">
 				<h4 class="card-title"> Edit User #1</h4>
@@ -95,12 +94,30 @@
 						<span >{{ $payment->online_payment_no }}</span >
 					</div>
 				</div>
+				<div class="form-group row">
+					<h4  class="col-sm-2 text-right"> Earning </h4>
+				</div>
+				<div class="form-group row">
+					<label for="mobile" class="col-sm-3 text-right control-label col-form-label">BW Coins</label>
+					<div class="col-sm-9 text-left control-label col-form-label">
+						<span >{{ $user->earning }}</span >
+					</div>
+				</div>
 			</div>
 			<!-- <div class="border-top">
 				<div class="card-body">
 					<button type="button" class="btn btn-primary">Submit</button>
 				</div>
 			</div> -->
+		</form>
+		<form class="form-horizontal" method="post" action="{{ url('save-user') }}" enctype="multipart/form-data">
+			@csrf
+			<div class="border-top">
+				<div class="card-body">
+					<button type="submit" onclick="return confirm('Are you sure to success');" class="btn btn-primary">Complete Withdrawal </button>
+					<input type="hidden" name="user_id" id="user_id" value="{{ $user->id }}" >
+				</div>
+			</div>
 		</form>
 	</div>
 </div>                   

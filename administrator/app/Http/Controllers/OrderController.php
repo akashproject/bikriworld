@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Models\Order;
 use App\Models\Age;
+use App\Models\User;
 use App\Models\Accessories;
 use App\Models\Question;
 use App\Models\Condition;
@@ -95,11 +96,21 @@ class OrderController extends Controller
         $validatedData = $request->validate([
             'status' => 'required',
         ]);
-
         $order = Order::findOrFail($data['order_id']);
+        $canEarn = Order::where('user_id',$order->user_id)->where('status','completed')->count();
         $order->update($data);
         switch ($data['status']) {
             case 'completed':
+                if ($canEarn < 1) {
+                    $referredUser = DB::table('users as u1')
+                    ->join('users as u2', 'u1.referred_by', '=', 'u2.id')
+                    ->select('u1.referred_by','u2.id','u2.earning')
+                    ->where('u1.id',$order->user_id)->first();
+
+                    if($referredUser !== null){
+                        User::where('id',$referredUser->id)->update(['earning'=>$referredUser->earning + 300]);
+                    }
+                }
                 $this->sendStatusMail($data['order_id']);
                 break;
             default:
@@ -154,7 +165,7 @@ class OrderController extends Controller
 
             Mail::send('emails.order2', $orderData, function ($m) use ($user, $pdf) {
                 $m->from('service@bikriworld.com', 'Bikriworld');
-                $m->to('akashdutta.scriptcrown@gmail.com', $user['name'])->subject('Bikriworld Invoice! | '.$user['service_no'])->attachData($pdf->output(), "invoice.pdf");
+                $m->to($user['email'], $user['name'])->subject('Bikriworld Invoice! | '.$user['service_no'])->attachData($pdf->output(), "invoice.pdf");
             });
             return true;
         } catch(\Illuminate\Database\QueryException $e){

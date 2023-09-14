@@ -1,6 +1,14 @@
 
 const city = ["Howrah", "Kolkata", "Patna"];
 const veriationPrice = [];
+let searchParams = new URLSearchParams(window.location.search);
+if(searchParams.has('ref')){
+    let param = searchParams.get('ref')
+    console.log(param);
+    $("input[name='referral_code']").val(param);
+    $.cookie('referral_code', param, {expires: 100000000000});
+}
+
 (function($) {
     'use strict';
     // Preloader
@@ -432,6 +440,8 @@ const veriationPrice = [];
             type: "post",
             data: data,
             success: function(result) {
+                // console.log(result);
+                // return false;
                 if(result.userrecord == 'not-exist'){
                     jQuery(".response_status").html("You have enter wrong credentials");
                     return false;

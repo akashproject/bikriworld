@@ -43,6 +43,11 @@
                                     <textarea class="copyLink" id="copyTextContainer" style="display:none">{{ $user->referral_code }}</textarea>
                                 </li>
                                 <li>
+                                    <a target="_blank" href="https://wa.me/?text={{ $shareLink }}">
+                                        <img src="{{ url('assets/images/icons/whatsapp-share.png') }}" alt="icon" class="image-fit-contain">
+                                    </a>
+                                </li>
+                                <li>
                                     <a href="https://www.facebook.com/sharer/sharer.php?u={{ $shareLink }}" target="_blank">
                                         <img src="{{ url('assets/images/icons/facebook.png') }}" alt="icon" class="image-fit-contain">
                                     </a>
@@ -55,11 +60,6 @@
                                 <li>
                                     <a target="_blank" href="https://www.linkedin.com/shareArticle?url={{ $shareLink }}&title=Register and Bonus&summary=Register and Bonus&source={{ $shareLink }}">
                                         <img src="{{ url('assets/images/icons/linkedin.png') }}" alt="icon" class="image-fit-contain">
-                                    </a>
-                                </li>
-                                <li>
-                                    <a target="_blank" href="https://wa.me/?text={{ $shareLink }}">
-                                        <img src="{{ url('assets/images/icons/whatsapp-share.png') }}" alt="icon" class="image-fit-contain">
                                     </a>
                                 </li>
                             </ul>
@@ -85,7 +85,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-4">
+                <div class="col-lg-4 desktop_trigger">
                     <div class="contact_faq_box refer-process shadow_1">
                         <div class="icon">
                             <img src="{{ url('assets/images/icons/login.png') }}" alt="icon" class="image-fit-contain">
