@@ -20,7 +20,7 @@ class BrandController extends Controller
     public function index($slug,Request $request){
         $user = $this->userdata;
         try {   
-            $category = Categories::where('slug', $slug)->firstOrFail(); //Categories::find($id);
+            $category = Categories::where('slug', $slug)->firstOrFail();
             $id = $category->id;
             $request->session()->put('selling_category', $id);
             //echo $request->session()->get('category_id');
@@ -28,6 +28,21 @@ class BrandController extends Controller
             $tobSellingBrands = Brand::where('category_id', 'like', '%"' . $id . '"%')->inRandomOrder()->limit(10)->get();
             $tobSellingProducts = Product::where('category_id', 'like', '%"' . $id . '"%')->inRandomOrder()->limit(10)->get();
             return view('brand.index',compact('category','brands','user','tobSellingBrands','tobSellingProducts'));
+
+        } catch(\Illuminate\Database\QueryException $e){
+        }
+    }
+
+    public function repair($slug,Request $request){
+        $user = $this->userdata;
+        try {   
+            $category = Categories::where('slug', $slug)->firstOrFail(); 
+            $id = $category->id;
+            $request->session()->put('selling_category', $id);
+            $brands = Brand::where('category_id', 'like', '%"' . $id . '"%')->orderBy('name', 'asc')->get();
+            $tobSellingBrands = Brand::where('category_id', 'like', '%"' . $id . '"%')->inRandomOrder()->limit(10)->get();
+            $tobSellingProducts = Product::where('category_id', 'like', '%"' . $id . '"%')->inRandomOrder()->limit(10)->get();
+            return view('brand.repair',compact('category','brands','user','tobSellingBrands','tobSellingProducts'));
 
         } catch(\Illuminate\Database\QueryException $e){
         }

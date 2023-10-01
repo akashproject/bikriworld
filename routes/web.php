@@ -26,7 +26,11 @@ Route::get('/test-mail', [App\Http\Controllers\ProductController::class, 'testMa
 //Categories 
 Route::get('/', [App\Http\Controllers\IndexController::class, 'index'])->name('index');
 Route::get('/sell-old-used-product', [App\Http\Controllers\CategoriesController::class, 'index'])->name('categories-index');
+Route::get('/repair-device', [App\Http\Controllers\CategoriesController::class, 'repair'])->name('categories-repair');
+
 Route::get('/select-brand/{slug}', [App\Http\Controllers\BrandController::class, 'index'])->name('brands-index');
+Route::get('/repair-select-brand/{slug}', [App\Http\Controllers\BrandController::class, 'repair'])->name('brands-repair');
+
 
 Route::post('/question', [App\Http\Controllers\QuestionController::class, 'index'])->name('question-index');
 Route::post('/calculate-price', [App\Http\Controllers\QuestionController::class, 'calculatePrice'])->name('calculate-price');
@@ -61,7 +65,11 @@ Route::get('/register', [App\Http\Controllers\LoginController::class, 'register'
 
 // Product Module
 Route::get('/sell-used-model/{slug}', [App\Http\Controllers\ProductController::class, 'index'])->name('products-index');
+Route::get('/repair-used-model/{slug}', [App\Http\Controllers\ProductController::class, 'repair'])->name('products-repair');
+
 Route::get('/sell-old-product/{slug}', [App\Http\Controllers\ProductController::class, 'view'])->name('sell-old-product');
+Route::get('/repair-device/{slug}', [App\Http\Controllers\RepairController::class, 'view'])->name('sell-old-product');
+
 Route::get('/add-device', [App\Http\Controllers\ProductController::class, 'add'])->name('add-device');
 Route::get('/product-quote', [App\Http\Controllers\ProductController::class, 'productQuote'])->name('product-quote');
 Route::get('/checkout', [App\Http\Controllers\ProductController::class, 'checkOut'])->name('checkout');
@@ -93,6 +101,11 @@ Route::post('/vehicle-condition', [App\Http\Controllers\VehicleController::class
 Route::post('/book-appointment', [App\Http\Controllers\VehicleController::class, 'bookAppointment'])->name('book-appointment');
 Route::post('/confirm-booking', [App\Http\Controllers\VehicleController::class, 'confirmBooking'])->name('confirm-booking');
 
+
+//Repair Module
+Route::post('/book-repair', [App\Http\Controllers\RepairController::class, 'bookRepair'])->name('book-repair');
+Route::post('/confirm-service-booking', [App\Http\Controllers\RepairController::class, 'confirmBooking'])->name('confirm-service-booking');
+Route::get('/order-repair-success', [App\Http\Controllers\RepairController::class, 'orderSuccess'])->name('order-success');
 
 //Refer & Earn
 Route::get('/refer-earn', [App\Http\Controllers\ReferEarnController::class, 'index'])->name('refer-earn');

@@ -35,4 +35,15 @@ class CategoriesController extends Controller
             
         }
     }
+
+    public function repair(){
+        $user = $this->userdata;
+        try {
+            $categories = Categories::where('status', '1')->get();
+            $tobSellingBrands = Brand::inRandomOrder()->limit(10)->get();
+            return view('categories.repair',compact('categories','tobSellingBrands','user'));
+        } catch(\Illuminate\Database\QueryException $e){
+            
+        }
+    }
 }

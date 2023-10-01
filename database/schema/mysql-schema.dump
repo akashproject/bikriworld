@@ -9,10 +9,10 @@ DROP TABLE IF EXISTS `accessories`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `accessories` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `icon` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `name` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `icon` varchar(100) NOT NULL,
+  `name` varchar(100) NOT NULL,
   `category_id` int(11) NOT NULL,
-  `brand_id` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `brand_id` varchar(100) NOT NULL,
   `deducted_amount` int(11) NOT NULL,
   `extra_deducted_amount` int(11) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -26,10 +26,10 @@ DROP TABLE IF EXISTS `addresses`;
 CREATE TABLE `addresses` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `user_id` int(11) NOT NULL,
-  `address_1` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `city` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `state` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `pincode` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `address_1` varchar(100) NOT NULL,
+  `city` varchar(50) NOT NULL,
+  `state` varchar(20) NOT NULL,
+  `pincode` varchar(20) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
@@ -42,9 +42,22 @@ CREATE TABLE `ages` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `category_id` int(11) NOT NULL,
   `brand_id` int(11) NOT NULL,
-  `age` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `age` varchar(50) NOT NULL,
   `deducted_amount` int(11) NOT NULL,
   `extra_deducted_amount` int(11) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+DROP TABLE IF EXISTS `blogs`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `blogs` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `title` text NOT NULL,
+  `image` text NOT NULL,
+  `description` longtext NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
@@ -55,8 +68,8 @@ DROP TABLE IF EXISTS `brand`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `brand` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `image` varchar(255) NOT NULL,
   `category_id` int(11) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
@@ -68,9 +81,9 @@ DROP TABLE IF EXISTS `calculation_question`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `calculation_question` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `question` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `description` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `answer` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `question` varchar(255) NOT NULL,
+  `description` varchar(255) NOT NULL,
+  `answer` varchar(255) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
@@ -81,7 +94,7 @@ DROP TABLE IF EXISTS `categories`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `categories` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(255) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
@@ -92,11 +105,11 @@ DROP TABLE IF EXISTS `cities`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `cities` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `districtid` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `state_id` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `description` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `status` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `districtid` varchar(50) NOT NULL,
+  `state_id` varchar(50) NOT NULL,
+  `description` varchar(50) NOT NULL,
+  `status` varchar(50) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
@@ -109,7 +122,7 @@ CREATE TABLE `conditions` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `category_id` int(11) NOT NULL,
   `brand_id` int(11) NOT NULL,
-  `condition` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `condition` varchar(50) NOT NULL,
   `deducted_amount` int(11) NOT NULL,
   `extra_deducted_amount` int(11) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -122,11 +135,11 @@ DROP TABLE IF EXISTS `contact`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `contact` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `mobile` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `subject` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `message` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `mobile` varchar(20) NOT NULL,
+  `email` varchar(20) NOT NULL,
+  `subject` varchar(50) NOT NULL,
+  `message` varchar(255) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
@@ -137,8 +150,8 @@ DROP TABLE IF EXISTS `device_config`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `device_config` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `type` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `value` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `type` varchar(100) NOT NULL,
+  `value` varchar(255) NOT NULL,
   `price` int(11) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
@@ -150,11 +163,11 @@ DROP TABLE IF EXISTS `failed_jobs`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `failed_jobs` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `uuid` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `connection` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `queue` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `payload` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
-  `exception` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `uuid` varchar(255) NOT NULL,
+  `connection` text NOT NULL,
+  `queue` text NOT NULL,
+  `payload` longtext NOT NULL,
+  `exception` longtext NOT NULL,
   `failed_at` timestamp NOT NULL DEFAULT current_timestamp(),
   PRIMARY KEY (`id`),
   UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`)
@@ -165,7 +178,7 @@ DROP TABLE IF EXISTS `migrations`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `migrations` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `migration` varchar(255) NOT NULL,
   `batch` int(11) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -179,14 +192,30 @@ CREATE TABLE `orders` (
   `updated_at` timestamp NULL DEFAULT NULL,
   `user_id` int(11) NOT NULL,
   `product_id` int(11) NOT NULL,
-  `service_no` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `service_no` varchar(20) NOT NULL,
   `amount` int(11) NOT NULL,
-  `payment_mode` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `pickup_schedule` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `pickup_address` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `pickup_city` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `pickup_state` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `pincode` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `payment_mode` varchar(20) DEFAULT NULL,
+  `pickup_schedule` varchar(20) DEFAULT NULL,
+  `pickup_address` varchar(20) DEFAULT NULL,
+  `pickup_city` varchar(50) DEFAULT NULL,
+  `pickup_state` varchar(50) DEFAULT NULL,
+  `pincode` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+DROP TABLE IF EXISTS `parts`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `parts` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `icon` varchar(100) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `category_id` int(11) NOT NULL,
+  `brand_id` varchar(100) NOT NULL,
+  `price` int(11) NOT NULL,
+  `extra_price` int(11) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -194,8 +223,8 @@ DROP TABLE IF EXISTS `password_resets`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `password_resets` (
-  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `token` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `token` varchar(255) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   KEY `password_resets_email_index` (`email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -206,12 +235,12 @@ DROP TABLE IF EXISTS `payments`;
 CREATE TABLE `payments` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `user_id` int(11) NOT NULL,
-  `bank_name` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `account_no` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `account_holder_name` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `ifsc_code` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `upi_id` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `online_payment_no` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `bank_name` varchar(20) NOT NULL,
+  `account_no` varchar(20) NOT NULL,
+  `account_holder_name` varchar(20) NOT NULL,
+  `ifsc_code` varchar(20) NOT NULL,
+  `upi_id` varchar(20) NOT NULL,
+  `online_payment_no` varchar(20) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
@@ -222,11 +251,11 @@ DROP TABLE IF EXISTS `personal_access_tokens`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `personal_access_tokens` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `tokenable_type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `tokenable_type` varchar(255) NOT NULL,
   `tokenable_id` bigint(20) unsigned NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `token` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `abilities` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `name` varchar(255) NOT NULL,
+  `token` varchar(64) NOT NULL,
+  `abilities` text DEFAULT NULL,
   `last_used_at` timestamp NULL DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
@@ -241,10 +270,23 @@ DROP TABLE IF EXISTS `product`;
 CREATE TABLE `product` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `brand_id` int(11) NOT NULL,
-  `name` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `variant` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
-  `type` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `image` varchar(255) NOT NULL,
+  `variant` longtext NOT NULL,
+  `type` longtext NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+DROP TABLE IF EXISTS `product_config_price`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `product_config_price` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `product_id` int(11) NOT NULL,
+  `config_id` int(11) NOT NULL,
+  `price` int(11) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
@@ -257,10 +299,23 @@ CREATE TABLE `sell_request` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `category_id` int(11) NOT NULL,
   `brand_id` int(11) NOT NULL,
-  `name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `ram` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `storage` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `question_id` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `ram` varchar(50) NOT NULL,
+  `storage` varchar(50) NOT NULL,
+  `question_id` varchar(255) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+DROP TABLE IF EXISTS `series`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `series` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `category_id` int(11) NOT NULL,
+  `brand_id` int(11) NOT NULL,
+  `series` varchar(50) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
@@ -271,16 +326,29 @@ DROP TABLE IF EXISTS `users`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `users` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `email` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `mobile` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `password` varchar(255) NOT NULL,
+  `mobile` varchar(50) DEFAULT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
-  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `remember_token` varchar(100) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `users_email_unique` (`email`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+DROP TABLE IF EXISTS `vehicle_variation`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `vehicle_variation` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `type` varchar(100) DEFAULT NULL,
+  `name` varchar(100) DEFAULT NULL,
+  `category_id` int(11) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -309,3 +377,8 @@ INSERT INTO `migrations` VALUES (41,'2022_04_24_065806_create_ages',4);
 INSERT INTO `migrations` VALUES (42,'2022_04_24_182553_create_accessories',4);
 INSERT INTO `migrations` VALUES (43,'2022_05_16_070741_create_device_config',4);
 INSERT INTO `migrations` VALUES (44,'2022_06_20_175748_create_conditions',4);
+INSERT INTO `migrations` VALUES (45,'2022_06_22_182901_create_series',5);
+INSERT INTO `migrations` VALUES (46,'2022_07_12_060833_create_product_config_price',5);
+INSERT INTO `migrations` VALUES (47,'2022_07_20_170728_create_vehicle_variation',5);
+INSERT INTO `migrations` VALUES (48,'2022_10_13_163719_create_blogs_table',5);
+INSERT INTO `migrations` VALUES (49,'2023_09_19_195438_create_parts_table',5);

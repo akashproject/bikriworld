@@ -148,23 +148,14 @@ class QuestionController extends Controller
 
 
     public function givenAccessories(Request $request){
-
         $user = $this->userdata;
-
         $data = $request->all();
-
         $category_id = $request->session()->get('selling_category');
-
         $callculatedData = array(
-
             'question_id' => (isset($data['question_id']))?$data['question_id']:array(),
-
             'product_id' => $data['product_id'],
-
             'veriation_price' => $data['veriation_price'],
-
             'variation_type' => $data['veriation_type']
-
         );
 
         $request->session()->put('sellprice', $callculatedData);

@@ -62,6 +62,30 @@ class ProductController extends Controller
         }
     }
 
+    public function repair($slug,Request $request){
+       
+        try {
+            $user = $this->userdata;
+            $brand = Brand::where('slug', $slug)->firstOrFail();
+            $category_id = $request->session()->get('selling_category');
+            $request->session()->put('selling_brand', $brand->id);
+            $tobSellingBrands = Brand::inRandomOrder()->limit(10)->get();
+            $tobSellingProducts = Product::inRandomOrder()->limit(10)->get();
+           
+            $products = Product::where('brand_id', $brand->id)
+            ->where('category_id', $category_id)
+            ->orderBy('name', 'asc')
+            ->get();
+            if($category_id == "12"){
+                return view('vehicle.index',compact('products','brand','user','tobSellingBrands','tobSellingProducts'));
+            } else {
+                return view('product.repair',compact('products','brand','user','tobSellingBrands','tobSellingProducts'));
+            }
+            
+            } catch(\Illuminate\Database\QueryException $e){
+        }
+    }
+
     public function view($slug,Request $request){
         $user = $this->userdata;
         try {
@@ -287,8 +311,7 @@ class ProductController extends Controller
         $price = (isset($productConfigPrice->price))?$productConfigPrice->price:"0";
         return response()->json($price,$this->_statusOK);
     }
-
-    
+   
     public function testMail(Request $request){
         $user = $this->userdata;
         $user = array(

@@ -89,8 +89,7 @@
                     </div>                   
                 </div>
                 <div class="col-lg-4">
-                    <div class="sidebar style_3">
-                        
+                    <div class="sidebar style_3">   
                         <div class="sidebar_widget text-center">          
                             <h5 class="widget_title">Price Summary</h5>                 
                             <div class="sidebar_widget_inner">

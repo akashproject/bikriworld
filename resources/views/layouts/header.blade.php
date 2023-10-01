@@ -44,6 +44,9 @@ Preloader End -->
                 <li class="menu-item">
                     <a class="menu-link" href="{{ url('refer-earn') }}"> Refer & Earn </a>
                 </li>
+                <li class="menu-item">
+                    <a class="menu-link" href="{{ route('categories-repair') }}"> Repair </a>
+                </li>
             @if(Session::get('userData'))
                 <li class="menu-item">
                     <a href="{{ url('dashboard') }}"> Dashboard </a>
@@ -166,7 +169,9 @@ Preloader End -->
                             <li class="menu-item">
                                 <a class="menu-link" href="mailto:franchise@bikriworld.com"> Become a Pertner </a>
                             </li>
-                            
+                            <li class="menu-item">
+                                <a class="menu-link" href="{{ route('categories-repair') }}"> Repair </a>
+                            </li>
                         </ul>
                     </li>
                 </ul>
@@ -254,6 +259,9 @@ Preloader End -->
                             <ul class="sub-menu">
                                 <li class="menu-item">
                                     <a class="menu-link" href="mailto:franchise@bikriworld.com"> Become a Pertner </a>
+                                </li>
+                                <li class="menu-item">
+                                    <a class="menu-link" href="{{ route('categories-repair') }}"> Repair </a>
                                 </li>
                             </ul>
                         </li>

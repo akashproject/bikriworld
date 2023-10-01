@@ -854,6 +854,9 @@
         display: none;
     }
 
+    .view-repair-wrap img {
+        width: 40%;
+    }
 }
 
 

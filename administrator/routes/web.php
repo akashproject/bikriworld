@@ -70,6 +70,13 @@ Route::get('/addcategories', [App\Http\Controllers\CategoriesController::class, 
 Route::post('/submitcategories', [App\Http\Controllers\CategoriesController::class, 'save'])->name('submitcategories');
 Route::get('/delete-category/{id}', [App\Http\Controllers\CategoriesController::class, 'delete'])->name('delete-category');
 
+//Parts
+Route::get('/parts/{id}', [App\Http\Controllers\PartsController::class, 'index'])->name('parts');
+Route::get('/part/{id}', [App\Http\Controllers\PartsController::class, 'show'])->name('part');
+Route::get('/addparts', [App\Http\Controllers\PartsController::class, 'add'])->name('addparts');
+Route::post('/submitparts', [App\Http\Controllers\PartsController::class, 'save'])->name('submitparts');
+Route::get('/delete-parts/{id}', [App\Http\Controllers\PartsController::class, 'delete'])->name('delete-parts');
+
 //Products
 Route::get('/products', [App\Http\Controllers\ProductController::class, 'index'])->name('products');
 Route::get('/product/{id}', [App\Http\Controllers\ProductController::class, 'show'])->name('product');
