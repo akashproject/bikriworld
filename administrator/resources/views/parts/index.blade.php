@@ -20,7 +20,6 @@
 
 						<thead>
 							<tr>
-								<th>Logo</th>
 								<th>Name</th>
 								<th>Price</th>
 								<th>Options</th>
@@ -30,7 +29,7 @@
 						<tbody>
 							@foreach ($parts as $value)
 							<tr>
-								<td style="width:80px"><img src="{{ url('public/images')}}/{{ $value->image }}" style="width:100%"></td>													
+																					
 								<td>{{ $value->name }}</td>													
 								<td>{{ $value->price }}</td>													
 								<td>

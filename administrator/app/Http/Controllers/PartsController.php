@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Parts;
 use App\Models\Categories;
+use App\Models\Brand;
+use App\Models\Product;
 
 class PartsController extends Controller
 {
@@ -28,16 +30,19 @@ class PartsController extends Controller
     }
 
     public function add() {
-        $categories = Categories::all();
-        return view('parts.add',compact('categories'));
+        $categories = Product::all();
+        $brands = Brand::all();
+        return view('parts.add',compact('categories','brands'));
     }
 
 
     public function show($id)
     {
         try {
-            $parts = Parts::find($id);
-            return view('parts.show',compact('parts'));
+            $part = Parts::find($id);
+            $brands = Brand::all();
+            $categories = Categories::all();
+            return view('parts.show',compact('part','brands','categories'));
         } catch(\Illuminate\Database\QueryException $e){
         }        
     }

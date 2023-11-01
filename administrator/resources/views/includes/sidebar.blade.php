@@ -32,7 +32,9 @@
 
                             <ul aria-expanded="false" class="collapse  first-level">
 
-								<li class="sidebar-item"><a href="{{ url('orders') }}" class="sidebar-link"><i class="mdi mdi-border-inside"></i><span class="hide-menu"> All Orders </span></a></li>
+								<li class="sidebar-item"><a href="{{ url('orders') }}" class="sidebar-link"><i class="mdi mdi-border-inside"></i><span class="hide-menu"> Pickups </span></a></li>
+
+                                <li class="sidebar-item"><a href="{{ url('services') }}" class="sidebar-link"><i class="mdi mdi-border-inside"></i><span class="hide-menu"> Services </span></a></li>
 
                             </ul>
 

@@ -49,8 +49,10 @@ class RepairController extends Controller
         try {
             $user = $this->loggedinUser;
             $data = $request->all();
+           
             $dataParts = json_encode($data['parts']);
             $parts = Parts::wherein('id',$data['parts'])->get()->toArray();
+            
             $product = Product::find($data['product_id']);
             return view('repair.checkout',compact('product','user','parts','dataParts'));       
         } catch(\Illuminate\Database\QueryException $e){
@@ -64,6 +66,7 @@ class RepairController extends Controller
             $user = $this->userdata;
             $product = Product::find($data['product_id']);
 
+            print_r($data['parts']); exit;
             $orderData = array(
                 'user_id' => $data['user_id'],
                 'product_id' => $data['product_id'],

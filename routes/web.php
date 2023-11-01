@@ -53,11 +53,11 @@ Route::post('/save-info', [App\Http\Controllers\UserController::class, 'saveInfo
 Route::get('/logout', [App\Http\Controllers\UserController::class, 'logout'])->name('logout');
 Route::get('/bw-earning', [App\Http\Controllers\UserController::class, 'bwEarning'])->name('bw-earning');
 Route::get('/confirm-withdrawal', [App\Http\Controllers\UserController::class, 'confirmWithdrawal'])->name('confirm-withdrawal');
+Route::get('/sevices', [App\Http\Controllers\UserController::class, 'service'])->name('sevices');
 
 // Login Module
 Route::post('/submit-mobile-otp', [App\Http\Controllers\LoginController::class, 'submitMobileOtp'])->name('submit-mobile-otp');
 Route::post('/verify-otp', [App\Http\Controllers\LoginController::class, 'verifyOtp'])->name('verify-otp');
-
 Route::post('/access-profile', [App\Http\Controllers\LoginController::class, 'accessProfile'])->name('access-profile');
 Route::post('/check-exist', [App\Http\Controllers\LoginController::class, 'isUserExist'])->name('check-exist');
 Route::post('/register', [App\Http\Controllers\LoginController::class, 'registerUser'])->name('register');
@@ -66,7 +66,6 @@ Route::get('/register', [App\Http\Controllers\LoginController::class, 'register'
 // Product Module
 Route::get('/sell-used-model/{slug}', [App\Http\Controllers\ProductController::class, 'index'])->name('products-index');
 Route::get('/repair-used-model/{slug}', [App\Http\Controllers\ProductController::class, 'repair'])->name('products-repair');
-
 Route::get('/sell-old-product/{slug}', [App\Http\Controllers\ProductController::class, 'view'])->name('sell-old-product');
 Route::get('/repair-device/{slug}', [App\Http\Controllers\RepairController::class, 'view'])->name('sell-old-product');
 

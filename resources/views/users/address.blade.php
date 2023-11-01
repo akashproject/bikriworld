@@ -7,20 +7,7 @@
                 <div class="col-lg-4 ">
                     <div class="sidebar style_2">
                         <div class="sidebar_widget">
-                            <ul class="category_widgets">
-                                <li>
-                                    <a href="{{ url('dashboard') }}">Dashboard</a>
-                                </li>
-                                <li class="active">
-                                    <a href="{{ url('pickups') }}">Pickups</a>
-                                </li>
-                                <li>
-                                    <a href="{{ url('payments') }}">Payments</a>
-                                </li>
-                                <li>
-                                    <a href="{{ url('addresses') }}">Addresses</a>
-                                </li>
-                            </ul>
+                            @include('common.user-menu')
                         </div>
                     </div>
                 </div>

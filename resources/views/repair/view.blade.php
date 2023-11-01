@@ -59,7 +59,7 @@
                                     <div class="col-md-2 col-6 relative">
                                         <input type="checkbox" name="parts[]" id="accessory_{{$value->id}}" class="accessory_input" value="{{$value->id}}">   
                                         <label for="accessory_{{$value->id}}" class="accessories_wrap" dataquestion="{{$value->id}}" style="padding: 10px 0 0 0;overflow: hidden;">
-                                            <img src="https://bikriworld.com/assets/images/icons/charger.png" style="width: auto;">
+                                            <img src="https://bikriworld.com/assets/images/icons/{{$value->icon}}.png" style="width: auto;">
                                             <h6> {{$value->name}} </h6>
                                             <span class="parts-price" > {{$value->price}}/- </h6>
                                         </label>
@@ -77,10 +77,10 @@
                         <div class="sidebar_widget text-center">          
                             <h5 class="widget_title">Price Summary</h5>                 
                             <div class="sidebar_widget_inner">
-                                <ul class="info_widget repair-part-lists">
-                                    <li id="1"> Display <span> 1200 </span></li>
-                                    <li id="2"> Speaker <span> 1200 </span></li>
-                                    <li id="4"> Mic <span> 1200 </span></li>
+                                <ul class="info_widget device_summary">
+                                    @foreach ($parts as $key => $value)
+                                        <li id="{{$value->id}}" style="display:none;text-align: left;" > {{$value->name}} <span class="" style="float: right;text-align: right;display: flow;font-size: 16px;font-weight: 800;" >₹{{$value->price}}</span> </li >
+                                    @endforeach	
                                 </ul>
                             </div>
                             <div class="sidebar_widget_inner">

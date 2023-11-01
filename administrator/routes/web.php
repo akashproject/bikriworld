@@ -43,15 +43,23 @@ Route::get('/getRole', function () {
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/logout', [App\Http\Controllers\Auth\LoginController::class, 'logout'])->name('logout');
+
 // users
 Route::get('/users', [App\Http\Controllers\UserController::class, 'index'])->name('users');
 Route::get('/user/{id}', [App\Http\Controllers\UserController::class, 'show'])->name('show');
 Route::post('/save-user', [App\Http\Controllers\UserController::class, 'save'])->name('save-user');
+
 //Orders
 Route::get('/orders', [App\Http\Controllers\OrderController::class, 'index'])->name('users');
 Route::get('/order/{id}', [App\Http\Controllers\OrderController::class, 'show'])->name('show');
 Route::post('/saveorder', [App\Http\Controllers\OrderController::class, 'save'])->name('save');
 Route::post('/export-csv', [App\Http\Controllers\OrderController::class, 'exportAllCsv'])->name('export-csv');
+
+// Services
+Route::get('/services', [App\Http\Controllers\RepairOrdersController::class, 'index'])->name('services');
+Route::get('/service/{id}', [App\Http\Controllers\RepairOrdersController::class, 'show'])->name('show');
+Route::post('/saveservice', [App\Http\Controllers\RepairOrdersController::class, 'save'])->name('save');
+Route::post('/service-export-csv', [App\Http\Controllers\RepairOrdersController::class, 'exportAllCsv'])->name('service-export-csv');
 
 Route::get('/order-report', [App\Http\Controllers\OrderByUserController::class, 'index'])->name('order-report');
 Route::get('/user-report', [App\Http\Controllers\OrderByUserController::class, 'indexByUser'])->name('order-user');

@@ -3,10 +3,10 @@
 @section('content')
 <div class="col-12">
 	<div class="card">
-		<form class="form-horizontal" method="post" action="{{ url('submitbrand') }}" enctype="multipart/form-data">
+		<form class="form-horizontal" method="post" action="{{ url('submitparts') }}" enctype="multipart/form-data">
 			@csrf
 			<div class="card-body">
-				<h4 class="card-title"> Edit Brand </h4>
+				<h4 class="card-title"> Add Parts </h4>
 				@if ($errors->any())
 					<div class="alert alert-danger">
 						<ul>
@@ -14,59 +14,44 @@
 								<li>{{ $error }}</li>
 							@endforeach
 						</ul>
-
 					</div>
-
 				@endif
-
 				<div class="form-group row">
-					<label for="title" class="col-sm-3 text-right control-label col-form-label">Image</label>
+					<label for="category" class="col-sm-3 text-right control-label col-form-label">Category</label>
+					<div class="col-sm-9">
+						<select name="category_id" id="category_id" class="select2 form-control custom-select" >
+							<option value="">Select Category</option>
+							@foreach($categories as $category)
+							<option value="{{$category->id}}" {{ ($category->id == $part->category_id)?'selected' : '' }} >
+								 {{$category->name}}
+							</option>
+							@endforeach
+						<select>
+					</div>
+				</div>
+				<div class="form-group row">
+					<label for="icon" class="col-sm-3 text-right control-label col-form-label">Parts Icon</label>
 					<div class="col-md-9">
 						<div class="custom-file">
-							<input type="file" class="custom-file-input" name="image" id="validatedCustomFile">
-							<label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
-							<div class="invalid-feedback">Example invalid custom file feedback</div>
+							<input type="text" class="form-control" name="icon" id="icon"  value="{{$part->icon}}" >
 						</div>
 					</div>
 				</div>
 
 				<div class="form-group row">
-					<label for="name" class="col-sm-3 text-right control-label col-form-label">Brand Name</label>
+					<label for="name" class="col-sm-3 text-right control-label col-form-label">Parts Name</label>
 					<div class="col-sm-9">
-						<input type="text" class="form-control" name="name" id="name" placeholder="Brand Name Here" value="{{ $brand->name }}" >
+						<input type="text" class="form-control" name="name" id="name" placeholder="Enter name Here" value="{{$part->name}}" required >
 					</div>
-				</div>
-
-				<div class="form-group row">
-					<label for="name" class="col-sm-3 text-right control-label col-form-label">Brand Slug</label>
-					<div class="col-sm-9">
-						<input type="text" class="form-control" name="slug" id="slug" placeholder="Title Here" value="{{ $brand->slug }}">
-					</div>
-				</div>
-
-				<div class="form-group row">
-					<label for="state" class="col-sm-3 text-right control-label col-form-label">Category</label>
-					<div class="col-sm-9">
-						<select name="category_id[]" id="category_id" class="select2 form-control custom-select" style="width: 100%; height:136px;" multiple>	
-							<option value="">Select Category</option>
-							@foreach($categories as $category)
-							<option value="{{$category->id}}"  {{ (in_array($category->id,  $brand->category_id))?'selected' : '' }} > {{$category->name}}</option>
-							@endforeach
-						<select>
-					</div>
-				</div>
+				</div>		
 			</div>
 
 			<div class="border-top">
-
 				<div class="card-body">
-
 					<button type="submit" class="btn btn-primary">Submit</button>
-					<input type="hidden" name="brand_id" id="brand_id" value="{{ $brand->id }}" >
+					<input type="hidden" name="parts_id" id="parts_id" value="{{ $part->id }}" >
 				</div>
-
 			</div>
-
 		</form>
 
 	</div>

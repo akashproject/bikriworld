@@ -53,6 +53,19 @@ class UserController extends Controller
         return view('users.pickups',compact('user','order'));
     }
 
+    public function service(){
+        $user = $this->user;
+        //$order = Order::where('user_id', $user->id)->get();
+
+        $order = DB::table('repair_orders')
+            ->join('product', 'repair_orders.product_id', '=', 'product.id')
+            ->where('repair_orders.user_id', '=', $user->id)
+            ->select('repair_orders.*', 'product.*')
+            ->distinct()
+            ->get();
+        return view('users.services',compact('user','order'));
+    }
+
     public function payments(Request $request){
         $user = $this->user;
         $payment = Payment::where('user_id', $user->id)->first();
