@@ -21,7 +21,6 @@
 						<thead>
 							<tr>
 								<th>Name</th>
-								<th>Price</th>
 								<th>Options</th>
 							</tr>
 						</thead>
@@ -31,7 +30,6 @@
 							<tr>
 																					
 								<td>{{ $value->name }}</td>													
-								<td>{{ $value->price }}</td>													
 								<td>
 								<a href="{{ url('part') }}/{{ $value->id }}" class="btn btn-primary btn-lg">Edit</a>
 								<a href="{{ url('delete-parts') }}/{{ $value->id }}" class="btn btn-danger btn-lg" onclick="return confirm('Are you sure?')";>Delete </a>

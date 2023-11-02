@@ -30,7 +30,7 @@ class PartsController extends Controller
     }
 
     public function add() {
-        $categories = Product::all();
+        $categories = Categories::all();
         $brands = Brand::all();
         return view('parts.add',compact('categories','brands'));
     }

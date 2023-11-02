@@ -42,12 +42,6 @@
 						<input type="text" class="form-control" name="name" id="name" placeholder="Enter name Here" >
 					</div>
 				</div>		
-				<div class="form-group row">
-					<label for="price" class="col-sm-3 text-right control-label col-form-label">Price</label>
-					<div class="col-sm-9">
-						<input type="text" class="form-control" name="price" id="price" placeholder="Enter Price Here" >
-					</div>
-				</div>
 			</div>
 
 			<div class="border-top">
@@ -55,15 +49,11 @@
 					<button type="submit" class="btn btn-primary">Submit</button>
 					<input type="hidden" name="parts_id" id="parts_id" value="" >
 				</div>
-
 			</div>
-
 		</form>
 	</div>
 </div>              
-
 @endsection
-
 @section('script')
 
 <!-- ============================================================== -->

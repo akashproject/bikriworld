@@ -32,7 +32,6 @@
 							<tr>
 								<th>image</th>
 								<th>Name</th>
-								<th>Variant</th>
 								<th>Max Price</th>
 								<th>Created Date</th>
 								<th>Options</th>
@@ -49,7 +48,6 @@
 
 								<td style="width:80px"><img src="{{ url('/public/images')}}/{{ $value->image }}" style="width:100%"></td>
 								<td>{{ $value->name }}</td>
-								<td>{{$value->variant }}</td>
 								<td>{{$value->max_price }}</td>
 								<td> {{ $value->created_at->isoFormat('MMM DD, YYYY') }} </td>
 								<td>

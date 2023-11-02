@@ -35,7 +35,7 @@ class RepairController extends Controller
         try {
             $brand_id = $request->session()->get('selling_brand');
             $product = Product::where('slug', $slug)->firstOrFail();  //Product::find($id);          
-            $parts = Parts::where('category_id',$product->category_id)->get();
+            $parts = Parts::where('category_id',$product->category_id)->orderBy('name','asc')->get();
             $tobSellingBrands = Brand::inRandomOrder()->limit(10)->get();
             $tobSellingProducts = Product::inRandomOrder()->limit(10)->get();
 

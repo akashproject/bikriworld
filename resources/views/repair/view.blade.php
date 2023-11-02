@@ -59,7 +59,7 @@
                                     <div class="col-md-2 col-6 relative">
                                         <input type="checkbox" name="parts[]" id="accessory_{{$value->id}}" class="accessory_input" value="{{$value->id}}">   
                                         <label for="accessory_{{$value->id}}" class="accessories_wrap" dataquestion="{{$value->id}}" style="padding: 10px 0 0 0;overflow: hidden;">
-                                            <img src="https://bikriworld.com/assets/images/icons/{{$value->icon}}.png" style="width: auto;">
+                                            <img src="https://bikriworld.com/assets/images/parts/{{$value->icon}}.png" style="width: auto;">
                                             <h6> {{$value->name}} </h6>
                                             <span class="parts-price" > {{$value->price}}/- </h6>
                                         </label>
