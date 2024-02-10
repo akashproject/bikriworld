@@ -33,7 +33,7 @@ class AppServiceProvider extends ServiceProvider
         {
 
             $serviceLocation = array(
-                'Howrah','Kolkata','Bihar','Bhubaneswar','Cuttack'
+                'Howrah','Kolkata','Bihar','Bhubaneswar','Cuttack','Delhi'
             );
             $view->with('serviceLocation', $serviceLocation);
             // Header Menu

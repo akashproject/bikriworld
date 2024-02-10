@@ -91,6 +91,9 @@ Route::get('/product/{id}', [App\Http\Controllers\ProductController::class, 'sho
 Route::get('/addproduct', [App\Http\Controllers\ProductController::class, 'add'])->name('product');
 Route::post('/submitproduct', [App\Http\Controllers\ProductController::class, 'save'])->name('submitproduct');
 Route::get('/product-delete/{id}', [App\Http\Controllers\ProductController::class, 'delete'])->name('product-delete');
+Route::get('/product-parts/{id}', [App\Http\Controllers\ProductController::class, 'parts'])->name('product-parts');
+Route::post('/save-product-parts', [App\Http\Controllers\ProductController::class, 'saveParts'])->name('save-product-parts');
+
 
 //Series
 Route::get('/serieses', [App\Http\Controllers\SeriesController::class, 'index'])->name('seriess');

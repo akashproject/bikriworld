@@ -31,6 +31,10 @@ Route::get('/repair-device', [App\Http\Controllers\CategoriesController::class, 
 Route::get('/select-brand/{slug}', [App\Http\Controllers\BrandController::class, 'index'])->name('brands-index');
 Route::get('/repair-select-brand/{slug}', [App\Http\Controllers\BrandController::class, 'repair'])->name('brands-repair');
 
+//whatsapp
+Route::get('/sell-old-used-laptop', [App\Http\Controllers\CategoriesController::class, 'laptopUsedWhatsapp'])->name('laptop-whatsapp');
+Route::get('/sell-used-laptop', [App\Http\Controllers\CategoriesController::class, 'laptopWhatsapp'])->name('laptop-whatsapp');
+
 
 Route::post('/question', [App\Http\Controllers\QuestionController::class, 'index'])->name('question-index');
 Route::post('/calculate-price', [App\Http\Controllers\QuestionController::class, 'calculatePrice'])->name('calculate-price');
@@ -77,6 +81,7 @@ Route::get('/order-success', [App\Http\Controllers\ProductController::class, 'or
 Route::post('/update-order', [App\Http\Controllers\ProductController::class, 'updateOrder'])->name('update-order');
 Route::post('/cancel-order', [App\Http\Controllers\ProductController::class, 'cancelOrder'])->name('cancel-order');
 Route::get('/manage-order/{id}', [App\Http\Controllers\ProductController::class, 'manageOrder'])->name('manage-order');
+Route::get('/manage-service/{id}', [App\Http\Controllers\ProductController::class, 'manageService'])->name('manage-service');
 Route::post('/get-question', [App\Http\Controllers\ProductController::class, 'getQuestion'])->name('get-question');
 Route::post('/submit-sell-request', [App\Http\Controllers\ProductController::class, 'submitSellRequest'])->name('submit-sell-request');
 Route::post('/get-product-config-price', [App\Http\Controllers\ProductController::class, 'getProductConfigPrice'])->name('get-product-config-price');

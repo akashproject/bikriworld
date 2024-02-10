@@ -9326,7 +9326,7 @@ ul.social-share {
     margin-right: 30px;
 
 }
-.accessories_wrap {
+.accessories_wrap,.parts_wrap {
     text-align: center;
     padding: 12px;
     border-radius: 10px;
@@ -9357,23 +9357,23 @@ ul.social-share {
     list-style: disc;
 }
 
-.accessories_wrap h6 {
+.accessories_wrap h6,.parts_wrap h6 {
     font-size: 12px;
     margin: 8px 3px 0;
 }
 
 
 
-.accessory_input:checked + .accessories_wrap, .age_input:checked + .ages_wrap, .condition_input:checked + .conditions_wrap, .form-check-input:checked + .form-check-label {
+.accessory_input:checked + .accessories_wrap, .age_input:checked + .ages_wrap, .condition_input:checked + .conditions_wrap, .form-check-input:checked + .form-check-label,.parts_input:checked + .parts_wrap {
     font-weight: bold;
     border: 1px solid #00986b;
 }
 
-.accessories_list,.ages_list, .conditions_list{
+.accessories_list,.ages_list, .conditions_list,.parts_list{
     margin-bottom: 30px;
 }   
 
-input.accessory_input, input.age_input, input.condition_input{
+input.accessory_input, input.age_input, input.condition_input, input.parts_input{
     position: absolute;
     visibility: hidden;
 }

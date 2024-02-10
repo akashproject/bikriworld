@@ -37,7 +37,7 @@
                                 </div>
                                 <div class="col-12 col-lg-6 text-right">
                                 <a href="{{ url('repair-device') }}" class="thm-btn bg-thm-color-one thm-color-two-shadow btn-rectangle" style="margin-top: 32px;">   Book Again</a>
-                                <a href="{{ url('manage-order') }}/{{ $value->service_no}}" class="thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle" style="margin-top: 32px;">   Details</a>
+                                <a href="{{ url('manage-service') }}/{{ $value->service_no}}" class="thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle" style="margin-top: 32px;">   Details</a>
                                 </div>
                             </div>
                         @endforeach	

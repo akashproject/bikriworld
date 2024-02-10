@@ -166,9 +166,9 @@
                                         @foreach($parts as $value)
                                         <li>
                                             <span style="float:left">{{ $value['name'] }}</span>
-                                            <span style="float:right">₹ {{ $value['price'] }} </span>
+                                            <span style="float:right">₹{{ $price[$value['id']] }}  </span>
                                             @php
-                                                $total += $value['price'];
+                                                $total +=$price[$value['id']];
                                             @endphp
                                         </li>
                                         @endforeach

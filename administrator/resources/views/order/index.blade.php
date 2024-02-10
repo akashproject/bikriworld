@@ -77,14 +77,15 @@
 						<thead>
 
 							<tr>
-								<th>#ID</th>
 								<th>Service No</th>
 								<th>User</th>
 								<th>Product</th>
 								<th>Amount</th>
 								<th>Payment Mode</th>
 								<th>Order Placed Date</th>
+								<th>Device</th>
 								<th>Status</th>
+								<th>Remarks</th>
 								<th>Options</th>
 
 							</tr>
@@ -95,13 +96,14 @@
 
 							@foreach ($orders as $value)
 							<tr>
-								<td>{{ $value->order_id }}</td>													
+																				
 								<td>{{ $value->service_no }}</td>													
 								<td>{{ $value->user_fullname }}</td>													
 								<td>{{ $value->product_name }}</td>													
 								<td>{{ $value->amount }}</td>													
 								<td>{{ $value->payment_mode }}</td>													
 								<td>{{ date("M d, Y",strtotime($value->created_at)) }}</td>
+								<td>{{ ($value->is_device == "1")?"Web":"App" }}</td>	
 								<td > 
 									<span style="display:none" >
 									{{$color = "" }}
@@ -115,6 +117,7 @@
 									</span>
 									<span style="color:{{$color}}" > {{ $value->status }} </span>
 								</td>
+								<td>{{ $value->remarks }}</td>	
 								<td>
 								<a href="{{ url('order') }}/{{ $value->id }}" class="btn btn-primary btn-lg">View</a>
 								</td>

@@ -8,6 +8,7 @@ use App\Models\Product;
 use App\Models\Categories;
 use App\Models\Brand;
 use App\Models\Series;
+use App\Models\Parts;
 use Mail;
 
 class ProductController extends Controller
@@ -39,8 +40,7 @@ class ProductController extends Controller
         return view('product.add',compact('brands','serieses','categories'));
     }
 
-    public function show($id)
-    {
+    public function show($id) {
         try {
 
             $product = Product::find($id);
@@ -53,57 +53,87 @@ class ProductController extends Controller
     }
 
     public function save(Request $request) {
-        $data = $request->all();
-        $variation = array();
-        $data['variant'] = null;
-        if ($data['ram'][0] != '') {
-            for ($i=0; $i < count($data['ram']); $i++) { 
-                $variation[$i] = array(
-                    'ram'=> $data['ram'][$i],
-                    'storage'=> $data['storage'][$i],
-                    'price'=> $data['price'][$i],
-                );
+        try {    
+            $data = $request->all();
+            $variation = array();
+            $data['variant'] = null;
+            if ($data['ram'][0] != '') {
+                for ($i=0; $i < count($data['ram']); $i++) { 
+                    $variation[$i] = array(
+                        'ram'=> $data['ram'][$i],
+                        'storage'=> $data['storage'][$i],
+                        'price'=> $data['price'][$i],
+                    );
+                }
+                $data['variant'] = json_encode($variation);
             }
-            $data['variant'] = json_encode($variation);
-        }
-        
-        $validatedData = $request->validate([
-            'name' => 'required',
-            'slug' => 'required',
-        ]);
-
-        if($data['product_id'] <= 0){
-            $request->validate([
-                'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',
+            
+            $validatedData = $request->validate([
+                'name' => 'required',
+                'slug' => 'required',
             ]);
-        }
 
-        if ($request->hasFile('image')) {
-            
-            $imageFile = strtolower(str_replace(" ","",$data['name'])).'_logo_'.time().'.'.$request->image->extension();  
-            
-            $request->image->move(public_path('images/product'), $imageFile);
-            $data['image'] = "product/".$imageFile;
-        }
+            if($data['product_id'] <= 0){
+                $request->validate([
+                    'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',
+                ]);
+            }
 
-        if($data['product_id'] <= 0){
-            $data['slug'] = "sell-old-used-".str_replace(" ","-",strtolower($data['name']));
-            Product::create($data);
-        } else {
-            $brand = Product::findOrFail($data['product_id']);
-            $brand->update($data);
+            if ($request->hasFile('image')) {
+                
+                $imageFile = strtolower(str_replace(" ","",$data['name'])).'_logo_'.time().'.'.$request->image->extension();  
+                
+                $request->image->move(public_path('images/product'), $imageFile);
+                $data['image'] = "product/".$imageFile;
+            }
+
+            if($data['product_id'] <= 0){
+                $data['slug'] = "sell-old-used-".str_replace(" ","-",strtolower($data['name']));
+                Product::create($data);
+            } else {
+                $product = Product::findOrFail($data['product_id']);
+                $product->update($data);
+            }
+            
+            return redirect('/products');
+        } catch(\Illuminate\Database\QueryException $e){
         }
-        
-        return redirect('/products');
     }
 
     public function delete($id)
     {
         try {
-            $brand = Product::find($id)->delete();
+            Product::find($id)->delete();
             return redirect('/products');
         } catch(\Illuminate\Database\QueryException $e){
         }        
+    }
+
+    public function parts($id)
+    {
+        try {
+            $product = Product::find($id);
+            if ($product->parts != null) {
+                $product->parts = json_decode($product->parts,true);
+            } else {
+                $product->parts = array();
+            }
+            $parts = Parts::where('category_id',$product->category_id)->get();
+           return view('product.parts',compact('parts','product'));
+        } catch(\Illuminate\Database\QueryException $e){
+        }        
+    }
+
+    public function saveParts(Request $request){
+        try {
+            $data = $request->all();
+            $data['parts'] = json_encode($data['parts']);
+            $product = Product::findOrFail($data['product_id']);
+            $product->update($data);
+            return redirect()->back()->with('message', 'Parts updated successfully!');
+           exit;
+        } catch(\Illuminate\Database\QueryException $e){
+        }  
     }
 
 }

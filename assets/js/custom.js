@@ -1,10 +1,9 @@
 
-const city = ["Howrah", "Kolkata", "Patna"];
+const city = ["Howrah", "Kolkata", "Patna","Delhi"];
 const veriationPrice = [];
 let searchParams = new URLSearchParams(window.location.search);
 if(searchParams.has('ref')){
     let param = searchParams.get('ref')
-    console.log(param);
     $("input[name='referral_code']").val(param);
     $.cookie('referral_code', param, {expires: 100000000000});
 }
@@ -232,6 +231,12 @@ if(searchParams.has('ref')){
         $(".device_summary").html('<li class="">'+questionval+'</li>');
     });
 
+    $(".parts_wrap").click(function(){
+        let questionval = $(this).children("h6").html();
+        let id = $(this).attr("dataquestion");
+        $(".device_summary #"+id).toggle();
+        //$(".device_summary").append('<li class="">'+questionval+'</li>');
+    });
 
     // Canvas 
     $(".desktop_trigger, .trigger-right").on('click', function() {
@@ -267,16 +272,19 @@ if(searchParams.has('ref')){
     $(".search_trigger>a, .close-search-trigger").on('click', function() {
         $(".search-form-wrapper").toggleClass('open');
     });
+
     // Mobile Menu
     $(".mobile_trigger, .trigger-left").on('click', function() {
         $(".mobile_trigger").toggleClass('active');
         $(".aside_mobile").toggleClass('open');
     });
+
     $(".aside_mobile .menu-item-has-children > a").on('click', function(e) {
         var submenu = $(this).next(".sub-menu");
         e.preventDefault();
         submenu.slideToggle(200);
     });
+
     var header = $(".can-sticky");
     var footer = $(".ft-sticky");
     var headerHeight = header.innerHeight();
@@ -294,6 +302,7 @@ if(searchParams.has('ref')){
             footer.removeClass("d-flex");
         }
     }
+
     jQuery( "#datepicker" ).datepicker({ 
         format: 'mm/dd/yyyy', 
         changeMonth: true,
@@ -399,7 +408,6 @@ if(searchParams.has('ref')){
             }
         });
     }
-
 
     function verifyLoginOtp(form,formId,verifyOtp,responsedOtp) {
         $.ajaxSetup({
@@ -786,11 +794,18 @@ if(searchParams.has('ref')){
         $(this).addClass("active");
     });
 
-    $('.veriation_price').on("click",function(){
+    $('.veriation_price').on("change",function(){
         $(".product-price_amount").html(addCommas($(this).val()))
         $("#veriation_type").val($(this).attr("data-type"));
         $("#veriation_price").val($(this).val())
     })
+
+    $('.mackbook_veriation_price').on("change",function(){
+        $(".product-price_amount").html(addCommas($(this).val()))
+        $("#veriation_type").val($(this).find("option:selected").text());
+        $("#veriation_price").val($(this).val())
+    })
+    
 
     $(".device-configuration").on("change",function(){
         
@@ -807,34 +822,6 @@ if(searchParams.has('ref')){
     })
 
     $(".device-configuration").on("change",function(){
-
-        // let config_id = $(this).attr("id");
-        // veriationPrice[config_id] = $(this).val();
-
-        // // price = parseInt(price)+parseInt($(this).val());
-        // // $("#veriation_price").val(price);
-
-        // $.ajaxSetup({
-        //     headers: {
-        //      'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        //     }
-        // });
-
-        // $.ajax({
-        //     url: `https://${window.location.hostname}/get-product-config-price`,
-        //     type: "post",
-        //     data: {
-        //         config_id: $('#'+config_id+' option:selected').attr('data-id'),
-        //         product_id:$("#product_id").val()
-        //     },
-        //     success: function(result) {
-
-        //         let config_price = parseInt($("#config_price").val()) + parseInt(result);
-        //         //$("#config_price").val(config_price);
-        //         veriationPrice["config-"+config_id] = result;
-        //     }
-        // });
-
         let processor = $("#deviceProcessor option:selected" ).text();
         let ram = $("#deviceRam option:selected" ).text();
         let hdd = $("#deviceHarddisk option:selected" ).text();
@@ -845,9 +832,7 @@ if(searchParams.has('ref')){
         $("#veriation_type").val(label);
     });
 
-
     // Easy pie bar
-    
     $(".circle_bar").each(function() {
         var circleBar = $(this);
         $(circleBar).one('inview', function(event, isInView) {
@@ -864,6 +849,7 @@ if(searchParams.has('ref')){
             }
         });
     });
+
     $(".countdown-timer").each(function() {
         var $this = $(this);
         $this.countdown($this.data('countdown'), function(event) {
@@ -956,18 +942,16 @@ if(searchParams.has('ref')){
         closeOnBgClick:true
     });
 
-    
-    
-    // $(window).on('load', function() {  
-    //     if($.cookie('userCity')  == null) {
-    //         $('.open-city-popup').trigger("click");
-    //     } else {
-    //         if(city.includes($.cookie('userCity'))){ } else {
-    //             console.log("Here",$.cookie('userCity'));
-    //             $('.service-modal').trigger("click");
-    //         }           
-    //     }
-    // });
+    /*$(window).on('load', function() {  
+        if($.cookie('userCity')  == null) {
+            $('.open-city-popup').trigger("click");
+        } else {
+            if(city.includes($.cookie('userCity'))){ } else {
+                console.log("Here",$.cookie('userCity'));
+                $('.service-modal').trigger("click");
+            }           
+        }
+    });*/
 
     $(document).on("click","#select-city-popup .city-search-list",function(){
         let city = $(this).attr('data-city');

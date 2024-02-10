@@ -1,140 +1,72 @@
 <?php
 
 
-
-
-
 namespace App\Http\Controllers;
-
 use Illuminate\Support\Facades\DB;
-
 use App\Http\Controllers\Controller;
-
 use Illuminate\Http\Request;
-
 use App\Models\Question;
-
 use App\Models\Product;
-
 use App\Models\Brand;
-
 use App\Models\Accessories;
-
 use App\Models\Age;
-
 use App\Models\Condition;
-
 use App\Models\DeviceConfig;
-
 use App\Models\Series;
-
 use App\Models\ProductConfigPrice;
 use App\Models\Order;
 
 
 class QuestionController extends Controller
-
 {
 
     public $userdata = '';
-
     public function __construct(Request $request)
-
     {
-
         $this->userdata = $request->session()->get('userData');
-
     }
 
     
 
     public function index(Request $request){
-
         $user = $this->userdata;
-
-       
-
         try {
 
-
-
             $category_id = $request->session()->get('selling_category');
-
             $productData = $request->all();
-            
-
             $veriationPrice = 0;
 
-
-
             if(isset($productData['config']) && $productData['config']){
-
-                // Device Configuration Price
-
                 $configPrice = DeviceConfig::select('price')
-
                 ->whereIn('id', $productData['config'])
-
                 ->get(); 
-
-
-
                 foreach($configPrice as $key => $value){
-
                     $veriationPrice += $value->price;
-
                 }
-
-
 
                 // Device Configuration Extra Price
-
                 $productConfigPrice = ProductConfigPrice::select('price')
-
                 ->where('product_id', '=', $productData['product_id'])
-
                 ->whereIn('config_id', $productData['config'])
-
                 ->get(); 
-
                 foreach($productConfigPrice as $key => $value){
-
                     $veriationPrice += $value->price;
-
                 }
-
             } else {
-
                 $veriationPrice = $productData['veriation_price'];
-
             }
-
 
 
             if(isset($productData['series_price']) && $productData['series_price'] != ''){
-
                 $veriationPrice += $productData['series_price'];
-
             }
 
-
-
             $questions = Question::where('category_id', $category_id)->get();
-
             $product = Product::find($productData['product_id']);
-
-
-
-
 
             $veriationType = $productData['veriation_type'];
 
-
-
-
-
             $tobSellingBrands = Brand::inRandomOrder()->limit(10)->get();
-
             $tobSellingProducts = Product::inRandomOrder()->limit(10)->get();
 
             return view('questions.index',compact('questions','product','user','tobSellingBrands','tobSellingProducts','veriationPrice','veriationType'));
@@ -324,48 +256,30 @@ class QuestionController extends Controller
 
             }
 
-
-
-           
-
             // Deduction calculation by accessories
 
-            if(isset($callculatedData['accessories'])){
+            if(!isset($callculatedData['accessories'])){
+                $callculatedData['accessories'] = [];
+            } 
 
-                $notProvidedAccessories = DB::table('accessories')
-
+            $notProvidedAccessories = DB::table('accessories')
                                         ->select('accessories.brand_id','accessories.deducted_amount','accessories.extra_deducted_amount')
-
                                         ->whereNotIn('id', $callculatedData['accessories'])
-
                                         ->where('category_id', '=', $category_id)->get();
 
 
-
-                foreach ($notProvidedAccessories as $key => $notProvidedAccessory) {
-
-                    $sum_deduction += $notProvidedAccessory->deducted_amount;
-
-                    if($notProvidedAccessory->brand_id){
-
-                        $brands = json_decode($notProvidedAccessory->brand_id,true);
-
-                        if(in_array($brand_id, $brands)){
-
-                            $accessory_extra_amount = ($notProvidedAccessory->extra_deducted_amount / 100) * $veriation_price;
-
-                            $sum_deduction += $accessory_extra_amount;
-
-                        }   
-
-                    }
-
+            foreach ($notProvidedAccessories as $key => $notProvidedAccessory) {
+                //echo $notProvidedAccessory->deducted_amount." ";
+                $sum_deduction += $notProvidedAccessory->deducted_amount;
+                if($notProvidedAccessory->brand_id){
+                    $brands = json_decode($notProvidedAccessory->brand_id,true);
+                    if(in_array($brand_id, $brands)){
+                        $accessory_extra_amount = ($notProvidedAccessory->extra_deducted_amount / 100) * $veriation_price;
+                        $sum_deduction += $accessory_extra_amount;
+                    }   
                 }
-
             }
-
-
-
+        
             
 
             // Deduction calculation by age

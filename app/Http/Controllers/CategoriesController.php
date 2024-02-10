@@ -26,6 +26,31 @@ class CategoriesController extends Controller
         }
     }
 
+    public function laptopWhatsapp(){
+        $user = $this->userdata;
+        try {
+            
+            return view('categories.laptop-whatsapp');
+        } catch(\Illuminate\Database\QueryException $e){
+            
+        }
+    }
+
+    public function laptopUsedWhatsapp(Request $request){
+        $user = $this->userdata;
+        try {
+            $category = Categories::where('slug', 'sell-old-used-laptop')->firstOrFail();
+            $id = $category->id;
+            $request->session()->put('selling_category', $id);
+            //echo $request->session()->get('category_id');
+            $brands = Brand::where('category_id', 'like', '%"' . $id . '"%')->orderBy('name', 'asc')->get();
+            return view('categories.laptop-whatsapp-model',compact('category','brands','user'));
+        } catch(\Illuminate\Database\QueryException $e){
+            
+        }
+    }
+
+
     public function apiIndex(){
         try {
             $categories = Categories::where('status', '1')->orderBy('id', 'DESC')->get();

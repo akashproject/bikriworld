@@ -41,23 +41,19 @@
 						</thead>
 
 						<tbody>
-
 							@foreach ($products as $value)
-
 							<tr>
-
 								<td style="width:80px"><img src="{{ url('/public/images')}}/{{ $value->image }}" style="width:100%"></td>
 								<td>{{ $value->name }}</td>
 								<td>{{$value->max_price }}</td>
 								<td> {{ $value->created_at->isoFormat('MMM DD, YYYY') }} </td>
 								<td>
+									<a href="{{ url('product-parts') }}/{{ $value->id }}" class="btn btn-primary btn-lg"> Parts </a>
 									<a href="{{ url('product') }}/{{ $value->id }}" class="btn btn-primary btn-lg">Edit</a>
 									<a href="{{ url('product-delete') }}/{{ $value->id }}" class="btn btn-danger btn-lg" onclick="return confirm('Are you sure?')";>Delete </a>
 								</td>
 							</tr>
-
 							@endforeach							
-
 						</tbody>
 
 					</table>

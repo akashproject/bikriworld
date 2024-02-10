@@ -17,16 +17,17 @@
             <div class="slide-item col-12">
                 <div class="features_box product_image_box">
                     <div class="icon">
-                        <a href="{{ url('view-product') }}/{{ $value->id }}" >
+                        <a href="{{ url('view-product') }}/{{ $value->slug }}" >
                             <img src="https://administrator.bikriworld.com/public/images/{{ $value->image }}" alt="img">
                         </a>
                     </div>
-                    <h6 class="text-center"><a href="{{ url('view-product') }}/{{ $value->id }}"> {{ $value->name }} </a> </h6>
+                    <h6 class="text-center">
+                        <a href="{{ url('view-product') }}/{{ $value->slug }}"> {{ $value->name }} </a> 
+                    </h6>
                 </div>
             </div>
             <!-- Feature Box End -->
             @endforeach     
         </div>
-        
     </div>
 </section>

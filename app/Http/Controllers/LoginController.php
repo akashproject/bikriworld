@@ -55,7 +55,8 @@ class LoginController extends Controller
         }
       }
 
-    public function isUserExist(Request $request){
+   
+      public function isUserExist(Request $request){
         try {
             $requestData = $request->all();
             $exist = User::where('mobile', $requestData['mobile'])->count();
@@ -100,6 +101,7 @@ class LoginController extends Controller
                 'name'=> $data['name'],
                 'email'=> $data['email'],
                 'referral_code'=> "BW_".$this->random_strings(8),
+                'is_device'=> "1",
             );
 
             if (isset($data['referral_code']) && $data['referral_code'] !='') {

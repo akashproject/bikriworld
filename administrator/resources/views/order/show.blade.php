@@ -125,8 +125,8 @@ Email : {{ $order->email }}
 
 				<div class="form-group row">
 					<label for="name" class="col-sm-3 text-right control-label col-form-label">Selling Amount</label>
-					<div class="col-sm-9 text-left control-label col-form-label">
-						<span >Rs. {{ number_format($order->amount) }}/-</span >
+					<div class="col-sm-5 text-left control-label col-form-label">
+						<input type="text" class="form-control" name="amount" id="amount" placeholder="Title Here" value="{{ $order->amount }}">
 					</div>
 				</div>
 
@@ -176,6 +176,13 @@ Email : {{ $order->email }}
 					<label for="name" class="col-sm-3 text-right control-label col-form-label"> Reason </label>
 					<div class="col-sm-9 text-left control-label col-form-label">
 						<textarea name="reason" class="form-control"  id="reason" placeholder="Enter Reason Here" >{{ $order->reason }}</textarea>
+					</div>
+				</div>
+
+				<div class="form-group row">
+					<label for="name" class="col-sm-3 text-right control-label col-form-label"> Remarks </label>
+					<div class="col-sm-9 text-left control-label col-form-label">
+						<textarea name="remarks" class="form-control"  id="remarks" placeholder="Enter Remarks Here" >{{ $order->remarks }}</textarea>
 					</div>
 				</div>
 

@@ -34,8 +34,16 @@ class RepairController extends Controller
         $user = $this->userdata;
         try {
             $brand_id = $request->session()->get('selling_brand');
-            $product = Product::where('slug', $slug)->firstOrFail();  //Product::find($id);          
-            $parts = Parts::where('category_id',$product->category_id)->orderBy('name','asc')->get();
+            $product = Product::where('slug', $slug)->firstOrFail();  //Product::find($id);    
+            $parts_id = [];      
+            if ($product->parts != null) {
+                $product->parts = array_filter(json_decode($product->parts,true));
+                $parts_id = array_keys($product->parts);
+            } else {
+                $product->parts = array();
+            }
+            $parts = Parts::whereIn('id',$parts_id)->orderBy('name','asc')->get();
+            
             $tobSellingBrands = Brand::inRandomOrder()->limit(10)->get();
             $tobSellingProducts = Product::inRandomOrder()->limit(10)->get();
 
@@ -50,11 +58,15 @@ class RepairController extends Controller
             $user = $this->loggedinUser;
             $data = $request->all();
            
-            $dataParts = json_encode($data['parts']);
-            $parts = Parts::wherein('id',$data['parts'])->get()->toArray();
+            $dataParts = json_encode(array_keys($data['parts']));
+            $price = $data['parts'];
+
+            $parts_id = array_keys($data['parts']);
+            $parts = Parts::wherein('id',$parts_id)->get()->toArray();
             
             $product = Product::find($data['product_id']);
-            return view('repair.checkout',compact('product','user','parts','dataParts'));       
+            
+            return view('repair.checkout',compact('product','user','parts','dataParts','price'));       
         } catch(\Illuminate\Database\QueryException $e){
         }
     }
@@ -66,7 +78,6 @@ class RepairController extends Controller
             $user = $this->userdata;
             $product = Product::find($data['product_id']);
 
-            print_r($data['parts']); exit;
             $orderData = array(
                 'user_id' => $data['user_id'],
                 'product_id' => $data['product_id'],

@@ -18,6 +18,7 @@ use App\Models\SellRequest;
 use App\Models\DeviceConfig;
 use App\Models\Series;
 use App\Models\ProductConfigPrice;
+use App\Models\RepairOrders;
 use Mail;
 
 class ProductController extends Controller
@@ -97,25 +98,31 @@ class ProductController extends Controller
             $tobSellingBrands = Brand::inRandomOrder()->limit(10)->get();
             $tobSellingProducts = Product::inRandomOrder()->limit(10)->get();
             $series = Series::find($product->series_id);
-            if($product->category_id == "2"){
-                $year = '';
-                if($brand_id == "1"){
-                    $processer = DeviceConfig::where('type', "processer")->where('brand_id', $brand_id)->orderBy('value', 'asc')->get();
-                    $year = DeviceConfig::where('type', "year")->orderBy('value', 'asc')->get();
-                } else {
-                    $processer = DeviceConfig::where('type', "processer")->whereNull('brand_id')->orderBy('value', 'asc')->get();
-                }
 
-                $ram = DeviceConfig::where('type', "ram")->orderBy('id', 'asc')->get();
-                $hdd = DeviceConfig::where('type', "hdd")->orderBy('id', 'asc')->get();
-                $screen = DeviceConfig::where('type', "screen")->orderBy('value', 'asc')->get();
-                $graphic = DeviceConfig::where('type', "graphic")->orderBy('value', 'asc')->get();
+            switch ($product->category_id) {
+                case '2':
+                    $year = '';
+                    if($brand_id == "1"){
+                        $processer = DeviceConfig::where('type', "processer")->where('brand_id', $brand_id)->orderBy('value', 'asc')->get();
+                        $year = DeviceConfig::where('type', "year")->orderBy('value', 'asc')->get();
+                    } else {
+                        $processer = DeviceConfig::where('type', "processer")->whereNull('brand_id')->orderBy('value', 'asc')->get();
+                    }
 
-                return view('product.laptop-view',compact('series','product','user','tobSellingBrands','tobSellingProducts','processer','ram','hdd','screen','graphic','year'));
-            } else {
-                return view('product.view',compact('series','product','user','tobSellingBrands','tobSellingProducts'));                
+                    $ram = DeviceConfig::where('type', "ram")->orderBy('id', 'asc')->get();
+                    $hdd = DeviceConfig::where('type', "hdd")->orderBy('id', 'asc')->get();
+                    $screen = DeviceConfig::where('type', "screen")->orderBy('value', 'asc')->get();
+                    $graphic = DeviceConfig::where('type', "graphic")->orderBy('value', 'asc')->get();
+
+                    return view('product.laptop-view',compact('series','product','user','tobSellingBrands','tobSellingProducts','processer','ram','hdd','screen','graphic','year'));
+                    break;
+                case '14':
+                    
+                    return view('product.macbook-view',compact('series','product','user','tobSellingBrands','tobSellingProducts'));
+                default:
+                    return view('product.view',compact('series','product','user','tobSellingBrands','tobSellingProducts'));
+                    break;
             }
-            
         } catch(\Illuminate\Database\QueryException $e){
         }
     }
@@ -124,6 +131,7 @@ class ProductController extends Controller
         $user = $this->userdata;
         $product = Product::find($this->sellprice['product_id']);
         $calculatedData = $this->sellprice;
+        //echo "<pre>"; print_r($calculatedData);  echo "</pre>";
         $tobSellingBrands = Brand::inRandomOrder()->limit(10)->get();
         $tobSellingProducts = Product::inRandomOrder()->limit(10)->get();
 
@@ -168,6 +176,7 @@ class ProductController extends Controller
             'pickup_state' => $data['state'],
             'pincode' => $data['pincode'],
             'status' => 'pending',
+            'is_device'=> "1",
         );
 
         $order = Order::create($orderData)->toArray();
@@ -243,6 +252,13 @@ class ProductController extends Controller
         $order = Order::where('service_no',$id)->first();
         $order['product_name'] = Product::findOrFail($order->product_id)->name;
         return view('product.order-manage',compact('user','order'));
+    }
+
+    public function manageService($id){
+        $user = $this->userdata;
+        $order = RepairOrders::where('service_no',$id)->first();
+        $order['product_name'] = Product::findOrFail($order->product_id)->name;
+        return view('product.service-manage',compact('user','order'));
     }
 
     public function updateOrder(Request $request){

@@ -51,7 +51,7 @@
                         <ul>
                             @foreach ($footerCategories as $key => $footerCategory)
                             <li>
-                                <a class="menu-link" href="{{ url('selling-brands') }}/{{ $footerCategory->id }}">{{ $footerCategory->name }}</a>
+                                <a class="menu-link" href="{{ url('select-brand') }}/{{ $footerCategory->slug }}">{{ $footerCategory->name }}</a>
                             </li>
                             @endforeach
                         </ul>
