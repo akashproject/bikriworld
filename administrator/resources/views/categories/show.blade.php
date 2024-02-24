@@ -33,7 +33,7 @@
 				<div class="form-group row">
 					<label for="state" class="col-sm-3 text-right control-label col-form-label">Status</label>
 					<div class="col-sm-9">
-						<select name="status" id="status" class="select2 form-control custom-select" style="width: 100%; height:36px;">	
+						<select name="status" id="status" >	
 							<option value="">Update Status</option>
 							<option value="1" {{ ( $category->status ==  '1' )? 'selected' : '' }} > Publish</option>
 							<option value="0" {{ ( $category->status ==  '0' )? 'selected' : '' }}> Private </option>

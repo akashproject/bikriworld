@@ -17,22 +17,26 @@
 				<h4 class="card-title"> Add Product</h4>
 
 				@if ($errors->any())
-
 					<div class="alert alert-danger">
-
 						<ul>
-
 							@foreach ($errors->all() as $error)
-
 								<li>{{ $error }}</li>
-
 							@endforeach
-
 						</ul>
-
 					</div>
-
 				@endif
+
+				<div class="form-group row ">
+					<label for="state" class="col-sm-3 text-right control-label col-form-label">Series</label>
+					<div class="col-sm-9">
+						<select name="series_id" id="series_id">	
+							<option value="">Select Series</option>
+							@foreach($serieses as $series)
+							<option value="{{$series->id}}" > {{$series->series}}</option>
+							@endforeach
+						<select>
+					</div>
+				</div>
 
 				<div class="form-group row">
 					<label for="image" class="col-sm-3 text-right control-label col-form-label">Product Photo</label>
@@ -44,7 +48,6 @@
 						</div>
 					</div>
 				</div>
-
 
 				<div class="form-group row">
 					<label for="name" class="col-sm-3 text-right control-label col-form-label">Name</label>
@@ -78,7 +81,7 @@
 				<div class="form-group row">
 					<label for="category" class="col-sm-3 text-right control-label col-form-label">Category</label>
 					<div class="col-sm-9">
-						<select name="category_id" id="category_id" class="select2 form-control custom-select" style="width: 100%; height:36px;">
+						<select name="category_id" id="category_id">
 							<option value="">Select Category</option>
 							@foreach($categories as $category)
 							<option value="{{$category->id}}" > {{$category->name}}</option>
@@ -90,7 +93,7 @@
 				<div class="form-group row">
 					<label for="state" class="col-sm-3 text-right control-label col-form-label">Brands</label>
 					<div class="col-sm-9">
-						<select name="brand_id" id="brand_id" class="select2 form-control custom-select" style="width: 100%; height:36px;">
+						<select name="brand_id" id="brand_id">
 							<option value="">Select Brand</option>
 							@foreach($brands as $brand)
 							<option value="{{$brand->id}}" > {{$brand->name}}</option>

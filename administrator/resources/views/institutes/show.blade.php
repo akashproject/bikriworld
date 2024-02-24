@@ -260,7 +260,7 @@
 	<div class="form-group row">
 		<label for="ownership_type" class="col-sm-3 text-right control-label col-form-label">Ownership type</label>
 		<div class="col-sm-9">
-			<select name="ownership_type" id="ownership_type" class="select2 form-control custom-select" style="width: 100%; height:36px;">
+			<select name="ownership_type" id="ownership_type" >
 
 				<option value="">Ownership type</option>
 
@@ -276,7 +276,7 @@
 	<div class="form-group row">
 		<label for="state" class="col-sm-3 text-right control-label col-form-label">Country</label>
 		<div class="col-sm-9">
-			<select name="country_id" id="country_id" class="select2 form-control custom-select" style="width: 100%; height:36px;">							
+			<select name="country_id" id="country_id" >							
 				<option value="">Select State</option>
 				@foreach($countries as $country)
 				<option value="{{$country->id}}"  {{ ( $institute->country_id ==  $country->id )? 'selected' : '' }} > {{$country->name}}</option>
@@ -289,7 +289,7 @@
 	<div class="form-group row">
 		<label for="state" class="col-sm-3 text-right control-label col-form-label">State</label>
 		<div class="col-sm-9">
-			<select name="state_id" id="state_id" class="select2 form-control custom-select" style="width: 100%; height:36px;">							
+			<select name="state_id" id="state_id" >							
 				<option value="">Select State</option>
 				@foreach($states as $state)
 				<option value="{{$state->id}}" {{ ( $institute->state_id ==  $state->id )? 'selected' : '' }} > {{$state->state_name}}</option>

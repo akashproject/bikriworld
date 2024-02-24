@@ -31,6 +31,9 @@ Route::get('/repair-device', [App\Http\Controllers\CategoriesController::class, 
 Route::get('/select-brand/{slug}', [App\Http\Controllers\BrandController::class, 'index'])->name('brands-index');
 Route::get('/repair-select-brand/{slug}', [App\Http\Controllers\BrandController::class, 'repair'])->name('brands-repair');
 
+//Series 
+Route::get('/select-series/{slug}', [App\Http\Controllers\SeriesController::class, 'index'])->name('series-index');
+
 //whatsapp
 Route::get('/sell-old-used-laptop', [App\Http\Controllers\CategoriesController::class, 'laptopUsedWhatsapp'])->name('laptop-whatsapp');
 Route::get('/sell-used-laptop', [App\Http\Controllers\CategoriesController::class, 'laptopWhatsapp'])->name('laptop-whatsapp');

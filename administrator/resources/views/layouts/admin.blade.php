@@ -19,6 +19,7 @@
     <link href="{{ url('assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.css') }}" rel="stylesheet">
     <link href="{{ url('dist/css/style.min.css') }}" rel="stylesheet">
     <link href="{{ url('dist/css/custom.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/css/selectize.bootstrap2.min.css" />
     @yield('style')
 </head>
 <body class="">
@@ -63,6 +64,7 @@
 <!-- All Jquery -->
 
 <script src="{{ url('assets/libs/jquery/dist/jquery.min.js') }}"></script>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/js/standalone/selectize.min.js></script>
 <script src="{{ url('assets/libs/popper.js/dist/umd/popper.min.js') }}"></script>
 <script src="{{ url('assets/libs/bootstrap/dist/js/bootstrap.min.js') }}"></script>
 <script src="{{ url('assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js') }}"></script>

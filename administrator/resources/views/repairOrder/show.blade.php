@@ -117,7 +117,7 @@ Email : {{ $order->email }}
 				<div class="form-group row">
 					<label for="state" class="col-sm-3 text-right control-label col-form-label">Status</label>
 					<div class="col-sm-4">
-						<select name="status" id="status" class="select2 form-control custom-select" style="width: 100%; height:36px;">	
+						<select name="status" id="status" >	
 							<option value="">Update Status</option>
 							<option value="pending" {{ ( $order->status ==  'pending' )? 'selected' : '' }} >Pending</option>
 							<option value="paid" {{ ( $order->status ==  'paid' )? 'selected' : '' }} > Paid But Product Not Recived </option>

@@ -25,7 +25,7 @@
 				<div class="form-group row">
 					<label for="state" class="col-sm-3 text-right control-label col-form-label">Course Type</label>
 					<div class="col-sm-9">
-						<select name="course_id" id="course_id" class="select2 form-control custom-select" style="width: 100%; height:36px;">							
+						<select name="course_id" id="course_id" >							
 							<option value="">Select Course</option>
 							@foreach($courses as $course)
 							<option value="{{$course->id}}" > {{$course->course_name}}</option>

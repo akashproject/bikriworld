@@ -20,7 +20,7 @@
 				<div class="form-group row ">
 					<label for="state" class="col-sm-3 text-right control-label col-form-label">Series</label>
 					<div class="col-sm-9">
-						<select name="series_id" id="series_id" class="select2 form-control custom-select" style="width: 100%; height:36px;">	
+						<select name="series_id" id="series_id">	
 							<option value="">Select Series</option>
 							@foreach($serieses as $series)
 							<option value="{{$series->id}}"  {{ ( $product->series_id ==  $series->id )? 'selected' : '' }} > {{$series->series}}</option>
@@ -63,7 +63,7 @@
 				<div class="form-group row">
 					<label for="category" class="col-sm-3 text-right control-label col-form-label">Category</label>
 					<div class="col-sm-9">
-						<select name="category_id" id="category_id" class="select2 form-control custom-select" style="width: 100%; height:36px;">
+						<select name="category_id" id="category_id">
 							<option value="">Select Category</option>
 							@foreach($categories as $category)
 							<option value="{{$category->id}}" {{ ( $product->category_id ==  $category->id )? 'selected' : '' }}> {{$category->name}}</option>
@@ -75,7 +75,7 @@
 				<div class="form-group row">
 					<label for="state" class="col-sm-3 text-right control-label col-form-label">Brands</label>
 					<div class="col-sm-9">
-						<select name="brand_id" id="brand_id" class="select2 form-control custom-select" style="width: 100%; height:36px;">
+						<select name="brand_id" id="brand_id">
 							<option value="">Select Brand</option>
 							@foreach($brands as $brand)
 							<option value="{{$brand->id}}" {{ ( $product->brand_id ==  $brand->id )? 'selected' : '' }} > {{$brand->name}}</option>
