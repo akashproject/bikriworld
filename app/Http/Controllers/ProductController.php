@@ -43,23 +43,66 @@ class ProductController extends Controller
        
         try {
             $user = $this->userdata;
-            $brand = Brand::where('slug', $slug)->firstOrFail();
             $category_id = $request->session()->get('selling_category');
+
+            $brand = Brand::where('slug', $slug)->firstOrFail();
             $request->session()->put('selling_brand', $brand->id);
+
+            
             $tobSellingBrands = Brand::inRandomOrder()->limit(10)->get();
             $tobSellingProducts = Product::inRandomOrder()->limit(10)->get();
-           
+
+            $series = Series::where('category_id', $category_id)
+                                ->where('brand_id', $brand->id)
+                                ->orderBy('series', 'asc')
+                                ->get();
+
             $products = Product::where('brand_id', $brand->id)
             ->where('category_id', $category_id)
             ->orderBy('name', 'asc')
             ->get();
+
             if($category_id == "12"){
                 return view('vehicle.index',compact('products','brand','user','tobSellingBrands','tobSellingProducts'));
             } else {
-                return view('product.index',compact('products','brand','user','tobSellingBrands','tobSellingProducts'));
+                return view('product.index',compact('series','products','brand','user','tobSellingBrands','tobSellingProducts'));
             }
             
-            } catch(\Illuminate\Database\QueryException $e){
+        } catch(\Illuminate\Database\QueryException $e){
+            print_r($e->getMessage());
+        }
+    }
+
+    public function filterBySeries(Request $request){
+        try {
+            $user = $this->userdata;
+            
+            $data = $request->all();
+            $products = Product::where('series_id', $data['series_id'])
+            ->orderBy('name', 'asc')
+            ->get();
+            $model = '';
+            foreach ($products as $key => $value) { 
+                $model .= '<div class="col-lg-2 col-6 product_filter_list">
+                    <div class="team_block style_2 style_3">
+                        <div class="team_img product_img">
+                            <a href="'.url('sell-old-product').'/'.$value->slug.'">
+                                <img src="https://administrator.bikriworld.com/public/images/'.$value->image.'" alt="img">
+                               
+                            </a>
+                            <a href="'.url('sell-old-product').'/'.$value->slug.'" class="thm-btn bg-thm-color-two thm-color-two-shadow btn-circle link">
+                                <i class="fal fa-plus"></i>
+                            </a>
+                        </div>
+                        <p class="thm-color-two mb-0 font-weight-bold"><a href="'.url('sell-old-product').'/'.$value->slug.'" style="font-size: 13px;line-height: 18px;"> '.$value->name.' </a></p>
+                    </div>
+                </div>';
+            }
+
+            echo $model;
+            
+        } catch(\Illuminate\Database\QueryException $e){
+            print_r($e->getMessage());
         }
     }
 

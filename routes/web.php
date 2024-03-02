@@ -75,6 +75,7 @@ Route::get('/sell-used-model/{slug}', [App\Http\Controllers\ProductController::c
 Route::get('/repair-used-model/{slug}', [App\Http\Controllers\ProductController::class, 'repair'])->name('products-repair');
 Route::get('/sell-old-product/{slug}', [App\Http\Controllers\ProductController::class, 'view'])->name('sell-old-product');
 Route::get('/repair-device/{slug}', [App\Http\Controllers\RepairController::class, 'view'])->name('sell-old-product');
+Route::post('/filter-by-series', [App\Http\Controllers\ProductController::class, 'filterBySeries'])->name('filter-by-series');
 
 Route::get('/add-device', [App\Http\Controllers\ProductController::class, 'add'])->name('add-device');
 Route::get('/product-quote', [App\Http\Controllers\ProductController::class, 'productQuote'])->name('product-quote');
@@ -121,3 +122,7 @@ Route::get('/refer-earn', [App\Http\Controllers\ReferEarnController::class, 'ind
 Route::get('/api-categories', [App\Http\Controllers\ApiCategoriesController::class, 'apiIndex'])->name('api-categories-index');
 Route::get('/api-brands/{id}', [App\Http\Controllers\ApiCategoriesController::class, 'apiBrands'])->name('api-brands-index');
 Route::post('/api-products', [App\Http\Controllers\ApiProductsController::class, 'listProduct'])->name('api-products');
+
+
+//Franchise Landing Page
+Route::post('/become-franchise-partner', [App\Http\Controllers\UserController::class, 'franchisePartner'])->name('franchise-partner');

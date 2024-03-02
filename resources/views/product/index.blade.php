@@ -31,11 +31,7 @@
         <div class="container">  
             <div class="row">
                 <div class="col-lg-6">
-                    <div class="section-title left-align">
-                        <p class="subtitle mb-0">
-                            <i class="fal fa-book"></i>
-                            Please select device
-                        </p>
+                    <div class="section-title left-align">                      
                         <h6 class="title mb-0">choose device what you like to sell</h6>
                     </div>
                 </div>
@@ -47,8 +43,39 @@
                         </div>
                     </div>
                 </div>
-            </div>        
+            </div>      
             <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title left-align" style="padding: 8px 0;">
+                        <p class="subtitle mb-0">
+                            <i class="fal fa-book"></i>
+                            Select series
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row series_filter_wraper">
+                @if($series)
+                    @foreach($series as $value)
+                        <div class="col-lg-3 col-6 mt-2 series_filter">
+                            <a href="javascript:void(0)" class="series_filter_list" data-id="{{ $value->id }}">
+                                {{ $value->series }}
+                            </a>
+                        </div>
+                    @endforeach
+                @endif
+            </div> 
+            <div class="row mt-5">
+                <div class="col-lg-12">
+                    <div class="section-title left-align">
+                        <p class="subtitle mb-0">
+                            <i class="fal fa-book"></i>
+                            Select Model
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row model_wraper">
                 @if($products)
                 @foreach ($products as $value)
                 <div class="col-lg-2 col-6 product_filter_list">

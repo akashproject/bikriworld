@@ -25,4 +25,13 @@ class IndexController extends Controller
         }
         
     }
+
+    public function franchisePartner(){
+        $user = $this->userdata;
+        try {
+            
+            return view('franchise-partner');
+        } catch(\Illuminate\Database\QueryException $e){
+        }
+    }
 }
