@@ -290,6 +290,7 @@
     }
 
     .banner .transform-center {
+        background: #0e3b00db;
         position: relative;
         top: 0;
         transform: none;
@@ -470,9 +471,19 @@
 
 
 }
-
+ 
 @media (max-width: 767px) {
-
+    .bg-banner:before {
+        background: #005b3fd6;
+        z-index: 9;
+    }
+    .offers {
+        width: auto;
+        margin: 10px 0;
+    }
+    .model-grid {
+       margin: 10px 0;
+    }
     .refferel-code {
         margin: auto;
         text-align: center;
@@ -857,6 +868,23 @@
     .view-repair-wrap img {
         width: 40%;
     }
+
+    .usp-content {
+        width: 100%;
+    }
+    .usp-content h4 {
+        font-size: 26px;
+    }
+    .ad_why_choose_section h6 {
+        font-size: 18px;
+    }
+    .usp-points {
+        margin-top: 20px;
+    }
+
+    .ad-cta-box {
+        width: 100%;
+    }
 }
 
 
@@ -929,7 +957,7 @@
     }
 
     .cta_box .cta_box_inner {
-        padding: 0 40px 40px;
+        padding: 0 10px;
     }
 
     .cta_box .cta_box_inner .image_box img {

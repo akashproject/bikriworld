@@ -18,7 +18,7 @@ class CategoriesController extends Controller
     public function index(){
         $user = $this->userdata;
         try {
-            $categories = Categories::where('status', '1')->get();
+            $categories = Categories::where('status', '1')->orderBy('order','asc')->get();
             $tobSellingBrands = Brand::inRandomOrder()->limit(10)->get();
             return view('categories.index',compact('categories','tobSellingBrands','user'));
         } catch(\Illuminate\Database\QueryException $e){

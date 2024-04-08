@@ -30,7 +30,7 @@ class IndexController extends Controller
         $user = $this->userdata;
         try {
             
-            return view('franchise-partner');
+            return view('users.franchise-partner',compact('user'));
         } catch(\Illuminate\Database\QueryException $e){
         }
     }

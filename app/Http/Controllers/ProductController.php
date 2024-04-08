@@ -48,18 +48,20 @@ class ProductController extends Controller
             $brand = Brand::where('slug', $slug)->firstOrFail();
             $request->session()->put('selling_brand', $brand->id);
 
-            
             $tobSellingBrands = Brand::inRandomOrder()->limit(10)->get();
             $tobSellingProducts = Product::inRandomOrder()->limit(10)->get();
 
-            $series = Series::where('category_id', $category_id)
-                                ->where('brand_id', $brand->id)
-                                ->orderBy('series', 'asc')
-                                ->get();
+            $series = Series::select('series.*')
+            ->join('product', 'series.id', '=', 'product.series_id')
+            ->where('series.brand_id', $brand->id)
+            ->where('series.category_id', $category_id)
+            ->groupBy('series.id')
+            ->havingRaw('COUNT(product.id) > 1')
+            ->get();
 
             $products = Product::where('brand_id', $brand->id)
             ->where('category_id', $category_id)
-            ->orderBy('name', 'asc')
+            ->orderBy('id', 'desc')
             ->get();
 
             if($category_id == "12"){

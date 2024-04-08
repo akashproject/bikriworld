@@ -43,7 +43,8 @@
                         </div>
                     </div>
                 </div>
-            </div>      
+            </div>     
+            @if(count($series) > 1) 
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-title left-align" style="padding: 8px 0;">
@@ -55,16 +56,17 @@
                 </div>
             </div>
             <div class="row series_filter_wraper">
-                @if($series)
+                
                     @foreach($series as $value)
                         <div class="col-lg-3 col-6 mt-2 series_filter">
-                            <a href="javascript:void(0)" class="series_filter_list" data-id="{{ $value->id }}">
-                                {{ $value->series }}
+                            <a href="javascript:void(0)" class="series_filter_list series_no_{{ $value->id }}" data-id="{{ $value->id }}" >
+                                {{ $value->series }} <span class="reset_series" > <i class="fal fa-times-circle"></i> </span>
                             </a>
                         </div>
                     @endforeach
-                @endif
+                
             </div> 
+            @endif
             <div class="row mt-5">
                 <div class="col-lg-12">
                     <div class="section-title left-align">
@@ -78,7 +80,7 @@
             <div class="row model_wraper">
                 @if($products)
                 @foreach ($products as $value)
-                <div class="col-lg-2 col-6 product_filter_list">
+                <div class="col-lg-2 col-6 product_filter_list series_{{$value->series_id}}" data-series="" >
                     <div class="team_block style_2 style_3">
                         <div class="team_img product_img">
                             <a href="{{ url('sell-old-product') }}/{{ $value->slug }}" >

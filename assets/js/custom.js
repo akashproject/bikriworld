@@ -968,27 +968,21 @@ if(searchParams.has('ref')){
     });
 
     $(".series_filter").on("click",function(){
-        let series = $(this).children(".series_filter_list").parent();
-        $(".series_filter_wraper").html(series);
-       
         let series_id = $(this).children(".series_filter_list").attr("data-id");
-        $.ajaxSetup({
-            headers: {
-             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            }
-        });
-        $.ajax({
-            url: `https://${window.location.hostname}/filter-by-series`,
-            type: "post",
-            data:{
-                series_id:series_id
-            },
-            success: function(result) {
-                console.log(result);
-                $(".model_wraper").html(result);
-            }
-        });
+        $(".series_filter_list").parent().hide();
+        $(".series_filter_list.series_no_"+series_id).parent().show();
+        $(this).children(".series_filter_list").children('.reset_series').show();
+        
+        $(".product_filter_list").hide();
+        $(".product_filter_list.series_"+series_id).show();
     });
+
+    $(".reset_series").on("click",function(){
+        console.log("hi");
+        $(".series_filter").show()
+        $(".product_filter_list").show();
+    });
+
 })(jQuery);
 
 function addCommas(nStr)
