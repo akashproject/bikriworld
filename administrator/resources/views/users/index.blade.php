@@ -39,7 +39,7 @@
 								<td>{{$value->mobile }}</td>
 								<td> {{ $value->created_at->isoFormat('MMM DD, YYYY') }} </td>
 								<td>
-									<a href="{{ url('user') }}/{{ $value->id }}" class="btn btn-primary btn-lg">View</a>
+									<a href="{{ url($slug) }}/{{ $value->id }}" class="btn btn-primary btn-lg">View</a>
 								</td>
 							</tr>
 							@endforeach							

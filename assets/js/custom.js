@@ -27,6 +27,29 @@ if(searchParams.has('ref')){
         },
     })
 
+    $("#franchise-lead-form").validate({
+        rules : {
+            'name': {
+                required: true,
+            },
+            'email': {
+                required: true,
+            },
+            'mobile': {
+                required: true,
+            },
+            'city': {
+                required: true,
+            },
+        },
+        messages: {
+            'name': "Please Enter Valid Name.",
+            'email': "Please Enter Valid Email.",
+            'mobile': "Please Enter Valid Mobile Number.",
+            'city': "Please Enter Valid Location/City.",
+        },
+    });
+
     $("#updateOrder").validate({
         messages: {
             'address_1': "Please enter pickup address.",
@@ -379,6 +402,10 @@ if(searchParams.has('ref')){
         $(".registration_fields").hide();        
     });
 
+    $("#product_sign_in").on("click",function(){
+        $("#checkexactvalue").validate();
+    });
+
     function checkExist(mobile){
         $.ajaxSetup({
             headers: {
@@ -456,10 +483,9 @@ if(searchParams.has('ref')){
                 } else {
                     console.log($("#redirect_url").val());
                     if($("#redirect_url").val() == 'active'){
-                        console.log("if");
+                        $(".aside_canvas").removeClass('open');
                         $("#checkexactvalue").submit();
                     } else {
-                        console.log("else");
                         location.reload();
                     }
                     

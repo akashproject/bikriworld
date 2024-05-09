@@ -24,6 +24,8 @@
 
 								<li class="sidebar-item"><a href="{{ url('users') }}" class="sidebar-link"><i class="mdi mdi-emoticon"></i><span class="hide-menu"> All Users </span></a></li>
 
+                                <li class="sidebar-item"><a href="{{ url('franchise-users') }}" class="sidebar-link"><i class="mdi mdi-emoticon"></i><span class="hide-menu"> All Franchise Users </span></a></li>
+
                             </ul>
 
                         </li>

@@ -126,3 +126,5 @@ Route::post('/api-products', [App\Http\Controllers\ApiProductsController::class,
 
 //Franchise Landing Page
 Route::get('/become-franchise-partner', [App\Http\Controllers\IndexController::class, 'franchisePartner'])->name('franchise-partner');
+Route::post('/save-franchise', [App\Http\Controllers\IndexController::class, 'saveFranchisePartner'])->name('save-franchise');
+Route::get('/franchise-thank-you', [App\Http\Controllers\IndexController::class, 'franchiseThankyou'])->name('franchise-thank-you');

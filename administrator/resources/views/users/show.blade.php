@@ -8,7 +8,7 @@
 			<div class="card-body">
 				<h4 class="card-title"> Edit User #1</h4>
 				<div class="form-group row">
-					<h4  class="col-sm-2 text-right"> Product Info </h4>
+					<h4  class="col-sm-2 text-right"> User Info </h4>
 				</div>
 				<div class="form-group row">
 					<label for="name" class="col-sm-3 text-right control-label col-form-label">Name</label>

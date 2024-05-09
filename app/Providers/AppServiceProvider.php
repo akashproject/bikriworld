@@ -6,7 +6,7 @@ use Illuminate\Support\ServiceProvider;
 use Illuminate\Pagination\Paginator;
 use App\Models\Categories;
 use View;
-
+use Illuminate\Support\Facades\DB;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -32,9 +32,14 @@ class AppServiceProvider extends ServiceProvider
         View::composer('*', function($view)
         {
 
-            $serviceLocation = array(
-                'Howrah','Kolkata','Bihar','Bhubaneswar','Cuttack','Delhi'
-            );
+            // $serviceLocation = array(
+            //     'Howrah','Kolkata','Bihar','Bhubaneswar','Cuttack','Delhi'
+            // );
+            $serviceLocationTbl = DB::table('cities')->select('name')->where('status',"1")->get()->toArray();
+            $serviceLocation = [];
+            foreach ($serviceLocationTbl as $key => $value) {
+                $serviceLocation[$key] = $value->name;
+            }
             $view->with('serviceLocation', $serviceLocation);
             // Header Menu
             $navbars = array(

@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Address;
 use App\Models\Payment;
+use App\Models\Franchise;
+
 
 class UserController extends Controller
 {
@@ -38,11 +40,33 @@ class UserController extends Controller
                 ->orWhere('email','LIKE',"%$search%");
              } 
 
-            $users = $builder->orderBy('name')->paginate(20);
+            $users = $builder->orderBy('created_at','desc')->paginate(20);
+            $slug = "user";
         } catch(\Illuminate\Database\QueryException $e){
             return response()->json(['error' => $e->errorInfo[2]], $this->_statusErr);
         }		
-        return view('users.index',compact('users'));
+        return view('users.index',compact('users','slug'));
+    }
+
+    
+    public function franchiseUsers()
+    {
+        $users = "";
+		try {
+            $search = (request()->has('search'))?request()->get('search'):"";
+            $builder = Franchise::query();
+            if(request()->has('search') && request()->get('search') != "") {
+                $builder->where('name', 'LIKE', "%$search%")
+                ->orWhere('mobile',$search)
+                ->orWhere('email','LIKE',"%$search%");
+             } 
+
+            $users = $builder->orderBy('created_at','desc')->paginate(20);
+            $slug = "franchise-user";
+        } catch(\Illuminate\Database\QueryException $e){
+            return response()->json(['error' => $e->errorInfo[2]], $this->_statusErr);
+        }		
+        return view('users.index',compact('users','slug'));
     }
 
     public function show($id)
@@ -52,6 +76,13 @@ class UserController extends Controller
         $payment = Payment::where('user_id',$id)->first();
         return view('users.show',compact('user','addressess','payment'));
     }
+
+    public function franchiseShow($id)
+    {
+        $user = Franchise::find($id);
+        return view('users.franchise-show',compact('user'));
+    }
+    
 
     public function edit($id, $request)
     {

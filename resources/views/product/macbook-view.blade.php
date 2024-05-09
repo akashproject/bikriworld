@@ -53,6 +53,7 @@
                                 <div class="col-12" >
                                     <div class="form-group form_style">
                                         <select name="veriation_choice" id="macbook_config"  class="form-control mackbook_veriation_price" required>
+                                            <option value="" > Select Your Configuration
                                             @foreach(json_decode($product->variant) as $key => $variant)
                                                 <option value="{{$variant->price}}" > {{$variant->ram}} {{($variant->ram)?'|':''}} {{$variant->storage}} </option>
                                             @endforeach	

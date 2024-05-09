@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
     @section('content')
-    @if(isset($_COOKIE['userCity']) && !in_array($_COOKIE['userCity'],$serviceLocation))
+    @if(isset($_COOKIE['userCity']) && array_search($_COOKIE['userCity'], array_column($serviceLocation, 'name')) !== FALSE)
     <div class="section-padding">
         <div class="container ">
             <div class="row text-center" >

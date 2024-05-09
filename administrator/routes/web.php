@@ -49,6 +49,9 @@ Route::get('/users', [App\Http\Controllers\UserController::class, 'index'])->nam
 Route::get('/user/{id}', [App\Http\Controllers\UserController::class, 'show'])->name('show');
 Route::post('/save-user', [App\Http\Controllers\UserController::class, 'save'])->name('save-user');
 
+Route::get('/franchise-users', [App\Http\Controllers\UserController::class, 'franchiseUsers'])->name('franchise-users');
+Route::get('/franchise-user/{id}', [App\Http\Controllers\UserController::class, 'franchiseShow'])->name('franchise-user');
+
 //Orders
 Route::get('/orders', [App\Http\Controllers\OrderController::class, 'index'])->name('users');
 Route::get('/order/{id}', [App\Http\Controllers\OrderController::class, 'show'])->name('show');
