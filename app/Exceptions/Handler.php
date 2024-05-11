@@ -32,19 +32,19 @@ class Handler extends ExceptionHandler
      *
      * @return void
      */
-    public function register()
-    {
-        $this->renderable(function (InvalidOrderException $e, $request) {
-            return response()->view('common.error', [], 500);
-        });
-    }
-
-    // public function render($request, Exception $e)
+    // public function register()
     // {
-    //     $this->reportable(function (Throwable $e) {
-    //         //
+    //     $this->renderable(function (InvalidOrderException $e, $request) {
+    //         return response()->view('common.error', [], 500);
     //     });
-    
     // }
+
+    public function render($request, Exception $e)
+    {
+        $this->reportable(function (Throwable $e) {
+            //
+        });
+    
+    }
     
 }

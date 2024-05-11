@@ -221,12 +221,6 @@ Preloader End -->
                                 Call : 7439 995 068
                             </a>
                         </li>
-                        <li>
-                            <a href="mailto:service@bikriworld.com">
-                                <i class="fal fa-envelope"></i>
-                                service@bikriworld.com
-                            </a>
-                        </li>
                     </ul>
                 </div>
             </div>

@@ -130,11 +130,56 @@
                 @if($categories)
                     @foreach ($categories as $value)
                     <!-- Feature Box Start -->
-                    <div class="col-lg-2 col-6">
+                    <div class="col-lg-2 col-4 product_filter_list">
                         <div class="features_box style_2">
                             <div class="icon">
                                 @if($value->status == '1')
                                 <a href="{{ url('select-brand') }}/{{ $value->slug }}"> 
+                                    <img src="{{ url('assets/images/icons') }}/{{$value->icon}}.png" style="width: auto;">
+                                </a>
+                                <h5 class="text-center" ><a href="{{ url('select-brand') }}/{{ $value->slug }}"> {{ $value->name }}</a></h5>
+                                @else 
+                                <a href="javascript:void(0)"> 
+                                    <img src="{{ url('assets/images/icons') }}/{{$value->icon}}.png" style="width: auto;">
+                                </a>
+                                <h5 class="text-center" ><a href="javascript:void(0)"> {{ $value->name }}</a></h5>
+                                @endif
+                            </div>
+                            
+                            @if($value->status != '1')
+                            <a href="javescript:void(0)" >
+                                <span>Coming Soon</span>
+                            </a>
+                            @endif
+                        </div>
+                    </div>
+                    <!-- Feature Box End -->
+                    @endforeach	
+                @endif
+            </div>
+        </div>
+    </section>
+    <!-- Features End -->
+
+    <!-- Features Start -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title left-align">
+                        <h6 class="title mb-0">Select device for Repair</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                @if($categories)
+                    @foreach ($categories as $value)
+                    <!-- Feature Box Start -->
+                    <div class="col-lg-2 col-4 product_filter_list">
+                        <div class="features_box style_2">
+                            <div class="icon">
+                                @if($value->status == '1')
+                                <a href="{{ url('repair-select-brand') }}/{{ $value->slug }}"> 
                                     <img src="{{ url('assets/images/icons') }}/{{$value->icon}}.png" style="width: auto;">
                                 </a>
                                 @else 
@@ -143,13 +188,8 @@
                                 </a>
                                 @endif
                             </div>
-                            <h5 class="text-center" ><a href="{{ url('select-brand') }}/{{ $value->slug }}"> Sell {{ $value->name }}</a></h5>
-                            @if($value->status == '1')
-                            <a href="{{ url('select-brand') }}/{{ $value->slug }}">
-                                <span>Sell Now</span>
-                                <i class="fal fa-chevron-right"></i>
-                            </a>
-                            @else 
+                            <h5 class="text-center" ><a href="{{ url('repair-select-brand') }}/{{ $value->slug }}"> {{ $value->name }} </a></h5>
+                            @if($value->status != '1')
                             <a href="javescript:void(0)" >
                                 <span>Coming Soon</span>
                             </a>
@@ -165,7 +205,7 @@
     <!-- Features End -->
     
     <!-- About Start -->
-    <section class="section-padding pt-0 about">
+    <section class="section-padding about">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-xl-7 col-lg-6">

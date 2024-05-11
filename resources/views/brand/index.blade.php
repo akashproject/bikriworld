@@ -45,7 +45,7 @@
     <section class="section-padding bg-thm-color-two-gradient style_2 z-1 team_page_bg">
         <div class="container">
             <div class="row">
-                <div class="col-lg-6">
+                <div class="col-lg-6 hide-in-mobile">
                     <div class="section-title left-align">
                         <p class="subtitle mb-0">
                             <i class="fal fa-book"></i>

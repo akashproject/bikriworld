@@ -48,16 +48,13 @@
             @if($categories)
                 @foreach ($categories as $value)
                 <!-- Feature Box Start -->
-                <div class="col-lg-2 col-6">
+                <div class="col-lg-2 col-4 product_filter_list">
                     <div class="features_box style_2">
                         <div class="icon">
                             <a href="{{ url('select-brand') }}/{{ $value->slug }}"> <img src="{{ url('assets/images/icons') }}/{{$value->icon}}.png" style="width: auto;"> </a>
                         </div>
-                        <h5 class="text-center" ><a href="{{ url('select-brand') }}/{{ $value->slug }}"> Sell {{ $value->name }}</a></h5>
-                        <a href="{{ url('select-brand') }}/{{ $value->slug }}" class="text-center">
-                            <span>View</span>
-                            <i class="fal fa-chevron-right"></i>
-                        </a>
+                        <h5 class="text-center" ><a href="{{ url('select-brand') }}/{{ $value->slug }}"> {{ $value->name }}</a></h5>
+                        
                     </div>
                 </div>
                 <!-- Feature Box End -->

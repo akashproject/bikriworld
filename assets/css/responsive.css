@@ -68,6 +68,9 @@
     .features_box {
         padding: 20px;
     }
+    .features_box a {
+        font-size: 12px;
+    }
 
     /*Counter*/
     .counter_box {
@@ -473,6 +476,17 @@
 }
  
 @media (max-width: 767px) {
+    .hide-in-mobile {
+        display: none !important;
+    }
+    .header.header-3 .nav_sec {
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .section-padding {
+        position: relative;
+        padding: 15px 0 0px;
+    }
     .bg-banner:before {
         background: #005b3fd6;
         z-index: 9;
@@ -547,7 +561,7 @@
     }
 
     .subheader {
-        padding: 30px 0 0;
+        padding: 15px 0 0;
         background-size: cover;
     }
 
@@ -555,6 +569,9 @@
         font-size: 15px !important;
     }
 
+    .subheader .row p {
+        display: none;
+    }
     h6 {
         font-size: 12px;
         line-height: 1.7;
@@ -884,6 +901,10 @@
 
     .ad-cta-box {
         width: 100%;
+    }
+
+    .subheader .page_breadcrumb {
+        margin-bottom: 18px;
     }
 }
 
