@@ -44,7 +44,9 @@ class CategoriesController extends Controller
         $validatedData = $request->validate([
             'name' => 'required',
         ]);
-
+        if (count($data['service']) > 0) {
+            $data['service'] = json_encode($data['service']);
+        }
         if($data['category_id'] <= 0){
             Categories::create($data);
         } else {

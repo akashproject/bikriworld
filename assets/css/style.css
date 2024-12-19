@@ -1,171 +1,27 @@
 @charset "UTF-8";
-
-/*-----------------------------------------------------------------------------------
-
-    Template Name: Wellco
-
-    Description: Multipurpose UpSkills HTML Template
-
-    Author: WebTend 
-
-    Author URI: https://webtend.net/
-
-    Version: 1.0
-
-
-
------------------------------------------------------------------------------------
-
-    
-
-    >>> TABLE OF CONTENTS:
-
-    =======================
-
-
-
-    01. Common/Reusable CSS
-
-        1.1 - Animations
-
-        1.2 - General
-
-        1.3 - Section Title
-
-        1.4 - Video Button
-
-        1.5 - Slick Arrows
-
-        1.6 - Slick Dots
-
-        1.7 - Typography
-
-        1.8 - Tables
-
-        1.9 - Forms
-
-        1.10 - Forms
-
-        1.11 - Buttons
-
-        1.12 - Pagination
-
-        1.13 - Colors
-
-        1.14 - Accordion
-
-        1.15 - Tabs
-
-    02. Homepage
-
-        2.1 - Preloader
-
-        2.2 - Topbar
-
-        2.3 - Header
-
-        2.4 - Banner
-
-        2.5 - Features
-
-        2.6 - About Us
-
-        2.7 - Team
-
-        2.8 - Cta
-
-        2.9 - Video Box
-
-        2.10 - Testimonials
-
-        2.11 - Course Grid
-
-        2.12 - Sponsors
-
-        2.13 - Newsletter
-
-        2.14 - Why-Us-List
-
-        2.15 - Plane_box
-
-        2.16 - Skills
-
-        2.17 - Counter
-
-        2.18 - Quote Form
-
-        2.19 - Progress Bar
-
-        2.20 - Footer
-
-        2.21 - Back To Top
-
-    03. Subheader
-
-    04. Blog Grid
-
-    05. Blog List
-
-    06. Blog Details
-
-    07. Portfolio Box
-
-    08. Event Box
-
-    09. Service Box
-
-    10. Contact Us
-
-    
-
------------------------------------------------------------------------------------*/
-
-/*Google Fonts*/
-
 @import url('https://fonts.googleapis.com/css?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
-
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;600;700;800;900&display=swap');
 
-
-
 :root {
-
     --thm-font: 'Montserrat', sans-serif;
-
     /* Headings */
-
     --thm-b-font: 'Nunito Sans', sans-serif;
-
     /* Body font */
-
     --thm-color-one: #1b2336;
-
     --thm-color-two: #00986b;
-
     --thm-color-three: #65cfa9;
-
     --thm-color-four: #ffbd3f;
-
     --thm-color-five: #0c1634;
-
     --thm-color-six: #c52341;
-
     --thm-color-light: #dadada;
-
     /*RGB Colors*/
 
     --thm-color-one-rgb: 27, 35, 54;
-
     --thm-color-two-rgb: 75, 131, 251;
-
     --thm-color-three-rgb: 101, 207, 169;
-
     --thm-color-four-rgb: 255, 189, 63;
-
     --thm-color-six-rgb: 255, 0, 48;
-
     --thm-border-rgb: 241, 241, 241;
-
     /*Theme Colors*/
 
     --thm-body-color: #415674;
@@ -643,11 +499,9 @@ body {
 
 
 .section-padding {
-
+    z-index: 9;
     position: relative;
-
-    padding: 40px 0 0px;
-
+    padding: 9px;
 }
 
 
@@ -940,6 +794,7 @@ select {
 }
 
 .section-title .title {
+    color: #000;
     font-weight: 800;
     text-transform: capitalize;
     font-size: 26px;
@@ -2515,9 +2370,9 @@ blockquote .quote_author:before {
 
 .header {
 
-    padding-top: 40px;
+    padding-top: 15px;
 
-    padding-bottom: 40px;
+    padding-bottom: 5px;
 
 }
 
@@ -2558,9 +2413,7 @@ blockquote .quote_author:before {
 
 
 .header .nav_warp nav .logo img {
-
-    max-width: 180px;
-
+    max-width: 150px;
 }
 
 
@@ -2841,33 +2694,21 @@ blockquote .quote_author:before {
 
 
 .menu-item-has-children>.sub-menu>li.menu-item-has-children>a:after {
-
     display: inline-block;
-
     margin-left: 0;
-
     content: "\f107";
-
     font-family: "Font Awesome 5 Pro";
-
     font-weight: 400;
-
     position: absolute;
-
     right: 12px;
-
     transform: rotate(-90deg);
-
 }
 
 
 
 .menu-item-has-children>.sub-menu>li.menu-item-has-children>.sub-menu {
-
     left: 100%;
-
     top: 0%;
-
 }
 
 
@@ -2875,19 +2716,14 @@ blockquote .quote_author:before {
 /*style 2*/
 
 .header.header-2 {
-
     padding-top: 20px;
-
     padding-bottom: 20px;
-
 }
 
 
 
 .header.header-2 .head_actions .search_bar input {
-
     background-color: var(--thm-white);
-
 }
 
 
@@ -2897,27 +2733,20 @@ blockquote .quote_author:before {
 
 
 .header.header-3 {
-
     padding: 0;
-
 }
 
 
 
 .header.header-3 .nav_warp {
-
     width: 100%;
-
 }
 
 
 
 .header.header-3 .nav_sec {
-
-    padding-top: 20px;
-
-    padding-bottom: 20px;
-
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 
@@ -3940,18 +3769,19 @@ a.close_aside i {
     transition: 0.3s all;
     background-color: #ffffff !important;
     border-radius: 10px;
-    height: 130px;
+    height: 120px;
     box-shadow: 0px 1px 4px 1px #cfcfcf;
 }
 
 
 .features_box .icon {
+    width: 100%;
     margin-bottom: 0;
     text-align: center;
 }
 
 .features_box .icon img {
-    margin-bottom: 12px;
+    margin-bottom: 10px;
     text-align: center;
     width: 80px;
 }

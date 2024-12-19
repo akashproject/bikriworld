@@ -67,20 +67,11 @@
                 
             </div> 
             @endif
-            <div class="row mt-5">
-                <div class="col-lg-12">
-                    <div class="section-title left-align">
-                        <p class="subtitle mb-0">
-                            <i class="fal fa-book"></i>
-                            Select Model
-                        </p>
-                    </div>
-                </div>
-            </div>
+            
             <div class="row model_wraper">
                 @if($products)
                 @foreach ($products as $value)
-                <div class="col-lg-2 col-6 product_filter_list series_{{$value->series_id}}" data-series="" >
+                <div class="col-lg-2 col-4 product_filter_list series_{{$value->series_id}}" data-series="" >
                     <div class="team_block style_2 style_3">
                         <div class="team_img product_img">
                             <a href="{{ url('sell-old-product') }}/{{ $value->slug }}" >
@@ -89,9 +80,6 @@
                             @else 
                             <img src="https://via.placeholder.com/180x180" alt="img" class="">
                             @endif   
-                            </a>
-                            <a href="{{ url('sell-old-product') }}/{{ $value->slug }}" class="thm-btn bg-thm-color-two thm-color-two-shadow btn-circle link">
-                                <i class="fal fa-plus"></i>
                             </a>
                         </div>
                         <p class="thm-color-two mb-0 font-weight-bold"><a href="{{ url('sell-old-product') }}/{{ $value->slug }}" style="font-size: 13px;line-height: 18px;" > {{ $value->name }} </a></p>
@@ -118,8 +106,6 @@
         </div>
     </section>
     <!-- Team End -->
-    @include('common.top-brand')
-    @include('common.top-product')
     @endsection
 @section('script')
 <!-- ============================================================== -->

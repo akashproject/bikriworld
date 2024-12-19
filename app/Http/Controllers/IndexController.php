@@ -19,6 +19,7 @@ class IndexController extends Controller
     public function index(){
         $user = $this->userdata;
         try {
+            //echo "hi"; exit;
             //$categories = Categories::where('status', '1')->orderBy('name', 'asc')->get();
             $categories = Categories::orderBy('order','asc')->get();
             return view('index',compact('categories','user'));

@@ -22,8 +22,8 @@
         <div class="container relative z-1">
             <div class="row">
                 <div class="col-12">
-                    <h4 class="page_title">Repair Old {{$category->name}}</h4>
-                    <p> Repair {{$category->name}} At The Best Service </p>
+                    <h4 class="page_title">Get Verified Original Parts of {{$category->name}}</h4>
+                    <p> Get Verified Original Parts of {{$category->name}} At The Best Service </p>
                     <div class="page_breadcrumb">
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
@@ -51,7 +51,7 @@
                             <i class="fal fa-book"></i>
                             Please select brand
                         </p>
-                        <h5 class="title mb-0">choose brand what you like to sell</h5>
+                        <h5 class="title mb-0">choose brand of parts</h5>
                     </div>
                 </div>
                 <div class="col-lg-6">

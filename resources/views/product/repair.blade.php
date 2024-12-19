@@ -6,13 +6,13 @@
         <div class="container relative z-1">
             <div class="row">
                 <div class="col-12">
-                    <h4 class="page_title">Select Your {{$brand->name}} Device  </h4>
-                    <p> Book device repair service Online In 24 Hours: Free Doorstep </p>
+                    <h4 class="page_title">Select {{$brand->name}} Model  </h4>
+                    <p> Get Certified original parts of {{$brand->name}} </p>
                     <div class="page_breadcrumb">
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="{{  url('') }}">Home</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Select Device</li>
+                                <li class="breadcrumb-item active" aria-current="page">Select Model</li>
                             </ol>
                         </nav>
                     </div>
@@ -36,7 +36,7 @@
                             <i class="fal fa-book"></i>
                             Please select device
                         </p>
-                        <h6 class="title mb-0">choose device what you like to repair</h6>
+                        <h6 class="title mb-0">choose device of parts</h6>
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -54,18 +54,21 @@
                 <div class="col-lg-2 col-6 product_filter_list">
                     <div class="team_block style_2 style_3">
                         <div class="team_img product_img">
-                            <a href="{{ url('repair-device') }}/{{ $value->slug }}" >
+                            <a href="https://api.whatsapp.com/send?phone=7439995068&amp;text=Want to Buy Part of {{ $value->name }}" >
                             @if($value->image)
                             <img src="https://administrator.bikriworld.com/public/images/{{ $value->image }}" alt="img">
                             @else 
                             <img src="https://via.placeholder.com/180x180" alt="img" class="">
                             @endif   
                             </a>
-                            <a href="{{ url('repair-device') }}/{{ $value->slug }}" class="thm-btn bg-thm-color-two thm-color-two-shadow btn-circle link">
-                                <i class="fal fa-plus"></i>
-                            </a>
+                            
                         </div>
-                        <p class="thm-color-two mb-0 font-weight-bold"><a href="{{ url('repair-device') }}/{{ $value->slug }}" style="font-size: 13px;line-height: 18px;" > {{ $value->name }} </a></p>
+                        <p class="thm-color-two mb-0 font-weight-bold"><a href="javascript:void(0)" style="font-size: 13px;line-height: 18px;" > {{ $value->name }} </a></p>
+                        <p class="mb-0 mr-0 font-weight-bold bg-thm-color-two thm-color-two-shadow btn-rectangle ">
+                            <a style="color: white;" href="https://api.whatsapp.com/send?phone=7439995068&amp;text=Want to Buy Part of {{ $value->name }}">
+                                Connect to seller
+                            </a>
+                        </p>
                     </div>
                 </div>
                 @endforeach	

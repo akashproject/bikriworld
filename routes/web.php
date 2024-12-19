@@ -38,6 +38,8 @@ Route::get('/select-series/{slug}', [App\Http\Controllers\SeriesController::clas
 Route::get('/sell-old-used-laptop', [App\Http\Controllers\CategoriesController::class, 'laptopUsedWhatsapp'])->name('laptop-whatsapp');
 Route::get('/sell-used-laptop', [App\Http\Controllers\CategoriesController::class, 'laptopWhatsapp'])->name('laptop-whatsapp');
 
+//Whatsapp For Parts
+Route::get('/buy-online-device-parts', [App\Http\Controllers\PartsController::class, 'index'])->name('buy-online-device-parts');
 
 Route::post('/question', [App\Http\Controllers\QuestionController::class, 'index'])->name('question-index');
 Route::post('/calculate-price', [App\Http\Controllers\QuestionController::class, 'calculatePrice'])->name('calculate-price');

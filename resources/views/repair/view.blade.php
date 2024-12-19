@@ -7,7 +7,7 @@
             <div class="row">
                 <div class="col-12">
                     <h4 class="page_title">Your Device : {{ $product->name }}</h4>
-                    <p> Here At The Right Valuation: Get Cash In 24 Hours</p>
+                    <p> Pay After Parts Verify in your hand</p>
                     <div class="page_breadcrumb">
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">

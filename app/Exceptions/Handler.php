@@ -39,12 +39,12 @@ class Handler extends ExceptionHandler
     //     });
     // }
 
-    public function render($request, Exception $e)
-    {
-        $this->reportable(function (Throwable $e) {
-            //
-        });
+    // public function render($request, Exception $e)
+    // {
+    //     $this->reportable(function (Throwable $e) {
+    //         //
+    //     });
     
-    }
+    // }
     
 }

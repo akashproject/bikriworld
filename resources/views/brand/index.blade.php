@@ -114,8 +114,6 @@
         </div>
     </section>
     <!-- Team End -->
-    @include('common.top-brand')
-    @include('common.top-product')
     @endif
     @endsection
 @section('script')

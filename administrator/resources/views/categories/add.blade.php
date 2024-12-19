@@ -32,7 +32,30 @@
 						<input type="text" class="form-control" name="name" id="title" placeholder="Title Here" >
 					</div>
 				</div>
-											
+
+				<div class="form-group row">
+					<label for="service" class="col-sm-3 text-right control-label col-form-label">Service</label>
+					<div class="col-sm-9">
+						<select name="service[]" id="service" multiple>
+							<option value="">Select Service</option>
+							<option value="buy" > Buy </option>
+							<option value="sell" > Sell </option>
+							<option value="repair" > Repair </option>
+						<select>
+					</div>
+				</div>	
+
+				<div class="form-group row">
+					<label for="state" class="col-sm-3 text-right control-label col-form-label">Status</label>
+					<div class="col-sm-9">
+						<select name="status" id="status" >	
+							<option value="">Update Status</option>
+							<option value="1"> Publish</option>
+							<option value="0"> Private </option>
+						<select>
+					</div>
+				</div>
+
 			</div>
 
 			<div class="border-top">

@@ -39,7 +39,7 @@ Preloader End -->
                 </li>
             @endforeach    
                 <li class="menu-item">
-                    <a class="menu-link" href="mailto:franchise@bikriworld.com"> Become a Pertner </a>
+                    <a class="menu-link" href="{{ route('franchise-partner') }}"> Become a Partner </a>
                 </li>
                 <li class="menu-item">
                     <a class="menu-link" href="{{ url('refer-earn') }}"> Refer & Earn </a>
@@ -167,7 +167,7 @@ Preloader End -->
                         <a href="#">More</a>
                         <ul class="sub-menu">
                             <li class="menu-item">
-                                <a class="menu-link" href="mailto:franchise@bikriworld.com"> Become a Pertner </a>
+                                <a class="menu-link" href="{{ route('franchise-partner') }}"> Become a Partner </a>
                             </li>
                             <li class="menu-item">
                                 <a class="menu-link" href="{{ route('categories-repair') }}"> Repair </a>
@@ -207,25 +207,6 @@ Preloader End -->
 </header>
 @else
 <header class="header header-3">
-    <div class="topbar bg-thm-color-two">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-7">
-                    
-                </div>
-                <div class="col-lg-5">
-                    <ul class="right-side">
-                        <li>
-                            <a href="tel:7439995068">
-                                <i class="fal fa-phone"></i>
-                                Call : 7439 995 068
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
     <div class="nav_sec">
         <div class="container">
             <!-- inner -->
@@ -252,7 +233,7 @@ Preloader End -->
                             <a href="#">More</a>
                             <ul class="sub-menu">
                                 <li class="menu-item">
-                                    <a class="menu-link" href="mailto:franchise@bikriworld.com"> Become a Pertner </a>
+                                    <a class="menu-link" href="{{ route('franchise-partner') }}"> Become a Partner </a>
                                 </li>
                                 <li class="menu-item">
                                     <a class="menu-link" href="{{ route('categories-repair') }}"> Repair </a>
